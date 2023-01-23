@@ -1,0 +1,20 @@
+.css-m5hdmq-MuiInputBase-root-MuiInput-root-MuiSelect-root:before {
+    border-color: #0D6EFD;
+}
+
+.css-tjylgk-MuiModal-root img {
+    height: 90% !important;
+    width: 35% !important;
+    margin: 0 auto;
+    padding-top: 50px !important;
+}
+
+.css-tjylgk-MuiModal-root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.css-tjylgk-MuiModal-root * {
+    outline: none !important;
+}

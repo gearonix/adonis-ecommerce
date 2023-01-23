@@ -1,0 +1,115 @@
+@use 'styles/variables' as *;
+
+.messages_main {
+  @include backgroundImage('/wallpaper_2.svg');
+  @include size(100%, 652px);
+
+  .wrapper {
+    @include size(72%, calc(100% - 24px));
+    .messages_block{
+      @include size(100%, calc(88%));
+      overflow-y: auto;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+    margin: 0 auto;
+    position: relative;
+    border: 1px solid transparent;
+    .message_bar {
+      border-radius: 12px;
+      background: white;
+      position: relative;
+      padding: 15px;
+      box-sizing: border-box;
+      display: flex;
+      margin-top: 20px;
+      @include size(100%, 56px);
+
+      .icon_wrapper {
+        svg {
+          @include size(24px, 24px);
+          color: $light-grey;
+        }
+      }
+
+      input {
+        @include size(85%);
+        width: 85%;
+        border: none;
+        margin-left: 18px;
+        font-size: 17px;
+
+        &::placeholder {
+          color: $light-grey;
+        }
+      }
+
+      .send {
+        margin-left: 16px;
+        position: absolute;
+        top: 15px;
+        right: 25px;
+
+        svg {
+          color: #8BABD8;
+          @include size(26px, 26px);
+          transition: color 200ms;
+
+          &:hover {
+            color: #789CCE;
+          }
+        }
+      }
+    }
+
+  }
+}
+.my_message ,.opponent_message{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 17px;
+  .wrapper{
+    margin: 0;
+    min-height: 28px;
+    min-width: 85px;
+    max-width: 243px;
+    background: #78E378;
+    border-radius: 12px;
+    @include padding(8px,5px);
+    position: relative;
+    padding-bottom: 10px;
+    .title_wrapper{
+      @include size(70%);
+      .title{
+        text-align: left;
+        word-wrap: break-word;
+      }
+    }
+
+    .time_block{
+      color: white;
+      position: absolute;
+      right: 12px;
+      bottom: 4px;
+      font-size: 12px;
+      @include size(48px,16px);
+      @include flex(space-between);
+      svg{
+        @include size(14px,14px);
+      }
+    }
+  }
+}
+
+.opponent_message{
+  justify-content: flex-start;
+  .wrapper{
+    background: white;
+    color: $dark;
+    svg, span   {
+      color: $dark;
+    }
+  }
+}

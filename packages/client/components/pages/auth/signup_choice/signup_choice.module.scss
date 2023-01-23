@@ -1,0 +1,81 @@
+@use '../../../../styles/variables' as *;
+
+
+.signup_main {
+  @include size(100%, 600px);
+
+  .wrapper {
+    width: 387px;
+    @include itemBorder;
+    margin: 60px auto 0 auto;
+    padding: 30px 30px 0 30px;
+    box-shadow: $shadow;
+    position: relative;
+
+    .home {
+      position: absolute;
+      right: 30px;
+      top: 30px;
+
+      svg {
+        @include size(28px, 28px);
+        color: $dark;
+
+        &:hover {
+          transition: color 200ms;
+          color: $dark-grey;
+        }
+      }
+    }
+
+    p {
+      margin-top: 90px;
+
+      a {
+        background-image: linear-gradient(to right, $blue, $blue);
+      }
+    }
+
+    .title {
+      @include inlineStyles(24px, $dark, bold);
+    }
+
+    .choice_container {
+      @include grid(2, 2);
+      margin: 87px auto 0 auto;
+      width: 96%;
+
+      .choice_block {
+        margin: 0 auto;
+        position: relative;
+        border-radius: 100%;
+        @include size(110px, 110px);
+        @include flex(center, center);
+
+        svg {
+          @include size(92px, 92px);
+          color: $dark-grey;
+        }
+
+        &:hover {
+          transition: box-shadow 250ms, background-color 200ms;
+          box-shadow: $shadow-hover;
+          background: #FAFAFA;
+        }
+      }
+
+      .choice_title {
+        font-size: 27px;
+        color: $dark-grey;
+      }
+
+      button {
+        margin: 0 auto;
+        margin-top: 42px;
+        width: 150px;
+      }
+    }
+  }
+
+
+}

@@ -1,0 +1,32 @@
+@use '../../../styles/variables' as *;
+
+.not_found {
+  @include size(100%, 700px);
+  padding-left: 60px;
+  position: relative;
+
+  .title {
+    margin-top: 100px;
+    @include inlineStyles($giant, #384259, bold);
+  }
+
+  .subtitle {
+    @include inlineStyles(30px, #565F73);
+    margin-top: 15px;
+  }
+
+  .go_back {
+    margin-top: 108px;
+    @include size(330px, 57px);
+    @include inlineStyles(22px, white, bold);
+  }
+
+  .image_wrapper {
+    @include size(35%, 540px);
+    position: absolute;
+    right: 200px;
+    top: 0;
+
+  }
+
+}

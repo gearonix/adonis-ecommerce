@@ -1,0 +1,105 @@
+@use '../../../../styles/variables' as *;
+
+.search_list {
+  @include size(60%);
+  margin-bottom: 20px;
+  position: relative;
+
+  .controls {
+    border: 1px solid $light;
+    padding-left: 19px;
+    padding-right: 19px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    background: white;
+    @include size(100%, 56px);
+    @include itemHover;
+    @include flex(space-between, center);
+
+    .controls_title {
+      @include size(40%);
+      @include flex(stretch, center);
+
+      .bold {
+        font-weight: bold;
+      }
+    }
+
+    .controls_buttons {
+      @include size(40%);
+      margin-right: 30px;
+      @include flex(space-between, center);
+
+    }
+
+    .controls_select {
+      border: 1px solid $light;
+      border-radius: 4px;
+      height: 35px;
+    }
+  }
+
+  .item_block {
+    @include size(calc(100% + 38px), 1430px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 19px;
+
+    .search_item {
+      @include itemHover;
+      @include size(100%, 230px);
+      border-radius: $rounded;
+      margin-top: 20px;
+      border: 1px solid $light;
+      @include flex(stretch, center);
+      position: relative;
+      background: white;
+
+      img {
+        cursor: pointer;
+      }
+
+      .info_block {
+        @include size(55%, 90%);
+
+        .price {
+          @include inlineStyles($xm, $dark, bold);
+          margin-top: 16px;
+        }
+      }
+
+      .heart {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        border: 1px solid $light;
+        background: white;
+        border-radius: $rounded;
+        cursor: pointer;
+        @include flex(center, center);
+        @include size(40px, 40px);
+
+        &:hover {
+          svg {
+            path {
+              color: #FF7E7E;
+            }
+          }
+
+        }
+
+        svg {
+          path {
+            transition: color 400ms;
+            color: $blue;
+
+          }
+
+          @include size(20px, 20px);
+        }
+      }
+
+    }
+  }
+
+}

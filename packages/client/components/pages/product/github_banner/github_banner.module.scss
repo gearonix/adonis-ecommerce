@@ -1,0 +1,27 @@
+@use 'styles/variables' as *;
+
+.github_banner {
+	@include size(100%, 110px);
+	padding: 30px;
+	margin-bottom: 40px;
+	margin-top: 40px;
+	border-radius: $rounded;
+	box-sizing: border-box;
+	@include flex(space-between, center);
+	background: linear-gradient(to left, #4892FF, #005ADE);
+
+	* {
+		color: white;
+	}
+
+	h2 {
+		font-size: $small-md;
+		margin-bottom: 4px;
+	}
+
+	button {
+		width: 121px;
+	}
+
+
+}

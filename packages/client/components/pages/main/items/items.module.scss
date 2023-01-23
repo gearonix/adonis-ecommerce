@@ -1,0 +1,40 @@
+@use 'styles/variables' as *;
+
+.recommended_items {
+	@include size(100%, 700px);
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding-top: 20px;
+	padding-bottom: 38px;
+
+	.items_block {
+		@include size(80%);
+		margin: 0 auto;
+		@include grid(5, 2, 20px);
+
+		.item {
+			@include flex(stretch, center, column);
+			@include padding(10px, 9px);
+			height: 310px;
+			background: white;
+			border-radius: $rounded;
+			border: $br $light;
+			@include itemHover;
+
+			.price, .item_description {
+				display: inline-block;
+				width: 200px;
+			}
+
+			.price {
+				margin-top: 16px;
+				font-weight: bold;
+			}
+
+			.item_description {
+				margin-top: 6px;
+				color: $light-grey;
+			}
+		}
+	}
+}

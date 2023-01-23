@@ -1,0 +1,169 @@
+@use './variables.scss' as *;
+
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.typo {
+  color: $dark;
+  font-size: $small;
+  font-weight: bold;
+}
+
+.typo_grey {
+  font-weight: normal;
+  font-size: $small;
+  color: $dark-grey;
+}
+
+.blue_link {
+  background-image: linear-gradient(to right, $blue, $blue 50%, $blue 50%) !important;
+  font-size: $small;
+}
+
+
+.primary_button, .outlined_button, .orange_button, .green_button {
+  text-align: center;
+  @include inlineStyles($small, white);
+  @include size(18%, 38px);
+  background: $blue;
+  border-radius: $rounded;
+  transition: background 200ms;
+  display: block;
+
+  &:hover {
+    background: $hover-blue;
+  }
+}
+
+.outlined_button {
+  background: white;
+  color: $dark;
+  box-shadow: $shadow;
+  border: $br $light;
+
+  &:hover {
+    background: #F3F3F3;
+  }
+}
+
+.orange_button {
+  background: $orange;
+
+  &:hover {
+    background: #FE8604;
+  }
+}
+
+.green_button {
+  background: $green;
+
+  &:hover {
+    background: #03A718;
+  }
+
+}
+
+.primary_select {
+  border: 2px solid $blue;
+  border-left-width: 1px;
+  font-size: 16px;
+  padding-left: 5px;
+
+  * {
+    font-size: 16px;
+    background-color: rgb(247, 247, 247);
+    height: 50px;
+    padding: 15px;
+    border: 1px solid rgb(41, 18, 18);
+  }
+}
+
+.dark_title {
+  @include inlineStyles($small_md, $dark, bold);
+  margin-bottom: 24px;
+  margin-top: 14px;
+}
+
+.hover_link {
+  background-image: linear-gradient(
+                  to right,
+                  #54b3d6,
+                  #54b3d6 50%,
+                  #000 50%
+  );
+
+  svg {
+    color: $dark;
+  }
+
+  &:hover {
+    svg {
+      color: #54b3d6;
+    }
+
+  }
+
+  background-size: 200% 100%;
+  background-position: -100%;
+  display: inline-block;
+  padding: 5px 0;
+  position: relative;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+
+  &:before {
+    content: '';
+    background: #54b3d6;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover {
+    background-position: 0;
+  }
+
+  &:hover:before {
+    width: 100%;
+  }
+}
+
+.custom_scrollbar::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #F5F5F5;
+}
+
+.custom_scrollbar::-webkit-scrollbar {
+  width: 5px;
+  background-color: #F7FAFC;
+}
+
+.custom_scrollbar::-webkit-scrollbar-thumb {
+  background-color: $light;
+  background-image: -webkit-linear-gradient(45deg,
+          rgba(255, 255, 255, .2) 25%,
+          transparent 25%,
+          transparent 50%,
+          rgba(255, 255, 255, .2) 50%,
+          rgba(255, 255, 255, .2) 75%,
+          transparent 75%,
+          transparent)
+}
+
+.search_head {
+  color: $light-grey;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.color_green {
+  color: #00B517;
+}
