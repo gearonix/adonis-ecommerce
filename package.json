@@ -1,16 +1,13 @@
 {
   "name": "adonis-monorepo",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "version": "0.0.0",
+  "workspaces": ["packages/**"],
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Gearonix/adonis-monorepo.git"
   },
-  "author": "",
+  "author": "Gearonix",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Gearonix/adonis-monorepo/issues"
