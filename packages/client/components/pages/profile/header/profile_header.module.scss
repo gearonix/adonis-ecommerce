@@ -1,0 +1,65 @@
+@use 'styles/variables' as *;
+
+.profile_header{
+	width: 90%;
+	margin: 30px auto 20px auto;
+	@include itemBorder;
+	*{
+		//@include testBorder;
+	}
+	.profile_background{
+		@include imageWrapper(100%,310px,$rounded);
+		button{
+			position: absolute;
+			right: 20px;
+			top: 20px;
+			z-index: 1;
+			@include size(210px,32px);
+			opacity: 0.6;
+			transition: opacity 200ms;
+			&:hover{
+				opacity: 1;
+			}
+			svg{
+				margin-right: 3px;
+			}
+		}
+	}
+	.info_block{
+		position: relative;
+		padding: 20px;
+		box-sizing: border-box;
+		@include size(100%,123px);
+		display: flex;
+		.avatar{
+				@include imageWrapper(170px,170px,100%);
+				border: 3px solid $light;
+				margin-left: 20px;
+				margin-top: -7%;
+		}
+		.user_info{
+			@include size(25%);
+			margin-left: 20px;
+			.user_name{
+				@include inlineStyles($small-md,$dark,bold);
+			}
+			.description{
+				@include inlineStyles($small,$light-grey);
+				margin-top: 10px;
+				position: relative;
+			}
+		}
+		.change_profile{
+			@include size(18%,50px);
+			@include flex(flex-end);
+			position: absolute;
+			right: 28px;
+			top: 20px;
+			button{
+				@include size(183px, 33px);
+			}
+		}
+
+	}
+
+}

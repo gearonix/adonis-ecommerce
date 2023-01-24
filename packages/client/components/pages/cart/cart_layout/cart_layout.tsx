@@ -3,12 +3,12 @@ import {NextImage} from "components/UIkit/components";
 import cn from 'classnames'
 import {AiFillLock, AiOutlineArrowLeft, FaTruck, MdMessage} from 'icons';
 import {MuiModal} from "components/UIkit/mui/mui_components";
-import {useState} from "react";
+import {FC, useState} from "react";
 
-const CartLayout = () => {
+const CartLayout: FC<{mode: 'cart' | 'saved'}> = ({mode}) => {
     const items = [1, 2, 3]
     const [isOpen, openModal] = useState<boolean>(false)
-    return <><h2 className="dark_title">My cart (N)</h2>
+    return <div style={{width: '50%'}}>
         <div className={s.cart_container}>
             <MuiModal isOpen={isOpen} handleOpen={openModal} image={'/item_mock_2.svg'}/>
 
@@ -29,10 +29,11 @@ const CartLayout = () => {
                                     s.remove_button)}>
                                     Remove
                                 </button>
+                                {mode == 'cart' &&
                                 <button className={cn('outlined_button',
                                     s.save_button)}>
                                     Save for later
-                                </button>
+                                </button>}
                             </div>
                         </div>
                         <div className={s.price_block}>
@@ -42,7 +43,7 @@ const CartLayout = () => {
                     </div>
                 })}
                 <div className={s.cart_buttons}>
-                    <button className={cn('primary_button', s.back_to_shop)}>
+                    <button className={cn(mode == 'cart' ? 'primary_button' : 'red_button', s.back_to_shop)}>
                         <AiOutlineArrowLeft/>
                         Back to shop
                     </button>
@@ -50,16 +51,6 @@ const CartLayout = () => {
                         Remove all
                     </button>
                 </div>
-            </div>
-            <div className={s.checkout_block}>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit </p>
-                <div className={s.total_block}>
-                    <h4>Total:</h4>
-                    <h4>$1357.97</h4>
-                </div>
-                <button className={cn('green_button', s.checkout_button)}>
-                    Checkout
-                </button>
             </div>
         </div>
         <div className={s.cart_icons}>
@@ -92,7 +83,7 @@ const CartLayout = () => {
             </div>
         </div>
 
-    </>
+    </div>
 }
 
 export default CartLayout

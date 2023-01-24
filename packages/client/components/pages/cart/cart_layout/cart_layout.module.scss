@@ -5,10 +5,11 @@
   display: flex;
 
   .cart_layout {
-    width: 60%;
+    width: 100%;
     @include itemBorder;
     padding: 20px;
     box-sizing: border-box;
+    margin: 0;
 
     .item {
       @include size(100%, 140px);
@@ -125,7 +126,7 @@
 
 
 .cart_icons {
-  @include size(60%, 50px);
+  @include size(100%, 50px);
   @include flex(space-between);
   margin-top: 30px;
   margin-bottom: 30px;

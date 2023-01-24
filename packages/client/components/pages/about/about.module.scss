@@ -1,0 +1,44 @@
+@use 'styles/variables' as *;
+
+.about{
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  @include itemBorder;
+  position: relative;
+  .title{
+    @include inlineStyles(42px,$dark,bold);
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 60px;
+  }
+  .text{
+    width: 65%;
+    margin: 0 auto;
+    font-size: $xm;
+    text-align: center;
+  }
+  .link{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    span{
+      background-image: linear-gradient(to left, $blue, $blue);
+      cursor: pointer;
+    }
+  }
+  .github_icon{
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    cursor: pointer;
+    svg{
+      @include size(37px,37px);
+    }
+  }
+  .image_wrapper{
+    @include imageWrapper(30%,400px);
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+}

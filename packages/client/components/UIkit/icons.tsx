@@ -1,6 +1,7 @@
 import {FiHeart} from 'react-icons/fi';
 import {GiHamburgerMenu, GiTopHat} from 'react-icons/gi';
-import {BsGridFill, BsCheck2} from 'react-icons/bs';
+import {BsGridFill, BsCheck2,BsPen,
+    BsDot,BsThreeDotsVertical} from 'react-icons/bs';
 import {
     AiFillEye,
     AiFillEyeInvisible,
@@ -11,7 +12,9 @@ import {
     AiOutlineGithub,
     AiOutlineHome,
     AiOutlineSearch,
-    AiFillFileAdd
+    AiFillFileAdd,
+    AiOutlineFileAdd,
+    AiOutlineUnorderedList
 } from 'react-icons/ai';
 import {MdMessage, MdOutlineDescription, MdSend} from 'react-icons/md';
 import {HiOutlineFlag} from 'react-icons/hi';
@@ -43,5 +46,10 @@ export {
     AiFillEyeInvisible,
     MdSend,
     BsCheck2,
-    AiFillFileAdd
+    AiFillFileAdd,
+    BsPen,
+    AiOutlineFileAdd,
+    AiOutlineUnorderedList,
+    BsDot,
+    BsThreeDotsVertical
 }

@@ -37,7 +37,7 @@ const SearchList: FC = () => {
     </div>
 }
 
-const Product: FC = () => {
+export const Product: FC = () => {
     return <div className={s.search_item}>
         <Image src={'/mock_item.svg'} alt={'Check it!'}
                width={210} height={210}/>

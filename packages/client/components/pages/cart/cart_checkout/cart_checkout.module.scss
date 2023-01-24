@@ -1,0 +1,36 @@
+@use 'styles/variables' as *;
+
+.checkout_block {
+  @include itemBorder;
+  box-shadow: $shadow;
+  @include size(16%);
+  padding: 20px;
+  margin: 0;
+  margin-left: 20px;
+
+  p{
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: $dark-grey;
+  }
+
+  .total_block {
+    border-bottom: $br $light;
+    padding-bottom: 10px;
+    @include flex(space-between);
+    @include size(100%, 28px);
+    margin-bottom: 18px;
+
+    h4 {
+      font-weight: bold;
+      font-size: 19px;
+    }
+  }
+
+  .checkout_button {
+    @include size(100%, 54px);
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+
+}

@@ -17,17 +17,7 @@ const MessagesMain: NCT = () => {
                     <Message message={'Hi'}/>
                 </div>
             </div>
-            <div className={s.message_bar}>
-                <div className={s.icon_wrapper}>
-                    <AiFillFileAdd/>
-                </div>
-
-
-                <input placeholder={'Message'} maxLength={60}/>
-                <div className={s.send}>
-                    <MdSend/>
-                </div>
-            </div>
+            <MessageBar/>
         </div>
     </div>
 }
@@ -58,7 +48,18 @@ export const Message : FC<MessageProps> = ({isMine = false, image,message}) => {
         </div>
     </div>
 }
-// export const UserMessage : NCT = () => {
-// }
+
+export const MessageBar: FC<{placeholder?: string}> = ({placeholder  = 'Message'}) => {
+    return <div className={s.message_bar}>
+        <div className={s.icon_wrapper}>
+            <AiFillFileAdd/>
+        </div>
+        <input placeholder={placeholder} maxLength={60}/>
+        <div className={s.send}>
+            <MdSend/>
+        </div>
+    </div>
+}
+
 
 export default MessagesMain

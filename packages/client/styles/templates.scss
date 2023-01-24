@@ -24,7 +24,8 @@
 }
 
 
-.primary_button, .outlined_button, .orange_button, .green_button {
+.primary_button, .outlined_button, .orange_button, .green_button
+,.red_button{
   text-align: center;
   @include inlineStyles($small, white);
   @include size(18%, 38px);
@@ -63,7 +64,12 @@
   &:hover {
     background: #03A718;
   }
-
+}
+.red_button{
+  background: $red;
+  &:hover {
+    background: #FE4D4D;
+  }
 }
 
 .primary_select {
