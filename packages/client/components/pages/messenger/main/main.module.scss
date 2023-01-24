@@ -1,16 +1,22 @@
 @use 'styles/variables' as *;
 
 .messages_main {
-  @include backgroundImage('/wallpaper_2.svg');
+  //@include backgroundImage('/wallpaper_2.svg');
   @include size(100%, 652px);
+  background: white;
 
   .wrapper {
-    @include size(72%, calc(100% - 24px));
+    @include size(100%, calc(100% - 24px));
     .messages_block{
       @include size(100%, calc(88%));
       overflow-y: auto;
       &::-webkit-scrollbar {
         display: none;
+      }
+      .messages_wrapper{
+        margin: 0 auto;
+        width: 72%;
+        margin-bottom: 20px;
       }
     }
     margin: 0 auto;
@@ -19,12 +25,14 @@
     .message_bar {
       border-radius: 12px;
       background: white;
+      border: $br $light;
       position: relative;
       padding: 15px;
       box-sizing: border-box;
       display: flex;
+      margin: 0 auto;
       margin-top: 20px;
-      @include size(100%, 56px);
+      @include size(72%, 56px);
 
       .icon_wrapper {
         svg {
@@ -70,26 +78,40 @@
   display: flex;
   justify-content: flex-end;
   margin-top: 17px;
+  .wrapper:has(.image_wrapper){
+    min-width: 365px;
+  }
   .wrapper{
     margin: 0;
     min-height: 28px;
     min-width: 85px;
     max-width: 243px;
-    background: #78E378;
+    background: #F5F5F5;
     border-radius: 12px;
-    @include padding(8px,5px);
     position: relative;
+    padding: 0;
     padding-bottom: 10px;
+    .image_wrapper{
+      cursor: pointer;
+      @include size(calc(100% + 2px),200px);
+      margin-left: -1px;
+      margin-top: -1px;
+      margin-bottom: 12px;
+      position: relative;
+      border-radius: 12px 12px 0 0;
+      overflow: hidden;
+    }
     .title_wrapper{
       @include size(70%);
       .title{
         text-align: left;
+        margin-left: 10px;
+        margin-top: 5px;
         word-wrap: break-word;
       }
     }
 
     .time_block{
-      color: white;
       position: absolute;
       right: 12px;
       bottom: 4px;
@@ -100,16 +122,39 @@
         @include size(14px,14px);
       }
     }
+    cursor: pointer;
   }
 }
 
 .opponent_message{
   justify-content: flex-start;
   .wrapper{
-    background: white;
-    color: $dark;
+    background: #218aff;
+    transition: background 200ms;
+    *{
+      color: white;
+    }
+    .time_block span{
+      color: white;
+    }
+
+    &:hover {
+      background: #3192FF;
+    }
+    cursor: pointer;
     svg, span   {
       color: $dark;
     }
+
   }
+}
+.today_label{
+  background: rgba(61, 112, 184, 0.3);
+  height: 28px;
+  border-radius: 12px;
+  min-width: 71px;
+  max-width: 100px;
+  margin: 16px auto 16px;
+  @include flex(center,center);
+  color: white;
 }

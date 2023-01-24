@@ -7,6 +7,11 @@
 	padding-left: 22px;
 	padding-right: 22px;
 	box-sizing: border-box;
+	transition: background 200ms;
+	border-bottom: $br $light;
+	&:hover {
+		background: #FAFAFA;
+	}
 
 	.icon_wrapper {
 		svg {

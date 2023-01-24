@@ -31,6 +31,12 @@ const DevNavRouting: NCT = () => {
         <Link href={'/messenger'}>
             <button>messenger</button>
         </Link>
+        <Link href={'/saved'}>
+            <button>saved</button>
+        </Link>
+        <Link href={'/profile'}>
+            <button>profile</button>
+        </Link>
         <Link href={'/not_found'}>
             <button>not_found</button>
         </Link>

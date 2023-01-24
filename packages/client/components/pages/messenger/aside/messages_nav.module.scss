@@ -6,6 +6,7 @@
   overflow-y: auto;
   overflow-x: hidden;
   box-sizing: border-box;
+  border-right: $br $light;
 
   .search_wrapper {
     width: 90%;
@@ -13,7 +14,7 @@
   }
 
   .user {
-    @include size(100%, 75px);
+    @include size(100%, 78px);
     cursor: pointer;
     transition: background 200ms;
 
@@ -63,7 +64,7 @@
   position: relative;
   @include size(48px, 48px);
   border-radius: 100%;
-  margin-right: 16px;
+  margin-right: 17px;
   overflow: hidden;
 }
 
