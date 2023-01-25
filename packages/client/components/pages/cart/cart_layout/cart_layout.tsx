@@ -2,7 +2,7 @@ import s from './cart_layout.module.scss'
 import {NextImage} from "components/UIkit/components";
 import cn from 'classnames'
 import {AiFillLock, AiOutlineArrowLeft, FaTruck, MdMessage} from 'icons';
-import {MuiModal} from "components/UIkit/mui/mui_components";
+import {ImageModal} from "components/UIkit/mui/mui_components";
 import {FC, useState} from "react";
 
 const CartLayout: FC<{mode: 'cart' | 'saved'}> = ({mode}) => {
@@ -10,7 +10,7 @@ const CartLayout: FC<{mode: 'cart' | 'saved'}> = ({mode}) => {
     const [isOpen, openModal] = useState<boolean>(false)
     return <div style={{width: '50%'}}>
         <div className={s.cart_container}>
-            <MuiModal isOpen={isOpen} handleOpen={openModal} image={'/item_mock_2.svg'}/>
+            <ImageModal isOpen={isOpen} handleOpen={openModal} image={'/item_mock_2.svg'}/>
 
             <div className={s.cart_layout}>
                 {items.map(i => {

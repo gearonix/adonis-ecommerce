@@ -1,7 +1,8 @@
-import {FC, useState} from 'react';
+import {FC, ReactNode, useState} from 'react';
 import {
     Autocomplete,
     Backdrop,
+    Box,
     Button,
     ButtonGroup,
     Checkbox,
@@ -98,7 +99,7 @@ export const MuiPagination: FC = () => {
 }
 
 
-export const MuiModal: FC<ModalProps> = ({isOpen, handleOpen, image}) => {
+export const ImageModal: FC<ModalProps> = ({isOpen, handleOpen, image}) => {
     return <Modal
         open={isOpen}
         onClose={() => handleOpen(false)}
@@ -183,7 +184,7 @@ export const MuiTable: NCT = () => {
 }
 
 
-export const MuiLoginField: FC<MuiLoginFieldProps> = ({title, isPassword}) => {
+export const HeadField: FC<MuiLoginFieldProps> = ({title, isPassword ,readOnly = false}) => {
     const [showPassword, setShowPassword] = useState(true);
 
     return <FormControl variant="outlined" fullWidth size={'small'} sx={{
@@ -191,6 +192,7 @@ export const MuiLoginField: FC<MuiLoginFieldProps> = ({title, isPassword}) => {
     }}>
         <Typography>{title}</Typography>
         <OutlinedInput
+            readOnly={readOnly}
             placeholder={title}
             id="outlined-adornment-password"
             sx={{height: 40, marginTop: '10px'}}
@@ -213,6 +215,40 @@ export const MuiLoginField: FC<MuiLoginFieldProps> = ({title, isPassword}) => {
         />
     </FormControl>
 }
+export const TextArea = () => {
+    return  <FormControl variant="outlined" fullWidth size={'small'} sx={{
+        marginBottom: '26px'
+    }}>
+        <Typography>Description</Typography>
+        <TextField
+            id="outlined-multiline-static"
+            multiline
+            rows={4}
+            placeholder={'Description'}
+            defaultValue="Default Value"
+            sx={{marginTop: '10px'}}
+        />
+    </FormControl>
+}
+
+export const StandardSelect = () => {
+    return <FormControl size={'small'} sx={{width: '30%'}}>
+        <Typography>Select</Typography>
+        <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={[30]}
+            label="Age"
+            onChange={() => {}}
+            sx={{marginTop: '8px'}}
+        >
+            <MenuItem value={10}>Test 1</MenuItem>
+            <MenuItem value={20}>Test 2</MenuItem>
+            <MenuItem value={30}>Test 3</MenuItem>
+        </Select>
+    </FormControl>
+}
+
 
 export const SearchInput: NCT = () => {
     return <FormControl variant="outlined" fullWidth sx={{marginBottom: '10px'}}>
@@ -229,4 +265,49 @@ export const SearchInput: NCT = () => {
             }
         />
     </FormControl>
+}
+
+
+const ModalStyles = {
+    position: 'absolute' as 'absolute',
+    top: '5%',
+    left: '50%',
+    height: '80%',
+    overflowY: 'auto',
+    transform: 'translate(-50%, 0)',
+    width: '70%',
+    bgcolor: 'background.paper',
+    borderRadius: '6px',
+    boxShadow: 24,
+    p: 4,
+};
+
+interface ContentModalProps{
+    isOpened: boolean,
+    close: () => void,
+    children: ReactNode
+}
+
+export const ContentModal : FC<ContentModalProps> = ({isOpened,close, children}) => {
+    return (
+        <div>
+            <Modal
+                aria-labelledby="transition-modal-title"
+                aria-describedby="transition-modal-description"
+                open={isOpened}
+                onClose={close}
+                closeAfterTransition
+                BackdropComponent={Backdrop}
+                BackdropProps={{
+                    timeout: 500,
+                }}
+            >
+                <Fade in={isOpened}>
+                    <Box sx={ModalStyles}>
+                        {children}
+                    </Box>
+                </Fade>
+            </Modal>
+        </div>
+    );
 }

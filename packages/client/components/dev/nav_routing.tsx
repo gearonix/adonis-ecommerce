@@ -37,9 +37,6 @@ const DevNavRouting: NCT = () => {
         <Link href={'/profile'}>
             <button>profile</button>
         </Link>
-        <Link href={'/edit_profile'}>
-            <button>edit_profile</button>
-        </Link>
         <Link href={'/about'}>
             <button>about</button>
         </Link>

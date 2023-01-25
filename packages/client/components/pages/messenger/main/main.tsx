@@ -5,7 +5,7 @@ import { BsCheck2 } from 'icons';
 import {FC, useState} from "react";
 import cn from "classnames";
 import {NextImage} from "components/UIkit/components";
-import {MuiModal} from "components/UIkit/mui/mui_components";
+import {ImageModal} from "components/UIkit/mui/mui_components";
 
 const MessagesMain: NCT = () => {
     return <div className={s.messages_main}>
@@ -32,7 +32,7 @@ interface MessageProps{
 export const Message : FC<MessageProps> = ({isMine = false, image,message}) => {
     const [isOpened,openModal] = useState<boolean>(false)
     return <div className={cn(isMine ? s.my_message : s.opponent_message)}>
-        {image &&  <MuiModal isOpen={isOpened} handleOpen={openModal} image={image} />}
+        {image &&  <ImageModal isOpen={isOpened} handleOpen={openModal} image={image} />}
         <div className={s.wrapper}>
             {image &&  <div className={s.image_wrapper} onClick={() => openModal(true)}>
                 <NextImage src={image} />

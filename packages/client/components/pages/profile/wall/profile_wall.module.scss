@@ -13,6 +13,7 @@
 		@include flex(flex-start,center);
 		padding-bottom: 10px;
 		border-bottom: $br $light;
+		position: relative;
 		button{
 			background: white;
 			font-size: 16px;
@@ -29,6 +30,20 @@
 			}
 
 		}
+		.add_product{
+			position: absolute;
+			right: 0;
+			top: 0;
+			button{
+				@include size(167px,33px);
+				svg{
+					@include size(16px,16px);
+					margin-right: 2px;
+				}
+				color: $dark;
+			}
+		}
+
 		.selected{
 			box-shadow: $shadow;
 			border: $br $light;
@@ -124,3 +139,98 @@
 	}
 }
 
+.add_product_block{
+	padding: 20px;
+	.title{
+		font-size: $lmedium;
+		text-align: center;
+	}
+	.container{
+		padding: 30px 20px 30px 20px;
+		border-top: $br $light;
+		border-bottom: $br $light;
+		width: 70%;
+		margin: 0 auto;
+		gap: 25px;
+		margin-top: 20px;
+		margin-bottom: 25px;
+
+		.title{
+			text-align: left;
+			margin-top: 5px;
+			font-size: $small-md;
+			border-bottom: $br $light;
+			padding-bottom: 12px;
+			padding-top: 8px;
+		}
+		.add_image_block{
+			@include size(50%);
+			height: 100%;
+			padding: 20px;
+
+			button{
+				margin-bottom: 15px;
+				@include size(180px,40px);
+				@include flex(center,center);
+				svg{
+					@include size(19px,19px);
+					margin-right: 4px;
+				}
+			}
+			button:last-child{
+				color: $red;
+			}
+			.text{
+				font-size: $xm;
+				margin-bottom: 50px;
+				text-align: center;
+
+			}
+		}
+		.flex ,.user_info_block{
+			@include size;
+			display: flex;
+			width: 100%;
+			gap: 20px;
+		}
+		.user_info_block{
+			margin: 10px 0 10px 0;
+			padding: 10px 0 10px 0;
+			border-top: $br $light;
+			border-bottom: $br $light;
+		}
+		.select_container{
+			@include flex(space-around);
+		}
+		.save_buttons{
+			margin-top: 37px;
+			width: 100%;
+			display: flex;
+			gap: 15px;
+		}
+		.background{
+			@include imageWrapper(100%,177px,$rounded);
+			button{
+				position: absolute;
+				right: 20px;
+				top: 20px;
+				@include size(187px,35px);
+			}
+			padding-bottom: 20px;
+		}
+		.user_avatar_block{
+			@include size(163px);
+			height: 176px;
+			@include flex(center,center,column);
+			.user_avatar{
+				@include imageWrapper(125px,125px,100%);
+			}
+			button{
+				//margin: 0 auto;
+				@include size(163px,30px);
+				margin-top : 10px;
+			}
+		}
+
+	}
+}

@@ -1,13 +1,13 @@
 import {NCT} from 'types/global'
-import {MuiLoginField} from "components/UIkit/mui/mui_components";
+import {HeadField} from "components/UIkit/mui/mui_components";
 import RegTemplate from "../auth_template/auth_template";
 
 const SalesmanForm: NCT = () => {
     return <RegTemplate mode={'signup'}>
-        <MuiLoginField title={'Name'}/>
-        <MuiLoginField title={'Surname'}/>
-        <MuiLoginField title={'Email'}/>
-        <MuiLoginField title={'Password'} isPassword/>
+        <HeadField title={'Name'}/>
+        <HeadField title={'Surname'}/>
+        <HeadField title={'Email'}/>
+        <HeadField title={'Password'} isPassword/>
     </RegTemplate>
 }
 

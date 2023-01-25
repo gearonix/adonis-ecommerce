@@ -19,5 +19,6 @@ export interface ModalProps {
 
 export interface MuiLoginFieldProps {
     title: string,
-    isPassword?: boolean
+    isPassword?: boolean,
+    readOnly? : boolean
 }
