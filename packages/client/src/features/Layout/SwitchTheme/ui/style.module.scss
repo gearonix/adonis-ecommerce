@@ -1,0 +1,12 @@
+@use '../../../../../styles/variables' as *;
+
+.dropdowns {
+  @include flex(space-between, center);
+  @include size(23%, 24px);
+
+  select {
+    @include flex(space-between);
+    border: none;
+    width: 45%;
+  }
+}

@@ -1,0 +1,30 @@
+@use '../../../../../styles/variables' as *;
+
+
+.product_images {
+  margin-right: 20px;
+
+  .image_wrapper {
+    @include size(400px, 400px);
+    border: 1.5px solid $light;
+    border-radius: $rounded;
+    position: relative;
+    cursor: pointer;
+    @include itemHover;
+  }
+
+  .image_carousel {
+    @include size(100%, 48px);
+    @include flex();
+    margin-top: 20px;
+
+    .image_carousel_wrapper {
+      @include size(56px, 56px);
+      margin-right: 10px;
+      border-radius: $rounded;
+      border: 1.5px solid $light;
+      position: relative;
+      cursor: pointer;
+    }
+  }
+}

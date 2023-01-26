@@ -1,0 +1,7 @@
+@use '../../../../styles/variables' as *;
+
+.logo {
+  @include size(200px, 100%);
+  cursor: pointer;
+  position: relative;
+}

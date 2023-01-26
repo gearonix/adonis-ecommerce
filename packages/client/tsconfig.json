@@ -19,11 +19,26 @@
       "components/*": [
         "components/*"
       ],
+      "mui": [
+        "src/shared/lib/mui/index.ts"
+      ],
       "icons": [
-        "components/UIkit/icons.tsx"
+        "src/shared/helpers/icons.ts"
       ],
       "types": [
         "types/*"
+      ],
+      "shared/*": [
+        "src/shared/*"
+      ],
+      "widgets/*": [
+        "src/widgets/*"
+      ],
+      "entities/*": [
+        "src/entities/*"
+      ],
+      "features/*": [
+        "src/features/*"
       ]
     }
   },

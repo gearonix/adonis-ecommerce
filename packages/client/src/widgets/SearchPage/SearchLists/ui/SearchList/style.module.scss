@@ -1,0 +1,9 @@
+@use '../../../../../../styles/variables' as *;
+
+.items_block {
+  @include size(calc(100% + 38px), 1430px);
+  @include customScroll;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 19px;
+}

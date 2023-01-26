@@ -1,0 +1,24 @@
+@use '../../../../../styles/variables' as *;
+
+
+.search_form {
+  @include size(100%, 420px);
+  @include backgroundImage('/search_form_back.svg');
+  @include padding(40px, 40px);
+  border-radius: $rounded;
+  margin-top: 20px;
+  position: relative;
+  box-sizing: border-box;
+
+  .title {
+    margin-bottom: 20px;
+    width: 400px;
+    @include inlineStyles($lmedium, white, bold);
+  }
+
+  .description {
+    color: white;
+    width: 400px;
+  }
+
+}

@@ -1,38 +1,16 @@
 import s from './search_list.module.scss'
-import {CheckBoxControl, MuiPagination, SizeButtons} from "components/UIkit/mui/mui_components";
+import {MuiPagination} from "components/UIkit/mui/mui_components";
 import cn from "classnames";
 import React, {FC} from "react";
 import Image from "next/image";
 import {Rating} from '@mui/material';
 import {FiHeart} from 'icons'
+import {SearchList} from 'widgets/SearchPage/SearchLists';
 
 
-const SearchList: FC = () => {
+const Qwe: FC = () => {
     return <div className={s.search_list}>
-        <div className={s.controls}>
-            <div className={s.controls_title}>
-                <h4>12,911 items in <span className={s.bold}>Mobile accessory</span></h4>
-            </div>
-            <div className={s.controls_buttons}>
-                <CheckBoxControl title={'Verified only'} idx={1}/>
-                <select className={cn(s.controls_select, 'primary_select')}>
-                    <option>All category</option>
-                    <option>Option 2</option>
-                    <option>Option 3</option>
-                    <option>Option 4</option>
-                </select>
-                <SizeButtons/>
-            </div>
-        </div>
-        <div className={cn(s.item_block, 'custom_scrollbar')}>
-            <Product/>
-            <Product/>
-            <Product/>
-            <Product/>
-            <Product/>
-            <Product/>
-            <Product/>
-        </div>
+        <SearchList/>
         <MuiPagination/>
     </div>
 }
@@ -56,4 +34,4 @@ export const Product: FC = () => {
     </div>
 }
 
-export default SearchList
+export default Qwe

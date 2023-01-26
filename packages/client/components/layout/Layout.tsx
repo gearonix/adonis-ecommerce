@@ -1,8 +1,8 @@
 import {FC, ReactNode} from 'react';
-import Header from './header/header';
 import {Inter} from '@next/font/google'
-import Footer from './footer/footer';
 import DevNavRouting from 'components/dev/nav_routing';
+import {Header} from 'src/widgets/Header';
+import {Footer} from 'src/entities/Layout/Footer';
 
 const interFont = Inter({subsets: ['latin']})
 

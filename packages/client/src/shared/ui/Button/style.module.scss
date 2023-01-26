@@ -1,0 +1,15 @@
+@use '../../../../styles/variables' as *;
+
+.button {
+  text-align: center;
+  @include inlineStyles($small, white);
+  @include size(18%, 38px);
+  background: $blue;
+  border-radius: $rounded;
+  transition: background 200ms;
+  display: block;
+
+  &:hover {
+    background: $hover-blue;
+  }
+}

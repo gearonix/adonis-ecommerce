@@ -1,0 +1,20 @@
+@use 'styles/variables' as *;
+
+.form {
+  @include size(33%, 250px);
+  @include padding(20px, 22px);
+  position: absolute;
+  top: 33px;
+  right: 30px;
+  border-radius: $rounded;
+  background: white;
+
+  .form_title {
+    @include inlineStyles($xm, $dark, bold);
+    margin-bottom: 18px;
+  }
+
+  button {
+    margin-top: 25px;
+  }
+}

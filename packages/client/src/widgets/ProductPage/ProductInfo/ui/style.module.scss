@@ -1,0 +1,19 @@
+@use 'styles/variables' as *;
+
+
+.product_info {
+  border: 1px solid $light;
+  box-sizing: border-box;
+  border-radius: $rounded;
+  @include size(100%, 580px);
+
+  * {
+    font-size: $small;
+  }
+
+  background: white;
+  padding: 20px;
+  @include flex();
+
+
+}

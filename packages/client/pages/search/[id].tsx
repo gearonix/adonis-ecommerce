@@ -1,6 +1,8 @@
 import Head from "next/head";
-import {GithubBanner, ProductInfo, ProductParams, YouMayLike} from "components/pages/product";
+import {GithubBanner, ProductParams, YouMayLike} from "components/pages/product";
 import {ExtraServices, Recommended} from "components/pages/main";
+import {ProductInfo} from "widgets/ProductPage/ProductInfo";
+
 
 const ProductPage = () => {
     return <div>

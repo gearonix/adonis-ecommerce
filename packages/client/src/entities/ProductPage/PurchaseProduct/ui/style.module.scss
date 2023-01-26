@@ -1,0 +1,59 @@
+@use 'styles/variables' as *;
+
+
+.purchase_block {
+  @include size(18%);
+  margin-left: 20px;
+  padding: 15px;
+  box-sizing: border-box;
+
+  .purchase_card {
+    padding: 17px;
+    border: $br $light;
+    border-radius: $rounded;
+    @include size(100%, 325px);
+
+    .purchase_supplier {
+      @include size(100%, 65px);
+      @include flex();
+      border-bottom: $br $light;
+      margin-bottom: 11px;
+
+      h2 {
+        margin-left: 11px;
+      }
+
+      * {
+        cursor: pointer;
+      }
+    }
+
+    .supplier_params {
+      margin-bottom: 11px;
+      display: block;
+      color: $light-grey;
+
+      svg {
+        margin-right: 16px;
+      }
+    }
+
+    button {
+      margin-top: 8px;
+      @include size(100%, 40px);
+
+      &[class*="outlined_button"] {
+        color: $blue;
+      }
+    }
+  }
+
+  .save_later {
+    color: $blue;
+    cursor: pointer;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: block;
+  }
+}

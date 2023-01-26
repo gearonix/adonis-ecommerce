@@ -1,0 +1,32 @@
+@use '../../../../../../styles/variables' as *;
+
+.heart {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: 1px solid $light;
+  background: white;
+  border-radius: $rounded;
+  cursor: pointer;
+  @include flex(center, center);
+  @include size(40px, 40px);
+
+  &:hover {
+    svg {
+      path {
+        color: #FF7E7E;
+      }
+    }
+
+  }
+
+  svg {
+    path {
+      transition: color 400ms;
+      color: $blue;
+
+    }
+
+    @include size(20px, 20px);
+  }
+}

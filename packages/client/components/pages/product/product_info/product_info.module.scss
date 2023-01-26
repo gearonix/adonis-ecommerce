@@ -15,7 +15,6 @@
   @include flex();
 
 
-
 }
 
 .modal_wrapper {
@@ -24,7 +23,8 @@
 }
 
 .product_images {
-   margin-right: 20px;
+  margin-right: 20px;
+
   .image_wrapper {
     @include size(400px, 400px);
     border: 1.5px solid $light;
@@ -49,6 +49,7 @@
     }
   }
 }
+
 .product_info_block {
   margin-left: 22px;
   @include size(46%);
@@ -98,6 +99,7 @@
     }
   }
 }
+
 .purchase_block {
   @include size(18%);
   margin-left: 20px;

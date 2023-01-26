@@ -1,0 +1,23 @@
+@use '../../../../../../styles/variables' as *;
+
+.item {
+  @include padding(16px, 20px);
+  border: $br $light;
+  position: relative;
+  @include itemHover;
+
+  .item_title {
+    margin-bottom: 9px;
+  }
+
+  .item_description {
+    @include inlineStyles(13px, $light-grey);
+  }
+
+  .item_image {
+    @include imageWrapper(82px, 82px);
+    position: absolute;
+    top: 26px;
+    right: 0;
+  }
+}

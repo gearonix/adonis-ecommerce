@@ -1,18 +1,26 @@
 import Head from "next/head";
-import React from "react";
-import {ExtraServices, RecommendedItems} from "components/pages/main";
-import {Aside, SearchList} from "components/pages/search";
+import {FC} from "react";
+import {SearchAside} from "widgets/SearchPage/SearchAside";
+import {SearchHeader} from "widgets/SearchPage/SearchHeader";
+import {RecommendedItems, SearchList} from "widgets/SearchPage/SearchLists";
+import {MuiPagination} from "mui";
+import {NavigationTitle} from "shared/ui";
+import {ExtraServices} from "entities/Banners/ExtraServices";
 
 
-const SearchPage = () => {
+const SearchPage: FC = () => {
     return <>
-        <h2 className={'search_head'}>Home {'>'} Search</h2>
+        <NavigationTitle>Home {'>'} Search</NavigationTitle>
         <main className='search_page'>
             <Head>
                 <title>Adonis - Search items</title>
             </Head>
-            <Aside/>
-            <SearchList/>
+            <SearchAside/>
+            <div style={{position: 'relative'}}>
+                <SearchHeader/>
+                <SearchList/>
+                <MuiPagination/>
+            </div>
         </main>
         <ExtraServices/>
         <RecommendedItems/>

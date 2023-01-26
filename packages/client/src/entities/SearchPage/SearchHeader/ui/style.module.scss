@@ -1,0 +1,38 @@
+@use '../../../../../styles/variables' as *;
+
+
+.controls {
+  border: 1px solid $light;
+  padding-left: 19px;
+  padding-right: 19px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  background: white;
+  @include size(100%, 56px);
+  @include itemHover;
+  @include flex(space-between, center);
+
+  .controls_title {
+    @include size(40%);
+    @include flex(stretch, center);
+
+    .bold {
+      font-weight: bold;
+    }
+  }
+
+  .controls_buttons {
+    @include size(43%);
+    margin-right: 30px;
+    @include flex(flex-end, center);
+    gap: 18px;
+
+  }
+
+  select {
+    border: 1px solid $light;
+    border-radius: 4px;
+    height: 35px;
+    width: 110px;
+  }
+}

@@ -1,6 +1,10 @@
 import React from 'react';
 import Head from "next/head";
-import {Categories, ExtraServices, Languages, Recommended, RecommendedItems, SearchForm} from 'components/pages/main';
+import {Categories} from 'entities/Banners/Categories';
+import {ExtraServices} from 'entities/Banners/ExtraServices'
+import {Languages} from 'entities/Banners/Languages'
+import {Recommended, RecommendedItems} from 'widgets/SearchPage/SearchLists';
+import {FindProductBanner} from 'widgets/Banners/FindProductBanner'
 
 const MainPage = () => {
     return <div>
@@ -10,7 +14,7 @@ const MainPage = () => {
         <Categories/>
         <Recommended/>
         <Recommended/>
-        <SearchForm/>
+        <FindProductBanner/>
         <RecommendedItems/>
         <ExtraServices/>
         <Languages/>

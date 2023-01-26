@@ -1,0 +1,43 @@
+@use 'styles/variables' as *;
+
+.item {
+  @include itemHover;
+  @include size(23%);
+  transition: background 200ms;
+
+  &:hover {
+    background: #F8F8F8;
+  }
+
+  background: white;
+  border-radius: 8px;
+  border: 2px solid $light;
+
+  .item_image {
+    @include backgroundImage('/extra_services_mock.svg');
+    @include size(100%, 120px);
+    position: relative;
+    margin-bottom: 10px;
+
+    .item_button {
+      border-radius: 100%;
+      border: 2px solid white;
+      @include size(55px, 55px);
+      background: #D1E7FF;
+      @include flex(center, center);
+      position: absolute;
+      right: 21px;
+      bottom: -25px;
+
+      svg {
+        @include size(24px, 24px);
+      }
+    }
+  }
+
+  .item_title {
+    @include padding(20px, 20px);
+    font-weight: bold;
+    width: 160px;
+  }
+}

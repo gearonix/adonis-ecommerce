@@ -1,0 +1,15 @@
+@use 'styles/variables' as *;
+
+
+.controls_buttons {
+  @include size(40%);
+  margin-right: 30px;
+  @include flex(space-between, center);
+
+}
+
+.controls_select {
+  border: 1px solid $light;
+  border-radius: 4px;
+  height: 35px;
+}
