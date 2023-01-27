@@ -1,0 +1,48 @@
+@use '../../../../../styles/variables' as *;
+
+.item {
+  @include size(100%, 140px);
+  margin-bottom: 23px;
+  display: flex;
+  border-bottom: $br $light;
+
+  .image_wrapper {
+    position: relative;
+    @include size(87px, 87px);
+    @include itemBorder;
+    margin: 0;
+    cursor: pointer;
+  }
+
+  .item_info {
+    @include size(82%);
+    margin-left: 10px;
+
+    p {
+      color: $light-grey;
+      margin-top: 7px;
+      margin-bottom: 9px;
+      width: 319px;
+    }
+
+    .item_buttons {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+    }
+
+  }
+
+  .price_block {
+    @include size(10%);
+    @include flex(stretch, flex-end, column);
+
+    h2 {
+      font-weight: bold;
+    }
+
+    .item_price {
+
+    }
+  }
+}

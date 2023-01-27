@@ -1,5 +1,5 @@
-import {CustomerForm} from "components/pages/auth";
 import Head from "next/head"
+import {CustomerForm} from "widgets/Login";
 
 const Customer = () => {
     return <>

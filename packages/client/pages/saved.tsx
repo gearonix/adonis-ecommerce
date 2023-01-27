@@ -1,21 +1,21 @@
 import Head from 'next/head'
-import {NCT} from 'types/global'
-import {CartLayout} from "components/pages/cart";
-import React from "react";
-import {Recommended} from "components/pages/main";
-import {GithubBanner} from "components/pages/product";
+import {FC} from "react";
+import {ContainerTitle} from "shared/ui";
+import {CartItems} from "widgets/Cart/CartItems";
+import {RemoveAllSaved, RemoveFromSaved} from "features/Saved";
+import {Recommended} from "widgets/SearchLists";
+import {GithubBanner} from "entities/Banners/GithubBanner";
 
-const Saved: NCT = () => {
+const Saved: FC = () => {
     return <>
         <Head>
             <title>Adonis - Saved</title>
         </Head>
-        <h2 className="dark_title">Saved products</h2>
-        <CartLayout mode={'saved'}/>
+        <ContainerTitle>Saved products</ContainerTitle>
+        <CartItems Add={null} Remove={RemoveFromSaved} RemoveAll={RemoveAllSaved}/>
         <Recommended/>
         <GithubBanner/>
-
-        </>
+    </>
 }
 
 export default Saved

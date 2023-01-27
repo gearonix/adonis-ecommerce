@@ -1,0 +1,13 @@
+@use 'styles/variables' as *;
+
+
+.header {
+  @include size(100%, 36px);
+  border-bottom: $br $light;
+
+  h4 {
+    color: $blue;
+    margin-top: 16px;
+    margin-left: 16px;
+  }
+}

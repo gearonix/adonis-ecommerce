@@ -1,7 +1,6 @@
 @use 'styles/variables' as *;
 
 .messages_main {
-  //@include backgroundImage('/wallpaper_2.svg');
   @include size(100%, 652px);
   background: white;
 

@@ -1,5 +1,5 @@
-import {SalesmanForm} from "components/pages/auth";
 import Head from "next/head";
+import {SalesmanForm} from "widgets/Login";
 
 const SalesmanPage = () => {
     return <>

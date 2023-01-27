@@ -14,4 +14,4 @@ export {MdMessage, MdOutlineDescription, MdSend} from 'react-icons/md';
 export {HiOutlineFlag} from 'react-icons/hi';
 export {TfiWorld} from 'react-icons/tfi'
 export {FaHeart, FaInfo, FaShoppingCart, FaTruck, FaUserAlt} from 'react-icons/fa';
-
+export {FcGoogle} from 'react-icons/fc'

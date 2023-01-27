@@ -1,7 +1,9 @@
 import Head from "next/head";
-import {GithubBanner, ProductParams, YouMayLike} from "components/pages/product";
-import {ExtraServices, Recommended} from "components/pages/main";
 import {ProductInfo} from "widgets/ProductPage/ProductInfo";
+import {ProductDescription} from "entities/ProductPage/ProductDescription";
+import {Recommended, YouMayLike} from "widgets/SearchLists";
+import {ExtraServices} from "entities/Banners/ExtraServices";
+import {GithubBanner} from "entities/Banners/GithubBanner";
 
 
 const ProductPage = () => {
@@ -12,7 +14,7 @@ const ProductPage = () => {
         <h2 className={'search_head'}>Home {'>'} Search {'>'} [Item]</h2>
         <ProductInfo/>
         <div className="product_page">
-            <ProductParams/>
+            <ProductDescription/>
             <YouMayLike/>
         </div>
         <Recommended/>

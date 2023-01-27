@@ -5,7 +5,7 @@ import React, {FC} from "react";
 import Image from "next/image";
 import {Rating} from '@mui/material';
 import {FiHeart} from 'icons'
-import {SearchList} from 'widgets/SearchPage/SearchLists';
+import {SearchList} from 'widgets/SearchLists';
 
 
 const Qwe: FC = () => {

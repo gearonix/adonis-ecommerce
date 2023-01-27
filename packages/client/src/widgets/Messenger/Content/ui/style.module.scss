@@ -1,0 +1,13 @@
+@use 'styles/variables' as *;
+
+.messages_main {
+  @include size(100%, 652px);
+  background: white;
+  margin: 0 auto;
+  position: relative;
+  border: 1px solid transparent;
+
+  .wrapper {
+    @include size(100%, calc(100% - 24px));
+  }
+}

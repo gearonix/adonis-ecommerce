@@ -1,6 +1,8 @@
-import {MessagesHeader, MessagesMain, MessagesNav} from 'components/pages/messenger'
 import Head from 'next/head'
 import {NCT} from 'types/global'
+import {MessengerAside} from 'widgets/Messenger/Aside'
+import {MessengerContent} from 'widgets/Messenger/Content'
+import {MessengerHeader} from 'widgets/Messenger/Header'
 
 const Messenger: NCT = () => {
     return <>
@@ -8,10 +10,10 @@ const Messenger: NCT = () => {
             <title>Adonis - Messenger</title>
         </Head>
         <div className={'messenger_page'}>
-            <MessagesNav/>
+            <MessengerAside/>
             <div style={{width: '88%'}}>
-                <MessagesHeader/>
-                <MessagesMain/>
+                <MessengerHeader/>
+                <MessengerContent/>
             </div>
         </div>
 

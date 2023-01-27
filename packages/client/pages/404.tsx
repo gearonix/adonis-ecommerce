@@ -1,8 +1,8 @@
-import NotFoundComponent from 'components/pages/404/404'
 import Head from 'next/head'
-import {NCT} from 'types/global'
+import {NotFoundComponent} from "entities/Others";
+import {FC} from "react";
 
-const NotFound: NCT = () => {
+const NotFound: FC = () => {
     return <>
         <Head>
             <title>Adonis - Page not found</title>

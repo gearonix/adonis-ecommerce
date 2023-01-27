@@ -1,0 +1,49 @@
+@use 'styles/variables' as *;
+
+.message_bar {
+  border-radius: 12px;
+  background: white;
+  border: $br $light;
+  position: relative;
+  padding: 15px;
+  box-sizing: border-box;
+  display: flex;
+  margin: 20px auto 10px auto;
+  @include size(72%, 56px);
+
+  .icon_wrapper {
+    svg {
+      @include size(24px, 24px);
+      color: $light-grey;
+    }
+  }
+
+  input {
+    @include size(85%);
+    width: 85%;
+    border: none;
+    margin-left: 18px;
+    font-size: 17px;
+
+    &::placeholder {
+      color: $light-grey;
+    }
+  }
+
+  .send {
+    margin-left: 16px;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+
+    svg {
+      color: #8BABD8;
+      @include size(26px, 26px);
+      transition: color 200ms;
+
+      &:hover {
+        color: #789CCE;
+      }
+    }
+  }
+}

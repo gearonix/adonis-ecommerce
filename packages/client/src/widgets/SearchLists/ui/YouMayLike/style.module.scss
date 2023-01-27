@@ -1,0 +1,14 @@
+@use '../../../../../styles/variables' as *;
+@use '../../../../../styles/variables' as *;
+
+.you_may_like {
+  @include itemBorder;
+  @include size(19%, 553px);
+  margin-left: 20px;
+  @include padding(16px, 20px);
+
+  .heading {
+    font-weight: bold;
+    margin-bottom: 14px;
+  }
+}

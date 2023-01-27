@@ -1,21 +1,28 @@
-import {CartCheckout, CartLayout} from "components/pages/cart"
-import {Recommended, SearchForm} from "components/pages/main";
-import {GithubBanner} from "components/pages/product";
 import Head from "next/head";
 import React from "react";
+import {CartItems} from "widgets/Cart/CartItems";
+import {ContainerTitle} from "shared/ui";
+import {Checkout} from "entities/Cart";
+import {CheckoutButton} from "features/Checkout";
+import {Recommended} from "widgets/SearchLists";
+import {GithubBanner} from "entities/Banners/GithubBanner";
+import {FindProductBanner} from "widgets/Banners/FindProductBanner";
+import {RemoveAllCard, RemoveFromCard} from "features/Cart";
+import {AddToSavedCart} from "features/Saved";
 
 const Cart = () => {
     return <main>
         <Head>
             <title>Adonis - Shopping Cart</title>
         </Head>
-        <h2 className="dark_title">My cart (N)</h2>
+        <ContainerTitle>My cart (N)</ContainerTitle>
         <div className={'cart_page'}>
-            <CartLayout mode={'cart'}/>
-            <CartCheckout/>
+            <CartItems RemoveAll={RemoveAllCard} Remove={RemoveFromCard}
+                       Add={AddToSavedCart}/>
+            <Checkout CheckoutButton={CheckoutButton}/>
         </div>
         <Recommended/>
-        <SearchForm/>
+        <FindProductBanner/>
         <GithubBanner/>
     </main>
 }

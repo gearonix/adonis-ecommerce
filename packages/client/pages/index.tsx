@@ -3,7 +3,7 @@ import Head from "next/head";
 import {Categories} from 'entities/Banners/Categories';
 import {ExtraServices} from 'entities/Banners/ExtraServices'
 import {Languages} from 'entities/Banners/Languages'
-import {Recommended, RecommendedItems} from 'widgets/SearchPage/SearchLists';
+import {Recommended, RecommendedItems} from 'widgets/SearchLists';
 import {FindProductBanner} from 'widgets/Banners/FindProductBanner'
 
 const MainPage = () => {

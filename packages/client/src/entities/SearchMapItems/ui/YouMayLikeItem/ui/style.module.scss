@@ -1,0 +1,22 @@
+@use 'styles/variables' as *;
+
+.item {
+  @include size(90%, 80px);
+  display: flex;
+  margin-top: 20px;
+
+  .image_wrapper {
+    @include size(90px, 80px);
+    margin: 0;
+    margin-right: 11px;
+    position: relative;
+  }
+
+  .info_block {
+    span {
+      display: block;
+      color: $light-grey;
+      margin-top: 4px;
+    }
+  }
+}

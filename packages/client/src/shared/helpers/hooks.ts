@@ -1,4 +1,4 @@
-import {ColorType, HexColorsI} from "../main";
+import {ColorType, HexColorsI} from "../types";
 import {hexColors} from "../consts";
 
 export const useColor = (color: ColorType): HexColorsI['primary'] => {

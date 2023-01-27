@@ -1,0 +1,18 @@
+@use 'styles/variables' as *;
+
+.messages_block {
+  @include size(100%, calc(88%));
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .messages_wrapper {
+    margin: 0 auto;
+    width: 72%;
+    margin-bottom: 20px;
+  }
+}
+
+

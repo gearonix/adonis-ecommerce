@@ -1,0 +1,126 @@
+@use 'styles/variables' as *;
+
+
+.cart_container {
+  width: 100%;
+  display: flex;
+
+  .cart_layout {
+    width: 100%;
+    @include itemBorder;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0;
+
+    .item {
+      @include size(100%, 140px);
+      margin-bottom: 23px;
+      display: flex;
+      border-bottom: $br $light;
+
+      .image_wrapper {
+        position: relative;
+        @include size(87px, 87px);
+        @include itemBorder;
+        margin: 0;
+        cursor: pointer;
+      }
+
+      .item_info {
+        @include size(82%);
+        margin-left: 10px;
+
+        p {
+          color: $light-grey;
+          margin-top: 7px;
+          margin-bottom: 9px;
+          width: 319px;
+        }
+
+        .item_buttons {
+          margin-top: 10px;
+          display: flex;
+
+          .remove_button, .save_button {
+            margin-right: 6px;
+            @include size(91px, 32px);
+            color: $red;
+          }
+
+          .save_button {
+            color: $blue;
+            width: 114px;
+          }
+        }
+
+      }
+
+      .price_block {
+        @include size(10%);
+        @include flex(stretch, flex-end, column);
+
+        h2 {
+          font-weight: bold;
+        }
+
+        .item_price {
+
+        }
+      }
+    }
+
+    .cart_buttons {
+      @include size(100%, 50px);
+      @include flex(space-between);
+
+      .back_to_shop {
+        width: 159px;
+
+        svg {
+          margin-right: 9px;
+
+          @include size(15px, 15px);
+        }
+      }
+
+      .remove_all {
+        width: 115px;
+        color: $blue;
+      }
+    }
+  }
+
+  .checkout_block {
+    @include itemBorder;
+    box-shadow: $shadow;
+    @include size(16%);
+    margin-left: 20px;
+    padding: 20px;
+
+    p {
+      margin-top: 0;
+      margin-bottom: 25px;
+      color: $dark-grey;
+    }
+
+    .total_block {
+      border-bottom: $br $light;
+      padding-bottom: 10px;
+      @include flex(space-between);
+      @include size(100%, 28px);
+      margin-bottom: 18px;
+
+      h4 {
+        font-weight: bold;
+        font-size: 19px;
+      }
+    }
+
+    .checkout_button {
+      @include size(100%, 54px);
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+  }
+}

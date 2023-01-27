@@ -1,0 +1,27 @@
+@use 'styles/variables' as *;
+
+.user_info_wrapper {
+  position: relative;
+  width: 20%;
+  display: flex;
+  cursor: pointer;
+}
+
+.image {
+  position: relative;
+  @include size(48px, 48px);
+  border-radius: 100%;
+  margin-right: 17px;
+  overflow: hidden;
+}
+
+.info {
+  @include size(75%, 48px);
+
+  span {
+    color: $light-grey;
+    display: block;
+    font-size: 15px;
+    width: 90%;
+  }
+}

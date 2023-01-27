@@ -1,4 +1,4 @@
-import {SignupChoice} from "components/pages/auth";
+import {SignupChoice} from "entities/Auth/Choice";
 import Head from "next/head";
 
 

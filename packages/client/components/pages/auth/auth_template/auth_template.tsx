@@ -4,6 +4,7 @@ import cn from "classnames";
 import {FcGoogle} from "react-icons/fc";
 import Link from "next/link";
 import {getUIText} from './helpers';
+import {AuthTemplate} from "entities/Auth/AuthTemplate";
 
 
 interface RegTemplateProps {
@@ -34,4 +35,4 @@ const RegTemplate: FC<RegTemplateProps> = ({children, mode}) => {
     </div>
 }
 
-export default RegTemplate
+export default AuthTemplate

@@ -1,0 +1,32 @@
+@use 'styles/variables' as *;
+
+.cart_icons {
+  @include size(100%, 50px);
+  @include flex(space-between);
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  .item {
+    @include size(30%);
+    display: flex;
+
+    span {
+      color: $light-grey;
+      margin-top: 8px;
+    }
+
+    .icon_wrapper {
+      background: $primary-blue;
+      @include size(48px, 48px);
+      border-radius: 100%;
+      @include flex(center, center);
+      margin-right: 10px;
+
+      svg {
+        @include size(24px, 24px);
+        color: $light-grey;
+      }
+    }
+
+  }
+}

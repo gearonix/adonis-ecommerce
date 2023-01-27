@@ -1,0 +1,13 @@
+@use 'styles/variables' as *;
+
+.messenger_aside {
+  @include size(22%, 720px);
+  background: white;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  border-right: $br $light;
+  @include customScroll;
+
+}
+

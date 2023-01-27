@@ -1,0 +1,13 @@
+@use '../../../../../styles/variables' as *;
+
+.cart_buttons {
+  @include size(100%, 50px);
+  @include flex(space-between);
+
+  button {
+    svg {
+      margin-right: 9px;
+      @include size(15px, 15px);
+    }
+  }
+}
