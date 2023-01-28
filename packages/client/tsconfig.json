@@ -14,31 +14,34 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": ".",
+    "baseUrl": "src",
     "paths": {
-      "components/*": [
-        "components/*"
-      ],
       "mui": [
-        "src/shared/lib/mui/index.ts"
+        "shared/lib/mui/index.ts"
       ],
       "icons": [
-        "src/shared/helpers/icons.ts"
-      ],
-      "types": [
-        "types/*"
+        "shared/helpers/icons.ts"
       ],
       "shared/*": [
-        "src/shared/*"
+        "shared/*"
       ],
       "widgets/*": [
-        "src/widgets/*"
+        "widgets/*"
       ],
       "entities/*": [
-        "src/entities/*"
+        "entities/*"
       ],
       "features/*": [
-        "src/features/*"
+        "features/*"
+      ],
+      "pages/*": [
+        "pages/*"
+      ],
+      "app/*": [
+        "app/*"
+      ],
+      "public/*": [
+        "public/*"
       ]
     }
   },

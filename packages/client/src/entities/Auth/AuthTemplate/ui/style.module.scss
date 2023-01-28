@@ -1,58 +1,57 @@
-@use 'styles/variables' as *;
+@use 'public/mixins' as *;
 
 .login_form {
   width: 100%;
+}
 
-  .wrapper {
-    margin: 0 auto;
-    width: 310px;
-    margin-bottom: 50px;
-    @include itemBorder;
-    margin-top: 60px;
-    padding: 30px;
+.wrapper {
+  margin: 0 auto;
+  width: 310px;
+  margin-bottom: 50px;
+  @include itemBorder;
+  margin-top: 60px;
+  padding: 30px;
+}
 
-    .title {
-      font-size: $small-md;
-      margin-bottom: 30px;
-      font-weight: bold;
+.title {
+  font-size: $small-md;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
 
+.login_button, .with_google {
+  width: 100%;
+  font-size: 18px;
+  margin-top: 14px;
+}
 
-    }
+.grey_line {
+  margin-top: 29px;
+  margin-bottom: 29px;
+  @include size(100%, 1px);
+  background: $light;
+}
 
-    .login_button, .with_google {
-      width: 100%;
-      font-size: 18px;
-      margin-top: 14px;
-    }
+.with_google {
+  color: #606060;
+  margin-top: 0;
+  position: relative;
 
-    .grey_line {
-      margin-top: 29px;
-      margin-bottom: 29px;
-      @include size(100%, 1px);
-      background: $light;
-    }
-
-    .with_google {
-      color: #606060;
-      margin-top: 0;
-      position: relative;
-
-      svg {
-        margin-right: 10px;
-        @include size(21px, 21px);
-        @include absolute(11px, 7px);
-      }
-    }
-
-    .account_link {
-      margin-top: 70px;
-      //margin-bottom: 34px;
-      text-align: center;
-
-      a {
-        background-image: linear-gradient(to right, $blue, $blue);
-      }
-    }
-
+  svg {
+    margin-right: 10px;
+    @include size(21px, 21px);
+    @include absolute(11px, 7px);
   }
 }
+
+.account_link {
+  margin-top: 70px;
+  //margin-bottom: 34px;
+  text-align: center;
+
+  a {
+    background-image: linear-gradient(to right, $blue, $blue);
+  }
+}
+
+

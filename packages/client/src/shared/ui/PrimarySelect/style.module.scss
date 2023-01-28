@@ -1,4 +1,4 @@
-@use '../../../../styles/variables' as *;
+@use 'public/mixins' as *;
 
 .primary_select {
   border: 2px solid $blue;

@@ -1,6 +1,6 @@
 import {FC, ReactNode} from 'react';
 import s from './style.module.scss'
-import {NextImage} from "components/UIkit/components";
+import {NextImage} from "shared/ui";
 
 const MessengerUser: FC<{ SelectUser: FC<{ children: ReactNode }> }> = ({SelectUser}) => {
     return <SelectUser>

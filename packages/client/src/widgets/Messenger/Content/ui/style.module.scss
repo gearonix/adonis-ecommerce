@@ -1,4 +1,4 @@
-@use 'styles/variables' as *;
+@use 'public/mixins' as *;
 
 .messages_main {
   @include size(100%, 652px);

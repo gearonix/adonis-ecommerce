@@ -1,4 +1,4 @@
-@use '../../../../../styles/variables' as *;
+@use 'public/mixins' as *;
 
 .search {
   @include size(40%, 38px);

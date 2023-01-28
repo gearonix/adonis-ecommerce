@@ -1,0 +1,97 @@
+@use 'public/mixins' as *;
+
+
+.post {
+  width: 100%;
+  min-height: 157px;
+  padding: 25px 25px 25px 25px;
+  position: relative;
+  display: flex;
+
+  * {
+    //@include testBorder;
+  }
+
+  border-bottom: $br $light;
+  box-sizing: border-box;
+
+  .user_image {
+    @include imageWrapper(60px, 60px, 100%);
+    margin-right: 10px;
+  }
+
+  .user_info {
+    width: 90%;
+    margin-left: 7px;
+
+    .user_name {
+      font-weight: bold;
+
+      span {
+        @include inlineStyles($small, $light-grey, normal);
+      }
+    }
+
+    .post_text {
+      margin-top: 7px;
+      max-width: 80%;
+    }
+
+    .attached_image {
+      @include imageWrapper(80%, 300px, $rounded);
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+
+    .post_buttons {
+      display: flex;
+      width: 100%;
+      height: 26px;
+
+      button {
+        background: white;
+        @include inlineStyles($small, $light-grey);
+        padding: 0;
+        @include flex(center, center);
+
+        svg {
+          margin-right: 4px;
+          @include size(20px, 20px);
+        }
+
+        margin-right: 35px;
+      }
+    }
+  }
+
+  .options {
+    position: absolute;
+    right: 30px;
+    top: 15px;
+
+    svg {
+      @include size(18px, 18px);
+    }
+  }
+}
+
+
+.comments {
+  width: 95%;
+  margin-left: 45px;
+
+  .post {
+    border-left: $br $light;
+
+    .attached_image {
+      height: 200px;
+      width: 60%;
+    }
+  }
+
+  h4 {
+    background-image: linear-gradient(to left, $blue, $blue);
+    cursor: pointer;
+    margin-top: 5px;
+  }
+}

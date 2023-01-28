@@ -1,4 +1,4 @@
-@use 'styles/variables' as *;
+@use 'public/mixins' as *;
 
 
 .item {
@@ -10,17 +10,18 @@
     margin-top: 8px;
   }
 
-  .icon_wrapper {
-    background: $primary-blue;
-    @include size(48px, 48px);
-    border-radius: 100%;
-    @include flex(center, center);
-    margin-right: 10px;
-
-    svg {
-      @include size(24px, 24px);
-      color: $light-grey;
-    }
-  }
-
 }
+
+.icon_wrapper {
+  background: $primary-blue;
+  @include size(48px, 48px);
+  border-radius: 100%;
+  @include flex(center, center);
+  margin-right: 10px;
+
+  svg {
+    @include size(24px, 24px);
+    color: $light-grey;
+  }
+}
+

@@ -1,0 +1,86 @@
+@import 'lib/custom_mui.css';
+@import "src/app/css/templates";
+
+body {
+    background-color: #F7FAFC;
+}
+
+
+body, input {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+input {
+    outline: none;
+}
+
+button, select, option, svg, path, a {
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+#active {
+    font-weight: 600;
+    color: black;
+}
+
+.search_page, .product_page {
+    display: flex;
+    width: 100%;
+    height: 1560px;
+}
+
+.product_page {
+    justify-content: space-between;
+    width: 100%;
+    height: 670px;
+
+}
+
+.messenger_page {
+    display: flex;
+    margin-top: 45px;
+    margin-bottom: 60px;
+    border: 1px solid #E0E0E0;
+    border-radius: 6px;
+}
+
+.cart_page {
+    width: 100%;
+    display: flex;
+}
+
+.profile_wall {
+    width: 90%;
+    margin: 0 auto;
+    padding: 15px;
+    box-sizing: border-box;
+    margin-top: 25px;
+    border: 1px solid #E0E0E0;
+    border-radius: 6px;
+    background: white;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+}
+
+.profile_wall article {
+    margin-left: 0px;
+}

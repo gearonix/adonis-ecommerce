@@ -6,7 +6,7 @@ const MessengerContent: FC = () => {
     return <div className={s.messages_block}>
         <div className={s.messages_wrapper}>
             <TimeLabel/>
-            <Message isMine={true} image={'/recommended.svg'} message={'Hello'}/>
+            <Message isMine={true} image={'/electronic_prewiew.svg'} message={'Hello'}/>
             <Message message={'Hi'}/>
         </div>
     </div>

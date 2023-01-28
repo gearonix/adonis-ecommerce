@@ -1,6 +1,6 @@
 import {FC} from 'react';
 import s from './style.module.scss'
-import {NextImage} from "components/UIkit/components";
+import {NextImage} from "shared/ui";
 
 const YouMayLikeItem: FC = () => {
     return <div className={s.item}>

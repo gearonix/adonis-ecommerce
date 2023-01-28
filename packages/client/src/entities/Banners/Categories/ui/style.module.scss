@@ -1,4 +1,4 @@
-@use '../../../../../styles/variables' as *;
+@use 'public/mixins' as *;
 
 .categories {
   @include size(100%, 400px);

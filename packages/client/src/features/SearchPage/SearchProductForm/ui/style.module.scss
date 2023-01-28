@@ -1,4 +1,4 @@
-@use 'styles/variables' as *;
+@use 'public/mixins' as *;
 
 .form {
   @include size(33%, 250px);

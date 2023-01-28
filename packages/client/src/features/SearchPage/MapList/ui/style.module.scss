@@ -1,4 +1,4 @@
-@use '../../../../../styles/variables' as *;
+@use 'public/mixins' as *;
 
 .recommended_items {
   @include size(80%);

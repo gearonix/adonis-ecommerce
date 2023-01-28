@@ -1,5 +1,5 @@
 import {FC} from 'react';
-import {useColor} from 'src/shared/helpers/hooks';
+import {useColor} from 'shared/helpers/hooks';
 import s from './style.module.scss'
 import {ButtonProps} from "./types";
 

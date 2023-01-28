@@ -1,0 +1,37 @@
+@use 'public/mixins' as *;
+
+
+.flex, .user_info_block {
+  @include size;
+  display: flex;
+  width: 100%;
+  gap: 20px;
+}
+
+.add_image_block {
+  @include size(50%);
+  height: 100%;
+  padding: 20px;
+
+  button {
+    margin-bottom: 15px;
+    @include size(180px, 40px);
+    @include flex(center, center);
+
+    svg {
+      @include size(19px, 19px);
+      margin-right: 4px;
+    }
+  }
+
+  button:last-child {
+    color: $red;
+  }
+
+  .text {
+    font-size: $xm;
+    margin-bottom: 50px;
+    text-align: center;
+
+  }
+}

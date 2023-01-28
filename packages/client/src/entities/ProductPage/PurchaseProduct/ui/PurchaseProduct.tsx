@@ -9,7 +9,7 @@ const PurchaseProduct: FC<PurchaseProductP> = ({AddToSaved, BuyProduct}) => {
     return <div className={s.purchase_block}>
         <div className={s.purchase_card}>
             <div className={s.purchase_supplier}>
-                <Image height={48} width={48} alt={'Supplier'} src={'/supplier_mock.svg'}/>
+                <Image height={48} width={48} alt={'Supplier'} src={'/avatar.jpg'}/>
                 <h2>
                     Supplier <br/>
                     Guanjoi Trading LLC

@@ -1,4 +1,4 @@
-@use 'styles/variables' as *;
+@use 'public/mixins' as *;
 
 .item {
   @include itemHover;
@@ -14,7 +14,7 @@
   border: 2px solid $light;
 
   .item_image {
-    @include backgroundImage('/extra_services_mock.svg');
+    @include backgroundImage('/square.png');
     @include size(100%, 120px);
     position: relative;
     margin-bottom: 10px;

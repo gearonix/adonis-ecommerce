@@ -1,0 +1,51 @@
+@use 'public/mixins' as *;
+
+.content_buttons {
+  @include size(100%, 40px);
+  @include flex(flex-start, center);
+  padding-bottom: 10px;
+  border-bottom: $br $light;
+  position: relative;
+
+  button {
+    background: white;
+    font-size: 16px;
+    color: $light-grey;
+    transition: color 200ms;
+    margin-right: 10px;
+    border-radius: $rounded;
+    height: 28px;
+
+    &:hover {
+      color: $blue;
+    }
+
+    svg {
+      @include size(18px, 18px);
+    }
+
+  }
+
+  .add_product {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    button {
+      @include size(167px, 33px);
+
+      svg {
+        @include size(16px, 16px);
+        margin-right: 2px;
+      }
+
+      color: $dark;
+    }
+  }
+
+  .selected {
+    box-shadow: $shadow;
+    border: $br $light;
+    color: $blue;
+  }
+}

@@ -1,6 +1,6 @@
-import {SwitchThemeDrops} from 'src/features/Layout/SwitchTheme';
-import {HeaderSearch} from 'src/features/SearchPage/HeaderSearch';
-import {HeaderSkeleton} from "src/entities/Layout/Header";
+import {SwitchThemeDrops} from 'features/Layout/SwitchTheme';
+import {HeaderSearch} from 'features/SearchPage/HeaderSearch';
+import {HeaderSkeleton} from "entities/Others/Layout/Header";
 import {FC} from 'react'
 
 
