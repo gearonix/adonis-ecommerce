@@ -1,4 +1,4 @@
-@use 'public/mixins' as *;
+@use 'shared/css/mixins.scss' as *;
 
 .github_banner {
   @include size(100%, 110px);
@@ -8,7 +8,13 @@
   border-radius: $rounded;
   box-sizing: border-box;
   @include flex(space-between, center);
-  background: linear-gradient(to left, #4892FF, #005ADE);
+  background: #005ADE;
+  transition: background 200ms;
+
+  &:hover {
+    background: #1464d7;
+    //005ADE
+  }
 
   * {
     color: white;

@@ -4,10 +4,11 @@ import {ProductDescription} from "entities/ProductPage/ProductDescription";
 import {Recommended, YouMayLike} from "widgets/SearchLists";
 import {ExtraServices} from "entities/Banners/ExtraServices";
 import {GithubBanner} from "entities/Banners/GithubBanner";
+import {WithSpring} from "shared/lib/animations";
 
 
 const ProductPage = () => {
-    return <div>
+    return <WithSpring>
         <Head>
             <title>Adonis - [Item]</title>
         </Head>
@@ -20,7 +21,7 @@ const ProductPage = () => {
         <Recommended/>
         <GithubBanner/>
         <ExtraServices/>
-    </div>
+    </WithSpring>
 }
 
 export default ProductPage

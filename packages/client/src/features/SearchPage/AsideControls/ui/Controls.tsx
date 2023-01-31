@@ -7,7 +7,7 @@ import Typo from "shared/ui/Typo/Typo";
 const Controls: FC<CategoryProps> = ({title, Component, items}) => {
     return <div className={s.category}>
         <Typo>{title}</Typo>
-        {items.map((item, idx) => <Component title={title} idx={idx}/>)}
+        {items.map((item, idx) => <Component title={title} idx={idx} key={idx}/>)}
         <BlueLink>Disable all</BlueLink>
     </div>
 }

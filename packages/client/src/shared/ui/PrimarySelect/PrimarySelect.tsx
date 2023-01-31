@@ -5,7 +5,7 @@ import {PrimarySelectProps} from "./types";
 export const PrimarySelect: FC<PrimarySelectProps> = ({values}) => {
     return <select className={s.primary_select}>
         {values.map(i => {
-            return <option>{i}</option>
+            return <option key={i}>{i}</option>
         })}
     </select>
 }

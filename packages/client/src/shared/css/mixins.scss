@@ -12,6 +12,7 @@ $green: #00B517;
 $orange: #FF9017;
 $red: #FA3434;
 $light-max: #FAFAFA;
+$grey-300: #F7FAFC;
 
 
 $br: 1px solid;
@@ -44,10 +45,18 @@ $center: 0 auto;
   font-weight: $weight;
 }
 
-@mixin flex($jc: start,$ai: stretch,$dir: row) {
+@mixin flex($jc: flex-start,$ai: stretch,$dir: row) {
+  @if $jc == start or $jc == end {
+    justify-content: flex- $jc;
+  } @else {
+    justify-content: $jc;
+  }
+  @if $ai == start or $ai == end {
+    align-items: flex- $ai;
+  } @else {
+    align-items: $ai;
+  }
   display: flex;
-  justify-content: $jc;
-  align-items: $ai;
   flex-direction: $dir;
 }
 
@@ -57,10 +66,10 @@ $center: 0 auto;
   background-size: $size;
 }
 
-@mixin grid($cols,$rows, $gap: 0) {
+@mixin grid($cols,$rows, $gap: 0, $wstep : 1fr, $hstep: 1fr) {
   display: grid;
-  grid-template-columns: repeat($cols, 1fr);
-  grid-template-rows: repeat($rows, 1fr);
+  grid-template-columns: repeat($cols, $wstep);
+  grid-template-rows: repeat($rows, $hstep);
   gap: $gap;
 }
 
@@ -69,10 +78,11 @@ $center: 0 auto;
   padding-left: $left;
 }
 
-@mixin absolute($left: 0,$top : 0) {
+@mixin absolute($left: 0,$top : 0, $z: 1) {
   position: absolute;
   left: $left;
   top: $top;
+  z-index: $z;
 }
 
 @mixin itemHover {

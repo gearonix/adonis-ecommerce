@@ -1,8 +1,15 @@
 {
   "name": "adonis-monorepo",
   "version": "0.0.0",
-  "workspaces": ["packages/**"],
+  "workspaces": [
+    "./packages/*"
+  ],
   "private": true,
+  "scripts": {
+    "start:dev": "npm run dev --workspace=client && npm run start:dev --workspace=server",
+    "client:dev": "npm run dev --workspace=client",
+    "server:dev": "npm run dev --workspace=server"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Gearonix/adonis-monorepo.git"

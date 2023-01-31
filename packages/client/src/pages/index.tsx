@@ -5,9 +5,10 @@ import {ExtraServices} from 'entities/Banners/ExtraServices'
 import {Languages} from 'entities/Banners/Languages'
 import {Recommended, RecommendedItems} from 'widgets/SearchLists';
 import {FindProductBanner} from 'widgets/Banners/FindProductBanner'
+import {WithSpring} from "shared/lib/animations";
 
 const MainPage = () => {
-    return <div>
+    return <WithSpring>
         <Head>
             <title>Adonis - Online Shopping</title>
         </Head>
@@ -18,7 +19,7 @@ const MainPage = () => {
         <RecommendedItems/>
         <ExtraServices/>
         <Languages/>
-    </div>
+    </WithSpring>
 }
 
 export default MainPage

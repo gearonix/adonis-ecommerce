@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import {WithSpring} from 'shared/lib/animations'
 import {FC} from 'react'
 import {MessengerAside} from 'widgets/Messenger/Aside'
 import {MessengerContent} from 'widgets/Messenger/Content'
@@ -9,13 +10,13 @@ const Messenger: FC = () => {
         <Head>
             <title>Adonis - Messenger</title>
         </Head>
-        <div className={'messenger_page'}>
+        <WithSpring className={'messenger_page'}>
             <MessengerAside/>
             <div style={{width: '88%'}}>
                 <MessengerHeader/>
                 <MessengerContent/>
             </div>
-        </div>
+        </WithSpring>
 
     </>
 }

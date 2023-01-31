@@ -16,12 +16,6 @@
     "incremental": true,
     "baseUrl": "src",
     "paths": {
-      "mui": [
-        "shared/lib/mui/index.ts"
-      ],
-      "icons": [
-        "shared/helpers/icons.ts"
-      ],
       "shared/*": [
         "shared/*"
       ],
@@ -42,6 +36,12 @@
       ],
       "public/*": [
         "public/*"
+      ],
+      "mui": [
+        "shared/lib/mui/index.ts"
+      ],
+      "icons": [
+        "shared/helpers/icons.ts"
       ]
     }
   },

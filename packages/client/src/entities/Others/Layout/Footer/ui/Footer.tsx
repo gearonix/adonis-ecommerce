@@ -9,7 +9,7 @@ const Footer: FC = () => {
         <div className={s.footer_block}>
             <div className={s.brand_block}>
                 <Image src={'/logo.svg'}
-                       alt={'Adonis'} width={175} height={70}/>
+                       alt={'Adonis'} width={175} height={70} priority={false}/>
                 <p className={s.brand_text}>
                     Best information about the company gies here
                     but now lorem ipsum is
@@ -56,8 +56,7 @@ const Footer: FC = () => {
         <div className={s.footer_bottom}>
             <div className={s.footer_bottom_block}>
                 <HoverLink>@ Gearonix</HoverLink>
-                <HoverLink><Image src={'/united_states.svg'}
-                                  alt={'Select language'} width={28} height={18}/> English</HoverLink>
+                <HoverLink>English</HoverLink>
             </div>
         </div>
     </footer>

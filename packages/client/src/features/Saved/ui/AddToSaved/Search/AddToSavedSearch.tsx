@@ -1,11 +1,14 @@
 import React, {FC} from 'react';
 import s from './style.module.scss'
 import {FiHeart} from "icons";
+import {ApiAnimation} from 'shared/lib/animations';
+
 
 const AddToSavedSearch: FC = () => {
-    return <div className={s.heart}>
+    return <ApiAnimation className={s.heart} type={'reverseScale'}>
         <FiHeart/>
-    </div>
+    </ApiAnimation>
+
 }
 
 export default AddToSavedSearch

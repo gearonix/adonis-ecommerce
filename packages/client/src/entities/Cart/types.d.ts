@@ -1,11 +1,11 @@
-import {FC} from "react";
+import {FC, MutableRefObject} from "react";
 
 export interface CheckoutProps {
     CheckoutButton: FC
 }
 
 export interface CartItemProps {
-    Remove: FC,
+    Remove: FC<{ ref?: MutableRefObject<undefined> }>,
     SaveForLater: FC | null,
 }
 

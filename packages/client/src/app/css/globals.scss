@@ -2,18 +2,22 @@
 @import "src/app/css/templates";
 
 body {
-    background-color: #F7FAFC;
+  background-color: #F7FAFC;
+}
+
+* {
+  font-size: 16px;
 }
 
 
 body, input {
-    margin: 0;
-    box-sizing: border-box;
-    padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
 }
 
 input {
-    outline: none;
+  outline: none;
 }
 
 button, select, option, svg, path, a {
@@ -84,3 +88,4 @@ h2 {
 .profile_wall article {
     margin-left: 0px;
 }
+

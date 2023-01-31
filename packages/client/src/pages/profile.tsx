@@ -11,6 +11,7 @@ import {ContentBlock} from 'widgets/Profile/ContentBlock';
 import {SearchProduct} from "entities/SearchMapItems";
 import {AddToSavedSearch} from "features/Saved";
 import {Post} from "entities/Profile/Post";
+import {WithSpring} from 'shared/lib/animations';
 
 const Profile: FC = () => {
     const [IsEditProfile, openEditProfile] = useState<boolean>(false)
@@ -18,7 +19,7 @@ const Profile: FC = () => {
     const closeEdit = () => openEditProfile(false)
     const closeProduct = () => openAddProduct(false)
 
-    return <>
+    return <WithSpring>
         <Head>
             <title>Adonis - [User]</title>
         </Head>
@@ -39,7 +40,7 @@ const Profile: FC = () => {
                 <Post/>
             </ContentBlock>
         </div>
-    </>
+    </WithSpring>
 }
 
 export default Profile

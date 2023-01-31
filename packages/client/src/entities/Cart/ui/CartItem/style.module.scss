@@ -1,10 +1,11 @@
-@use 'public/mixins' as *;
+@use 'shared/css/mixins' as *;
 
 .item {
   @include size(100%, 140px);
   margin-bottom: 23px;
   display: flex;
   border-bottom: $br $light;
+  overflow: hidden;
 
   .image_wrapper {
     position: relative;

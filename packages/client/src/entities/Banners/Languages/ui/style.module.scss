@@ -1,4 +1,4 @@
-@use 'public/mixins' as *;
+@use 'shared/css/mixins' as *;
 
 .languages {
   @include size(100%, 256px);
@@ -7,14 +7,13 @@
   border: $br transparent;
 
   .block {
-    @include grid(5, 2);
+    @include grid(5, 2, 0, 20%);
     @include size(100%, 135px);
 
     .item {
       @include flex();
 
       .item_icon {
-        @include backgroundImage('/united_states.svg');
         @include size(28px, 20px);
         margin-right: 11px;
       }

@@ -6,10 +6,10 @@ import {RecommendedItems, SearchList} from "widgets/SearchLists";
 import {MuiPagination} from "mui";
 import {NavigationTitle} from "shared/ui";
 import {ExtraServices} from "entities/Banners/ExtraServices";
-
+import {WithSpring} from "shared/lib/animations";
 
 const SearchPage: FC = () => {
-    return <>
+    return <WithSpring>
         <NavigationTitle>Home {'>'} Search</NavigationTitle>
         <main className='search_page'>
             <Head>
@@ -24,7 +24,7 @@ const SearchPage: FC = () => {
         </main>
         <ExtraServices/>
         <RecommendedItems/>
-    </>
+    </WithSpring>
 }
 
 

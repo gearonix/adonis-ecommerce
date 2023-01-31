@@ -1,9 +1,26 @@
-@use 'public/mixins' as *;
+@use 'shared/css/mixins' as *;
 
 .header {
-  @include size(100%, 138px);
+  width: 100%;
   background: white;
   border-bottom: 2px solid $light;
+  max-height: 138px;
+
+  @media (max-width: 880px) {
+  }
+
+  .logo_link {
+    @include size(200px, 100%);
+    @include flex(center, center);
+    @media (max-width: 1498px) {
+      width: 180px;
+    }
+    @media (max-width: 880px) {
+      width: 155px;
+    }
+
+
+  }
 
   .header_block {
     @include size(90%, 86px);
@@ -13,7 +30,6 @@
     .options {
       @include size(18%, 38px);
       @include flex(space-between);
-
       * {
         color: $light-grey;
         transition: background 200ms;
@@ -21,6 +37,7 @@
         &:hover {
           color: $hover-grey;
         }
+
       }
 
       .options_item {
@@ -37,29 +54,65 @@
           white-space: nowrap;
         }
       }
-    }
-  }
 
-  .navbar_block {
-    @include size(90%, 56px);
-    margin: 0 auto;
-    @include flex(space-between, center);
+      @media (max-width: 1262px) {
+        width: 25%;
+      }
+      @media (max-width: 880px) {
+        align-items: center;
+        * {
+          color: $dark-grey;
+        }
+        .options_item {
+          height: 22px;
 
-    .navbar {
-      @include flex(space-between, center);
-      @include size(25%, 24px);
+          span {
+            display: none;
+          }
 
-      a {
-        @include flex(stretch, center);
-
-        svg {
-          margin-right: 4px;
         }
       }
+      @media (max-width: 564px) {
+        width: 35%;
+      }
     }
-
   }
 
 
 }
 
+.navbar_block {
+  @include size(90%, 56px);
+  margin: 0 auto;
+  @include flex(space-between, center);
+
+  .navbar {
+    @include flex(space-between, center);
+    @include size(25%, 24px);
+
+    a {
+      @include flex(stretch, center);
+
+      svg {
+        margin-right: 4px;
+      }
+    }
+
+    @media (max-width: 1478px) {
+      width: 27%;
+      a {
+        font-size: 15px;
+      }
+    }
+    @media (max-width: 1176px) {
+      width: 35%;
+      a {
+        font-size: 15px;
+      }
+    }
+  }
+
+  @media (max-width: 880px) {
+    display: none;
+  }
+}

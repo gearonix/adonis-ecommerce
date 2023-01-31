@@ -1,5 +1,5 @@
-@use 'public/mixins' as *;
-@use '../../../../public/mixins' as *;
+@use 'shared/css/mixins' as *;
+@use '../../../../shared/css/mixins' as *;
 
 .you_may_like {
   @include itemBorder;

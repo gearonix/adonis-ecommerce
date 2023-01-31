@@ -1,0 +1,48 @@
+@use 'shared/css/mixins' as *;
+
+.search {
+  @include size(40%, 38px);
+  display: flex;
+
+  .search_input {
+    @include size(62%, 100%);
+    font-size: 16px;
+    border: 2px solid $blue;
+    padding-left: 10px;
+    border-radius: 8px 0 0 8px;
+    border-right-width: 0;
+  }
+
+  button {
+    border-radius: 0 8px 8px 0;
+  }
+
+  @media (max-width: 880px) {
+    display: none;
+  }
+}
+
+.mobile_search {
+  position: relative;
+  @include size(90%, 40px);
+  margin: 0 auto;
+  margin-bottom: 12px;
+
+  input {
+    @include size;
+    border-radius: $rounded;
+    background: #F7FAFC;
+    color: $light-grey;
+    position: relative;
+    border: $br $light;
+    outline: none;
+    padding-left: 36px;
+
+  }
+
+  svg {
+    @include absolute(9px, 8px, 1);
+    @include size(22px, 22px);
+    color: $light-grey;
+  }
+}

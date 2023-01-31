@@ -1,7 +1,11 @@
-@use 'public/mixins' as *;
+@use 'shared/css/mixins' as *;
 
 .logo {
-  @include size(200px, 100%);
   cursor: pointer;
   position: relative;
+  @include imageWrapper(200px, 100%);
+  @media (max-width: 1148px) {
+    width: 170px;
+    height: 80%;
+  }
 }

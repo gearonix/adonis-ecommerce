@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import {FC} from "react";
-//import s from './';
 
 const DevNavRouting: FC = () => {
     return <div style={{position: 'fixed', left: 0, bottom: 0, cursor: 'pointer', zIndex: 1000}}>

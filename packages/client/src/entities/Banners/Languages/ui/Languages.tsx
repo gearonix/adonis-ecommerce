@@ -6,7 +6,7 @@ const Languages = () => {
         <ContainerTitle>Suppliers by region</ContainerTitle>
         <div className={s.block}>
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(i => {
-                return <div className={s.item}>
+                return <div className={s.item} key={i}>
                     <div className={s.item_icon}></div>
                     <div>
                         <h4>United States</h4>

@@ -13,7 +13,6 @@ export const HeadField: FC<MuiLoginFieldProps> = ({title, isPassword, readOnly =
         <OutlinedInput
             readOnly={readOnly}
             placeholder={title}
-            id="outlined-adornment-password"
             sx={{height: 40, marginTop: '10px'}}
             type={isPassword && showPassword ? 'password' : 'text'}
             endAdornment={

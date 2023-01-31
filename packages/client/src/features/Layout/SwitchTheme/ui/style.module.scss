@@ -1,4 +1,4 @@
-@use 'public/mixins' as *;
+@use 'shared/css/mixins' as *;
 
 .dropdowns {
   @include flex(space-between, center);
@@ -8,5 +8,12 @@
     @include flex(space-between);
     border: none;
     width: 45%;
+  }
+
+  @media (max-width: 1072px) {
+    width: 35%;
+  }
+  @media (max-width: 880px) {
+    display: none;
   }
 }

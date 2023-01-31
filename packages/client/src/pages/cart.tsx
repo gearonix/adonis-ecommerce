@@ -9,9 +9,10 @@ import {GithubBanner} from "entities/Banners/GithubBanner";
 import {FindProductBanner} from "widgets/Banners/FindProductBanner";
 import {RemoveAllCard, RemoveFromCard} from "features/Cart";
 import {AddToSavedCart} from "features/Saved";
+import {WithSpring} from "shared/lib/animations";
 
 const Cart = () => {
-    return <main>
+    return <WithSpring>
         <Head>
             <title>Adonis - Shopping Cart</title>
         </Head>
@@ -24,7 +25,7 @@ const Cart = () => {
         <Recommended/>
         <FindProductBanner/>
         <GithubBanner/>
-    </main>
+    </WithSpring>
 }
 
 export default Cart

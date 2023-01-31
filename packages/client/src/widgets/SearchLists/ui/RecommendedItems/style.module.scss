@@ -1,4 +1,4 @@
-@use 'public/mixins' as *;
+@use 'shared/css/mixins' as *;
 
 .recommended_items {
   @include size(100%, 700px);
@@ -10,6 +10,6 @@
   .items_block {
     @include size(80%);
     margin: 0 auto;
-    @include grid(5, 2, 20px);
+    @include grid(5, 2, 20px, 18%);
   }
 }

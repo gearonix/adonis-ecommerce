@@ -1,4 +1,4 @@
-@use 'public/mixins' as *;
+@use 'shared/css/mixins' as *;
 
 .categories {
   @include size(100%, 400px);
@@ -68,6 +68,9 @@
 
           .user_title {
             font-size: $small;
+            @media (max-width: 1308px) {
+              font-size: 14px;
+            }
           }
         }
 

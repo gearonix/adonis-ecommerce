@@ -1,0 +1,15 @@
+@use 'shared/css/mixins' as *;
+
+.burger {
+  display: none;
+  margin-right: 10px;
+
+  svg {
+    color: $dark;
+    @include size(24px, 24px);
+  }
+
+  @media (max-width: 880px) {
+    display: block;
+  }
+}

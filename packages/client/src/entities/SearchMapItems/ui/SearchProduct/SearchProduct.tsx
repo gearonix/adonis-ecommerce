@@ -9,7 +9,7 @@ import {SearchProductProps} from "./types";
 const SearchProduct: FC<SearchProductProps> = ({AddToSaved}) => {
     return <div className={s.search_item}>
         <Image src={'/mock_item.svg'} alt={'Check it!'}
-               width={210} height={210}/>
+               width={210} height={210} priority={true}/>
         <div className={s.info_block}>
             <Typo>Canon Cmera EOS 2000, Black 10x zoom</Typo>
             <h3 className={s.price}>$998.00</h3>

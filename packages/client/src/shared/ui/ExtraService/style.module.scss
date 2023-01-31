@@ -1,4 +1,4 @@
-@use 'public/mixins' as *;
+@use 'shared/css/mixins' as *;
 
 .item {
   @include itemHover;
@@ -38,6 +38,5 @@
   .item_title {
     @include padding(20px, 20px);
     font-weight: bold;
-    width: 160px;
   }
 }

@@ -1,11 +1,12 @@
 import {FC} from 'react';
 import s from './style.module.scss'
-import Image from "next/image";
+import {NextImage} from "shared/ui";
 
 const RecommendedItemTall: FC = () => {
     return <div className={s.item}>
-        <Image src={'/mock_item.svg'} alt={'Check it!'}
-               width={200} height={200}/>
+        <div className={s.image_wrapper}>
+            <NextImage src={'/mock_item.svg'}/>
+        </div>
         <h3 className={s.price}>$10.30</h3>
         <span className={s.item_description}>
                 T-shirts with multiple colors, for men
