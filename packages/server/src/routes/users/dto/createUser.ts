@@ -1,6 +1,6 @@
 import {Roles} from "@app/lib";
 
-export class CreateUser {
+export class UserDTO {
     readonly email: string;
     readonly password: string;
     readonly first_name?: string;

@@ -1,13 +1,10 @@
 import Head from 'next/head'
-import {ProfileHeader} from 'widgets/Profile/ProfileHeader'
+import {ContentBlock, ContentButtons, EditProfile, ProfileHeader} from 'widgets/Profile'
 import {FC, useState} from "react";
 import {ContentModal} from "mui";
-import {EditProfile} from "widgets/Profile/EditProfile";
-import AddProduct from "widgets/Profile/AddProduct/ui/AddProduct";
-import {ContentButtons} from "widgets/Profile/ContentButtons";
+import AddProduct from "widgets/Profile/ui/AddProduct/AddProduct";
 import {MessageBar} from "entities/Messenger/MessageBar";
 import {MessageForm} from "features/Messenger/MessageForm";
-import {ContentBlock} from 'widgets/Profile/ContentBlock';
 import {SearchProduct} from "entities/SearchMapItems";
 import {AddToSavedSearch} from "features/Saved";
 import {Post} from "entities/Profile/Post";

@@ -2,7 +2,7 @@ import {Injectable} from '@nestjs/common';
 import {InjectRepository} from "@nestjs/typeorm";
 import {UsersModel} from '@app/models'
 import {Repository} from 'typeorm';
-import {CreateUser} from './requests';
+import {UserDTO} from './dto';
 
 @Injectable()
 export class UsersService {
@@ -12,13 +12,18 @@ export class UsersService {
     ) {
     }
 
-    async getUserByEmail(email: string) {
-        const user = await this.users.findOneBy({email})
-        return user
+    async getIdAndPasswordByEmail(email: string) {
+        return await this.users.findOne({
+            select: ['password', 'user_id'],
+            where: {email}
+        })
     }
 
-    async createUser(user: CreateUser) {
-        const newUser = await this.users.save(user)
-        return newUser
+    async createUser(user: UserDTO) {
+        return await this.users.save(user)
+    }
+
+    async getUserById(user_id: number) {
+        return await this.users.findOneBy({user_id})
     }
 }

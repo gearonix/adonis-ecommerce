@@ -1,8 +1,7 @@
-import {CanActivate, ExecutionContext, Injectable, SetMetadata, UnauthorizedException} from '@nestjs/common'
+import {Exceptions} from '@app/lib/index';
+import {CanActivate, ExecutionContext, Injectable, UnauthorizedException} from '@nestjs/common'
 import {JwtService} from '@nestjs/jwt'
 import {Observable} from "rxjs";
-// Convienience Function
-const AllowUnauthorizedRequest = () => SetMetadata('allowUnauthorizedRequest', true);
 
 @Injectable()
 export class AuthGuard implements CanActivate {
@@ -13,17 +12,16 @@ export class AuthGuard implements CanActivate {
         const req = context.switchToHttp().getRequest()
         try {
             const authHeader = req.headers.authorization
-            const [bearer, token] = authHeader.split('')
+            const [bearer, token] = authHeader.split(' ')
 
             if (bearer != 'Bearer' || !token) {
-                throw new UnauthorizedException({message: 'User not authorized'})
+                throw new UnauthorizedException({message: Exceptions.NOT_AUTHORIZED})
             }
 
-            const user = this.jwtService.verify(token)
-            req.user = user
+            req.user = this.jwtService.verify(token)
             return true
         } catch (e) {
-            throw new UnauthorizedException({message: 'User not authorized'})
+            throw new UnauthorizedException({message: Exceptions.NOT_AUTHORIZED})
         }
     }
 }

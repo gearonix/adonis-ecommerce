@@ -1,1 +1,0 @@
-export {UserDTO} from './userDTO'

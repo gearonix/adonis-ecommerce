@@ -11,7 +11,7 @@ export class UsersModel {
     last_name: string
     @Column('varchar', {length: Lengths.TITLE})
     email: string
-    @Column('varchar', {length: Lengths.HASH})
+    @Column('varchar', {length: Lengths.HASH, select: false})
     password: string
     @Column('varchar', {length: Lengths.IMAGE, nullable: true})
     avatar: string

@@ -6,7 +6,7 @@
   ],
   "private": true,
   "scripts": {
-    "start:dev": "npm run dev --workspace=client && npm run start:dev --workspace=server",
+    "start:dev": "npm run client:dev | npm run server:dev",
     "client:dev": "npm run dev --workspace=client",
     "server:dev": "npm run start:dev --workspace=server"
   },

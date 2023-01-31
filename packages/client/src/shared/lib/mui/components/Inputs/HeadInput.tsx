@@ -3,9 +3,10 @@ import {FC, useState} from "react";
 import {FormControl, IconButton, InputAdornment, OutlinedInput, Typography} from "@mui/material";
 import {AiFillEye, AiFillEyeInvisible} from "icons";
 
-export const HeadField: FC<MuiLoginFieldProps> = ({title, isPassword, readOnly = false}) => {
+export const HeadField: FC<MuiLoginFieldProps> = ({title, isPassword, readOnly = false, options}) => {
     const [showPassword, setShowPassword] = useState(true);
 
+    console.log(options)
     return <FormControl variant="outlined" fullWidth size={'small'} sx={{
         marginBottom: '26px'
     }}>
@@ -29,6 +30,7 @@ export const HeadField: FC<MuiLoginFieldProps> = ({title, isPassword, readOnly =
                     </InputAdornment>
                     : null
             }
+            inputProps={options}
             label="Password"
         />
     </FormControl>
