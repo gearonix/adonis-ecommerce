@@ -1,13 +1,21 @@
-import { HttpAdapterHost, NestFactory } from '@nestjs/core'
-import { AppModule } from './app.module'
-import { ValidationPipe } from '@nestjs/common'
-import { AllExceptionsFilter } from '@app/filters/exception.filter'
+import {NestFactory} from '@nestjs/core'
+import {AppModule} from './app.module'
+import {appConfig, corsConfig, createSwaggerDocs} from "@app/config";
+import {SwaggerModule} from '@nestjs/swagger'
+import * as process from "process";
 
-async function bootstrap() {
+const bootstrap = async () => {
+
   const app = await NestFactory.create(AppModule)
-  app.enableCors()
-  app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }))
-  app.useGlobalFilters(new AllExceptionsFilter(app.get(HttpAdapterHost)))
-  await app.listen(process.env.NODE_ENV !== 'production' ? 7729 : 80, '0.0.0.0')
+
+  const {PORT, docsPrefix, globalPrefix} = appConfig
+
+  app.enableCors(corsConfig)
+  app.setGlobalPrefix(globalPrefix)
+  SwaggerModule.setup(docsPrefix, app, createSwaggerDocs(app))
+
+
+  await app.listen(process.env.PORT || PORT, () => console.log(`Nestjs server started at port ${PORT}`))
 }
+
 bootstrap()
