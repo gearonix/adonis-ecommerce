@@ -11,6 +11,5 @@ export interface UserSlice {
     country: string,
     city: string
     user_id: number,
-    registration_date: string,
-    isLoading?: boolean
+    registration_date: string
 }

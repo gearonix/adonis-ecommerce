@@ -13,24 +13,19 @@ const initialState: ObjectNullable<UserSlice> = {
     country: null,
     city: null,
     user_id: null,
-    registration_date: null,
-    isLoading: true
+    registration_date: null
 }
-const userSlice = createSlice({
+const userReducer = createSlice({
     name: 'users',
     initialState,
     reducers: {
         setUser(state, {payload}: PayloadAction<UserSlice>) {
-            return {...payload}
-        },
-        setLoading(state, {payload}: PayloadAction<boolean>) {
-            state.isLoading = payload
+            return payload
         }
-    },
-
+    }
 })
 
 
-export const {setUser, setLoading} = userSlice.actions
+export const {setUser} = userReducer.actions
 
-export default userSlice.reducer
+export default userReducer.reducer

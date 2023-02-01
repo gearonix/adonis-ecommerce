@@ -1,15 +1,20 @@
 import type {AppProps} from 'next/app'
 import Layout from "./providers/Layout";
 import {Provider} from "react-redux";
-import store from './redux/store'
 import AuthGuard from './providers/AuthGuard'
+import AsyncAuthorization from "app/providers/AsyncAuthorization";
+import wrapper from './redux/store';
 
-const App = ({Component, pageProps}: AppProps) => {
+const App = ({Component, ...rest}: AppProps) => {
+    const {store, props} = wrapper.useWrappedStore(rest);
     return <Provider store={store}>
         <Layout>
-            <AuthGuard>
-                <Component {...pageProps} />
-            </AuthGuard>
+            <AsyncAuthorization>
+                <AuthGuard>
+                    <Component {...props.pageProps} />
+                </AuthGuard>
+            </AsyncAuthorization>
+
         </Layout>
     </Provider>
 }
