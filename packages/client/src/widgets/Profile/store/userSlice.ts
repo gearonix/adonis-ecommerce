@@ -1,6 +1,6 @@
-import {ObjectNullable} from "shared/types/globals";
-import {UserSlice} from "shared/types/slices";
-import {createSlice} from '@reduxjs/toolkit'
+import {ObjectNullable} from "shared/config/types/globals";
+import {UserSlice} from "shared/config/types/slices";
+import {createSlice, PayloadAction} from '@reduxjs/toolkit'
 
 const initialState: ObjectNullable<UserSlice> = {
     role: null,
@@ -13,14 +13,24 @@ const initialState: ObjectNullable<UserSlice> = {
     country: null,
     city: null,
     user_id: null,
-    registration_date: null
+    registration_date: null,
+    isLoading: true
 }
-
 const userSlice = createSlice({
-    name: 'profile',
+    name: 'users',
     initialState,
-    reducers: {}
+    reducers: {
+        setUser(state, {payload}: PayloadAction<UserSlice>) {
+            return {...payload}
+        },
+        setLoading(state, {payload}: PayloadAction<boolean>) {
+            state.isLoading = payload
+        }
+    },
+
 })
 
+
+export const {setUser, setLoading} = userSlice.actions
 
 export default userSlice.reducer

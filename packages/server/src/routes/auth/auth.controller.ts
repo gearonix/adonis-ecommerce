@@ -1,7 +1,7 @@
 import {Body, Controller, Get, Headers, HttpException, HttpStatus, Post, Res} from '@nestjs/common';
 import {AuthService} from "@app/routes/auth";
 import {Response} from "express";
-import {UserDTO} from '../users/dto';
+import {UserDTO, UserLoginDTO} from '../users/dto';
 import {Exceptions} from "@app/lib";
 
 @Controller('auth')
@@ -10,7 +10,7 @@ export class AuthController {
     }
 
     @Post('/login')
-    async login(@Body() user: UserDTO, @Res({passthrough: true}) res: Response) {
+    async login(@Body() user: UserLoginDTO, @Res({passthrough: true}) res: Response) {
         const tokenData = await this.authService.login(user)
         res.cookie('AUTH_TOKEN', tokenData.token)
         return tokenData

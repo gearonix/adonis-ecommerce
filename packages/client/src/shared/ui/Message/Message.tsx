@@ -4,7 +4,7 @@ import cn from "classnames";
 import {ImageModal} from "mui";
 import {NextImage} from "shared/ui";
 import {BsCheck2} from "icons";
-import {MessageProps} from "../../types";
+import {MessageProps} from "../types";
 import {WithSpring} from "shared/lib/animations";
 import useMeasure from "react-use-measure";
 

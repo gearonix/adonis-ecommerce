@@ -3,7 +3,7 @@ import {JwtService} from '@nestjs/jwt';
 import {UsersService} from "@app/routes/users";
 import * as bcrypt from 'bcryptjs'
 import {Exceptions} from '@app/lib';
-import {UserDTO} from '../users/dto';
+import {UserDTO, UserLoginDTO} from '../users/dto';
 import {Request} from "express";
 import {REQUEST} from '@nestjs/core';
 
@@ -17,7 +17,7 @@ export class AuthService {
     ) {
     }
 
-    async login(userDto: UserDTO) {
+    async login(userDto: UserLoginDTO) {
         const user_id = await this.validateUser(userDto)
         return this.generateToken(user_id)
     }
@@ -57,7 +57,7 @@ export class AuthService {
         }
     }
 
-    private async validateUser(userDto: UserDTO) {
+    private async validateUser(userDto: UserLoginDTO) {
         const user = await this.usersService.getIdAndPasswordByEmail(userDto.email)
 
 

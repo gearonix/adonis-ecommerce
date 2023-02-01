@@ -1,4 +1,4 @@
-import {HexColorsI} from "shared/types";
+import {HexColorsI} from "shared/ui/types";
 
 export const hexColors: HexColorsI = {
     primary: {

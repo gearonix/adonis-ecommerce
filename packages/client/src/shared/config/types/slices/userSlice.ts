@@ -1,4 +1,4 @@
-import {Roles} from "shared/types/globals";
+import {Roles} from "app/config/paths";
 
 export interface UserSlice {
     role: Roles,
@@ -11,5 +11,6 @@ export interface UserSlice {
     country: string,
     city: string
     user_id: number,
-    registration_date: string
+    registration_date: string,
+    isLoading?: boolean
 }
