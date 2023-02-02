@@ -11,7 +11,7 @@ import {createFieldValues} from "../lib/helpers";
 
 const SalesmanForm: FC = () => {
     const form = useForm<SignupForm>({resolver: yupResolver(salesmanSchema)});
-    const onSubmit = useSubmitForm(Roles.SALESMAN)
+    const onSubmit = useSubmitForm(form.setError, Roles.SALESMAN)
     const reg = createFieldValues(form)
 
     return <AuthTemplate mode={'signup'} submit={form.handleSubmit(onSubmit)}>

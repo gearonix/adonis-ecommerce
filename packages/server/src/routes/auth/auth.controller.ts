@@ -1,8 +1,21 @@
-import {Body, Controller, Delete, Get, Headers, HttpException, HttpStatus, Post, Res} from '@nestjs/common';
+import {
+    Body,
+    Controller,
+    Delete,
+    Get,
+    Headers,
+    HttpException,
+    HttpStatus,
+    Post,
+    Req,
+    Res,
+    UseGuards
+} from '@nestjs/common';
 import {AuthService} from "@app/routes/auth";
 import {Response} from "express";
 import {RegisterUserDTO, UserLoginDTO} from '../users/dto';
 import {Exceptions} from "@app/lib";
+import {AuthGuard as PassportGuard} from '@nestjs/passport';
 
 @Controller('auth')
 export class AuthController {
@@ -29,20 +42,26 @@ export class AuthController {
     }
 
     @Get('/get/me')
-    GetUserData(@Headers() headers) {
+    async GetUserData(@Headers() headers) {
         const token = headers?.authorization?.split(' ')[1]
         if (!token) {
-            throw new HttpException(Exceptions.NO_TOKEN, HttpStatus.BAD_REQUEST)
+            throw new HttpException(Exceptions.NO_TOKEN, HttpStatus.NO_CONTENT)
         }
-        return this.authService.getMe(token)
+        const data = await this.authService.getMe(token)
+        return data
     }
-
-    //TODO: add ability to delete jwt
-    // tokens on logout
 
     @Delete('/delete/token')
     cookieClear(@Res({passthrough: true}) res: Response) {
         res.clearCookie('AUTH_TOKEN')
         res.end()
+    }
+
+    @Get('/google')
+    @UseGuards(PassportGuard('google'))
+    googleAuthRedirect(@Req() req) {
+        return {
+            data: req.user
+        }
     }
 }

@@ -12,7 +12,7 @@ import {createFieldValues} from "../lib/helpers";
 //TODO: improve imports
 const CustomerForm: FC = () => {
     const form = useForm<SignupForm>({resolver: yupResolver(customerSchema)});
-    const onSubmit = useSubmitForm(Roles.CUSTOMER)
+    const onSubmit = useSubmitForm(form.setError, Roles.CUSTOMER)
     const reg = createFieldValues(form)
 
     return <AuthTemplate mode={"signup"} submit={form.handleSubmit(onSubmit)}>

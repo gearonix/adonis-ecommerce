@@ -1,7 +1,19 @@
 import Link from 'next/link'
 import {FC} from "react";
+import {useRouter} from "next/router";
+import {Paths} from "shared/types/globals";
+import {logoutUser} from 'widgets/Login/store/thunks';
+import {useDispatch} from 'shared/types/redux';
 
 const DevNavRouting: FC = () => {
+    const router = useRouter()
+    const dispatch = useDispatch()
+
+    const logout = async () => {
+        dispatch(logoutUser())
+        router.push(Paths.LOGIN)
+    }
+
     return <div style={{position: 'fixed', left: 0, bottom: 0, cursor: 'pointer', zIndex: 1000}}>
         <Link href={'/'}>
             <button>main</button>
@@ -42,6 +54,7 @@ const DevNavRouting: FC = () => {
         <Link href={'/not_found'}>
             <button>not_found</button>
         </Link>
+        <button onClick={logout}>logout</button>
     </div>
 }
 

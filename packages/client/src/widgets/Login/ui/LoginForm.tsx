@@ -10,7 +10,7 @@ import {createFieldValues} from "../lib/helpers";
 //TODO: add server error handling
 const LoginForm: FC = () => {
     const form = useForm<LoginForm>({resolver: yupResolver(loginSchema)});
-    const onSubmit = useSubmitForm();
+    const onSubmit = useSubmitForm(form.setError);
     const reg = createFieldValues(form)
 
     return <AuthTemplate mode={'login'} submit={form.handleSubmit(onSubmit)}>

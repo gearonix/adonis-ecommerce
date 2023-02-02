@@ -1,20 +1,20 @@
 import {createThunk} from "shared/types/redux";
-import LoginApi from '../../api'
-import {HttpStatusCode} from "axios";
+import LoginApi from '../../authApi'
 import {setUser} from "widgets/Profile/store/userReducer";
+import {isError} from "shared/helpers/helpers";
 
 export const getMe = createThunk(
     'users/GET_TOKEN',
     async (_, {dispatch}) => {
-        const response = await LoginApi.authByCookie()
+            const response = await LoginApi.authByCookie()
 
-        if (response.status == HttpStatusCode.BadRequest) {
-            throw new Error('Authorization failed')
-        }
-        const token = response.data.token
+            if (isError(response)) return
 
-        const {data: user} = await LoginApi.getMe(token)
+            const token = response.data.token
 
-        dispatch(setUser(user))
+            const {data: user} = await LoginApi.getMe(token)
+
+            if (!user) return
+            dispatch(setUser(user))
     }
 )

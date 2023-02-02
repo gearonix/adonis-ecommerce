@@ -4,7 +4,8 @@ export enum Lengths {
     LONGTEXT = 60,
     ID = 8,
     TINYTEXT = 10,
-    HASH = 100
+    HASH = 100,
+    TOKEN = 300
 }
 
 export enum Roles {

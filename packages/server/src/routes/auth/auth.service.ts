@@ -1,4 +1,4 @@
-import {HttpException, HttpStatus, Inject, Injectable, Scope, UnauthorizedException} from '@nestjs/common';
+import {HttpException, HttpStatus, Inject, Injectable, Scope} from '@nestjs/common';
 import {JwtService} from '@nestjs/jwt';
 import {UsersService} from "@app/routes/users";
 import * as bcrypt from 'bcryptjs'
@@ -6,7 +6,6 @@ import {Exceptions} from '@app/lib';
 import {RegisterUserDTO, UserLoginDTO} from '../users/dto';
 import {Request} from "express";
 import {REQUEST} from '@nestjs/core';
-
 
 @Injectable({scope: Scope.REQUEST})
 export class AuthService {
@@ -26,7 +25,7 @@ export class AuthService {
         const candidate = await this.usersService.getIdAndPasswordByEmail(user.email)
 
         if (candidate) {
-            throw new HttpException(Exceptions.USER_ALREADY_EXISTS, HttpStatus.BAD_REQUEST)
+            throw new HttpException(Exceptions.USER_ALREADY_EXISTS, HttpStatus.ACCEPTED)
         }
         const hashPassword = await bcrypt.hash(user.password, 5)
         const {user_id} = await this.usersService.createUser({...user, password: hashPassword})
@@ -37,7 +36,7 @@ export class AuthService {
     async authByCookie() {
         const {AUTH_TOKEN} = this.request.cookies
         if (!AUTH_TOKEN) {
-            throw new HttpException(Exceptions.NO_COOKIE, HttpStatus.BAD_REQUEST)
+            throw new HttpException(Exceptions.NO_COOKIE, HttpStatus.NO_CONTENT)
         }
         return {token: AUTH_TOKEN}
     }
@@ -45,24 +44,25 @@ export class AuthService {
     async getMe(token: string) {
         try {
             const tokenData = await this.jwtService.verify(token)
-            return await this.usersService.getUserById(tokenData.user_id)
+            if (!tokenData.payload.user_id) {
+                throw new HttpException(Exceptions.NO_TOKEN, HttpStatus.NO_CONTENT)
+            }
+            return await this.usersService.getUserById(tokenData.payload.user_id)
         } catch (e) {
-            throw new HttpException(Exceptions.INCORRECT_TOKEN, HttpStatus.BAD_REQUEST)
+            throw new HttpException(Exceptions.INCORRECT_TOKEN, HttpStatus.NO_CONTENT)
         }
     }
 
     private async generateToken(user_id: number) {
-        return {
-            token: this.jwtService.sign({payload: {user_id}}, {expiresIn: '1h'})
-        }
+        const token = this.jwtService.sign({payload: {user_id}}, {expiresIn: '1h'})
+        return {token}
     }
 
     private async validateUser(userDto: UserLoginDTO) {
         const user = await this.usersService.getIdAndPasswordByEmail(userDto.email)
 
-
         if (!user) {
-            throw new HttpException(Exceptions.USER_NOT_EXIST, HttpStatus.BAD_REQUEST)
+            throw new HttpException(Exceptions.USER_NOT_EXIST, HttpStatus.NO_CONTENT)
         }
 
         const {password, user_id} = user
@@ -73,7 +73,7 @@ export class AuthService {
             return user_id;
         }
 
-        throw new UnauthorizedException({message: Exceptions.INCORRECT_PASSWORD})
+        throw new HttpException(Exceptions.INCORRECT_PASSWORD, HttpStatus.ACCEPTED)
     }
 
 

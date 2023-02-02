@@ -4,6 +4,7 @@ import {UsersModel} from '@app/models'
 import {Repository} from 'typeorm';
 import {RegisterUserDTO} from './dto';
 
+//TODO: delete return-await
 @Injectable()
 export class UsersService {
     constructor(
