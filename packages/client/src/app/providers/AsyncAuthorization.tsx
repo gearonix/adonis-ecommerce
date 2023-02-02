@@ -1,7 +1,8 @@
 import {FC, ReactNode, useEffect, useState} from 'react';
-import {getMe} from "widgets/Login/store/thunks/getToken";
-import {useDispatch} from "shared/config/types/redux";
+import {getMe} from "widgets/Login/store/thunks/getMe";
+import {useDispatch} from "shared/types/redux";
 import {Preloader} from "shared/ui";
+
 
 const AsyncAuthorization: FC<{ children: ReactNode }> = ({children}) => {
     const dispatch = useDispatch()

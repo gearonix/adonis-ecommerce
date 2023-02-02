@@ -1,5 +1,5 @@
 import {ReactNode} from "react";
-import {FieldError, UseFormRegisterReturn} from 'react-hook-form'
+import {UseFormRegisterReturn} from 'react-hook-form'
 
 export interface ModalProps {
     isOpen: boolean,
@@ -23,8 +23,10 @@ export interface MuiLoginFieldProps {
     title: string,
     isPassword?: boolean,
     readOnly?: boolean,
-    options: UseFormRegisterReturn,
-    error: FieldError | undefined
+    values: {
+        inputProps: UseFormRegisterReturn<string>,
+        error: any
+    }
 }
 
 export interface ContentModalProps {

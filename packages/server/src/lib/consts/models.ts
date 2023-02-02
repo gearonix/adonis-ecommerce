@@ -1,5 +1,5 @@
 export enum Lengths {
-    TITLE = 20,
+    TITLE = 40,
     IMAGE = 50,
     LONGTEXT = 60,
     ID = 8,

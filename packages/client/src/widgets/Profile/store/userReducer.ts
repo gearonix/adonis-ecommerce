@@ -1,5 +1,5 @@
-import {ObjectNullable} from "shared/config/types/globals";
-import {UserSlice} from "shared/config/types/slices";
+import {ObjectNullable} from "shared/types/helpers";
+import {UserSlice} from "shared/types/slices";
 import {createSlice, PayloadAction} from '@reduxjs/toolkit'
 
 const initialState: ObjectNullable<UserSlice> = {

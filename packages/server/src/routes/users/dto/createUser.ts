@@ -7,7 +7,7 @@ export class UserLoginDTO {
 }
 
 
-export class UserDTO extends UserLoginDTO {
+export class RegisterUserDTO extends UserLoginDTO {
     readonly first_name?: string;
     readonly last_name?: string;
     readonly role: Roles

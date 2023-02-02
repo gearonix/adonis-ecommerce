@@ -1,4 +1,4 @@
-import {AppState} from "shared/config/types/redux";
+import {AppState} from "shared/types/redux";
 
 
 const Selectors = {

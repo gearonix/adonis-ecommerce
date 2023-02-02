@@ -1,4 +1,4 @@
-import {createThunk} from "shared/config/types/redux";
+import {createThunk} from "shared/types/redux";
 import LoginApi from '../../api'
 import {HttpStatusCode} from "axios";
 import {setUser} from "widgets/Profile/store/userReducer";

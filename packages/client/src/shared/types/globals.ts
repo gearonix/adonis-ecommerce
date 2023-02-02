@@ -12,8 +12,6 @@ export enum Paths {
     ABOUT = '/about',
 }
 
-export const privatePaths = [Paths.PROFILE, Paths.MESSENGER]
-
 export enum Roles {
     SALESMAN = 'SALESMAN',
     CUSTOMER = 'CUSTOMER'

@@ -2,7 +2,8 @@ import {useEffect, useState} from "react";
 import Selectors from "shared/model/selectors";
 import {useSelector} from 'react-redux';
 import {useRouter} from 'next/router';
-import {Paths, privatePaths} from "app/config/paths";
+import appConfig from "app/config";
+import {Paths} from "shared/types/globals";
 
 
 export const useRedirect = () => {
@@ -14,9 +15,17 @@ export const useRedirect = () => {
 
     const authCheck = (url: string) => {
         const path: Paths = url.split('?')[0] as Paths
-        if (user_id === null && privatePaths.includes(path)) {
+        const {privatePaths} = appConfig
+
+        //redirect if not registered
+        if (user_id === null && privatePaths.unauthorized.includes(path)) {
             return router.push(Paths.LOGIN)
         }
+        //redirect if registered
+        if (user_id && privatePaths.authorized.includes(path)) {
+            return router.push(Paths.PROFILE)
+        }
+
         setIsLoaded(true)
     }
 

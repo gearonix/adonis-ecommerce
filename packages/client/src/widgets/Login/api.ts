@@ -1,18 +1,20 @@
 import axiosInstance from 'shared/config/axios'
-import {LoginFormValues} from "widgets/Login/types/types";
-import {GetToken} from "widgets/Login/types/responseTypes";
-import {AxiosResponse as Res} from "shared/config/types/globals";
-import {UserSlice} from "shared/config/types/slices";
+import {LoginForm, SignupWithRoles} from "./types";
+import {AxiosResponse as Res} from "shared/types/helpers";
+import {UserSlice} from "shared/types/slices";
 
 
 const AuthApi = {
-    loginUser: (formValues: LoginFormValues): Res<GetToken> => axiosInstance.post('/auth/login', formValues),
+    loginUser: (formValues: LoginForm): Res<{ token: string }> => axiosInstance.post('/auth/login', formValues),
     getMe: (token: string): Res<UserSlice> => axiosInstance.get('/auth/get/me', {
         headers: {
             Authorization: `Bearer ${token}`
         }
     }),
-    authByCookie: (): Res<GetToken> => axiosInstance.get('/auth/get/token')
+    authByCookie: (): Res<{ token: string }> => axiosInstance.get('/auth/get/token'),
+    registerUser: (formValues: SignupWithRoles): Res<{ token: string }> =>
+        axiosInstance.post('/auth/registration', formValues),
+    clearAuthToken: () => axiosInstance.delete('auth/delete/token')
 }
 
 

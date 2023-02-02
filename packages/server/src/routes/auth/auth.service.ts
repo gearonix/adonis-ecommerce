@@ -3,7 +3,7 @@ import {JwtService} from '@nestjs/jwt';
 import {UsersService} from "@app/routes/users";
 import * as bcrypt from 'bcryptjs'
 import {Exceptions} from '@app/lib';
-import {UserDTO, UserLoginDTO} from '../users/dto';
+import {RegisterUserDTO, UserLoginDTO} from '../users/dto';
 import {Request} from "express";
 import {REQUEST} from '@nestjs/core';
 
@@ -22,7 +22,7 @@ export class AuthService {
         return this.generateToken(user_id)
     }
 
-    async registration(user: UserDTO) {
+    async registration(user: RegisterUserDTO) {
         const candidate = await this.usersService.getIdAndPasswordByEmail(user.email)
 
         if (candidate) {
@@ -53,7 +53,7 @@ export class AuthService {
 
     private async generateToken(user_id: number) {
         return {
-            token: this.jwtService.sign({payload: {user_id}})
+            token: this.jwtService.sign({payload: {user_id}}, {expiresIn: '1h'})
         }
     }
 

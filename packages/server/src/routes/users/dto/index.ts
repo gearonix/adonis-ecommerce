@@ -1,2 +1,2 @@
-export {UserDTO} from './createUser'
+export {RegisterUserDTO} from './createUser'
 export {UserLoginDTO} from './createUser'

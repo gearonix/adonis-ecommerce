@@ -1,4 +1,4 @@
-import {Roles} from "app/config/paths";
+import {Roles} from "shared/types/globals";
 
 export interface UserSlice {
     role: Roles,

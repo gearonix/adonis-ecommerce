@@ -1,7 +1,7 @@
-import {Body, Controller, Get, Headers, HttpException, HttpStatus, Post, Res} from '@nestjs/common';
+import {Body, Controller, Delete, Get, Headers, HttpException, HttpStatus, Post, Res} from '@nestjs/common';
 import {AuthService} from "@app/routes/auth";
 import {Response} from "express";
-import {UserDTO, UserLoginDTO} from '../users/dto';
+import {RegisterUserDTO, UserLoginDTO} from '../users/dto';
 import {Exceptions} from "@app/lib";
 
 @Controller('auth')
@@ -17,7 +17,7 @@ export class AuthController {
     }
 
     @Post('/registration')
-    async registration(@Body() user: UserDTO, @Res({passthrough: true}) res: Response) {
+    async registration(@Body() user: RegisterUserDTO, @Res({passthrough: true}) res: Response) {
         const tokenData = await this.authService.registration(user)
         res.cookie('AUTH_TOKEN', tokenData.token)
         return tokenData
@@ -35,5 +35,14 @@ export class AuthController {
             throw new HttpException(Exceptions.NO_TOKEN, HttpStatus.BAD_REQUEST)
         }
         return this.authService.getMe(token)
+    }
+
+    //TODO: add ability to delete jwt
+    // tokens on logout
+
+    @Delete('/delete/token')
+    cookieClear(@Res({passthrough: true}) res: Response) {
+        res.clearCookie('AUTH_TOKEN')
+        res.end()
     }
 }
