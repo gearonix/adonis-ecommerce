@@ -1,2 +1,2 @@
-export {Lengths, Roles} from './consts/models'
-export {Exceptions} from './consts/exceptions'
+export {Lengths, Roles} from '../types/models'
+export {Exceptions} from '../types/exceptions'

@@ -4,19 +4,25 @@ import {Provider} from "react-redux";
 import AuthGuard from './providers/AuthGuard'
 import AsyncAuthorization from "app/providers/AsyncAuthorization";
 import wrapper from './redux/store';
+import {GoogleOAuthProvider} from '@react-oauth/google';
+
+const googleClientId = '329001787710-gs0jm4icnclbjsn3k40a9eu84ikiltca.apps.googleusercontent.com'
+
 
 const App = ({Component, ...rest}: AppProps) => {
     const {store, props} = wrapper.useWrappedStore(rest);
-    return <Provider store={store}>
-        <Layout>
-            <AsyncAuthorization>
-                <AuthGuard>
-                    <Component {...props.pageProps} />
-                </AuthGuard>
-            </AsyncAuthorization>
+    return <GoogleOAuthProvider clientId={googleClientId}>
+        <Provider store={store}>
+            <Layout>
+                <AsyncAuthorization>
+                    <AuthGuard>
+                        <Component {...props.pageProps} />
+                    </AuthGuard>
+                </AsyncAuthorization>
 
-        </Layout>
-    </Provider>
+            </Layout>
+        </Provider>
+    </GoogleOAuthProvider>
 }
 
 

@@ -27,4 +27,6 @@ export class UsersModel {
     city: string
     @CreateDateColumn()
     registration_date: Date
+    @Column('varchar', {length: Lengths.LONGTEXT, nullable: true})
+    google_sub: string
 }

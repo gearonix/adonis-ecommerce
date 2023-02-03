@@ -15,6 +15,7 @@ const CustomerForm: FC = () => {
     const onSubmit = useSubmitForm(form.setError, Roles.CUSTOMER)
     const reg = createFieldValues(form)
 
+
     return <AuthTemplate mode={"signup"} submit={form.handleSubmit(onSubmit)}>
         <HeadField title={'Email'} values={reg('email')}/>
         <HeadField title={'Password'} isPassword values={reg('password')}/>

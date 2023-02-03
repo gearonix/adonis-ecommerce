@@ -25,5 +25,7 @@ export enum Exceptions {
     NOT_AUTHORIZED = 'User not authorized',
     NO_COOKIE = 'No cookie',
     INCORRECT_TOKEN = 'Incorrect token',
-    NO_TOKEN = 'Headers does not contain a token'
+    NO_TOKEN = 'Headers does not contain a token',
+    LOGIN_FAILED = 'Login failed',
+    REGISTRATION_FAILED = 'Registration failed'
 }

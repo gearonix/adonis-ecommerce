@@ -8,6 +8,7 @@ import {salesmanSchema} from "../lib/formSchemes";
 import {useSubmitForm} from "../lib/hooks";
 import {Roles} from "shared/types/globals";
 import {createFieldValues} from "../lib/helpers";
+import GoogleButton from "widgets/Login/ui/GoogleButton";
 
 const SalesmanForm: FC = () => {
     const form = useForm<SignupForm>({resolver: yupResolver(salesmanSchema)});
@@ -20,6 +21,7 @@ const SalesmanForm: FC = () => {
         <HeadField title={'Email'} values={reg('email')}/>
         <HeadField title={'Password'} isPassword values={reg('password')}/>
         <HeadField title={'Repeat password'} isPassword values={reg('repeatPassword')}/>
+        <GoogleButton mode={'signup'}/>
     </AuthTemplate>
 }
 

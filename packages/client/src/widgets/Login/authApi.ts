@@ -14,7 +14,9 @@ const AuthApi = {
     authByCookie: (): Res<{ token: string }> => axiosInstance.get('/auth/get/token'),
     registerUser: (formValues: SignupWithRoles): Res<{ token: string }> =>
         axiosInstance.post('/auth/registration', formValues),
-    clearAuthToken: () => axiosInstance.delete('auth/delete/token')
+    clearAuthToken: () => axiosInstance.delete('auth/delete/token'),
+    registerUserByGoogle: (jwt: string) => axiosInstance.post('/auth/registration/google', {jwt}),
+    loginUserByGoogle: (jwt: string) => axiosInstance.post('/auth/login/google', {jwt})
 }
 
 

@@ -4,11 +4,10 @@ import {AuthService} from './auth.service';
 import {JwtModule} from '@nestjs/jwt';
 import {appConfig} from "@app/config";
 import {UsersModule} from '../users';
-import {GoogleStrategy} from "./google.strategy";
 
 @Module({
   controllers: [AuthController],
-  providers: [AuthService, GoogleStrategy],
+  providers: [AuthService],
   imports: [
     forwardRef(() => UsersModule),
     JwtModule.register({

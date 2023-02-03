@@ -1,21 +1,9 @@
-import {
-    Body,
-    Controller,
-    Delete,
-    Get,
-    Headers,
-    HttpException,
-    HttpStatus,
-    Post,
-    Req,
-    Res,
-    UseGuards
-} from '@nestjs/common';
+import {Body, Controller, Delete, Get, Headers, HttpException, HttpStatus, Post, Res,} from '@nestjs/common';
 import {AuthService} from "@app/routes/auth";
 import {Response} from "express";
 import {RegisterUserDTO, UserLoginDTO} from '../users/dto';
 import {Exceptions} from "@app/lib";
-import {AuthGuard as PassportGuard} from '@nestjs/passport';
+import {GoogleDTO} from '../users/dto/dto';
 
 @Controller('auth')
 export class AuthController {
@@ -57,11 +45,19 @@ export class AuthController {
         res.end()
     }
 
-    @Get('/google')
-    @UseGuards(PassportGuard('google'))
-    googleAuthRedirect(@Req() req) {
-        return {
-            data: req.user
-        }
+    @Post('/registration/google')
+    async registrationByGoogle(@Body() {jwt}: GoogleDTO, @Res({passthrough: true}) res: Response) {
+        const tokenData = await this.authService.signupWithGoogle(jwt)
+        console.log('controller - tokenData ')
+        console.log(tokenData)
+        res.cookie('AUTH_TOKEN', tokenData.token)
+        return tokenData
+    }
+
+    @Post('/login/google')
+    async loginByGoogle(@Body() {jwt}: GoogleDTO, @Res({passthrough: true}) res: Response) {
+        const tokenData = await this.authService.loginWithGoogle(jwt)
+        res.cookie('AUTH_TOKEN', tokenData.token)
+        return tokenData
     }
 }

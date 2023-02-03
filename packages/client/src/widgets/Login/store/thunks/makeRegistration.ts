@@ -10,12 +10,28 @@ export const makeRegistration = createThunk(
     async (data: SignupWithRoles, {dispatch, rejectWithValue}) => {
             const response = await LoginApi.registerUser(data)
 
-            if (isError(response)) return rejectWithValue(Exceptions.USER_ALREADY_EXISTS)
+        if (isError(response)) return rejectWithValue(Exceptions.USER_ALREADY_EXISTS)
 
-            const {token} = response.data
+        const {token} = response.data
 
-            const {data: user} = await LoginApi.getMe(token)
+        const {data: user} = await LoginApi.getMe(token)
 
-            dispatch(setUser(user))
+        dispatch(setUser(user))
+    }
+)
+
+
+export const registerByGoogle = createThunk(
+    'users/MAKE_REGISTRATION_BY_GOOGLE',
+    async (google_sub: string, {dispatch, rejectWithValue}) => {
+        const response = await LoginApi.registerUserByGoogle(google_sub)
+
+        if (isError(response)) return rejectWithValue(Exceptions.REGISTRATION_FAILED)
+
+        const {token} = response.data
+
+        const {data: user} = await LoginApi.getMe(token)
+
+        dispatch(setUser(user))
     }
 )

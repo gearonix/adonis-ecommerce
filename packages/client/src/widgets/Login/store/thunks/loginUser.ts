@@ -11,12 +11,27 @@ export const loginUser = createThunk(
             const response = await LoginApi.loginUser(formValues)
 
             if (isError(response)) return rejectWithValue(Exceptions.INCORRECT_PASSWORD)
-            const {token} = response.data
+        const {token} = response.data
 
 
-            const {data: user} = await LoginApi.getMe(token)
+        const {data: user} = await LoginApi.getMe(token)
 
-            dispatch(setUser(user))
+        dispatch(setUser(user))
 
+    }
+)
+
+
+export const loginByGoogle = createThunk(
+    'users/LOGIN_BY_GOOGLE',
+    async (jwt: string, {dispatch, rejectWithValue}) => {
+        const response = await LoginApi.loginUserByGoogle(jwt)
+
+        if (isError(response)) return rejectWithValue(Exceptions.LOGIN_FAILED)
+        const {token} = response.data
+
+        const {data: user} = await LoginApi.getMe(token)
+
+        dispatch(setUser(user))
     }
 )

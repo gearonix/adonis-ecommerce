@@ -6,6 +6,7 @@ import {Exceptions} from '@app/lib';
 import {RegisterUserDTO, UserLoginDTO} from '../users/dto';
 import {Request} from "express";
 import {REQUEST} from '@nestjs/core';
+import {GoogleData} from "@app/types/others";
 
 @Injectable({scope: Scope.REQUEST})
 export class AuthService {
@@ -33,8 +34,27 @@ export class AuthService {
         return this.generateToken(user_id)
     }
 
+    async signupWithGoogle(jwt: string) {
+        const googleData = await this.jwtService.decode(jwt);
+        console.log('jwt: ')
+        console.log(jwt)
+        const user = this.usersService.convertGoogleData(googleData as GoogleData)
+        console.log('user:')
+        console.log(user)
+        return await this.registration(user)
+    }
+
+    async loginWithGoogle(jwt: string) {
+        const googleData = await this.jwtService.decode(jwt);
+        const {user_id} = await this.usersService.getIdByGoogleSub(googleData.sub)
+        if (!user_id) {
+            throw new HttpException(Exceptions.USER_NOT_EXIST, HttpStatus.BAD_REQUEST)
+        }
+        return await this.generateToken(user_id)
+    }
+
     async authByCookie() {
-        const {AUTH_TOKEN} = this.request.cookies
+        const AUTH_TOKEN = this.request?.cookies?.AUTH_TOKEN
         if (!AUTH_TOKEN) {
             throw new HttpException(Exceptions.NO_COOKIE, HttpStatus.NO_CONTENT)
         }
