@@ -2,11 +2,12 @@ import {HttpException, HttpStatus, Inject, Injectable, Scope} from '@nestjs/comm
 import {JwtService} from '@nestjs/jwt';
 import {UsersService} from "@app/routes/users";
 import * as bcrypt from 'bcryptjs'
-import {Exceptions} from '@app/lib';
+import {Exceptions, Roles} from '@app/lib';
 import {RegisterUserDTO, UserLoginDTO} from '../users/dto';
 import {Request} from "express";
 import {REQUEST} from '@nestjs/core';
 import {GoogleData} from "@app/types/others";
+import {GoogleDTO} from "@app/routes/users/dto/dto";
 
 @Injectable({scope: Scope.REQUEST})
 export class AuthService {
@@ -34,23 +35,19 @@ export class AuthService {
         return this.generateToken(user_id)
     }
 
-    async signupWithGoogle(jwt: string) {
+    async signupWithGoogle({jwt, role}: GoogleDTO) {
         const googleData = await this.jwtService.decode(jwt);
-        console.log('jwt: ')
-        console.log(jwt)
-        const user = this.usersService.convertGoogleData(googleData as GoogleData)
-        console.log('user:')
-        console.log(user)
+        const user = this.usersService.convertGoogleData(googleData as GoogleData, role)
         return await this.registration(user)
     }
 
     async loginWithGoogle(jwt: string) {
         const googleData = await this.jwtService.decode(jwt);
-        const {user_id} = await this.usersService.getIdByGoogleSub(googleData.sub)
-        if (!user_id) {
-            throw new HttpException(Exceptions.USER_NOT_EXIST, HttpStatus.BAD_REQUEST)
+        const user = await this.usersService.getIdByGoogleSub(googleData.sub)
+        if (!user) {
+            return await this.signupWithGoogle({jwt, role: Roles.CUSTOMER})
         }
-        return await this.generateToken(user_id)
+        return await this.generateToken(user.user_id)
     }
 
     async authByCookie() {

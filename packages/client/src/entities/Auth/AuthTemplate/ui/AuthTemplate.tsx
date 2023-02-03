@@ -2,11 +2,11 @@ import {FC} from "react";
 import s from "./style.module.scss";
 import Link from "next/link";
 import {getUIText} from '../helpers';
-import {RegTemplateProps} from "../types";
-import {FcGoogle} from "icons";
+import {AuthTemplateProps} from "../types";
 import cn from "classnames";
+import GoogleButton from "widgets/Login/ui/GoogleButton";
 
-const RegTemplate: FC<RegTemplateProps> = ({children, mode, submit}) => {
+const RegTemplate: FC<AuthTemplateProps> = ({children, mode, submit, role}) => {
     const {title, linkHref, linkText, blueLinkText} = getUIText(mode)
 
     return <form className={s.login_form}>
@@ -15,9 +15,7 @@ const RegTemplate: FC<RegTemplateProps> = ({children, mode, submit}) => {
             {children}
             <button className={cn('primary_button', s.login_button)} onClick={submit}>{title}</button>
             <div className={s.grey_line}></div>
-            <button className={cn('outlined_button', s.with_google)}><FcGoogle/>
-                Continue with google
-            </button>
+            <GoogleButton mode={mode} role={role}/>
             <h4 className={s.account_link}>
                 {linkText} <Link className="hover_link" href={linkHref}>  {blueLinkText} </Link></h4>
         </div>

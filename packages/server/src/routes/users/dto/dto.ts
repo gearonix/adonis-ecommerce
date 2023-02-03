@@ -14,11 +14,13 @@ export class RegisterUserDTO extends UserLoginDTO {
     readonly role: Roles
 }
 
+export class GoogleRegisterDTO extends RegisterUserDTO {
+    readonly avatar: string
+}
 
 export class GoogleDTO {
     readonly jwt: string
+    readonly role: Roles
 }
 
-export class LoginByGoogleDTO {
-    readonly google_sub: string
-}
+

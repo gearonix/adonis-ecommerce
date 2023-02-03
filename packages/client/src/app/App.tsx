@@ -5,7 +5,7 @@ import AuthGuard from './providers/AuthGuard'
 import AsyncAuthorization from "app/providers/AsyncAuthorization";
 import wrapper from './redux/store';
 import {GoogleOAuthProvider} from '@react-oauth/google';
-
+//TODO: remove this
 const googleClientId = '329001787710-gs0jm4icnclbjsn3k40a9eu84ikiltca.apps.googleusercontent.com'
 
 

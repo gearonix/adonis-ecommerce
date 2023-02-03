@@ -8,6 +8,7 @@ import {customerSchema} from "../lib/formSchemes";
 import {useSubmitForm} from "../lib/hooks";
 import {Roles} from 'shared/types/globals';
 import {createFieldValues} from "../lib/helpers";
+import GoogleButton from './GoogleButton'
 
 //TODO: improve imports
 const CustomerForm: FC = () => {
@@ -16,7 +17,8 @@ const CustomerForm: FC = () => {
     const reg = createFieldValues(form)
 
 
-    return <AuthTemplate mode={"signup"} submit={form.handleSubmit(onSubmit)}>
+    return <AuthTemplate mode={"signup"} submit={form.handleSubmit(onSubmit)} GoogleButton={GoogleButton}
+                         role={Roles.CUSTOMER}>
         <HeadField title={'Email'} values={reg('email')}/>
         <HeadField title={'Password'} isPassword values={reg('password')}/>
         <HeadField title={'Repeat password'} isPassword values={reg('repeatPassword')}/>

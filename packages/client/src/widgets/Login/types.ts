@@ -19,3 +19,12 @@ export interface SignupWithRoles extends SignupForm {
 export type Forms = LoginForm | SignupForm
 
 
+export interface GoogleButtonProps {
+    mode: 'signup' | 'login',
+    role?: Roles
+}
+
+export interface RegisterByGoogle {
+    jwt: string,
+    role: Roles
+}

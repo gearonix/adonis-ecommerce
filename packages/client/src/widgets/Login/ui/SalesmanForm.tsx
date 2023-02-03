@@ -15,13 +15,13 @@ const SalesmanForm: FC = () => {
     const onSubmit = useSubmitForm(form.setError, Roles.SALESMAN)
     const reg = createFieldValues(form)
 
-    return <AuthTemplate mode={'signup'} submit={form.handleSubmit(onSubmit)}>
+    return <AuthTemplate mode={'signup'} submit={form.handleSubmit(onSubmit)}
+                         GoogleButton={GoogleButton} role={Roles.SALESMAN}>
         <HeadField title={'Name'} values={reg('first_name')}/>
         <HeadField title={'Surname'} values={reg('last_name')}/>
         <HeadField title={'Email'} values={reg('email')}/>
         <HeadField title={'Password'} isPassword values={reg('password')}/>
         <HeadField title={'Repeat password'} isPassword values={reg('repeatPassword')}/>
-        <GoogleButton mode={'signup'}/>
     </AuthTemplate>
 }
 

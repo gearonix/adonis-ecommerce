@@ -1,5 +1,5 @@
 import {createThunk} from "shared/types/redux";
-import {SignupWithRoles} from "widgets/Login/types";
+import {RegisterByGoogle, SignupWithRoles} from "widgets/Login/types";
 import LoginApi from "widgets/Login/authApi";
 import {setUser} from "widgets/Profile/store/userReducer";
 import {isError} from "shared/helpers/helpers";
@@ -23,8 +23,8 @@ export const makeRegistration = createThunk(
 
 export const registerByGoogle = createThunk(
     'users/MAKE_REGISTRATION_BY_GOOGLE',
-    async (google_sub: string, {dispatch, rejectWithValue}) => {
-        const response = await LoginApi.registerUserByGoogle(google_sub)
+    async (data: RegisterByGoogle, {dispatch, rejectWithValue}) => {
+        const response = await LoginApi.registerUserByGoogle(data)
 
         if (isError(response)) return rejectWithValue(Exceptions.REGISTRATION_FAILED)
 

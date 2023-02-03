@@ -46,10 +46,8 @@ export class AuthController {
     }
 
     @Post('/registration/google')
-    async registrationByGoogle(@Body() {jwt}: GoogleDTO, @Res({passthrough: true}) res: Response) {
-        const tokenData = await this.authService.signupWithGoogle(jwt)
-        console.log('controller - tokenData ')
-        console.log(tokenData)
+    async registrationByGoogle(@Body() {jwt, role}: GoogleDTO, @Res({passthrough: true}) res: Response) {
+        const tokenData = await this.authService.signupWithGoogle({jwt, role})
         res.cookie('AUTH_TOKEN', tokenData.token)
         return tokenData
     }

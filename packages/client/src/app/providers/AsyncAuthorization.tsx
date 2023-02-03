@@ -12,10 +12,6 @@ const AsyncAuthorization: FC<{ children: ReactNode }> = ({children}) => {
         dispatch(getMe()).then(() => setIsLoaded(true))
     }, [])
 
-    const responseGoogle = (response: any) => {
-        console.log(response);
-    }
-
     return <>
         {isLoaded ? children : <Preloader/>}
 

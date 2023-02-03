@@ -6,6 +6,7 @@ import {RegisterUserDTO} from './dto';
 import {GoogleData} from "@app/types/others";
 import {Roles} from "@app/types/models";
 import {generateId} from "@app/lib/helpers";
+import {GoogleRegisterDTO} from './dto/dto';
 
 //TODO: delete return-await
 @Injectable()
@@ -31,18 +32,20 @@ export class UsersService {
         return await this.users.findOneBy({user_id})
     }
 
-    convertGoogleData({email, family_name, given_name, sub}: GoogleData): RegisterUserDTO {
+    convertGoogleData(googleData: GoogleData, role: Roles): GoogleRegisterDTO {
+        const {given_name, sub, family_name, email, picture} = googleData
         return {
             email,
             first_name: given_name,
             last_name: family_name,
             google_sub: sub,
             password: `google_generated__${generateId()}`,
-            role: Roles.SALESMAN
+            role,
+            avatar: picture
         }
     }
 
-    async getIdByGoogleSub(google_sub: string) {
-        return await this.users.findOneBy({google_sub})
+    async getIdByGoogleSub(google_sub: string): Promise<UsersModel> {
+        return this.users.findOneBy({google_sub})
     }
 }
