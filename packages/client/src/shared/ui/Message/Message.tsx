@@ -16,11 +16,9 @@ export const Message: FC<MessageProps> = ({isMine = false, image, message}) => {
                        type={'opacityHeight'} param={height}>
         {image && <ImageModal isOpen={isOpened} handleOpen={openModal} image={image}/>}
         <div className={s.wrapper} ref={bind}>
-            {image && <div className={s.image_wrapper} onClick={() => openModal(true)}>
-                <WithSpring>
-                    <NextImage src={image}/>
-                </WithSpring>
-            </div>
+            {image && <WithSpring className={s.image_wrapper} onClick={() => openModal(true)}>
+                <NextImage src={image}/>
+            </WithSpring>
             }
             <div className={s.title_wrapper}>
                 <h4 className={s.title}>{message}</h4>

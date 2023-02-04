@@ -18,6 +18,7 @@ export const HeadField: FC<MuiLoginFieldProps> = ({title, isPassword, readOnly =
             error={!!error}
             sx={{height: 40, marginTop: '10px'}}
             type={isPassword && showPassword ? 'password' : 'text'}
+            autoComplete={'on'}
             endAdornment={
                 isPassword ?
                     <InputAdornment position="end">

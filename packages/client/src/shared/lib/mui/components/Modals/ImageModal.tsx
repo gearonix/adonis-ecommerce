@@ -22,8 +22,7 @@ export const ImageModal: FC<ModalProps> = ({isOpen, handleOpen, image}) => {
         }}
     >
         <Fade in={isOpen} timeout={500}>
-            <Image src={image} alt={''} layout='fill'
-                   objectFit='contain'/>
+            <Image src={image} alt={''} fill/>
         </Fade>
     </Modal>
 }

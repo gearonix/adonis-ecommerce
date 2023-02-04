@@ -14,3 +14,4 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({color = 'prim
     </button>
 })
 
+Button.displayName = 'Button'

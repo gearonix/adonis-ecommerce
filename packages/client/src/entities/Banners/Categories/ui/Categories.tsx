@@ -19,7 +19,7 @@ const Categories: FC = () => {
                         <Image width={44} height={44} src={'/avatar.jpg'} alt={'Electronic'}
                                priority={false}/>
                         <div className={s.user_title}>Hi user <br/>
-                            let's get started
+                            let&apos;s get started
                         </div>
                     </div>
                 </div>

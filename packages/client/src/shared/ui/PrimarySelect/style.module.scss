@@ -1,4 +1,4 @@
-@use 'shared/css/mixins' as *;
+@use 'shared/css/mixins.scss' as *;
 
 .primary_select {
   border: 2px solid $blue;

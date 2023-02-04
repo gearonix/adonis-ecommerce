@@ -1,14 +1,13 @@
-import {Injectable} from '@nestjs/common';
-import {InjectRepository} from "@nestjs/typeorm";
+import {Injectable} from '@nestjs/common'
+import {InjectRepository} from '@nestjs/typeorm'
 import {UsersModel} from '@app/models'
-import {Repository} from 'typeorm';
-import {RegisterUserDTO} from './dto';
-import {GoogleData} from "@app/types/others";
-import {Roles} from "@app/types/models";
-import {generateId} from "@app/lib/helpers";
-import {GoogleRegisterDTO} from './dto/dto';
+import {Repository} from 'typeorm'
+import {RegisterUserDTO} from './dto'
+import {GoogleData} from '@app/types/others'
+import {Roles} from '@app/types/models'
+import {generateId} from '@app/lib/helpers'
+import {GoogleRegisterDTO} from './dto/dto'
 
-//TODO: delete return-await
 @Injectable()
 export class UsersService {
     constructor(
@@ -20,7 +19,7 @@ export class UsersService {
     async getIdAndPasswordByEmail(email: string) {
         return await this.users.findOne({
             select: ['password', 'user_id'],
-            where: {email}
+            where: {email},
         })
     }
 
@@ -41,7 +40,7 @@ export class UsersService {
             google_sub: sub,
             password: `google_generated__${generateId()}`,
             role,
-            avatar: picture
+            avatar: picture,
         }
     }
 

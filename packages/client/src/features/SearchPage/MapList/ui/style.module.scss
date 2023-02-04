@@ -1,4 +1,4 @@
-@use 'shared/css/mixins' as *;
+@use 'src/shared/css/mixins' as *;
 
 .recommended_items {
   @include size(80%);

@@ -1,4 +1,4 @@
-@use 'shared/css/mixins' as *;
+@use 'shared/css/mixins.scss' as *;
 
 .footer {
   @include size(100%, 324px);
@@ -24,6 +24,10 @@
         margin-top: 18px;
         margin-bottom: 12px;
         width: 60%;
+      }
+
+      .brand_logo {
+        @include imageWrapper(175px, 70px);
       }
 
       .icon_block {

@@ -1,4 +1,4 @@
-@use 'shared/css/mixins' as *;
+@use 'shared/css/mixins.scss' as *;
 
 .items_block {
   @include size(calc(100% + 38px), 1430px);

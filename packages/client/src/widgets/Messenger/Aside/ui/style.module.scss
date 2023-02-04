@@ -1,4 +1,4 @@
-@use 'shared/css/mixins' as *;
+@use 'shared/css/mixins.scss' as *;
 
 .messenger_aside {
   @include size(22%, 720px);

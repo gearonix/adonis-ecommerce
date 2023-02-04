@@ -1,7 +1,7 @@
-import {Exceptions} from '@app/lib/index';
+import {Exceptions} from '@app/lib/index'
 import {CanActivate, ExecutionContext, Injectable, UnauthorizedException} from '@nestjs/common'
 import {JwtService} from '@nestjs/jwt'
-import {Observable} from "rxjs";
+import {Observable} from 'rxjs'
 
 @Injectable()
 export class AuthGuard implements CanActivate {

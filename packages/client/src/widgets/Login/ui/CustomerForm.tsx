@@ -10,7 +10,6 @@ import {Roles} from 'shared/types/globals';
 import {createFieldValues} from "../lib/helpers";
 import GoogleButton from './GoogleButton'
 
-//TODO: improve imports
 const CustomerForm: FC = () => {
     const form = useForm<SignupForm>({resolver: yupResolver(customerSchema)});
     const onSubmit = useSubmitForm(form.setError, Roles.CUSTOMER)

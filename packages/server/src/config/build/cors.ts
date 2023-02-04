@@ -1,8 +1,7 @@
-import {appConfig} from "@app/config/build/config";
-import {CorsConfig} from "@app/config/types";
+import {CorsConfig} from '@app/config/types'
 
 export const corsConfig: CorsConfig = {
-    origin: appConfig.clientURL,
+    origin: process.env.CLIENT_URL || 'http://localhost:3000',
     methods: ['POST', 'PUT', 'DELETE', 'GET'],
-    credentials: true
+    credentials: true,
 }

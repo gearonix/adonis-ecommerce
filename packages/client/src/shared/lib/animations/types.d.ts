@@ -1,4 +1,4 @@
-import {MutableRefObject, ReactNode} from "react";
+import {CSSProperties, MutableRefObject, ReactNode} from "react";
 import callbackSprings from "./config/callbackSprings";
 import springs from "shared/lib/animations/config/springs";
 
@@ -16,6 +16,8 @@ export interface WithSpringProps {
     children: ReactNode,
     type?: keyof typeof springs,
     param?: string | number,
+    style?: CSSProperties,
+    onClick?: () => void
 }
 
 

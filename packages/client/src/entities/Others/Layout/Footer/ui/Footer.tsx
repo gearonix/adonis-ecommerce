@@ -1,15 +1,15 @@
 import {FC} from 'react';
 import s from './style.module.scss'
-import Image from "next/image";
 import {AiOutlineGithub} from "icons";
-import {HoverLink} from 'shared/ui';
+import {HoverLink, NextImage} from 'shared/ui';
 
 const Footer: FC = () => {
     return <footer className={s.footer}>
         <div className={s.footer_block}>
             <div className={s.brand_block}>
-                <Image src={'/logo.svg'}
-                       alt={'Adonis'} width={175} height={70} priority={false}/>
+                <div className={s.brand_logo}>
+                    <NextImage src={'/logo.svg'}/>
+                </div>
                 <p className={s.brand_text}>
                     Best information about the company gies here
                     but now lorem ipsum is

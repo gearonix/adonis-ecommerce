@@ -9,7 +9,6 @@ import {useSubmitForm} from '../lib/hooks';
 import {createFieldValues} from "../lib/helpers";
 import GoogleButton from "./GoogleButton";
 
-//TODO: add server error handling
 const LoginForm: FC = () => {
     const form = useForm<LoginForm>({resolver: yupResolver(loginSchema)});
     const onSubmit = useSubmitForm(form.setError);

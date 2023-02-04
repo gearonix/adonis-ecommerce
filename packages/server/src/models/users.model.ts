@@ -1,5 +1,5 @@
-import {Column, CreateDateColumn, Entity, PrimaryGeneratedColumn} from 'typeorm';
-import {Lengths, Roles} from "@app/lib";
+import {Column, CreateDateColumn, Entity, PrimaryGeneratedColumn} from 'typeorm'
+import {Lengths, Roles} from '@app/lib'
 
 @Entity('users')
 export class UsersModel {

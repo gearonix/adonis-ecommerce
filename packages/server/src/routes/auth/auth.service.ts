@@ -1,20 +1,20 @@
-import {HttpException, HttpStatus, Inject, Injectable, Scope} from '@nestjs/common';
-import {JwtService} from '@nestjs/jwt';
-import {UsersService} from "@app/routes/users";
+import {HttpException, HttpStatus, Inject, Injectable, Scope} from '@nestjs/common'
+import {JwtService} from '@nestjs/jwt'
+import {UsersService} from '@app/routes/users'
 import * as bcrypt from 'bcryptjs'
-import {Exceptions, Roles} from '@app/lib';
-import {RegisterUserDTO, UserLoginDTO} from '../users/dto';
-import {Request} from "express";
-import {REQUEST} from '@nestjs/core';
-import {GoogleData} from "@app/types/others";
-import {GoogleDTO} from "@app/routes/users/dto/dto";
+import {Exceptions, Roles} from '@app/lib'
+import {RegisterUserDTO, UserLoginDTO} from '../users/dto'
+import {Request} from 'express'
+import {REQUEST} from '@nestjs/core'
+import {GoogleData} from '@app/types/others'
+import {GoogleDTO} from '@app/routes/users/dto/dto'
 
 @Injectable({scope: Scope.REQUEST})
 export class AuthService {
     constructor(
         @Inject(REQUEST) private request: Request,
         private usersService: UsersService,
-        private jwtService: JwtService
+        private jwtService: JwtService,
     ) {
     }
 
@@ -36,13 +36,13 @@ export class AuthService {
     }
 
     async signupWithGoogle({jwt, role}: GoogleDTO) {
-        const googleData = await this.jwtService.decode(jwt);
+        const googleData = await this.jwtService.decode(jwt)
         const user = this.usersService.convertGoogleData(googleData as GoogleData, role)
         return await this.registration(user)
     }
 
     async loginWithGoogle(jwt: string) {
-        const googleData = await this.jwtService.decode(jwt);
+        const googleData = await this.jwtService.decode(jwt)
         const user = await this.usersService.getIdByGoogleSub(googleData.sub)
         if (!user) {
             return await this.signupWithGoogle({jwt, role: Roles.CUSTOMER})
@@ -87,11 +87,9 @@ export class AuthService {
         const passwordEquals = await bcrypt.compare(userDto.password, password)
 
         if (passwordEquals) {
-            return user_id;
+            return user_id
         }
 
         throw new HttpException(Exceptions.INCORRECT_PASSWORD, HttpStatus.ACCEPTED)
     }
-
-
 }

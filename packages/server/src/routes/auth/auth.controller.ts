@@ -1,9 +1,9 @@
-import {Body, Controller, Delete, Get, Headers, HttpException, HttpStatus, Post, Res,} from '@nestjs/common';
-import {AuthService} from "@app/routes/auth";
-import {Response} from "express";
-import {RegisterUserDTO, UserLoginDTO} from '../users/dto';
-import {Exceptions} from "@app/lib";
-import {GoogleDTO} from '../users/dto/dto';
+import {Body, Controller, Delete, Get, Headers, HttpException, HttpStatus, Post, Res} from '@nestjs/common'
+import {AuthService} from '@app/routes/auth'
+import {Response} from 'express'
+import {RegisterUserDTO, UserLoginDTO} from '../users/dto'
+import {Exceptions} from '@app/lib'
+import {GoogleDTO} from '../users/dto/dto'
 
 @Controller('auth')
 export class AuthController {

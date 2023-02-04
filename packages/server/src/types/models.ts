@@ -5,10 +5,10 @@ export enum Lengths {
     ID = 8,
     TINYTEXT = 10,
     HASH = 100,
-    TOKEN = 300
+    TOKEN = 300,
 }
 
 export enum Roles {
     SALESMAN = 'SALESMAN',
-    CUSTOMER = 'CUSTOMER'
+    CUSTOMER = 'CUSTOMER',
 }
