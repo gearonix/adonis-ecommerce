@@ -1,6 +1,6 @@
 import {FC} from 'react';
-import s from './style.module.scss'
-import {NextImage} from "shared/ui";
+import s from './style.module.scss';
+import {NextImage} from 'shared/ui';
 
 const UserInfo: FC = () => {
     return <div className={s.user_info_wrapper}>
@@ -11,7 +11,7 @@ const UserInfo: FC = () => {
             <h3>Test User</h3>
             <span>offline</span>
         </div>
-    </div>
-}
+    </div>;
+};
 
-export default UserInfo
+export default UserInfo;

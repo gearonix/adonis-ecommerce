@@ -1,5 +1,5 @@
-import {Autocomplete, TextField} from "@mui/material";
-import {FC} from "react";
+import {Autocomplete, TextField} from '@mui/material';
+import {FC} from 'react';
 
 export const MuiAutoComplete: FC = () => {
     return <Autocomplete
@@ -12,5 +12,5 @@ export const MuiAutoComplete: FC = () => {
             <TextField {...params} label="Size small" placeholder="Favorites"/>
         )}
         sx={{width: '90%'}}
-    />
-}
+    />;
+};

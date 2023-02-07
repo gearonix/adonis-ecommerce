@@ -1,1 +1,1 @@
-export {default as AuthTemplate} from './ui/AuthTemplate'
+export {default as AuthTemplate} from './ui/AuthTemplate';

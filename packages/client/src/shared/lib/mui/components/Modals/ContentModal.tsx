@@ -1,6 +1,6 @@
-import {FC} from "react";
-import {Backdrop, Box, Fade, Modal} from "@mui/material";
-import {ContentModalProps} from '../../types'
+import {FC} from 'react';
+import {Box, Fade, Modal} from '@mui/material';
+import {ContentModalProps} from '../../types';
 
 const ModalStyles = {
     position: 'absolute' as 'absolute',
@@ -25,10 +25,6 @@ export const ContentModal: FC<ContentModalProps> = ({isOpened, close, children})
                 open={isOpened}
                 onClose={close}
                 closeAfterTransition
-                BackdropComponent={Backdrop}
-                BackdropProps={{
-                    timeout: 500,
-                }}
             >
                 <Fade in={isOpened}>
                     <Box sx={ModalStyles}>
@@ -38,4 +34,4 @@ export const ContentModal: FC<ContentModalProps> = ({isOpened, close, children})
             </Modal>
         </div>
     );
-}
+};

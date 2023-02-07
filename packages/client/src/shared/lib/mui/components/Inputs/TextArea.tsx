@@ -1,8 +1,8 @@
-import {FormControl, TextField, Typography} from "@mui/material";
+import {FormControl, TextField, Typography} from '@mui/material';
 
 export const TextArea = () => {
     return <FormControl variant="outlined" fullWidth size={'small'} sx={{
-        marginBottom: '26px'
+        marginBottom: '26px',
     }}>
         <Typography>Description</Typography>
         <TextField
@@ -13,5 +13,5 @@ export const TextArea = () => {
             defaultValue="Default Value"
             sx={{marginTop: '10px'}}
         />
-    </FormControl>
-}
+    </FormControl>;
+};

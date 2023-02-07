@@ -1,9 +1,9 @@
 import {FC} from 'react';
-import s from './style.module.scss'
-import Link from "next/link";
-import {AiOutlineApi, AiOutlineHome, GiTopHat} from "icons";
-import {Button} from "shared/ui";
-import {Paths} from "shared/types/globals";
+import s from './style.module.scss';
+import Link from 'next/link';
+import {AiOutlineApi, AiOutlineHome, GiTopHat} from 'icons';
+import {Button} from 'shared/ui';
+import {Paths} from 'shared/types/globals';
 
 const SignupChoice: FC = () => {
     return <div className={s.signup_main}>
@@ -40,8 +40,7 @@ const SignupChoice: FC = () => {
                 <span>Log in</span>
             </Link></p>
         </div>
-    </div>
+    </div>;
+};
 
-}
-
-export default SignupChoice
+export default SignupChoice;

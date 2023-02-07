@@ -78,8 +78,7 @@
       }
 
       button {
-        margin: 0 auto;
-        margin-top: 10px;
+        margin: 10px auto 0;
 
         &[class*="outlined_button"] {
           color: $blue;

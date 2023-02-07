@@ -1,2 +1,2 @@
 export {Lengths, Roles} from '../types/models'
-export {Exceptions} from '../types/exceptions'
+export {ServerExceptions} from '../types/exceptions/serverExceptions'

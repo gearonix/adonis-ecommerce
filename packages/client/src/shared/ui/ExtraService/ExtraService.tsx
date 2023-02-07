@@ -1,6 +1,6 @@
 import {FC} from 'react';
-import s from './style.module.scss'
-import {AiOutlineSearch} from "icons";
+import s from './style.module.scss';
+import {AiOutlineSearch} from 'icons';
 
 export const ExtraService: FC = () => {
     return <div className={s.item}>
@@ -10,6 +10,6 @@ export const ExtraService: FC = () => {
             </div>
         </div>
         <h3 className={s.item_title}>Source from Industry Hubs</h3>
-    </div>
-}
+    </div>;
+};
 

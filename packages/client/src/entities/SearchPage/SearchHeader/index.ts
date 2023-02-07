@@ -1,1 +1,1 @@
-export {default as SearchHeaderSkeleton} from './ui/SearchHeader'
+export {default as SearchHeaderSkeleton} from './ui/SearchHeader';

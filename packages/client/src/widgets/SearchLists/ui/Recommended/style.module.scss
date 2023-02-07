@@ -19,9 +19,6 @@
       font-weight: bold;
     }
 
-    .source_now {
-      width: 119px;
-    }
   }
 
   .recommended_items {
@@ -34,19 +31,6 @@
       position: relative;
       @include itemHover;
 
-      .item_title {
-        margin-bottom: 9px;
-      }
-
-      .item_description {
-        @include inlineStyles(13px, $light-grey);
-      }
-
-      .item_image {
-        position: absolute;
-        top: 26px;
-        right: 0;
-      }
     }
   }
 }

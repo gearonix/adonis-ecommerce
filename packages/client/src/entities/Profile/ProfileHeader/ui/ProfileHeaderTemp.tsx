@@ -1,7 +1,7 @@
 import {FC} from 'react';
-import s from './style.module.scss'
-import {NextImage} from "shared/ui";
-import {ProfileHeaderTempP} from "../types";
+import s from './style.module.scss';
+import {NextImage} from 'shared/ui';
+import {ProfileHeaderTempP} from '../types';
 
 const ProfileHeaderTemp: FC<ProfileHeaderTempP> = ({ChangeBackground, OpenProfileEdit}) => {
     return <div className={s.profile_header}>
@@ -21,7 +21,7 @@ const ProfileHeaderTemp: FC<ProfileHeaderTempP> = ({ChangeBackground, OpenProfil
                 {OpenProfileEdit}
             </div>
         </div>
-    </div>
-}
+    </div>;
+};
 
-export default ProfileHeaderTemp
+export default ProfileHeaderTemp;

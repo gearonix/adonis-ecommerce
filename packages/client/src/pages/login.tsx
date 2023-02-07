@@ -1,16 +1,15 @@
-import Head from "next/head";
+import Head from 'next/head';
 import {LoginForm} from 'widgets/Login';
-import {FC} from "react";
-import {WithSpring} from "shared/lib/animations";
+import {FC} from 'react';
+import {WithSpring} from 'shared/lib/animations';
 
 const Login: FC = () => {
-
     return <WithSpring>
         <Head>
             <title>Adonis - Login</title>
         </Head>
         <LoginForm/>
-    </WithSpring>
-}
+    </WithSpring>;
+};
 
-export default Login
+export default Login;

@@ -18,76 +18,8 @@
       display: flex;
       border-bottom: $br $light;
 
-      .image_wrapper {
-        position: relative;
-        @include size(87px, 87px);
-        @include itemBorder;
-        margin: 0;
-        cursor: pointer;
-      }
-
-      .item_info {
-        @include size(82%);
-        margin-left: 10px;
-
-        p {
-          color: $light-grey;
-          margin-top: 7px;
-          margin-bottom: 9px;
-          width: 319px;
-        }
-
-        .item_buttons {
-          margin-top: 10px;
-          display: flex;
-
-          .remove_button, .save_button {
-            margin-right: 6px;
-            @include size(91px, 32px);
-            color: $red;
-          }
-
-          .save_button {
-            color: $blue;
-            width: 114px;
-          }
-        }
-
-      }
-
-      .price_block {
-        @include size(10%);
-        @include flex(stretch, flex-end, column);
-
-        h2 {
-          font-weight: bold;
-        }
-
-        .item_price {
-
-        }
-      }
     }
 
-    .cart_buttons {
-      @include size(100%, 50px);
-      @include flex(space-between);
-
-      .back_to_shop {
-        width: 159px;
-
-        svg {
-          margin-right: 9px;
-
-          @include size(15px, 15px);
-        }
-      }
-
-      .remove_all {
-        width: 115px;
-        color: $blue;
-      }
-    }
   }
 
   .checkout_block {

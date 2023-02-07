@@ -5,8 +5,7 @@
   box-shadow: $shadow;
   @include size(16%);
   padding: 20px;
-  margin: 0;
-  margin-left: 20px;
+  margin: 0 0 0 20px;
 
   p {
     margin-top: 0;

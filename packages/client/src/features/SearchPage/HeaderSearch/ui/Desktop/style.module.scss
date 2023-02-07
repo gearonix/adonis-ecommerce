@@ -25,8 +25,7 @@
 .mobile_search {
   position: relative;
   @include size(90%, 40px);
-  margin: 0 auto;
-  margin-bottom: 12px;
+  margin: 0 auto 12px;
 
   input {
     @include size;

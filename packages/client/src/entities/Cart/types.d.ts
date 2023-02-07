@@ -1,4 +1,4 @@
-import {FC, MutableRefObject} from "react";
+import {FC, MutableRefObject} from 'react';
 
 export interface CheckoutProps {
     CheckoutButton: FC

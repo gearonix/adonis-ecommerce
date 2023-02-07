@@ -14,10 +14,8 @@
     border-top: $br $light;
     border-bottom: $br $light;
     width: 70%;
-    margin: 0 auto;
     gap: 25px;
-    margin-top: 20px;
-    margin-bottom: 25px;
+    margin: 20px auto 25px;
 
     .title {
       text-align: left;
@@ -26,34 +24,6 @@
       border-bottom: $br $light;
       padding-bottom: 12px;
       padding-top: 8px;
-    }
-
-    .add_image_block {
-      @include size(50%);
-      height: 100%;
-      padding: 20px;
-
-      button {
-        margin-bottom: 15px;
-        @include size(180px, 40px);
-        @include flex(center, center);
-
-        svg {
-          @include size(19px, 19px);
-          margin-right: 4px;
-        }
-      }
-
-      button:last-child {
-        color: $red;
-      }
-
-      .text {
-        font-size: $xm;
-        margin-bottom: 50px;
-        text-align: center;
-
-      }
     }
 
     .flex, .user_info_block {
@@ -68,10 +38,6 @@
       padding: 10px 0 10px 0;
       border-top: $br $light;
       border-bottom: $br $light;
-    }
-
-    .select_container {
-      @include flex(space-around);
     }
 
     .save_buttons {

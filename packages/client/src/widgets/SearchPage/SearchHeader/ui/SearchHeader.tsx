@@ -1,9 +1,9 @@
 import {FC} from 'react';
-import {SearchHeaderFilters} from 'features/SearchPage/SearchHeaderFilters'
-import {SearchHeaderSkeleton} from "entities/SearchPage/SearchHeader";
+import {SearchHeaderFilters} from 'features/SearchPage/SearchHeaderFilters';
+import {SearchHeaderSkeleton} from 'entities/SearchPage/SearchHeader';
 
 const SearchHeader: FC = () => {
-    return <SearchHeaderSkeleton Filters={SearchHeaderFilters}/>
-}
+    return <SearchHeaderSkeleton Filters={SearchHeaderFilters}/>;
+};
 
-export default SearchHeader
+export default SearchHeader;

@@ -1,4 +1,10 @@
-import {AxiosResponse, HttpStatusCode} from "axios";
+import {AxiosResponse, HttpStatusCode} from 'axios';
 
-export const isError = (response: AxiosResponse<any>) => response.status !== HttpStatusCode.Ok
-    && response.status !== HttpStatusCode.Created
+export const isResponseError = (response: AxiosResponse) => response.status !== HttpStatusCode.Ok &&
+    response.status !== HttpStatusCode.Created;
+
+export const onThunkError = (response: any) => (callback: () => void) => {
+    if (response.meta.requestStatus === 'rejected') {
+        callback()
+    }
+}

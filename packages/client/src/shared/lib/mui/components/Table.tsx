@@ -1,8 +1,8 @@
-import {Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from "@mui/material";
-import {FC} from "react";
+import {Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from '@mui/material';
+import {FC} from 'react';
 
 export const MuiTable: FC = () => {
-    const rows = [{name: 'Item', value: 'Description'}]
+    const rows = [{name: 'Item', value: 'Description'}];
     return (
         <div style={{width: '60%'}}>
             <TableContainer component={Paper}>
@@ -37,4 +37,4 @@ export const MuiTable: FC = () => {
         </div>
 
     );
-}
+};

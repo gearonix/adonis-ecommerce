@@ -1,11 +1,11 @@
-import s from './style.module.scss'
-import {AiOutlineGithub} from 'icons'
-import {NextImage} from "shared/ui";
+import s from './style.module.scss';
+import {AiOutlineGithub} from 'icons';
+import {NextImage} from 'shared/ui';
 
 const About = () => {
     return <div className={s.about}>
         <h1 className={s.title}>About us</h1>
-        <p className={s.text}>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+        <p className={s.text}>Lorem ipsum dolor sit amet, consectetur adipisicing,
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             Ut enim ad minim veniam, quis nostrud exercitation ullamco
             laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
@@ -21,7 +21,7 @@ const About = () => {
         <h4 className={s.link}>
             Some text lalalalalla <span className={'hover_link'}>@ some link</span>
         </h4>
-    </div>
-}
+    </div>;
+};
 
-export default About
+export default About;

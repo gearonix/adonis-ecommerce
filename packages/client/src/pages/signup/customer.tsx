@@ -1,6 +1,6 @@
-import Head from "next/head"
-import {WithSpring} from "shared/lib/animations";
-import {CustomerForm} from "widgets/Login";
+import Head from 'next/head';
+import {WithSpring} from 'shared/lib/animations';
+import {CustomerForm} from 'widgets/Login';
 
 const Customer = () => {
     return <WithSpring>
@@ -9,7 +9,7 @@ const Customer = () => {
         </Head>
         <CustomerForm/>
 
-    </WithSpring>
-}
+    </WithSpring>;
+};
 
 export default Customer;

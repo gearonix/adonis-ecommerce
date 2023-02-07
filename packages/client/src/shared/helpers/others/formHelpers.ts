@@ -1,4 +1,4 @@
-import * as Yup from "yup";
+import * as Yup from 'yup';
 
 export const formErrors = {
     required: (word: string) => `${word} is required`,
@@ -6,7 +6,7 @@ export const formErrors = {
     maxLength: (word: string, chars = 12) => `${word} cannot exceed more than ${chars} characters`,
     dontMatch: (word = 'Passwords') => `${word} do not match`,
     invalidEmail: () => 'Email is not valid',
-}
+};
 
 
 export const createField = (fieldName: string, min = 4, max = 12) => {
@@ -15,9 +15,9 @@ export const createField = (fieldName: string, min = 4, max = 12) => {
         .min(min, formErrors.minLength(fieldName, min))
         .max(max, formErrors.maxLength(fieldName, max))
         .trim();
-}
+};
 
-export const createEmailField = () => createField('Email', 5, 28).email(formErrors.invalidEmail())
+export const createEmailField = () => createField('Email', 5, 28).email(formErrors.invalidEmail());
 
 export const createRepeatPassword = () => createField('Repeat Password', 8, 16)
-    .oneOf([Yup.ref("password")], formErrors.dontMatch())
+    .oneOf([Yup.ref('password')], formErrors.dontMatch());

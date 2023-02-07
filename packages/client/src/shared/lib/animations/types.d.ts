@@ -1,6 +1,6 @@
-import {CSSProperties, MutableRefObject, ReactNode} from "react";
-import callbackSprings from "./config/callbackSprings";
-import springs from "shared/lib/animations/config/springs";
+import {CSSProperties, MutableRefObject, ReactNode} from 'react';
+import callbackSprings from './config/callbackSprings';
+import springs from 'shared/lib/animations/config/springs';
 
 
 export interface CallbackSprings {

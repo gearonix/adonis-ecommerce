@@ -1,4 +1,4 @@
-export enum Exceptions {
+export enum ServerExceptions {
     USER_NOT_EXIST = 'This user does not exist',
     INCORRECT_PASSWORD = 'Incorrect email or password',
     USER_ALREADY_EXISTS = 'User with this email already exists',

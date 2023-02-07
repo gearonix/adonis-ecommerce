@@ -1,5 +1,5 @@
-import {FC} from "react";
-import {ControlsProps} from "shared/lib/mui/types";
+import {FC} from 'react';
+import {ControlsProps} from 'shared/lib/mui/types';
 
 export interface CategoryProps {
     items: string[],

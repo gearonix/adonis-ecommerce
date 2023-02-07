@@ -13,8 +13,7 @@
 
     @include size(85%, 234px);
     @include flex(space-between);
-    margin: 0 auto;
-    margin-bottom: 59px;
+    margin: 0 auto 59px;
 
     .brand_block {
       @include size(25%);
@@ -65,11 +64,6 @@
         }
 
         @include size(20%);
-
-        .grey_link {
-          color: $light-grey;
-          font-weight: normal;
-        }
 
         .link {
           font-weight: bold;

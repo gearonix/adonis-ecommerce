@@ -1,6 +1,6 @@
 import {FC, ReactNode} from 'react';
-import s from './style.module.scss'
-import {NextImage} from "shared/ui";
+import s from './style.module.scss';
+import {NextImage} from 'shared/ui';
 
 const MessengerUser: FC<{ SelectUser: FC<{ children: ReactNode }> }> = ({SelectUser}) => {
     return <SelectUser>
@@ -19,7 +19,7 @@ const MessengerUser: FC<{ SelectUser: FC<{ children: ReactNode }> }> = ({SelectU
                 </div>
             </div>
         </div>
-    </SelectUser>
-}
+    </SelectUser>;
+};
 
-export default MessengerUser
+export default MessengerUser;

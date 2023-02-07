@@ -1,15 +1,15 @@
 import {FC} from 'react';
-import s from './style.module.scss'
-import {WithSpring} from "shared/lib/animations";
-import {useTimeout} from "shared/helpers/hooks";
+import s from './style.module.scss';
+import {WithSpring} from 'shared/lib/animations';
+import {useTimeout} from 'shared/helpers/hooks';
 
 export const Preloader: FC = () => {
-    const showPen = useTimeout()
+    const showPen = useTimeout();
 
     return <div className={s.preloader}>
         {showPen && <PenAnimation/>}
-    </div>
-}
+    </div>;
+};
 
 const PenAnimation = () => {
     return <WithSpring className={s.container}>
@@ -21,5 +21,5 @@ const PenAnimation = () => {
             </div>
         </div>
         <p className={s.text}>Page is Loading... Please Wait</p>
-    </WithSpring>
-}
+    </WithSpring>;
+};

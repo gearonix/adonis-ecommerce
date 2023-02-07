@@ -1,6 +1,6 @@
 import {FC} from 'react';
-import s from './style.module.scss'
-import {AiFillLock, FaTruck, MdMessage} from "icons";
+import s from './style.module.scss';
+import {AiFillLock, FaTruck, MdMessage} from 'icons';
 import {CartIcon} from 'shared/ui';
 
 const CartIcons: FC = () => {
@@ -8,8 +8,8 @@ const CartIcons: FC = () => {
         <CartIcon Icon={AiFillLock}/>
         <CartIcon Icon={MdMessage}/>
         <CartIcon Icon={FaTruck}/>
-    </div>
-}
+    </div>;
+};
 
 
-export default CartIcons
+export default CartIcons;

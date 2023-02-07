@@ -1,15 +1,15 @@
-import {MuiLoginFieldProps} from "../../types";
-import {FC, useState} from "react";
-import {FormControl, FormHelperText, IconButton, InputAdornment, OutlinedInput, Typography} from "@mui/material";
-import {AiFillEye, AiFillEyeInvisible} from "icons";
+import {MuiLoginFieldProps} from '../../types';
+import {FC, useState} from 'react';
+import {FormControl, FormHelperText, IconButton, InputAdornment, OutlinedInput, Typography} from '@mui/material';
+import {AiFillEye, AiFillEyeInvisible} from 'icons';
 
 export const HeadField: FC<MuiLoginFieldProps> = ({title, isPassword, readOnly = false, values}) => {
     const [showPassword, setShowPassword] = useState(true);
 
-    const {error, inputProps} = values
+    const {error, inputProps} = values;
 
     return <FormControl variant="outlined" fullWidth size={'small'} sx={{
-        marginBottom: '26px'
+        marginBottom: '26px',
     }}>
         <Typography>{title}</Typography>
         <OutlinedInput
@@ -30,8 +30,8 @@ export const HeadField: FC<MuiLoginFieldProps> = ({title, isPassword, readOnly =
                         >
                             {!showPassword ? <AiFillEye/> : <AiFillEyeInvisible/>}
                         </IconButton>
-                    </InputAdornment>
-                    : null
+                    </InputAdornment> :
+                    null
             }
             inputProps={inputProps}
             label="Password"
@@ -41,5 +41,5 @@ export const HeadField: FC<MuiLoginFieldProps> = ({title, isPassword, readOnly =
         </FormHelperText>
         }
 
-    </FormControl>
-}
+    </FormControl>;
+};

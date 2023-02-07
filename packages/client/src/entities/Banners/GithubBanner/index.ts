@@ -1,1 +1,1 @@
-export {default as GithubBanner} from './ui/GithubBanner'
+export {default as GithubBanner} from './ui/GithubBanner';

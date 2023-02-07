@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -21,6 +20,7 @@
     "axios": "^1.2.6",
     "classnames": "^2.3.2",
     "eslint": "8.32.0",
+    "eslint-config-google": "^0.14.0",
     "eslint-config-next": "13.1.2",
     "next": "13.1.2",
     "next-redux-wrapper": "^8.1.0",

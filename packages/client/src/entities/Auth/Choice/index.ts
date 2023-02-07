@@ -1,1 +1,1 @@
-export {default as SignupChoice} from './ui/SignupChoice'
+export {default as SignupChoice} from './ui/SignupChoice';

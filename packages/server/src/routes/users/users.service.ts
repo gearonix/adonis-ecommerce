@@ -2,11 +2,10 @@ import {Injectable} from '@nestjs/common'
 import {InjectRepository} from '@nestjs/typeorm'
 import {UsersModel} from '@app/models'
 import {Repository} from 'typeorm'
-import {RegisterUserDTO} from './dto'
-import {GoogleData} from '@app/types/others'
+import {GoogleData, GoogleRegisterDTO} from './dto/googleDTO'
 import {Roles} from '@app/types/models'
 import {generateId} from '@app/lib/helpers'
-import {GoogleRegisterDTO} from './dto/dto'
+import {RegisterUserDTO} from "@app/routes/users/dto/authDTO";
 
 @Injectable()
 export class UsersService {

@@ -1,1 +1,1 @@
-export {formErrors, createField, createEmailField, createRepeatPassword} from './formHelpers'
+export {formErrors, createField, createEmailField, createRepeatPassword} from './formHelpers';

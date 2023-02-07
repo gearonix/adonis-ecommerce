@@ -1,15 +1,15 @@
-import s from "./style.module.scss";
-import {useState} from "react";
-import {NextImage} from "shared/ui";
-import {BsDot, BsThreeDotsVertical, FiHeart, MdMessage} from "icons";
-import {ImageModal} from "mui";
+import s from './style.module.scss';
+import {useState} from 'react';
+import {NextImage} from 'shared/ui';
+import {BsDot, BsThreeDotsVertical, FiHeart, MdMessage} from 'icons';
+import {ImageModal} from 'mui';
 
 const Post = () => {
     return <>
         <PostUI/>
         <Comments/>
-    </>
-}
+    </>;
+};
 
 
 export const Comments = () => {
@@ -17,11 +17,11 @@ export const Comments = () => {
         <PostUI/>
         <PostUI/>
         <h4 className={'hover_link'}>See more comments</h4>
-    </div>
-}
+    </div>;
+};
 
 export const PostUI = () => {
-    const [isModalOpened, openModal] = useState<boolean>(false)
+    const [isModalOpened, openModal] = useState<boolean>(false);
     return <>
         <div className={s.post}>
             <div className={s.user_image}>
@@ -44,8 +44,8 @@ export const PostUI = () => {
                 </div>
             </div>
         </div>
-    </>
-}
+    </>;
+};
 
 
-export default Post
+export default Post;

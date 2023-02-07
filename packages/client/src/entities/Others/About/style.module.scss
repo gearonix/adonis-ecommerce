@@ -2,8 +2,7 @@
 
 .about {
   width: 80%;
-  margin: 0 auto;
-  margin-bottom: 30px;
+  margin: 0 auto 30px;
   @include itemBorder;
   position: relative;
 }
@@ -48,7 +47,6 @@
 
 .image_wrapper {
   @include imageWrapper(30%, 400px);
-  margin: 0 auto;
-  margin-top: 30px;
+  margin: 30px auto 0;
 }
 

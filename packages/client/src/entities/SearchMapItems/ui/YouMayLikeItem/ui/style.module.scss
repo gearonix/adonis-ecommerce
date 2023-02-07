@@ -7,8 +7,7 @@
 
   .image_wrapper {
     @include size(90px, 80px);
-    margin: 0;
-    margin-right: 11px;
+    margin: 0 11px 0 0;
     position: relative;
   }
 

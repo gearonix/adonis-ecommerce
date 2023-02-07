@@ -1,13 +1,6 @@
 @use 'shared/css/mixins.scss' as *;
 
 
-.flex, .user_info_block {
-  @include size;
-  display: flex;
-  width: 100%;
-  gap: 20px;
-}
-
 .add_image_block {
   @include size(50%);
   height: 100%;

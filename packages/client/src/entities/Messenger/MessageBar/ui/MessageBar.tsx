@@ -1,7 +1,7 @@
 import {FC} from 'react';
-import s from './style.module.scss'
-import {AiFillFileAdd} from "icons";
-import {MessageBarProps} from "entities/Messenger/MessageBar/types";
+import s from './style.module.scss';
+import {AiFillFileAdd} from 'icons';
+import {MessageBarProps} from 'entities/Messenger/MessageBar/types';
 
 
 const MessageBar: FC<MessageBarProps> = ({placeholder = 'Message', MessageForm}) => {
@@ -10,8 +10,8 @@ const MessageBar: FC<MessageBarProps> = ({placeholder = 'Message', MessageForm})
             <AiFillFileAdd/>
         </div>
         <MessageForm placeholder={placeholder}/>
-    </article>
-}
+    </article>;
+};
 
 
-export default MessageBar
+export default MessageBar;

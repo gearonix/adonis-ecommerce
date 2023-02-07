@@ -1,7 +1,7 @@
 import {FC} from 'react';
-import s from './style.module.scss'
-import {HeadField, StandardSelect, TextArea} from "mui";
-import {AddProductProps} from "../types";
+import s from './style.module.scss';
+import {HeadField, StandardSelect, TextArea} from 'mui';
+import {AddProductProps} from '../types';
 
 const AddProduct: FC<AddProductProps> = ({submitForm, cancel, ProductImages}) => {
     return <div className={s.add_product_block}>
@@ -25,7 +25,7 @@ const AddProduct: FC<AddProductProps> = ({submitForm, cancel, ProductImages}) =>
                 <button className="outlined_button" onClick={cancel}>Cancel</button>
             </div>
         </div>
-    </div>
-}
+    </div>;
+};
 
-export default AddProduct
+export default AddProduct;

@@ -1,7 +1,7 @@
 import {FC} from 'react';
-import s from './style.module.scss'
-import {AiOutlineCheck, FaShoppingCart, MdMessage} from "icons";
-import {Rating} from "@mui/material";
+import s from './style.module.scss';
+import {AiOutlineCheck, FaShoppingCart, MdMessage} from 'icons';
+import {Rating} from '@mui/material';
 
 const ProductParams: FC = () => {
     return <div className={s.product_info_block}>
@@ -45,7 +45,7 @@ const ProductParams: FC = () => {
                 <span>Price:</span> <span>Negotiable</span>
             </div>
         </div>
-    </div>
-}
+    </div>;
+};
 
-export default ProductParams
+export default ProductParams;

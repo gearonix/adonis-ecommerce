@@ -1,10 +1,10 @@
 import React, {FC} from 'react';
-import s from './style.module.scss'
-import Image from "next/image";
-import {Rating} from "@mui/material";
-import Typo from "shared/ui/Typo/Typo";
-import {BlueLink} from "shared/ui";
-import {SearchProductProps} from "./types";
+import s from './style.module.scss';
+import Image from 'next/image';
+import {Rating} from '@mui/material';
+import Typo from 'shared/ui/Typo/Typo';
+import {BlueLink} from 'shared/ui';
+import {SearchProductProps} from './types';
 
 const SearchProduct: FC<SearchProductProps> = ({AddToSaved}) => {
     return <div className={s.search_item}>
@@ -20,7 +20,7 @@ const SearchProduct: FC<SearchProductProps> = ({AddToSaved}) => {
             <BlueLink>View details</BlueLink>
             <AddToSaved/>
         </div>
-    </div>
-}
+    </div>;
+};
 
-export default SearchProduct
+export default SearchProduct;

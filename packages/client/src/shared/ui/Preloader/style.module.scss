@@ -6,16 +6,6 @@
 }
 
 
-.sign {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  -webkit-transform: translate(-20%, -100%);
-  transform: translate(-20%, -100%);
-  font-size: 3rem;
-  color: #282828;
-}
-
 .container {
   @include absolute(50%, 50%);
   transform: translate(-50%, 20%) scale(0.7);
@@ -62,7 +52,6 @@
   line-height: 4rem;
   background: rgba(249, 89, 89, 0.07);
   text-align: center;
-  -webkit-transform: translate(1%, -365%) rotate(-45deg);
   transform: translate(1%, -365%) rotate(-45deg);
   -webkit-transform-origin: center;
   transform-origin: center;
@@ -102,7 +91,7 @@
   top: 0;
   right: 0;
   height: 100%;
-  width: 0%;
+  width: 0;
   background: #79b6fc;
   z-index: -1;
   -webkit-animation: color_full 10s ease-out infinite;
@@ -117,7 +106,6 @@
   left: 0;
   width: 8%;
   height: 100%;
-  -webkit-transform: translateX(-95%);
   transform: translateX(-95%);
   background: #34374c;
 }
@@ -132,7 +120,6 @@
   border-style: solid;
   border-color: transparent #34374c transparent transparent;
   border-width: 1.6rem 3.5rem 1.6rem 0;
-  -webkit-transform: translateX(-101%);
   transform: translateX(-101%);
 }
 
@@ -145,7 +132,6 @@
   height: 1rem;
   border-radius: 1rem 0 0 1rem;
   background: #439bdc;
-  -webkit-transform: translate(-215%, -50%);
   transform: translate(-215%, -50%);
 }
 
@@ -156,7 +142,6 @@
   width: 12%;
   height: 102%;
   border-radius: 0 0.8rem 0.8rem 0;
-  -webkit-transform: translate(90%, -1%);
   transform: translate(90%, -1%);
   background: #34374c;
 }
@@ -244,36 +229,29 @@
 @-webkit-keyframes pen_move {
   0% {
     left: 0;
-    -webkit-transform: translate(1%, -365%) rotate(-45deg);
     transform: translate(1%, -365%) rotate(-45deg);
   }
   50% {
     left: 100%;
-    -webkit-transform: translate(1%, -365%) rotate(-45deg);
     transform: translate(1%, -365%) rotate(-45deg);
   }
   55% {
     left: 100%;
-    -webkit-transform: translate(1%, -385%) rotate(-45deg);
     transform: translate(1%, -385%) rotate(-45deg);
   }
   60% {
     left: 100%;
-    -webkit-transform: translate(-8%, -310%) rotate(140deg);
     transform: translate(-8%, -310%) rotate(140deg);
   }
   90% {
-    left: 0%;
-    -webkit-transform: translate(-8%, -310%) rotate(140deg);
+    left: 0;
     transform: translate(-8%, -310%) rotate(140deg);
   }
   95% {
-    left: 0%;
-    -webkit-transform: translate(-8%, -450%) rotate(140deg);
+    left: 0;
     transform: translate(-8%, -450%) rotate(140deg);
   }
   100% {
-    -webkit-transform: translate(1%, -365%) rotate(315deg);
     transform: translate(1%, -365%) rotate(315deg);
   }
 }
@@ -281,36 +259,29 @@
 @keyframes pen_move {
   0% {
     left: 0;
-    -webkit-transform: translate(1%, -365%) rotate(-45deg);
     transform: translate(1%, -365%) rotate(-45deg);
   }
   50% {
     left: 100%;
-    -webkit-transform: translate(1%, -365%) rotate(-45deg);
     transform: translate(1%, -365%) rotate(-45deg);
   }
   55% {
     left: 100%;
-    -webkit-transform: translate(1%, -385%) rotate(-45deg);
     transform: translate(1%, -385%) rotate(-45deg);
   }
   60% {
     left: 100%;
-    -webkit-transform: translate(-8%, -310%) rotate(140deg);
     transform: translate(-8%, -310%) rotate(140deg);
   }
   90% {
-    left: 0%;
-    -webkit-transform: translate(-8%, -310%) rotate(140deg);
+    left: 0;
     transform: translate(-8%, -310%) rotate(140deg);
   }
   95% {
-    left: 0%;
-    -webkit-transform: translate(-8%, -450%) rotate(140deg);
+    left: 0;
     transform: translate(-8%, -450%) rotate(140deg);
   }
   100% {
-    -webkit-transform: translate(1%, -365%) rotate(315deg);
     transform: translate(1%, -365%) rotate(315deg);
   }
 }

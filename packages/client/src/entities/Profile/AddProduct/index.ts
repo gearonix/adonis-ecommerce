@@ -1,1 +1,1 @@
-export {default as AddProductTemplate} from './ui/AddProduct'
+export {default as AddProductTemplate} from './ui/AddProduct';

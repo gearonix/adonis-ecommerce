@@ -1,6 +1,6 @@
 import {FC} from 'react';
-import s from './style.module.scss'
-import {NextImage} from "shared/ui";
+import s from './style.module.scss';
+import {NextImage} from 'shared/ui';
 
 const YouMayLikeItem: FC = () => {
     return <div className={s.item}>
@@ -11,7 +11,7 @@ const YouMayLikeItem: FC = () => {
             <h4>Apple Watch Series Space Gray</h4>
             <span>$7.00 - $99.50</span>
         </div>
-    </div>
-}
+    </div>;
+};
 
-export default YouMayLikeItem
+export default YouMayLikeItem;

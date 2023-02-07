@@ -1,6 +1,6 @@
 import {FC} from 'react';
 import {Button} from 'shared/ui';
-import s from './style.module.scss'
+import s from './style.module.scss';
 
 const GithubBanner: FC = () => {
     return <article className={s.github_banner}>
@@ -11,7 +11,7 @@ const GithubBanner: FC = () => {
         <Button w={'121px'} color={'orange'}>
             Show more
         </Button>
-    </article>
-}
+    </article>;
+};
 
-export default GithubBanner
+export default GithubBanner;

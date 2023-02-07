@@ -1,1 +1,1 @@
-export {default as SwitchThemeDrops} from './ui/SwitchThemeDrops'
+export {default as SwitchThemeDrops} from './ui/SwitchThemeDrops';

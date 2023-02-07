@@ -1,6 +1,6 @@
-import {FormControl, IconButton, Input, InputAdornment} from "@mui/material";
-import {AiOutlineSearch} from "icons";
-import {FC} from "react";
+import {FormControl, IconButton, Input, InputAdornment} from '@mui/material';
+import {AiOutlineSearch} from 'icons';
+import {FC} from 'react';
 
 export const SearchInput: FC = () => {
     return <FormControl variant="outlined" fullWidth sx={{marginBottom: '10px'}}>
@@ -16,5 +16,5 @@ export const SearchInput: FC = () => {
                 </InputAdornment>
             }
         />
-    </FormControl>
-}
+    </FormControl>;
+};

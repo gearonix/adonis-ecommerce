@@ -1,7 +1,7 @@
 import {FC} from 'react';
-import s from './style.module.scss'
-import {Button} from "shared/ui";
-import {MuiAutoComplete, MuiSimpleInput} from "mui";
+import s from './style.module.scss';
+import {Button} from 'shared/ui';
+import {MuiAutoComplete, MuiSimpleInput} from 'mui';
 
 const SearchProductForm: FC = () => {
     return <div className={s.form}>
@@ -9,7 +9,7 @@ const SearchProductForm: FC = () => {
         <MuiSimpleInput/>
         <MuiAutoComplete/>
         <Button w={'129px'}>Send injury</Button>
-    </div>
-}
+    </div>;
+};
 
-export default SearchProductForm
+export default SearchProductForm;

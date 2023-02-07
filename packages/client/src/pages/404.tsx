@@ -1,6 +1,6 @@
-import Head from 'next/head'
-import {NotFoundComponent} from "entities/Others";
-import {FC} from "react";
+import Head from 'next/head';
+import {NotFoundComponent} from 'entities/Others';
+import {FC} from 'react';
 
 const NotFound: FC = () => {
     return <>
@@ -9,7 +9,7 @@ const NotFound: FC = () => {
         </Head>
         <NotFoundComponent/>
 
-    </>
-}
+    </>;
+};
 
-export default NotFound
+export default NotFound;

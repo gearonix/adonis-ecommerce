@@ -1,6 +1,6 @@
 import {FC} from 'react';
-import s from './style.module.scss'
-import {AiOutlineGithub} from "icons";
+import s from './style.module.scss';
+import {AiOutlineGithub} from 'icons';
 import {HoverLink, NextImage} from 'shared/ui';
 
 const Footer: FC = () => {
@@ -59,7 +59,7 @@ const Footer: FC = () => {
                 <HoverLink>English</HoverLink>
             </div>
         </div>
-    </footer>
-}
+    </footer>;
+};
 
-export default Footer
+export default Footer;

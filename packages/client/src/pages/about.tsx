@@ -1,7 +1,7 @@
 import {AboutComponent} from 'entities/Others';
 import Head from 'next/head';
 import {WithSpring} from 'shared/lib/animations';
-import {FC} from "react";
+import {FC} from 'react';
 
 const AboutPage: FC = () => {
     return <WithSpring type={'opacityScale'}>
@@ -9,7 +9,7 @@ const AboutPage: FC = () => {
             <title>Adonis - About us</title>
         </Head>
         <AboutComponent/>
-    </WithSpring>
-}
+    </WithSpring>;
+};
 
-export default AboutPage
+export default AboutPage;

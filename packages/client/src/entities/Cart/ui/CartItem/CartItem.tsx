@@ -1,13 +1,13 @@
 import {FC, useRef, useState} from 'react';
-import s from './style.module.scss'
-import {NextImage} from "shared/ui";
-import {ImageModal} from "mui";
-import {CartItemProps} from "../../types";
-import {ApiAnimation} from "shared/lib/animations";
+import s from './style.module.scss';
+import {NextImage} from 'shared/ui';
+import {ImageModal} from 'mui';
+import {CartItemProps} from '../../types';
+import {ApiAnimation} from 'shared/lib/animations';
 
 const CartItem: FC<CartItemProps> = ({Remove, SaveForLater}) => {
-    const [isOpen, openModal] = useState<boolean>(false)
-    const removeRef = useRef()
+    const [isOpen, openModal] = useState<boolean>(false);
+    const removeRef = useRef();
     return <ApiAnimation className={s.item} type={'reduceLength'} param={140} subscriber={removeRef}>
         <ImageModal isOpen={isOpen} handleOpen={openModal} image={'/mock_item.svg'}/>
         <div className={s.image_wrapper} onClick={() => openModal(true)}>
@@ -28,7 +28,7 @@ const CartItem: FC<CartItemProps> = ({Remove, SaveForLater}) => {
             <h2>$78.99</h2>
         </div>
 
-    </ApiAnimation>
-}
+    </ApiAnimation>;
+};
 
-export default CartItem
+export default CartItem;

@@ -1,4 +1,4 @@
-import {AxiosResponse as AxiosRes} from "axios";
+import {AxiosResponse as AxiosRes} from 'axios';
 
 export type Nullable<T> = null | T
 

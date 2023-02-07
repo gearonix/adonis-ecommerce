@@ -1,8 +1,8 @@
 import {FC} from 'react';
-import s from './style.module.scss'
-import {MuiTable} from "mui";
+import s from './style.module.scss';
+import {MuiTable} from 'mui';
 import {BlueLinkHeader} from 'shared/ui';
-import Advantage from "shared/ui/Advantage/ui/Advantage";
+import Advantage from 'shared/ui/Advantage/ui/Advantage';
 
 const ProductDescription: FC = () => {
     return <div className={s.product_params}>
@@ -31,7 +31,7 @@ const ProductDescription: FC = () => {
             <Advantage/>
             <Advantage/>
         </div>
-    </div>
-}
+    </div>;
+};
 
-export default ProductDescription
+export default ProductDescription;

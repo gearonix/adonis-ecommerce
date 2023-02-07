@@ -1,4 +1,4 @@
-import {Roles} from "shared/types/globals"
+import {Roles} from 'shared/types/globals';
 
 export interface LoginForm {
     email: string,
@@ -20,7 +20,6 @@ export type Forms = LoginForm | SignupForm
 
 
 export interface GoogleButtonProps {
-    mode: 'signup' | 'login',
     role?: Roles
 }
 

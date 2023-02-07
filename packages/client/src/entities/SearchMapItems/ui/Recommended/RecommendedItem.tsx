@@ -1,6 +1,6 @@
 import {FC} from 'react';
-import s from './style.module.scss'
-import {NextImage} from "shared/ui";
+import s from './style.module.scss';
+import {NextImage} from 'shared/ui';
 
 const RecommendedItem: FC = () => {
     return <div className={s.item}>
@@ -9,7 +9,7 @@ const RecommendedItem: FC = () => {
         <div className={s.item_image}>
             <NextImage src={'/mock_item.svg'}/>
         </div>
-    </div>
-}
+    </div>;
+};
 
-export default RecommendedItem
+export default RecommendedItem;

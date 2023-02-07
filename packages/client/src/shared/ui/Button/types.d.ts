@@ -1,5 +1,5 @@
-import {ColorType} from "../types";
-import {ReactNode} from "react";
+import {ColorType} from '../types';
+import {ReactNode} from 'react';
 
 interface ButtonProps {
     children: ReactNode,

@@ -1,31 +1,28 @@
-import {useDispatch} from "shared/types/redux";
-import {useRouter} from "next/router";
-import {Forms, SignupForm} from "widgets/Login/types";
-import {loginUser, makeRegistration} from "widgets/Login/store/thunks";
-import {Paths, Roles} from "shared/types/globals";
-import {UseFormSetError} from "react-hook-form";
+import {useDispatch} from 'shared/types/redux';
+import {Forms, SignupForm} from 'widgets/Login/types';
+import {loginUser, makeRegistration} from 'widgets/Login/thunks';
+import {Roles} from 'shared/types/globals';
+import {UseFormSetError} from 'react-hook-form';
+import {onThunkError} from "shared/helpers/helpers";
 
 
 const isRegistration = (formValues: Forms): formValues is SignupForm => {
-    return 'repeatPassword' in formValues
-}
+  return 'repeatPassword' in formValues;
+};
 
-export const useSubmitForm = (errorHandler: UseFormSetError<any>, role ?: Roles) => {
-    const dispatch = useDispatch()
-    const router = useRouter();
+export const useSubmitForm = (setError: UseFormSetError<any>, role ?: Roles) => {
+  const dispatch = useDispatch();
 
-    return async (formValues: Forms) => {
-        let response;
-        if (!isRegistration(formValues)) {
-            response = await dispatch(loginUser(formValues))
-        } else {
-            response = await dispatch(makeRegistration({...formValues, role: role as Roles}))
-        }
-
-        if (response.meta.requestStatus === 'rejected') {
-            return errorHandler('password', {message: response.payload as string})
-        }
-        router.push(Paths.PROFILE)
-
+  return async (formValues: Forms) => {
+    let response: any;
+    if (!isRegistration(formValues)) {
+      response = await dispatch(loginUser(formValues));
+    } else {
+      response = await dispatch(makeRegistration({...formValues, role: role as Roles}));
     }
-}
+
+    const onError = onThunkError(response)
+
+    onError(() => setError('password', {message: response.payload as string}))
+  };
+};

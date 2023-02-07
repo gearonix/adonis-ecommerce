@@ -1,1 +1,1 @@
-export {default as ImageCarousel} from './ui/ImageCarousel'
+export {default as ImageCarousel} from './ui/ImageCarousel';

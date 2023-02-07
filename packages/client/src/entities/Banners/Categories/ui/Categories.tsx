@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
-import s from './style.module.scss'
-import Image from "next/image";
-import {Button, CategoriesList} from "shared/ui";
+import s from './style.module.scss';
+import Image from 'next/image';
+import {Button, CategoriesList} from 'shared/ui';
 
 
 const Categories: FC = () => {
@@ -34,7 +34,7 @@ const Categories: FC = () => {
             </div>
         </div>
 
-    </article>
-}
+    </article>;
+};
 
-export default Categories
+export default Categories;

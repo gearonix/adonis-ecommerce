@@ -3,7 +3,7 @@ import {FC, ReactNode} from 'react';
 const SelectUser: FC<{ children: ReactNode }> = ({children}) => {
     return <div>
         {children}
-    </div>
-}
+    </div>;
+};
 
-export default SelectUser
+export default SelectUser;

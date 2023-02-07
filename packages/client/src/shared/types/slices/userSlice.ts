@@ -1,4 +1,4 @@
-import {Roles} from "shared/types/globals";
+import {Roles} from 'shared/types/globals';
 
 export interface UserSlice {
     role: Roles,

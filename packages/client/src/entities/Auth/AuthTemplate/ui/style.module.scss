@@ -5,11 +5,9 @@
 }
 
 .wrapper {
-  margin: 0 auto;
   width: 310px;
-  margin-bottom: 50px;
   @include itemBorder;
-  margin-top: 60px;
+  margin: 60px auto 50px;
   padding: 30px;
 }
 
@@ -19,29 +17,11 @@
   font-weight: bold;
 }
 
-.login_button, .with_google {
-  width: 100%;
-  font-size: 18px;
-  margin-top: 14px;
-}
-
 .grey_line {
   margin-top: 29px;
   margin-bottom: 29px;
   @include size(100%, 1px);
   background: $light;
-}
-
-.with_google {
-  color: #606060;
-  margin-top: 0;
-  position: relative;
-
-  svg {
-    margin-right: 10px;
-    @include size(21px, 21px);
-    @include absolute(11px, 7px);
-  }
 }
 
 .account_link {
@@ -55,3 +35,8 @@
 }
 
 
+.login_button {
+  width: 100%;
+  font-size: 18px;
+  margin-top: 14px;
+}

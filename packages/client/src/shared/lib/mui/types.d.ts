@@ -1,5 +1,5 @@
-import {ReactNode} from "react";
-import {UseFormRegisterReturn} from 'react-hook-form'
+import {ReactNode} from 'react';
+import {UseFormRegisterReturn} from 'react-hook-form';
 
 export interface ModalProps {
     isOpen: boolean,

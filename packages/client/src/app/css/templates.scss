@@ -28,7 +28,7 @@
 ,.red_button{
   text-align: center;
   @include inlineStyles($small, white);
-  @include size(18%, 38px);
+  height: 38px;
   background: $blue;
   border-radius: $rounded;
   transition: background 200ms;

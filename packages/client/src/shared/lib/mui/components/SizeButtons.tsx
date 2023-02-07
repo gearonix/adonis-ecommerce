@@ -1,6 +1,6 @@
-import {FC} from "react";
-import {Button, ButtonGroup} from "@mui/material";
-import {BsGridFill, GiHamburgerMenu} from "icons";
+import {FC} from 'react';
+import {Button, ButtonGroup} from '@mui/material';
+import {BsGridFill, GiHamburgerMenu} from 'icons';
 
 export const SizeButtons: FC = () => {
     return <ButtonGroup
@@ -10,5 +10,5 @@ export const SizeButtons: FC = () => {
         color={'inherit'}>
         <Button color={'inherit'} size={'large'}><BsGridFill/></Button>
         <Button color={'inherit'} size={'large'}><GiHamburgerMenu/></Button>
-    </ButtonGroup>
-}
+    </ButtonGroup>;
+};

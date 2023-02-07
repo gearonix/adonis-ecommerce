@@ -1,1 +1,1 @@
-export {default as SearchMessages} from './ui/SearchMessages'
+export {default as SearchMessages} from './ui/SearchMessages';

@@ -1,9 +1,9 @@
 import {FC} from 'react';
-import s from './style.module.scss'
-import Image from "next/image";
-import {HiOutlineFlag, MdMessage, TfiWorld} from "icons";
-import {Button} from "shared/ui";
-import {PurchaseProductP} from './types'
+import s from './style.module.scss';
+import Image from 'next/image';
+import {HiOutlineFlag, MdMessage, TfiWorld} from 'icons';
+import {Button} from 'shared/ui';
+import {PurchaseProductP} from './types';
 
 const PurchaseProduct: FC<PurchaseProductP> = ({AddToSaved, BuyProduct}) => {
     return <div className={s.purchase_block}>
@@ -23,7 +23,7 @@ const PurchaseProduct: FC<PurchaseProductP> = ({AddToSaved, BuyProduct}) => {
             <Button w={'100%'} color={'blueBordered'}>Seller’s profile</Button>
         </div>
         <AddToSaved/>
-    </div>
-}
+    </div>;
+};
 
-export default PurchaseProduct
+export default PurchaseProduct;

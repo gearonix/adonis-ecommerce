@@ -7,19 +7,19 @@ import {AuthModule} from './routes/auth'
 import {UsersModule} from './routes/users'
 
 @Module({
-  imports: [
-    ConfigModule.forRoot({
-      envFilePath: `.${process.env.NODE_ENV}.env`,
-      cache: true,
-    }),
-    TypeOrmModule.forRoot(buildDBConfig([UsersModel])),
+    imports: [
+        ConfigModule.forRoot({
+            envFilePath: `.${process.env.NODE_ENV}.env`,
+            cache: true,
+        }),
+        TypeOrmModule.forRoot(buildDBConfig([UsersModel])),
 
-    AuthModule,
-    UsersModule,
-  ],
+        AuthModule,
+        UsersModule,
+    ],
 
-  controllers: [],
-  providers: [],
+    controllers: [],
+    providers: [],
 })
 export class AppModule {
 }

@@ -1,8 +1,8 @@
 import {FC} from 'react';
-import s from './style.module.scss'
-import {AiOutlineArrowLeft} from "icons";
+import s from './style.module.scss';
+import {AiOutlineArrowLeft} from 'icons';
 import {CartButtonsProps} from '../../types';
-import {Button} from "shared/ui";
+import {Button} from 'shared/ui';
 
 const CartButtons: FC<CartButtonsProps> = ({RemoveAll, BackColor}) => {
     return <div className={s.cart_buttons}>
@@ -10,7 +10,7 @@ const CartButtons: FC<CartButtonsProps> = ({RemoveAll, BackColor}) => {
             <AiOutlineArrowLeft/> Back to shop
         </Button>
         <RemoveAll/>
-    </div>
-}
+    </div>;
+};
 
-export default CartButtons
+export default CartButtons;

@@ -1,17 +1,17 @@
 import {FC, useState} from 'react';
-import s from './style.module.scss'
-import cn from "classnames";
-import {ImageModal} from "mui";
-import {NextImage} from "shared/ui";
-import {BsCheck2} from "icons";
-import {MessageProps} from "../types";
-import {WithSpring} from "shared/lib/animations";
-import useMeasure from "react-use-measure";
+import s from './style.module.scss';
+import cn from 'classnames';
+import {ImageModal} from 'mui';
+import {NextImage} from 'shared/ui';
+import {BsCheck2} from 'icons';
+import {MessageProps} from '../types';
+import {WithSpring} from 'shared/lib/animations';
+import useMeasure from 'react-use-measure';
 
 
 export const Message: FC<MessageProps> = ({isMine = false, image, message}) => {
-    const [isOpened, openModal] = useState<boolean>(false)
-    const [bind, {height}] = useMeasure()
+    const [isOpened, openModal] = useState<boolean>(false);
+    const [bind, {height}] = useMeasure();
     return <WithSpring className={cn(isMine ? s.my_message : s.opponent_message)}
                        type={'opacityHeight'} param={height}>
         {image && <ImageModal isOpen={isOpened} handleOpen={openModal} image={image}/>}
@@ -28,7 +28,7 @@ export const Message: FC<MessageProps> = ({isMine = false, image, message}) => {
                 <BsCheck2/>
             </div>
         </div>
-    </WithSpring>
-}
+    </WithSpring>;
+};
 
-export default Message
+export default Message;

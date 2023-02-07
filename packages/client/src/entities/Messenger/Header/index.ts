@@ -1,1 +1,1 @@
-export {default as MessengerHeaderTemp} from './ui/MessengerHeaderTemp'
+export {default as MessengerHeaderTemp} from './ui/MessengerHeaderTemp';

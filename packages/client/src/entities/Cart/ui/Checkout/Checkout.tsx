@@ -1,5 +1,5 @@
 import {FC} from 'react';
-import s from './style.module.scss'
+import s from './style.module.scss';
 import {CheckoutProps} from '../../types';
 
 const Checkout: FC<CheckoutProps> = ({CheckoutButton}) => {
@@ -10,7 +10,7 @@ const Checkout: FC<CheckoutProps> = ({CheckoutButton}) => {
             <h4>$1357.97</h4>
         </div>
         <CheckoutButton/>
-    </div>
-}
+    </div>;
+};
 
-export default Checkout
+export default Checkout;

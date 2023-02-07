@@ -1,12 +1,12 @@
 import {FC} from 'react';
-import s from './style.module.scss'
-import {NextImage} from "shared/ui";
-import {HeadField, TextArea} from "mui";
-import {EditProfileProps} from "../types";
+import s from './style.module.scss';
+import {NextImage} from 'shared/ui';
+import {HeadField, TextArea} from 'mui';
+import {EditProfileProps} from '../types';
 
 const EditProfile: FC<EditProfileProps> = ({
                                                ChangeBackground, ChangeAvatar
-                                               , close, submitForm
+                                               , close, submitForm,
                                            }) => {
     return <div className={s.add_product_block}>
         <h2 className={s.title}>Change Profile</h2>
@@ -32,7 +32,7 @@ const EditProfile: FC<EditProfileProps> = ({
                 <button className="outlined_button" onClick={close}>Cancel</button>
             </div>
         </div>
-    </div>
-}
+    </div>;
+};
 
-export default EditProfile
+export default EditProfile;

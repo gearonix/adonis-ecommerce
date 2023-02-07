@@ -1,1 +1,1 @@
-export {default as CartIcons} from './ui/CartIcons'
+export {default as CartIcons} from './ui/CartIcons';

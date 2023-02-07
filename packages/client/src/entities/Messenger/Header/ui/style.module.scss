@@ -14,10 +14,4 @@
     background: #FAFAFA;
   }
 
-  .icon_wrapper {
-    svg {
-      color: $light-grey;
-      @include size(24px, 24px);
-    }
-  }
 }

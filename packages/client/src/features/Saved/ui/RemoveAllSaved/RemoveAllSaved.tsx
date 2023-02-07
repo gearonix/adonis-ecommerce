@@ -1,8 +1,8 @@
 import {FC} from 'react';
-import {Button} from "shared/ui";
+import {Button} from 'shared/ui';
 
 const RemoveAllSaved: FC = () => {
-    return <Button w={'114px'} color={'blueBordered'}>Remove all</Button>
-}
+    return <Button w={'114px'} color={'blueBordered'}>Remove all</Button>;
+};
 
-export default RemoveAllSaved
+export default RemoveAllSaved;

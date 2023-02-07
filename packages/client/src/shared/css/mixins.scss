@@ -61,8 +61,7 @@ $center: 0 auto;
 }
 
 @mixin backgroundImage($url, $size: 100%) {
-  background: url($url);
-  background-repeat: no-repeat;
+  background: url($url) no-repeat;
   background-size: $size;
 }
 

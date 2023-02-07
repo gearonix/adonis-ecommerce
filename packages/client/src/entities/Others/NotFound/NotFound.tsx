@@ -1,8 +1,8 @@
-import s from './style.module.scss'
-import {NextImage} from "shared/ui";
-import cn from 'classnames'
-import Link from "next/link";
-import React from "react";
+import s from './style.module.scss';
+import {NextImage} from 'shared/ui';
+import cn from 'classnames';
+import Link from 'next/link';
+import React from 'react';
 
 const NotFoundComponent = () => {
     return <div className={s.not_found}>
@@ -14,7 +14,7 @@ const NotFoundComponent = () => {
         <div className={s.image_wrapper}>
             <NextImage src={'/not_found.svg'}/>
         </div>
-    </div>
-}
+    </div>;
+};
 
-export default NotFoundComponent
+export default NotFoundComponent;
