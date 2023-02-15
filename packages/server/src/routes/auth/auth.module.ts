@@ -4,6 +4,7 @@ import {AuthService} from './auth.service'
 import {JwtModule} from '@nestjs/jwt'
 import {appConfig} from '@app/config'
 import {UsersModule} from '../users'
+import {RequestContextModule} from 'nestjs-request-context'
 
 @Module({
     controllers: [AuthController],
@@ -16,6 +17,7 @@ import {UsersModule} from '../users'
                 expiresIn: '1h',
             },
         }),
+        RequestContextModule
     ],
     exports: [AuthService, JwtModule],
 })

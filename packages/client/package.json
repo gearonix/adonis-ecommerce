@@ -16,9 +16,11 @@
     "@react-oauth/google": "^0.6.1",
     "@react-spring/web": "^9.6.1",
     "@reduxjs/toolkit": "^1.9.2",
+    "@types/country-list-js": "^3.1.2",
     "adonis-monorepo": "file:../..",
     "axios": "^1.2.6",
     "classnames": "^2.3.2",
+    "country-list-js": "^3.1.7",
     "eslint": "8.32.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-next": "13.1.2",
@@ -37,7 +39,6 @@
     "@types/node": "18.11.18",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
-    "@types/yup": "^0.32.0",
     "sass": "^1.57.1"
   }
 }

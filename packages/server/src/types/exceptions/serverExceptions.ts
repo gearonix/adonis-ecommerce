@@ -6,4 +6,5 @@ export enum ServerExceptions {
     NO_COOKIE = 'No cookie',
     INCORRECT_TOKEN = 'Incorrect token',
     NO_TOKEN = 'Headers does not contain a token',
+    INCORRECT_USER_DATA = 'You have entered incorrect user data'
 }

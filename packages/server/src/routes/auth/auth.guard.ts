@@ -14,6 +14,12 @@ export class AuthGuard implements CanActivate {
             const authHeader = req.headers.authorization
             const [bearer, token] = authHeader.split(' ')
 
+            if (req.cookies.AUTH_TOKEN) {
+                req.user = this.jwtService.verify(req.cookies.AUTH_TOKEN)
+                return true
+            }
+
+
             if (bearer != 'Bearer' || !token) {
                 throw new UnauthorizedException({message: ServerExceptions.NOT_AUTHORIZED})
             }

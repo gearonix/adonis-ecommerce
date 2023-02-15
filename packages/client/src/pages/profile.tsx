@@ -10,6 +10,7 @@ import {AddToSavedSearch} from 'features/Saved';
 import {Post} from 'entities/Profile/Post';
 import {WithSpring} from 'shared/lib/animations';
 
+
 const Profile: FC = () => {
     const [IsEditProfile, openEditProfile] = useState<boolean>(false);
     const [isAddProduct, openAddProduct] = useState<boolean>(false);

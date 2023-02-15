@@ -18,7 +18,7 @@ export const customerSchema: Yup.SchemaOf<SignupForm> = Yup.object().shape({
 
 export const salesmanSchema = Yup.object().shape({
     ...formTemplate,
-    first_name: createField('Name'),
-    last_name: createField('Surname'),
+    firstName: createField('Name'),
+    lastName: createField('Surname'),
     repeatPassword: createRepeatPassword(),
 });

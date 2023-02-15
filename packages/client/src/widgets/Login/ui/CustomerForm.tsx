@@ -7,8 +7,8 @@ import {yupResolver} from '@hookform/resolvers/yup';
 import {customerSchema} from '../lib/formSchemes';
 import {useSubmitForm} from '../lib/hooks';
 import {Roles} from 'shared/types/globals';
-import {createFieldValues} from '../lib/helpers';
 import GoogleButton from './GoogleButton';
+import {createFieldValues} from "shared/helpers/others/formHelpers";
 
 const CustomerForm: FC = () => {
     const form = useForm<SignupForm>({resolver: yupResolver(customerSchema)});

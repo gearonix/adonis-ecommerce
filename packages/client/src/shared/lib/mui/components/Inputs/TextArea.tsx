@@ -1,17 +1,24 @@
 import {FormControl, TextField, Typography} from '@mui/material';
+import {FC} from "react";
+import {MuiLoginFieldProps} from "shared/lib/mui/types";
 
-export const TextArea = () => {
+export const TextArea: FC<MuiLoginFieldProps> = ({title, values}) => {
+
+    const {error, inputProps} = values
+
     return <FormControl variant="outlined" fullWidth size={'small'} sx={{
         marginBottom: '26px',
     }}>
-        <Typography>Description</Typography>
+        <Typography>{title}</Typography>
         <TextField
             id="outlined-multiline-static"
+            error={!!error}
             multiline
             rows={4}
             placeholder={'Description'}
             defaultValue="Default Value"
             sx={{marginTop: '10px'}}
+            inputProps={inputProps}
         />
     </FormControl>;
 };

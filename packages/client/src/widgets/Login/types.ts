@@ -7,8 +7,8 @@ export interface LoginForm {
 
 export interface SignupForm extends LoginForm {
     repeatPassword: string,
-    first_name?: string,
-    last_name?: string
+    firstName?: string,
+    lastName?: string
 }
 
 export interface SignupWithRoles extends SignupForm {

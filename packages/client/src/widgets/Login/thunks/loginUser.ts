@@ -1,7 +1,7 @@
 import {createThunk} from 'shared/types/redux';
 import {LoginForm} from 'widgets/Login/types';
 import LoginApi from '../authApi';
-import {isResponseError} from 'shared/helpers/helpers';
+import {isResponseError} from 'shared/helpers/others/httpHelpers';
 import {Exceptions} from 'shared/types/globals';
 import {getMe} from "widgets/Login/thunks/getMe";
 

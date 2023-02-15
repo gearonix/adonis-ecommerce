@@ -2,8 +2,8 @@ import {Roles} from 'shared/types/globals';
 
 export interface UserSlice {
     role: Roles,
-    first_name: string,
-    last_name: string,
+    firstName: string,
+    lastName: string,
     email: string,
     avatar: string,
     background: string,

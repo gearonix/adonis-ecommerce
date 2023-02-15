@@ -4,8 +4,8 @@ import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
 const initialState: ObjectNullable<UserSlice> = {
     role: null,
-    first_name: null,
-    last_name: null,
+    firstName: null,
+    lastName: null,
     email: null,
     avatar: null,
     background: null,
@@ -20,7 +20,7 @@ const userReducer = createSlice({
     initialState,
     reducers: {
         setUser(state, {payload}: PayloadAction<UserSlice>) {
-            return payload;
+            return {...state, ...payload};
         },
         clearUser(state) {
             return initialState;

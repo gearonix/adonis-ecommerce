@@ -1,6 +1,6 @@
 import {createThunk} from 'shared/types/redux';
 import LoginApi from '../authApi';
-import {isResponseError} from 'shared/helpers/helpers';
+import {isResponseError} from 'shared/helpers/others/httpHelpers';
 import {getMe} from './getMe';
 
 export const authByCookie = createThunk(
@@ -8,7 +8,6 @@ export const authByCookie = createThunk(
     async (_, {dispatch}) => {
         const response = await LoginApi.authByCookie();
 
-        console.log(response)
 
         if (isResponseError(response)) return;
 

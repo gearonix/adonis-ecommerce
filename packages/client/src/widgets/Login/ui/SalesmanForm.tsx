@@ -7,8 +7,8 @@ import {yupResolver} from '@hookform/resolvers/yup';
 import {salesmanSchema} from '../lib/formSchemes';
 import {useSubmitForm} from '../lib/hooks';
 import {Roles} from 'shared/types/globals';
-import {createFieldValues} from '../lib/helpers';
 import GoogleButton from 'widgets/Login/ui/GoogleButton';
+import {createFieldValues} from "shared/helpers/others/formHelpers";
 
 const SalesmanForm: FC = () => {
     const form = useForm<SignupForm>({resolver: yupResolver(salesmanSchema)});
@@ -17,8 +17,8 @@ const SalesmanForm: FC = () => {
 
     return <AuthTemplate submit={form.handleSubmit(onSubmit)}
                          GoogleButton={GoogleButton} role={Roles.SALESMAN}>
-        <HeadField title={'Name'} values={reg('first_name')}/>
-        <HeadField title={'Surname'} values={reg('last_name')}/>
+        <HeadField title={'Name'} values={reg('firstName')}/>
+        <HeadField title={'Surname'} values={reg('lastName')}/>
         <HeadField title={'Email'} values={reg('email')}/>
         <HeadField title={'Password'} isPassword values={reg('password')}/>
         <HeadField title={'Repeat password'} isPassword values={reg('repeatPassword')}/>

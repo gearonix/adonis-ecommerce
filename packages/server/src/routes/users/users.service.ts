@@ -1,4 +1,4 @@
-import {Injectable} from '@nestjs/common'
+import {forwardRef, HttpException, HttpStatus, Inject} from '@nestjs/common'
 import {InjectRepository} from '@nestjs/typeorm'
 import {UsersModel} from '@app/models'
 import {Repository} from 'typeorm'
@@ -6,12 +6,19 @@ import {GoogleData, GoogleRegisterDTO} from './dto/googleDTO'
 import {Roles} from '@app/types/models'
 import {generateId} from '@app/lib/helpers'
 import {RegisterUserDTO} from "@app/routes/users/dto/authDTO";
+import {ObjectOptional} from "@app/types/helpers";
+import {EditProfileForm} from "@app/routes/users/dto/editProfileDTO";
+import {AuthService} from "@app/routes/auth";
+import {RequestContext} from "nestjs-request-context";
+import {ServerExceptions} from "@app/types/exceptions";
 
-@Injectable()
+
 export class UsersService {
     constructor(
         @InjectRepository(UsersModel)
         private users: Repository<UsersModel>,
+        @Inject(forwardRef(() => AuthService))
+        private authService: AuthService
     ) {
     }
 
@@ -34,8 +41,8 @@ export class UsersService {
         const {given_name, sub, family_name, email, picture} = googleData
         return {
             email,
-            first_name: given_name,
-            last_name: family_name,
+            firstName: given_name,
+            lastName: family_name,
             google_sub: sub,
             password: `google_generated__${generateId()}`,
             role,
@@ -45,5 +52,16 @@ export class UsersService {
 
     async getIdByGoogleSub(google_sub: string): Promise<UsersModel> {
         return this.users.findOneBy({google_sub})
+    }
+
+    async changeProfile(data: ObjectOptional<EditProfileForm>): Promise<UsersModel> {
+        const req = RequestContext.currentContext.req
+        const user_id = req.user.payload.user_id
+        const response = await this.users.update({user_id}, data)
+        if (!response.affected) {
+            throw new HttpException(ServerExceptions.INCORRECT_USER_DATA, HttpStatus.ACCEPTED)
+        }
+
+        return this.getUserById(user_id)
     }
 }

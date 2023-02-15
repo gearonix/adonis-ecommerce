@@ -6,9 +6,9 @@ export class UsersModel {
     @Column({type: 'enum', enum: Roles})
     role: Roles
     @Column('varchar', {length: Lengths.TITLE, nullable: true})
-    first_name: string
+    firstName: string
     @Column('varchar', {length: Lengths.TITLE, nullable: true})
-    last_name: string
+    lastName: string
     @Column('varchar', {length: Lengths.TITLE})
     email: string
     @Column('varchar', {length: Lengths.HASH, select: false})
