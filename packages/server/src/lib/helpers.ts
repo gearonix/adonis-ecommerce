@@ -12,3 +12,11 @@ export const reformatErrors = (errors: ValidationError[]) => {
     }),
   };
 };
+
+export const lastItemOf = <T>(array: T[]): T => {
+  return array[array.length - 1]
+}
+
+export const getRequest = (requestContext : any) => {
+  return requestContext.currentContext.req
+}

@@ -14,3 +14,4 @@ export {UserInfo} from './UserInfo/UserInfo';
 export {TimeLabel} from './TimeLabel/TodayLabel';
 export {Message} from './Message/Message';
 export {Preloader} from './Preloader/Preloader';
+export {UploadButton} from './UploadButton/UploadButton'

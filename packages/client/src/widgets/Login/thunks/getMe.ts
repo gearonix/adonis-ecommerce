@@ -1,6 +1,6 @@
 import {createThunk} from 'shared/types/redux';
 import LoginApi from '../authApi';
-import {setUser} from 'widgets/Profile/store/userReducer';
+import {userActions} from 'widgets/Profile';
 
 export const getMe = createThunk(
     'users/GET_USER_DATA',
@@ -8,6 +8,6 @@ export const getMe = createThunk(
       const {data: user} = await LoginApi.getMe(token);
 
       if (!user) return;
-      dispatch(setUser(user));
+      dispatch(userActions.setUser(user));
     }
 );

@@ -3,7 +3,7 @@ import {InjectRepository} from '@nestjs/typeorm';
 import {UsersModel} from '@app/models';
 import {Repository} from 'typeorm';
 import {GoogleData, GoogleRegisterDTO} from './dto/googleDTO';
-import {Roles} from '@app/types/models';
+import {FileDirectories, Roles} from '@app/types/models';
 import {generateId} from '@app/lib/helpers';
 import {RegisterUserDTO} from "@app/routes/users/dto/authDTO";
 import {ObjectOptional} from "@app/types/helpers";
@@ -11,7 +11,6 @@ import {EditProfileForm} from "@app/routes/users/dto/editProfileDTO";
 import {AuthService} from "@app/routes/auth";
 import {ServerExceptions} from "@app/types/exceptions";
 import {FilesService} from "@app/routes/files/files.service";
-import {RequestContext} from "nestjs-request-context";
 
 export class UsersService {
   constructor(
@@ -76,18 +75,45 @@ export class UsersService {
     return response?.avatar
   }
 
-  async changeUserImage(image: any): Promise<string>{
-    const fileUrl = await this.fileService.uploadFile(image)
+  async getUserBackground(user_id : number){
+    const response =  await this.users.findOne({
+      select: ["background"],
+      where: { user_id },
+    });
+    console.log(response)
+    return response?.background
+  }
 
-    const user_id = await this.authService.getUserIdByPayload()
+  async replaceOldFileToNew(image: any, user_id, mode: FileDirectories,
+                    getPath: (user_id: number) => Promise<string>){
+    const fileUrl = await this.fileService.uploadFile(image, mode)
 
-    const oldAvatar = await this.getUserAvatar(user_id)
-    if (oldAvatar){
-      await this.fileService.deleteFile(oldAvatar)
+
+    const oldImage = await getPath(user_id)
+
+    console.log(oldImage)
+    if (oldImage){
+      await this.fileService.deleteFile(oldImage, mode)
     }
 
+    return fileUrl
+  }
+
+  async changeUserImage(image: any): Promise<string>{
+    const user_id = await this.authService.getUserIdByPayload()
+    const fileUrl = await this.replaceOldFileToNew(image, user_id,
+        FileDirectories.USER_AVATAR, this.getUserAvatar.bind(this))
 
     await this.users.update({user_id}, {avatar: fileUrl})
+    return fileUrl
+  }
+
+  async changeUserBackground(image: any): Promise<string>{
+    const user_id = await this.authService.getUserIdByPayload()
+    const fileUrl = await this.replaceOldFileToNew(image, user_id,
+        FileDirectories.USER_BACKGROUND, this.getUserBackground.bind(this))
+
+    await this.users.update({user_id}, {background: fileUrl})
     return fileUrl
   }
 

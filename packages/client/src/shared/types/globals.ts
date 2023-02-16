@@ -29,3 +29,9 @@ export enum Exceptions {
     LOGIN_FAILED = 'Login failed',
     REGISTRATION_FAILED = 'Registration failed'
 }
+
+
+export enum UploadProperties{
+    USER_AVATAR = 'avatar',
+    USER_BACKGROUND = 'user_background'
+}

@@ -25,10 +25,15 @@ const userReducer = createSlice({
     clearUser(state) {
       return initialState;
     },
+    changeUserAvatar(state, {payload}: PayloadAction<{ fileUrl: string }>){
+      state.avatar = payload.fileUrl
+    },
+    changeUserBackground(state, {payload}: PayloadAction<{ fileUrl: string }>){
+      state.background = payload.fileUrl
+    }
   },
 });
 
+export const userActions = userReducer.actions
 
-export const {setUser, clearUser} = userReducer.actions;
-
-export default userReducer.reducer;
+export const userSlice = userReducer.reducer

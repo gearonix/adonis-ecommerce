@@ -5,11 +5,12 @@ import {ProfileHeaderTemplate} from '../types';
 
 const ProfileHeaderTemp: FC<ProfileHeaderTemplate> = ({ChangeBackground, OpenProfileEdit, user}) => {
   const avatar = user.user_image || '/avatar.jpg';
+  const background = user.background || '/electronic_prewiew.svg'
 
   return <div className={s.profile_header}>
     <div className={s.electronic_prewiewground}>
       {ChangeBackground}
-      <NextImage src={'/electronic_prewiew.svg'} alt={''}/>
+      <NextImage src={background} alt={''}/>
     </div>
     <div className={s.info_block}>
       <div className={s.avatar}>

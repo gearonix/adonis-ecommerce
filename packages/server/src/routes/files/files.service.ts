@@ -1,58 +1,70 @@
-import {HttpException, HttpStatus, Injectable} from "@nestjs/common";
-import {ServerExceptions} from "@app/types/exceptions";
+import {HttpException, HttpStatus, Injectable} from '@nestjs/common';
+import {ServerExceptions} from '@app/types/exceptions';
 import * as fs from 'fs';
 import * as path from 'path';
-import * as uuid from 'uuid'
-import {RequestContext} from "nestjs-request-context";
+import * as uuid from 'uuid';
+import {RequestContext} from 'nestjs-request-context';
+import {FileDirectories} from "@app/types/models";
+import {appConfig} from "@app/config";
+import {getRequest, lastItemOf} from "@app/lib/helpers";
 
 @Injectable()
-export class FilesService{
-    private staticPath = path.resolve(__dirname,'..','..','static')
+export class FilesService {
 
-    public async uploadFile(file): Promise<string>{
-        try{
-            const fileName = await this.generateFileName(file.originalname)
-            if (!fs.existsSync(this.staticPath)){
-                fs.mkdirSync(this.staticPath, {recursive: true})
-            }
-            fs.writeFileSync(path.join(this.staticPath,fileName), file.buffer)
+  public async uploadFile(file, mode : FileDirectories): Promise<string> {
+    try {
+      const fileName = await this.generateFileName(file.originalname);
+      const staticPath = this.getStaticPath(mode)
 
-            return this.fileToUrl(fileName)
-        }
-        catch (e){
-            throw new HttpException(ServerExceptions.FILE_UPLOAD_ERROR,
-            HttpStatus.INTERNAL_SERVER_ERROR)
-        }
+      await this.createFolderIfNotExists(staticPath)
+
+      fs.writeFileSync(path.join(staticPath, fileName), file.buffer);
+
+      return this.fileToUrl(fileName, mode);
+    } catch (e) {
+      throw new HttpException(ServerExceptions.FILE_UPLOAD_ERROR,
+          HttpStatus.INTERNAL_SERVER_ERROR);
     }
+  }
 
-    public async deleteFile(fileUrl){
-        try{
-            const fileName = await this.urlToFile(fileUrl)
+  public async deleteFile(fileUrl , mode: FileDirectories) {
+    try {
+      const staticPath = this.getStaticPath(mode)
 
-            fs.unlinkSync(path.join(this.staticPath, fileName))
-        }
-        catch (e){
-            throw new HttpException(ServerExceptions.FILE_REMOVAL_ERROR,
-                HttpStatus.INTERNAL_SERVER_ERROR)
-        }
+      await this.createFolderIfNotExists(staticPath)
+
+      const fileName = await this.urlToFile(fileUrl, mode);
+
+      console.log(fileName)
+      fs.unlinkSync(path.join(this.getStaticPath(mode), fileName));
+    } catch (e) {
+      throw new HttpException(ServerExceptions.FILE_REMOVAL_ERROR,
+          HttpStatus.INTERNAL_SERVER_ERROR);
     }
+  }
 
 
 
+  private async fileToUrl(fileName: string, mode: FileDirectories): Promise<string> {
+    const req = getRequest(RequestContext)
+    return `${req.protocol}://${req.get('Host')}/${appConfig.globalPrefix}/static/${mode}/${fileName}`;
+  }
 
-    private async fileToUrl(fileName: string): Promise<string>{
-        const req = RequestContext.currentContext.req;
-        return `${req.protocol}://${req.get('Host')}/static/${fileName}`
+  private async urlToFile(fileUrl: string, mode: FileDirectories): Promise<string> {
+    return lastItemOf(fileUrl.split(`/static/${mode}/`))
+  }
+
+  private async generateFileName(fileName: string): Promise<string> {
+    return `${uuid.v4()}.${lastItemOf(fileName.split('.'))}`;
+  }
+
+  private getStaticPath(mode: FileDirectories): string {
+    return path.resolve(__dirname, '..', '..', 'static', mode);
+  }
+
+  private createFolderIfNotExists(staticPath){
+    if (!fs.existsSync(staticPath)) {
+      fs.mkdirSync(staticPath, {recursive: true});
     }
-
-    private async urlToFile(fileUrl: string): Promise<string>{
-        return fileUrl.split('/static/')[1]
-    }
-
-    private async generateFileName(fileName: string): Promise<string>{
-        const fileNameArray = fileName.split('.')
-
-        return `${uuid.v4()}.${fileNameArray[fileNameArray.length - 1]}`
-    }
-
+  }
 }

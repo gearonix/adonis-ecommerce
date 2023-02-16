@@ -3,3 +3,4 @@ export {
   createField,
 } from './formHelpers';
 export {default as Helpers} from '../helpers';
+export {withFormData} from './httpHelpers'

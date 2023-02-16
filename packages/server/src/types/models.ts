@@ -12,3 +12,8 @@ export enum Roles {
   SALESMAN = 'SALESMAN',
   CUSTOMER = 'CUSTOMER',
 }
+
+export enum FileDirectories{
+  USER_AVATAR = 'user_avatars',
+  USER_BACKGROUND = 'user_backgrounds'
+}

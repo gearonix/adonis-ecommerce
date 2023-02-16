@@ -4,4 +4,4 @@ export {default as ContentButtons} from './ui/ContentButtons/ContentButtons';
 export {default as EditProfile} from './ui/EditProfile/EditProfile';
 export {default as ProfileHeader} from './ui/ProfileHeader/ProfileHeader';
 
-export {default as userSlice} from './store/userReducer';
+export {userSlice, userActions} from './store/userReducer';

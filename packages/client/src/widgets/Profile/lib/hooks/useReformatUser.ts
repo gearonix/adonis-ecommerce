@@ -8,19 +8,22 @@ import {raiseGoogleImageQuality} from 'widgets/Profile/lib/helpers';
 export interface FormattedUser {
     user_name: string,
     description: string,
-    user_image: string
+    user_image: string,
+    background: string
 }
 
 
 export const useReformatUser = (): ObjectNullable<FormattedUser> => {
   const user = useSelector(Selectors.user);
-  const {firstName, lastName, description, email, avatar, user_id} = user as UserSlice;
+  const {firstName, lastName, description, email, avatar, user_id,
+    background} = user as UserSlice;
 
   if (!user_id) {
     return {
       user_name: null,
       description: null,
       user_image: null,
+      background: null
     };
   }
 
@@ -36,5 +39,6 @@ export const useReformatUser = (): ObjectNullable<FormattedUser> => {
     user_name,
     description,
     user_image,
+    background
   };
 };
