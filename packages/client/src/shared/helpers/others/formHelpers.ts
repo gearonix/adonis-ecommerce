@@ -44,7 +44,7 @@ interface CreateFieldValues<T extends FieldValues> {
 }
 
 export const createFieldValues = <T extends FieldValues>({register, formState}:
-                                                             UseFormReturn<T>) => (name: Path<T>): CreateFieldValues<T> => {
+             UseFormReturn<T>) => (name: Path<T>): CreateFieldValues<T> => {
     return {
       inputProps: register(name),
       error: formState.errors[name]?.message as string,

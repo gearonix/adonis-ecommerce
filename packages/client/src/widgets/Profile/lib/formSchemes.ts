@@ -3,6 +3,8 @@ import {EditProfileForm} from 'widgets/Profile/types';
 import {ObjectNullable} from 'shared/types/helpers';
 import {createMaxLengthField, createOptionalField} from 'shared/helpers/others/formHelpers';
 
+
+
 export const editProfileSchema: Yup.SchemaOf<ObjectNullable<EditProfileForm>> = Yup.object().shape({
   firstName: createOptionalField('First name', 3, 10),
   lastName: createOptionalField('Last name', 3, 10),

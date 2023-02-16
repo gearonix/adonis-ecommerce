@@ -9,15 +9,17 @@ import {RegisterUserDTO} from "@app/routes/users/dto/authDTO";
 import {ObjectOptional} from "@app/types/helpers";
 import {EditProfileForm} from "@app/routes/users/dto/editProfileDTO";
 import {AuthService} from "@app/routes/auth";
-import {RequestContext} from "nestjs-request-context";
 import {ServerExceptions} from "@app/types/exceptions";
+import {FilesService} from "@app/routes/files/files.service";
+import {RequestContext} from "nestjs-request-context";
 
 export class UsersService {
   constructor(
     @InjectRepository(UsersModel)
     private users: Repository<UsersModel>,
     @Inject(forwardRef(() => AuthService))
-    private authService: AuthService
+    private authService: AuthService,
+    private fileService: FilesService
   ) {}
 
   async getIdAndPasswordByEmail(email: string) {
@@ -55,8 +57,7 @@ export class UsersService {
   async changeProfile(
     data: ObjectOptional<EditProfileForm>
   ): Promise<UsersModel> {
-    const req = RequestContext.currentContext.req;
-    const user_id = req.user.payload.user_id;
+    const user_id = await this.authService.getUserIdByPayload()
     const response = await this.users.update({ user_id }, data);
     if (!response.affected) {
       throw new HttpException(
@@ -67,4 +68,28 @@ export class UsersService {
 
     return this.getUserById(user_id);
   }
+  async getUserAvatar(user_id : number){
+    const response =  await this.users.findOne({
+      select: ["avatar"],
+      where: { user_id },
+    });
+    return response?.avatar
+  }
+
+  async changeUserImage(image: any): Promise<string>{
+    const fileUrl = await this.fileService.uploadFile(image)
+
+    const user_id = await this.authService.getUserIdByPayload()
+
+    const oldAvatar = await this.getUserAvatar(user_id)
+    if (oldAvatar){
+      await this.fileService.deleteFile(oldAvatar)
+    }
+
+
+    await this.users.update({user_id}, {avatar: fileUrl})
+    return fileUrl
+  }
+
+
 }

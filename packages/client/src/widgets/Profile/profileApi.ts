@@ -10,7 +10,7 @@ interface ProfileApi {
 
 const profileApi: ProfileApi = {
   changeUserProfile(formValues) {
-    return axiosInstance.post('users/change_profile', formValues);
+    return axiosInstance.post('users/change/profile', formValues);
   },
 
 };

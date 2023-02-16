@@ -1,7 +1,9 @@
 import {ReactElement} from 'react';
 import {createFieldValues, CreateFieldValues} from 'shared/helpers/others/formHelpers';
 import {EditProfileForm} from 'widgets/Profile/types';
-import {Path, SubmitHandler, FieldError} from 'react-hook-form';
+import {SubmitHandler} from 'react-hook-form';
+import {ObjectNullable} from "shared/types/helpers";
+import {UserSlice} from "shared/types/slices";
 
 export interface EditProfileProps {
     ChangeBackground: ReactElement,
@@ -9,9 +11,5 @@ export interface EditProfileProps {
     close: () => void,
     submitForm: (e: SubmitHandler) => void,
     reg: ReturnType<typeof createFieldValues<EditProfileForm>>,
-    valuesApi: (field: Path<EditProfileForm>) => {
-        setValue(value: string): void,
-        value: string,
-        error: FieldError | undefined
-    }
+    user: ObjectNullable<UserSlice>
 }

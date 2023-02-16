@@ -5,6 +5,8 @@ import {buildDBConfig} from './config';
 import {UsersModel} from '@app/models';
 import {AuthModule} from './routes/auth';
 import {UsersModule} from './routes/users';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { resolve } from 'path';
 
 @Module({
   imports: [
@@ -13,9 +15,13 @@ import {UsersModule} from './routes/users';
       cache: true,
     }),
     TypeOrmModule.forRoot(buildDBConfig([UsersModel])),
-
+    ServeStaticModule.forRoot({
+      rootPath: resolve(__dirname, 'static'),
+      serveRoot: '/static'
+    }),
     AuthModule,
     UsersModule,
+
   ],
 
   controllers: [],

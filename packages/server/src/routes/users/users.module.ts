@@ -5,6 +5,7 @@ import {TypeOrmModule} from '@nestjs/typeorm';
 import {UsersModel} from '@app/models';
 import {AuthModule} from '@app/routes/auth';
 import {RequestContextModule} from 'nestjs-request-context';
+import {FilesModule} from "@app/routes/files";
 
 @Module({
   controllers: [UsersController],
@@ -13,6 +14,7 @@ import {RequestContextModule} from 'nestjs-request-context';
     TypeOrmModule.forFeature([UsersModel]),
     forwardRef(() => AuthModule),
     RequestContextModule,
+    FilesModule
   ],
   exports: [UsersService],
 })

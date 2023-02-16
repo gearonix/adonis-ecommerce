@@ -5,3 +5,8 @@ export type EditProfileForm = {
     country: string
     city: string
 }
+
+export type CreateFormApi = {
+    setValue(value: string): void,
+    value: string
+}

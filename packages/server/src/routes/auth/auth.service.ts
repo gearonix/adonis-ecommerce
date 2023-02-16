@@ -144,4 +144,8 @@ export class AuthService {
         HttpStatus.ACCEPTED
     );
   }
+  async getUserIdByPayload(): Promise<number>{
+    const req = RequestContext.currentContext.req;
+    return req.user.payload.user_id;
+  }
 }
