@@ -8,18 +8,18 @@ import {FindProductBanner} from 'widgets/Banners/FindProductBanner';
 import {WithSpring} from 'shared/lib/animations';
 
 const MainPage = () => {
-    return <WithSpring>
-        <Head>
-            <title>Adonis - Online Shopping</title>
-        </Head>
-        <Categories/>
-        <Recommended/>
-        <Recommended/>
-        <FindProductBanner/>
-        <RecommendedItems/>
-        <ExtraServices/>
-        <Languages/>
-    </WithSpring>;
+  return <WithSpring>
+    <Head>
+      <title>Adonis - Online Shopping</title>
+    </Head>
+    <Categories/>
+    <Recommended/>
+    <Recommended/>
+    <FindProductBanner/>
+    <RecommendedItems/>
+    <ExtraServices/>
+    <Languages/>
+  </WithSpring>;
 };
 
 export default MainPage;

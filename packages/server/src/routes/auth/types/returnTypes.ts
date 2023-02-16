@@ -1,4 +1,3 @@
 export interface ReturnToken {
-    token: string
+  token: string;
 }
-

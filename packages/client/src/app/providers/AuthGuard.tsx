@@ -3,11 +3,11 @@ import {Preloader} from 'shared/ui';
 import {useRedirect} from './hooks/useRedirect';
 
 const AuthGuard: FC<{ children: ReactNode }> = ({children}) => {
-    const isLoading = useRedirect();
+  const isLoading = useRedirect();
 
-    return <>
-        {isLoading ? children : <Preloader/>}
-    </>;
+  return <>
+    {isLoading ? children : <Preloader/>}
+  </>;
 };
 
 export default AuthGuard;

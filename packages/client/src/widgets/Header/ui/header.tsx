@@ -6,7 +6,7 @@ import {Burger} from 'features/Layout/Burger';
 
 
 const Header: FC = () => {
-    return <HeaderSkeleton Search={HeaderSearch} DropDowns={SwitchThemeDrops} Burger={Burger}/>;
+  return <HeaderSkeleton Search={HeaderSearch} DropDowns={SwitchThemeDrops} Burger={Burger}/>;
 };
 
 export default Header;

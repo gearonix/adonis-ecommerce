@@ -8,7 +8,7 @@ export type AppState = ReturnType<AppStore['getState']>;
 
 export const createThunk = createAsyncThunk.withTypes<{ state: AppState, dispatch: AppDispatch }>();
 
-export const useSelector: TypedUseSelectorHook<AppState> = useReduxSelector
+export const useSelector: TypedUseSelectorHook<AppState> = useReduxSelector;
 
 
 export const useDispatch = ReactReduxDispatch<AppDispatch>;

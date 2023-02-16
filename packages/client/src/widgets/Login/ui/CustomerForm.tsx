@@ -8,20 +8,20 @@ import {customerSchema} from '../lib/formSchemes';
 import {useSubmitForm} from '../lib/hooks';
 import {Roles} from 'shared/types/globals';
 import GoogleButton from './GoogleButton';
-import {createFieldValues} from "shared/helpers/others/formHelpers";
+import {createFieldValues} from 'shared/helpers/others/formHelpers';
 
 const CustomerForm: FC = () => {
-    const form = useForm<SignupForm>({resolver: yupResolver(customerSchema)});
-    const onSubmit = useSubmitForm(form.setError, Roles.CUSTOMER);
-    const reg = createFieldValues(form);
+  const form = useForm<SignupForm>({resolver: yupResolver(customerSchema)});
+  const onSubmit = useSubmitForm(form.setError, Roles.CUSTOMER);
+  const reg = createFieldValues(form);
 
 
-    return <AuthTemplate submit={form.handleSubmit(onSubmit)} GoogleButton={GoogleButton}
-                         role={Roles.CUSTOMER}>
-        <HeadField title={'Email'} values={reg('email')}/>
-        <HeadField title={'Password'} isPassword values={reg('password')}/>
-        <HeadField title={'Repeat password'} isPassword values={reg('repeatPassword')}/>
-    </AuthTemplate>;
+  return <AuthTemplate submit={form.handleSubmit(onSubmit)} GoogleButton={GoogleButton}
+    role={Roles.CUSTOMER}>
+    <HeadField title={'Email'} values={reg('email')}/>
+    <HeadField title={'Password'} isPassword values={reg('password')}/>
+    <HeadField title={'Repeat password'} isPassword values={reg('repeatPassword')}/>
+  </AuthTemplate>;
 };
 
 export default CustomerForm;

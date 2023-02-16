@@ -1,1 +1,1 @@
-export type ObjectOptional<T> = { [K in keyof T]?: T[K] }
+export type ObjectOptional<T> = { [K in keyof T]?: T[K] };

@@ -9,22 +9,22 @@ import {ExtraServices} from 'entities/Banners/ExtraServices';
 import {WithSpring} from 'shared/lib/animations';
 
 const SearchPage: FC = () => {
-    return <WithSpring>
-        <NavigationTitle>Home {'>'} Search</NavigationTitle>
-        <main className='search_page'>
-            <Head>
-                <title>Adonis - Search items</title>
-            </Head>
-            <SearchAside/>
-            <div style={{position: 'relative'}}>
-                <SearchHeader/>
-                <SearchList/>
-                <MuiPagination/>
-            </div>
-        </main>
-        <ExtraServices/>
-        <RecommendedItems/>
-    </WithSpring>;
+  return <WithSpring>
+    <NavigationTitle>Home {'>'} Search</NavigationTitle>
+    <main className='search_page'>
+      <Head>
+        <title>Adonis - Search items</title>
+      </Head>
+      <SearchAside/>
+      <div style={{position: 'relative'}}>
+        <SearchHeader/>
+        <SearchList/>
+        <MuiPagination/>
+      </div>
+    </main>
+    <ExtraServices/>
+    <RecommendedItems/>
+  </WithSpring>;
 };
 
 

@@ -12,20 +12,20 @@ import {AddToSavedCart} from 'features/Saved';
 import {WithSpring} from 'shared/lib/animations';
 
 const Cart = () => {
-    return <WithSpring>
-        <Head>
-            <title>Adonis - Shopping Cart</title>
-        </Head>
-        <ContainerTitle>My cart (N)</ContainerTitle>
-        <div className={'cart_page'}>
-            <CartItems RemoveAll={RemoveAllCard} Remove={RemoveFromCard}
-                       Add={AddToSavedCart}/>
-            <Checkout CheckoutButton={CheckoutButton}/>
-        </div>
-        <Recommended/>
-        <FindProductBanner/>
-        <GithubBanner/>
-    </WithSpring>;
+  return <WithSpring>
+    <Head>
+      <title>Adonis - Shopping Cart</title>
+    </Head>
+    <ContainerTitle>My cart (N)</ContainerTitle>
+    <div className={'cart_page'}>
+      <CartItems RemoveAll={RemoveAllCard} Remove={RemoveFromCard}
+        Add={AddToSavedCart}/>
+      <Checkout CheckoutButton={CheckoutButton}/>
+    </div>
+    <Recommended/>
+    <FindProductBanner/>
+    <GithubBanner/>
+  </WithSpring>;
 };
 
 export default Cart;

@@ -8,20 +8,20 @@ import {WithSpring} from 'shared/lib/animations';
 
 
 const ProductPage = () => {
-    return <WithSpring>
-        <Head>
-            <title>Adonis - [Item]</title>
-        </Head>
-        <h2 className={'search_head'}>Home {'>'} Search {'>'} [Item]</h2>
-        <ProductInfo/>
-        <div className="product_page">
-            <ProductDescription/>
-            <YouMayLike/>
-        </div>
-        <Recommended/>
-        <GithubBanner/>
-        <ExtraServices/>
-    </WithSpring>;
+  return <WithSpring>
+    <Head>
+      <title>Adonis - [Item]</title>
+    </Head>
+    <h2 className={'search_head'}>Home {'>'} Search {'>'} [Item]</h2>
+    <ProductInfo/>
+    <div className="product_page">
+      <ProductDescription/>
+      <YouMayLike/>
+    </div>
+    <Recommended/>
+    <GithubBanner/>
+    <ExtraServices/>
+  </WithSpring>;
 };
 
 export default ProductPage;

@@ -1,7 +1,7 @@
 import {ReactElement} from 'react';
-import {createFieldValues, CreateFieldValues} from "shared/helpers/others/formHelpers";
-import {EditProfileForm} from "widgets/Profile/types";
-import {Path, SubmitHandler} from 'react-hook-form';
+import {createFieldValues, CreateFieldValues} from 'shared/helpers/others/formHelpers';
+import {EditProfileForm} from 'widgets/Profile/types';
+import {Path, SubmitHandler, FieldError} from 'react-hook-form';
 
 export interface EditProfileProps {
     ChangeBackground: ReactElement,
@@ -11,6 +11,7 @@ export interface EditProfileProps {
     reg: ReturnType<typeof createFieldValues<EditProfileForm>>,
     valuesApi: (field: Path<EditProfileForm>) => {
         setValue(value: string): void,
-        value: string
+        value: string,
+        error: FieldError | undefined
     }
 }

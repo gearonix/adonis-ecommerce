@@ -1,16 +1,19 @@
-import {forwardRef, Module} from '@nestjs/common'
-import {UsersController} from './users.controller'
-import {UsersService} from './users.service'
-import {TypeOrmModule} from '@nestjs/typeorm'
-import {UsersModel} from '@app/models'
-import {AuthModule} from '@app/routes/auth'
-import {RequestContextModule} from 'nestjs-request-context'
+import {forwardRef, Module} from '@nestjs/common';
+import {UsersController} from './users.controller';
+import {UsersService} from './users.service';
+import {TypeOrmModule} from '@nestjs/typeorm';
+import {UsersModel} from '@app/models';
+import {AuthModule} from '@app/routes/auth';
+import {RequestContextModule} from 'nestjs-request-context';
 
 @Module({
-    controllers: [UsersController],
-    providers: [UsersService],
-    imports: [TypeOrmModule.forFeature([UsersModel]), forwardRef(() => AuthModule), RequestContextModule],
-    exports: [UsersService],
+  controllers: [UsersController],
+  providers: [UsersService],
+  imports: [
+    TypeOrmModule.forFeature([UsersModel]),
+    forwardRef(() => AuthModule),
+    RequestContextModule,
+  ],
+  exports: [UsersService],
 })
-export class UsersModule {
-}
+export class UsersModule {}

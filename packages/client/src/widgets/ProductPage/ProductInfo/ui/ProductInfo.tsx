@@ -8,11 +8,11 @@ import {BuyProduct} from 'features/ProductPage/BuyProduct';
 import {AddToSavedProduct} from 'features/Saved';
 
 const ProductInfo: FC = () => {
-    return <article className={s.product_info}>
-        <ProductImage ImageCarousel={ImageCarousel}/>
-        <ProductParams/>
-        <PurchaseProduct BuyProduct={BuyProduct} AddToSaved={AddToSavedProduct}/>
-    </article>;
+  return <article className={s.product_info}>
+    <ProductImage ImageCarousel={ImageCarousel}/>
+    <ProductParams/>
+    <PurchaseProduct BuyProduct={BuyProduct} AddToSaved={AddToSavedProduct}/>
+  </article>;
 };
 
 export default ProductInfo;

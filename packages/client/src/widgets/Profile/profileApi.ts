@@ -1,7 +1,7 @@
 import axiosInstance from 'shared/config/axios';
-import {AxiosResponse as Res, ObjectOptional} from "shared/types/helpers";
-import {EditProfileForm} from "widgets/Profile/types";
-import {UserSlice} from "shared/types/slices";
+import {AxiosResponse as Res, ObjectOptional} from 'shared/types/helpers';
+import {EditProfileForm} from 'widgets/Profile/types';
+import {UserSlice} from 'shared/types/slices';
 
 
 interface ProfileApi {
@@ -9,11 +9,11 @@ interface ProfileApi {
 }
 
 const profileApi: ProfileApi = {
-    changeUserProfile(formValues) {
-        return axiosInstance.post('users/change_profile', formValues)
-    },
+  changeUserProfile(formValues) {
+    return axiosInstance.post('users/change_profile', formValues);
+  },
 
-}
+};
 
 
-export default profileApi
+export default profileApi;

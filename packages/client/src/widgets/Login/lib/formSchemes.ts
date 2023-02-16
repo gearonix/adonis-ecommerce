@@ -4,21 +4,21 @@ import {LoginForm, SignupForm} from '../types';
 
 
 const formTemplate = {
-    email: createEmailField(),
-    password: createField('Password', 8, 16),
+  email: createEmailField(),
+  password: createField('Password', 8, 16),
 };
 
 export const loginSchema: Yup.SchemaOf<LoginForm> = Yup.object().shape(formTemplate);
 
 // @ts-ignore
 export const customerSchema: Yup.SchemaOf<SignupForm> = Yup.object().shape({
-    ...formTemplate,
-    repeatPassword: createRepeatPassword(),
+  ...formTemplate,
+  repeatPassword: createRepeatPassword(),
 });
 
 export const salesmanSchema = Yup.object().shape({
-    ...formTemplate,
-    firstName: createField('Name'),
-    lastName: createField('Surname'),
-    repeatPassword: createRepeatPassword(),
+  ...formTemplate,
+  firstName: createField('Name'),
+  lastName: createField('Surname'),
+  repeatPassword: createRepeatPassword(),
 });

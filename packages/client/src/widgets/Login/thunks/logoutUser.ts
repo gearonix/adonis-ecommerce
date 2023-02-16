@@ -5,7 +5,7 @@ import {clearUser} from 'widgets/Profile/store/userReducer';
 export const logoutUser = createThunk(
     'users/LOGOUT_USER',
     async (_, {dispatch}) => {
-        await authApi.clearAuthToken();
-        dispatch(clearUser());
+      await authApi.clearAuthToken();
+      dispatch(clearUser());
     }
 );

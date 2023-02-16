@@ -5,10 +5,10 @@ import {OpenProfileEdit} from 'features/Profile/OpenProfileEdit';
 import {useReformatUser} from 'widgets/Profile/lib/hooks';
 
 const ProfileHeader: FC<{ openProfile: () => void }> = ({openProfile}) => {
-    const user = useReformatUser()
+  const user = useReformatUser();
 
-    return <ProfileHeaderTemp ChangeBackground={<ChangeBackground/>}
-                              OpenProfileEdit={<OpenProfileEdit openProfile={openProfile}/>} user={user}/>;
+  return <ProfileHeaderTemp ChangeBackground={<ChangeBackground/>}
+    OpenProfileEdit={<OpenProfileEdit openProfile={openProfile}/>} user={user}/>;
 };
 
 export default ProfileHeader;

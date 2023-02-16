@@ -4,13 +4,13 @@ import {WithSpring} from 'shared/lib/animations';
 
 
 const SignUp = () => {
-    return <WithSpring>
-        <Head>
-            <title>Adonis - Sign up</title>
-        </Head>
-        <SignupChoice/>
+  return <WithSpring>
+    <Head>
+      <title>Adonis - Sign up</title>
+    </Head>
+    <SignupChoice/>
 
-    </WithSpring>;
+  </WithSpring>;
 };
 
 export default SignUp;

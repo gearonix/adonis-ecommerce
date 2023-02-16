@@ -5,10 +5,10 @@ import {SearchProduct} from 'entities/SearchMapItems';
 import {AddToSavedSearch} from 'features/Saved';
 
 const SearchList: FC = () => {
-    return <div className={s.items_block}>
-        <SearchMap values={[1, 2, 3, 4, 5, 6, 7, 8]}
-                   Item={() => <SearchProduct AddToSaved={AddToSavedSearch}/>}/>
-    </div>;
+  return <div className={s.items_block}>
+    <SearchMap values={[1, 2, 3, 4, 5, 6, 7, 8]}
+      Item={() => <SearchProduct AddToSaved={AddToSavedSearch}/>}/>
+  </div>;
 };
 
 export default SearchList;

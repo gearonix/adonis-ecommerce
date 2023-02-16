@@ -4,7 +4,7 @@ export const isResponseError = (response: AxiosResponse) => response.status !== 
     response.status !== HttpStatusCode.Created;
 
 export const onThunkError = (response: any) => (callback: () => void) => {
-    if (response.meta.requestStatus === 'rejected') {
-        callback()
-    }
-}
+  if (response.meta.requestStatus === 'rejected') {
+    callback();
+  }
+};

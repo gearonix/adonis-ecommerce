@@ -1,5 +1,5 @@
-import {createFieldValues} from "shared/helpers/others";
-import {Nullable, ObjectOptional} from "shared/types/helpers";
+import {createFieldValues} from 'shared/helpers/others';
+import {Nullable, ObjectOptional} from 'shared/types/helpers';
 
 export interface IHelpers {
     getNameFromEmail(email: string): string,

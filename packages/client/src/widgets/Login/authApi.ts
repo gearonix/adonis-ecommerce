@@ -22,22 +22,22 @@ interface AuthApi {
 }
 
 const authApi: AuthApi = {
-    loginUser: (formValues) => axiosInstance.post('/auth/login', formValues),
+  loginUser: (formValues) => axiosInstance.post('/auth/login', formValues),
 
-    getMe: (token) => axiosInstance.get('/auth/get/me', {
-        headers: {
-            Authorization: `Bearer ${token}`,
-        },
-    }),
-    authByCookie: () => axiosInstance.get('/auth/get/token'),
+  getMe: (token) => axiosInstance.get('/auth/get/me', {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }),
+  authByCookie: () => axiosInstance.get('/auth/get/token'),
 
-    registerUser: (formValues) => axiosInstance.post('/auth/registration', formValues),
+  registerUser: (formValues) => axiosInstance.post('/auth/registration', formValues),
 
-    clearAuthToken: () => axiosInstance.delete('auth/delete/token'),
+  clearAuthToken: () => axiosInstance.delete('auth/delete/token'),
 
-    registerUserByGoogle: (data) => axiosInstance.post('/auth/registration/google', data),
+  registerUserByGoogle: (data) => axiosInstance.post('/auth/registration/google', data),
 
-    loginUserByGoogle: (jwt) => axiosInstance.post('/auth/login/google', {jwt}),
+  loginUserByGoogle: (jwt) => axiosInstance.post('/auth/login/google', {jwt}),
 };
 
 

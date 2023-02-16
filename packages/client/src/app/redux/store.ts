@@ -3,7 +3,7 @@ import {createReducers} from './createReducers';
 import {createWrapper} from 'next-redux-wrapper';
 
 export const makeStore = () => configureStore({
-    reducer: createReducers(),
+  reducer: createReducers(),
 });
 
 

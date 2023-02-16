@@ -7,21 +7,20 @@ import cn from 'classnames';
 import GoogleButton from 'widgets/Login/ui/GoogleButton';
 
 const RegTemplate: FC<AuthTemplateProps> = ({children, submit, role}) => {
+  const mode = !!role ? 'signup' : 'login';
+  const {title, linkHref, linkText, blueLinkText} = getUIText(mode);
 
-    const mode = !!role ? 'signup' : 'login'
-    const {title, linkHref, linkText, blueLinkText} = getUIText(mode);
-
-    return <form className={s.login_form}>
-        <div className={s.wrapper}>
-            <h2 className={s.title}>{title}</h2>
-            {children}
-            <button className={cn('primary_button', s.login_button)} onClick={submit}>{title}</button>
-            <div className={s.grey_line}></div>
-            <GoogleButton role={role}/>
-            <h4 className={s.account_link}>
-                {linkText} <Link className="hover_link" href={linkHref}>  {blueLinkText} </Link></h4>
-        </div>
-    </form>;
+  return <form className={s.login_form}>
+    <div className={s.wrapper}>
+      <h2 className={s.title}>{title}</h2>
+      {children}
+      <button className={cn('primary_button', s.login_button)} onClick={submit}>{title}</button>
+      <div className={s.grey_line}></div>
+      <GoogleButton role={role}/>
+      <h4 className={s.account_link}>
+        {linkText} <Link className="hover_link" href={linkHref}>  {blueLinkText} </Link></h4>
+    </div>
+  </form>;
 };
 
 export default RegTemplate;

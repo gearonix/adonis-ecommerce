@@ -7,7 +7,7 @@ interface HoverLinkProps {
 }
 
 export const HoverLink: FC<HoverLinkProps> = ({children, bold}) => {
-    return <a className={s.hover_link} style={{fontWeight: bold ? 'bold' : 'normal'}}>
-        {children}
-    </a>;
+  return <a className={s.hover_link} style={{fontWeight: bold ? 'bold' : 'normal'}}>
+    {children}
+  </a>;
 };

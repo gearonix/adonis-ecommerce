@@ -8,15 +8,15 @@ import {GithubBanner} from 'entities/Banners/GithubBanner';
 import {WithSpring} from 'shared/lib/animations';
 
 const Saved: FC = () => {
-    return <WithSpring>
-        <Head>
-            <title>Adonis - Saved</title>
-        </Head>
-        <ContainerTitle>Saved products</ContainerTitle>
-        <CartItems Add={null} Remove={RemoveFromSaved} RemoveAll={RemoveAllSaved}/>
-        <Recommended/>
-        <GithubBanner/>
-    </WithSpring>;
+  return <WithSpring>
+    <Head>
+      <title>Adonis - Saved</title>
+    </Head>
+    <ContainerTitle>Saved products</ContainerTitle>
+    <CartItems Add={null} Remove={RemoveFromSaved} RemoveAll={RemoveAllSaved}/>
+    <Recommended/>
+    <GithubBanner/>
+  </WithSpring>;
 };
 
 export default Saved;

@@ -17,10 +17,10 @@ const GoogleButton: FC<GoogleButtonProps> = ({role}) => {
   const onError = () => console.error('Login by google failed.');
 
   return <GoogleLogin
-      onSuccess={onSuccess}
-      onError={onError}
-      size={'large'}
-      width={'310'}
+    onSuccess={onSuccess}
+    onError={onError}
+    size={'large'}
+    width={'310'}
   />;
 };
 

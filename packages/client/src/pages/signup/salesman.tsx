@@ -3,12 +3,12 @@ import {WithSpring} from 'shared/lib/animations';
 import {SalesmanForm} from 'widgets/Login';
 
 const SalesmanPage = () => {
-    return <WithSpring>
-        <Head>
-            <title>Adonis - Sign up as salesman</title>
-        </Head>
-        <SalesmanForm/>
-    </WithSpring>;
+  return <WithSpring>
+    <Head>
+      <title>Adonis - Sign up as salesman</title>
+    </Head>
+    <SalesmanForm/>
+  </WithSpring>;
 };
 
 export default SalesmanPage;

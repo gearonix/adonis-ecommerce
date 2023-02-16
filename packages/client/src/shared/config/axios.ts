@@ -3,8 +3,8 @@ import appConfig from 'app/config';
 
 
 const axiosInstance = axios.create({
-    baseURL: appConfig.SERVER_URL,
-    withCredentials: true,
+  baseURL: appConfig.SERVER_URL,
+  withCredentials: true,
 
 });
 
