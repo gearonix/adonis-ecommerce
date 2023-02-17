@@ -1,1 +1,1 @@
-export {default as SelectUser} from './ui/SelectUser';
+export {default as SelectUser} from './ui/SelectUser'

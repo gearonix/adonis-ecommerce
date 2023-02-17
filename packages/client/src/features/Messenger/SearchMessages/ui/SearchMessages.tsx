@@ -1,10 +1,10 @@
-import {FC} from 'react';
-import {AiOutlineSearch} from 'icons';
+import {FC} from 'react'
+import {AiOutlineSearch} from 'shared/ui/icons'
 
 const SearchMessages: FC = () => {
   return <div>
     <AiOutlineSearch color={'#8B96A5'} size={'24px'}/>
-  </div>;
-};
+  </div>
+}
 
-export default SearchMessages;
+export default SearchMessages

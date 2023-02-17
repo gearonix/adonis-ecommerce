@@ -1,4 +1,5 @@
-const path = require('path');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const path = require('path')
 
 const isDev = process.env.NODE_ENV === 'development'
 const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL
@@ -13,7 +14,7 @@ const nextConfig = {
   env: {
     GOOGLE_CLIENT_ID: googleClientId,
     SERVER_URL: serverUrl,
-    IS_DEV: isDev
+    IS_DEV: isDev,
   },
   images: {
     remotePatterns: [
@@ -25,6 +26,6 @@ const nextConfig = {
     ],
     domains: ['lh3.googleusercontent.com', serverHost],
   },
-};
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

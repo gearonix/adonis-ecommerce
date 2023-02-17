@@ -1,4 +1,4 @@
-@use 'shared/css/mixins.scss' as *;
+@use 'shared/css/common.scss' as *;
 
 .categories {
   @include size(100%, 400px);
@@ -19,7 +19,7 @@
   }
 
   .image_block {
-    @include backgroundImage("/electronic_prewiew.svg", 99%);
+    @include backgroundImage("/assets/dev/electronic_prewiew.svg", 99%);
     width: 60%;
     position: relative;
     padding-left: 45px;

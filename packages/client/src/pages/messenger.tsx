@@ -1,9 +1,9 @@
-import Head from 'next/head';
-import {WithSpring} from 'shared/lib/animations';
-import {FC} from 'react';
-import {MessengerAside} from 'widgets/Messenger/Aside';
-import {MessengerContent} from 'widgets/Messenger/Content';
-import {MessengerHeader} from 'widgets/Messenger/Header';
+import Head from 'next/head'
+import {WithSpring} from 'shared/ui/animations'
+import {FC} from 'react'
+import {MessengerAside} from 'widgets/Messenger/Aside'
+import {MessengerContent} from 'widgets/Messenger/Content'
+import {MessengerHeader} from 'widgets/Messenger/Header'
 
 const Messenger: FC = () => {
   return <>
@@ -18,7 +18,7 @@ const Messenger: FC = () => {
       </div>
     </WithSpring>
 
-  </>;
-};
+  </>
+}
 
-export default Messenger;
+export default Messenger

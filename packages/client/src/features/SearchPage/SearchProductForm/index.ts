@@ -1,1 +1,1 @@
-export {default as SearchProductForm} from './ui/SearchProductForm';
+export {default as SearchProductForm} from './ui/SearchProductForm'

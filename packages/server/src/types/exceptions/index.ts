@@ -1,2 +1,2 @@
-export {ServerExceptions} from './serverExceptions';
-export {ValidationExceptions} from './validationExceptions';
+export {ServerExceptions} from './serverExceptions'
+export {ValidationExceptions} from './validationExceptions'

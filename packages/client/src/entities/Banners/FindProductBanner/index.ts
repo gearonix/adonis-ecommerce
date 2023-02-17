@@ -1,1 +1,1 @@
-export {default as FindProductSkeleton} from './ui/FindProductSkeleton';
+export {default as FindProductSkeleton} from './ui/FindProductSkeleton'

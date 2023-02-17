@@ -1,8 +1,7 @@
-import * as Yup from 'yup';
-import {EditProfileForm} from 'widgets/Profile/types';
-import {ObjectNullable} from 'shared/types/helpers';
-import {createMaxLengthField, createOptionalField} from 'shared/helpers/others/formHelpers';
-
+import * as Yup from 'yup'
+import {EditProfileForm} from 'widgets/Profile/types'
+import {ObjectNullable} from 'shared/types/common'
+import {createMaxLengthField, createOptionalField} from 'shared/lib/helpers/others/formHelpers'
 
 
 export const editProfileSchema: Yup.SchemaOf<ObjectNullable<EditProfileForm>> = Yup.object().shape({
@@ -12,4 +11,4 @@ export const editProfileSchema: Yup.SchemaOf<ObjectNullable<EditProfileForm>> = 
   country: createOptionalField('Your country', 3, 40),
   city: createOptionalField('Your city', 3, 40),
 
-}).camelCase();
+}).camelCase()

@@ -1,1 +1,1 @@
-export {default as SearchAsideSkeleton} from './ui/SearchAside';
+export {default as SearchAsideSkeleton} from './ui/SearchAside'

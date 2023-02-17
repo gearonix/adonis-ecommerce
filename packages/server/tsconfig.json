@@ -23,5 +23,10 @@
       "@modules/*": ["src/modules/*"],
       "@common/*": ["src/common/*"],
     }
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/dist/**"
+  ],
 }

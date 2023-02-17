@@ -1,6 +1,6 @@
-import s from './style.module.scss';
-import {AiOutlineGithub} from 'icons';
-import {NextImage} from 'shared/ui';
+import s from './style.module.scss'
+import {AiOutlineGithub} from 'shared/ui/icons'
+import {NextImage} from 'shared/ui/kit'
 
 const About = () => {
   return <div className={s.about}>
@@ -16,12 +16,12 @@ const About = () => {
       <AiOutlineGithub/>
     </div>
     <div className={s.image_wrapper}>
-      <NextImage src={'/gigachad.png'}/>
+      <NextImage src={'/assets/dev/electronic_prewiew.svg'}/>
     </div>
     <h4 className={s.link}>
             Some text lalalalalla <span className={'hover_link'}>@ some link</span>
     </h4>
-  </div>;
-};
+  </div>
+}
 
-export default About;
+export default About

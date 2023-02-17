@@ -1,10 +1,10 @@
-import {EditProfileForm} from 'widgets/Profile/types';
-import {UserSlice} from 'shared/types/slices';
-import {ObjectNullable} from "shared/types/helpers";
+import {EditProfileForm} from 'widgets/Profile/types'
+import {UserSlice} from 'shared/types/slices'
+import {ObjectNullable} from 'shared/types/common'
 
 
 export const useCreateEditProfileValues = (user: ObjectNullable<UserSlice>): { defaultValues: EditProfileForm } => {
-  const {firstName, lastName, description, country, city} = user as UserSlice;
+  const {firstName, lastName, description, country, city} = user as UserSlice
 
   return {
     defaultValues: {
@@ -14,5 +14,5 @@ export const useCreateEditProfileValues = (user: ObjectNullable<UserSlice>): { d
       country,
       city,
     },
-  };
-};
+  }
+}

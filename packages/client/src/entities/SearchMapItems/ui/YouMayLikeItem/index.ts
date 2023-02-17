@@ -1,1 +1,1 @@
-export {default as YouMayLikeItem} from './ui/YouMayLikeItem';
+export {default as YouMayLikeItem} from './ui/YouMayLikeItem'

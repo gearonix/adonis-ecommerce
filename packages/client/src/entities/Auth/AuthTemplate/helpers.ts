@@ -9,5 +9,5 @@ export const getUIText = (mode: 'login' | 'signup') => {
     linkText: 'Already have an account?',
     linkHref: '/login',
     blueLinkText: 'Login in',
-  };
-};
+  }
+}

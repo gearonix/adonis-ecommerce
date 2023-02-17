@@ -1,37 +1,32 @@
-import {
-  Column,
-  CreateDateColumn,
-  Entity,
-  PrimaryGeneratedColumn,
-} from 'typeorm';
-import {Lengths, Roles} from '@app/lib';
+import {Column, CreateDateColumn, Entity, PrimaryGeneratedColumn,} from 'typeorm'
+import {Lengths, Roles} from '@app/lib'
 
 @Entity('users')
 export class UsersModel {
   @Column({type: 'enum', enum: Roles})
-    role: Roles;
+    role: Roles
   @Column('varchar', {length: Lengths.TITLE, nullable: true})
-    firstName: string;
+    firstName: string
   @Column('varchar', {length: Lengths.TITLE, nullable: true})
-    lastName: string;
+    lastName: string
   @Column('varchar', {length: Lengths.TITLE})
-  email: string;
+    email: string
   @Column('varchar', {length: Lengths.HASH, select: false})
-  password: string;
+    password: string
   @Column('varchar', {length: Lengths.IMAGE, nullable: true})
-    avatar: string;
+    avatar: string
   @Column('varchar', {length: Lengths.IMAGE, nullable: true})
-    background: string;
+    background: string
   @Column('varchar', {length: Lengths.LONGTEXT, nullable: true})
-    description: string;
+    description: string
   @PrimaryGeneratedColumn()
-  user_id: number;
+    userId: number
   @Column('varchar', {length: Lengths.TITLE, nullable: true})
-    country: string;
+    country: string
   @Column('varchar', {length: Lengths.TITLE, nullable: true})
-    city: string;
+    city: string
   @CreateDateColumn()
-    registration_date: Date;
+    registration_date: Date
   @Column('varchar', {length: Lengths.LONGTEXT, nullable: true})
-  google_sub: string;
+    google_sub: string
 }

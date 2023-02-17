@@ -1,9 +1,9 @@
-import {FC} from 'react';
-import {BsCartPlus} from 'icons';
+import {FC} from 'react'
+import {BsCartPlus} from 'shared/ui/icons'
 
 const OpenAddProduct: FC<{ open: () => void }> = ({open}) => {
   return <button className={'outlined_button'}
-    onClick={open}><BsCartPlus/> Add Product</button>;
-};
+    onClick={open}><BsCartPlus/> Add Product</button>
+}
 
-export default OpenAddProduct;
+export default OpenAddProduct

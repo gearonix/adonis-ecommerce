@@ -1,1 +1,1 @@
-export {default as EditProfileTemplate} from './ui/EditProfile';
+export {default as EditProfileTemplate} from './ui/EditProfile'

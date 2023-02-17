@@ -1,14 +1,14 @@
-import {FC} from 'react';
-import s from './style.module.scss';
-import {AiOutlineGithub} from 'icons';
-import {HoverLink, NextImage} from 'shared/ui';
+import {FC} from 'react'
+import s from './style.module.scss'
+import {AiOutlineGithub} from 'shared/ui/icons'
+import {HoverLink, NextImage} from 'shared/ui/kit'
 
 const Footer: FC = () => {
   return <footer className={s.footer}>
     <div className={s.footer_block}>
       <div className={s.brand_block}>
         <div className={s.brand_logo}>
-          <NextImage src={'/logo.svg'}/>
+          <NextImage src={'/assets/logo.svg'}/>
         </div>
         <p className={s.brand_text}>
                     Best information about the company gies here
@@ -59,7 +59,7 @@ const Footer: FC = () => {
         <HoverLink>English</HoverLink>
       </div>
     </div>
-  </footer>;
-};
+  </footer>
+}
 
-export default Footer;
+export default Footer

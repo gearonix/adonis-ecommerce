@@ -1,26 +1,29 @@
 module.exports = {
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    project: 'tsconfig.json',
-    tsconfigRootDir: __dirname,
-    sourceType: 'module',
-  },
-  plugins: ['@typescript-eslint/eslint-plugin'],
-  extends: [
-    'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
-    'google'
-  ],
-  root: true,
   env: {
-    node: true,
-    jest: true,
+    es6: true,
   },
-  ignorePatterns: ['.eslintrc.js'],
+  ignorePatterns: ["**/dist/**", "**/node_modules/**"],
+  extends: ["plugin:@darraghor/nestjs-typed/recommended", "google",
+    "plugin:@darraghor/nestjs-typed/no-swagger", "plugin:@typescript-eslint/recommended"],
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    project: ["./tsconfig.json"],
+    sourceType: "module",
+    ecmaVersion: "es2019",
+  },
   rules: {
-    '@typescript-eslint/interface-name-prefix': 'off',
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
-    '@typescript-eslint/no-explicit-any': 'off',
+    "new-cap": "off",
+    "require-jsdoc": "off",
+    "max-len": "off",
+    "@darraghor/nestjs-typed/all-properties-have-explicit-defined": "off",
+    "@darraghor/nestjs-typed/all-properties-are-whitelisted": "off",
+    "semi": [
+      "error",
+      "never"
+    ],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error"]
+
   },
+  plugins: ["@darraghor/nestjs-typed","@typescript-eslint"],
 };

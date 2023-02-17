@@ -1,7 +1,11 @@
-import {FC} from 'react';
-import s from './style.module.scss';
-import {AiOutlineFileAdd, AiOutlineUnorderedList, FiHeart} from 'icons';
-import {ContentButtonsProps} from '../types';
+import {FC, ReactElement} from 'react'
+import s from './style.module.scss'
+import {AiOutlineFileAdd, AiOutlineUnorderedList, FiHeart} from 'shared/ui/icons'
+
+export interface ContentButtonsProps {
+  AddProduct: ReactElement
+}
+
 
 const ContentButtons: FC<ContentButtonsProps> = ({AddProduct}) => {
   return <div className={s.content_buttons}>
@@ -11,7 +15,7 @@ const ContentButtons: FC<ContentButtonsProps> = ({AddProduct}) => {
     <div className={s.add_product}>
       {AddProduct}
     </div>
-  </div>;
-};
+  </div>
+}
 
-export default ContentButtons;
+export default ContentButtons

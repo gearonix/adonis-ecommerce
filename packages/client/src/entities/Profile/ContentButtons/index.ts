@@ -1,1 +1,1 @@
-export {default as ContentButtonsTemplate} from './ui/ContentButtons';
+export {default as ContentButtonsTemplate} from './ui/ContentButtons'

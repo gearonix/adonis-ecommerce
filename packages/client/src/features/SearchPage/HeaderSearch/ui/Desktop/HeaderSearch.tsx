@@ -1,11 +1,11 @@
-import {FC} from 'react';
-import s from './style.module.scss';
-import {Button, PrimarySelect} from 'shared/ui';
-import {useAdaptive} from 'shared/helpers/hooks';
-import {AiOutlineSearch} from 'icons';
+import {FC} from 'react'
+import s from './style.module.scss'
+import {Button, PrimarySelect} from 'shared/ui/kit'
+import {useAdaptive} from 'shared/lib/helpers/hooks/shared'
+import {AiOutlineSearch} from 'shared/ui/icons'
 
 const HeaderSearch: FC = () => {
-  const isMobile = useAdaptive(476);
+  const isMobile = useAdaptive(476)
   return isMobile ? <div className={s.mobile_search}>
     <AiOutlineSearch/>
     <input placeholder={'Search'}/>
@@ -16,8 +16,8 @@ const HeaderSearch: FC = () => {
           <Button w={'90px'}>
                 Search
           </Button>
-        </div>;
-};
+        </div>
+}
 
 
-export default HeaderSearch;
+export default HeaderSearch

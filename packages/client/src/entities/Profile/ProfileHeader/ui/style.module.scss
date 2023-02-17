@@ -1,16 +1,18 @@
-@use 'shared/css/mixins.scss' as *;
+@use 'shared/css/common.scss' as *;
 
 .profile_header {
-  width: 90%;
+  width: 83%;
   margin: 30px auto 20px auto;
   @include itemBorder;
+  .profile_background {
+    @include size(100%,360px);
+    position: relative;
+    .image_wrapper{
+      @include imageWrapper(100%, 100%, $rounded);
+      margin: 0 auto;
+    }
+    background: $grey-300;
 
-  * {
-    //@include testBorder;
-  }
-
-  .electronic_prewiewground {
-    @include imageWrapper(100%, 310px, $rounded);
 
     button {
       position: absolute;
@@ -43,6 +45,7 @@
       border: 3px solid $light;
       margin-left: 20px;
       margin-top: -7%;
+      background: white;
     }
 
     .user_info {

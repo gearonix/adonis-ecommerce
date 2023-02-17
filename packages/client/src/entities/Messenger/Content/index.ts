@@ -1,1 +1,1 @@
-export {default as MessengerContentTemp} from './ui/MessengerContent';
+export {default as MessengerContentTemp} from './ui/MessengerContent'

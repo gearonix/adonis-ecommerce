@@ -1,7 +1,0 @@
-@use 'shared/css/mixins.scss' as *;
-
-.title {
-    @include inlineStyles($small_md, $dark, bold);
-    margin-bottom: 24px;
-    margin-top: 14px;
-}

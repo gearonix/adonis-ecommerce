@@ -1,6 +1,6 @@
-import {SignupChoice} from 'entities/Auth/Choice';
-import Head from 'next/head';
-import {WithSpring} from 'shared/lib/animations';
+import {SignupChoice} from 'entities/Auth/Choice'
+import Head from 'next/head'
+import {WithSpring} from 'shared/ui/animations'
 
 
 const SignUp = () => {
@@ -10,7 +10,7 @@ const SignUp = () => {
     </Head>
     <SignupChoice/>
 
-  </WithSpring>;
-};
+  </WithSpring>
+}
 
-export default SignUp;
+export default SignUp

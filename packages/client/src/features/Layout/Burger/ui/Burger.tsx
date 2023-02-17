@@ -1,11 +1,11 @@
-import {FC} from 'react';
-import s from './style.module.scss';
-import {GiHamburgerMenu} from 'icons';
+import {FC} from 'react'
+import s from './style.module.scss'
+import {GiHamburgerMenu} from 'shared/ui/icons'
 
 const Burger: FC = () => {
   return <div className={s.burger}>
     <GiHamburgerMenu/>
-  </div>;
-};
+  </div>
+}
 
-export default Burger;
+export default Burger

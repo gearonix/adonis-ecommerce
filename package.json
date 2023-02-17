@@ -6,9 +6,10 @@
   ],
   "private": true,
   "scripts": {
-    "start:dev": "npm run client:dev | npm run server:dev",
-    "client:dev": "npm run dev --workspace=client",
-    "server:dev": "npm run start:dev --workspace=server"
+    "start": "npm run start:client | npm run start:server",
+    "start:client": "npm run dev --workspace=client",
+    "start:server": "npm run start:dev --workspace=server",
+    "lint": "npm run lint --workspace=client && npm run lint --workspace=server"
   },
   "repository": {
     "type": "git",

@@ -1,20 +1,20 @@
-import {ButtonHTMLAttributes, FC} from 'react';
-import {BsPen} from 'icons';
-import {UploadButton} from "shared/ui";
-import {UploadProperties} from "shared/types/globals";
-import {useDispatch} from "shared/types/redux";
-import {changeBackground} from './../thunks/changeBackground';
+import {ButtonHTMLAttributes, FC} from 'react'
+import {BsPen} from 'shared/ui/icons'
+import {UploadButton} from 'shared/ui/kit'
+import {UploadProperties} from 'app/config/globals'
+import {useDispatch} from 'shared/types/redux'
+import {changeBackground} from './../thunks/changeBackground'
 
 const ChangeBackground: FC<ButtonHTMLAttributes<HTMLButtonElement>> = () => {
-    const dispatch = useDispatch()
+  const dispatch = useDispatch()
 
-    const handleBackground = (formData: FormData) => {
-        dispatch(changeBackground(formData))
-    }
+  const handleBackground = (formData: FormData) => {
+    dispatch(changeBackground(formData))
+  }
 
   return <UploadButton className={'primary_button'}
-     mode={UploadProperties.USER_BACKGROUND}
-                   handleChange={handleBackground}><BsPen/> Change background</UploadButton>;
-};
+    mode={UploadProperties.USER_BACKGROUND}
+    handleChange={handleBackground}><BsPen/> Change background</UploadButton>
+}
 
-export default ChangeBackground;
+export default ChangeBackground

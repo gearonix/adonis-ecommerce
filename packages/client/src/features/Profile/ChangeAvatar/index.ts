@@ -1,1 +1,1 @@
-export {default as ChangeAvatar} from './ui/ChangeAvatar';
+export {default as ChangeAvatar} from './ui/ChangeAvatar'

@@ -1,12 +1,12 @@
-import {DocumentBuilder, OpenAPIObject, SwaggerModule} from '@nestjs/swagger';
-import {appConfig} from './config';
+import {DocumentBuilder, OpenAPIObject, SwaggerModule} from '@nestjs/swagger'
+import {appConfig} from './config'
 
 export const createSwaggerDocs = (app): OpenAPIObject => {
   const swagger = new DocumentBuilder()
-    .setTitle(appConfig.appName)
-    .setDescription("REST API documentation")
+      .setTitle(appConfig.appName)
+      .setDescription('REST API documentation')
       .setVersion(appConfig.appVersion)
-    .build();
+      .build()
 
-  return SwaggerModule.createDocument(app, swagger);
-};
+  return SwaggerModule.createDocument(app, swagger)
+}

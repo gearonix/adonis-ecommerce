@@ -1,4 +1,4 @@
-@use 'shared/css/mixins.scss' as *;
+@use 'shared/css/common.scss' as *;
 
 
 .add_product_block {
@@ -67,6 +67,7 @@
 
       .user_avatar {
         @include imageWrapper(125px, 125px, 100%);
+        border: $br $light;
       }
 
       button {

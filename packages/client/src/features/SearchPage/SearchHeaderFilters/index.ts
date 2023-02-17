@@ -1,1 +1,1 @@
-export {default as SearchHeaderFilters} from './ui/Filters';
+export {default as SearchHeaderFilters} from './ui/Filters'

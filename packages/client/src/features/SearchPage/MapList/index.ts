@@ -1,1 +1,1 @@
-export {default as SearchMap} from './ui/MapList';
+export {default as SearchMap} from './ui/MapList'

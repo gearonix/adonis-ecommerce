@@ -1,1 +1,1 @@
-export {default as ProductImages} from './ui/ProductImages';
+export {default as ProductImages} from './ui/ProductImages'

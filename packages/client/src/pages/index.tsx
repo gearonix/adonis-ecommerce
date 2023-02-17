@@ -1,11 +1,11 @@
-import React from 'react';
-import Head from 'next/head';
-import {Categories} from 'entities/Banners/Categories';
-import {ExtraServices} from 'entities/Banners/ExtraServices';
-import {Languages} from 'entities/Banners/Languages';
-import {Recommended, RecommendedItems} from 'widgets/SearchLists';
-import {FindProductBanner} from 'widgets/Banners/FindProductBanner';
-import {WithSpring} from 'shared/lib/animations';
+import React from 'react'
+import Head from 'next/head'
+import {Categories} from 'entities/Banners/Categories'
+import {ExtraServices} from 'entities/Banners/ExtraServices'
+import {Languages} from 'entities/Banners/Languages'
+import {Recommended, RecommendedItems} from 'widgets/SearchLists'
+import {FindProductBanner} from 'widgets/Banners/FindProductBanner'
+import {WithSpring} from 'shared/ui/animations'
 
 const MainPage = () => {
   return <WithSpring>
@@ -19,7 +19,7 @@ const MainPage = () => {
     <RecommendedItems/>
     <ExtraServices/>
     <Languages/>
-  </WithSpring>;
-};
+  </WithSpring>
+}
 
-export default MainPage;
+export default MainPage

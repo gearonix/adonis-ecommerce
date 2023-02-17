@@ -1,10 +1,10 @@
-import Head from 'next/head';
-import {ProductInfo} from 'widgets/ProductPage/ProductInfo';
-import {ProductDescription} from 'entities/ProductPage/ProductDescription';
-import {Recommended, YouMayLike} from 'widgets/SearchLists';
-import {ExtraServices} from 'entities/Banners/ExtraServices';
-import {GithubBanner} from 'entities/Banners/GithubBanner';
-import {WithSpring} from 'shared/lib/animations';
+import Head from 'next/head'
+import {ProductInfo} from 'widgets/ProductPage/ProductInfo'
+import {ProductDescription} from 'entities/ProductPage/ProductDescription'
+import {Recommended, YouMayLike} from 'widgets/SearchLists'
+import {ExtraServices} from 'entities/Banners/ExtraServices'
+import {GithubBanner} from 'entities/Banners/GithubBanner'
+import {WithSpring} from 'shared/ui/animations'
 
 
 const ProductPage = () => {
@@ -21,7 +21,7 @@ const ProductPage = () => {
     <Recommended/>
     <GithubBanner/>
     <ExtraServices/>
-  </WithSpring>;
-};
+  </WithSpring>
+}
 
-export default ProductPage;
+export default ProductPage

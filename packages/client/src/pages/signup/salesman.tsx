@@ -1,6 +1,6 @@
-import Head from 'next/head';
-import {WithSpring} from 'shared/lib/animations';
-import {SalesmanForm} from 'widgets/Login';
+import Head from 'next/head'
+import {WithSpring} from 'shared/ui/animations'
+import {SalesmanForm} from 'widgets/Login'
 
 const SalesmanPage = () => {
   return <WithSpring>
@@ -8,7 +8,7 @@ const SalesmanPage = () => {
       <title>Adonis - Sign up as salesman</title>
     </Head>
     <SalesmanForm/>
-  </WithSpring>;
-};
+  </WithSpring>
+}
 
-export default SalesmanPage;
+export default SalesmanPage

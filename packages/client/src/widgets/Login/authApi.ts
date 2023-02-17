@@ -1,7 +1,9 @@
-import axiosInstance from 'shared/config/axios';
-import {LoginForm, RegisterByGoogle, SignupWithRoles} from './types';
-import {AxiosResponse as Res} from 'shared/types/helpers';
-import {UserSlice} from 'shared/types/slices';
+import axiosInstance from 'shared/config/axios'
+import {LoginForm, RegisterByGoogle, SignupWithRoles} from './types'
+import {AxiosResponse as Res} from 'shared/types/common'
+import {UserSlice} from 'shared/types/slices'
+import EndPoints from 'shared/config/endpoints'
+
 
 type Token = Res<{ token: string }>
 
@@ -21,6 +23,8 @@ interface AuthApi {
     loginUserByGoogle(jwt: string): Token
 }
 
+const EndPoint = EndPoints.AUTH
+
 const authApi: AuthApi = {
   loginUser: (formValues) => axiosInstance.post('/auth/login', formValues),
 
@@ -29,16 +33,16 @@ const authApi: AuthApi = {
       Authorization: `Bearer ${token}`,
     },
   }),
-  authByCookie: () => axiosInstance.get('/auth/get/token'),
+  authByCookie: () => axiosInstance.get(EndPoint.getToken),
 
-  registerUser: (formValues) => axiosInstance.post('/auth/registration', formValues),
+  registerUser: (formValues) => axiosInstance.post(EndPoint.registration, formValues),
 
-  clearAuthToken: () => axiosInstance.delete('auth/delete/token'),
+  clearAuthToken: () => axiosInstance.delete(EndPoint.deleteToken),
 
-  registerUserByGoogle: (data) => axiosInstance.post('/auth/registration/google', data),
+  registerUserByGoogle: (data) => axiosInstance.post(EndPoint.googleRegistration, data),
 
-  loginUserByGoogle: (jwt) => axiosInstance.post('/auth/login/google', {jwt}),
-};
+  loginUserByGoogle: (jwt) => axiosInstance.post(EndPoint.googleLogin, {jwt}),
+}
 
 
-export default authApi;
+export default authApi

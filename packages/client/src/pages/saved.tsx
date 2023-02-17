@@ -1,11 +1,11 @@
-import Head from 'next/head';
-import {FC} from 'react';
-import {ContainerTitle} from 'shared/ui';
-import {CartItems} from 'widgets/Cart/CartItems';
-import {RemoveAllSaved, RemoveFromSaved} from 'features/Saved';
-import {Recommended} from 'widgets/SearchLists';
-import {GithubBanner} from 'entities/Banners/GithubBanner';
-import {WithSpring} from 'shared/lib/animations';
+import Head from 'next/head'
+import {FC} from 'react'
+import {ContainerTitle} from 'shared/ui/kit'
+import {CartItems} from 'widgets/Cart/CartItems'
+import {RemoveAllSaved, RemoveFromSaved} from 'features/Saved'
+import {Recommended} from 'widgets/SearchLists'
+import {GithubBanner} from 'entities/Banners/GithubBanner'
+import {WithSpring} from 'shared/ui/animations'
 
 const Saved: FC = () => {
   return <WithSpring>
@@ -16,7 +16,7 @@ const Saved: FC = () => {
     <CartItems Add={null} Remove={RemoveFromSaved} RemoveAll={RemoveAllSaved}/>
     <Recommended/>
     <GithubBanner/>
-  </WithSpring>;
-};
+  </WithSpring>
+}
 
-export default Saved;
+export default Saved

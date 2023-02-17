@@ -1,4 +1,4 @@
-import {Roles} from 'shared/types/globals';
+import {UserRoles} from 'app/config/globals'
 
 export interface LoginForm {
     email: string,
@@ -12,7 +12,7 @@ export interface SignupForm extends LoginForm {
 }
 
 export interface SignupWithRoles extends SignupForm {
-    role: Roles
+    role: UserRoles
 }
 
 
@@ -20,10 +20,10 @@ export type Forms = LoginForm | SignupForm
 
 
 export interface GoogleButtonProps {
-    role?: Roles
+    role?: UserRoles
 }
 
 export interface RegisterByGoogle {
     jwt: string,
-    role: Roles
+    role: UserRoles
 }

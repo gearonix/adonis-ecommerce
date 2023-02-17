@@ -1,5 +1,5 @@
-import s from './style.module.scss';
-import {ContainerTitle} from 'shared/ui';
+import s from './style.module.scss'
+import {ContainerTitle} from 'shared/ui/kit'
 
 const Languages = () => {
   return <article className={s.languages}>
@@ -12,10 +12,10 @@ const Languages = () => {
             <h4>United States</h4>
             <span className={s.description}>shopname.ae</span>
           </div>
-        </div>;
+        </div>
       })}
     </div>
-  </article>;
-};
+  </article>
+}
 
-export default Languages;
+export default Languages

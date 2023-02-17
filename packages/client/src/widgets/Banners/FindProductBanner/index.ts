@@ -1,1 +1,1 @@
-export {default as FindProductBanner} from './ui/FindProductBanner';
+export {default as FindProductBanner} from './ui/FindProductBanner'

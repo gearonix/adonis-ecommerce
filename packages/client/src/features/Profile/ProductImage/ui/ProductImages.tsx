@@ -1,8 +1,8 @@
-import {FC} from 'react';
-import s from './style.module.scss';
-import {ProductImage} from 'entities/ProductPage/ProductImage';
-import {ImageCarousel} from 'features/ProductPage/ImageCarousel';
-import {AiOutlineUpload, BsTrash} from 'icons';
+import {FC} from 'react'
+import s from './style.module.scss'
+import {ProductImage} from 'entities/ProductPage/ProductImage'
+import {ImageCarousel} from 'features/ProductPage/ImageCarousel'
+import {AiOutlineUpload, BsTrash} from 'shared/ui/icons'
 
 const ProductImages: FC = () => {
   return <div className={s.flex}>
@@ -19,7 +19,7 @@ const ProductImages: FC = () => {
       <h2 className={s.title}>Product Name</h2>
       <h2 className={s.title}>Price: <b>$123</b></h2>
     </div>
-  </div>;
-};
+  </div>
+}
 
-export default ProductImages;
+export default ProductImages

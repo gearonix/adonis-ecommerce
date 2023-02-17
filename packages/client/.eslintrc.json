@@ -1,11 +1,31 @@
 {
   "extends": [
     "next/core-web-vitals",
-    "google"
+    "google",
+    "plugin:@typescript-eslint/recommended"
   ],
   "rules": {
     "max-len": "off",
     "no-unused-vars": "warn",
-    "no-tabs": "off"
-  }
+    "no-tabs": "off",
+    "require-jsdoc": "off",
+    "react-hooks/exhaustive-deps": "off",
+    "new-cap": "off",
+    "no-empty-function": "off",
+    "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/no-inferrable-types": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "semi": [
+      "error",
+      "never"
+    ],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["warn"],
+    "@typescript-eslint/no-empty-interface": "warn"
+  },
+  "ignorePatterns": ["**/dev/**", "next-env.d.ts"],
+  "plugins": ["@typescript-eslint"],
+  "parser": "@typescript-eslint/parser",
+  "root": true
 }

@@ -1,1 +1,1 @@
-export {default as AsideControls} from './ui/Controls';
+export {default as AsideControls} from './ui/Controls'

@@ -1,4 +1,4 @@
-@use 'shared/css/mixins.scss' as *;
+@use 'shared/css/common.scss' as *;
 
 .cart_icons {
   @include size(100%, 50px);

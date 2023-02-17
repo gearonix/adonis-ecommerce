@@ -1,15 +1,15 @@
-import * as process from 'process';
-import {TypeOrmModuleOptions} from '@nestjs/typeorm';
-import {MixedList} from 'typeorm';
+import * as process from 'process'
+import {TypeOrmModuleOptions} from '@nestjs/typeorm'
+import {MixedList} from 'typeorm'
 
 export const buildDBConfig = (
-    entities: MixedList<any>
+    entities: MixedList<any>,
 ): TypeOrmModuleOptions => {
-  const { HOST_NAME, DB_PORT, USER_NAME, PASSWORD, DATABASE_NAME } =
-    process.env;
+  const {HOST_NAME, DB_PORT, USER_NAME, PASSWORD, DATABASE_NAME} =
+    process.env
 
   return {
-    type: "mysql",
+    type: 'mysql',
     host: HOST_NAME,
     port: +DB_PORT,
     username: USER_NAME,
@@ -17,5 +17,5 @@ export const buildDBConfig = (
     database: DATABASE_NAME,
     synchronize: true,
     entities: entities,
-  };
-};
+  }
+}

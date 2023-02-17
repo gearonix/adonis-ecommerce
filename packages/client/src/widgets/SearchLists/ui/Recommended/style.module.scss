@@ -1,4 +1,4 @@
-@use 'shared/css/mixins.scss' as *;
+@use 'shared/css/common.scss' as *;
 
 .recommended {
   @include size(100%, 270px);
@@ -8,7 +8,7 @@
   border-radius: $rounded;
 
   .image_block {
-    @include backgroundImage('/square.png');
+    @include backgroundImage('/assets/dev/square.png');
     @include size(20%);
     @include padding(20px, 20px);
     box-sizing: border-box;

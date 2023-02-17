@@ -1,1 +1,1 @@
-export {default as SearchUsers} from './ui/SearchUsers';
+export {default as SearchUsers} from './ui/SearchUsers'

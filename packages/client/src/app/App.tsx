@@ -1,14 +1,14 @@
-import type {AppProps} from 'next/app';
-import Layout from './providers/Layout';
-import {Provider} from 'react-redux';
-import AuthGuard from './providers/AuthGuard';
-import AsyncAuthorization from 'app/providers/AsyncAuthorization';
-import wrapper from './redux/store';
-import {GoogleOAuthProvider} from '@react-oauth/google';
-import Head from 'next/head';
+import type {AppProps} from 'next/app'
+import Layout from './providers/Layout'
+import {Provider} from 'react-redux'
+import AuthGuard from './providers/AuthGuard'
+import AsyncAuthorization from 'app/providers/AsyncAuthorization'
+import wrapper from './redux/store'
+import {GoogleOAuthProvider} from '@react-oauth/google'
+import Head from 'next/head'
 
 const App = ({Component, ...rest}: AppProps) => {
-  const {store, props} = wrapper.useWrappedStore(rest);
+  const {store, props} = wrapper.useWrappedStore(rest)
   return <>
     <Head>
       <title>Adonis</title>
@@ -25,8 +25,8 @@ const App = ({Component, ...rest}: AppProps) => {
         </Layout>
       </Provider>
     </GoogleOAuthProvider>
-  </>;
-};
+  </>
+}
 
 
-export default App;
+export default App

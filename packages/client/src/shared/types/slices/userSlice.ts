@@ -1,7 +1,7 @@
-import {Roles} from 'shared/types/globals';
+import {UserRoles} from 'app/config/globals'
 
 export interface UserSlice {
-    role: Roles,
+    role: UserRoles,
     firstName: string,
     lastName: string,
     email: string,
@@ -10,6 +10,6 @@ export interface UserSlice {
     description: string
     country: string,
     city: string
-    user_id: number,
+    userId: number,
     registration_date: string
 }

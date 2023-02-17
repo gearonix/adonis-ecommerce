@@ -1,1 +1,1 @@
-export {default as ProfileHeaderTemp} from './ui/ProfileHeaderTemp';
+export {default as ProfileHeaderTemp} from './ui/ProfileHeaderTemp'

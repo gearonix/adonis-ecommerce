@@ -1,13 +1,46 @@
-import {FC, ReactNode} from 'react';
-import {Preloader} from 'shared/ui';
-import {useRedirect} from './hooks/useRedirect';
+import {FC, ReactNode, useEffect} from 'react'
+import {Preloader} from 'shared/ui/kit'
+import {useRouter} from 'next/router'
+import {useSelector} from 'react-redux'
+import Selectors from 'shared/model/selectors'
+import appConfig from 'app/config/config'
+import {useBooleanState} from 'shared/lib/helpers/hooks/common'
+import {Routes} from 'shared/config/routes'
 
 const AuthGuard: FC<{ children: ReactNode }> = ({children}) => {
-  const isLoading = useRedirect();
+  const {isOpen: isLoaded, open: openLoading, close: closeLoading} = useBooleanState()
+  const router = useRouter()
+  const userId = useSelector(Selectors.userId)
+
+  const authCheck = (url: string) => {
+    const path: Routes = url.split('?')[0] as Routes
+    const {privatePaths} = appConfig
+
+    // redirect if not registered
+    if (userId === null && privatePaths.unauthorized.includes(path)) {
+      return router.push(Routes.LOGIN)
+    }
+    // redirect if registered
+    if (userId && privatePaths.authorized.includes(path)) {
+      return router.push(Routes.PROFILE)
+    }
+
+    openLoading()
+  }
+
+  useEffect(() => {
+    authCheck(router.asPath)
+    router.events.on('routeChangeStart', closeLoading)
+    router.events.on('routeChangeComplete', authCheck)
+    return () => {
+      router.events.off('routeChangeComplete', authCheck)
+      router.events.off('routeChangeStart', closeLoading)
+    }
+  }, [userId])
 
   return <>
-    {isLoading ? children : <Preloader/>}
-  </>;
-};
+    {isLoaded ? children : <Preloader/>}
+  </>
+}
 
-export default AuthGuard;
+export default AuthGuard

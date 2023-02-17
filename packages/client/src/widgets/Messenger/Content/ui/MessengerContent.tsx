@@ -1,8 +1,8 @@
-import {FC} from 'react';
-import s from './style.module.scss';
-import {MessengerContentTemp} from 'entities/Messenger/Content';
-import {MessageBar} from 'entities/Messenger/MessageBar';
-import {MessageForm} from 'features/Messenger/MessageForm';
+import {FC} from 'react'
+import s from './style.module.scss'
+import {MessengerContentTemp} from 'entities/Messenger/Content'
+import {MessageBar} from 'entities/Messenger/MessageBar'
+import {MessageForm} from 'features/Messenger/MessageForm'
 
 const MessengerContent: FC = () => {
   return <div className={s.messages_main}>
@@ -10,7 +10,7 @@ const MessengerContent: FC = () => {
       <MessengerContentTemp/>
       <MessageBar MessageForm={MessageForm}/>
     </div>
-  </div>;
-};
+  </div>
+}
 
-export default MessengerContent;
+export default MessengerContent

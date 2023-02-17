@@ -1,0 +1,12 @@
+@use 'shared/css/common.scss' as *;
+
+.list {
+  width: 12%;
+
+  h2.list_item {
+    margin-top: 22px;
+    color: $dark-grey;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+}

@@ -1,1 +1,1 @@
-export {default as Languages} from './ui/Languages';
+export {default as Languages} from './ui/Languages'

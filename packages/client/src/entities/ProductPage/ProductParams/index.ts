@@ -1,1 +1,1 @@
-export {default as ProductParams} from './ui/ProductParams';
+export {default as ProductParams} from './ui/ProductParams'

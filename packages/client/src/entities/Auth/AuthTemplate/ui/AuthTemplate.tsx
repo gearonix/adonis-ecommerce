@@ -1,14 +1,22 @@
-import {FC} from 'react';
-import s from './style.module.scss';
-import Link from 'next/link';
-import {getUIText} from '../helpers';
-import {AuthTemplateProps} from '../types';
-import cn from 'classnames';
-import GoogleButton from 'widgets/Login/ui/GoogleButton';
+import {FC, ReactNode} from 'react'
+import s from './style.module.scss'
+import Link from 'next/link'
+import {getUIText} from '../helpers'
+import cn from 'classnames'
+import GoogleButton from 'widgets/Login/ui/GoogleButton'
+import {GoogleButtonProps} from 'widgets/Login/types'
+import {UserRoles} from 'app/config/globals'
+
+interface AuthTemplateProps {
+    children: ReactNode,
+    submit: any,
+    GoogleButton: FC<GoogleButtonProps>,
+    role?: UserRoles
+}
 
 const RegTemplate: FC<AuthTemplateProps> = ({children, submit, role}) => {
-  const mode = !!role ? 'signup' : 'login';
-  const {title, linkHref, linkText, blueLinkText} = getUIText(mode);
+  const mode = !!role ? 'signup' : 'login'
+  const {title, linkHref, linkText, blueLinkText} = getUIText(mode)
 
   return <form className={s.login_form}>
     <div className={s.wrapper}>
@@ -20,7 +28,7 @@ const RegTemplate: FC<AuthTemplateProps> = ({children, submit, role}) => {
       <h4 className={s.account_link}>
         {linkText} <Link className="hover_link" href={linkHref}>  {blueLinkText} </Link></h4>
     </div>
-  </form>;
-};
+  </form>
+}
 
-export default RegTemplate;
+export default RegTemplate

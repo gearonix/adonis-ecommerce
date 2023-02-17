@@ -1,1 +1,1 @@
-export {default as OpenAddProduct} from './ui/OpenAddProduct';
+export {default as OpenAddProduct} from './ui/OpenAddProduct'

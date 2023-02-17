@@ -1,5 +1,5 @@
-import {App} from 'app';
-import 'app/css/globals.scss';
+import {App} from 'app'
+import 'app/css/globals.scss'
 
-export default App;
+export default App
 

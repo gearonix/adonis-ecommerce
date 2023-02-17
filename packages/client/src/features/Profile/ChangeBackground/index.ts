@@ -1,1 +1,1 @@
-export {default as ChangeBackground} from './ui/ChangeBackground';
+export {default as ChangeBackground} from './ui/ChangeBackground'

@@ -1,1 +1,1 @@
-export {default as OpenProfileEdit} from './ui/OpenProfileEdit';
+export {default as OpenProfileEdit} from './ui/OpenProfileEdit'

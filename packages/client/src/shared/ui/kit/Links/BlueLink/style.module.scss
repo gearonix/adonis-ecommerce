@@ -1,0 +1,12 @@
+@use 'shared/css/common.scss' as *;
+
+.link {
+  a {
+    background-image: linear-gradient(to right, $blue, $blue 50%, $blue 50%) !important;
+    font-size: $small;
+
+    svg {
+      color: $blue;
+    }
+  }
+}

@@ -1,13 +1,13 @@
-import {FC, ReactNode} from 'react';
-import s from './style.module.scss';
-import {NextImage} from 'shared/ui';
+import {FC, ReactNode} from 'react'
+import s from './style.module.scss'
+import {NextImage} from 'shared/ui/kit'
 
 const MessengerUser: FC<{ SelectUser: FC<{ children: ReactNode }> }> = ({SelectUser}) => {
   return <SelectUser>
     <div className={s.user}>
       <div className={s.wrapper}>
         <div className={s.image}>
-          <NextImage src={'/avatar.jpg'}/>
+          <NextImage src={'/assets/dev/avatar.jpg'}/>
         </div>
         <div className={s.info}>
           <h3>Test User</h3>
@@ -19,7 +19,7 @@ const MessengerUser: FC<{ SelectUser: FC<{ children: ReactNode }> }> = ({SelectU
         </div>
       </div>
     </div>
-  </SelectUser>;
-};
+  </SelectUser>
+}
 
-export default MessengerUser;
+export default MessengerUser

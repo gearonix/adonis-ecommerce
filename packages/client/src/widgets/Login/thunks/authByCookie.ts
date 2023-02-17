@@ -1,16 +1,16 @@
-import {createThunk} from 'shared/types/redux';
-import LoginApi from '../authApi';
-import {isResponseError} from 'shared/helpers/others/httpHelpers';
-import {getMe} from './getMe';
+import {createThunk} from 'shared/types/redux'
+import LoginApi from '../authApi'
+import {isResponseError} from 'shared/lib/helpers/others/httpHelpers'
+import {getMe} from './getMe'
 
 export const authByCookie = createThunk(
     'users/GET_TOKEN',
     async (_, {dispatch}) => {
-      const response = await LoginApi.authByCookie();
+      const response = await LoginApi.authByCookie()
 
 
-      if (isResponseError(response)) return;
+      if (isResponseError(response)) return
 
-      await dispatch(getMe(response.data.token));
+      await dispatch(getMe(response.data.token))
     }
-);
+)

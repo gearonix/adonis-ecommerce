@@ -1,1 +1,1 @@
-export {default as MessageBar} from './ui/MessageBar';
+export {default as MessageBar} from './ui/MessageBar'

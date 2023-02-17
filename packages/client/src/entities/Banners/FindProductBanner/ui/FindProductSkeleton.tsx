@@ -1,6 +1,10 @@
-import {FC} from 'react';
-import s from './style.module.scss';
-import {FindProductBannerP} from './types';
+import {FC} from 'react'
+import s from './style.module.scss'
+
+export interface FindProductBannerP {
+    Form: FC
+}
+
 
 const FindProductSkeleton: FC<FindProductBannerP> = ({Form}) => {
   return <div className={s.search_form}>
@@ -10,7 +14,7 @@ const FindProductSkeleton: FC<FindProductBannerP> = ({Form}) => {
             sit amet, consectetur adipisicing elit, sed do
             eiusmod tempor incididunt.</p>
     <Form/>
-  </div>;
-};
+  </div>
+}
 
-export default FindProductSkeleton;
+export default FindProductSkeleton

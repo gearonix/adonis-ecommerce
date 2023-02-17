@@ -1,6 +1,6 @@
-import {FC} from 'react';
-import s from './style.module.scss';
-import {MdSend} from 'icons';
+import {FC} from 'react'
+import s from './style.module.scss'
+import {MdSend} from 'shared/ui/icons'
 
 const MessageForm: FC<{ placeholder: string }> = ({placeholder}) => {
   return <>
@@ -8,7 +8,7 @@ const MessageForm: FC<{ placeholder: string }> = ({placeholder}) => {
     <div className={s.send}>
       <MdSend/>
     </div>
-  </>;
-};
+  </>
+}
 
-export default MessageForm;
+export default MessageForm

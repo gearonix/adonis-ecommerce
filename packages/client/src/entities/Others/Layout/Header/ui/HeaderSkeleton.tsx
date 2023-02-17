@@ -1,14 +1,19 @@
-import {FC} from 'react';
-import s from './style.module.scss';
-import {FaHeart, FaInfo, FaShoppingCart, FaUserAlt, GiHamburgerMenu, MdMessage} from 'icons';
-import Link from 'next/link';
-import {HoverLink, Logo} from 'shared/ui';
-import {HeaderSkeletonProps} from '../types';
-import {useAdaptive} from 'shared/helpers/hooks';
+import {FC} from 'react'
+import s from './style.module.scss'
+import {FaHeart, FaInfo, FaShoppingCart, FaUserAlt, GiHamburgerMenu, MdMessage} from 'shared/ui/icons'
+import Link from 'next/link'
+import {HoverLink, Logo} from 'shared/ui/kit'
+import {useAdaptive} from 'shared/lib/helpers/hooks/shared'
+
+export interface HeaderSkeletonProps {
+  Search: FC,
+  DropDowns: FC,
+  Burger: FC
+}
 
 
 const HeaderSkeleton: FC<HeaderSkeletonProps> = ({Search, DropDowns, Burger}) => {
-  const isMobile = useAdaptive(476);
+  const isMobile = useAdaptive(476)
   return <>
     <header className={s.header}>
       <div className={s.header_block}>
@@ -49,7 +54,7 @@ const HeaderSkeleton: FC<HeaderSkeletonProps> = ({Search, DropDowns, Burger}) =>
       </div>
     </header>
 
-  </>;
-};
+  </>
+}
 
-export default HeaderSkeleton;
+export default HeaderSkeleton
