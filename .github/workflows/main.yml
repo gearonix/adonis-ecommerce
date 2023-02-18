@@ -40,6 +40,6 @@ jobs:
       - name: Installing dependencies
         run: pnpm install
       - name: Linting project
-      - run: npm run lint
+        run: npm run lint
 
 
