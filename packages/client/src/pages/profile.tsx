@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import {ContentBlock, ContentButtons, EditProfile, ProfileHeader} from 'widgets/Profile'
-import {FC, useState} from 'react'
+import {FC} from 'react'
 import {ContentModal} from 'shared/ui/mui'
 import AddProduct from 'widgets/Profile/ui/AddProduct/AddProduct'
 import {MessageBar} from 'entities/Messenger/MessageBar'
@@ -9,29 +9,31 @@ import {SearchProduct} from 'entities/SearchMapItems'
 import {AddToSavedSearch} from 'features/Saved'
 import {Post} from 'entities/Profile/Post'
 import {WithSpring} from 'shared/ui/animations'
+import {useBooleanState} from 'shared/lib/helpers/hooks/common'
+import {useSelector} from 'shared/types/redux'
+import selectors from 'shared/model/selectors'
 
 
 const Profile: FC = () => {
-  const [IsEditProfile, openEditProfile] = useState<boolean>(false)
-  const [isAddProduct, openAddProduct] = useState<boolean>(false)
-  const closeEdit = () => openEditProfile(false)
-  const closeProduct = () => openAddProduct(false)
+  const editProfile = useBooleanState()
+  const addProduct = useBooleanState()
+  const userName = useSelector(selectors.userName)
 
   return <WithSpring>
     <Head>
-      <title>Adonis - [User]</title>
+      <title>Adonis - {userName}</title>
     </Head>
 
-    <ContentModal isOpened={IsEditProfile} close={closeEdit}>
-      <EditProfile close={closeEdit}/>
+    <ContentModal isOpened={editProfile.isOpen} close={editProfile.close}>
+      <EditProfile close={editProfile.close}/>
     </ContentModal>
-    <ContentModal isOpened={isAddProduct} close={closeProduct}>
-      <AddProduct cancel={closeProduct}/>
+    <ContentModal isOpened={addProduct.isOpen} close={addProduct.close}>
+      <AddProduct cancel={addProduct.close}/>
     </ContentModal>
 
-    <ProfileHeader openProfile={() => openEditProfile(true)}/>
+    <ProfileHeader openProfile={editProfile.open}/>
     <div className={'profile_wall'}>
-      <ContentButtons openModal={() => openAddProduct(true)}/>
+      <ContentButtons openModal={addProduct.open}/>
       <MessageBar MessageForm={MessageForm}/>
       <ContentBlock>
         <SearchProduct AddToSaved={AddToSavedSearch}/>

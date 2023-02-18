@@ -1,6 +1,6 @@
 import {FC} from 'react'
 import {Checkbox, FormControlLabel} from '@mui/material'
-import {ControlsProps} from '../../types'
+import {ControlsProps} from '../../../types'
 
 export const CheckBoxControl: FC<ControlsProps> = ({title, idx}) => {
   return <FormControlLabel control={<Checkbox defaultChecked style={{marginTop: -8, height: 25}}

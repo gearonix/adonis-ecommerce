@@ -13,11 +13,13 @@ export interface FormattedUser {
 }
 
 
-export const useReformatUser = (): ObjectNullable<FormattedUser> => {
+export const useReformatUser = (): ObjectNullable<FormattedUser> | null => {
   const user = useSelector(Selectors.user)
 
   const {firstName, lastName, description, email, avatar,
-    background} = user as UserSlice
+    background, userId} = user as UserSlice
+
+  if (!userId) return null
 
   const helpers = new Helpers()
 

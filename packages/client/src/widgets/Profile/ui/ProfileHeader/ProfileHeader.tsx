@@ -6,6 +6,7 @@ import {useReformatUser} from 'widgets/Profile/lib/hooks'
 
 const ProfileHeader: FC<{ openProfile: () => void }> = ({openProfile}) => {
   const user = useReformatUser()
+  if (!user) return null
 
   return <ProfileHeaderTemp ChangeBackground={<ChangeBackground/>}
     OpenProfileEdit={<OpenProfileEdit openProfile={openProfile}/>} user={user}/>

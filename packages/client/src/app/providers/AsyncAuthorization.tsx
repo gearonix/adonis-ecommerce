@@ -1,7 +1,7 @@
 import {FC, ReactNode, useEffect, useState} from 'react'
-import {authByCookie} from 'widgets/Login'
 import {useDispatch} from 'shared/types/redux'
 import {Preloader} from 'shared/ui/kit'
+import {getCurrentUser} from 'widgets/Login/thunks/getCurrentUser'
 
 
 const AsyncAuthorization: FC<{ children: ReactNode }> = ({children}) => {
@@ -9,7 +9,7 @@ const AsyncAuthorization: FC<{ children: ReactNode }> = ({children}) => {
   const [isLoaded, setIsLoaded] = useState<boolean>(false)
 
   useEffect(() => {
-    dispatch(authByCookie()).then(() => setIsLoaded(true))
+    dispatch(getCurrentUser()).then(() => setIsLoaded(true))
   }, [])
 
   return <>

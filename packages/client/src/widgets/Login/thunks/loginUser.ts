@@ -3,7 +3,7 @@ import {LoginForm} from 'widgets/Login/types'
 import LoginApi from '../authApi'
 import {isResponseError} from 'shared/lib/helpers/others/httpHelpers'
 import {Exceptions} from 'app/config/globals'
-import {getMe} from 'widgets/Login/thunks/getMe'
+import {getCurrentUser} from 'widgets/Login/thunks/getCurrentUser'
 
 export const loginUser = createThunk(
     'users/LOGIN_USER',
@@ -12,7 +12,7 @@ export const loginUser = createThunk(
 
       if (isResponseError(response)) return rejectWithValue(Exceptions.INCORRECT_PASSWORD)
 
-      await dispatch(getMe(response.data.token))
+      await dispatch(getCurrentUser())
     }
 )
 
@@ -24,6 +24,6 @@ export const loginByGoogle = createThunk(
 
       if (isResponseError(response)) return rejectWithValue(Exceptions.LOGIN_FAILED)
 
-      await dispatch(getMe(response.data.token))
+      await dispatch(getCurrentUser())
     }
 )

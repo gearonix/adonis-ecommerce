@@ -10,7 +10,7 @@ type Token = Res<{ token: string }>
 interface AuthApi {
     loginUser(formValues: LoginForm): Token,
 
-    getMe(token: string): Res<UserSlice>,
+    getCurrentUser(): Res<UserSlice>,
 
     authByCookie(): Token,
 
@@ -26,13 +26,9 @@ interface AuthApi {
 const EndPoint = EndPoints.AUTH
 
 const authApi: AuthApi = {
-  loginUser: (formValues) => axiosInstance.post('/auth/login', formValues),
+  loginUser: (formValues) => axiosInstance.post(EndPoint.login, formValues),
 
-  getMe: (token) => axiosInstance.get('/auth/get/me', {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  }),
+  getCurrentUser: () => axiosInstance.get(EndPoint.getUser),
   authByCookie: () => axiosInstance.get(EndPoint.getToken),
 
   registerUser: (formValues) => axiosInstance.post(EndPoint.registration, formValues),

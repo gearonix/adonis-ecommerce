@@ -1,4 +1,4 @@
-export {UsersService} from './users.service'
+export {UsersService} from './services/users.service'
 export {UsersModule} from './users.module'
 export {GoogleRegisterDTO, GoogleDTO} from './dto/googleDTO'
 export {UserLoginDTO} from '@app/routes/users/dto/authDTO'

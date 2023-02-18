@@ -1,5 +1,5 @@
 import {ServerExceptions} from '@app/lib/index'
-import {CanActivate, ExecutionContext, Injectable, UnauthorizedException,} from '@nestjs/common'
+import {CanActivate, ExecutionContext, Injectable, UnauthorizedException} from '@nestjs/common'
 import {JwtService} from '@nestjs/jwt'
 import {Observable} from 'rxjs'
 
@@ -12,15 +12,9 @@ export class AuthGuard implements CanActivate {
   ): boolean | Promise<boolean> | Observable<boolean> {
     const req = context.switchToHttp().getRequest()
     try {
-      const authHeader = req.headers.authorization
-      const [bearer, token] = authHeader.split(' ')
+      const token = req.cookies.AUTH_TOKEN
 
-      if (req.cookies.AUTH_TOKEN) {
-        req.user = this.jwtService.verify(req.cookies.AUTH_TOKEN)
-        return true
-      }
-
-      if (bearer != 'Bearer' || !token) {
+      if (!token) {
         throw new UnauthorizedException({
           message: ServerExceptions.NOT_AUTHORIZED,
         })

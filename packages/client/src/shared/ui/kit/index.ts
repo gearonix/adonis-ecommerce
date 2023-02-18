@@ -1,4 +1,4 @@
-export {Logo} from './Logo/Logo'
+export {Logo} from './Components/Logo/Logo'
 export {NextImage} from './Components/NextImage/NextImage'
 export {PrimarySelect} from './Inputs/PrimarySelect/PrimarySelect'
 export {Button} from './Buttons/Button/Button'

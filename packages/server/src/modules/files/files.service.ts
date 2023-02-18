@@ -36,8 +36,7 @@ export class FilesService {
 
       fs.unlinkSync(path.join(this.getStaticPath(mode), fileName))
     } catch (e) {
-      throw new HttpException(ServerExceptions.FILE_REMOVAL_ERROR,
-          HttpStatus.INTERNAL_SERVER_ERROR)
+
     }
   }
 
