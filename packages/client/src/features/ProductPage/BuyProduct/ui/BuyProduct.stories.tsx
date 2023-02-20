@@ -1,18 +1,17 @@
 import {ComponentMeta, ComponentStory} from '@storybook/react'
-import MessageForm from './MessageForm'
+import BuyProduct from './BuyProduct'
 import {FixedWidthDecorator} from 'shared/config/storybook/decorators'
 
 export default {
-  title: 'features/Messenger/MessageForm',
-  component: MessageForm,
+  title: 'features/ProductPage/BuyProduct',
+  component: BuyProduct,
   argTypes: {},
-} as ComponentMeta<typeof MessageForm>
+} as ComponentMeta<typeof BuyProduct>
 
-const Template: ComponentStory<typeof MessageForm> = (args) => <MessageForm {...args} />
+const Template: ComponentStory<typeof BuyProduct> = (args) => <BuyProduct {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  placeholder: 'some placeholder',
-}
 
+}
 Default.decorators = [FixedWidthDecorator()]

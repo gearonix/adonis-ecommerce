@@ -7,14 +7,15 @@ import {EditProfileForm} from '../../types'
 import {yupResolver} from '@hookform/resolvers/yup'
 import {editProfileSchema} from '../../lib/formSchemes'
 import {createFieldValues, Helpers} from 'shared/lib/helpers/others'
-import {useCreateEditProfileValues} from '../../lib/hooks'
 import {useDispatch, useSelector} from 'shared/types/redux'
 import {changeUserProfile} from '../../store/thunks/changeUserProfile'
-import Selectors from 'shared/model/selectors'
+import UserSelectors from 'shared/selectors/userSelectors'
+import {selectEditProfileValues} from 'widgets/Profile/store/selectors'
 
 const EditProfile: FC<{ close: () => void }> = ({close}) => {
-  const user = useSelector(Selectors.user)
-  const initialValues = useCreateEditProfileValues(user)
+  const user = useSelector(UserSelectors.user)
+  const initialValues = useSelector(selectEditProfileValues)
+
   const form = useForm<EditProfileForm>({resolver: yupResolver(editProfileSchema), ...initialValues})
   const reg = createFieldValues<EditProfileForm>(form)
   const dispatch = useDispatch()

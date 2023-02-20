@@ -1,5 +1,6 @@
 import {ComponentMeta, ComponentStory} from '@storybook/react'
 import {SearchInput} from './SearchInput'
+import {FixedWidthDecorator} from 'shared/config/storybook/decorators'
 
 export default {
   title: 'shared/mui/Inputs/SearchInput',
@@ -13,3 +14,4 @@ export const Default = Template.bind({})
 Default.args = {
 
 }
+Default.decorators = [FixedWidthDecorator(300)]

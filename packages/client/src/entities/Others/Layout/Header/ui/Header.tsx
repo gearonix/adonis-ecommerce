@@ -12,7 +12,7 @@ export interface HeaderSkeletonProps {
 }
 
 
-const HeaderSkeleton: FC<HeaderSkeletonProps> = ({Search, DropDowns, Burger}) => {
+const Header: FC<HeaderSkeletonProps> = ({Search, DropDowns, Burger}) => {
   const isMobile = useAdaptive(476)
   return <>
     <header className={s.header}>
@@ -57,4 +57,4 @@ const HeaderSkeleton: FC<HeaderSkeletonProps> = ({Search, DropDowns, Burger}) =>
   </>
 }
 
-export default HeaderSkeleton
+export default Header

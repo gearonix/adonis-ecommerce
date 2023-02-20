@@ -1,9 +1,8 @@
-import {EditProfileForm} from 'widgets/Profile/types'
+import {createSelector} from '@reduxjs/toolkit'
+import {UserSelectors} from 'shared/selectors'
 import {UserSlice} from 'shared/types/slices'
-import {ObjectNullable} from 'shared/types/common'
 
-
-export const useCreateEditProfileValues = (user: ObjectNullable<UserSlice>): { defaultValues: EditProfileForm } => {
+export const selectEditProfileValues = createSelector(UserSelectors.user, (user) => {
   const {firstName, lastName, description, country, city} = user as UserSlice
 
   return {
@@ -16,3 +15,4 @@ export const useCreateEditProfileValues = (user: ObjectNullable<UserSlice>): { d
     },
   }
 }
+)

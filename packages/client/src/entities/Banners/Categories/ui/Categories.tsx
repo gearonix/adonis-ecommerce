@@ -16,7 +16,7 @@ const Categories: FC = () => {
       <div className={s.user_block}>
         <div className={s.user_block_container}>
           <div className={s.hi_user}>
-            <Image width={44} height={44} src={'/avatar.jpg'} alt={'Electronic'}
+            <Image width={44} height={44} src={'assets/dev/avatar.jpg'} alt={'Electronic'}
               priority={false}/>
             <div className={s.user_title}>Hi user <br/>
                             let&apos;s get started

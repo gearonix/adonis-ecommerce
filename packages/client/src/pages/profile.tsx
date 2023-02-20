@@ -11,7 +11,7 @@ import {Post} from 'entities/Profile/Post'
 import {WithSpring} from 'shared/ui/animations'
 import {useBooleanState} from 'shared/lib/helpers/hooks/common'
 import {useSelector} from 'shared/types/redux'
-import selectors from 'shared/model/selectors'
+import selectors from 'shared/selectors/userSelectors'
 
 
 const Profile: FC = () => {

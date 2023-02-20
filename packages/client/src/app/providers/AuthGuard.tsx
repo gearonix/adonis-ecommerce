@@ -2,7 +2,7 @@ import {FC, ReactNode, useEffect} from 'react'
 import {Preloader} from 'shared/ui/kit'
 import {useRouter} from 'next/router'
 import {useSelector} from 'react-redux'
-import Selectors from 'shared/model/selectors'
+import UserSelectors from 'shared/selectors/userSelectors'
 import appConfig from 'app/config/config'
 import {useBooleanState} from 'shared/lib/helpers/hooks/common'
 import {Routes} from 'shared/config/routes'
@@ -10,7 +10,7 @@ import {Routes} from 'shared/config/routes'
 const AuthGuard: FC<{ children: ReactNode }> = ({children}) => {
   const {isOpen: isLoaded, open: openLoading, close: closeLoading} = useBooleanState()
   const router = useRouter()
-  const userId = useSelector(Selectors.userId)
+  const userId = useSelector(UserSelectors.userId)
 
   const authCheck = (url: string) => {
     const path: Routes = url.split('?')[0] as Routes

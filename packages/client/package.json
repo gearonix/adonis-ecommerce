@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint src/**/*.{js,jsx,ts,tsx} --fix",
-    "storybook": "start-storybook -p 6006"
+    "storybook": "start-storybook -p 6006",
+    "loki": "npx loki test",
+    "loki:approve": "npx loki approve",
+    "storybook:build": "build-storybook"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -56,6 +59,7 @@
     "css-loader": "^6.7.3",
     "eslint": "8.32.0",
     "file-loader": "^6.2.0",
+    "loki": "^0.31.0",
     "postcss-loader": "^7.0.2",
     "process": "^0.11.10",
     "resolve-url-loader": "^5.0.0",
@@ -66,5 +70,16 @@
     "styled-jsx": "^5.1.2",
     "typescript": "4.9.5",
     "webpack": "^5.75.0"
+  },
+  "loki": {
+    "configurations": {
+      "chrome.laptop": {
+        "target": "chrome.app",
+        "width": 1920,
+        "height": 1080,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      }
+    }
   }
 }
