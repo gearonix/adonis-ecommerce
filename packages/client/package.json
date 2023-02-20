@@ -75,7 +75,7 @@
   "loki": {
     "configurations": {
       "chrome.laptop": {
-        "target": "chrome.app",
+        "target": "chrome.docker",
         "width": 1920,
         "height": 1080,
         "deviceScaleFactor": 1,

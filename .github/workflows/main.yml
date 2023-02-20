@@ -76,6 +76,6 @@ jobs:
       - name: Building storybook
         run: npm run storybook:build --workspace=client
       - name: Screenshot testing
-        run: npm run loki --workspace=client
+        run: npm run loki:build --workspace=client
 
 
