@@ -8,5 +8,6 @@ export enum ServerExceptions {
   NO_TOKEN = 'Headers does not contain a token',
   INCORRECT_USER_DATA = 'You have entered incorrect user data',
   FILE_UPLOAD_ERROR = 'An error occurred while writing the file',
-  FILE_REMOVAL_ERROR = 'An error occurred while removing the file'
+  FILE_REMOVAL_ERROR = 'An error occurred while removing the file',
+  FORBIDDEN = 'Forbidden for you'
 }

@@ -3,7 +3,7 @@ import {JwtService} from '@nestjs/jwt'
 import {UsersService} from '@routes/users'
 import {ServerExceptions} from '@app/lib'
 import {ReturnToken} from '@routes/auth/types/returnTypes'
-import {UsersModel} from '@app/models'
+import {UsersEntity} from '@app/entities'
 import {RequestContext} from 'nestjs-request-context'
 import {getRequest, getResponse} from '@app/lib/helpers'
 
@@ -23,7 +23,7 @@ export class TokenService {
     return {token}
   }
 
-  async getUser(): Promise<UsersModel> {
+  async getUser(): Promise<UsersEntity> {
     try {
       const userId = await this.getUserIdByCookie()
       return this.usersService.getUserById(userId)

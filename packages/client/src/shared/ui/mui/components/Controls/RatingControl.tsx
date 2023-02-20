@@ -2,7 +2,7 @@ import {FC} from 'react'
 import {ControlsProps} from '../../types'
 import {FormControlLabel, Radio, Rating} from '@mui/material'
 
-export const RatingControl: FC<ControlsProps> = ({idx}) => {
+export const RatingControl: FC<ControlsProps> = ({idx = 1}) => {
   return <FormControlLabel control={<Radio style={{marginTop: -40, height: 25}}/>}
     label={<Rating name="read-only" value={5 - idx} readOnly sx={{
       height: 25,

@@ -3,26 +3,45 @@ import {UserSelectors} from 'shared/selectors'
 import {UserSlice} from 'shared/types/slices'
 import Helpers from 'shared/lib/helpers/helpers'
 import {raiseGoogleImageQuality} from 'widgets/Profile/lib/helpers'
+import {Nullable} from 'shared/types/common'
+import {UserRoles} from 'app/config/globals'
+
+export interface FormattedUser {
+  userName: string,
+  description: string,
+  userImage: Nullable<string>,
+  background: string,
+  country: Nullable<string>,
+  city: Nullable<string>,
+  date: string,
+  role: UserRoles
+}
 
 
-export const selectReformattedUser = createSelector(UserSelectors.user, (user) => {
-  const {firstName, lastName, description, email, avatar,
-    background, userId} = user as UserSlice
+export const selectReformattedUser = createSelector(UserSelectors.user, (nullableUser): Nullable<FormattedUser> => {
+  const user = nullableUser as UserSlice
 
-  if (!userId) return null
+  if (!user.userId) return null
 
   const helpers = new Helpers()
 
-  const userEmail = helpers.getNameFromEmail(email)
+  const userEmail = helpers.getNameFromEmail(user.email)
 
-  const userName = firstName ? helpers.attachStrings(firstName, lastName) : userEmail
+  const userName = user.firstName ? helpers.attachStrings(
+      user.firstName, user.lastName) : userEmail
 
-  const userImage = raiseGoogleImageQuality(avatar)
+  const userImage = raiseGoogleImageQuality(user.avatar)
+
+  const date = helpers.reformatMysqlDate(user.registration_date)
 
   return {
     userName,
-    description,
+    description: user.description,
     userImage,
-    background,
+    background: user.background,
+    country: user.country,
+    city: user.city,
+    role: user.role,
+    date,
   }
 })

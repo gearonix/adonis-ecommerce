@@ -1,4 +1,3 @@
-import {createFieldValues} from 'shared/lib/helpers/others'
 import {Nullable, ObjectOptional} from 'shared/types/common'
 
 export interface IHelpers {
@@ -10,7 +9,7 @@ export interface IHelpers {
 
     differenceBetweenObjects<T extends Object>(initialObject: T, changedObject: T): Nullable<ObjectOptional<T>>
 
-    isObjectEmpty(obj: any): boolean
+    isObjectEmpty(obj: any): boolean,
+    reformatMysqlDate(date: string): string
 }
 
-export type CreateFieldValues = ReturnType<typeof createFieldValues>

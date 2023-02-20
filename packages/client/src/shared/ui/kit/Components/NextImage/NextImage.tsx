@@ -9,6 +9,6 @@ interface NextImageProps extends ImageProps {
 
 export const NextImage: FC<NextImageProps> = ({src, alt = '', onClick = () => {}}) => {
   return <Image src={src} alt={alt} fill
-    priority={true} sizes={'100%, 100%'} onClick={onClick} loader={({src}) => src}/>
+    priority={true} sizes={'100%, 100%'} onClick={onClick} />
 }
 

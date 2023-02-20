@@ -2,7 +2,7 @@ import {Column, CreateDateColumn, Entity, PrimaryGeneratedColumn,} from 'typeorm
 import {Lengths, Roles} from '@app/lib'
 
 @Entity('users')
-export class UsersModel {
+export class UsersEntity {
   @Column({type: 'enum', enum: Roles})
     role: Roles
   @Column('varchar', {length: Lengths.TITLE, nullable: true})

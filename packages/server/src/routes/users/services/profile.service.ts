@@ -1,6 +1,6 @@
 import {forwardRef, HttpException, HttpStatus, Inject} from '@nestjs/common'
 import {InjectRepository} from '@nestjs/typeorm'
-import {UsersModel} from '@app/models'
+import {UsersEntity} from '@app/entities'
 import {Repository} from 'typeorm'
 import {FileDirectories} from '@app/types/models'
 import {ObjectOptional} from '@app/types/helpers'
@@ -12,8 +12,8 @@ import {UsersService} from '@routes/users'
 
 export class ProfileService {
   constructor(
-        @InjectRepository(UsersModel)
-        private users: Repository<UsersModel>,
+        @InjectRepository(UsersEntity)
+        private users: Repository<UsersEntity>,
         @Inject(forwardRef(() => AuthService))
         private authService: AuthService,
         private fileService: FilesService,
@@ -22,7 +22,7 @@ export class ProfileService {
 
   async changeProfile(
       data: ObjectOptional<EditProfileForm>,
-  ): Promise<UsersModel> {
+  ): Promise<UsersEntity> {
     const userId = await this.authService.getUserIdByPayload()
     const response = await this.users.update({userId}, data)
     if (!response.affected) {

@@ -6,6 +6,7 @@ export enum Lengths {
   TINYTEXT = 10,
   HASH = 100,
   TOKEN = 300,
+  TINYTITLE = 20
 }
 
 export enum Roles {
@@ -17,3 +18,4 @@ export enum FileDirectories{
   USER_AVATAR = 'user_avatars',
   USER_BACKGROUND = 'user_backgrounds'
 }
+

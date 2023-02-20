@@ -1,6 +1,6 @@
 export {CheckBoxControl} from './components/Controls/Checkbox/CheckBox'
 export {RadioControl} from './components/Controls/Radio'
-export {RatingControl} from './components/Controls/Rating'
+export {RatingControl} from './components/Controls/RatingControl'
 export {TypographyControl} from './components/Controls/Typography'
 export {MuiAutoComplete} from './components/Inputs/AutoComplete'
 export {HeadField} from './components/Inputs/HeadInput'
@@ -14,4 +14,4 @@ export {StandardSelect} from './components/Selects/StandardSelect'
 export {MuiPagination} from './components/Pagination'
 export {SizeButtons} from './components/SizeButtons'
 export {MuiTable} from './components/Table'
-
+export {Rating} from './components/Selects/Rating'

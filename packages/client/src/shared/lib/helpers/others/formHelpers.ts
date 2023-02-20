@@ -38,15 +38,21 @@ export const createMaxLengthField = (fieldName: string, max = 12): Yup.StringSch
 }
 
 
-interface CreateFieldValues<T extends FieldValues> {
+export interface ReturnFieldValues<T extends FieldValues> {
     inputProps: UseFormRegisterReturn<Path<T>>,
-    error: string
+    error: string,
+    setValue: (value: any) => void,
+    getValue: () => any
 }
 
-export const createFieldValues = <T extends FieldValues>({register, formState}:
-             UseFormReturn<T>) => (name: Path<T>): CreateFieldValues<T> => {
+export const createFieldValues = <T extends FieldValues>(form : UseFormReturn<T>) => (name: Path<T>): ReturnFieldValues<T> => {
     return {
-      inputProps: register(name),
-      error: formState.errors[name]?.message as string,
+      inputProps: form.register(name),
+      error: form.formState.errors[name]?.message as string,
+      setValue: (value) => form.setValue(name, value),
+      getValue: () => form.getValues(name)
     }
   }
+
+export type CreateFieldValues<T extends FieldValues> = ReturnType<typeof createFieldValues<T>>
+

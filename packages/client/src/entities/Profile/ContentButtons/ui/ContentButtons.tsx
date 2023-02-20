@@ -1,9 +1,10 @@
 import {FC, ReactElement} from 'react'
 import s from './style.module.scss'
 import {AiOutlineFileAdd, AiOutlineUnorderedList, FiHeart} from 'shared/ui/icons'
+import {Nullable} from "shared/types/common";
 
 export interface ContentButtonsProps {
-  AddProduct: ReactElement
+  AddProduct: Nullable<ReactElement>
 }
 
 

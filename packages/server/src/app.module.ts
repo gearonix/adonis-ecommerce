@@ -2,11 +2,12 @@ import {Module} from '@nestjs/common'
 import {ConfigModule} from '@nestjs/config'
 import {TypeOrmModule} from '@nestjs/typeorm'
 import {appConfig, buildDBConfig} from './config'
-import {UsersModel} from '@app/models'
+import {UsersEntity} from '@app/entities'
 import {AuthModule} from './routes/auth'
 import {UsersModule} from './routes/users'
 import {ServeStaticModule} from '@nestjs/serve-static'
 import {resolve} from 'path'
+import {ProductsModule} from '@routes/products/products.module'
 
 @Module({
   imports: [
@@ -14,14 +15,14 @@ import {resolve} from 'path'
       envFilePath: `.${process.env.NODE_ENV}.env`,
       cache: true,
     }),
-    TypeOrmModule.forRoot(buildDBConfig([UsersModel])),
+    TypeOrmModule.forRoot(buildDBConfig([UsersEntity])),
     ServeStaticModule.forRoot({
       rootPath: resolve(__dirname, 'static'),
       serveRoot: `/${appConfig.globalPrefix}/static`,
     }),
     AuthModule,
     UsersModule,
-
+    ProductsModule,
   ],
 
   controllers: [],

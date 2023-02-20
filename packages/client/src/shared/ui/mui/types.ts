@@ -16,7 +16,7 @@ export interface MuiSelectProps {
 
 export interface ControlsProps {
     title: string,
-    idx: number
+    idx?: number
 }
 
 export interface MuiLoginFieldProps {

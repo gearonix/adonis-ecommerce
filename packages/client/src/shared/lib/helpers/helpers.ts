@@ -1,5 +1,9 @@
 import {IHelpers} from './types'
 import {ObjectOptional} from 'shared/types/common'
+import dayjs from 'dayjs'
+import LocalizedFormat from 'dayjs/plugin/localizedFormat'
+
+dayjs.extend(LocalizedFormat)
 
 class Helpers implements IHelpers {
   public getNameFromEmail(email: string) {
@@ -31,6 +35,9 @@ class Helpers implements IHelpers {
     }
 
     return difference
+  }
+  public reformatMysqlDate(date: string) {
+    return dayjs(date).format('LL')
   }
 }
 

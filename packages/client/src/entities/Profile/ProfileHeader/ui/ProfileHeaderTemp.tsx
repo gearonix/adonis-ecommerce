@@ -1,8 +1,9 @@
 import {FC, ReactElement} from 'react'
 import s from './style.module.scss'
-import {ProfileBackground, UserAvatar} from 'shared/ui/kit'
+import {ProfileBackground, Typo, UserAvatar} from 'shared/ui/kit'
 import {ObjectNullable} from 'shared/types/common'
-import {FormattedUser} from 'widgets/Profile/lib/hooks'
+import {FormattedUser} from 'widgets/Profile/store/selectors'
+
 
 export interface ProfileHeaderTemplate {
   ChangeBackground: ReactElement,
@@ -29,6 +30,10 @@ const ProfileHeaderTemp: FC<ProfileHeaderTemplate> = ({ChangeBackground, OpenPro
         {OpenProfileEdit}
       </div>
     </div>
+    <Typo>{user.country}</Typo>
+    <Typo>{user.city}</Typo>
+    <Typo>{user.role}</Typo>
+    <Typo>{user.date}</Typo>
   </div>
 }
 

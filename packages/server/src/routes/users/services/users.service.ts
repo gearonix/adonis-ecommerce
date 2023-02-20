@@ -1,14 +1,14 @@
 import {forwardRef, Inject} from '@nestjs/common'
 import {InjectRepository} from '@nestjs/typeorm'
-import {UsersModel} from '@app/models'
+import {UsersEntity} from '@app/entities'
 import {Repository} from 'typeorm'
 import {RegisterUserDTO} from '@routes/users/dto/authDTO'
 import {AuthService} from '@routes/auth'
 
 export class UsersService {
   constructor(
-    @InjectRepository(UsersModel)
-    private users: Repository<UsersModel>,
+    @InjectRepository(UsersEntity)
+    private users: Repository<UsersEntity>,
     @Inject(forwardRef(() => AuthService))
     private authService: AuthService,
   ) {}
@@ -28,7 +28,7 @@ export class UsersService {
     return await this.users.findOneBy({userId})
   }
 
-  async getIdByGoogleSub(googleSub: string): Promise<UsersModel> {
+  async getIdByGoogleSub(googleSub: string): Promise<UsersEntity> {
     return this.users.findOneBy({google_sub: googleSub})
   }
 
@@ -46,5 +46,12 @@ export class UsersService {
       where: {userId},
     })
     return response?.background
+  }
+  async getUserRoleById(userId: number){
+    const response = await this.users.findOne({
+      select: ['role'],
+      where: {userId},
+    })
+    return response?.role
   }
 }
