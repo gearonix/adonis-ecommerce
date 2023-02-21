@@ -1,4 +1,10 @@
-import {ProductRatings} from "widgets/Profile/lib/consts/productTypes";
+import {
+    ProductFeatures,
+    ProductModels,
+    ProductRatings,
+    ProductSizes,
+    ProductTypes,
+} from 'widgets/Profile/lib/consts/productTypes'
 
 export interface EditProfileForm{
     firstName: string
@@ -12,16 +18,13 @@ export interface AddProductForm{
     name: string
     description: string
     design: string
-    rating: ProductRatings
+    rating: ProductRatings,
+    inStock: boolean,
+    price: number,
+    warrantyCount: number,
+    type: typeof ProductTypes,
+    model: typeof ProductModels,
+    size: typeof ProductSizes,
+    features: typeof ProductFeatures,
+    images: File[]
 }
-
-
-
-
-
-
-export type CreateFormApi = {
-    setValue(value: string): void,
-    value: string
-}
-

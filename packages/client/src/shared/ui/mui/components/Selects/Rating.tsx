@@ -1,23 +1,21 @@
-import {Rating as RatingMui, Typography} from '@mui/material';
-import {FC} from 'react';
-import {ReturnFieldValues} from 'shared/lib/helpers/others/formHelpers';
+import {Rating as RatingMui, Typography} from '@mui/material'
+import {FC} from 'react'
+import {FieldValues} from 'shared/lib/helpers/others/formHelpers/createFieldValues'
 
 
 export interface RatingProps{
     title: string,
-    values: ReturnFieldValues<any>
+    values: FieldValues
 }
 
 export const Rating: FC<RatingProps> = ({title, values}) => {
-
-
-    return <><Typography component="legend">{title}</Typography>
+  return <><Typography component="legend">{title}</Typography>
     <RatingMui
-        name="simple-controlled"
-        value={values.getValue()}
-        onChange={(event, newValue) => {
-            values.setValue(newValue);
-        }}
+      name="simple-controlled"
+      defaultValue={4}
+      onChange={(event, newValue) => {
+        values.setValue(newValue)
+      }}
     />
-    </>
+  </>
 }

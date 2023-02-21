@@ -1,7 +1,7 @@
 import {useState} from 'react'
 
-export const useBooleanState = () => {
-  const [isOpen, setIsOpened] = useState<boolean>(false)
+export const useBooleanState = (initialValue = false) => {
+  const [isOpen, setIsOpened] = useState<boolean>(initialValue)
 
   const close = () => setIsOpened(false)
   const open = () => setIsOpened(true)

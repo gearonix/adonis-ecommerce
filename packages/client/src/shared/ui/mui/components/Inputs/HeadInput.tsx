@@ -6,7 +6,7 @@ import {AiFillEye, AiFillEyeInvisible} from 'shared/ui/icons'
 export const HeadField: FC<MuiLoginFieldProps> = ({title, isPassword, readOnly = false, values}) => {
   const [showPassword, setShowPassword] = useState(true)
 
-  const {error, inputProps} = values
+  const {error, inputProps, maxLength} = values
 
   return <FormControl variant="outlined" fullWidth size={'small'} sx={{
     marginBottom: '26px',
@@ -33,7 +33,7 @@ export const HeadField: FC<MuiLoginFieldProps> = ({title, isPassword, readOnly =
                     </InputAdornment> :
                     null
       }
-      inputProps={inputProps}
+      inputProps={{...inputProps, maxLength}}
       label="Password"
     />
     {error && <FormHelperText error id="accountId-error" sx={{fontSize: 14}}>

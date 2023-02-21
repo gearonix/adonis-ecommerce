@@ -8,7 +8,7 @@ import {salesmanSchema} from '../lib/formSchemes'
 import {useSubmitForm} from '../lib/hooks'
 import {UserRoles} from 'app/config/globals'
 import GoogleButton from 'widgets/Login/ui/GoogleButton'
-import {createFieldValues} from 'shared/lib/helpers/others/formHelpers'
+import {createFieldValues} from 'shared/lib/helpers/others/formHelpers/createFieldValues'
 
 const SalesmanForm: FC = () => {
   const form = useForm<SignupForm>({resolver: yupResolver(salesmanSchema)})

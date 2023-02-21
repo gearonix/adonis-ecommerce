@@ -3,7 +3,7 @@ import {FC} from 'react'
 import {MuiLoginFieldProps} from 'shared/ui/mui/types'
 
 export const TextArea: FC<MuiLoginFieldProps> = ({title, values}) => {
-  const {error, inputProps} = values
+  const {error, inputProps, maxLength} = values
 
   return <FormControl variant="outlined" fullWidth size={'small'} sx={{
     marginBottom: '26px',
@@ -17,7 +17,7 @@ export const TextArea: FC<MuiLoginFieldProps> = ({title, values}) => {
       placeholder={'Description'}
       defaultValue="Default Value"
       sx={{marginTop: '10px'}}
-      inputProps={inputProps}
+      inputProps={{...inputProps, maxLength}}
     />
   </FormControl>
 }

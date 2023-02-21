@@ -5,7 +5,7 @@ import {useSelector} from 'react-redux'
 import UserSelectors from 'shared/selectors/userSelectors'
 import appConfig from 'app/config/config'
 import {useBooleanState} from 'shared/lib/helpers/hooks/common'
-import {Routes} from 'shared/config/routes'
+import {Routes, routes} from 'shared/config/routes'
 
 const AuthGuard: FC<{ children: ReactNode }> = ({children}) => {
   const {isOpen: isLoaded, open: openLoading, close: closeLoading} = useBooleanState()
@@ -18,11 +18,11 @@ const AuthGuard: FC<{ children: ReactNode }> = ({children}) => {
 
     // redirect if not registered
     if (userId === null && privatePaths.unauthorized.includes(path)) {
-      return router.push(Routes.LOGIN)
+      return router.push(routes.LOGIN)
     }
     // redirect if registered
     if (userId && privatePaths.authorized.includes(path)) {
-      return router.push(Routes.PROFILE)
+      return router.push(routes.PROFILE)
     }
 
     openLoading()

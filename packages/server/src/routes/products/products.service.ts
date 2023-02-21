@@ -5,8 +5,9 @@ import {ProductsEntity} from '@app/entities/products/products.entity'
 import {Repository} from 'typeorm'
 import {AuthService} from '@routes/auth'
 import {UsersService} from '@routes/users'
-import {Roles} from '@app/types/models'
+import {FileDirectories, Roles} from '@app/types/models'
 import {ServerExceptions} from '@app/types/exceptions'
+import {FilesService} from '@modules/files/files.service'
 
 @Injectable()
 export class ProductsService {
@@ -15,12 +16,23 @@ export class ProductsService {
       private products: Repository<ProductsEntity>,
       private authService: AuthService,
       private usersService: UsersService,
+      private fileService: FilesService,
   ) {
   }
-  async createProduct(product: ProductDTO){
+  async createProduct(product: ProductDTO) {
     await this.checkUserRole()
-    //@ts-ignore
-    return await this.products.save(product)
+    return this.products.save(product)
+  }
+  async setProductImages(images: any[], productId: number) {
+    await this.checkUserRole()
+
+    const fileUrls = []
+    for (const image of images) {
+      const url = await this.fileService.uploadFile(image, FileDirectories.PRODUCT_IMAGES)
+      fileUrls.push(url)
+    }
+
+    // await this.products.update()
   }
 
 

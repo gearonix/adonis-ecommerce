@@ -1,5 +1,5 @@
 import {ReactElement} from 'react'
-import {createFieldValues} from 'shared/lib/helpers/others/formHelpers'
+import {createFieldValues} from 'shared/lib/helpers/others/formHelpers/createFieldValues'
 import {EditProfileForm} from 'widgets/Profile/types'
 import {ObjectNullable} from 'shared/types/common'
 import {UserSlice} from 'shared/types/slices'

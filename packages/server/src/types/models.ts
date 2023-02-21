@@ -16,6 +16,7 @@ export enum Roles {
 
 export enum FileDirectories{
   USER_AVATAR = 'user_avatars',
-  USER_BACKGROUND = 'user_backgrounds'
+  USER_BACKGROUND = 'user_backgrounds',
+  PRODUCT_IMAGES = 'product_images'
 }
 

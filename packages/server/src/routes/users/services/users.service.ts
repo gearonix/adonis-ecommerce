@@ -47,7 +47,7 @@ export class UsersService {
     })
     return response?.background
   }
-  async getUserRoleById(userId: number){
+  async getUserRoleById(userId: number) {
     const response = await this.users.findOne({
       select: ['role'],
       where: {userId},

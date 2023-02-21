@@ -1,15 +1,27 @@
 import {Autocomplete, TextField} from '@mui/material'
 import {FC} from 'react'
+import {FieldValues} from 'shared/lib/helpers/others'
 
-export const MuiAutoComplete: FC = () => {
+interface AutoCompleteProps{
+  title: string,
+  values: FieldValues
+}
+
+export const AutoComplete: FC<AutoCompleteProps> = ({title, values}) => {
+  const currentValues = values.autoCompleteValues()
+
+  const onChange = (e: any, newValue: string[]) => {
+    values.setValue(newValue)
+  }
+
   return <Autocomplete
     multiple
     size="small"
-    options={[1, 2, 3]}
-    getOptionLabel={() => 'testing'}
-    defaultValue={[1]}
+    onChange={onChange}
+    options={currentValues}
+    getOptionLabel={(val: string) => val}
     renderInput={(params) => (
-      <TextField {...params} label="Size small" placeholder="Favorites"/>
+      <TextField {...params} label={title} placeholder={title} />
     )}
     sx={{width: '90%'}}
   />

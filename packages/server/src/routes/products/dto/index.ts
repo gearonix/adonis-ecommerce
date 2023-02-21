@@ -1,1 +1,1 @@
-export {ProductDTO} from './productDTO';
+export {ProductDTO} from './productDTO'

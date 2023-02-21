@@ -1,5 +1,5 @@
 import {ComponentMeta, ComponentStory} from '@storybook/react'
-import {CheckBoxControl} from './CheckBox'
+import {CheckBoxControl} from './CheckBoxControl'
 
 export default {
   title: 'shared/mui/Controls/CheckBox',

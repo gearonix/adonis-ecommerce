@@ -16,7 +16,7 @@ import selectors from 'shared/selectors/userSelectors'
 
 const Profile: FC = () => {
   const editProfile = useBooleanState()
-  const addProduct = useBooleanState()
+  const addProduct = useBooleanState(true)
   const userName = useSelector(selectors.userName)
 
   return <WithSpring>

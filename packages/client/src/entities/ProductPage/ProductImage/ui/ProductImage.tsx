@@ -2,15 +2,24 @@ import {FC, useState} from 'react'
 import s from './style.module.scss'
 import {ImageModal} from 'shared/ui/mui'
 import {NextImage} from 'shared/ui/kit'
+import {ImageCarouselProps} from 'features/ProductPage/ImageCarousel'
 
-const ProductImage: FC<{ ImageCarousel: FC }> = ({ImageCarousel}) => {
+interface ProductImageProps{
+  ImageCarousel: FC<ImageCarouselProps>,
+  files: string[]
+}
+
+
+const ProductImage: FC<ProductImageProps> = ({ImageCarousel, files}) => {
   const [isModalOpened, openModal] = useState<boolean>(false)
-  return <><ImageModal isOpen={isModalOpened} close={openModal} image={'/mock_item.svg'}/>
+  const [index, setIndex] = useState<number>(0)
+
+  return <><ImageModal isOpen={isModalOpened} close={openModal} image={files[index]}/>
     <div className={s.product_images}>
       <div className={s.image_wrapper} onClick={() => openModal(true)}>
-        <NextImage src={'/assets/dev/mock_item.svg'}/>
+        <NextImage src={files[index]} />
       </div>
-      <ImageCarousel/>
+      <ImageCarousel files={files} onSelect={(idx: number) => setIndex(idx)}/>
     </div>
   </>
 }

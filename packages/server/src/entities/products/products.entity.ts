@@ -1,7 +1,7 @@
 import {Column, Entity, OneToOne, PrimaryGeneratedColumn} from 'typeorm'
 import {Lengths} from '@app/lib'
 import {UsersEntity} from '@app/entities/users.entity'
-import {ProductModels, ProductRatings, ProductSizes, ProductTypes} from "./types";
+import {ProductModels, ProductRatings, ProductSizes, ProductTypes} from './types'
 
 @Entity('products')
 export class ProductsEntity {
@@ -17,8 +17,8 @@ export class ProductsEntity {
       inStock: boolean
     @Column('json', {nullable: true})
       images: string[]
-    @Column('tinyint')
-      purchasesCount: number
+    @Column('tinyint', {default: true})
+      savedCount: number
     @OneToOne((type) => UsersEntity, (user) => user.userId)
       salesmanId: number
     @Column('json')

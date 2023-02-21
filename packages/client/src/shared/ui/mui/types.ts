@@ -1,5 +1,5 @@
 import {ReactNode} from 'react'
-import {UseFormRegisterReturn} from 'react-hook-form'
+import {FieldValues} from 'shared/lib/helpers/others'
 
 export interface ModalProps {
     isOpen: boolean,
@@ -8,25 +8,21 @@ export interface ModalProps {
 }
 
 export interface MuiSelectProps {
-    value: string,
-    values: string[],
-    label: string,
-    handleChange: (value: string) => void
+    title: string,
+    values: FieldValues
 }
 
 export interface ControlsProps {
     title: string,
-    idx?: number
+    idx?: number,
+    values: FieldValues
 }
 
 export interface MuiLoginFieldProps {
     title: string,
     isPassword?: boolean,
     readOnly?: boolean,
-    values: {
-        inputProps: UseFormRegisterReturn<string>,
-        error: any
-    }
+    values: FieldValues
 }
 
 export interface ContentModalProps {

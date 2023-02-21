@@ -1,11 +1,12 @@
 import * as Yup from 'yup'
-import {createEmailField, createField, createRepeatPassword} from 'shared/lib/helpers/others'
 import {LoginForm, SignupForm} from '../types'
+import {FieldCreator} from 'shared/lib/helpers/others/formHelpers/fieldCreator'
 
+const creator = new FieldCreator()
 
 const formTemplate = {
-  email: createEmailField(),
-  password: createField('Password', 8, 16),
+  email: creator.email(),
+  password: creator.field('Password', 8, 16),
 }
 
 export const loginSchema: Yup.SchemaOf<LoginForm> = Yup.object().shape(formTemplate)
@@ -13,12 +14,12 @@ export const loginSchema: Yup.SchemaOf<LoginForm> = Yup.object().shape(formTempl
 // @ts-ignore
 export const customerSchema: Yup.SchemaOf<SignupForm> = Yup.object().shape({
   ...formTemplate,
-  repeatPassword: createRepeatPassword(),
+  repeatPassword: creator.password(),
 })
 
 export const salesmanSchema = Yup.object().shape({
   ...formTemplate,
-  firstName: createField('Name'),
-  lastName: createField('Surname'),
-  repeatPassword: createRepeatPassword(),
+  firstName: creator.field('Name'),
+  lastName: creator.field('Surname'),
+  repeatPassword: creator.password(),
 })

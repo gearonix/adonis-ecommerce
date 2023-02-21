@@ -1,27 +1,25 @@
 import {ButtonHTMLAttributes, ChangeEvent, FC} from 'react'
 import s from './style.module.scss'
 import cn from 'classnames'
-import {withFormData} from 'shared/lib/helpers/others'
-import {UploadProperties} from 'app/config/globals'
+
 
 interface UploadButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
-    handleChange: (formData: FormData) => void,
-    mode : UploadProperties
+    handleChange: (file: File) => void,
 }
 
 
-export const UploadButton: FC<UploadButtonProps> = ({className, children, handleChange, mode}) => {
-  const createFormData = withFormData(mode)
-
+export const UploadButton: FC<UploadButtonProps> = ({className, children, handleChange, disabled}) => {
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const formData = createFormData(e)
-    if (!formData) return
-    handleChange(formData)
+    if (e?.target?.files?.length === 0) return
+    const file = e?.target?.files?.[0]
+
+    handleChange(file as File)
   }
 
   return <button className={cn(s.UploadButton, className)}>
     {children}
-    <input type={'file'} onChange={onChange}/>
+    {!disabled && <input type={'file'} onChange={onChange}/>}
+
   </button>
 }
 

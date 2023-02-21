@@ -13,6 +13,10 @@ const EndPoints = {
     changeUserBackground: '/users/change/background',
     changeUserAvatar: '/users/change/avatar',
   },
+  PRODUCTS: {
+    createProduct: '/products/create',
+    setProductImages: '/products/set/images',
+  },
 } as const
 
 

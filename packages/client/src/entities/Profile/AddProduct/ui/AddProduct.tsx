@@ -1,35 +1,34 @@
-import {FC, ReactElement} from 'react'
+import {FC} from 'react'
 import s from './style.module.scss'
-import {HeadField, Rating, StandardSelect, TextArea} from 'shared/ui/mui'
-import {CreateFieldValues} from 'shared/lib/helpers/others/formHelpers'
-import {AddProductForm} from "widgets/Profile/types";
-
-export interface AddProductProps {
-  cancel: () => void,
-  submitForm: () => void,
-  ProductImages: ReactElement,
-  reg: CreateFieldValues<AddProductForm>,
-}
+import {AutoComplete, CheckBoxControl, HeadField, NumberField, Rating, StandardSelect, TextArea} from 'shared/ui/mui'
+import {AddProductProps} from 'entities/Profile/AddProduct/types'
 
 
 const AddProduct: FC<AddProductProps> = ({submitForm, cancel, ProductImages, reg}) => {
   return <div className={s.add_product_block}>
     <h2 className={s.title}>Add Product</h2>
     <div className={s.container}>
+
       <div className={s.flex}>
-         <HeadField title={'Product Name'} values={reg('name')}/>
+        <HeadField title={'Product Name'} values={reg('name', 20)}/>
       </div>
-      <TextArea title={'Product description'} values={reg('description')} />
-      <HeadField title={'Product Design'} values={reg('design')}/>
+      <TextArea title={'Product description'} values={reg('description', 55)} />
+      <HeadField title={'Product Design'} values={reg('design', 20)}/>
       <Rating title={'Product Rating'} values={reg('rating')}/>
+      <CheckBoxControl title={'In stock'} values={reg('inStock')}/>
+      <NumberField title={'Price'} values={reg('price')}/>
+      <NumberField title={'Warranty count'} values={reg('warrantyCount')}/>
+
       <div className={s.select_container}>
-        <StandardSelect/>
-        <StandardSelect/>
+        <StandardSelect title={'Product type'} values={reg('type')}/>
+        <StandardSelect title={'Product model'} values={reg('model')}/>
       </div>
+      <StandardSelect title={'Product size'} values={reg('size')}/>
+      <AutoComplete title={'Product features'} values={reg('features')}/>
     </div>
     <h2 className={s.title}>Product Images</h2>
     <div className={s.container}>
-      {ProductImages}
+      <ProductImages values={reg('images')}/>
       <div className={s.save_buttons}>
         <button className="primary_button" onClick={submitForm}>Add Product</button>
         <button className="outlined_button" onClick={cancel}>Cancel</button>

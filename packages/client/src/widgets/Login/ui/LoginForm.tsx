@@ -7,7 +7,7 @@ import {yupResolver} from '@hookform/resolvers/yup'
 import {loginSchema} from '../lib/formSchemes'
 import {useSubmitForm} from '../lib/hooks'
 import GoogleButton from './GoogleButton'
-import {createFieldValues} from 'shared/lib/helpers/others/formHelpers'
+import {createFieldValues} from 'shared/lib/helpers/others/formHelpers/createFieldValues'
 
 const LoginForm: FC = () => {
   const form = useForm<LoginForm>({resolver: yupResolver(loginSchema)})

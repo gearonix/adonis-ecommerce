@@ -2,21 +2,23 @@ import {FC} from 'react'
 import {FormControl, InputLabel, MenuItem, Select, SelectChangeEvent} from '@mui/material'
 import {MuiSelectProps} from '../../types'
 
-export const MuiSelect: FC<MuiSelectProps> = ({value, values, label, handleChange}) => {
+export const MuiSelect: FC<MuiSelectProps> = ({title, values}) => {
+  const selectValues = values.autoCompleteValues()
+
+  const onChange = (e: SelectChangeEvent<number>) => {
+    console.log(selectValues[e.target.value as number])
+  }
+
   return <FormControl sx={{m: 1, minWidth: 120, marginTop: '-8px', marginLeft: '3px'}} size="small">
-    <InputLabel id="demo-select-small" variant={'standard'}>{label}</InputLabel>
+    <InputLabel id="demo-select-small" variant={'standard'}>{title}</InputLabel>
     <Select
       labelId="demo-select-small"
       id="demo-select-small"
-      value={values.indexOf(value)}
-      label={label}
-      onChange={(e: SelectChangeEvent<number>) => {
-        handleChange(values[e.target.value as number])
-      }
-      }
+      label={title}
+      onChange={onChange}
       variant={'standard'}>
-      {values.map((item, idx) =>
-        <MenuItem value={values.indexOf(item)} key={idx}>{item}</MenuItem>)}
+      {selectValues.map((item, idx) =>
+        <MenuItem value={selectValues.indexOf(item)} key={idx}>{item}</MenuItem>)}
     </Select>
   </FormControl>
 }
