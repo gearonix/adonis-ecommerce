@@ -9,5 +9,6 @@ export enum ServerExceptions {
   INCORRECT_USER_DATA = 'You have entered incorrect user data',
   FILE_UPLOAD_ERROR = 'An error occurred while writing the file',
   FILE_REMOVAL_ERROR = 'An error occurred while removing the file',
-  FORBIDDEN = 'Forbidden for you'
+  FORBIDDEN = 'Forbidden for you',
+  INCORRECT_DATA = 'Your data is incorrect'
 }

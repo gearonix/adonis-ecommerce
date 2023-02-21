@@ -9,7 +9,6 @@ export class FieldCreator {
         .max(max, formErrors.maxLength(fieldName, max))
         .trim()
   }
-
   public email() {
     return this.field('Email', 5, 28).email(formErrors.invalidEmail())
   }

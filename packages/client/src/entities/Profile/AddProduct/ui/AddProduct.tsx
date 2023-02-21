@@ -25,6 +25,7 @@ const AddProduct: FC<AddProductProps> = ({submitForm, cancel, ProductImages, reg
       </div>
       <StandardSelect title={'Product size'} values={reg('size')}/>
       <AutoComplete title={'Product features'} values={reg('features')}/>
+      <HeadField title={'ProductMaterial'} values={reg('material')} />
     </div>
     <h2 className={s.title}>Product Images</h2>
     <div className={s.container}>

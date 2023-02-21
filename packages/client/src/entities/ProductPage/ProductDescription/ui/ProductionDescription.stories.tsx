@@ -2,7 +2,7 @@ import {ComponentMeta, ComponentStory} from '@storybook/react'
 import ProductDescription from './ProductDescription'
 
 export default {
-  title: 'entities/ProductPage/ProductDescription',
+  title: 'entities/CurrentProduct/ProductDescription',
   component: ProductDescription,
   argTypes: {},
 } as ComponentMeta<typeof ProductDescription>

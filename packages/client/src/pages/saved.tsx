@@ -3,7 +3,7 @@ import {FC} from 'react'
 import {ContainerTitle} from 'shared/ui/kit'
 import {CartItems} from 'widgets/Cart/CartItems'
 import {RemoveAllSaved, RemoveFromSaved} from 'features/Saved'
-import {Recommended} from 'widgets/SearchLists'
+import {Recommended} from 'widgets/Products'
 import {GithubBanner} from 'entities/Banners/GithubBanner'
 import {WithSpring} from 'shared/ui/animations'
 

@@ -2,7 +2,7 @@ import {ComponentMeta, ComponentStory} from '@storybook/react'
 import ImageCarousel from './ImageCarousel'
 
 export default {
-  title: 'features/ProductPage/ImageCarousel',
+  title: 'features/CurrentProduct/ImageCarousel',
   component: ImageCarousel,
   argTypes: {},
 } as ComponentMeta<typeof ImageCarousel>

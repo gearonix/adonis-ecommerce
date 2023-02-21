@@ -15,6 +15,8 @@ const initialState: ObjectNullable<UserSlice> = {
   userId: null,
   registration_date: null,
 }
+
+
 const userReducer = createSlice({
   name: 'users',
   initialState,

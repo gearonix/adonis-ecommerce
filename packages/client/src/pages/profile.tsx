@@ -1,23 +1,29 @@
 import Head from 'next/head'
 import {ContentBlock, ContentButtons, EditProfile, ProfileHeader} from 'widgets/Profile'
-import {FC} from 'react'
+import {FC, useEffect} from 'react'
 import {ContentModal} from 'shared/ui/mui'
-import AddProduct from 'widgets/Profile/ui/AddProduct/AddProduct'
+import AddProduct from 'widgets/Products/ui/AddProduct/AddProduct'
 import {MessageBar} from 'entities/Messenger/MessageBar'
 import {MessageForm} from 'features/Messenger/MessageForm'
-import {SearchProduct} from 'entities/SearchMapItems'
+import {SearchedProduct} from 'entities/SearchMapItems'
 import {AddToSavedSearch} from 'features/Saved'
 import {Post} from 'entities/Profile/Post'
 import {WithSpring} from 'shared/ui/animations'
 import {useBooleanState} from 'shared/lib/helpers/hooks/common'
-import {useSelector} from 'shared/types/redux'
+import {useDispatch, useSelector} from 'shared/types/redux'
 import selectors from 'shared/selectors/userSelectors'
+import {getMyProducts} from 'widgets/Products/store/thunks/getMyProducts'
 
 
 const Profile: FC = () => {
   const editProfile = useBooleanState()
   const addProduct = useBooleanState(true)
   const userName = useSelector(selectors.userName)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(getMyProducts())
+  }, [])
 
   return <WithSpring>
     <Head>
@@ -36,7 +42,7 @@ const Profile: FC = () => {
       <ContentButtons openModal={addProduct.open}/>
       <MessageBar MessageForm={MessageForm}/>
       <ContentBlock>
-        <SearchProduct AddToSaved={AddToSavedSearch}/>
+        <SearchedProduct AddToSaved={AddToSavedSearch}/>
         <Post/>
       </ContentBlock>
     </div>

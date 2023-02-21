@@ -20,6 +20,7 @@ export class ProductsEntity {
     @Column('tinyint', {default: true})
       savedCount: number
     @OneToOne((type) => UsersEntity, (user) => user.userId)
+    @Column('int')
       salesmanId: number
     @Column('json')
       features: string[]

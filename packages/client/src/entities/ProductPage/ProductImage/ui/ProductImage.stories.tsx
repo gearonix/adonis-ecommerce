@@ -3,7 +3,7 @@ import ProductImage from './ProductImage'
 import {ImageCarousel} from 'features/ProductPage/ImageCarousel'
 
 export default {
-  title: 'entities/ProductPage/ProductImage',
+  title: 'entities/CurrentProduct/ProductImage',
   component: ProductImage,
   argTypes: {},
 } as ComponentMeta<typeof ProductImage>

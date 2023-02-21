@@ -8,6 +8,7 @@ import {UsersService} from '@routes/users'
 import {FileDirectories, Roles} from '@app/types/models'
 import {ServerExceptions} from '@app/types/exceptions'
 import {FilesService} from '@modules/files/files.service'
+import {isNumber} from '@app/lib/helpers'
 
 @Injectable()
 export class ProductsService {
@@ -21,18 +22,27 @@ export class ProductsService {
   }
   async createProduct(product: ProductDTO) {
     await this.checkUserRole()
-    return this.products.save(product)
+    const salesmanId = await this.authService.getUserIdByPayload()
+
+    return this.products.save({...product, salesmanId})
   }
-  async setProductImages(images: any[], productId: number) {
+  async setProductImages(images: any[], productId: string) {
     await this.checkUserRole()
+    if (!isNumber(productId)) {
+      throw new HttpException(ServerExceptions.INCORRECT_DATA, HttpStatus.BAD_REQUEST)
+    }
+
 
     const fileUrls = []
     for (const image of images) {
       const url = await this.fileService.uploadFile(image, FileDirectories.PRODUCT_IMAGES)
       fileUrls.push(url)
     }
+    const salesmanId = await this.authService.getUserIdByPayload()
 
-    // await this.products.update()
+    await this.products.update({productId: +productId, salesmanId}, {images: fileUrls})
+
+    return await this.products.findOneBy({productId: +productId})
   }
 
 
@@ -43,5 +53,12 @@ export class ProductsService {
     if (userRole !== Roles.SALESMAN) {
       throw new HttpException(ServerExceptions.FORBIDDEN, HttpStatus.FORBIDDEN)
     }
+  }
+
+  async getMyProducts() {
+    await this.checkUserRole()
+    const salesmanId = await this.authService.getUserIdByPayload()
+
+    return this.products.find({where: {salesmanId}})
   }
 }

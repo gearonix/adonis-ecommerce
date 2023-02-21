@@ -9,7 +9,7 @@ import {AddToSavedProduct} from 'features/Saved'
 
 const ProductInfo: FC = () => {
   return <article className={s.product_info}>
-    <ProductImagesShowcase ImageCarousel={ImageCarousel}/>
+    <ProductImagesShowcase ImageCarousel={ImageCarousel} files={[]}/>
     <ProductParams/>
     <PurchaseProduct BuyProduct={BuyProduct} AddToSaved={AddToSavedProduct}/>
   </article>

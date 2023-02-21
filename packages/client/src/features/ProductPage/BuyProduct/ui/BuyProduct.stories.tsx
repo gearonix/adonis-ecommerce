@@ -3,7 +3,7 @@ import BuyProduct from './BuyProduct'
 import {FixedWidthDecorator} from 'shared/config/storybook/decorators'
 
 export default {
-  title: 'features/ProductPage/BuyProduct',
+  title: 'features/CurrentProduct/BuyProduct',
   component: BuyProduct,
   argTypes: {},
 } as ComponentMeta<typeof BuyProduct>

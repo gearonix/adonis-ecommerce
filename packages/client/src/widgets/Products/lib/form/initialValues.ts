@@ -4,7 +4,7 @@ import {
     ProductRatings,
     ProductSizes,
     ProductTypes,
-} from 'widgets/Profile/lib/consts/productTypes'
+} from 'widgets/Products/lib/consts/productTypes'
 
 const initialValues = {
   addProduct() {

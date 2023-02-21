@@ -2,13 +2,13 @@ import {FC} from 'react'
 import {AddProductTemplate} from 'entities/Profile/AddProduct'
 import {ProductImages} from 'features/Profile/ProductImage'
 import {useForm} from 'react-hook-form'
-import {AddProductForm} from 'widgets/Profile/types'
 import {yupResolver} from '@hookform/resolvers/yup'
-import {addProductSchema} from 'widgets/Profile/lib/form/formSchemes'
 import {createFieldValues} from 'shared/lib/helpers/others'
-import DefaultValues from 'widgets/Profile/lib/form/initialValues'
+import DefaultValues from 'widgets/Products/lib/form/initialValues'
 import {useDispatch} from 'shared/types/redux'
-import {addProduct} from 'widgets/Profile/store/thunks/addProduct'
+import {addProduct} from 'widgets/Products/store/thunks/addProduct'
+import {AddProductForm} from 'widgets/Products/types'
+import {addProductSchema} from 'widgets/Products/lib/form/formSchemes'
 
 const AddProduct: FC<{ cancel: () => void }> = ({cancel}) => {
   const {defaultValues, selectValues} = DefaultValues.addProduct()
@@ -17,8 +17,8 @@ const AddProduct: FC<{ cancel: () => void }> = ({cancel}) => {
   const dispatch = useDispatch()
 
   const onSubmit = (formValues: AddProductForm) => {
-    console.log(formValues)
     dispatch(addProduct(formValues))
+    cancel()
   }
 
 

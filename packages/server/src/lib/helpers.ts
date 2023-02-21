@@ -13,3 +13,5 @@ export const getRequest = (requestContext : any) => {
 export const getResponse = (requestContext : any) => {
   return requestContext.currentContext.res
 }
+
+export const isNumber = (str: string) => !isNaN(parseInt(str))

@@ -67,7 +67,6 @@ export class AuthService {
 
   async getUserIdByPayload(): Promise<number> {
     const req = RequestContext.currentContext.req
-    console.log(req.user)
     return req.user.payload.userId
   }
 }
