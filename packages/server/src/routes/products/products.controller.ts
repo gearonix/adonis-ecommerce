@@ -5,16 +5,17 @@ import {AuthGuard} from '@app/routes/auth/auth.guard'
 import {FilesInterceptor} from '@nestjs/platform-express'
 
 @Controller('products')
-@UseGuards(AuthGuard)
 export class ProductsController {
   constructor(private productsService: ProductsService) {}
 
   @Post('/create')
+  @UseGuards(AuthGuard)
   createProduct(@Body() product: ProductDTO) {
     return this.productsService.createProduct(product)
   }
 
   @Post('/set/images')
+  @UseGuards(AuthGuard)
   @UseInterceptors(FilesInterceptor('product_images'))
   setProductImages(@UploadedFiles() images, @Query('product_id') productId) {
     return this.productsService.setProductImages(images, productId)
@@ -22,9 +23,17 @@ export class ProductsController {
 
   @Get()
   getProducts(@Query() query) {
-    if (query.my) {
-      return this.productsService.getMyProducts()
-    }
-    return []
+    return this.productsService.getProducts(query)
+  }
+
+  @Get('/my')
+  @UseGuards(AuthGuard)
+  getMyProducts() {
+    return this.productsService.getMyProducts()
+  }
+
+  @Get('/recommended')
+  getRecommendedProducts() {
+    return this.productsService.getRandomProducts()
   }
 }

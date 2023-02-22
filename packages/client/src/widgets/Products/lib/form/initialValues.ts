@@ -23,6 +23,17 @@ const initialValues = {
       },
     }
   },
+  searchAside() {
+    return {
+      selectValues: {
+        model: ProductModels,
+        size: ProductSizes,
+        type: ProductTypes,
+        rating: [5, 4, 3, 2, 1],
+      },
+
+    }
+  },
 }
 
 

@@ -11,7 +11,7 @@ export interface FieldValues<T extends FormFieldValues = any> {
 }
 
 export const createFieldValues = <T extends FormFieldValues>(form : UseFormReturn<T>,
-  selectValues: any) =>
+  selectValues: any = {}) =>
     (name: Path<T>, maxLength?: number): FieldValues<T> => {
       return {
         inputProps: form.register(name),

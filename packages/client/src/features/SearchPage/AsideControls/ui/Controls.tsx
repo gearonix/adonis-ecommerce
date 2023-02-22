@@ -1,21 +1,25 @@
-import {FC} from 'react'
+import {FC, ReactNode} from 'react'
 import s from './style.module.scss'
 import {BlueLink} from 'shared/ui/kit'
 import Typo from 'shared/ui/kit/Typos/Typo/Typo'
-import {ControlsProps} from 'shared/ui/mui/types'
+import {FieldValues} from 'shared/lib/helpers/others'
 
 export interface CategoryProps {
-  items: string[],
   title: string,
-  Component: FC<ControlsProps>
+  children: ReactNode,
+  values: FieldValues
 }
 
 
-const Controls: FC<CategoryProps> = ({title, Component, items}) => {
+const Controls: FC<CategoryProps> = ({title, children, values}) => {
+  const disableAll = () => {
+    values.setValue(undefined)
+  }
+
   return <div className={s.category}>
     <Typo>{title}</Typo>
-    {items.map((item, idx) => <Component title={title} idx={idx} key={idx}/>)}
-    <BlueLink>Disable all</BlueLink>
+    {children}
+    <BlueLink onClick={disableAll}>Disable Group</BlueLink>
   </div>
 }
 

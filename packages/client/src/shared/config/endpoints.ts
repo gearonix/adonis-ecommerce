@@ -16,7 +16,9 @@ const EndPoints = {
   PRODUCTS: {
     createProduct: '/products/create',
     setProductImages: (id : number) => `/products/set/images?product_id=${id}`,
-    myProducts: '/products?my=true',
+    myProducts: '/products/my',
+    products: '/products',
+    recommended: '/products/recommended',
   },
 } as const
 

@@ -12,11 +12,6 @@ export interface MuiSelectProps {
     values: FieldValues
 }
 
-export interface ControlsProps {
-    title: string,
-    idx?: number,
-    values: FieldValues
-}
 
 export interface MuiLoginFieldProps {
     title: string,

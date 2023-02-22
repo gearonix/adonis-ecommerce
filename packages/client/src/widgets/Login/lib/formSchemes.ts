@@ -1,6 +1,6 @@
 import * as Yup from 'yup'
 import {LoginForm, SignupForm} from '../types'
-import {FieldCreator} from 'shared/lib/helpers/others/formHelpers/fieldCreator'
+import {FieldCreator} from 'shared/lib/helpers/others'
 
 const creator = new FieldCreator()
 

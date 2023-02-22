@@ -1,13 +1,13 @@
 import {ComponentMeta, ComponentStory} from '@storybook/react'
-import {CheckBoxControl} from './CheckBoxControl'
+import {Checkbox} from './Checkbox'
 
 export default {
   title: 'shared/mui/Controls/CheckBox',
-  component: CheckBoxControl,
+  component: Checkbox,
   argTypes: {},
-} as ComponentMeta<typeof CheckBoxControl>
+} as ComponentMeta<typeof Checkbox>
 
-const Template: ComponentStory<typeof CheckBoxControl> = (args) => <CheckBoxControl {...args} />
+const Template: ComponentStory<typeof Checkbox> = (args) => <Checkbox {...args} />
 
 export const Default = Template.bind({})
 Default.args = {

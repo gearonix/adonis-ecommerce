@@ -8,6 +8,7 @@
   border-radius: $rounded;
   border: $br $light;
   @include itemHover;
+  box-shadow: $shadow;
 
   .price, .item_description {
     display: inline-block;
@@ -25,6 +26,7 @@
   }
 
   .image_wrapper {
-    @include imageWrapper(100%, 200px);
+    @include imageWrapper(90%, 200px);
+    margin: 0 auto;
   }
 }

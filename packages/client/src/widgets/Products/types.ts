@@ -5,6 +5,7 @@ import {
     ProductSizes,
     ProductTypes,
 } from 'widgets/Products/lib/consts/productTypes'
+import {KeyOf, ObjectNullable} from 'shared/types/common'
 
 export interface AddProductForm {
     name: string
@@ -21,3 +22,10 @@ export interface AddProductForm {
     images: File[],
     material: string
 }
+
+export type SearchControlsForm = ObjectNullable<{
+    size: KeyOf<typeof ProductSizes>,
+    model: KeyOf<typeof ProductModels>,
+    type: KeyOf<typeof ProductTypes>,
+    rating: ProductRatings
+}>

@@ -17,6 +17,7 @@ module.exports = {
     "max-len": "off",
     "@darraghor/nestjs-typed/all-properties-have-explicit-defined": "off",
     "@darraghor/nestjs-typed/all-properties-are-whitelisted": "off",
+    "@darraghor/nestjs-typed/validated-non-primitive-property-needs-type-decorator": "off",
     "semi": [
       "error",
       "never"

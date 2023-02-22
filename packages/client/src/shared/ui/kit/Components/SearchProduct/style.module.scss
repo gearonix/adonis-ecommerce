@@ -12,10 +12,13 @@
 
   img {
     cursor: pointer;
+    border-radius: $rounded;
+    margin-left: 10px;
   }
 
   .info_block {
     @include size(55%, 90%);
+    margin-left: 20px;
 
     .price {
       @include inlineStyles($xm, $dark, bold);

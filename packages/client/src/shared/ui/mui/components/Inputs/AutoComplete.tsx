@@ -8,6 +8,8 @@ interface AutoCompleteProps{
 }
 
 export const AutoComplete: FC<AutoCompleteProps> = ({title, values}) => {
+  if (!values) return null
+
   const currentValues = values.autoCompleteValues()
 
   const onChange = (e: any, newValue: string[]) => {

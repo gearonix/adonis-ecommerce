@@ -1,8 +1,7 @@
 import {FC} from 'react'
 import s from './style.module.scss'
-import {Button} from 'shared/ui/kit'
+import {Button, RecommendedItem} from 'shared/ui/kit'
 import {SearchMap} from 'features/SearchPage/MapList'
-import {RecommendedItem} from 'entities/SearchMapItems'
 
 
 const Recommended: FC = () => {

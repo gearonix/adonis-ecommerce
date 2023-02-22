@@ -61,4 +61,14 @@ export class ProductsService {
 
     return this.products.find({where: {salesmanId}})
   }
+
+  async getProducts(query: any) {
+    return this.products.find({
+      where: query,
+    })
+  }
+
+  async getRandomProducts() {
+    return this.products.createQueryBuilder().orderBy('RAND()').limit(8).getMany()
+  }
 }

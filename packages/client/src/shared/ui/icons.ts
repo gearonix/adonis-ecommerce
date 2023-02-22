@@ -9,6 +9,7 @@ export {
   AiFillEye, AiFillEyeInvisible, AiFillLock, AiOutlineApi, AiOutlineArrowLeft,
   AiOutlineCheck, AiOutlineGithub, AiOutlineHome, AiOutlineSearch, AiFillFileAdd,
   AiOutlineFileAdd, AiOutlineUnorderedList, AiOutlineUpload,
+  AiOutlineShoppingCart,
 } from 'react-icons/ai'
 export {MdMessage, MdOutlineDescription, MdSend} from 'react-icons/md'
 export {HiOutlineFlag} from 'react-icons/hi'

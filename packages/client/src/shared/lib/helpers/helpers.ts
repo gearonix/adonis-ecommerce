@@ -39,6 +39,12 @@ class Helpers implements IHelpers {
   public reformatMysqlDate(date: string) {
     return dayjs(date).format('LL')
   }
+  public onlyDefinedValues<T extends Object>(obj: T): Partial<T> {
+    return JSON.parse(JSON.stringify(obj))
+  }
+  public objectToQuery<T extends Object>(obj: T) {
+    return Object.entries(obj).map(([key, value]) => `${key}=${value}`).join('&')
+  }
 }
 
 export default Helpers

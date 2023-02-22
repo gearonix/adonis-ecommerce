@@ -1,8 +1,14 @@
 import {FC} from 'react'
-import {ControlsProps} from '../../types'
-import {FormControlLabel, Radio} from '@mui/material'
+import {FormControlLabel, Radio as MuiRadio} from '@mui/material'
 
-export const RadioControl: FC<ControlsProps> = ({title, idx}) => {
-  return <FormControlLabel value={title} control={<Radio style={{marginTop: -20, height: 25}}/>}
-    label={title} sx={{display: 'block', height: 25}} key={idx}/>
+
+export interface RadioControlProps{
+  label: string,
+  name: string,
+  checked: boolean
+}
+
+export const Radio: FC<RadioControlProps> = ({label, name, checked}) => {
+  return <FormControlLabel value={name} control={<MuiRadio style={{marginTop: -20, height: 25}} checked={checked}/>}
+    label={label} sx={{display: 'block', height: 25}} />
 }

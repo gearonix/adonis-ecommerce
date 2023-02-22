@@ -3,6 +3,7 @@ import {UploadProperties} from 'app/config/globals'
 import {withFormData} from 'shared/lib/helpers/others'
 import {AddProductForm} from 'widgets/Products/types'
 import {ProductsApi} from 'widgets/Products/productsApi'
+import {getMyProducts} from 'widgets/Products'
 
 
 export const addProduct = createThunk('products/ADD_PRODUCT',
@@ -10,14 +11,11 @@ export const addProduct = createThunk('products/ADD_PRODUCT',
       const createFormData = withFormData(UploadProperties.PRODUCT_IMAGES)
       const images = createFormData(...formValues.images)
 
-      let response = await ProductsApi.addProduct(formValues)
-
+      const response = await ProductsApi.addProduct(formValues)
 
       const productId = response.data.productId
 
-      response = await ProductsApi.setProductImages(productId, images)
+      await ProductsApi.setProductImages(productId, images)
 
-      const newProduct = response.data
-
-      console.log(newProduct)
+      dispatch(getMyProducts())
     })

@@ -1,17 +1,17 @@
 import {FC} from 'react'
 import s from './style.module.scss'
 import {NextImage} from 'shared/ui/kit'
+import {Product} from 'shared/types/slices'
 
-const RecommendedItemTall: FC = () => {
+export const RecommendedItemTall: FC<{product: Product}> = ({product}) => {
   return <div className={s.item}>
     <div className={s.image_wrapper}>
-      <NextImage src={'/assets/dev/mock_item.svg'}/>
+      <NextImage src={product.images[0]}/>
     </div>
-    <h3 className={s.price}>$10.30</h3>
+    <h3 className={s.price}>${product.price}</h3>
     <span className={s.item_description}>
-                T-shirts with multiple colors, for men
+      {product.description}
     </span>
   </div>
 }
 
-export default RecommendedItemTall

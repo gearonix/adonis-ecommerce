@@ -1,13 +1,27 @@
-import React, {FC} from 'react'
+import React, {FC, useEffect} from 'react'
 import s from './style.module.scss'
-import {SearchMap} from 'features/SearchPage/MapList'
-import {SearchedProduct} from 'entities/SearchMapItems'
+import {SearchedProduct} from 'shared/ui/kit'
 import {AddToSavedSearch} from 'features/Saved'
+import {useDispatch, useSelector} from 'shared/types/redux'
+import {ProductSelectors} from 'shared/selectors'
+import {getProducts} from 'widgets/Products/store/thunks'
+import {productsActions} from 'widgets/Products/store/productsReducer'
 
 const SearchList: FC = () => {
+  const products = useSelector(ProductSelectors.products)
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(getProducts({}))
+    return () => {
+      dispatch(productsActions.setProducts([]))
+    }
+  }, [])
+
   return <div className={s.items_block}>
-    <SearchMap values={[1, 2, 3, 4, 5, 6, 7, 8]}
-      Item={() => <SearchedProduct AddToSaved={AddToSavedSearch}/>}/>
+    {products.map((product) => <SearchedProduct AddToSaved={AddToSavedSearch}
+      product={product}
+      key={product.productId}
+    />)}
   </div>
 }
 
