@@ -3,10 +3,12 @@ import s from './style.module.scss'
 import {Button} from 'shared/ui/kit'
 import {useForm} from 'shared/lib/helpers/hooks/common'
 import {searchDefaultValues} from '../lib/defaultValues'
-import {useRouter} from 'next/router'
-import {routes} from 'shared/config/routes'
 import {Helpers} from 'shared/lib/helpers/others'
 import {onEnter} from 'features/SearchPage/HeaderSearch/lib/helpers'
+import {useDispatch} from 'shared/types/redux'
+import {productsActions} from 'widgets/Products'
+import {useRouter} from 'next/router'
+import {routes} from 'shared/config/routes'
 
 interface SearchForm{
     search: string,
@@ -14,21 +16,17 @@ interface SearchForm{
 
 const helpers = new Helpers()
 
-const HeaderSearch: FC = () => {
+const HeaderInput: FC = () => {
   const {reg, submit} = useForm<SearchForm>(null, searchDefaultValues)
+  const dispatch = useDispatch()
   const router = useRouter()
 
   const onSearch = ({search}: SearchForm) => {
-    const query = {
-      query: {
-        search: helpers.strToUndefined(search),
-      },
-    }
+    dispatch(productsActions.changeFilter({search: helpers.toUndefined(search)}))
 
-    router.push({
-      pathname: routes.SEARCH,
-      ...helpers.partial(query),
-    })
+    if (router.pathname !== routes.SEARCH) {
+      router.push(routes.SEARCH)
+    }
   }
 
 
@@ -42,4 +40,4 @@ const HeaderSearch: FC = () => {
 }
 
 
-export default HeaderSearch
+export default HeaderInput

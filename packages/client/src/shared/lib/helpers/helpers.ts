@@ -39,17 +39,31 @@ class Helpers {
     return dayjs(date).format('LL')
   }
   public partial<T extends Object>(obj: T): Partial<T> {
-    return JSON.parse(JSON.stringify(obj))
+    const newObj: Partial<T> = {}
+    Object.entries(obj).map(([key, value]) => {
+      if (value === null || value === undefined || value === '') {
+        return
+      }
+      newObj[key as keyof T] = value
+    })
+    return newObj
   }
   public toQuery<T extends Object>(obj: T) {
     return Object.entries(obj).map(([key, value]) => `${key}=${value}`).join('&')
   }
-  public strToUndefined(str: string) {
+  public toUndefined(str: string) {
     return str === '' ? undefined : str
   }
   public cropped(str: string, char = 30) {
     return str.length > 30 ? str.slice(0, char) + '...' : str
   }
+  public isExist<T, N>(name: T, value: N): N | undefined {
+    return name ? value : undefined
+  }
+  public byDefault<T, N>(name: T, defaultValue: N): N | T {
+    return name ? name : defaultValue
+  }
 }
+
 
 export default Helpers

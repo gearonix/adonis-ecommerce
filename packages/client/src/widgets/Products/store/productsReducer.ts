@@ -1,35 +1,23 @@
-import {ProductsSlice} from 'shared/types/slices'
 import {createSlice, PayloadAction as Action} from '@reduxjs/toolkit'
 import {ProductsWithCount} from 'widgets/Products/productsApi'
+import {SearchQuery} from 'widgets/Products/types'
+import {productsInitialState as initialState} from 'shared/config/redux/initialStates'
 
-const initialProducts = {
-  data: [],
-  count: 0,
-  page: 0,
-}
-
-const initialState : ProductsSlice = {
-  products: initialProducts,
-  myProducts: initialProducts,
-}
 
 const productsReducer = createSlice({
   name: 'products',
   initialState,
   reducers: {
-    setMyProducts(state, {payload}: Action<ProductsWithCount>) {
-      state.myProducts.data = payload.data
-      state.myProducts.count = payload.count
-    },
     setProducts(state, {payload}: Action<ProductsWithCount>) {
-      state.products.data = payload.data
-      state.products.count = payload.count
+      state.products = payload.data
+      state.count = payload.count
     },
-    clearProducts(state) {
-      state.products = initialProducts
+    clearProducts() {
+      return initialState
     },
-    setProductsPage(state, {payload}: Action<number>) {
-      state.products.page = payload
+    changeFilter(state, {payload}: Action<Partial<SearchQuery>>) {
+      // @ts-ignore
+      state.filter = {...state.products.filter, ...payload}
     },
   },
 })

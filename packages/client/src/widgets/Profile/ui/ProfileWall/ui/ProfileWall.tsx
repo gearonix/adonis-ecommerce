@@ -4,6 +4,7 @@ import {ContentButtons} from 'widgets/Profile'
 import {useBooleanState} from 'shared/lib/helpers/hooks/common'
 import {ContentModal} from 'shared/ui/mui'
 import {AddProduct, MyProducts} from 'widgets/Products'
+import {SearchPagination} from 'features/SearchPage/SearchPagination'
 
 
 const ProfileWall : FC = () => {
@@ -16,6 +17,7 @@ const ProfileWall : FC = () => {
     <ContentButtons openModal={addProduct.open}/>
     <div style={{width: '100%'}}>
       <MyProducts />
+      <SearchPagination/>
     </div>
   </div>
 }

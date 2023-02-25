@@ -21,6 +21,6 @@ export enum FileDirectories{
 }
 
 export enum PageLimits{
-  RECOMMENDED = 8,
-  PRODUCTS = 2
+  RECOMMENDED = 10,
+  PRODUCTS = 10
 }

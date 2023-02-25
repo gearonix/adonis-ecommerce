@@ -1,7 +1,7 @@
 import axiosInstance from 'shared/config/axios'
 import {LoginForm, RegisterByGoogle, SignupWithRoles} from './types'
 import {AxiosResponse as Res} from 'shared/types/common'
-import {UserSlice} from 'shared/types/slices'
+import {User} from 'shared/types/slices'
 import EndPoints from 'shared/config/endpoints'
 
 
@@ -10,7 +10,7 @@ type Token = Res<{ token: string }>
 interface AuthApi {
     loginUser(formValues: LoginForm): Token,
 
-    getCurrentUser(): Res<UserSlice>,
+    getCurrentUser(): Res<User>,
 
     authByCookie(): Token,
 

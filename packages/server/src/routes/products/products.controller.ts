@@ -1,8 +1,9 @@
-import {Body, Controller, Get, Post, Query, UploadedFiles, UseGuards, UseInterceptors} from '@nestjs/common'
+import {Body, Controller, Get, Param, Post, Query, UploadedFiles, UseGuards, UseInterceptors} from '@nestjs/common'
 import {ProductsService} from '@routes/products/products.service'
 import {ProductDTO} from './dto'
 import {AuthGuard} from '@app/routes/auth/auth.guard'
 import {FilesInterceptor} from '@nestjs/platform-express'
+import {SearchDTO} from '@routes/products/dto/searchDTO'
 
 @Controller('products')
 export class ProductsController {
@@ -22,18 +23,23 @@ export class ProductsController {
   }
 
   @Get()
-  getProducts(@Query() query) {
+  getProducts(@Query() query: SearchDTO) {
     return this.productsService.getProducts(query)
   }
 
   @Get('/my')
   @UseGuards(AuthGuard)
-  getMyProducts() {
-    return this.productsService.getMyProducts()
+  getMyProducts(@Query('page') page) {
+    return this.productsService.getMyProducts(page)
   }
 
   @Get('/recommended')
-  getRecommendedProducts(@Query() query) {
+  getRecommendedProducts(@Query() query: SearchDTO) {
     return this.productsService.getRandomProducts(query)
+  }
+
+  @Get(':id')
+  getProduct(@Param('id') id) {
+    return this.productsService.getProduct(+id)
   }
 }

@@ -1,27 +1,13 @@
-import {ObjectNullable} from 'shared/types/common'
-import {UserSlice} from 'shared/types/slices'
+import {User} from 'shared/types/slices'
 import {createSlice, PayloadAction} from '@reduxjs/toolkit'
-
-const initialState: ObjectNullable<UserSlice> = {
-  role: null,
-  firstName: null,
-  lastName: null,
-  email: null,
-  avatar: null,
-  background: null,
-  description: null,
-  country: null,
-  city: null,
-  userId: null,
-  registration_date: null,
-}
+import {usersInitialState as initialState} from 'shared/config/redux/initialStates'
 
 
 const userReducer = createSlice({
   name: 'users',
   initialState,
   reducers: {
-    setUser(state, {payload}: PayloadAction<UserSlice>) {
+    setUser(state, {payload}: PayloadAction<User>) {
       return {...state, ...payload}
     },
     clearUser(state) {

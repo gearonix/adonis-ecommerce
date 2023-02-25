@@ -1,6 +1,6 @@
 import {UserRoles} from 'app/config/globals'
 
-export interface UserSlice {
+export interface User {
     role: UserRoles,
     firstName: string,
     lastName: string,

@@ -12,8 +12,11 @@ export const Pagination: FC<PaginationProps> = ({count, onChange, page}) => {
   const handleChange = (e: ChangeEvent<unknown>, value: number) => {
     onChange(value - 1)
   }
+  if (Math.ceil(count) < 2) {
+    return null
+  }
 
-  return <MuiPagination count={Math.floor(count)} variant="outlined" shape="rounded" sx={{
+  return <MuiPagination count={Math.ceil(count)} variant="outlined" shape="rounded" sx={{
     float: 'right',
     marginTop: '18px',
   }} onChange={handleChange} page={page + 1}/>

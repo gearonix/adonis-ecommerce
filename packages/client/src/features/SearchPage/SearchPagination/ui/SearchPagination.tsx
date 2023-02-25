@@ -1,18 +1,18 @@
 import {FC} from 'react'
 import {Pagination} from 'shared/ui/mui'
 import {useDispatch, useSelector} from 'shared/types/redux'
-import {ProductSelectors} from 'shared/selectors'
+import {ProductsSelectors} from 'shared/selectors'
 import {productsActions} from 'widgets/Products'
 
 const SearchPagination : FC = () => {
-  const productsCount = useSelector(ProductSelectors.productsTotalLength)
-  const page = useSelector(ProductSelectors.productsPage)
+  const productsCount = useSelector(ProductsSelectors.total)
+  const page = useSelector(ProductsSelectors.page) as number
   const dispatch = useDispatch()
-  const onChange = (value: number) => {
-    dispatch(productsActions.setProductsPage(value))
+  const onChange = (page: number) => {
+    dispatch(productsActions.changeFilter({page}))
   }
 
-  return <Pagination count={productsCount / 2} onChange={onChange} page={page}/>
+  return <Pagination count={productsCount / 10} onChange={onChange} page={page}/>
 }
 
 

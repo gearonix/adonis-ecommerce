@@ -1,13 +1,13 @@
 import {ComponentMeta, ComponentStory} from '@storybook/react'
-import ProductDescription from './ProductDescription'
+import ProductDescriptions from './ProductDescriptions'
 
 export default {
   title: 'entities/CurrentProduct/ProductDescription',
-  component: ProductDescription,
+  component: ProductDescriptions,
   argTypes: {},
-} as ComponentMeta<typeof ProductDescription>
+} as ComponentMeta<typeof ProductDescriptions>
 
-const Template: ComponentStory<typeof ProductDescription> = (args) => <ProductDescription {...args} />
+const Template: ComponentStory<typeof ProductDescriptions> = (args) => <ProductDescriptions {...args} />
 
 export const Default = Template.bind({})
 Default.args = {

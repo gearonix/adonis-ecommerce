@@ -1,2 +1,3 @@
-export type {UserSlice} from './userSlice'
-export type {ProductsSlice, Product} from './productsSlice'
+export type {User} from './userSlice'
+export type {Products, Product} from './productsSlice'
+export type {CurrentProduct} from './currentProductSlice'

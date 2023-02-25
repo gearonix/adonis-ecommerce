@@ -1,6 +1,6 @@
 import {createSelector} from '@reduxjs/toolkit'
 import {UserSelectors} from 'shared/selectors'
-import {UserSlice} from 'shared/types/slices'
+import {User} from 'shared/types/slices'
 import Helpers from 'shared/lib/helpers/helpers'
 import {raiseGoogleImageQuality} from 'widgets/Profile/lib/helpers'
 import {Nullable} from 'shared/types/common'
@@ -19,7 +19,7 @@ export interface FormattedUser {
 
 
 export const selectReformattedUser = createSelector(UserSelectors.user, (nullableUser): Nullable<FormattedUser> => {
-  const user = nullableUser as UserSlice
+  const user = nullableUser as User
 
   if (!user.userId) return null
 

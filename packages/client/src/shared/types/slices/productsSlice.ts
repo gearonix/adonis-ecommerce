@@ -1,15 +1,12 @@
 import {ProductModels, ProductRatings, ProductSizes, ProductTypes} from 'shared/types/elements/productTypes'
-import {KeyOf} from 'shared/types/common'
+import {KeyOf, ObjectNullable} from 'shared/types/common'
+import {SearchQuery} from 'widgets/Products/types'
 
-type WithCount = {
-    data: Product[],
+
+export interface Products {
+    products: Product[],
     count: number,
-    page: number,
-}
-
-export interface ProductsSlice{
-    products: WithCount,
-    myProducts: WithCount
+    filter: ObjectNullable<SearchQuery>
 }
 
 

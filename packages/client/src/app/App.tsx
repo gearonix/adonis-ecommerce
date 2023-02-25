@@ -1,13 +1,20 @@
 import type {AppProps} from 'next/app'
 import {Provider} from 'react-redux'
-import wrapper from './redux/store'
 import {GoogleOAuthProvider} from '@react-oauth/google'
 import Head from 'next/head'
 import {AsyncAuthorization, AuthGuard, Layout} from './providers'
+import store from './redux/store'
+import {useEffect} from 'react'
 
 
-const App = ({Component, ...rest}: AppProps) => {
-  const {store, props} = wrapper.useWrappedStore(rest)
+const App = ({Component, pageProps}: AppProps) => {
+  useEffect(() => {
+    if (window) {
+      // @ts-ignore
+      window.s = process.env.IS_DEV ? store.getState : null
+    }
+  }, [])
+
   return <>
     <Head>
       <title>Adonis</title>
@@ -17,7 +24,7 @@ const App = ({Component, ...rest}: AppProps) => {
         <Layout>
           <AsyncAuthorization>
             <AuthGuard>
-              <Component {...props.pageProps} />
+              <Component {...pageProps} />
             </AuthGuard>
           </AsyncAuthorization>
         </Layout>

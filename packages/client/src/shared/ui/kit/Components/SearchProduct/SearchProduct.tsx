@@ -5,6 +5,8 @@ import {Rating} from '@mui/material'
 import Typo from 'shared/ui/kit/Typos/Typo/Typo'
 import {BlueLink} from 'shared/ui/kit'
 import {Product} from 'shared/types/slices'
+import Link from 'next/link'
+import {routes} from 'shared/config/routes'
 
 export interface SearchProductProps {
   AddToSaved: FC,
@@ -22,7 +24,10 @@ export const SearchProduct: FC<SearchProductProps> = ({AddToSaved, product}) => 
       <Rating name="size-small" readOnly
         defaultValue={product.rating} size="small"/>
       <Typo>{product.description}</Typo>
-      <BlueLink>View details</BlueLink>
+      <Link href={`${routes.SEARCH}/${product.productId}`} >
+        <BlueLink>View details</BlueLink>
+      </Link>
+
       <AddToSaved/>
     </div>
   </div>

@@ -1,4 +1,5 @@
 import * as uuid from 'uuid'
+import {PageLimits} from '@app/types/global'
 
 export const generateId = () => uuid.v4().slice(0, 8)
 
@@ -16,6 +17,13 @@ export const getResponse = (requestContext : any) => {
 
 export const isNumber = (str: string) => !isNaN(parseInt(str))
 
-export const isExist = <T, N>(name: T, value: N): N | undefined => {
+export const ifExist = <T, N>(name: T, value: N): N | undefined => {
   return name ? value : undefined
+}
+
+export const withLimit = (page: string | undefined, take: PageLimits = PageLimits.PRODUCTS) => {
+  return {
+    take,
+    skip: page ? +page * take : 0,
+  }
 }

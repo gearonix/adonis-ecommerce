@@ -17,5 +17,5 @@ export const addProduct = createThunk('products/ADD_PRODUCT',
 
       await ProductsApi.setProductImages(productId, images)
 
-      dispatch(getMyProducts())
+      dispatch(getMyProducts(0))
     })

@@ -8,6 +8,7 @@
 
   .item_title {
     margin-bottom: 9px;
+    color: $dark-grey;
   }
 
   .item_description {
@@ -15,9 +16,11 @@
   }
 
   .item_image {
-    @include imageWrapper(115px, 100%);
+    @include imageWrapper(115px, 90%);
+    box-sizing: border-box;
     position: absolute;
-    top: 0;
+    top: 50%;
+    transform: translate(0,-50%);
     right: 0;
   }
 }

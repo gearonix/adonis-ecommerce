@@ -8,7 +8,7 @@ const RecommendedItems: FC<RecommendedItemProps> = ({items}) => {
   return items.length > 0 ? <article className={s.recommended_items}>
     <ContainerTitle>Recommended items</ContainerTitle>
     <div className={s.items_block}>
-      {items.slice(0, 8).map((product) =>
+      {items.slice(0, 10).map((product) =>
         <RecommendedItemTall key={product.productId} product={product}/>)}
     </div>
   </article> : null

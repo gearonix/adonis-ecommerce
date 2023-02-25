@@ -2,16 +2,20 @@ import {FC} from 'react'
 import s from './style.module.scss'
 import {NextImage} from 'shared/ui/kit'
 import {Product} from 'shared/types/slices'
+import {Helpers} from 'shared/lib/helpers/others'
+import Link from 'next/link'
+import {routes} from 'shared/config/routes'
 
 export const YouMayLikeItem: FC<{product: Product}> = ({product}) => {
-  return <div className={s.item}>
+  const helpers = new Helpers()
+  return <Link href={`${routes.SEARCH}/${product.productId}`} className={s.item}>
     <div className={s.image_wrapper}>
       <NextImage src={product.images[0]}/>
     </div>
     <div className={s.info_block}>
       <h4>{product.name}</h4>
-      <span>${product.price} - type: {product.type}</span>
+      <span>${product.price} - {helpers.cropped(product.description, 15)}</span>
     </div>
-  </div>
+  </Link>
 }
 

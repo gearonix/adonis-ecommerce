@@ -23,14 +23,15 @@ export interface AddProductForm {
     material: string
 }
 
-export type SearchControlsForm = Partial<{
+export interface SearchControlsForm{
     size: KeyOf<typeof ProductSizes>,
     model: KeyOf<typeof ProductModels>,
     type: KeyOf<typeof ProductTypes>,
     rating: ProductRatings
-}>
+}
 
-export type SearchQuery = SearchControlsForm & Partial<{
+export interface SearchQuery extends SearchControlsForm{
     search: string,
-    page: number
-}>
+    page: number,
+    inStock: boolean
+}

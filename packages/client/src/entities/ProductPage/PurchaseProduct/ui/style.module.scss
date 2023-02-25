@@ -18,6 +18,9 @@
       @include flex();
       border-bottom: $br $light;
       margin-bottom: 11px;
+      img{
+        border-radius: $rounded;
+      }
 
       h2 {
         margin-left: 11px;

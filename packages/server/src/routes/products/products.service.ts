@@ -8,7 +8,8 @@ import {UsersService} from '@routes/users'
 import {FileDirectories, PageLimits, Roles} from '@app/types/global'
 import {ServerExceptions} from '@app/types/exceptions'
 import {FilesService} from '@modules/files/files.service'
-import {isExist, isNumber} from '@app/lib/helpers'
+import {ifExist, isNumber, withLimit} from '@app/lib/helpers'
+import {SearchDTO} from '@routes/products/dto/searchDTO'
 
 @Injectable()
 export class ProductsService {
@@ -55,28 +56,49 @@ export class ProductsService {
     }
   }
 
-  async getMyProducts() {
+  async getMyProducts(page : string) {
     await this.checkUserRole()
     const salesmanId = await this.authService.getUserIdByPayload()
 
-    const [data, count] = await this.products.findAndCount({where: {salesmanId}})
+    const [data, count] = await this.products.findAndCount({
+      where: {salesmanId},
+      ...withLimit(page),
+    })
     return {data, count}
   }
 
-  async getProducts(query: any) {
-    const {size, model, type, rating, search} = query
-    console.log(query.page)
+  async getProducts(query: SearchDTO) {
+    const {size, model, type, rating, search, inStock} = query
     const [data, count] = await this.products.findAndCount({
-      where: {size, model, type, rating, name: isExist(search, Like(`%${search}%`))},
-      take: PageLimits.PRODUCTS,
-      skip: query.page * PageLimits.PRODUCTS,
+      where: {
+        size,
+        model,
+        type,
+        rating,
+        name: ifExist(search, Like(`%${search}%`)),
+        inStock: ifExist(inStock === 'true', true),
+      },
+      ...withLimit(query.page),
     },
     )
     return {data, count}
   }
 
-  async getRandomProducts(query: any) {
+  async getRandomProducts(query: SearchDTO) {
     return this.products.createQueryBuilder().orderBy('RAND()')
         .limit(PageLimits.RECOMMENDED).where(query).getMany()
+  }
+
+  async getProduct(productId: number) {
+    if (isNaN(productId)) {
+      throw new HttpException(ServerExceptions.INCORRECT_DATA, HttpStatus.BAD_REQUEST)
+    }
+
+    const product = await this.products.findOneBy({productId})
+    const salesman = await this.usersService.getUserById(product.salesmanId)
+    return {
+      ...product,
+      salesman,
+    }
   }
 }

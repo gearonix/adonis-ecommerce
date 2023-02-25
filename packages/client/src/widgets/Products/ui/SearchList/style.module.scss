@@ -3,6 +3,7 @@
 .items_block {
   width: calc(100% + 38px);
   min-height: 500px;
+  max-height: 1000px;
   @include customScroll;
   overflow-y: auto;
   overflow-x: hidden;

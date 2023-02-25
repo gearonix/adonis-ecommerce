@@ -1,6 +1,6 @@
 import {FC} from 'react'
 import s from './style.module.scss'
-import {AutoComplete, Checkbox, HeadField, NumberField, Rating, StandardSelect, TextArea,} from 'shared/ui/mui'
+import {AutoComplete, Checkbox, HeadField, NumberField, Rating, StandardSelect, TextArea} from 'shared/ui/mui'
 import {AddProductProps} from 'entities/Profile/AddProduct/types'
 
 

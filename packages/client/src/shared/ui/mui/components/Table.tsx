@@ -1,38 +1,35 @@
-import {Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from '@mui/material'
+import {Paper, Table as MuiTable, TableBody, TableCell, TableContainer, TableHead, TableRow} from '@mui/material'
 import {FC} from 'react'
+import {CurrentProduct} from 'shared/types/slices'
 
-export const MuiTable: FC = () => {
-  const rows = [{name: 'Item', value: 'Description'}]
+export const Table: FC<{product: CurrentProduct}> = ({product}) => {
   return (
     <div style={{width: '60%'}}>
       <TableContainer component={Paper}>
-        <Table aria-label="a dense table">
+        <MuiTable aria-label="a dense table">
           <TableHead sx={{backgroundColor: '#EFF2F4'}}>
             <TableRow>
-              <TableCell>Dessert (100g serving)</TableCell>
-              <TableCell align="right">Calories</TableCell>
-              <TableCell align="right">Fat&nbsp;(g)</TableCell>
-              <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-              <TableCell align="right">Protein&nbsp;(g)</TableCell>
+              <TableCell>Product Type</TableCell>
+              <TableCell align="right">Product Model</TableCell>
+              <TableCell align="right">Product Size</TableCell>
+              <TableCell align="right">Product Design</TableCell>
+              <TableCell align="right">Product Rating</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map((row) => (
-              <TableRow
-                key={row.name}
-                sx={{'&:last-child td, &:last-child th': {border: 0}}}
-              >
-                <TableCell component="th" scope="row">
-                  {row.name}
-                </TableCell>
-                <TableCell align="right">{row.value}</TableCell>
-                <TableCell align="right">{row.value}</TableCell>
-                <TableCell align="right">{row.value}</TableCell>
-                <TableCell align="right">{row.value}</TableCell>
-              </TableRow>
-            ))}
+            <TableRow
+              sx={{'&:last-child td, &:last-child th': {border: 0}}}
+            >
+              <TableCell component="th" scope="row">
+                {product.type}
+              </TableCell>
+              <TableCell align="right">{product.model}</TableCell>
+              <TableCell align="right">{product.size}</TableCell>
+              <TableCell align="right">{product.design}</TableCell>
+              <TableCell align="right">{product.rating}</TableCell>
+            </TableRow>
           </TableBody>
-        </Table>
+        </MuiTable>
       </TableContainer>
     </div>
 

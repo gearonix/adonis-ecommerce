@@ -1,25 +1,30 @@
 import Head from 'next/head'
-import {ProductInfo} from 'widgets/CurrentProduct/ProductInfo'
+import {ProductInfo} from 'widgets/CurrentProduct'
 import {ProductDescription} from 'entities/ProductPage/ProductDescription'
-import {RecommendedItems, SortedProducts} from 'widgets/Products'
+import {RecommendedItems} from 'widgets/Products'
 import {ExtraServices} from 'entities/Banners/ExtraServices'
 import {GithubBanner} from 'entities/Banners/GithubBanner'
 import {WithSpring} from 'shared/ui/animations'
-import {YouMayLike} from 'entities/Products'
+import {SortedProducts, YouMayLike} from 'entities/Products'
+import {ProductTypes} from 'shared/types/elements'
+import {useSelector} from 'shared/types/redux'
+import {ProductSelectors} from 'shared/selectors'
 
 
 const ProductPage = () => {
+  const productName = useSelector(ProductSelectors.name)
+
   return <WithSpring>
     <Head>
-      <title>Adonis - [Item]</title>
+      <title>Adonis - {productName}</title>
     </Head>
-    <h2 className={'search_head'}>Home {'>'} Search {'>'} [Item]</h2>
+    <h2 className={'search_head'}>Home {'>'} Search {'>'} {productName}</h2>
     <ProductInfo/>
     <div className="product_page">
       <ProductDescription/>
       <RecommendedItems Component={YouMayLike}/>
     </div>
-    <SortedProducts/>
+    <RecommendedItems Component={SortedProducts} type={ProductTypes[0]}/>
     <GithubBanner/>
     <ExtraServices/>
   </WithSpring>
