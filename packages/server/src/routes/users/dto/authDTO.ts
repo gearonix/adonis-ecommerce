@@ -1,6 +1,6 @@
 import {IsEmail, IsIn, IsOptional, IsString, Length} from 'class-validator'
 import {ValidationExceptions} from '@app/types/exceptions'
-import {Lengths, Roles} from '@app/types/models'
+import {Lengths, Roles} from '@app/types/global'
 
 export class UserLoginDTO {
   @IsEmail({}, {message: ValidationExceptions.INVALID_EMAIL})

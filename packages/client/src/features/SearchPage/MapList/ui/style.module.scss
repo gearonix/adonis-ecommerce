@@ -1,6 +1,0 @@
-@use '../../../../shared/css/common' as *;
-
-.recommended_items {
-  @include size(80%);
-  @include grid(4, 2);
-}

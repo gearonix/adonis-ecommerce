@@ -2,13 +2,13 @@ import {HttpException, HttpStatus, Injectable} from '@nestjs/common'
 import {ProductDTO} from './dto'
 import {InjectRepository} from '@nestjs/typeorm'
 import {ProductsEntity} from '@app/entities/products/products.entity'
-import {Repository} from 'typeorm'
+import {Like, Repository} from 'typeorm'
 import {AuthService} from '@routes/auth'
 import {UsersService} from '@routes/users'
-import {FileDirectories, Roles} from '@app/types/models'
+import {FileDirectories, PageLimits, Roles} from '@app/types/global'
 import {ServerExceptions} from '@app/types/exceptions'
 import {FilesService} from '@modules/files/files.service'
-import {isNumber} from '@app/lib/helpers'
+import {isExist, isNumber} from '@app/lib/helpers'
 
 @Injectable()
 export class ProductsService {
@@ -59,16 +59,24 @@ export class ProductsService {
     await this.checkUserRole()
     const salesmanId = await this.authService.getUserIdByPayload()
 
-    return this.products.find({where: {salesmanId}})
+    const [data, count] = await this.products.findAndCount({where: {salesmanId}})
+    return {data, count}
   }
 
   async getProducts(query: any) {
-    return this.products.find({
-      where: query,
-    })
+    const {size, model, type, rating, search} = query
+    console.log(query.page)
+    const [data, count] = await this.products.findAndCount({
+      where: {size, model, type, rating, name: isExist(search, Like(`%${search}%`))},
+      take: PageLimits.PRODUCTS,
+      skip: query.page * PageLimits.PRODUCTS,
+    },
+    )
+    return {data, count}
   }
 
-  async getRandomProducts() {
-    return this.products.createQueryBuilder().orderBy('RAND()').limit(8).getMany()
+  async getRandomProducts(query: any) {
+    return this.products.createQueryBuilder().orderBy('RAND()')
+        .limit(PageLimits.RECOMMENDED).where(query).getMany()
   }
 }

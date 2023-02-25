@@ -15,9 +15,9 @@
   }
 
   .item_image {
-    @include imageWrapper(82px, 82px);
+    @include imageWrapper(115px, 100%);
     position: absolute;
-    top: 26px;
+    top: 0;
     right: 0;
   }
 }

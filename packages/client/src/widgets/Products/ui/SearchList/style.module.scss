@@ -1,7 +1,8 @@
 @use 'shared/css/common.scss' as *;
 
 .items_block {
-  @include size(calc(100% + 38px), 1430px);
+  width: calc(100% + 38px);
+  min-height: 500px;
   @include customScroll;
   overflow-y: auto;
   overflow-x: hidden;

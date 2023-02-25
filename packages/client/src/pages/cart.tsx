@@ -4,7 +4,7 @@ import {CartItems} from 'widgets/Cart/CartItems'
 import {ContainerTitle} from 'shared/ui/kit'
 import {Checkout} from 'entities/Cart'
 import {CheckoutButton} from 'features/Checkout'
-import {Recommended} from 'widgets/Products'
+import {SortedProducts} from 'widgets/Products'
 import {GithubBanner} from 'entities/Banners/GithubBanner'
 import {FindProductBanner} from 'widgets/Banners/FindProductBanner'
 import {RemoveAllCard, RemoveFromCard} from 'features/Cart'
@@ -22,7 +22,7 @@ const Cart = () => {
         Add={AddToSavedCart}/>
       <Checkout CheckoutButton={CheckoutButton}/>
     </div>
-    <Recommended/>
+    <SortedProducts/>
     <FindProductBanner/>
     <GithubBanner/>
   </WithSpring>

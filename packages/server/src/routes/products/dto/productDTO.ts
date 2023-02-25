@@ -1,4 +1,4 @@
-import {Lengths} from '@app/types/models'
+import {Lengths} from '@app/types/global'
 import {IsIn, IsOptional, IsString, Length} from 'class-validator'
 import {ValidationExceptions} from '@app/types/exceptions'
 import {ProductModels, ProductRatings, ProductSizes, ProductTypes} from '@app/entities/products/types'

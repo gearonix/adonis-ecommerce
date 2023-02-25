@@ -4,7 +4,7 @@ import * as fs from 'fs'
 import * as path from 'path'
 import * as uuid from 'uuid'
 import {RequestContext} from 'nestjs-request-context'
-import {FileDirectories} from '@app/types/models'
+import {FileDirectories} from '@app/types/global'
 import {appConfig} from '@app/config'
 import {getRequest, lastItemOf} from '@app/lib/helpers'
 

@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import {ProductInfo} from 'widgets/CurrentProduct/ProductInfo'
 import {ProductDescription} from 'entities/ProductPage/ProductDescription'
-import {Recommended, RecommendedItems} from 'widgets/Products'
+import {RecommendedItems, SortedProducts} from 'widgets/Products'
 import {ExtraServices} from 'entities/Banners/ExtraServices'
 import {GithubBanner} from 'entities/Banners/GithubBanner'
 import {WithSpring} from 'shared/ui/animations'
@@ -19,7 +19,7 @@ const ProductPage = () => {
       <ProductDescription/>
       <RecommendedItems Component={YouMayLike}/>
     </div>
-    <Recommended/>
+    <SortedProducts/>
     <GithubBanner/>
     <ExtraServices/>
   </WithSpring>

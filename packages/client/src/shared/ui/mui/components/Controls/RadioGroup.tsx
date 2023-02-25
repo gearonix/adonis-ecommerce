@@ -2,7 +2,7 @@ import {FieldValues} from 'shared/lib/helpers/others'
 import {ChangeEvent, FC} from 'react'
 import {
     FormControl, RadioGroup as
-        MuiRadioGroup
+        MuiRadioGroup,
 } from '@mui/material'
 import {RadioControlProps} from 'shared/ui/mui/components/Controls/Radio'
 

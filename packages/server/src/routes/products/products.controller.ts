@@ -33,7 +33,7 @@ export class ProductsController {
   }
 
   @Get('/recommended')
-  getRecommendedProducts() {
-    return this.productsService.getRandomProducts()
+  getRecommendedProducts(@Query() query) {
+    return this.productsService.getRandomProducts(query)
   }
 }

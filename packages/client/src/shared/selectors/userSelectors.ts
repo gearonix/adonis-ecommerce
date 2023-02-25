@@ -12,7 +12,7 @@ const UserSelectors = {
     if (user.firstName) {
       return user.firstName
     }
-    return helpers.getNameFromEmail(user.email || '')
+    return helpers.nameToEmail(user.email || '')
   }),
   userRole: ({user}: AppState) => user.role,
 }

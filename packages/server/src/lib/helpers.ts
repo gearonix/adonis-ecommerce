@@ -15,3 +15,7 @@ export const getResponse = (requestContext : any) => {
 }
 
 export const isNumber = (str: string) => !isNaN(parseInt(str))
+
+export const isExist = <T, N>(name: T, value: N): N | undefined => {
+  return name ? value : undefined
+}

@@ -1,9 +1,15 @@
-import {ProductModels, ProductRatings, ProductSizes, ProductTypes} from 'widgets/Products/lib/consts/productTypes'
+import {ProductModels, ProductRatings, ProductSizes, ProductTypes} from 'shared/types/elements/productTypes'
 import {KeyOf} from 'shared/types/common'
 
+type WithCount = {
+    data: Product[],
+    count: number,
+    page: number,
+}
+
 export interface ProductsSlice{
-    products: Product[],
-    myProducts: Product[]
+    products: WithCount,
+    myProducts: WithCount
 }
 
 

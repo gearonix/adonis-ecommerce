@@ -4,7 +4,8 @@ import {
     ProductRatings,
     ProductSizes,
     ProductTypes,
-} from 'widgets/Products/lib/consts/productTypes'
+} from 'shared/types/elements/productTypes'
+import {SearchControlsForm} from 'widgets/Products/types'
 
 const initialValues = {
   addProduct() {
@@ -23,8 +24,9 @@ const initialValues = {
       },
     }
   },
-  searchAside() {
+  searchAside(query: Partial<SearchControlsForm>) {
     return {
+      defaultValues: query,
       selectValues: {
         model: ProductModels,
         size: ProductSizes,

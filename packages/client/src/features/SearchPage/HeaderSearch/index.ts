@@ -1,1 +1,1 @@
-export {default as HeaderSearch} from './ui/Desktop/HeaderSearch'
+export {default as HeaderSearch} from './ui/HeaderSearch'

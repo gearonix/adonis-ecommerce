@@ -4,8 +4,8 @@ import {
     ProductRatings,
     ProductSizes,
     ProductTypes,
-} from 'widgets/Products/lib/consts/productTypes'
-import {KeyOf, ObjectNullable} from 'shared/types/common'
+} from 'shared/types/elements/productTypes'
+import {KeyOf} from 'shared/types/common'
 
 export interface AddProductForm {
     name: string
@@ -23,9 +23,14 @@ export interface AddProductForm {
     material: string
 }
 
-export type SearchControlsForm = ObjectNullable<{
+export type SearchControlsForm = Partial<{
     size: KeyOf<typeof ProductSizes>,
     model: KeyOf<typeof ProductModels>,
     type: KeyOf<typeof ProductTypes>,
     rating: ProductRatings
+}>
+
+export type SearchQuery = SearchControlsForm & Partial<{
+    search: string,
+    page: number
 }>

@@ -1,6 +1,6 @@
 import {FC} from 'react'
 import s from './style.module.scss'
-import {AutoComplete, Checkbox, HeadField, NumberField, ReadonlyRating, StandardSelect, TextArea} from 'shared/ui/mui'
+import {AutoComplete, Checkbox, HeadField, NumberField, Rating, StandardSelect, TextArea,} from 'shared/ui/mui'
 import {AddProductProps} from 'entities/Profile/AddProduct/types'
 
 
@@ -14,7 +14,7 @@ const AddProduct: FC<AddProductProps> = ({submitForm, cancel, ProductImages, reg
       </div>
       <TextArea title={'Product description'} values={reg('description', 55)} />
       <HeadField title={'Product Design'} values={reg('design', 20)}/>
-      <ReadonlyRating title={'Product Rating'} values={reg('rating')}/>
+      <Rating title={'Product Rating'} values={reg('rating')}/>
       <Checkbox title={'In stock'} values={reg('inStock')}/>
       <NumberField title={'Price'} values={reg('price')}/>
       <NumberField title={'Warranty count'} values={reg('warrantyCount')}/>

@@ -2,11 +2,11 @@ import Head from 'next/head'
 import {FC} from 'react'
 import {RecommendedItems, SearchAside, SearchList} from 'widgets/Products'
 import {SearchHeader} from 'widgets/SearchPage/SearchHeader'
-import {MuiPagination} from 'shared/ui/mui'
 import {NavigationTitle} from 'shared/ui/kit'
 import {ExtraServices} from 'entities/Banners/ExtraServices'
 import {WithSpring} from 'shared/ui/animations'
-import {RecommendedItemsTemp} from 'entities/Products'
+import {RecommendedMap} from 'entities/Products'
+import {SearchPagination} from 'features/SearchPage/SearchPagination'
 
 const SearchPage: FC = () => {
   return <WithSpring>
@@ -19,11 +19,11 @@ const SearchPage: FC = () => {
       <div style={{position: 'relative', width: '68%'}}>
         <SearchHeader/>
         <SearchList/>
-        <MuiPagination/>
+        <SearchPagination/>
       </div>
     </main>
     <ExtraServices/>
-    <RecommendedItems Component={RecommendedItemsTemp}/>
+    <RecommendedItems Component={RecommendedMap}/>
   </WithSpring>
 }
 

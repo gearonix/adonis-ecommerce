@@ -20,3 +20,7 @@ export enum FileDirectories{
   PRODUCT_IMAGES = 'product_images'
 }
 
+export enum PageLimits{
+  RECOMMENDED = 8,
+  PRODUCTS = 2
+}

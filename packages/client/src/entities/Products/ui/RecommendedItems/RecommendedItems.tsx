@@ -1,10 +1,10 @@
 import s from './style.module.scss'
 import {ContainerTitle, RecommendedItemTall} from 'shared/ui/kit'
 import {FC} from 'react'
-import {Product} from 'shared/types/slices'
+import {RecommendedItemProps} from 'widgets/Products'
 
 
-const RecommendedItems: FC<{items: Product[]}> = ({items}) => {
+const RecommendedItems: FC<RecommendedItemProps> = ({items}) => {
   return items.length > 0 ? <article className={s.recommended_items}>
     <ContainerTitle>Recommended items</ContainerTitle>
     <div className={s.items_block}>
