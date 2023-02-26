@@ -4,7 +4,7 @@
   @include size(100%, 270px);
   @include flex();
   margin-top: 20px;
-  background: white;
+  background: $bg-absolute;
   border-radius: $rounded;
 
   .image_block {
@@ -27,7 +27,7 @@
 
     .item {
       @include padding(16px, 20px);
-      border: $br $light;
+      border: $br $bg-150;
       position: relative;
       @include itemHover;
 

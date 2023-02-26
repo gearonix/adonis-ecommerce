@@ -3,9 +3,11 @@ import {FC} from 'react'
 import {ContainerTitle} from 'shared/ui/kit'
 import {CartItems} from 'widgets/Cart/CartItems'
 import {RemoveAllSaved, RemoveFromSaved} from 'features/Saved'
-import {SortedProducts} from 'widgets/Products'
+import {RecommendedItems} from 'widgets/Products'
 import {GithubBanner} from 'entities/Banners/GithubBanner'
 import {WithSpring} from 'shared/ui/animations'
+import {ProductTypes} from 'shared/types/elements'
+import {SortedProducts} from 'entities/Products'
 
 const Saved: FC = () => {
   return <WithSpring>
@@ -14,7 +16,7 @@ const Saved: FC = () => {
     </Head>
     <ContainerTitle>Saved products</ContainerTitle>
     <CartItems Add={null} Remove={RemoveFromSaved} RemoveAll={RemoveAllSaved}/>
-    <SortedProducts/>
+    <RecommendedItems Component={SortedProducts} type={ProductTypes[0]}/>
     <GithubBanner/>
   </WithSpring>
 }

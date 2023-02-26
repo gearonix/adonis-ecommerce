@@ -5,23 +5,25 @@
   padding: 20px;
 
   .title {
-    font-size: $lmedium;
+    font-size: $l-medium;
     text-align: center;
+    color: white;
   }
 
   .container {
     padding: 30px 20px 30px 20px;
-    border-top: $br $light;
-    border-bottom: $br $light;
+    border-top: $br $bg-150;
+    border-bottom: $br $bg-150;
     width: 70%;
     gap: 25px;
     margin: 20px auto 25px;
 
     .title {
+
       text-align: left;
       margin-top: 5px;
       font-size: $small-md;
-      border-bottom: $br $light;
+      border-bottom: $br $bg-150;
       padding-bottom: 12px;
       padding-top: 8px;
     }
@@ -36,8 +38,8 @@
     .user_info_block {
       margin: 10px 0 10px 0;
       padding: 10px 0 10px 0;
-      border-top: $br $light;
-      border-bottom: $br $light;
+      border-top: $br $bg-150;
+      border-bottom: $br $bg-150;
     }
 
     .save_buttons {
@@ -67,7 +69,7 @@
 
       .user_avatar {
         @include imageWrapper(125px, 125px, 100%);
-        border: $br $light;
+        border: $br $bg-150;
       }
 
       button {

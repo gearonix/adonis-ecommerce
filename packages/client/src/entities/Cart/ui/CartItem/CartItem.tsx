@@ -7,8 +7,8 @@ import {ApiAnimation} from 'shared/ui/animations'
 
 const CartItem: FC<CartItemProps> = ({Remove, SaveForLater}) => {
   const [isOpen, openModal] = useState<boolean>(false)
-  const removeRef = useRef()
-  return <ApiAnimation className={s.item} type={'reduceLength'} param={140} subscriber={removeRef}>
+  const removeBtnRef = useRef()
+  return <ApiAnimation className={s.item} type={'reduceLength'} param={140} subscriber={removeBtnRef}>
     <ImageModal isOpen={isOpen} close={openModal} image={'/mock_item.svg'}/>
     <div className={s.image_wrapper} onClick={() => openModal(true)}>
       <NextImage src={'/assets/dev/mock_item.svg'}/>
@@ -20,7 +20,7 @@ const CartItem: FC<CartItemProps> = ({Remove, SaveForLater}) => {
                 Plastic
                 Seller: Artel Market</p>
       <div className={s.item_buttons}>
-        <Remove ref={removeRef}/>
+        <Remove ref={removeBtnRef}/>
         {SaveForLater && <SaveForLater/>}
       </div>
     </div>

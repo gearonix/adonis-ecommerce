@@ -1,9 +1,12 @@
-import {useState} from 'react'
+import {useContext, useEffect, useState} from 'react'
 import {FieldValues, useForm as useHookForm} from 'react-hook-form'
 import {yupResolver} from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
 import {createFieldValues} from 'shared/lib/helpers/others'
 import {Nullable} from 'shared/types/common'
+import ThemeContext from 'shared/config/contexts/ThemeContext'
+import {Theme} from 'shared/types/appTypes'
+import {createTheme} from '@mui/material/styles'
 
 export const useBooleanState = (initialValue = false) => {
   const [isOpen, setIsOpened] = useState<boolean>(initialValue)
@@ -25,4 +28,40 @@ export const useForm = <T extends FieldValues>(schema: Nullable<Yup.ObjectSchema
   const form = useHookForm<T>({resolver: schema ? yupResolver(schema) : undefined, defaultValues})
   const reg = createFieldValues(form, selectValues)
   return {form, reg, submit: form.handleSubmit}
+}
+
+
+export const useLocalStorage = <T>(key: string, defaultValue: T) => {
+  const [value, setValue] = useState<T | any>(null)
+  useEffect(() => {
+    const stored = localStorage.getItem(key)
+    setValue(stored as T ?? defaultValue)
+  }, [])
+
+  useEffect(() => {
+    if (value === null) return
+    localStorage.setItem(key, value as string)
+  }, [value])
+
+  return [value ?? defaultValue, setValue] as const
+}
+
+export const useTheme = () => {
+  const {theme, setTheme} = useContext(ThemeContext)
+
+  const toggleTheme = () => {
+    const selectedTheme = theme == Theme.LIGHT ? Theme.DARK : Theme.LIGHT
+    setTheme?.(selectedTheme)
+  }
+
+  return {theme, toggleTheme, isLight: theme === Theme.LIGHT}
+}
+
+
+export const useMuiTheme = (theme: Theme) => {
+  return createTheme({
+    palette: {
+      mode: theme === Theme.LIGHT ? 'light' : 'dark',
+    },
+  })
 }

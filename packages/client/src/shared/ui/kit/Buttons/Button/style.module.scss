@@ -2,14 +2,71 @@
 
 .button {
   text-align: center;
-  @include inlineStyles($small, white);
+  @include inlineStyles($small, $bg-absolute);
   @include size(18%, 38px);
-  background: $blue;
+  background: $link-color;
   border-radius: $rounded;
   transition: background 200ms;
   display: block;
 
   &:hover {
-    background: $hover-blue;
+    background: $link-color-hover;
   }
+}
+.primary{
+  background: $link-color;
+  &:hover{
+    background: $link-color-hover;
+  }
+  color: white;
+}
+.outlined{
+  background: white;
+  &:hover{
+    background: #F3F3F3;
+  }
+  color: black;
+}
+.orange{
+  background: #FF9017;
+  &:hover{
+    background: #FE8604;
+  }
+}
+.green{
+  background: #00B517;
+  &:hover{
+    background: #03A718;
+  }
+  color: $color-absolute;
+}
+.red{
+  background: #FA3434;
+  &:hover{
+    background: #FE4D4D;
+  }
+}
+.blueBordered,.redColored{
+  background: $bg-absolute;
+  transition: border, color 200ms, 400ms;
+  &:hover{
+    color: $link-color-hover;
+    border: $br $link-color-hover;
+    background: $bg-absolute;
+  }
+  color: $link-blue-white;
+  border: $br #E0E0E0;
+}
+
+.redColored{
+  color: #FA3434;
+}
+
+.greyBordered{
+  background: $bg-absolute;
+  &:hover{
+    background: $bg-absolute;
+  }
+  color: $color-absolute;
+  border: $br #E0E0E0;
 }

@@ -5,5 +5,5 @@
   @include absolute(50%,50%);
   transform: translate(-50%,-52%);
   @include imageWrapper(85%,85%,0);
-  background: white;
+  background: $bg-absolute;
 }

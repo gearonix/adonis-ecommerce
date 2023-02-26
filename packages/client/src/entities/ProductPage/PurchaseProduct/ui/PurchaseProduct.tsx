@@ -18,7 +18,7 @@ const PurchaseProduct: FC<PurchaseProductP> = ({AddToSaved, BuyProduct, salesman
   return <div className={s.purchase_block}>
     <div className={s.purchase_card}>
       <div className={s.purchase_supplier}>
-        <Image height={48} width={48} alt={'Supplier'}
+        <Image height={48} width={48} alt={''}
           src={salesman.avatar || 'assets/default_avatar.png'}
           priority={false}/>
         <h2>

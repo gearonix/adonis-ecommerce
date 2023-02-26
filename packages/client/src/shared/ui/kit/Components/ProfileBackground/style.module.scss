@@ -7,7 +7,7 @@
     @include imageWrapper(100%, 100%, $rounded);
     margin: 0 auto;
   }
-  background: $grey-300;
+  background: $color-300;
 
 
   button {
@@ -31,5 +31,5 @@
 
 .default{
   @include size;
-  background: $grey-300;
+  background: $color-300;
 }

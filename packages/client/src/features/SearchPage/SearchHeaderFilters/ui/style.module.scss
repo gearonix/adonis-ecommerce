@@ -1,4 +1,4 @@
-@use '../../../../shared/css/common' as *;
+@use 'shared/css/common.scss' as *;
 
 
 .controls_buttons {
@@ -9,7 +9,7 @@
 }
 
 .controls_select {
-  border: 1px solid $light;
+  border: 1px solid $bg-150;
   border-radius: 4px;
   height: 35px;
 }

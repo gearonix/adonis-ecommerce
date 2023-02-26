@@ -7,7 +7,7 @@ export const SizeButtons: FC = () => {
     disableElevation
     variant="contained"
     aria-label="Disabled elevation buttons"
-    color={'inherit'}>
+    color={'inherit'} sx={{color: 'black'}}>
     <Button color={'inherit'} size={'large'}><BsGridFill/></Button>
     <Button color={'inherit'} size={'large'}><GiHamburgerMenu/></Button>
   </ButtonGroup>

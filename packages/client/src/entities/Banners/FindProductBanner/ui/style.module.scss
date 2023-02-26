@@ -14,11 +14,11 @@
   .title {
     margin-bottom: 20px;
     width: 400px;
-    @include inlineStyles($lmedium, white, bold);
+    @include inlineStyles($l-medium, $color-absolute, bold);
   }
 
   .description {
-    color: white;
+    color: $color-absolute;
     width: 400px;
   }
 

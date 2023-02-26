@@ -1,12 +1,16 @@
+@use 'shared/css/common.scss' as *;
 @import 'lib/custom_mui.css';
-@import "src/app/css/templates";
+@import "templates.scss";
+@import 'themes.scss';
 
-body {
-  background-color: #F7FAFC;
+.layout{
+    background: $color-300;
+    color: $color-absolute;
 }
 
 * {
   font-size: 16px;
+
 }
 
 
@@ -43,7 +47,7 @@ h2 {
 
 #active {
     font-weight: 600;
-    color: black;
+    color: $color-absolute;
 }
 
 .search_page, .product_page {
@@ -66,8 +70,9 @@ h2 {
     display: flex;
     margin-top: 45px;
     margin-bottom: 60px;
-    border: 1px solid #E0E0E0;
-    border-radius: 6px;
+    border: 1px solid $bg-150;
+    border-radius: $rounded;
+    overflow: hidden;
 }
 
 .cart_page {
@@ -80,7 +85,7 @@ h2 {
     box-sizing: border-box;
     border: 1px solid #E0E0E0;
     border-radius: 6px;
-    background: white;
+    background: $bg-absolute;
     margin: 25px auto 40px;
     padding: 15px 15px 30px;
 }

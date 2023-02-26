@@ -8,16 +8,16 @@
   border-radius: $rounded;
   box-sizing: border-box;
   @include flex(space-between, center);
-  background: #005ADE;
+  background: $link-color;
   transition: background 200ms;
 
   &:hover {
-    background: #1464d7;
+    background: $link-color-hover;
     //005ADE
   }
 
   * {
-    color: white;
+    color: $color-absolute;
   }
 
   h2 {

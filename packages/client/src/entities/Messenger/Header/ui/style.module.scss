@@ -2,16 +2,16 @@
 
 .messages_header {
   @include size(100%, 68px);
-  background: white;
+  background: $bg-absolute;
   @include flex(space-between, center);
   padding-left: 22px;
   padding-right: 22px;
   box-sizing: border-box;
   transition: background 200ms;
-  border-bottom: $br $light;
+  border-bottom: $br $bg-150;
 
   &:hover {
-    background: #FAFAFA;
+    background: $bg-absolute-hover;
   }
 
 }

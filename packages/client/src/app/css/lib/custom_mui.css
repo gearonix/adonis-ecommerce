@@ -19,4 +19,9 @@
 .css-tjylgk-MuiModal-root * {
     outline: none !important;
 }
-
+.layout.theme-dark .style_category__ilW_r span{
+    color: white;
+}
+.layout.theme-light .style_category__ilW_r span{
+    color: #1e1e1e;
+}

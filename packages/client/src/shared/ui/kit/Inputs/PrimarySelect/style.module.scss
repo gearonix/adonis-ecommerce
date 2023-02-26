@@ -1,17 +1,18 @@
 @use 'shared/css/common.scss' as *;
 
 .primary_select {
-  border: 2px solid $blue;
+  border: 2px solid $link-color;
   border-left-width: 1px;
   font-size: 16px;
   padding-left: 5px;
   padding-right: 6px;
   width: 90px;
-
+  background: $bg-absolute;
+  color: $color-absolute;
   * {
     font-size: 16px;
-    background-color: rgb(247, 247, 247);
-    height: 70px;
+    background: $bg-absolute;
+    color: $color-absolute;
     padding: 15px;
     border: 1px solid rgb(41, 18, 18);
   }

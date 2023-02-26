@@ -5,10 +5,10 @@
   @include size(100%, 230px);
   border-radius: $rounded;
   margin-top: 20px;
-  border: 1px solid $light;
+  border: 1px solid $bg-150;
   @include flex(stretch, center);
   position: relative;
-  background: white;
+  background: $bg-absolute;
 
   img {
     cursor: pointer;
@@ -21,7 +21,7 @@
     margin-left: 20px;
 
     .price {
-      @include inlineStyles($xm, $dark, bold);
+      @include inlineStyles($xm, $bg-100, bold);
       margin-top: 16px;
     }
   }

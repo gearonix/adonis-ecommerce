@@ -2,7 +2,7 @@
 
 .footer {
   @include size(100%, 324px);
-  background: white;
+  background: $bg-absolute;
   padding-top: 40px;
   margin-top: 10px;
 
@@ -19,7 +19,7 @@
       @include size(25%);
 
       .brand_text {
-        color: $dark-grey;
+        color: $bg-200;
         margin-top: 18px;
         margin-bottom: 12px;
         width: 60%;
@@ -36,12 +36,12 @@
         .icon {
           @include size(32px, 32px);
           @include flex(center, center);
-          background: #BBBCBE;
+          background: $color-absolute;
           border-radius: 100%;
 
           svg {
             path {
-              color: white;
+              color: $bg-absolute;
             }
 
             @include size(25px, 25px);
@@ -83,13 +83,14 @@
       svg {
         margin-top: 15px;
         @include size(55px, 55px);
+        color: $color-absolute;
       }
     }
   }
 
   .footer_bottom {
     @include size(100%, 70px);
-    background: #E3E8EE;
+    background: $bg-light-blue;
     color: #606060;
 
     .footer_bottom_block {

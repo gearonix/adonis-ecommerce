@@ -3,7 +3,7 @@
 .no_products{
   margin: 90px auto;
   text-align: center;
-  @include inlineStyles($small-md, $hover-grey);
+  @include inlineStyles($small-md, $hover-100);
   h2{
     margin: 0;
   }

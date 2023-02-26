@@ -4,7 +4,7 @@ import {NextImage} from 'shared/ui/kit'
 
 
 export const Logo: FC = () => {
-  return <div className={s.logo} style={{height: '100px'}}>
+  return <div className={s.logo}>
     <NextImage src={'/assets/logo.svg'}/>
   </div>
 }

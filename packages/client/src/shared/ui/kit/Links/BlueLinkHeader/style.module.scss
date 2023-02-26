@@ -3,10 +3,10 @@
 
 .header {
   @include size(100%, 36px);
-  border-bottom: $br $light;
+  border-bottom: $br $bg-150;
 
   h4 {
-    color: $blue;
+    color: $link-color;
     margin-top: 16px;
     margin-left: 16px;
   }

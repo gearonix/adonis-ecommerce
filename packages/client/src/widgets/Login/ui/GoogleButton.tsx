@@ -4,9 +4,12 @@ import {registerByGoogle} from '../thunks/makeRegistration'
 import {useDispatch} from 'shared/types/redux'
 import {loginByGoogle} from '../thunks/loginUser'
 import {GoogleButtonProps, RegisterByGoogle} from '../types'
+import {useTheme} from 'shared/lib/helpers/hooks/common'
+import {Theme} from 'shared/types/appTypes'
 
 const GoogleButton: FC<GoogleButtonProps> = ({role}) => {
   const dispatch = useDispatch()
+  const {theme} = useTheme()
   const onSuccess = async ({credential}: CredentialResponse) => {
     if (role) {
       dispatch(registerByGoogle({jwt: credential, role} as RegisterByGoogle))
@@ -21,6 +24,7 @@ const GoogleButton: FC<GoogleButtonProps> = ({role}) => {
     onError={onError}
     size={'large'}
     width={'310'}
+    theme={theme === Theme.LIGHT ? undefined : 'filled_black'}
   />
 }
 

@@ -19,11 +19,11 @@
 
       svg {
         @include size(28px, 28px);
-        color: $dark;
+        color: $bg-100;
 
         &:hover {
           transition: color 200ms;
-          color: $dark-grey;
+          color: $bg-200;
         }
       }
     }
@@ -32,12 +32,12 @@
       margin-top: 90px;
 
       span {
-        color: $blue;
+        color: $link-color;
       }
     }
 
     .title {
-      @include inlineStyles(24px, $dark, bold);
+      @include inlineStyles(24px, $bg-100, bold);
     }
 
     .choice_container {
@@ -54,13 +54,13 @@
 
         svg {
           @include size(92px, 92px);
-          color: $dark-grey;
+          color: $bg-200;
         }
 
         &:hover {
           transition: box-shadow 250ms, background-color 200ms;
           box-shadow: $shadow-hover;
-          background: #FAFAFA;
+          background: $bg-150;
         }
       }
 

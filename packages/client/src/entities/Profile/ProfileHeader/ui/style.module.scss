@@ -11,7 +11,7 @@
       @include imageWrapper(100%, 100%, $rounded);
       margin: 0 auto;
     }
-    background: $grey-300;
+    background: $color-300;
 
 
     button {
@@ -42,10 +42,10 @@
 
     .avatar {
       @include imageWrapper(170px, 170px, 100%);
-      border: 3px solid $light;
+      border: 3px solid $bg-150;
       margin-left: 20px;
       margin-top: -7%;
-      background: white;
+      background: $bg-absolute;
     }
 
     .user_info {
@@ -53,11 +53,11 @@
       margin-left: 20px;
 
       .user_name {
-        @include inlineStyles($small-md, $dark, bold);
+        @include inlineStyles($small-md, $bg-100, bold);
       }
 
       .description {
-        @include inlineStyles($small, $light-grey);
+        @include inlineStyles($small, $bg-300);
         margin-top: 10px;
         position: relative;
       }

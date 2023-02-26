@@ -5,6 +5,7 @@ import Head from 'next/head'
 import {AsyncAuthorization, AuthGuard, Layout} from './providers'
 import store from './redux/store'
 import {useEffect} from 'react'
+import ThemeProvider from 'app/providers/ThemeProdiver'
 
 
 const App = ({Component, pageProps}: AppProps) => {
@@ -21,13 +22,15 @@ const App = ({Component, pageProps}: AppProps) => {
     </Head>
     <GoogleOAuthProvider clientId={process.env.GOOGLE_CLIENT_ID as string}>
       <Provider store={store}>
-        <Layout>
-          <AsyncAuthorization>
-            <AuthGuard>
-              <Component {...pageProps} />
-            </AuthGuard>
-          </AsyncAuthorization>
-        </Layout>
+        <ThemeProvider>
+          <Layout>
+            <AsyncAuthorization>
+              <AuthGuard>
+                <Component {...pageProps} />
+              </AuthGuard>
+            </AsyncAuthorization>
+          </Layout>
+        </ThemeProvider>
       </Provider>
     </GoogleOAuthProvider>
   </>

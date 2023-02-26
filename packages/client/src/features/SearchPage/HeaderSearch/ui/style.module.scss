@@ -7,10 +7,15 @@
   .search_input {
     @include size(62%, 100%);
     font-size: 16px;
-    border: 2px solid $blue;
+    border: 1px solid $link-color;
+    background: $bg-absolute;
     padding-left: 10px;
     border-radius: 8px 0 0 8px;
+    color: $color-absolute;
     border-right-width: 0;
+    &::placeholder{
+      color: $color-absolute;
+    }
   }
 
   button {
@@ -31,9 +36,9 @@
     @include size;
     border-radius: $rounded;
     background: #F7FAFC;
-    color: $light-grey;
+    color: $bg-300;
     position: relative;
-    border: $br $light;
+    border: $br $bg-150;
     outline: none;
     padding-left: 36px;
 
@@ -42,6 +47,6 @@
   svg {
     @include absolute(9px, 8px, 1);
     @include size(22px, 22px);
-    color: $light-grey;
+    color: $bg-300;
   }
 }

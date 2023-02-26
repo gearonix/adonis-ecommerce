@@ -8,23 +8,20 @@ interface Checkbox{
 }
 
 export const Checkbox: FC<Checkbox> = ({title, values}) => {
-  if (!values) {
-    return null
-  }
-
   const {getValue, setValue} = values
   const currentValue = getValue()
-
 
   const onChange = () => {
     setValue(!currentValue)
   }
-
+  if (!values) {
+    return null
+  }
   return <FormControlLabel control={<MuiCheckBox
     style={{marginTop: -8, height: 25}}
     onChange={onChange}
-    value={currentValue}
-  />}
+  />
+  }
   label={title} sx={{display: 'block', height: 25}} />
 }
 

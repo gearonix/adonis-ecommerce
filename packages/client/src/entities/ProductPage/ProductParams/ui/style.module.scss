@@ -6,7 +6,7 @@
   @include size(46%);
 
   .product_title {
-    @include inlineStyles($small-md, $dark, bold);
+    @include inlineStyles($small-md, $bg-100, bold);
     margin-top: 6px;
     margin-bottom: 6px;
     width: 60%;
@@ -18,7 +18,7 @@
     @include size(60%, 20px);
 
     h3 {
-      color: $light-grey;
+      color: $bg-300;
       margin-left: 10px;
 
       svg {
@@ -29,13 +29,13 @@
   }
 
   .price {
-    @include inlineStyles($lmedium, $dark, bold);
+    @include inlineStyles($l-medium, $bg-100, bold);
     margin-top: 12px;
     margin-bottom: 12px;
   }
 
   .params_block {
-    border-bottom: 1px solid $light;
+    border-bottom: 1px solid $bg-150;
     padding-bottom: 16px;
     width: 100%;
 
@@ -45,7 +45,10 @@
       margin-top: 16px;
 
       span:first-child {
-        color: $light-grey;
+        color: $color-absolute;
+      }
+      span:last-child{
+        color: $bg-300;
       }
     }
   }

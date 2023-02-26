@@ -7,10 +7,10 @@
   top: 33px;
   right: 30px;
   border-radius: $rounded;
-  background: white;
+  background: $bg-absolute;
 
   .form_title {
-    @include inlineStyles($xm, $dark, bold);
+    @include inlineStyles($xm, $bg-100, bold);
     margin-bottom: 18px;
   }
 

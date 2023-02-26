@@ -5,6 +5,7 @@
   display: flex;
   justify-content: flex-end;
   margin-top: 17px;
+  color: black;
 
   .wrapper:has(.image_wrapper) {
     min-width: 365px;
@@ -71,11 +72,11 @@
     transition: background 200ms;
 
     * {
-      color: white;
+      color: $color-absolute;
     }
 
     .time_block span {
-      color: white;
+      color: $color-absolute;
     }
 
     &:hover {
@@ -85,7 +86,7 @@
     cursor: pointer;
 
     svg, span {
-      color: $dark;
+      color: $bg-100;
     }
 
   }

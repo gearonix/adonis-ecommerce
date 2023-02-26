@@ -7,7 +7,7 @@
 }
 
 .typo {
-  color: $dark;
+  color: $bg-100;
   font-size: $small;
   font-weight: bold;
 }
@@ -15,11 +15,11 @@
 .typo_grey {
   font-weight: normal;
   font-size: $small;
-  color: $dark-grey;
+  color: $bg-200;
 }
 
 .blue_link {
-  background-image: linear-gradient(to right, $blue, $blue 50%, $blue 50%) !important;
+  background-image: linear-gradient(to right, $link-color, $link-color 50%, $link-color 50%) !important;
   font-size: $small;
 }
 
@@ -27,26 +27,29 @@
 .primary_button, .outlined_button, .orange_button, .green_button
 ,.red_button{
   text-align: center;
-  @include inlineStyles($small, white);
+  @include inlineStyles($small, $bg-absolute);
   height: 38px;
-  background: $blue;
+  background: $link-color;
   border-radius: $rounded;
   transition: background 200ms;
   display: block;
+  color: $color-absolute;
 
   &:hover {
-    background: $hover-blue;
+    background: $link-color-hover;
   }
 }
 
+
+
 .outlined_button {
-  background: white;
-  color: $dark;
+  background: $bg-absolute;
+  color: $color-absolute;
   box-shadow: $shadow;
-  border: $br $light;
+  border: $br $bg-150;
 
   &:hover {
-    background: #F3F3F3;
+    background: $bg-absolute-hover;
   }
 }
 
@@ -73,7 +76,7 @@
 }
 
 .primary_select {
-  border: 2px solid $blue;
+  border: 2px solid $link-color;
   border-left-width: 1px;
   font-size: 16px;
   padding-left: 5px;
@@ -88,26 +91,27 @@
 }
 
 .dark_title {
-  @include inlineStyles($small_md, $dark, bold);
+  @include inlineStyles($small_md, $bg-100, bold);
   margin-bottom: 24px;
   margin-top: 14px;
 }
 
 .hover_link {
+  cursor: pointer;
   background-image: linear-gradient(
                   to right,
-                  #54b3d6,
-                  #54b3d6 50%,
-                  #000 50%
+                  $link-color,
+                  $link-color 50%,
+                  $color-absolute 50%
   );
 
   svg {
-    color: $dark;
+    color: $bg-100;
   }
 
   &:hover {
     svg {
-      color: #54b3d6;
+      color: $link-color;
     }
 
   }
@@ -123,7 +127,7 @@
 
   &:before {
     content: '';
-    background: #54b3d6;
+    background: $link-color;
     display: block;
     position: absolute;
     bottom: -3px;
@@ -142,7 +146,7 @@
   }
 }
 .search_head {
-  color: $light-grey;
+  color: $bg-300;
   margin-top: 20px;
   margin-bottom: 20px;
 }

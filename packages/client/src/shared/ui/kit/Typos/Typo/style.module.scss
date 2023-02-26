@@ -1,7 +1,7 @@
 @use 'shared/css/common.scss' as *;
 
 .typo {
-  color: $dark;
+  color: $bg-100;
   font-size: $small;
   font-weight: bold;
 }
@@ -9,5 +9,5 @@
 .typo_grey {
   font-weight: normal;
   font-size: $small;
-  color: $dark-grey;
+  color: $bg-200;
 }

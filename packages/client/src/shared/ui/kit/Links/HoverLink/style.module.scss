@@ -3,18 +3,18 @@
 .hover_link {
   background-image: linear-gradient(
                   to right,
-                  #54b3d6,
-                  #54b3d6 50%,
-                  #000 50%
+                  $link-color-hover,
+                  $link-color-hover 50%,
+                  $color-absolute 50%
   );
 
   svg {
-    color: $dark;
+    color: $bg-100;
   }
 
   &:hover {
     svg {
-      color: #54b3d6;
+      color: $link-color-hover;
     }
 
   }
@@ -30,7 +30,7 @@
 
   &:before {
     content: '';
-    background: #54b3d6;
+    background: $link-color-hover;
     display: block;
     position: absolute;
     bottom: -3px;

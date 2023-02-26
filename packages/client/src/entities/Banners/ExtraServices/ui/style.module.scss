@@ -19,9 +19,9 @@
         background: #F8F8F8;
       }
 
-      background: white;
+      background: $bg-absolute;
       border-radius: 8px;
-      border: 2px solid $light;
+      border: 2px solid $bg-150;
 
     }
   }

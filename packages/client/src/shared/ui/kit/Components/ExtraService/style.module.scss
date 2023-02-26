@@ -9,9 +9,9 @@
     background: #F8F8F8;
   }
 
-  background: white;
+  background: $bg-absolute;
   border-radius: 8px;
-  border: 2px solid $light;
+  border: 2px solid $bg-150;
 
   .item_image {
     @include backgroundImage('/assets/dev/square.png');
@@ -21,7 +21,7 @@
 
     .item_button {
       border-radius: 100%;
-      border: 2px solid white;
+      border: 2px solid $bg-absolute;
       @include size(55px, 55px);
       background: #D1E7FF;
       @include flex(center, center);
@@ -37,6 +37,6 @@
 
   .item_title {
     @include padding(20px, 20px);
-    font-weight: bold;
+    color: $color-absolute-200;
   }
 }

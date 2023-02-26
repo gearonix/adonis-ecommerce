@@ -7,7 +7,7 @@
   transition: background 200ms;
 
   &:hover {
-    background: #FAFAFA;
+    background: $bg-absolute-hover;
   }
 
   .wrapper {
@@ -27,7 +27,7 @@
       @include size(75%, 48px);
 
       span {
-        color: $light-grey;
+        color: $bg-300;
         display: block;
         font-size: 15px;
         width: 90%;
@@ -40,7 +40,7 @@
       @include flex(stretch, end, column);
 
       span {
-        color: $light-grey;
+        color: $bg-300;
         font-size: 14px;
         margin-bottom: 6px;
       }
@@ -50,7 +50,7 @@
         border-radius: 100%;
         background: #78E378;
         @include flex(center, center);
-        @include inlineStyles(12px, white);
+        @include inlineStyles(12px, $bg-absolute);
       }
     }
   }

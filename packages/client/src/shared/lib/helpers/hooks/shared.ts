@@ -1,10 +1,5 @@
-import {ColorType, HexColorsI} from '../../../ui/kit/types'
-import {hexColors} from '../../../ui/kit/consts'
 import {useEffect, useState} from 'react'
 
-export const useColor = (color: ColorType): HexColorsI['primary'] => {
-  return hexColors[color]
-}
 
 export const useAdaptive = (px: number = 880) => {
   const [isMobile, setIsMobile] = useState<boolean>(false)

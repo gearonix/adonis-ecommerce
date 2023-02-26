@@ -4,8 +4,8 @@
   position: absolute;
   top: 20px;
   right: 20px;
-  border: 1px solid $light;
-  background: white;
+  border: 1px solid $bg-150;
+  background: $bg-absolute;
   border-radius: $rounded;
   cursor: pointer;
   @include flex(center, center);
@@ -23,7 +23,7 @@
   svg {
     path {
       transition: color 400ms;
-      color: $blue;
+      color: $link-color;
 
     }
 

@@ -19,12 +19,13 @@
       }
 
       .description {
-        color: $light-grey;
+        color: $color-absolute-200;
       }
 
       h4 {
-        font-weight: bold;
         font-size: 17px;
+        color: $color-absolute;
+        font-weight: bold;
 
       }
     }

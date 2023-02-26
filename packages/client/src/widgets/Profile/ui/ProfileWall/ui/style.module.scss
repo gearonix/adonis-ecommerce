@@ -1,9 +1,11 @@
+@use 'shared/css/common.scss' as *;
+
 .profile_wall {
   width: 83%;
   box-sizing: border-box;
   border: 1px solid #E0E0E0;
   border-radius: 6px;
-  background: white;
+  background: $bg-absolute;
   margin: 25px auto 60px;
   padding: 15px 15px 70px;
 }

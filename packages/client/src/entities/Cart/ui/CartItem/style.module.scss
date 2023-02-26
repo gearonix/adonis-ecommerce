@@ -4,7 +4,7 @@
   @include size(100%, 140px);
   margin-bottom: 23px;
   display: flex;
-  border-bottom: $br $light;
+  border-bottom: $br $bg-150;
   overflow: hidden;
 
   .image_wrapper {
@@ -18,9 +18,12 @@
   .item_info {
     @include size(82%);
     margin-left: 10px;
+    h4{
+      color: $color-absolute;
+    }
 
     p {
-      color: $light-grey;
+      color: $bg-300;
       margin-top: 7px;
       margin-bottom: 9px;
       width: 319px;
@@ -39,6 +42,7 @@
     @include flex(stretch, flex-end, column);
 
     h2 {
+      color: $color-absolute;
       font-weight: bold;
     }
 

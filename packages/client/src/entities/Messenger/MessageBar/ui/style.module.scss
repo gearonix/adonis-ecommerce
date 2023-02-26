@@ -2,8 +2,8 @@
 
 .message_bar {
   border-radius: 12px;
-  background: white;
-  border: $br $light;
+  background: $bg-absolute;
+  border: $br $bg-150;
   position: relative;
   padding: 15px;
   box-sizing: border-box;
@@ -14,7 +14,7 @@
   .icon_wrapper {
     svg {
       @include size(24px, 24px);
-      color: $light-grey;
+      color: $bg-300;
     }
   }
 
@@ -24,9 +24,10 @@
     border: none;
     margin-left: 18px;
     font-size: 17px;
+    background: $bg-absolute;
 
     &::placeholder {
-      color: $light-grey;
+      color: $bg-300;
     }
   }
 

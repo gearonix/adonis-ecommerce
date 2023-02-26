@@ -4,20 +4,20 @@
   @include size(100%, 40px);
   @include flex(flex-start, center);
   padding-bottom: 10px;
-  border-bottom: $br $light;
+  border-bottom: $br $bg-150;
   position: relative;
 
   button {
-    background: white;
+    background: $bg-absolute;
     font-size: 16px;
-    color: $light-grey;
+    color: $bg-300;
     transition: color 200ms;
     margin-right: 10px;
     border-radius: $rounded;
     height: 28px;
 
     &:hover {
-      color: $blue;
+      color: $link-color;
     }
 
     svg {
@@ -39,13 +39,13 @@
         margin-right: 2px;
       }
 
-      color: $dark;
+      color: $bg-100;
     }
   }
 
   .selected {
     box-shadow: $shadow;
-    border: $br $light;
-    color: $blue;
+    border: $br $bg-150;
+    color: $link-color;
   }
 }

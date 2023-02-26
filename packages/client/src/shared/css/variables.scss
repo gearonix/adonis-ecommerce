@@ -1,26 +1,31 @@
-$dark: #1C1C1C;
-$light-grey: #8B96A5;
-$blue: #0D6EFD;
-$hover-blue: #1C6FD0;
-$hover-grey: #888F98;
-$light: #E0E0E0;
-$hover-light: #A8A8A8;
-$dark-grey: #505050;
-$light-blue: #E3F0FF;
-$primary-blue: #E3E8EE;
-$green: #00B517;
-$orange: #FF9017;
-$red: #FA3434;
-$light-max: #FAFAFA;
-$grey-300: #F7FAFC;
-
+$bg-100: var(--bg-100);
+$bg-300: var(--bg-300);
+$link-color: var(--link-color);
+$link-color-hover: var(--link-color-hover);
+$hover-100: var(--hover-100);
+$bg-150: var(--bg-150);
+$bg-150-hover: var(--bg-150-hover);
+$bg-200: var(--bg-200);
+$link-color-light: var(--link-color-light);
+$color-100: var(--color-100);
+$green: var(--green);
+$orange: var(--orange);
+$red: var(--red);
+$color-max: var(--color-max);
+$color-300: var(--color-300);
+$bg-absolute: var(--bg-absolute);
+$color-absolute: var(--color-absolute);
+$color-absolute-200: var(--color-absolute-200);
+$bg-light-blue: var(--bg-light-blue);
+$link-blue-white: var(--link-blue-white);
+$bg-absolute-hover: var(--bg-absolute-hover);
 
 $xs: 12px;
 $small: 16px;
 $xm: 20px;
 $small-md: 24px;
 $medium: 28px;
-$lmedium: 32px;
+$l-medium: 32px;
 $giant: 74px;
 
 $shadow: 4px 4px 8px -3px rgba(34, 60, 80, 0.2);

@@ -5,10 +5,9 @@
   margin-right: 20px;
 
   .image_wrapper {
-    @include size(400px, 400px);
-    border: 1.5px solid $light;
+    @include imageWrapper(400px,400px,$rounded);
+    border: 1.5px solid $bg-150;
     border-radius: $rounded;
-    position: relative;
     cursor: pointer;
     @include itemHover;
   }

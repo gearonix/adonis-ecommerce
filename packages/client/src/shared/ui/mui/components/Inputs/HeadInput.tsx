@@ -2,16 +2,18 @@ import {MuiLoginFieldProps} from '../../types'
 import {FC, useState} from 'react'
 import {FormControl, FormHelperText, IconButton, InputAdornment, OutlinedInput, Typography} from '@mui/material'
 import {AiFillEye, AiFillEyeInvisible} from 'shared/ui/icons'
+import {useTheme} from 'shared/lib/helpers/hooks/common'
 
 export const HeadField: FC<MuiLoginFieldProps> = ({title, isPassword, readOnly = false, values}) => {
   const [showPassword, setShowPassword] = useState(true)
+  const {isLight} = useTheme()
 
   const {error, inputProps, maxLength} = values
 
   return <FormControl variant="outlined" fullWidth size={'small'} sx={{
     marginBottom: '26px',
   }}>
-    <Typography>{title}</Typography>
+    <Typography sx={{color: isLight ? 'black' : 'white'}}>{title}</Typography>
     <OutlinedInput
       readOnly={readOnly}
       placeholder={title}

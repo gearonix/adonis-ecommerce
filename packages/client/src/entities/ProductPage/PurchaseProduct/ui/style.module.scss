@@ -9,15 +9,16 @@
 
   .purchase_card {
     padding: 17px;
-    border: $br $light;
+    border: $br $bg-150;
     border-radius: $rounded;
     @include size(100%, 325px);
 
     .purchase_supplier {
       @include size(100%, 65px);
       @include flex();
-      border-bottom: $br $light;
+      border-bottom: $br $bg-150;
       margin-bottom: 11px;
+      color: $color-absolute;
       img{
         border-radius: $rounded;
       }
@@ -34,7 +35,7 @@
     .supplier_params {
       margin-bottom: 11px;
       display: block;
-      color: $light-grey;
+      color: $bg-300;
 
       svg {
         margin-right: 16px;
@@ -46,7 +47,7 @@
       @include size(100%, 40px);
 
       &[class*="outlined_button"] {
-        color: $blue;
+        color: $link-color;
       }
     }
   }

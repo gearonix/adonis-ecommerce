@@ -2,21 +2,22 @@
 
 .item {
   @include padding(16px, 20px);
-  border: $br $light;
+  border: $br $bg-150;
   position: relative;
   @include itemHover;
+  border-radius: 4px;
 
   .item_title {
     margin-bottom: 9px;
-    color: $dark-grey;
+    color: $bg-200;
   }
 
   .item_description {
-    @include inlineStyles(13px, $light-grey);
+    @include inlineStyles(13px, $bg-300);
   }
 
   .item_image {
-    @include imageWrapper(115px, 90%);
+    @include imageWrapper(115px, 90%, $rounded);
     box-sizing: border-box;
     position: absolute;
     top: 50%;

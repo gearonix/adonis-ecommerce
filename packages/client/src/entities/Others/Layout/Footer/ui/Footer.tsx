@@ -8,7 +8,7 @@ const Footer: FC = () => {
     <div className={s.footer_block}>
       <div className={s.brand_block}>
         <div className={s.brand_logo}>
-          <NextImage src={'/assets/logo.svg'}/>
+          <NextImage src={'/assets/Group 1028.png'}/>
         </div>
         <p className={s.brand_text}>
                     Best information about the company gies here

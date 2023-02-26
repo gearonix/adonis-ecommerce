@@ -2,11 +2,11 @@
 
 .messenger_aside {
   @include size(22%, 720px);
-  background: white;
+  background: $bg-absolute;
   overflow-y: auto;
   overflow-x: hidden;
   box-sizing: border-box;
-  border-right: $br $light;
+  border-right: $br $bg-150;
   @include customScroll;
 
 }

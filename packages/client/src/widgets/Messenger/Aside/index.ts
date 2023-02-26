@@ -1,1 +1,1 @@
-export {default as MessengerAside} from './ui/Aside'
+export {default as MessengerAside} from './ui/MessengerAside'

@@ -2,7 +2,7 @@
 
 .messages_main {
   @include size(100%, 652px);
-  background: white;
+  background: $bg-absolute;
   margin: 0 auto;
   position: relative;
   border: 1px solid transparent;

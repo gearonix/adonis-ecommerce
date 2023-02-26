@@ -12,7 +12,7 @@
     //@include testBorder;
   }
 
-  border-bottom: $br $light;
+  border-bottom: $br $bg-150;
   box-sizing: border-box;
 
   .user_image {
@@ -28,7 +28,7 @@
       font-weight: bold;
 
       span {
-        @include inlineStyles($small, $light-grey, normal);
+        @include inlineStyles($small, $bg-300, normal);
       }
     }
 
@@ -49,8 +49,8 @@
       height: 26px;
 
       button {
-        background: white;
-        @include inlineStyles($small, $light-grey);
+        background: $bg-absolute;
+        @include inlineStyles($small, $bg-300);
         padding: 0;
         @include flex(center, center);
 
@@ -81,7 +81,7 @@
   margin-left: 45px;
 
   .post {
-    border-left: $br $light;
+    border-left: $br $bg-150;
 
     .attached_image {
       height: 200px;
@@ -90,7 +90,7 @@
   }
 
   h4 {
-    background-image: linear-gradient(to left, $blue, $blue);
+    background-image: linear-gradient(to left, $link-color, $link-color);
     cursor: pointer;
     margin-top: 5px;
   }

@@ -8,13 +8,13 @@
 }
 
 .title {
-  @include inlineStyles(42px, $dark, bold);
+  @include inlineStyles(42px, $bg-100, bold);
   text-align: center;
   margin-top: 30px;
   margin-bottom: 60px;
 
   span {
-    background-image: linear-gradient(to left, $blue, $blue);
+    background-image: linear-gradient(to left, $link-color, $link-color);
     cursor: pointer;
   }
 

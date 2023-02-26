@@ -11,7 +11,7 @@
   @include flex(space-around, center);
 
   margin-top: 20px;
-  background: white;
+  background: $bg-absolute;
   border-radius: 8px;
 
   & div {
@@ -33,7 +33,7 @@
 
     .title {
       margin-bottom: 19px;
-      font-size: $lmedium;
+      font-size: $l-medium;
       font-weight: bold;
     }
 
@@ -45,7 +45,7 @@
     .user_block {
       @include size(100%, 150px);
       border-radius: 6px;
-      background: $light-blue;
+      background: $link-color-light;
       padding-top: 17px;
 
       .user_block_container {
@@ -68,6 +68,7 @@
 
           .user_title {
             font-size: $small;
+            color: black;
             @media (max-width: 1308px) {
               font-size: 14px;
             }
@@ -81,7 +82,7 @@
         margin: 10px auto 0;
 
         &[class*="outlined_button"] {
-          color: $blue;
+          color: $link-color;
         }
 
         @include size(90%, 30px);
@@ -94,7 +95,7 @@
       @include size(calc(100% - 16px), 80px);
       border-radius: 6px;
       background: #F38332;
-      color: white;
+      color: $color-absolute;
       margin-top: 10px;
       padding-top: 16px;
       padding-left: 16px;
@@ -102,7 +103,7 @@
 
       h4 {
         font-size: $small;
-        color: white;
+        color: $color-absolute;
       }
     }
 

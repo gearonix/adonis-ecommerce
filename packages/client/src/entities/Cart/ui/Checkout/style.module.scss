@@ -10,11 +10,11 @@
   p {
     margin-top: 0;
     margin-bottom: 25px;
-    color: $dark-grey;
+    color: $bg-200;
   }
 
   .total_block {
-    border-bottom: $br $light;
+    border-bottom: $br $bg-150;
     padding-bottom: 10px;
     @include flex(space-between);
     @include size(100%, 28px);

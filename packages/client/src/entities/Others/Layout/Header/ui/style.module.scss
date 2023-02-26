@@ -2,8 +2,8 @@
 
 .header {
   width: 100%;
-  background: white;
-  border-bottom: 2px solid $light;
+  background: $bg-absolute;
+  border-bottom: 2px solid $bg-150;
   max-height: 138px;
 
   @media (max-width: 880px) {
@@ -31,11 +31,11 @@
       @include size(18%, 38px);
       @include flex(space-between);
       * {
-        color: $light-grey;
+        color: $bg-300;
         transition: background 200ms;
 
         &:hover {
-          color: $hover-grey;
+          color: $hover-100;
         }
 
       }
@@ -50,7 +50,7 @@
         }
 
         span {
-          @include inlineStyles($xs, $light-grey);
+          @include inlineStyles($xs, $bg-300);
           white-space: nowrap;
         }
       }
@@ -61,7 +61,7 @@
       @media (max-width: 880px) {
         align-items: center;
         * {
-          color: $dark-grey;
+          color: $bg-200;
         }
       }
       @media (max-width: 564px) {

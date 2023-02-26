@@ -8,18 +8,18 @@
 
 .title {
   margin-top: 100px;
-  @include inlineStyles($giant, #384259, bold);
+  @include inlineStyles($giant, $color-absolute, bold);
 }
 
 .subtitle {
-  @include inlineStyles(30px, #565F73);
+  @include inlineStyles(30px, $color-absolute-200);
   margin-top: 15px;
 }
 
 .go_back {
   margin-top: 108px;
   @include size(330px, 57px);
-  @include inlineStyles(22px, white, bold);
+  @include inlineStyles(22px, $color-absolute, bold);
 }
 
 .image_wrapper {
