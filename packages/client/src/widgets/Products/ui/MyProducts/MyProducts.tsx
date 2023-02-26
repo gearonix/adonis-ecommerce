@@ -1,18 +1,20 @@
 import {FC, useEffect} from 'react'
 import {useDispatch, useSelector} from 'shared/types/redux'
-import {getMyProducts, productsActions} from 'widgets/Products'
+import {getUserProducts, productsActions} from 'widgets/Products'
 import {AddToSavedSearch} from 'features/Saved'
 import {ProductsSelectors} from 'shared/selectors'
 import {NoProducts, SearchedProduct} from 'shared/ui/kit'
+import UserSelectors from 'shared/selectors/userSelectors'
 
 const MyProducts : FC = () => {
   const dispatch = useDispatch()
   const myProducts = useSelector(ProductsSelectors.products)
   const page = useSelector(ProductsSelectors.page)
+  const userId = useSelector(UserSelectors.userId)
 
   useEffect(() => {
-    dispatch(getMyProducts(page))
-  }, [page])
+    dispatch(getUserProducts(page))
+  }, [page, userId])
 
   useEffect(() => {
     return () => {

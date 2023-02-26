@@ -26,6 +26,15 @@ const nextConfig = {
     ],
     domains: ['lh3.googleusercontent.com', serverHost],
   },
+  async redirects() {
+    return [
+      {
+        source: '/profile',
+        destination: '/profile/me',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 module.exports = nextConfig

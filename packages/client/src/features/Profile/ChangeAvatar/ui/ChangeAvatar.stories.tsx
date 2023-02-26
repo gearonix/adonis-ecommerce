@@ -2,7 +2,7 @@ import {ComponentMeta, ComponentStory} from '@storybook/react'
 import ChangeAvatar from './ChangeAvatar'
 
 export default {
-  title: 'features/Profile/ChangeAvatar',
+  title: 'features/Index/ChangeAvatar',
   component: ChangeAvatar,
   argTypes: {},
 } as ComponentMeta<typeof ChangeAvatar>

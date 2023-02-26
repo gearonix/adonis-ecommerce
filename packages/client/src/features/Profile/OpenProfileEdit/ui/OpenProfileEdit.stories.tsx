@@ -1,13 +1,13 @@
 import {ComponentMeta, ComponentStory} from '@storybook/react'
-import OpenProfileEdit from './OpenProfileEdit'
+import ChangeProfile from './ChangeProfile'
 
 export default {
-  title: 'features/Profile/OpenProfileEdit',
-  component: OpenProfileEdit,
+  title: 'features/Index/OpenProfileEdit',
+  component: ChangeProfile,
   argTypes: {},
-} as ComponentMeta<typeof OpenProfileEdit>
+} as ComponentMeta<typeof ChangeProfile>
 
-const Template: ComponentStory<typeof OpenProfileEdit> = (args) => <OpenProfileEdit {...args} />
+const Template: ComponentStory<typeof ChangeProfile> = (args) => <ChangeProfile {...args} />
 
 export const Default = Template.bind({})
 Default.args = {

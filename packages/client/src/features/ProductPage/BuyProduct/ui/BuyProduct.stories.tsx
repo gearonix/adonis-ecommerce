@@ -1,14 +1,14 @@
 import {ComponentMeta, ComponentStory} from '@storybook/react'
-import BuyProduct from './BuyProduct'
+import AddToCart from './AddToCart'
 import {FixedWidthDecorator} from 'shared/config/storybook/decorators'
 
 export default {
   title: 'features/CurrentProduct/BuyProduct',
-  component: BuyProduct,
+  component: AddToCart,
   argTypes: {},
-} as ComponentMeta<typeof BuyProduct>
+} as ComponentMeta<typeof AddToCart>
 
-const Template: ComponentStory<typeof BuyProduct> = (args) => <BuyProduct {...args} />
+const Template: ComponentStory<typeof AddToCart> = (args) => <AddToCart {...args} />
 
 export const Default = Template.bind({})
 Default.args = {

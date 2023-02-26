@@ -23,10 +23,10 @@ export class TokenService {
     return {token}
   }
 
-  async getUser(): Promise<UsersEntity> {
+  async getUser(): Promise<UsersEntity & {isMe: boolean}> {
     try {
       const userId = await this.getUserIdByCookie()
-      return this.usersService.getUserById(userId)
+      return await this.usersService.getUserById(userId)
     } catch (e) {
       throw new HttpException(
           ServerExceptions.INCORRECT_TOKEN,

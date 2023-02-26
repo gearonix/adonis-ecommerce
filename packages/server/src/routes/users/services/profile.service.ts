@@ -23,7 +23,7 @@ export class ProfileService {
   async changeProfile(
       data: ObjectOptional<EditProfileForm>,
   ): Promise<UsersEntity> {
-    const userId = await this.authService.getUserIdByPayload()
+    const userId = await this.authService.getUserId()
     const response = await this.users.update({userId}, data)
     if (!response.affected) {
       throw new HttpException(
@@ -50,16 +50,17 @@ export class ProfileService {
   }
 
   async changeUserImage(image: any): Promise<string> {
-    const userId = await this.authService.getUserIdByPayload()
+    const userId = await this.authService.getUserId()
     const fileUrl = await this.replaceOldFileToNew(image, userId,
         FileDirectories.USER_AVATAR, this.usersService.getUserAvatar.bind(this.usersService))
+    console.log(userId)
 
     await this.users.update({userId}, {avatar: fileUrl})
     return fileUrl
   }
 
   async changeUserBackground(image: any): Promise<string> {
-    const userId = await this.authService.getUserIdByPayload()
+    const userId = await this.authService.getUserId()
     const fileUrl = await this.replaceOldFileToNew(image, userId,
         FileDirectories.USER_BACKGROUND, this.usersService.getUserBackground.bind(this.usersService))
 

@@ -1,6 +1,6 @@
 import {useDispatch} from 'shared/types/redux'
 import {Forms, SignupForm} from 'widgets/Login/types'
-import {loginUser, makeRegistration} from 'widgets/Login/thunks'
+import {loginUser, makeRegistration} from 'widgets/Login/redux/thunks'
 import {UserRoles} from 'app/config/globals'
 import {UseFormSetError} from 'react-hook-form'
 import {onThunkError} from 'shared/lib/helpers/others/httpHelpers'

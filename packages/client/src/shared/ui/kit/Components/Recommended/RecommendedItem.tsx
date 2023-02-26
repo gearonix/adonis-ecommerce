@@ -5,6 +5,7 @@ import {Product} from 'shared/types/slices'
 import {Helpers} from 'shared/lib/helpers/others'
 import Link from 'next/link'
 import {routes} from 'shared/config/routes'
+import {DefaultAssets} from 'shared/config/assets'
 
 export const RecommendedItem: FC<{product: Product}> = ({product}) => {
   const helpers = new Helpers()
@@ -13,7 +14,7 @@ export const RecommendedItem: FC<{product: Product}> = ({product}) => {
       <h3 className={s.item_title}>{product.name}</h3>
       <span className={s.item_description}>{helpers.cropped(product.description)}</span>
       <div className={s.item_image}>
-        <NextImage src={product.images[0]}/>
+        <NextImage src={product.images[0]} def={DefaultAssets.PRODUCT}/>
       </div>
     </Link>
   </div>

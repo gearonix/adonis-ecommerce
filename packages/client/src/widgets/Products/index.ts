@@ -6,6 +6,6 @@ export {default as SearchAside} from './ui/SearchAside/SearchAside'
 
 export {productsSlice, productsActions} from './store/productsReducer'
 
-export {getMyProducts} from './store/thunks/getMyProducts'
+export {getUserProducts} from './store/thunks/getUserProducts'
 
 export type {RecommendedItemProps} from './ui/RecommendedItems/RecommendedItems'

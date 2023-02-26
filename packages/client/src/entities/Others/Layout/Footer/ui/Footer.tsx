@@ -2,13 +2,14 @@ import {FC} from 'react'
 import s from './style.module.scss'
 import {AiOutlineGithub} from 'shared/ui/icons'
 import {HoverLink, NextImage} from 'shared/ui/kit'
+import {Assets} from 'shared/config/assets'
 
 const Footer: FC = () => {
   return <footer className={s.footer}>
     <div className={s.footer_block}>
       <div className={s.brand_block}>
         <div className={s.brand_logo}>
-          <NextImage src={'/assets/Group 1028.png'}/>
+          <NextImage src={Assets.LOGO}/>
         </div>
         <p className={s.brand_text}>
                     Best information about the company gies here

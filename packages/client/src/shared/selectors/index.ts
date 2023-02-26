@@ -1,3 +1,5 @@
 export {default as UserSelectors} from './userSelectors'
 export {default as ProductsSelectors} from './productsSelectors'
 export {default as ProductSelectors} from './currentProductSelectors'
+export {default as AuthSelectors} from './authSelectors'
+export {default as CartSelectors} from './cartSelectors'

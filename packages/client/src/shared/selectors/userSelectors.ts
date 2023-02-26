@@ -15,6 +15,7 @@ const UserSelectors = {
     return helpers.nameToEmail(user.email || '')
   }),
   userRole: ({user}: AppState) => user.role,
+  isMe: ({user}: AppState) => user.isMe,
 }
 
 

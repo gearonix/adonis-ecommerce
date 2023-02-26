@@ -6,7 +6,7 @@
   transition: background 200ms;
 
   &:hover {
-    background: #F8F8F8;
+    background: $bg-absolute-hover;
   }
 
   background: $bg-absolute;

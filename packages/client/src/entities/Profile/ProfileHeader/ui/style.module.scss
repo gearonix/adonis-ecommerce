@@ -42,10 +42,10 @@
 
     .avatar {
       @include imageWrapper(170px, 170px, 100%);
-      border: 3px solid $bg-150;
+      border: 1px solid $bg-150;
       margin-left: 20px;
       margin-top: -7%;
-      background: $bg-absolute;
+      background: white;
     }
 
     .user_info {

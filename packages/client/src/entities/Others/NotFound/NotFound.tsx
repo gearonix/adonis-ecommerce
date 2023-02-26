@@ -3,6 +3,7 @@ import {NextImage} from 'shared/ui/kit'
 import cn from 'classnames'
 import Link from 'next/link'
 import React from 'react'
+import {Assets} from 'shared/config/assets'
 
 const NotFoundComponent = () => {
   return <div className={s.not_found}>
@@ -12,7 +13,7 @@ const NotFoundComponent = () => {
       <button className={cn(s.go_back, 'primary_button')}>Plz go back</button>
     </Link>
     <div className={s.image_wrapper}>
-      <NextImage src={'/assets/not_found.svg'}/>
+      <NextImage src={Assets.NOT_FOUND}/>
     </div>
   </div>
 }

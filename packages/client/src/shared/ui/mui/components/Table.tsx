@@ -1,13 +1,15 @@
 import {Paper, Table as MuiTable, TableBody, TableCell, TableContainer, TableHead, TableRow} from '@mui/material'
 import {FC} from 'react'
 import {CurrentProduct} from 'shared/types/slices'
+import {useTheme} from 'shared/lib/helpers/hooks/common'
 
 export const Table: FC<{product: CurrentProduct}> = ({product}) => {
+  const {isLight} = useTheme()
   return (
     <div style={{width: '60%'}}>
       <TableContainer component={Paper}>
         <MuiTable aria-label="a dense table">
-          <TableHead sx={{backgroundColor: '#EFF2F4'}}>
+          <TableHead sx={{backgroundColor: isLight ? '#EFF2F4' : '#2a2a2a'}}>
             <TableRow>
               <TableCell>Product Type</TableCell>
               <TableCell align="right">Product Model</TableCell>

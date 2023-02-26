@@ -1,11 +1,11 @@
 import {FC} from 'react'
 import {CredentialResponse, GoogleLogin} from '@react-oauth/google'
-import {registerByGoogle} from '../thunks/makeRegistration'
+import {registerByGoogle} from '../redux/thunks/makeRegistration'
 import {useDispatch} from 'shared/types/redux'
-import {loginByGoogle} from '../thunks/loginUser'
+import {loginByGoogle} from '../redux/thunks/loginUser'
 import {GoogleButtonProps, RegisterByGoogle} from '../types'
 import {useTheme} from 'shared/lib/helpers/hooks/common'
-import {Theme} from 'shared/types/appTypes'
+import {Theme} from 'shared/config/themes'
 
 const GoogleButton: FC<GoogleButtonProps> = ({role}) => {
   const dispatch = useDispatch()

@@ -9,7 +9,9 @@ export enum AppRoutes {
     MESSENGER = 'MESSENGER',
     SAVED = 'SAVED',
     PROFILE = 'PROFILE',
+    USER_PROFILE = 'USER_PROFILE',
     ABOUT = 'ABOUT',
+    PRODUCT = 'PRODUCT'
 }
 
 

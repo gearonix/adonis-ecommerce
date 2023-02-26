@@ -1,5 +1,6 @@
 import {CurrentProduct, Products, User} from 'shared/types/slices'
 import {ObjectNullable} from 'shared/types/common'
+import {AuthSlice} from 'shared/types/slices/authSlice'
 
 export const productsInitialState: Products = {
   products: [],
@@ -26,6 +27,7 @@ export const usersInitialState: ObjectNullable<User> = {
   city: null,
   userId: null,
   registration_date: null,
+  isMe: null,
 }
 
 export const currentProductInitialState: ObjectNullable<CurrentProduct> = {
@@ -46,3 +48,9 @@ export const currentProductInitialState: ObjectNullable<CurrentProduct> = {
   savedCount: null,
   salesman: usersInitialState,
 }
+
+export const authInitialState: AuthSlice = {
+  isAuthorized: null,
+  userId: null,
+}
+

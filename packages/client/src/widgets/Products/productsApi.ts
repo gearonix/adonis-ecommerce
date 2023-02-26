@@ -18,8 +18,8 @@ export const ProductsApi = {
   setProductImages(productId: number, formData: FormData): Res<Product> {
     return axiosInstance.post(`${endpoint.setProductImages}?product_id=${productId}`, formData)
   },
-  myProducts(page: Nullable<number>): Res<ProductsWithCount> {
-    return axiosInstance.get(`${endpoint.myProducts}?page=${page}`)
+  userProducts(id: number, page: Nullable<number>): Res<ProductsWithCount> {
+    return axiosInstance.get(`${endpoint.userProducts}/${id}?page=${page}`)
   },
   products(filter: ObjectNullable<SearchQuery>): Res<ProductsWithCount> {
     const query = helpers.toQuery(helpers.partial(filter))

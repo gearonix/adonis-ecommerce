@@ -5,7 +5,7 @@ import * as Yup from 'yup'
 import {createFieldValues} from 'shared/lib/helpers/others'
 import {Nullable} from 'shared/types/common'
 import ThemeContext from 'shared/config/contexts/ThemeContext'
-import {Theme} from 'shared/types/appTypes'
+import {Theme} from 'shared/config/themes'
 import {createTheme} from '@mui/material/styles'
 
 export const useBooleanState = (initialValue = false) => {

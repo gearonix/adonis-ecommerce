@@ -2,7 +2,7 @@ import {ComponentMeta, ComponentStory} from '@storybook/react'
 import OpenAddProduct from './OpenAddProduct'
 
 export default {
-  title: 'features/Profile/OpenAddProduct',
+  title: 'features/Index/OpenAddProduct',
   component: OpenAddProduct,
   argTypes: {},
 } as ComponentMeta<typeof OpenAddProduct>

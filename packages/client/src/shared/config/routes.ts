@@ -4,6 +4,7 @@ import {ValueOf} from 'shared/types/common'
 export const routes : Record<AppRoutes, string> = {
   [AppRoutes.MAIN]: '/',
   [AppRoutes.SEARCH]: '/search',
+  [AppRoutes.PRODUCT]: '/search/[id]',
   [AppRoutes.CART]: '/cart',
   [AppRoutes.LOGIN]: '/login',
   [AppRoutes.SIGNUP]: '/signup',
@@ -12,6 +13,7 @@ export const routes : Record<AppRoutes, string> = {
   [AppRoutes.MESSENGER]: '/messenger',
   [AppRoutes.SAVED]: '/saved',
   [AppRoutes.PROFILE]: '/profile',
+  [AppRoutes.USER_PROFILE]: '/profile/[id]',
   [AppRoutes.ABOUT]: '/about',
 }
 

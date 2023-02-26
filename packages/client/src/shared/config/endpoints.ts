@@ -16,7 +16,7 @@ const EndPoints = {
   PRODUCTS: {
     createProduct: '/products/create',
     setProductImages: '/products/set/images',
-    myProducts: '/products/my',
+    userProducts: '/products/user',
     products: '/products',
     recommended: '/products/recommended',
   },

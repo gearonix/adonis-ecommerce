@@ -1,1 +1,1 @@
-export {default as BuyProduct} from './ui/BuyProduct'
+export {default as BuyProduct} from './ui/AddToCart'

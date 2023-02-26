@@ -2,7 +2,7 @@ import {ComponentMeta, ComponentStory} from '@storybook/react'
 import Post from './Post'
 
 export default {
-  title: 'entities/Profile/Post',
+  title: 'entities/Index/Post',
   component: Post,
   argTypes: {},
 } as ComponentMeta<typeof Post>

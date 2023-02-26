@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import {FC} from 'react'
 import {ContainerTitle} from 'shared/ui/kit'
-import {CartItems} from 'widgets/Cart/CartItems'
+import {CartItems} from 'widgets/Cart'
 import {RemoveAllSaved, RemoveFromSaved} from 'features/Saved'
 import {RecommendedItems} from 'widgets/Products'
 import {GithubBanner} from 'entities/Banners/GithubBanner'

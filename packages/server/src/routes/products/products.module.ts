@@ -1,6 +1,7 @@
 import {Module} from '@nestjs/common'
 import {ProductsController} from './products.controller'
-import {ProductsService} from './products.service'
+import {ProductsService} from './services/products.service'
+import {CreateProductService} from './services/createProduct.service'
 import {AuthModule} from '@routes/auth'
 import {UsersModule} from '@routes/users'
 import {TypeOrmModule} from '@nestjs/typeorm'
@@ -10,7 +11,7 @@ import {FilesModule} from '@modules/files'
 
 @Module({
   controllers: [ProductsController],
-  providers: [ProductsService],
+  providers: [CreateProductService, ProductsService],
   imports: [
     TypeOrmModule.forFeature([ProductsEntity]),
     AuthModule,

@@ -2,7 +2,7 @@ import {forwardRef, HttpException, HttpStatus, Inject} from '@nestjs/common'
 import {JwtService} from '@nestjs/jwt'
 import {UsersService} from '@routes/users'
 import * as bcrypt from 'bcryptjs'
-import {ServerExceptions} from '@app/lib'
+import {Roles, ServerExceptions} from '@app/lib'
 import {RegisterUserDTO, UserLoginDTO} from '../../users'
 import {ReturnToken} from '@routes/auth/types/returnTypes'
 import {RequestContext} from 'nestjs-request-context'
@@ -65,8 +65,26 @@ export class AuthService {
     )
   }
 
-  async getUserIdByPayload(): Promise<number> {
+  async getUserId(): Promise<number> {
     const req = RequestContext.currentContext.req
-    return req.user.payload.userId
+    const userId = req?.user?.payload?.userId
+    if (!userId) {
+      try {
+        const userId = await this.tokenService.getUserIdByCookie()
+        return userId
+      } catch (e) {
+        return null
+      }
+    }
+    return userId
+  }
+
+  async checkUserRole() {
+    const userId = await this.getUserId()
+    const userRole = await this.usersService.getUserRoleById(userId)
+
+    if (userRole !== Roles.SALESMAN) {
+      throw new HttpException(ServerExceptions.FORBIDDEN, HttpStatus.FORBIDDEN)
+    }
   }
 }

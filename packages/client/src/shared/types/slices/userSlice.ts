@@ -11,5 +11,6 @@ export interface User {
     country: string,
     city: string
     userId: number,
-    registration_date: string
+    registration_date: string,
+    isMe: boolean
 }

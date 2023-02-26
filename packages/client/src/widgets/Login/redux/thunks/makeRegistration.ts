@@ -3,7 +3,7 @@ import {RegisterByGoogle, SignupWithRoles} from 'widgets/Login/types'
 import LoginApi from 'widgets/Login/authApi'
 import {isResponseError} from 'shared/lib/helpers/others/httpHelpers'
 import {Exceptions} from 'app/config/globals'
-import {getCurrentUser} from 'widgets/Login/thunks/getCurrentUser'
+import {authorizeUser} from 'widgets/Login/redux/thunks/authorizeUser'
 
 export const makeRegistration = createThunk(
     'users/MAKE_REGISTRATION',
@@ -12,7 +12,7 @@ export const makeRegistration = createThunk(
 
       if (isResponseError(response)) return rejectWithValue(Exceptions.USER_ALREADY_EXISTS)
 
-      await dispatch(getCurrentUser())
+      await dispatch(authorizeUser())
     }
 )
 
@@ -24,6 +24,6 @@ export const registerByGoogle = createThunk(
 
       if (isResponseError(response)) return rejectWithValue(Exceptions.REGISTRATION_FAILED)
 
-      await dispatch(getCurrentUser())
+      await dispatch(authorizeUser())
     }
 )

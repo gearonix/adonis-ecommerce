@@ -3,7 +3,7 @@ import {UploadProperties} from 'app/config/globals'
 import {withFormData} from 'shared/lib/helpers/others'
 import {AddProductForm} from 'widgets/Products/types'
 import {ProductsApi} from 'widgets/Products/productsApi'
-import {getMyProducts} from 'widgets/Products'
+import {getUserProducts} from 'widgets/Products'
 
 
 export const addProduct = createThunk('products/ADD_PRODUCT',
@@ -17,5 +17,5 @@ export const addProduct = createThunk('products/ADD_PRODUCT',
 
       await ProductsApi.setProductImages(productId, images)
 
-      dispatch(getMyProducts(0))
+      dispatch(getUserProducts(0))
     })

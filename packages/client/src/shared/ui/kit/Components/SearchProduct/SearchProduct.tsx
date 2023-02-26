@@ -15,6 +15,11 @@ export interface SearchProductProps {
 
 
 export const SearchProduct: FC<SearchProductProps> = ({AddToSaved, product}) => {
+  if (product.productId == 11) {
+    console.log(product.images[0], {color: 'red'})
+  }
+  console.log(product.productId)
+
   return <div className={s.search_item}>
     <Image src={product.images[0] || 'assets/default_product.png'} alt={'Check it!'}
       width={190} height={190} priority={true}/>

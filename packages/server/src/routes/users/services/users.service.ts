@@ -1,8 +1,8 @@
-import {forwardRef, Inject} from '@nestjs/common'
 import {InjectRepository} from '@nestjs/typeorm'
 import {UsersEntity} from '@app/entities'
 import {Repository} from 'typeorm'
 import {RegisterUserDTO} from '@routes/users/dto/authDTO'
+import {forwardRef, Inject} from '@nestjs/common'
 import {AuthService} from '@routes/auth'
 
 export class UsersService {
@@ -24,8 +24,13 @@ export class UsersService {
     return await this.users.save(user)
   }
 
-  async getUserById(userId: number) {
-    return await this.users.findOneBy({userId})
+  async getUserById(userId: number): Promise<UsersEntity & {isMe: boolean}> {
+    const sessionId = await this.authService.getUserId()
+    const user = await this.users.findOneBy({userId})
+    return {
+      ...user,
+      isMe: sessionId === user.userId,
+    }
   }
 
   async getIdByGoogleSub(googleSub: string): Promise<UsersEntity> {
