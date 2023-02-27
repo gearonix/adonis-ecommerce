@@ -1,7 +1,7 @@
 import {HttpException, HttpStatus, Injectable} from '@nestjs/common'
 import {InjectRepository} from '@nestjs/typeorm'
 import {ProductsEntity} from '@app/entities/products/products.entity'
-import {Like, Repository} from 'typeorm'
+import {In, Like, Repository} from 'typeorm'
 import {AuthService} from '@routes/auth'
 import {UsersService} from '@routes/users'
 import {PageLimits} from '@app/types/global'
@@ -59,5 +59,8 @@ export class ProductsService {
       ...withLimit(page),
     })
     return {data, count}
+  }
+  async getCartProducts(ids: number[]) {
+    return this.products.findBy({productId: In(ids)})
   }
 }

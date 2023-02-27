@@ -1,4 +1,4 @@
-import {Body, Controller, Get, Param, Post, Query, UploadedFiles, UseGuards, UseInterceptors} from '@nestjs/common'
+import {Body, Controller, Get, Param, Post, Put, Query, UploadedFiles, UseGuards, UseInterceptors} from '@nestjs/common'
 import {ProductDTO} from './dto'
 import {AuthGuard} from '@app/routes/auth/auth.guard'
 import {FilesInterceptor} from '@nestjs/platform-express'
@@ -42,5 +42,10 @@ export class ProductsController {
   @Get(':id')
   getProduct(@Param('id') id) {
     return this.productsService.getProduct(+id)
+  }
+
+  @Put('/cart')
+  getCartProducts(@Body() body) {
+    return this.productsService.getCartProducts(body.ids)
   }
 }

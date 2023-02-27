@@ -23,7 +23,6 @@ export const ProductsApi = {
   },
   products(filter: ObjectNullable<SearchQuery>): Res<ProductsWithCount> {
     const query = helpers.toQuery(helpers.partial(filter))
-    console.log(`${endpoint.products}?${query}`)
     return axiosInstance.get(`${endpoint.products}?${query}`)
   },
   recommendedProducts(filter: Partial<SearchControlsForm>): Res<Product[]> {
@@ -32,5 +31,8 @@ export const ProductsApi = {
   },
   getProduct(id: number): Res<CurrentProduct> {
     return axiosInstance.get(`${endpoint.products}/${id}`)
+  },
+  getCartProducts(ids: number[]): Res<Product[]> {
+    return axiosInstance.put(`${endpoint.cart}`, {ids})
   },
 }

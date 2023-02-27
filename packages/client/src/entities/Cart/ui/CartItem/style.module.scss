@@ -8,8 +8,7 @@
   overflow: hidden;
 
   .image_wrapper {
-    position: relative;
-    @include size(87px, 87px);
+    @include imageWrapper(87px,87px,$rounded);
     @include itemBorder;
     margin: 0;
     cursor: pointer;

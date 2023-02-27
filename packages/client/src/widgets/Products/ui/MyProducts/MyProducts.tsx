@@ -5,6 +5,7 @@ import {AddToSavedSearch} from 'features/Saved'
 import {ProductsSelectors} from 'shared/selectors'
 import {NoProducts, SearchedProduct} from 'shared/ui/kit'
 import UserSelectors from 'shared/selectors/userSelectors'
+import {CartButton} from 'features/ProductPage/BuyProduct'
 
 const MyProducts : FC = () => {
   const dispatch = useDispatch()
@@ -25,7 +26,7 @@ const MyProducts : FC = () => {
   return <>
     {myProducts.length > 0 ? myProducts.map((product) => {
       return <SearchedProduct AddToSaved={AddToSavedSearch}
-        key={product.productId} product={product}/>
+        key={product.productId} product={product} CartButton={CartButton}/>
     }) : <NoProducts/>}
   </>
 }

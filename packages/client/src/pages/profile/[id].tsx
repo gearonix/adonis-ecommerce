@@ -1,36 +1,38 @@
 import {FC, useEffect} from 'react'
 import {useDispatch, useSelector} from 'shared/types/redux'
 import {ProfileHeader, userActions} from 'widgets/Profile'
-import {useRouter} from 'next/router'
 import {WithSpring} from 'shared/ui/animations'
 import Head from 'next/head'
 import {ProfileWall} from 'widgets/Profile/ui/ProfileWall'
 import {UserSelectors} from 'shared/selectors'
 import {getUserById} from 'widgets/Login'
+import {useRouter} from 'next/router'
 
 
 const Profile: FC = () => {
   const dispatch = useDispatch()
-  const {query} = useRouter()
   const userName = useSelector(UserSelectors.userName)
+  const router = useRouter()
+  const id = router.query.id as string
 
   useEffect(() => {
-    if (query.id) {
-      dispatch(getUserById(query.id as string))
+    if (id) {
+      dispatch(getUserById(id))
     }
     return () => {
       dispatch(userActions.clearUser())
     }
-  }, [query.id])
+  }, [id])
 
-  return userName ? <WithSpring>
+
+  return <WithSpring>
     <Head>
       <title>Adonis - {userName}</title>
     </Head>
 
     <ProfileHeader />
     <ProfileWall/>
-  </WithSpring> : null
+  </WithSpring>
 }
 
 export default Profile

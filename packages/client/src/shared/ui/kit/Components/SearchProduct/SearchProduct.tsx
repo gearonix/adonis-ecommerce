@@ -10,16 +10,12 @@ import {routes} from 'shared/config/routes'
 
 export interface SearchProductProps {
   AddToSaved: FC,
+  CartButton: FC<{productId?: number}>
   product: Product
 }
 
 
-export const SearchProduct: FC<SearchProductProps> = ({AddToSaved, product}) => {
-  if (product.productId == 11) {
-    console.log(product.images[0], {color: 'red'})
-  }
-  console.log(product.productId)
-
+export const SearchProduct: FC<SearchProductProps> = ({AddToSaved, product, CartButton}) => {
   return <div className={s.search_item}>
     <Image src={product.images[0] || 'assets/default_product.png'} alt={'Check it!'}
       width={190} height={190} priority={true}/>
@@ -32,6 +28,9 @@ export const SearchProduct: FC<SearchProductProps> = ({AddToSaved, product}) => 
       <Link href={`${routes.SEARCH}/${product.productId}`} >
         <BlueLink>View details</BlueLink>
       </Link>
+      <div style={{width: '200px'}}>
+        <CartButton productId={product.productId}/>
+      </div>
 
       <AddToSaved/>
     </div>

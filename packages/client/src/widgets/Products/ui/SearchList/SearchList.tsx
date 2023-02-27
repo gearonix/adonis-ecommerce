@@ -6,12 +6,12 @@ import {useDispatch, useSelector} from 'shared/types/redux'
 import {ProductsSelectors} from 'shared/selectors'
 import {getProducts} from 'widgets/Products/store/thunks'
 import {productsActions} from 'widgets/Products/store/productsReducer'
+import CartButton from 'features/ProductPage/BuyProduct/ui/CartButton'
 
 const SearchList: FC = () => {
   const products = useSelector(ProductsSelectors.products)
   const filter = useSelector(ProductsSelectors.filter)
   const dispatch = useDispatch()
-  console.log(products)
 
   useEffect(() => {
     dispatch(getProducts(filter))
@@ -28,6 +28,7 @@ const SearchList: FC = () => {
     {products.map((product) => <SearchedProduct AddToSaved={AddToSavedSearch}
       product={product}
       key={product.productId}
+      CartButton={CartButton}
     />)}
   </div>
 }

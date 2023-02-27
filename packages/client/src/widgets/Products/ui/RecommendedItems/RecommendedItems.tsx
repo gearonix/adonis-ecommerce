@@ -26,8 +26,7 @@ const RecommendedItems: FC<RecommendedItemsProps> = ({Component, ...filter}) => 
     })
   }, [])
 
-  return Component ?
-    <Component items={items} {...filter}/> : null
+  return <Component items={items} {...filter}/>
 }
 
 export default RecommendedItems

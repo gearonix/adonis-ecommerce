@@ -6,7 +6,7 @@ import {ThemeProvider as MuiThemeProvider} from '@mui/material/styles'
 
 
 const ThemeProvider: FC<{ children: ReactNode }> = ({children}) => {
-  const [theme, setTheme] = useLocalStorage(LocalStorage.THEME, Theme.LIGHT)
+  const {value: theme, save: setTheme} = useLocalStorage(LocalStorage.THEME, Theme.LIGHT)
   const muiTheme = useMuiTheme(theme)
 
   const defaultProps = useMemo(() => ({

@@ -3,32 +3,31 @@ import s from './style.module.scss'
 import {NextImage} from 'shared/ui/kit'
 import {ImageModal} from 'shared/ui/mui'
 import {CartItemProps} from '../../types'
-import {ApiAnimation} from 'shared/ui/animations'
+import {DefaultAssets} from 'shared/config/assets'
 
-const CartItem: FC<CartItemProps> = ({Remove, SaveForLater}) => {
+const CartItem: FC<CartItemProps> = ({Remove, SaveForLater, product}) => {
   const [isOpen, openModal] = useState<boolean>(false)
   const removeBtnRef = useRef()
-  return <ApiAnimation className={s.item} type={'reduceLength'} param={140} subscriber={removeBtnRef}>
-    <ImageModal isOpen={isOpen} close={openModal} image={'/mock_item.svg'}/>
-    <div className={s.image_wrapper} onClick={() => openModal(true)}>
-      <NextImage src={'/assets/dev/mock_item.svg'}/>
-    </div>
-    <div className={s.item_info}>
-      <h4>T-shirts with multiple colors,
-                for men and lady</h4>
-      <p>Size: medium, Color: blue, Material:
-                Plastic
-                Seller: Artel Market</p>
-      <div className={s.item_buttons}>
-        <Remove ref={removeBtnRef}/>
-        {SaveForLater && <SaveForLater/>}
-      </div>
-    </div>
-    <div className={s.price_block}>
-      <h2>$78.99</h2>
-    </div>
+  // return <ApiAnimation className={s.item} type={'reduceLength'} param={140} subscriber={removeBtnRef}>
+  return <div className={s.item}> {product.images.length && <ImageModal isOpen={isOpen} close={openModal} image={product.images[0]}
+    def={DefaultAssets.PRODUCT}/>}
+  <div className={s.image_wrapper} onClick={() => openModal(true)}>
+    <NextImage src={product.images[0]} def={DefaultAssets.PRODUCT}/>
 
-  </ApiAnimation>
+  </div>
+  <div className={s.item_info}>
+    <h4>{product.name}</h4>
+    <p>Size: {product.size}, Material: {product.material}, Type: {product.type}, Model: {product.model},
+        Seller: {product.salesmanId}</p>
+    <div className={s.item_buttons}>
+      <Remove ref={removeBtnRef} productId={product.productId}/>
+      {SaveForLater && <SaveForLater/>}
+    </div>
+  </div>
+  <div className={s.price_block}>
+    <h2>${product.price}.00</h2>
+  </div>
+  </div>
 }
 
 export default CartItem

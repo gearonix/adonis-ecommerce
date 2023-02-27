@@ -1,10 +1,12 @@
 import {ReactNode} from 'react'
 import {FieldValues} from 'shared/lib/helpers/others'
+import {DefaultAssets} from 'shared/config/assets'
 
 export interface ModalProps {
     isOpen: boolean,
     close: (value: boolean) => void,
-    image: string
+    image: string,
+    def: DefaultAssets
 }
 
 export interface MuiSelectProps {

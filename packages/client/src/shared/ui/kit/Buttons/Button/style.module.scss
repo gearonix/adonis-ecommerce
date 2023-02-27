@@ -38,13 +38,14 @@
   &:hover{
     background: #03A718;
   }
-  color: $color-absolute;
+  color: white;
 }
 .red{
   background: #FA3434;
   &:hover{
     background: #FE4D4D;
   }
+  color: white;
 }
 .blueBordered,.redColored{
   background: $bg-absolute;

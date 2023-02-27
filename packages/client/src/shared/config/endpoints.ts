@@ -19,6 +19,7 @@ const EndPoints = {
     userProducts: '/products/user',
     products: '/products',
     recommended: '/products/recommended',
+    cart: '/products/cart',
   },
 } as const
 

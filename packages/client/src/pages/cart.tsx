@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import React from 'react'
-import {CartItems} from 'widgets/Cart'
+import {CartItems, CartProdiver} from 'widgets/Cart'
 import {ContainerTitle} from 'shared/ui/kit'
 import {Checkout} from 'entities/Cart'
 import {CheckoutButton} from 'features/Checkout'
@@ -23,9 +23,11 @@ const Cart = () => {
     </Head>
     <ContainerTitle>My cart ({productsCount})</ContainerTitle>
     <div className={'cart_page'}>
-      <CartItems RemoveAll={RemoveAllCard} Remove={RemoveFromCard}
-        Add={AddToSavedCart}/>
-      <Checkout CheckoutButton={CheckoutButton}/>
+      <CartProdiver>
+        <CartItems RemoveAll={RemoveAllCard} Remove={RemoveFromCard}
+          Add={AddToSavedCart}/>
+        <Checkout CheckoutButton={CheckoutButton}/>
+      </CartProdiver>
     </div>
     <RecommendedItems Component={SortedProducts} type={ProductTypes[1]}/>
     <FindProductBanner/>

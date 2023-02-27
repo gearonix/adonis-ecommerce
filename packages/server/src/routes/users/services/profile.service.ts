@@ -53,7 +53,6 @@ export class ProfileService {
     const userId = await this.authService.getUserId()
     const fileUrl = await this.replaceOldFileToNew(image, userId,
         FileDirectories.USER_AVATAR, this.usersService.getUserAvatar.bind(this.usersService))
-    console.log(userId)
 
     await this.users.update({userId}, {avatar: fileUrl})
     return fileUrl

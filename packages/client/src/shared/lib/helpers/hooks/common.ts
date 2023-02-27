@@ -43,8 +43,9 @@ export const useLocalStorage = <T>(key: string, defaultValue: T) => {
     localStorage.setItem(key, value as string)
   }, [value])
 
-  return [value ?? defaultValue, setValue] as const
+  return {value: value ?? defaultValue, save: setValue} as const
 }
+
 
 export const useTheme = () => {
   const {theme, setTheme} = useContext(ThemeContext)

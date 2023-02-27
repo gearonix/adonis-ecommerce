@@ -14,6 +14,6 @@ export const authorizeUser = createThunk(
         return
       }
 
-      dispatch(authActions.authorizeUser(user.userId))
+      dispatch(authActions.authorizeUser(user))
     }
 )

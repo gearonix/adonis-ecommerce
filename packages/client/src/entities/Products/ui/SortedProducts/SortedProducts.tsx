@@ -23,7 +23,8 @@ const SortedProducts: FC<RecommendedItemProps> = ({type, items}) => {
       <Button w={'119px'} color={'outlined'} onClick={onSearch}>Source now</Button>
     </div>
     <div className={s.recommended_items}>
-      {items.slice(0, 8).map((product) => <RecommendedItem product={product} key={product.productId}/>)}
+      {items.slice(0, 8).map((product, idx) => <RecommendedItem product={product}
+        key={`${product.productId}_${idx}`}/>)}
     </div>
   </div>
 }

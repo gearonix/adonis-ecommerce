@@ -4,5 +4,6 @@ export enum Theme {
 }
 
 export enum LocalStorage{
-    THEME = 'theme'
+    THEME = 'theme',
+    CART = 'cart'
 }

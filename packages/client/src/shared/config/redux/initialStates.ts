@@ -52,5 +52,8 @@ export const currentProductInitialState: ObjectNullable<CurrentProduct> = {
 export const authInitialState: AuthSlice = {
   isAuthorized: null,
   userId: null,
+  avatar: null,
+  firstName: null,
+  email: null,
 }
 

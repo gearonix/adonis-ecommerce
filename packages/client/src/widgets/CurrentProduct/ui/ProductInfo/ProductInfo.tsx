@@ -4,7 +4,7 @@ import {ProductImagesShowcase} from 'entities/ProductPage/ProductImage'
 import {ImageCarousel} from 'features/ProductPage/ImageCarousel'
 import {ProductParams} from 'entities/ProductPage/ProductParams'
 import {PurchaseProduct} from 'entities/ProductPage/PurchaseProduct'
-import {BuyProduct} from 'features/ProductPage/BuyProduct'
+import {CartButton} from 'features/ProductPage/BuyProduct'
 import {AddToSavedProduct} from 'features/Saved'
 import {useDispatch, useSelector} from 'shared/types/redux'
 import {getProduct} from '../../store/thunks/getProduct'
@@ -33,7 +33,7 @@ const ProductInfo: FC = () => {
   return <article className={s.product_info}>
     <ProductImagesShowcase ImageCarousel={ImageCarousel} files={product.images}/>
     <ProductParams product={product}/>
-    <PurchaseProduct BuyProduct={BuyProduct} AddToSaved={AddToSavedProduct} salesman={product.salesman}/>
+    <PurchaseProduct CartButton={CartButton} AddToSaved={AddToSavedProduct} salesman={product.salesman}/>
   </article>
 }
 

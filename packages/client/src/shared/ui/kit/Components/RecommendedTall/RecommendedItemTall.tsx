@@ -7,7 +7,6 @@ import {routes} from 'shared/config/routes'
 import {DefaultAssets} from 'shared/config/assets'
 
 export const RecommendedItemTall: FC<{product: Product}> = ({product}) => {
-  console.log(product.name, product.images[0])
   return <Link href={`${routes.SEARCH}/${product.productId}`} className={s.item}>
     <div className={s.image_wrapper}>
       <NextImage src={product.images[0]} def={DefaultAssets.PRODUCT}/>

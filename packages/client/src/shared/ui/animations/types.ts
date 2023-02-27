@@ -25,5 +25,6 @@ export interface ApiAnimationProps extends WithSpringProps {
     onClick?: () => void,
     type: keyof typeof callbackSprings,
     subscriber?: MutableRefObject<undefined | HTMLElement>,
-    subscriberValue?: any
+    subscriberValue?: any,
+    duration?: number
 }

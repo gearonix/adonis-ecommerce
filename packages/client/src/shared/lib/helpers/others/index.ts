@@ -8,3 +8,4 @@ export {formErrors} from 'shared/lib/helpers/others/formHelpers/formErrors'
 export {withFormData} from './fileHelpers/withFormData'
 
 export {FieldCreator} from './formHelpers/fieldCreator'
+export {ReduxLocalStorage} from './localStorageHelpers'

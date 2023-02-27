@@ -57,11 +57,14 @@ class Helpers {
   public cropped(str: string, char = 30) {
     return str.length > 30 ? str.slice(0, char) + '...' : str
   }
-  public isExist<T, N>(name: T, value: N): N | undefined {
-    return name ? value : undefined
-  }
   public byDefault<T, N>(name: T, defaultValue: N): N | T {
     return name ? name : defaultValue
+  }
+  public sum(array: number[]): number {
+    return array.reduce((prev, next) => prev + next, 0)
+  }
+  public emptyArray<T>(array: T[]) {
+    return array.length === 0
   }
 }
 

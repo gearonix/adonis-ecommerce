@@ -10,13 +10,13 @@ import {DefaultAssets} from 'shared/config/assets'
 
 
 export interface PurchaseProductP {
-  BuyProduct: FC,
+  CartButton: FC,
   AddToSaved: FC,
-  salesman: ObjectNullable<User>
+  salesman: ObjectNullable<User>,
 }
 
 
-const PurchaseProduct: FC<PurchaseProductP> = ({AddToSaved, BuyProduct, salesman}) => {
+const PurchaseProduct: FC<PurchaseProductP> = ({AddToSaved, CartButton, salesman}) => {
   return <div className={s.purchase_block}>
     <div className={s.purchase_card}>
       <div className={s.purchase_supplier}>
@@ -35,7 +35,7 @@ const PurchaseProduct: FC<PurchaseProductP> = ({AddToSaved, BuyProduct, salesman
       <span className={s.supplier_params}><TfiWorld/>{salesman.country ? salesman.country :
           'No Country'}</span>
       <span className={s.supplier_params}><HiOutlineFlag/>{salesman.city ? salesman.city : 'No City'}</span>
-      <BuyProduct/>
+      <CartButton/>
       <Link href={`${routes.PROFILE}/${salesman.userId}`}>
         <Button w={'100%'} color={'blueBordered'}>Seller’s profile</Button>
       </Link>
