@@ -1,13 +1,13 @@
 import {ComponentMeta, ComponentStory} from '@storybook/react'
-import AddToSavedCart from './AddToSavedCart'
+import CartSaved from './CartSaved'
 
 export default {
-  title: 'features/Saved/AddToSavedCart',
-  component: AddToSavedCart,
+  title: 'features/SavedProvider/AddToSavedCart',
+  component: CartSaved,
   argTypes: {},
-} as ComponentMeta<typeof AddToSavedCart>
+} as ComponentMeta<typeof CartSaved>
 
-const Template: ComponentStory<typeof AddToSavedCart> = (args) => <AddToSavedCart {...args} />
+const Template: ComponentStory<typeof CartSaved> = (args) => <CartSaved {...args} />
 
 export const Default = Template.bind({})
 Default.args = {

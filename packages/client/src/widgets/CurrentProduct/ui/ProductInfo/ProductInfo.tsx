@@ -12,6 +12,7 @@ import {useRouter} from 'next/router'
 import {productActions} from '../../store/productReducer'
 import {ProductSelectors} from 'shared/selectors'
 import {CurrentProduct} from 'shared/types/slices'
+import SavedProvider from 'features/Saved/ui/SavedProvider/SavedProvider'
 
 const ProductInfo: FC = () => {
   const dispatch = useDispatch()
@@ -33,7 +34,7 @@ const ProductInfo: FC = () => {
   return <article className={s.product_info}>
     <ProductImagesShowcase ImageCarousel={ImageCarousel} files={product.images}/>
     <ProductParams product={product}/>
-    <PurchaseProduct CartButton={CartButton} AddToSaved={AddToSavedProduct} salesman={product.salesman}/>
+    <PurchaseProduct CartButton={CartButton} AddToSaved={SavedProvider} product={product}/>
   </article>
 }
 

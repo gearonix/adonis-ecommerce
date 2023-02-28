@@ -42,6 +42,6 @@ export class CreateProductService {
 
     await this.products.update({productId: +productId, salesmanId}, {images: fileUrls})
 
-    return await this.products.findOneBy({productId: +productId})
+    return this.products.findOneBy({productId: +productId})
   }
 }

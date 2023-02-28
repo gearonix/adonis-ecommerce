@@ -3,6 +3,7 @@ import {productsSlice} from 'widgets/Products'
 import {currentProductSlice} from 'widgets/CurrentProduct'
 import {authSlice} from 'widgets/Login/redux/authReducer'
 import {cartSlice} from 'widgets/Cart'
+import {savedSlice} from 'features/Saved'
 
 
 export const createReducers = () => {
@@ -12,5 +13,6 @@ export const createReducers = () => {
     currentProduct: currentProductSlice,
     auth: authSlice,
     cart: cartSlice,
+    saved: savedSlice,
   }
 }

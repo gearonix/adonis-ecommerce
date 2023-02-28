@@ -2,21 +2,22 @@ import {FC} from 'react'
 import s from './style.module.scss'
 import {HiOutlineFlag, MdMessage, TfiWorld} from 'shared/ui/icons'
 import {Button, NextImage} from 'shared/ui/kit'
-import {User} from 'shared/types/slices'
-import {ObjectNullable} from 'shared/types/common'
+import {CurrentProduct} from 'shared/types/slices'
 import Link from 'next/link'
 import {routes} from 'shared/config/routes'
 import {DefaultAssets} from 'shared/config/assets'
+import {SavedProps, ProductSaved} from 'features/Saved'
 
 
 export interface PurchaseProductP {
   CartButton: FC,
-  AddToSaved: FC,
-  salesman: ObjectNullable<User>,
+  AddToSaved: FC<SavedProps>,
+  product: CurrentProduct,
 }
 
 
-const PurchaseProduct: FC<PurchaseProductP> = ({AddToSaved, CartButton, salesman}) => {
+const PurchaseProduct: FC<PurchaseProductP> = ({AddToSaved, CartButton, product}) => {
+  const {salesman, productId} = product
   return <div className={s.purchase_block}>
     <div className={s.purchase_card}>
       <div className={s.purchase_supplier}>
@@ -40,7 +41,7 @@ const PurchaseProduct: FC<PurchaseProductP> = ({AddToSaved, CartButton, salesman
         <Button w={'100%'} color={'blueBordered'}>Seller’s profile</Button>
       </Link>
     </div>
-    <AddToSaved/>
+    <AddToSaved productId={productId} Component={ProductSaved}/>
   </div>
 }
 

@@ -4,8 +4,9 @@ import {NextImage} from 'shared/ui/kit'
 import {ImageModal} from 'shared/ui/mui'
 import {CartItemProps} from '../../types'
 import {DefaultAssets} from 'shared/config/assets'
+import {CartSaved} from 'features/Saved'
 
-const CartItem: FC<CartItemProps> = ({Remove, SaveForLater, product}) => {
+const CartItem: FC<CartItemProps> = ({Remove, AddToSaved, product}) => {
   const [isOpen, openModal] = useState<boolean>(false)
   const removeBtnRef = useRef()
   // return <ApiAnimation className={s.item} type={'reduceLength'} param={140} subscriber={removeBtnRef}>
@@ -20,8 +21,8 @@ const CartItem: FC<CartItemProps> = ({Remove, SaveForLater, product}) => {
     <p>Size: {product.size}, Material: {product.material}, Type: {product.type}, Model: {product.model},
         Seller: {product.salesmanId}</p>
     <div className={s.item_buttons}>
-      <Remove ref={removeBtnRef} productId={product.productId}/>
-      {SaveForLater && <SaveForLater/>}
+      {Remove && <Remove ref={removeBtnRef} productId={product.productId}/>}
+      {AddToSaved && <AddToSaved productId={product.productId} Component={CartSaved}/>}
     </div>
   </div>
   <div className={s.price_block}>

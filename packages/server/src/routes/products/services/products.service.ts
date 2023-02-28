@@ -8,6 +8,7 @@ import {PageLimits} from '@app/types/global'
 import {ServerExceptions} from '@app/types/exceptions'
 import {ifExist, withLimit} from '@app/lib/helpers'
 import {SearchDTO} from '@routes/products/dto/searchDTO'
+import {SavedService} from '@routes/products/services/saved.service'
 
 @Injectable()
 export class ProductsService {
@@ -16,6 +17,7 @@ export class ProductsService {
       private products: Repository<ProductsEntity>,
       private authService: AuthService,
       private usersService: UsersService,
+      private savedSerice: SavedService,
   ) {
   }
 
@@ -60,7 +62,16 @@ export class ProductsService {
     })
     return {data, count}
   }
-  async getCartProducts(ids: number[]) {
+  async getProductsIdsByUserId(salesmanId : number) {
+    if (isNaN(salesmanId)) {
+      throw new HttpException(ServerExceptions.INCORRECT_DATA, HttpStatus.BAD_REQUEST)
+    }
+    const saved = await this.savedSerice.getSavedProducts(salesmanId)
+
+    return this.products.findBy({productId: In(saved?.map((i) => i.productId))})
+  }
+
+  async getProductsByIds(ids: number[]) {
     return this.products.findBy({productId: In(ids)})
   }
 }

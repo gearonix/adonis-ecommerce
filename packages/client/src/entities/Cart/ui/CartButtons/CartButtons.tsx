@@ -13,8 +13,8 @@ const CartButtons: FC<CartButtonsProps> = ({RemoveAll, BackColor}) => {
         <AiOutlineArrowLeft/> Back to shop
       </Button>
     </Link>
+    {RemoveAll && <RemoveAll/>}
 
-    <RemoveAll/>
   </div>
 }
 

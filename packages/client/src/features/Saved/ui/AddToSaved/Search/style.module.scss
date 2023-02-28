@@ -17,7 +17,6 @@
         color: #FF7E7E;
       }
     }
-
   }
 
   svg {
@@ -28,5 +27,12 @@
     }
 
     @include size(20px, 20px);
+  }
+}
+.saved{
+  svg {
+    path {
+      color: #fa9090;
+    }
   }
 }

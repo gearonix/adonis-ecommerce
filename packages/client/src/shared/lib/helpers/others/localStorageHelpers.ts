@@ -19,3 +19,17 @@ export class ReduxLocalStorage<T> {
     }
   }
 }
+
+export class LocalStorageHelper {
+  public get() {
+    if (typeof localStorage !== 'undefined') {
+      return localStorage
+    }
+    return null
+  }
+  public clear() {
+    if (typeof localStorage !== 'undefined') {
+      localStorage.clear()
+    }
+  }
+}

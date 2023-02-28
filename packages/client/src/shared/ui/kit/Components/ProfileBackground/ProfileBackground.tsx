@@ -21,11 +21,8 @@ export const ProfileBackground : FC<ProfileBackgroundProps> = ({src, ChangeBackg
 }
 
 const ExistingBackground: FC<{src: string, onError: () => void}> = ({src, onError}) => {
-  const [isOpen, setIsOpened] = useState<boolean>(false)
-
   return <>
-    <ImageModal isOpen={isOpen} close={() => setIsOpened(false)} image={src} />
-    <div className={s.image_wrapper} onClick={() => setIsOpened(true)}>
+    <div className={s.image_wrapper}>
       <NextImage src={src} alt={''} priority={true} onError={onError}/>
     </div></>
 }

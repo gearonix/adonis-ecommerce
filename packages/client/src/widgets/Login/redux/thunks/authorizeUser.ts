@@ -2,6 +2,7 @@ import {createThunk} from 'shared/types/redux'
 import LoginApi from '../../authApi'
 import {authActions} from 'widgets/Login/redux/authReducer'
 import {isResponseError as isError} from 'shared/lib/helpers/others/httpHelpers'
+import {getSavedProducts} from 'features/Saved/store/thunks'
 
 export const authorizeUser = createThunk(
     'users/AUTHORIZE_USER',
@@ -10,10 +11,10 @@ export const authorizeUser = createThunk(
       const user = response.data
 
       if (!user || isError(response)) {
-        dispatch(authActions.authorizationFailed())
-        return
+        return dispatch(authActions.authorizationFailed())
       }
 
       dispatch(authActions.authorizeUser(user))
+      dispatch(getSavedProducts())
     }
 )

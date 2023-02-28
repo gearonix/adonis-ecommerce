@@ -1,25 +1,13 @@
 import {FC, useContext} from 'react'
-import s from './style.module.scss'
-import {CartButtons, CartItem} from 'entities/Cart'
-import {CartIcons} from 'entities/Banners/CartICons'
-import {CardItemsProps} from 'widgets/Cart/types'
+import {CartItemsProps} from 'widgets/Cart/types'
 import CartContext from 'widgets/Cart/providers/Cart/CartContext'
+import {CartItems as CartItemsTemplate} from 'entities/Cart'
 
-
-const CartItems: FC<CardItemsProps> = ({Remove, RemoveAll, Add}) => {
+const CartItems: FC<CartItemsProps> = ({Remove, RemoveAll, AddToSaved}) => {
   const {items} = useContext(CartContext)
+  console.log(items)
 
-  return <div style={{width: '50%'}}>
-    <div className={s.cart_container}>
-      <div className={s.cart_layout}>
-        {items.map((product, idx) => {
-          return <CartItem Remove={Remove} SaveForLater={Add} key={idx} product={product}/>
-        })}
-        <CartButtons BackColor={'primary'} RemoveAll={RemoveAll}/>
-      </div>
-    </div>
-    <CartIcons/>
-  </div>
+  return <CartItemsTemplate items={items} Remove={Remove} RemoveAll={RemoveAll} AddToSaved={AddToSaved}/>
 }
 
 export default CartItems

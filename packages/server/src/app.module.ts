@@ -2,9 +2,8 @@ import {Module} from '@nestjs/common'
 import {ConfigModule} from '@nestjs/config'
 import {TypeOrmModule} from '@nestjs/typeorm'
 import {appConfig, buildDBConfig} from './config'
-import {ProductsEntity, UsersEntity} from '@app/entities'
-import {AuthModule} from './routes/auth'
-import {UsersModule} from './routes/users'
+import {AuthModule} from '@routes/auth'
+import {UsersModule} from '@routes/users'
 import {ServeStaticModule} from '@nestjs/serve-static'
 import {resolve} from 'path'
 import {ProductsModule} from '@routes/products/products.module'
@@ -15,7 +14,7 @@ import {ProductsModule} from '@routes/products/products.module'
       envFilePath: `.${process.env.NODE_ENV}.env`,
       cache: true,
     }),
-    TypeOrmModule.forRoot(buildDBConfig([UsersEntity, ProductsEntity])),
+    TypeOrmModule.forRoot(buildDBConfig()),
     ServeStaticModule.forRoot({
       rootPath: resolve(__dirname, 'static'),
       serveRoot: `/${appConfig.globalPrefix}/static`,

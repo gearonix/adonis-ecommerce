@@ -7,9 +7,10 @@ import {BlueLink} from 'shared/ui/kit'
 import {Product} from 'shared/types/slices'
 import Link from 'next/link'
 import {routes} from 'shared/config/routes'
+import {SavedProps, SearchSaved} from 'features/Saved'
 
 export interface SearchProductProps {
-  AddToSaved: FC,
+  AddToSaved?: FC<SavedProps>,
   CartButton: FC<{productId?: number}>
   product: Product
 }
@@ -31,8 +32,8 @@ export const SearchProduct: FC<SearchProductProps> = ({AddToSaved, product, Cart
       <div style={{width: '200px'}}>
         <CartButton productId={product.productId}/>
       </div>
+      {AddToSaved && <AddToSaved productId={product.productId} Component={SearchSaved}/>}
 
-      <AddToSaved/>
     </div>
   </div>
 }

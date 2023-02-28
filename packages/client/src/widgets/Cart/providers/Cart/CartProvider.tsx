@@ -8,15 +8,16 @@ import {Helpers} from 'shared/lib/helpers/others'
 
 const CartProvider : FC<{children: ReactNode}> = ({children}) => {
   const [items, setItems] = useState<Product[]>([])
-  const cart = useSelector(CartSelectors.cart)
+  const cart = useSelector(CartSelectors.productsByIds)
   const dispatch = useDispatch()
   const helpers = new Helpers()
   const sum = helpers.sum(items.map((product) => product.price))
 
   useEffect(() => {
     if (helpers.emptyArray(cart)) return setItems([])
-
+    console.log(cart)
     dispatch(getCartProducts(cart)).then(({payload}) => {
+      console.log(payload)
       if (payload) {
         setItems(payload as Product[])
       }

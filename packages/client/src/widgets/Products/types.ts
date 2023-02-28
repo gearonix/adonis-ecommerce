@@ -1,9 +1,9 @@
 import {
-    ProductFeatures,
-    ProductModels,
-    ProductRatings,
-    ProductSizes,
-    ProductTypes,
+  ProductFeatures,
+  ProductModels,
+  ProductRatings,
+  ProductSizes,
+  ProductTypes,
 } from 'shared/types/elements/productTypes'
 import {KeyOf} from 'shared/types/common'
 

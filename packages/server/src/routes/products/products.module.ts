@@ -5,15 +5,16 @@ import {CreateProductService} from './services/createProduct.service'
 import {AuthModule} from '@routes/auth'
 import {UsersModule} from '@routes/users'
 import {TypeOrmModule} from '@nestjs/typeorm'
-import {ProductsEntity} from '@app/entities'
+import {ProductsEntity, SavedEntity} from '@app/entities'
 import {RequestContextModule} from 'nestjs-request-context'
 import {FilesModule} from '@modules/files'
+import {SavedService} from './services/saved.service'
 
 @Module({
   controllers: [ProductsController],
-  providers: [CreateProductService, ProductsService],
+  providers: [CreateProductService, ProductsService, SavedService],
   imports: [
-    TypeOrmModule.forFeature([ProductsEntity]),
+    TypeOrmModule.forFeature([ProductsEntity, SavedEntity]),
     AuthModule,
     UsersModule,
     RequestContextModule,

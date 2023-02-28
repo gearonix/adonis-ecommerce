@@ -6,3 +6,8 @@ export interface EditProfileForm{
     city: string
 }
 
+export enum WallPages {
+    posts = 'posts',
+    products = 'products',
+    saved = 'saved'
+}

@@ -23,8 +23,9 @@ module.exports = {
       "never"
     ],
     "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": ["warn"]
-
+    "@typescript-eslint/no-unused-vars": ["warn"],
+    "@typescript-eslint/no-empty-function": "off",
+    "no-return-await": "error",
   },
   plugins: ["@darraghor/nestjs-typed","@typescript-eslint"],
 };

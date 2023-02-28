@@ -33,6 +33,6 @@ export const ProductsApi = {
     return axiosInstance.get(`${endpoint.products}/${id}`)
   },
   getCartProducts(ids: number[]): Res<Product[]> {
-    return axiosInstance.put(`${endpoint.cart}`, {ids})
+    return axiosInstance.put(`${endpoint.productsByIds}`, {ids})
   },
 }

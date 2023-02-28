@@ -19,7 +19,10 @@ const EndPoints = {
     userProducts: '/products/user',
     products: '/products',
     recommended: '/products/recommended',
-    cart: '/products/cart',
+    productsByIds: '/products/ids',
+    saved: '/products/saved',
+    addToSaved: '/products/saved/add',
+    removeFromSaved: '/products/saved/remove',
   },
 } as const
 

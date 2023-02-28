@@ -1,10 +1,8 @@
 import * as process from 'process'
 import {TypeOrmModuleOptions} from '@nestjs/typeorm'
-import {MixedList} from 'typeorm'
+import {ProductsEntity, UsersEntity, SavedEntity} from '@app/entities'
 
-export const buildDBConfig = (
-    entities: MixedList<any>,
-): TypeOrmModuleOptions => {
+export const buildDBConfig = (): TypeOrmModuleOptions => {
   const {HOST_NAME, DB_PORT, USER_NAME, PASSWORD, DATABASE_NAME} =
     process.env
 
@@ -16,6 +14,6 @@ export const buildDBConfig = (
     password: PASSWORD,
     database: DATABASE_NAME,
     synchronize: true,
-    entities: entities,
+    entities: [UsersEntity, ProductsEntity, SavedEntity],
   }
 }

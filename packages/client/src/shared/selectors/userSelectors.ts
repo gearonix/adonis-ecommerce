@@ -16,6 +16,9 @@ const UserSelectors = {
   }),
   userRole: ({user}: AppState) => user.role,
   isMe: ({user}: AppState) => user.isMe,
+  selectMyOrUserId(state: AppState) {
+    return state.user.userId || state.auth.userId
+  },
 }
 
 
