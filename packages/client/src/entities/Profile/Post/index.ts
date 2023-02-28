@@ -1,1 +1,1 @@
-export {default as Post} from './ui/Post'
+export {default as PostWrapper} from './ui/PostWrapper/PostWrapper'

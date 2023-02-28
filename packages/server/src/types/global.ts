@@ -6,7 +6,7 @@ export enum Lengths {
   TINYTEXT = 10,
   HASH = 100,
   TOKEN = 300,
-  TINYTITLE = 20
+  TINYTITLE = 20,
 }
 
 export enum Roles {

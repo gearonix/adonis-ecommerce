@@ -1,7 +1,8 @@
-import {Column, Entity, OneToOne, PrimaryGeneratedColumn} from 'typeorm'
+import {Column, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn} from 'typeorm'
 import {Lengths} from '@app/lib'
 import {UsersEntity} from '@app/entities/users.entity'
 import {ProductModels, ProductRatings, ProductSizes, ProductTypes} from './types'
+import {ProductCommentsEntity} from '@app/entities'
 
 @Entity('products')
 export class ProductsEntity {
@@ -38,4 +39,10 @@ export class ProductsEntity {
       size: typeof ProductSizes[number]
     @PrimaryGeneratedColumn()
       productId: number
+    @Column('int')
+      commentId: number
+  // @ManyToOne((type) => ProductCommentsEntity)
+  // @JoinColumn({name: 'commentId', foreignKeyConstraintName:
+  //         'FK_commentId_2', referencedColumnName: 'commentId'})
+  //   comment: ProductCommentsEntity
 }

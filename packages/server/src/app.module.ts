@@ -6,7 +6,8 @@ import {AuthModule} from '@routes/auth'
 import {UsersModule} from '@routes/users'
 import {ServeStaticModule} from '@nestjs/serve-static'
 import {resolve} from 'path'
-import {ProductsModule} from '@routes/products/products.module'
+import {ProductsModule} from '@routes/products'
+import {CommentsModule} from '@routes/comments'
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import {ProductsModule} from '@routes/products/products.module'
     AuthModule,
     UsersModule,
     ProductsModule,
+    CommentsModule,
   ],
 
   controllers: [],

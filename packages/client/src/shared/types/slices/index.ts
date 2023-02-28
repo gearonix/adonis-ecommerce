@@ -1,5 +1,5 @@
 export type {User} from './userSlice'
 export type {Products, Product} from './productsSlice'
-export type {CurrentProduct} from './currentProductSlice'
+export type {CurrentProduct, ProductComment} from './currentProductSlice'
 export type {AuthSlice} from './authSlice'
 export type {SavedSlice} from './savedSlice'

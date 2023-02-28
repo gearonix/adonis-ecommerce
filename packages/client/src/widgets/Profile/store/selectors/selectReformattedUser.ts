@@ -25,7 +25,7 @@ export const selectReformattedUser = createSelector(UserSelectors.user, (nullabl
 
   const helpers = new Helpers()
 
-  const userEmail = helpers.nameToEmail(user.email)
+  const userEmail = helpers.emailToName(user.email)
 
   const userName = user.firstName ? helpers.attachStrings(
       user.firstName, user.lastName) : userEmail

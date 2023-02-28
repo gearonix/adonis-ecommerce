@@ -1,11 +1,12 @@
-import {ObjectOptional} from 'shared/types/common'
+import {ObjectNullable, ObjectOptional} from 'shared/types/common'
 import dayjs from 'dayjs'
 import LocalizedFormat from 'dayjs/plugin/localizedFormat'
+import {User} from 'shared/types/slices'
 
 dayjs.extend(LocalizedFormat)
 
 class Helpers {
-  public nameToEmail(email: string) {
+  public emailToName(email: string) {
     return this.capitalize(email.split('@')[0])
   }
 
@@ -65,6 +66,15 @@ class Helpers {
   }
   public emptyArray<T>(array: T[]) {
     return array.length === 0
+  }
+  public toNormalName(user: any) {
+    if (user.firstName) {
+      return user.firstName
+    }
+    if (!user.email) {
+      return 'User not found'
+    }
+    return this.emailToName(user.email || '')
   }
 }
 

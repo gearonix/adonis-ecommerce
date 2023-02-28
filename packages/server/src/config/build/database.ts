@@ -1,10 +1,12 @@
 import * as process from 'process'
 import {TypeOrmModuleOptions} from '@nestjs/typeorm'
-import {ProductsEntity, UsersEntity, SavedEntity} from '@app/entities'
+import {ProductsEntity, UsersEntity, SavedEntity, ProductCommentsEntity} from '@app/entities'
 
 export const buildDBConfig = (): TypeOrmModuleOptions => {
   const {HOST_NAME, DB_PORT, USER_NAME, PASSWORD, DATABASE_NAME} =
     process.env
+
+  const entities = [UsersEntity, ProductsEntity, SavedEntity, ProductCommentsEntity]
 
   return {
     type: 'mysql',
@@ -14,6 +16,6 @@ export const buildDBConfig = (): TypeOrmModuleOptions => {
     password: PASSWORD,
     database: DATABASE_NAME,
     synchronize: true,
-    entities: [UsersEntity, ProductsEntity, SavedEntity],
+    entities,
   }
 }

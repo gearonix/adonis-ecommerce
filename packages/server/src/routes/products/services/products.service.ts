@@ -9,6 +9,7 @@ import {ServerExceptions} from '@app/types/exceptions'
 import {ifExist, withLimit} from '@app/lib/helpers'
 import {SearchDTO} from '@routes/products/dto/searchDTO'
 import {SavedService} from '@routes/products/services/saved.service'
+import {CommentsService} from '@routes/comments/comments.service'
 
 @Injectable()
 export class ProductsService {
@@ -17,7 +18,8 @@ export class ProductsService {
       private products: Repository<ProductsEntity>,
       private authService: AuthService,
       private usersService: UsersService,
-      private savedSerice: SavedService,
+      private savedService: SavedService,
+      private commentsService: CommentsService,
   ) {
   }
 
@@ -50,9 +52,11 @@ export class ProductsService {
 
     const product = await this.products.findOneBy({productId})
     const salesman = await this.usersService.getUserById(product.salesmanId)
+    const comments = await this.commentsService.getProductComments(productId)
     return {
       ...product,
       salesman,
+      comments,
     }
   }
   async userProducts(salesmanId: number, page: string) {
@@ -66,7 +70,7 @@ export class ProductsService {
     if (isNaN(salesmanId)) {
       throw new HttpException(ServerExceptions.INCORRECT_DATA, HttpStatus.BAD_REQUEST)
     }
-    const saved = await this.savedSerice.getSavedProducts(salesmanId)
+    const saved = await this.savedService.getSavedProducts(salesmanId)
 
     return this.products.findBy({productId: In(saved?.map((i) => i.productId))})
   }

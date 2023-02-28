@@ -9,6 +9,7 @@ import {ProductsEntity, SavedEntity} from '@app/entities'
 import {RequestContextModule} from 'nestjs-request-context'
 import {FilesModule} from '@modules/files'
 import {SavedService} from './services/saved.service'
+import {CommentsModule} from '@routes/comments'
 
 @Module({
   controllers: [ProductsController],
@@ -19,6 +20,7 @@ import {SavedService} from './services/saved.service'
     UsersModule,
     RequestContextModule,
     FilesModule,
+    CommentsModule,
   ],
 })
 export class ProductsModule {}

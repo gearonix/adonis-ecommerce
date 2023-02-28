@@ -7,13 +7,7 @@ const AuthSelectors = {
   isAuthorized: ({auth}: AppState) => auth.isAuthorized,
   userId: ({auth}: AppState) => auth.userId,
   userName: ({auth}: AppState) => {
-    if (auth.firstName) {
-      return auth.firstName
-    }
-    if (auth.email) {
-      return helpers.nameToEmail(auth.email)
-    }
-    return ''
+    return helpers.toNormalName(auth)
   },
 }
 

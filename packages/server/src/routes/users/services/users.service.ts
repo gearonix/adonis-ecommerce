@@ -2,8 +2,9 @@ import {InjectRepository} from '@nestjs/typeorm'
 import {UsersEntity} from '@app/entities'
 import {Repository} from 'typeorm'
 import {RegisterUserDTO} from '@routes/users/dto/authDTO'
-import {forwardRef, Inject} from '@nestjs/common'
+import {forwardRef, HttpException, HttpStatus, Inject} from '@nestjs/common'
 import {AuthService} from '@routes/auth'
+import {ServerExceptions} from '@app/types/exceptions'
 
 export class UsersService {
   constructor(
@@ -14,17 +15,20 @@ export class UsersService {
   ) {}
 
   async getIdAndPasswordByEmail(email: string) {
-    return await this.users.findOne({
+    return this.users.findOne({
       select: ['password', 'userId'],
       where: {email},
     })
   }
 
   async createUser(user: RegisterUserDTO) {
-    return await this.users.save(user)
+    return this.users.save(user)
   }
 
   async getUserById(userId: number): Promise<UsersEntity & {isMe: boolean}> {
+    if (isNaN(userId)) {
+      throw new HttpException(ServerExceptions.INCORRECT_DATA, HttpStatus.BAD_REQUEST)
+    }
     const sessionId = await this.authService.getUserId()
     const user = await this.users.findOneBy({userId})
     return {

@@ -19,13 +19,15 @@ module.exports = {
     "@darraghor/nestjs-typed/all-properties-are-whitelisted": "off",
     "@darraghor/nestjs-typed/validated-non-primitive-property-needs-type-decorator": "off",
     "semi": [
-      "error",
+      "warn",
       "never"
     ],
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": ["warn"],
     "@typescript-eslint/no-empty-function": "off",
     "no-return-await": "error",
+    "no-trailing-spaces": "off",
+    "padded-blocks": "warn",
   },
   plugins: ["@darraghor/nestjs-typed","@typescript-eslint"],
 };
