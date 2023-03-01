@@ -3,9 +3,13 @@ import {User} from 'shared/types/slices/userSlice'
 import {ObjectNullable} from 'shared/types/common'
 
 
-export interface CurrentProduct extends Product{
+export interface CurrentProduct{
+    productInfo: Product,
     salesman: ObjectNullable<User>,
-    comments: ProductComment[]
+    comments: {
+        data: ProductComment[],
+        page: number
+    }
 }
 
 export interface ProductComment{

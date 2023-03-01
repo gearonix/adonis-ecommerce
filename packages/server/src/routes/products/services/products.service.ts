@@ -50,13 +50,15 @@ export class ProductsService {
       throw new HttpException(ServerExceptions.INCORRECT_DATA, HttpStatus.BAD_REQUEST)
     }
 
-    const product = await this.products.findOneBy({productId})
-    const salesman = await this.usersService.getUserById(product.salesmanId)
+    const productInfo = await this.products.findOneBy({productId})
+    const salesman = await this.usersService.getUserById(productInfo.salesmanId)
     const comments = await this.commentsService.getProductComments(productId)
     return {
-      ...product,
+      productInfo,
       salesman,
-      comments,
+      comments: {
+        data: comments,
+      },
     }
   }
   async userProducts(salesmanId: number, page: string) {

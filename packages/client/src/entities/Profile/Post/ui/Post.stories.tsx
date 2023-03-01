@@ -1,8 +1,8 @@
 import {ComponentMeta, ComponentStory} from '@storybook/react'
-import Post from './Post'
+import Post from './CommentWrapper'
 
 export default {
-  title: 'entities/Index/Post',
+  title: 'entities/Index/CommentWrapper',
   component: Post,
   argTypes: {},
 } as ComponentMeta<typeof Post>

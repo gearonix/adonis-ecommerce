@@ -30,24 +30,31 @@ export const usersInitialState: ObjectNullable<User> = {
   isMe: null,
 }
 
-export const currentProductInitialState: ObjectNullable<CurrentProduct> = {
-  name: null,
-  description: null,
-  productId: null,
-  type: null,
-  rating: null,
-  size: null,
-  model: null,
-  images: null,
-  price: null,
-  design: null,
-  inStock: null,
-  features: null,
-  material: null,
-  salesmanId: null,
-  savedCount: null,
+export const productInitialState: CurrentProduct = {
+  productInfo: {
+    name: null,
+    description: null,
+    productId: null,
+    type: null,
+    rating: null,
+    size: null,
+    model: null,
+    images: null,
+    price: null,
+    design: null,
+    inStock: null,
+    features: null,
+    material: null,
+    salesmanId: null,
+    savedCount: null,
+  },
   salesman: usersInitialState,
+  comments: {
+    data: [],
+    page: 0,
+  },
 }
+
 
 export const authInitialState: AuthSlice = {
   isAuthorized: null,

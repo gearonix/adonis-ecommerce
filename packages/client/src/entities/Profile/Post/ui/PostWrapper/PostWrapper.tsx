@@ -1,12 +1,12 @@
 import {FC} from 'react'
 import {PostProps} from '../../types'
 import {Comments} from '../Comments/Comments'
-import {Post} from '../Post/Post'
+import {CommentWrapper} from '../CommentWrapper/CommentWrapper'
 
 
 const PostWrapper: FC<PostProps> = ({comment}) => {
   return <>
-    <Post comment={comment}/>
+    <CommentWrapper comment={comment}/>
     <Comments/>
   </>
 }

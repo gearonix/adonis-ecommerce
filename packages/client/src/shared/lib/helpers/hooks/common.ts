@@ -27,7 +27,7 @@ export const useForm = <T extends FieldValues>(schema: Nullable<Yup.ObjectSchema
   const {defaultValues, selectValues} = values
   const form = useHookForm<T>({resolver: schema ? yupResolver(schema) : undefined, defaultValues})
   const reg = createFieldValues(form, selectValues)
-  return {form, reg, submit: form.handleSubmit}
+  return {form, reg, submit: form.handleSubmit, ...form}
 }
 
 

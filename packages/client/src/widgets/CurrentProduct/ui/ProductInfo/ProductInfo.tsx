@@ -17,7 +17,7 @@ const ProductInfo: FC = () => {
   const dispatch = useDispatch()
   const router = useRouter()
   const id = router.query.id as string
-  const product = useSelector(ProductSelectors.product) as CurrentProduct
+  const product = useSelector(ProductSelectors.currentProduct) as CurrentProduct
 
   useEffect(() => {
     dispatch(getProduct(id))
@@ -26,13 +26,13 @@ const ProductInfo: FC = () => {
     }
   }, [id])
 
-  if (!product.productId) {
+  if (!product.productInfo.productId) {
     return null
   }
 
   return <article className={s.product_info}>
-    <ProductImagesShowcase ImageCarousel={ImageCarousel} files={product.images}/>
-    <ProductParams product={product}/>
+    <ProductImagesShowcase ImageCarousel={ImageCarousel} files={product.productInfo.images}/>
+    <ProductParams product={product.productInfo}/>
     <PurchaseProduct CartButton={CartButton} AddToSaved={SavedProvider} product={product}/>
   </article>
 }

@@ -4,6 +4,7 @@ import {ProductCommentsEntity, ProductsEntity, UsersEntity} from '@app/entities'
 import {Repository} from 'typeorm'
 import {AuthService} from '@routes/auth'
 import {ServerExceptions} from '@app/types/exceptions'
+import {NewCommentDTO} from '@routes/comments/dto'
 
 @Injectable()
 export class CommentsService {
@@ -14,9 +15,10 @@ export class CommentsService {
               private authService: AuthService,
   ) {}
 
-  async createProductComment({message, productId}: any) {
+  async createProductComment({message, productId}: NewCommentDTO) {
     const userId = await this.authService.getUserId()
-    return this.productComments.save({message, productId, userId})
+    const newComment = await this.productComments.save({message, productId, userId})
+    return this.getCommentById(newComment.commentId)
   }
   async getProductComments(productId: number) {
     if (isNaN(productId)) {
@@ -27,6 +29,16 @@ export class CommentsService {
       relations: {user: true},
       where: {productId},
       select: ['message', 'likes', 'date', 'commentId'],
+      order: {date: 'DESC'},
+    })
+  }
+
+  async getCommentById(commentId: number) {
+    return this.productComments.findOne({
+      relations: {user: true},
+      where: {commentId},
+      select: ['message', 'likes', 'date', 'commentId'],
+
     })
   }
 }

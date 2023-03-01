@@ -24,6 +24,9 @@ const EndPoints = {
     addToSaved: '/products/saved/add',
     removeFromSaved: '/products/saved/remove',
   },
+  COMMENTS: {
+    createProductComment: '/comments/products/create',
+  },
 } as const
 
 

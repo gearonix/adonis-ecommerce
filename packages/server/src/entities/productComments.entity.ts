@@ -6,7 +6,7 @@ import {UsersEntity} from '@app/entities/users.entity'
 export class ProductCommentsEntity {
   @CreateDateColumn()
     date: Date
-  @Column('varchar', {length: Lengths.HASH})
+  @Column('varchar', {length: 170})
     message: string
   @Column('int')
     userId: number

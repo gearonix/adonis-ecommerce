@@ -9,7 +9,7 @@ import {SortedProducts, YouMayLike} from 'entities/Products'
 import {ProductTypes} from 'shared/types/elements'
 import {useSelector} from 'shared/types/redux'
 import {ProductSelectors} from 'shared/selectors'
-import ProductComment from '../../widgets/CurrentProduct/ui/ProductComment/ProductComment'
+import ProductComments from '../../widgets/CurrentProduct/ui/ProductComment/ProductComment'
 
 
 const ProductPage = () => {
@@ -25,7 +25,7 @@ const ProductPage = () => {
       <ProductDescription/>
       <RecommendedItems Component={YouMayLike}/>
     </div>
-    <ProductComment/>
+    <ProductComments/>
     <RecommendedItems Component={SortedProducts} type={ProductTypes[0]}/>
     <GithubBanner/>
     <ExtraServices/>

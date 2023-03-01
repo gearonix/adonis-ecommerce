@@ -76,6 +76,9 @@ class Helpers {
     }
     return this.emailToName(user.email || '')
   }
+  public removeSpaces(str: string) {
+    return str.split(' ').join('')
+  }
 }
 
 

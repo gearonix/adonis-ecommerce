@@ -17,7 +17,7 @@ export interface PurchaseProductP {
 
 
 const PurchaseProduct: FC<PurchaseProductP> = ({AddToSaved, CartButton, product}) => {
-  const {salesman, productId} = product
+  const {salesman, productInfo} = product
   return <div className={s.purchase_block}>
     <div className={s.purchase_card}>
       <div className={s.purchase_supplier}>
@@ -41,7 +41,7 @@ const PurchaseProduct: FC<PurchaseProductP> = ({AddToSaved, CartButton, product}
         <Button w={'100%'} color={'blueBordered'}>Seller’s profile</Button>
       </Link>
     </div>
-    <AddToSaved productId={productId} Component={ProductSaved}/>
+    <AddToSaved productId={productInfo.productId} Component={ProductSaved}/>
   </div>
 }
 
