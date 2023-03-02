@@ -7,10 +7,11 @@ import {ProfileWallContext} from 'widgets/Profile/contexts'
 
 export interface ContentButtonsProps {
   AddProduct?: ReactElement | false,
+  AddPost?: ReactElement,
 }
 
 
-const ContentButtons: FC<ContentButtonsProps> = ({AddProduct}) => {
+const ContentButtons: FC<ContentButtonsProps> = ({AddProduct, AddPost}) => {
   return <div className={s.content_buttons}>
     <ContentButton page={WallPages.posts}><AiOutlineFileAdd/> Posts</ContentButton>
     <ContentButton page={WallPages.products}><AiOutlineUnorderedList/> Products</ContentButton>
@@ -18,6 +19,7 @@ const ContentButtons: FC<ContentButtonsProps> = ({AddProduct}) => {
     <div className={s.add_product}>
       {AddProduct}
     </div>
+    {AddPost}
   </div>
 }
 

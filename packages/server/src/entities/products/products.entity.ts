@@ -6,7 +6,7 @@ import {ProductCommentsEntity} from '@app/entities'
 
 @Entity('products')
 export class ProductsEntity {
-    @Column('varchar', {length: Lengths.TINYTITLE, nullable: true})
+    @Column('varchar', {length: Lengths.TINY_TITLE, nullable: true})
       name: string
     @Column('smallint')
       price: number
@@ -29,11 +29,11 @@ export class ProductsEntity {
       material: string
     @Column('varchar', {length: Lengths.TINYTEXT, nullable: true})
       type: ProductTypes
-    @Column('varchar', {length: Lengths.TINYTITLE, nullable: true})
+    @Column('varchar', {length: Lengths.TINY_TITLE, nullable: true})
       design: string
     @Column('tinyint')
       warrantyCount: number
-    @Column('varchar', {length: Lengths.TINYTITLE, nullable: true})
+    @Column('varchar', {length: Lengths.TINY_TITLE, nullable: true})
       model: ProductModels
     @Column('tinyint')
       size: typeof ProductSizes[number]

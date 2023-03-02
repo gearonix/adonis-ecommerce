@@ -1,7 +1,7 @@
 import {FormControl, TextField, Typography} from '@mui/material'
 import {FC} from 'react'
 import {MuiLoginFieldProps} from 'shared/ui/mui/types'
-import {useTheme} from 'shared/lib/helpers/hooks/common'
+import {useTheme} from 'shared/lib/hooks/common'
 
 export const TextArea: FC<MuiLoginFieldProps> = ({title, values}) => {
   const {isLight} = useTheme()

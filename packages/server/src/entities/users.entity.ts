@@ -1,6 +1,7 @@
 import {Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn} from 'typeorm'
 import {Lengths, Roles} from '@app/lib'
-import {ProductCommentsEntity} from '@app/entities/productComments.entity'
+import {ProductCommentsEntity} from '@app/entities/product_comments.entity'
+import {PostsEntity} from '@app/entities/posts.entity'
 
 @Entity('users')
 export class UsersEntity {
@@ -31,5 +32,6 @@ export class UsersEntity {
   @Column('varchar', {length: Lengths.LONGTEXT, nullable: true})
     google_sub: string
   @OneToMany((type) => ProductCommentsEntity, (comment) => comment.user)
+  @OneToMany((type) => PostsEntity, (post) => post.user)
     user: UsersEntity[]
 }

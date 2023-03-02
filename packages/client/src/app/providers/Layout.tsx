@@ -3,7 +3,7 @@ import {Inter} from '@next/font/google'
 import DevNavRouting from '../../../dev/nav_routing'
 import {Header} from 'widgets/Header'
 import {Footer} from 'entities/Others/Layout/Footer'
-import {useTheme} from 'shared/lib/helpers/hooks/common'
+import {useTheme} from 'shared/lib/hooks/common'
 import cn from 'classnames'
 
 const interFont = Inter({subsets: ['latin']})

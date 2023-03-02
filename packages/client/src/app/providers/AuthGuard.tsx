@@ -3,7 +3,7 @@ import {Preloader} from 'shared/ui/kit'
 import {useRouter} from 'next/router'
 import {useSelector} from 'react-redux'
 import appConfig from 'app/config/config'
-import {useBooleanState} from 'shared/lib/helpers/hooks/common'
+import {useBooleanState} from 'shared/lib/hooks/common'
 import {Routes, routes} from 'shared/config/routes'
 import {AuthSelectors} from 'shared/selectors'
 

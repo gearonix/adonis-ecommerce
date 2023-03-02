@@ -5,6 +5,7 @@ import {EditProfileForm} from './dto/editProfileDTO'
 import {ObjectOptional} from '@app/types/helpers'
 import {FileInterceptor} from '@nestjs/platform-express'
 import {ProfileService} from './services/profile.service'
+import {FileDirectories} from '@app/types/global'
 
 @Controller('users')
 export class UsersController {
@@ -17,14 +18,14 @@ export class UsersController {
   }
   @UseGuards(AuthGuard)
   @Post('/change/avatar')
-  @UseInterceptors(FileInterceptor('avatar'))
+  @UseInterceptors(FileInterceptor(FileDirectories.USER_AVATAR))
   async changeAvatar(@UploadedFile() avatar) {
     const fileUrl = await this.profileService.changeUserImage(avatar)
     return {fileUrl}
   }
   @UseGuards(AuthGuard)
   @Post('/change/background')
-  @UseInterceptors(FileInterceptor('user_background'))
+  @UseInterceptors(FileInterceptor(FileDirectories.USER_BACKGROUND))
   async changeUserBackground(@UploadedFile() background) {
     const fileUrl = await this.profileService.changeUserBackground(background)
     return {fileUrl}

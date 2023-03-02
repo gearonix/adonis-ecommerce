@@ -18,6 +18,7 @@ import {SearchDTO} from '@routes/products/dto/searchDTO'
 import {ProductsService} from './services/products.service'
 import {CreateProductService} from './services/createProduct.service'
 import {SavedService} from '@routes/products/services/saved.service'
+import {FileDirectories} from '@app/types/global'
 
 @Controller('products')
 export class ProductsController {
@@ -33,7 +34,7 @@ export class ProductsController {
 
   @Post('/set/images')
   @UseGuards(AuthGuard)
-  @UseInterceptors(FilesInterceptor('product_images'))
+  @UseInterceptors(FilesInterceptor(FileDirectories.PRODUCT_IMAGES))
   setProductImages(@UploadedFiles() images, @Query('product_id') productId) {
     return this.createProductService.setImages(images, productId)
   }

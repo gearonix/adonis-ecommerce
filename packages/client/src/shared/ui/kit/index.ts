@@ -26,3 +26,4 @@ export {SearchProduct as SearchedProduct} from './Components/SearchProduct/Searc
 export {RecommendedItemTall} from './Components/RecommendedTall/RecommendedItemTall'
 export {RecommendedItem} from './Components/Recommended/RecommendedItem'
 export {InStock} from './Links/InStock/InStock'
+export {UploadWithPreview} from './Components/UploadWithPreview/UploadWithPreview'

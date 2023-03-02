@@ -1,7 +1,7 @@
 import {Paper, Table as MuiTable, TableBody, TableCell, TableContainer, TableHead, TableRow} from '@mui/material'
 import {FC} from 'react'
 import {CurrentProduct} from 'shared/types/slices'
-import {useTheme} from 'shared/lib/helpers/hooks/common'
+import {useTheme} from 'shared/lib/hooks/common'
 
 export const Table: FC<{product: CurrentProduct}> = ({product}) => {
   const {isLight} = useTheme()

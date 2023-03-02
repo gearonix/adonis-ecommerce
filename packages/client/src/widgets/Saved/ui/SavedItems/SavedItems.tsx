@@ -24,7 +24,7 @@ const SavedItems : FC<CartItemsProps> = ({Remove, AddToSaved, Component}) => {
   }, [])
 
 
-  return <Component Remove={Remove} AddToSaved={AddToSaved} items={products} />
+  return Component ? <Component Remove={Remove} AddToSaved={AddToSaved} items={products} /> : null
 }
 
 

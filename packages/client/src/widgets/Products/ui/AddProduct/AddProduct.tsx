@@ -6,7 +6,7 @@ import {useDispatch} from 'shared/types/redux'
 import {addProduct} from 'widgets/Products/store/thunks/addProduct'
 import {AddProductForm} from 'widgets/Products/types'
 import {addProductSchema} from 'widgets/Products/lib/form/formSchemes'
-import {useForm} from 'shared/lib/helpers/hooks/common'
+import {useForm} from 'shared/lib/hooks/common'
 
 const AddProduct: FC<{ cancel: () => void }> = ({cancel}) => {
   const {form, reg} = useForm<AddProductForm>(addProductSchema, DefaultValues.addProduct())

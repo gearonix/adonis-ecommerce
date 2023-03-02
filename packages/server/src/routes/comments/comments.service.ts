@@ -38,7 +38,6 @@ export class CommentsService {
       relations: {user: true},
       where: {commentId},
       select: ['message', 'likes', 'date', 'commentId'],
-
     })
   }
 }

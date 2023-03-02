@@ -3,7 +3,7 @@ import {FC, useEffect} from 'react'
 import {useDispatch, useSelector} from 'shared/types/redux'
 import {SearchControlsForm} from 'widgets/Products/types'
 import initialValues from 'widgets/Products/lib/form/initialValues'
-import {useForm} from 'shared/lib/helpers/hooks/common'
+import {useForm} from 'shared/lib/hooks/common'
 import {productsActions} from 'widgets/Products'
 import productSelectors from 'shared/selectors/productsSelectors'
 

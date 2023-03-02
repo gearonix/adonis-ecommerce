@@ -1,5 +1,5 @@
 import {FC} from 'react'
-import {useForm} from 'shared/lib/helpers/hooks/common'
+import {useForm} from 'shared/lib/hooks/common'
 import {useDispatch} from 'shared/types/redux'
 import {addComment} from 'widgets/CurrentProduct/store/thunks'
 import {MessageBar} from 'entities/Messenger/MessageBar'

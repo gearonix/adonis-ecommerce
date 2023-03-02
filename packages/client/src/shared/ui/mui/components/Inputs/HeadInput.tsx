@@ -2,7 +2,7 @@ import {MuiLoginFieldProps} from '../../types'
 import {FC, useState} from 'react'
 import {FormControl, FormHelperText, IconButton, InputAdornment, OutlinedInput, Typography} from '@mui/material'
 import {AiFillEye, AiFillEyeInvisible} from 'shared/ui/icons'
-import {useTheme} from 'shared/lib/helpers/hooks/common'
+import {useTheme} from 'shared/lib/hooks/common'
 
 export const HeadField: FC<MuiLoginFieldProps> = ({title, isPassword, readOnly = false, values}) => {
   const [showPassword, setShowPassword] = useState(true)

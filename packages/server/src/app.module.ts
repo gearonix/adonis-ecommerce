@@ -8,6 +8,8 @@ import {ServeStaticModule} from '@nestjs/serve-static'
 import {resolve} from 'path'
 import {ProductsModule} from '@routes/products'
 import {CommentsModule} from '@routes/comments'
+import {RequestContextModule} from 'nestjs-request-context'
+import {PostsModule} from '@routes/posts/posts.module'
 
 @Module({
   imports: [
@@ -24,6 +26,8 @@ import {CommentsModule} from '@routes/comments'
     UsersModule,
     ProductsModule,
     CommentsModule,
+    PostsModule,
+    RequestContextModule,
   ],
 
   controllers: [],

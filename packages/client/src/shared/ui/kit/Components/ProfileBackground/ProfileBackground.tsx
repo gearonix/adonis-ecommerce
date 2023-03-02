@@ -2,7 +2,7 @@ import {FC, ReactElement, useState} from 'react'
 import {NextImage} from 'shared/ui/kit'
 import s from './style.module.scss'
 import {ImageModal} from 'shared/ui/mui'
-import {useBooleanState} from 'shared/lib/helpers/hooks/common'
+import {useBooleanState} from 'shared/lib/hooks/common'
 
 interface ProfileBackgroundProps{
     src: string | null,

@@ -6,7 +6,7 @@ import {customerSchema} from '../lib/formSchemes'
 import {useSubmitForm} from '../lib/hooks'
 import {UserRoles} from 'app/config/globals'
 import GoogleButton from './GoogleButton'
-import {useForm} from 'shared/lib/helpers/hooks/common'
+import {useForm} from 'shared/lib/hooks/common'
 
 const CustomerForm: FC = () => {
   const {form, reg} = useForm<SignupForm>(customerSchema)

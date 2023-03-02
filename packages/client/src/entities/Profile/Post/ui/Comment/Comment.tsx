@@ -1,5 +1,4 @@
 import {FC} from 'react'
-import {PostProps} from 'entities/Profile/Post/types'
 import {Helpers} from 'shared/lib/helpers/others'
 import {NextImage} from 'shared/ui/kit'
 import {DefaultAssets} from 'shared/config/assets'
@@ -7,8 +6,13 @@ import {BsDot, BsThreeDotsVertical} from 'shared/ui/icons'
 import s from './style.module.scss'
 import Link from 'next/link'
 import {routes} from 'shared/config/routes'
+import {ProductComment} from 'shared/types/slices'
 
-export const CommentWrapper: FC<PostProps> = ({comment}) => {
+interface CommentProps{
+  comment: ProductComment
+}
+
+export const Comment: FC<CommentProps> = ({comment}) => {
   const helpers = new Helpers()
   const {user} = comment
   return <>

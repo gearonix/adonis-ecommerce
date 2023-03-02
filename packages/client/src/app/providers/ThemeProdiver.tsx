@@ -1,6 +1,6 @@
 import {FC, ReactNode, useMemo} from 'react'
 import ThemeContext from 'shared/config/contexts/ThemeContext'
-import {useLocalStorage, useMuiTheme} from 'shared/lib/helpers/hooks/common'
+import {useLocalStorage, useMuiTheme} from 'shared/lib/hooks/common'
 import {LocalStorage, Theme} from 'shared/config/themes'
 import {ThemeProvider as MuiThemeProvider} from '@mui/material/styles'
 

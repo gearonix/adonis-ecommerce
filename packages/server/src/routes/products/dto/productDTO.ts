@@ -5,7 +5,7 @@ import {ProductModels, ProductRatings, ProductSizes, ProductTypes} from '@app/en
 
 export class ProductDTO {
     @IsString({message: ValidationExceptions.MUST_BE_A_STRING})
-    @Length(3, Lengths.TINYTITLE, {
+    @Length(3, Lengths.TINY_TITLE, {
       message: ValidationExceptions.LENGTH_IS_NOT_CORRECT,
     })
   readonly name: string
@@ -32,14 +32,14 @@ export class ProductDTO {
     @IsIn([ProductTypes.TYPE1, ProductTypes.TYPE2])
     readonly type: ProductTypes
     @IsString({message: ValidationExceptions.MUST_BE_A_STRING})
-    @Length(3, Lengths.TINYTITLE, {
+    @Length(3, Lengths.TINY_TITLE, {
       message: ValidationExceptions.LENGTH_IS_NOT_CORRECT,
     })
     @IsOptional()
     readonly design?: string
     readonly warrantyCount?: number
     @IsString({message: ValidationExceptions.MUST_BE_A_STRING})
-    @Length(3, Lengths.TINYTITLE, {
+    @Length(3, Lengths.TINY_TITLE, {
       message: ValidationExceptions.LENGTH_IS_NOT_CORRECT,
     })
     @IsIn([ProductModels.MODEL1, ProductModels.MODEL2])

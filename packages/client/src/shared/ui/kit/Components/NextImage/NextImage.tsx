@@ -19,8 +19,8 @@ export const NextImage: FC<NextImageProps> = ({src: initialSrc, alt = '',
     props.onError?.(e)
   }
 
-  return <Image src={src} alt={alt} fill
+  return initialSrc ? <Image src={src} alt={alt} fill
     priority={true} sizes={'100%, 100%'} onClick={onClick} {...props}
-    onError={onError}/>
+    onError={onError}/> : null
 }
 

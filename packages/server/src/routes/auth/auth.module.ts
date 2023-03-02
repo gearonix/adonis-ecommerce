@@ -16,7 +16,7 @@ import {TokenService} from '@routes/auth/services/token.service'
     JwtModule.register({
       secret: process.env.PRIVATE_KEY || appConfig.privateKey,
       signOptions: {
-        expiresIn: '48h',
+        expiresIn: '24h',
       },
     }),
     RequestContextModule,

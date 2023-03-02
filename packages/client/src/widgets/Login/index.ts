@@ -4,3 +4,5 @@ export {default as SalesmanForm} from './ui/SalesmanForm'
 
 export {authorizeUser} from './redux/thunks'
 export {getUserById} from './redux/thunks'
+
+export {authSlice} from './redux/authReducer'

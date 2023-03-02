@@ -27,6 +27,11 @@ const EndPoints = {
   COMMENTS: {
     createProductComment: '/comments/products/create',
   },
+  POSTS: {
+    getPosts: '/posts',
+    addPost: '/posts/create',
+    setPostImage: '/posts/set/images',
+  },
 } as const
 
 

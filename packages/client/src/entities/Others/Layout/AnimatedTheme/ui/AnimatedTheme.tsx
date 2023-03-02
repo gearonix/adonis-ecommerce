@@ -1,7 +1,7 @@
 import {FC} from 'react'
 import {ApiAnimation} from 'shared/ui/animations'
 import s from './style.module.scss'
-import {useTheme} from 'shared/lib/helpers/hooks/common'
+import {useTheme} from 'shared/lib/hooks/common'
 
 
 const AnimatedTheme : FC = () => {

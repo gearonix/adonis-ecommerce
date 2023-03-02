@@ -4,7 +4,7 @@ import {ChangeBackground} from 'features/Profile/ChangeBackground'
 import {OpenProfileEdit} from 'features/Profile/OpenProfileEdit'
 import {useSelector} from 'shared/types/redux'
 import {selectReformattedUser} from 'widgets/Profile/store/selectors'
-import {useBooleanState} from 'shared/lib/helpers/hooks/common'
+import {useBooleanState} from 'shared/lib/hooks/common'
 import {ContentModal} from 'shared/ui/mui'
 import {EditProfile} from 'widgets/Profile'
 

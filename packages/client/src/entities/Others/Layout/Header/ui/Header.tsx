@@ -3,7 +3,7 @@ import s from './style.module.scss'
 import {FaHeart, FaInfo, FaShoppingCart, FaUserAlt, GiHamburgerMenu, MdMessage} from 'shared/ui/icons'
 import Link from 'next/link'
 import {HoverLink, Logo} from 'shared/ui/kit'
-import {useAdaptive} from 'shared/lib/helpers/hooks/shared'
+import {useAdaptive} from 'shared/lib/hooks/shared'
 
 export interface HeaderSkeletonProps {
   Search: FC,

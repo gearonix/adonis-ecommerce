@@ -2,7 +2,7 @@ import {FC} from 'react'
 import s from './style.module.scss'
 import {NextImage} from 'shared/ui/kit'
 import {DefaultAssets} from 'shared/config/assets'
-import {useBooleanState} from 'shared/lib/helpers/hooks/common'
+import {useBooleanState} from 'shared/lib/hooks/common'
 
 interface UserAvatarProps{
   src: string | null,
