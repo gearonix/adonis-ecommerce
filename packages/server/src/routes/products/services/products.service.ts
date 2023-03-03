@@ -4,7 +4,7 @@ import {ProductsEntity} from '@app/entities/products/products.entity'
 import {In, Like, Repository} from 'typeorm'
 import {AuthService} from '@routes/auth'
 import {UsersService} from '@routes/users'
-import {PageLimits} from '@app/types/global'
+import {PAGE_LIMIT} from '@app/types/global'
 import {ServerExceptions} from '@app/types/exceptions'
 import {ifExist, withLimit} from '@app/lib/helpers'
 import {SearchDTO} from '@routes/products/dto/searchDTO'
@@ -42,7 +42,7 @@ export class ProductsService {
 
   async randomProducts(query: SearchDTO) {
     return this.products.createQueryBuilder().orderBy('RAND()')
-        .limit(PageLimits.RECOMMENDED).where(query).getMany()
+        .limit(PAGE_LIMIT).where(query).getMany()
   }
 
   async getProduct(productId: number) {
@@ -56,9 +56,7 @@ export class ProductsService {
     return {
       productInfo,
       salesman,
-      comments: {
-        data: comments,
-      },
+      comments,
     }
   }
   async userProducts(salesmanId: number, page: string) {

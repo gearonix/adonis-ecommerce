@@ -12,8 +12,8 @@ export const routes : Record<AppRoutes, string> = {
   [AppRoutes.SIGNUP_SALESMAN]: '/signup/salesman',
   [AppRoutes.MESSENGER]: '/messenger',
   [AppRoutes.SAVED]: '/saved',
-  [AppRoutes.PROFILE]: '/profile',
-  [AppRoutes.USER_PROFILE]: '/profile/[id]',
+  [AppRoutes.USERS]: '/users',
+  [AppRoutes.USERS_ID]: '/users/[id]',
   [AppRoutes.ABOUT]: '/about',
 }
 

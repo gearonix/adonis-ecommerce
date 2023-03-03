@@ -10,14 +10,15 @@ import {getProduct} from '../../store/thunks/getProduct'
 import {useRouter} from 'next/router'
 import {productActions} from '../../store/productReducer'
 import {ProductSelectors} from 'shared/selectors'
-import {CurrentProduct} from 'shared/types/slices'
+import {Product} from 'shared/types/slices'
 import SavedProvider from 'features/Saved/ui/SavedProvider/SavedProvider'
 
 const ProductInfo: FC = () => {
   const dispatch = useDispatch()
   const router = useRouter()
   const id = router.query.id as string
-  const product = useSelector(ProductSelectors.currentProduct) as CurrentProduct
+  const product = useSelector(ProductSelectors.currentProduct)
+  const productInfo = product.productInfo as Product
 
   useEffect(() => {
     dispatch(getProduct(id))
@@ -26,13 +27,13 @@ const ProductInfo: FC = () => {
     }
   }, [id])
 
-  if (!product.productInfo.productId) {
+  if (!productInfo.productId) {
     return null
   }
 
   return <article className={s.product_info}>
-    <ProductImagesShowcase ImageCarousel={ImageCarousel} files={product.productInfo.images}/>
-    <ProductParams product={product.productInfo}/>
+    <ProductImagesShowcase ImageCarousel={ImageCarousel} files={productInfo.images}/>
+    <ProductParams product={productInfo}/>
     <PurchaseProduct CartButton={CartButton} AddToSaved={SavedProvider} product={product}/>
   </article>
 }

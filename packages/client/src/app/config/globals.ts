@@ -8,8 +8,8 @@ export enum AppRoutes {
     SIGNUP_SALESMAN = 'SIGNUP_SALESMAN',
     MESSENGER = 'MESSENGER',
     SAVED = 'SAVED',
-    PROFILE = 'PROFILE',
-    USER_PROFILE = 'USER_PROFILE',
+    USERS = 'USERS',
+    USERS_ID = 'USERS_ID',
     ABOUT = 'ABOUT',
     PRODUCT = 'PRODUCT'
 }
@@ -48,3 +48,5 @@ export enum AppMethods{
     PUT = 'put',
     DELETE = 'delete'
 }
+
+export const PAGE_LIMIT = 6 as const

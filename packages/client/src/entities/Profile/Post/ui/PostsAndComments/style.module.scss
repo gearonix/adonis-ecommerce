@@ -43,7 +43,7 @@
     }
 
     .attached_image {
-      @include imageWrapper(80%, 300px, $rounded);
+      @include imageWrapper(50%, 260px, $rounded);
       margin-top: 15px;
 
       margin-bottom: 15px;

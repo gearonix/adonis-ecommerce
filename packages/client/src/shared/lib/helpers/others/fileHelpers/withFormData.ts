@@ -5,7 +5,6 @@ export const withFormData = (mode: UploadProperties) => (...files: File[]) => {
   for (const file of files) {
     formData.append(mode, file)
   }
-  console.log(formData)
 
 
   return formData

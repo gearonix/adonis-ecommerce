@@ -1,6 +1,7 @@
 import {createSlice, PayloadAction as Action} from '@reduxjs/toolkit'
 import {productInitialState as initialState} from 'shared/config/redux/initialStates'
 import {CurrentProduct, ProductComment} from 'shared/types/slices'
+import {ProductComments} from 'shared/types/slices/currentProductSlice'
 
 const productReducer = createSlice({
   name: 'currentProduct',
@@ -9,6 +10,7 @@ const productReducer = createSlice({
     setProduct(state, {payload}: Action<CurrentProduct>) {
       state.productInfo = payload.productInfo
       state.comments.data = payload.comments.data
+      state.comments.count = payload.comments.count
       state.salesman = payload.salesman
     },
     clearProduct() {
@@ -16,6 +18,13 @@ const productReducer = createSlice({
     },
     addComment(state, {payload}: Action<ProductComment>) {
       state.comments?.data.unshift(payload)
+    },
+    setCommentsPage(state, {payload}: Action<number>) {
+      state.comments.page = payload
+    },
+    setComments(state, {payload}: Action<ProductComments>) {
+      state.comments.data = payload.data
+      state.comments.count = payload.count
     },
   },
 })

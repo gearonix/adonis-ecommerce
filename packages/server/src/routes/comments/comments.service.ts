@@ -5,6 +5,7 @@ import {Repository} from 'typeorm'
 import {AuthService} from '@routes/auth'
 import {ServerExceptions} from '@app/types/exceptions'
 import {NewCommentDTO} from '@routes/comments/dto'
+import {withLimit} from '@app/lib/helpers'
 
 @Injectable()
 export class CommentsService {
@@ -20,17 +21,19 @@ export class CommentsService {
     const newComment = await this.productComments.save({message, productId, userId})
     return this.getCommentById(newComment.commentId)
   }
-  async getProductComments(productId: number) {
+  async getProductComments(productId: number, page?: string) {
     if (isNaN(productId)) {
       throw new HttpException(ServerExceptions.INCORRECT_DATA, HttpStatus.BAD_REQUEST)
     }
 
-    return this.productComments.find({
+    const [comments, count] = await this.productComments.findAndCount({
       relations: {user: true},
       where: {productId},
       select: ['message', 'likes', 'date', 'commentId'],
       order: {date: 'DESC'},
+      ...withLimit(page),
     })
+    return {data: comments, count}
   }
 
   async getCommentById(commentId: number) {

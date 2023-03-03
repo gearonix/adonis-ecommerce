@@ -4,12 +4,14 @@ import {ObjectNullable} from 'shared/types/common'
 
 
 export interface CurrentProduct{
-    productInfo: Product,
+    productInfo: ObjectNullable<Product>,
     salesman: ObjectNullable<User>,
-    comments: {
-        data: ProductComment[],
-        page: number
-    }
+    comments: ProductComments
+}
+export interface ProductComments{
+    data: ProductComment[],
+    page: number,
+    count: number
 }
 
 export interface ProductComment{

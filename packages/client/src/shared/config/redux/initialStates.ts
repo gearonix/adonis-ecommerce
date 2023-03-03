@@ -1,6 +1,7 @@
 import {CurrentProduct, Products, User} from 'shared/types/slices'
 import {ObjectNullable} from 'shared/types/common'
 import {AuthSlice} from 'shared/types/slices/authSlice'
+import {PostsSlice} from 'shared/types/slices/postSlice'
 
 export const productsInitialState: Products = {
   products: [],
@@ -52,6 +53,7 @@ export const productInitialState: CurrentProduct = {
   comments: {
     data: [],
     page: 0,
+    count: 0,
   },
 }
 
@@ -64,3 +66,8 @@ export const authInitialState: AuthSlice = {
   email: null,
 }
 
+export const postsInitialState: PostsSlice = {
+  data: [],
+  page: 0,
+  count: 0,
+}

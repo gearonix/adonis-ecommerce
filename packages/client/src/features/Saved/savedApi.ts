@@ -11,7 +11,6 @@ export const SavedApi = {
     return axiosInstance.get(endpoint.saved)
   },
   addToSaved(productId : number): Res<void> {
-    console.log(productId)
     return axiosInstance.post(endpoint.addToSaved, {productId})
   },
   removeFromSaved(productId : number): Res<void> {

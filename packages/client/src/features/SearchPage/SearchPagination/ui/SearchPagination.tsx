@@ -3,6 +3,7 @@ import {Pagination} from 'shared/ui/mui'
 import {useDispatch, useSelector} from 'shared/types/redux'
 import {ProductsSelectors} from 'shared/selectors'
 import {productsActions} from 'widgets/Products'
+import {PAGE_LIMIT} from 'app/config/globals'
 
 const SearchPagination : FC = () => {
   const productsCount = useSelector(ProductsSelectors.total)
@@ -12,7 +13,7 @@ const SearchPagination : FC = () => {
     dispatch(productsActions.changeFilter({page}))
   }
 
-  return <Pagination count={productsCount / 10} onChange={onChange} page={page}/>
+  return <Pagination count={productsCount / PAGE_LIMIT} onChange={onChange} page={page}/>
 }
 
 

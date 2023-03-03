@@ -23,7 +23,7 @@ const AuthGuard: FC<{ children: ReactNode }> = ({children}) => {
     }
     // redirect if registered
     if (isAuthorized && privatePaths.authorized.includes(path)) {
-      return router.push(`${routes.PROFILE}/${userId}`)
+      return router.push(`${routes.USERS}/${userId}`)
     }
 
     openLoading()

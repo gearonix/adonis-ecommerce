@@ -37,7 +37,7 @@ const PurchaseProduct: FC<PurchaseProductP> = ({AddToSaved, CartButton, product}
           'No Country'}</span>
       <span className={s.supplier_params}><HiOutlineFlag/>{salesman.city ? salesman.city : 'No City'}</span>
       <CartButton/>
-      <Link href={`${routes.PROFILE}/${salesman.userId}`}>
+      <Link href={`${routes.USERS}/${salesman.userId}`}>
         <Button w={'100%'} color={'blueBordered'}>Seller’s profile</Button>
       </Link>
     </div>

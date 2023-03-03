@@ -5,6 +5,7 @@ import {Repository} from 'typeorm'
 import {AuthService} from '@routes/auth'
 import {FilesService} from '@modules/files/files.service'
 import {FileDirectories} from '@app/types/global'
+import {withLimit} from '@app/lib/helpers'
 
 @Injectable()
 export class PostsService {
@@ -14,12 +15,14 @@ export class PostsService {
               private fileService: FilesService,
   ) {}
 
-  async getPostsByUserId(userId: number) {
-    return this.posts.find({
+  async getPostsByUserId(userId: number, page: string) {
+    const [posts, count] = await this.posts.findAndCount({
       relations: {user: true},
       where: {userId},
       order: {date: 'DESC'},
+      ...withLimit(page),
     })
+    return {data: posts, count}
   }
   async createPost(message: string) {
     const userId = await this.authService.getUserId()

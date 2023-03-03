@@ -21,7 +21,5 @@ export enum FileDirectories{
   POST_IMAGES = 'post_images'
 }
 
-export enum PageLimits{
-  RECOMMENDED = 10,
-  PRODUCTS = 10
-}
+
+export const PAGE_LIMIT = 6 as const

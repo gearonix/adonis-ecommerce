@@ -2,13 +2,14 @@ import axiosInstance from 'shared/config/axios'
 import Endpoints from 'shared/config/endpoints'
 import {AxiosResponse as Res} from 'shared/types/common'
 import {Post} from 'shared/types/slices'
+import {PostsSlice} from 'shared/types/slices/postSlice'
 
 
 const endpoint = Endpoints.POSTS
 
 export const PostsApi = {
-  getPosts(userId: number): Res<Post[]> {
-    return axiosInstance.get(`${endpoint.getPosts}/${userId}`)
+  getPosts(userId: number, page: number): Res<PostsSlice> {
+    return axiosInstance.get(`${endpoint.getPosts}/${userId}?page=${page}`)
   },
   addPosts(message: string): Res<Post> {
     return axiosInstance.post(endpoint.addPost, {message})

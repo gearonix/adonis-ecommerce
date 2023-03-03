@@ -1,22 +1,28 @@
 import {Post} from 'shared/types/slices'
 import {createSlice, PayloadAction} from '@reduxjs/toolkit'
+import {postsInitialState as initialState} from 'shared/config/redux/initialStates'
+import {PostsSlice} from 'shared/types/slices/postSlice'
 
-
-const initialState: Post[] = []
 
 const postReducer = createSlice({
   name: 'posts',
   initialState,
   reducers: {
-    setPosts(state, {payload}: PayloadAction<Post[]>) {
-      return payload
+    setPosts(state, {payload}: PayloadAction<PostsSlice>) {
+      state.data = payload.data
+      state.count = payload.count
     },
     clearPosts() {
       return initialState
     },
     addPost(state, {payload}: PayloadAction<Post>) {
-      state.unshift(payload)
+      state.data.unshift(payload)
+      state.count += 1
     },
+    setPage(state, {payload}: PayloadAction<number>) {
+      state.page = payload
+    },
+
   },
 })
 

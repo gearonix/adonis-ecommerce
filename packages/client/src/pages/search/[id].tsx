@@ -9,7 +9,7 @@ import {SortedProducts, YouMayLike} from 'entities/Products'
 import {ProductTypes} from 'shared/types/elements'
 import {useSelector} from 'shared/types/redux'
 import {ProductSelectors} from 'shared/selectors'
-import ProductComments from '../../widgets/CurrentProduct/ui/ProductComment/ProductComment'
+import ProductComments from 'widgets/CurrentProduct/ui/ProductComments/ProductComments'
 
 
 const ProductPage = () => {

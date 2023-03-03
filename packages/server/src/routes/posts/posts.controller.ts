@@ -22,8 +22,8 @@ export class PostsController {
   constructor(private postsService: PostsService) {}
 
   @Get('/:id')
-  getPosts(@Param('id') userId: number) {
-    return this.postsService.getPostsByUserId(userId)
+  getPosts(@Param('id') userId: number, @Query('page') page) {
+    return this.postsService.getPostsByUserId(userId, page)
   }
 
   @Post('/create')
@@ -37,7 +37,6 @@ export class PostsController {
   @UseGuards(AuthGuard)
   @UseInterceptors(FileInterceptor(FileDirectories.POST_IMAGES))
   setPostImage(@UploadedFile() image, @Query('post_id') postId) {
-    console.log(image)
     return this.postsService.setPostImage(image, postId)
   }
 }

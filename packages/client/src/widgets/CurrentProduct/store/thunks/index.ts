@@ -1,2 +1,2 @@
-export {addComment} from './addComment'
+export {addComment} from './comments/addComment'
 export {getProduct} from './getProduct'

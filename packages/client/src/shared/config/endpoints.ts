@@ -9,7 +9,7 @@ const EndPoints = {
     googleLogin: '/auth/login/google',
   },
   USERS: {
-    changeProfileData: '/users/change/profile',
+    changeProfileData: '/users/change/users',
     changeUserBackground: '/users/change/background',
     changeUserAvatar: '/users/change/avatar',
   },
@@ -26,6 +26,7 @@ const EndPoints = {
   },
   COMMENTS: {
     createProductComment: '/comments/products/create',
+    getProductComments: '/comments/products',
   },
   POSTS: {
     getPosts: '/posts',

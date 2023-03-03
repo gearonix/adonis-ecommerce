@@ -15,9 +15,7 @@ const CartProvider : FC<{children: ReactNode}> = ({children}) => {
 
   useEffect(() => {
     if (helpers.emptyArray(cart)) return setItems([])
-    console.log(cart)
     dispatch(getCartProducts(cart)).then(({payload}) => {
-      console.log(payload)
       if (payload) {
         setItems(payload as Product[])
       }

@@ -12,7 +12,7 @@ export class UsersController {
   constructor(private usersService: UsersService,
               private profileService: ProfileService) {}
   @UseGuards(AuthGuard)
-  @Post('/change/profile')
+  @Post('/change/users')
   changeProfile(@Body() body: ObjectOptional<EditProfileForm>) {
     return this.profileService.changeProfile(body)
   }

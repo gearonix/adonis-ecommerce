@@ -1,4 +1,4 @@
-import {Body, Controller, Get, Param, Post, UseGuards, UsePipes, ValidationPipe} from '@nestjs/common'
+import {Body, Controller, Get, Param, Post, Query, UseGuards, UsePipes, ValidationPipe} from '@nestjs/common'
 import {CommentsService} from './comments.service'
 import {AuthGuard} from '@routes/auth'
 import {NewCommentDTO} from '@routes/comments/dto/newComment.dto'
@@ -14,7 +14,7 @@ export class CommentsController {
     return this.commentsService.createProductComment(comment)
   }
   @Get('/products/:id')
-  getProductComments(@Param('id') id) {
-    return this.commentsService.getProductComments(+id)
+  getProductComments(@Param('id') id, @Query('page') page) {
+    return this.commentsService.getProductComments(+id, page)
   }
 }

@@ -3,6 +3,7 @@ import {CurrentProduct, ProductComment} from 'shared/types/slices'
 import axiosInstance from 'shared/config/axios'
 import Endpoints from 'shared/config/endpoints'
 import {AddComment} from 'widgets/CurrentProduct/types'
+import {ProductComments} from 'shared/types/slices/currentProductSlice'
 
 
 const CurrentProductApi = {
@@ -11,6 +12,9 @@ const CurrentProductApi = {
   },
   createComment(comment: AddComment): Res<ProductComment> {
     return axiosInstance.post(Endpoints.COMMENTS.createProductComment, comment)
+  },
+  setCommentsPage(productId: number, page: number): Res<ProductComments> {
+    return axiosInstance.get(`${Endpoints.COMMENTS.getProductComments}/${productId}?page=${page}`)
   },
 }
 
