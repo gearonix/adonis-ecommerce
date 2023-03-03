@@ -1,12 +1,12 @@
 import { createThunk } from 'shared/types/redux'
-import { SavedApi } from 'features/Saved/savedApi'
+import { savedApi } from 'features/Saved/api'
 import { isError } from 'shared/lib/helpers/others/httpHelpers'
 import { savedActions } from 'features/Saved'
 
 export const getSavedByIds = createThunk('saved/GET_SAVED_BY_IDS',
-    async (id: number, { dispatch }) => {
+    async (id: number, { dispatch, extra }) => {
       // const userId = AuthSelectors
-      const response = await SavedApi.setSavedProducts(id)
+      const response = await extra.api.saved.setProducts(id)
       if (isError(response)) return
       dispatch(savedActions.setSavedProducts(response.data))
     })

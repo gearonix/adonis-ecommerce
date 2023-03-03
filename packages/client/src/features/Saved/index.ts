@@ -9,3 +9,6 @@ export { savedSlice, savedActions } from './store/savedReducer'
 export type { SharedSavedProps, SavedProps } from './ui/SavedProvider/SavedProvider'
 
 export { default as SavedProvider } from './ui/SavedProvider/SavedProvider'
+
+export { savedApi } from './api'
+export type { SavedApi } from './types'

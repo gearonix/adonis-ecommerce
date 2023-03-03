@@ -7,7 +7,7 @@ import EndPoints from 'shared/config/endpoints'
 
 
 export const changeAvatar = createThunk('users/CHANGE_AVATAR',
-    async (avatar: FormData, { dispatch }) => {
+    async (avatar: FormData, { dispatch, extra }) => {
       const response = await requestAvatarToServer(avatar)
       if (response.status !== HttpStatusCode.Created) return
 

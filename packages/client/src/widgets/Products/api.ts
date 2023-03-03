@@ -1,38 +1,34 @@
-import { AddProductForm, SearchControlsForm, SearchQuery } from 'widgets/Products/types'
+import { ProductsApi } from 'widgets/Products/types'
 import axiosInstance from 'shared/config/axios'
 import Endpoints from 'shared/config/endpoints'
-import { AxiosResponse as Res, Nullable, ObjectNullable } from 'shared/types/common'
-import { CurrentProduct, Product } from 'shared/types/slices'
 import { Helpers } from 'shared/lib/helpers'
 
 const endpoint = Endpoints.PRODUCTS
 const helpers = new Helpers()
 
-export interface ProductsWithCount{
-  data: Product[],
-  count: number
-}
 
-export const ProductsApi = {
-  addProduct: (formValues: AddProductForm): Res<Product> => axiosInstance.post(endpoint.createProduct, formValues),
-  setProductImages(productId: number, formData: FormData): Res<Product> {
+export const productsApi: ProductsApi = {
+  addProduct(formValues) {
+    return axiosInstance.post(endpoint.createProduct, formValues)
+  },
+  setProductImages(productId, formData) {
     return axiosInstance.post(`${endpoint.setProductImages}?product_id=${productId}`, formData)
   },
-  userProducts(id: number, page: Nullable<number>): Res<ProductsWithCount> {
+  userProducts(id, page) {
     return axiosInstance.get(`${endpoint.userProducts}/${id}?page=${page}`)
   },
-  products(filter: ObjectNullable<SearchQuery>): Res<ProductsWithCount> {
+  getProducts(filter) {
     const query = helpers.toQuery(helpers.partial(filter))
     return axiosInstance.get(`${endpoint.products}?${query}`)
   },
-  recommendedProducts(filter: Partial<SearchControlsForm>): Res<Product[]> {
+  recommended(filter) {
     const query = helpers.toQuery(helpers.partial(filter))
     return axiosInstance.get(`${endpoint.recommended}?${query}`)
   },
-  getProduct(id: number): Res<CurrentProduct> {
+  getProduct(id) {
     return axiosInstance.get(`${endpoint.products}/${id}`)
   },
-  getCartProducts(ids: number[]): Res<Product[]> {
+  getCartProducts(ids) {
     return axiosInstance.put(`${endpoint.productsByIds}`, { ids })
   }
 }

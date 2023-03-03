@@ -5,7 +5,8 @@ import {
   ProductSizes,
   ProductTypes
 } from 'shared/types/elements/productTypes'
-import { KeyOf } from 'shared/types/common'
+import { AxiosResponse as Res, KeyOf, Nullable, ObjectNullable } from 'shared/types/common'
+import { CurrentProduct, Product } from 'shared/types/slices'
 
 export interface AddProductForm {
     name: string
@@ -34,4 +35,25 @@ export interface SearchQuery extends SearchControlsForm{
     search: string,
     page: number,
     inStock: boolean
+}
+
+export interface ProductsWithCount {
+    data: Product[],
+    count: number
+}
+
+export interface ProductsApi {
+    addProduct(formValues: AddProductForm): Res<Product>
+
+    setProductImages(id: number, formData: FormData): Res<Product>,
+
+    userProducts(id: number, page: Nullable<number>): Res<ProductsWithCount>
+
+    getProducts(filter: ObjectNullable<SearchQuery>): Res<ProductsWithCount>
+
+    recommended(filter: Partial<SearchControlsForm>): Res<Product[]>
+
+    getProduct(id: number): Res<CurrentProduct>
+
+    getCartProducts(ids: number[]): Res<Product[]>
 }

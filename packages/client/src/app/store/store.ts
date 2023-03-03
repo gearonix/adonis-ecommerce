@@ -1,10 +1,21 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { createReducers } from './createReducers'
+import { createReducers } from './config/createReducers'
+import { createReducerManager } from './reducerManager'
+import createConfig from 'app/store/config/createConfig'
+import { CreateStoreProps } from 'app/store/types'
 
 
-const store = configureStore({
-  reducer: createReducers()
-})
+export const createStore = ({ redirect }: CreateStoreProps) => {
+  const rootReducers = createReducers()
 
+  const reducerManager = createReducerManager(rootReducers)
+  // @ts-ignore
+  const store = configureStore(createConfig(reducerManager, redirect))
+  // @ts-ignore
+  store.reducerManager = reducerManager
 
-export default store
+  return store
+}
+
+export default createStore
+
