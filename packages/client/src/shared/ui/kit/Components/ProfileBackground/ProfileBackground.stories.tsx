@@ -1,11 +1,11 @@
-import {ComponentMeta, ComponentStory} from '@storybook/react'
-import {ProfileBackground} from './ProfileBackground'
-import {ChangeBackground} from 'features/Profile/ChangeBackground'
+import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { ProfileBackground } from 'shared/ui/kit'
+import { ChangeBackground } from 'features/Profile'
 
 export default {
   title: 'shared/kit/Components/ProfileBackground',
   component: ProfileBackground,
-  argTypes: {},
+  argTypes: {}
 } as ComponentMeta<typeof ProfileBackground>
 
 const Template: ComponentStory<typeof ProfileBackground> = (args) => <ProfileBackground {...args} />
@@ -13,5 +13,5 @@ const Template: ComponentStory<typeof ProfileBackground> = (args) => <ProfileBac
 
 export const WithImage = Template.bind({})
 WithImage.args = {
-  ChangeBackground: <ChangeBackground/>,
+  ChangeBackground: <ChangeBackground/>
 }

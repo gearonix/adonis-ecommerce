@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import {LoginForm} from 'widgets/Login'
-import {FC} from 'react'
-import {WithSpring} from 'shared/ui/animations'
+import { LoginForm } from 'widgets/Login'
+import { FC } from 'react'
+import { WithSpring } from 'shared/lib/components'
 
 const Login: FC = () => {
   return <WithSpring>

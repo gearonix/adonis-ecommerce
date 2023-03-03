@@ -1,12 +1,11 @@
-import {FC, useEffect} from 'react'
-import {useDispatch, useSelector} from 'shared/types/redux'
-import {ProductSelectors} from 'shared/selectors'
-import {Comment} from 'entities/Profile/Post'
-import {CommentBar} from 'features/ProductPage/CommentBar'
-import {Pagination} from 'shared/ui/mui'
-import {productActions} from 'widgets/CurrentProduct/store/productReducer'
-import {PAGE_LIMIT} from 'app/config/globals'
-import {changeCommentsPage} from 'widgets/CurrentProduct/store/thunks/comments/changeCommentsPage'
+import { FC, useEffect } from 'react'
+import { useDispatch, useSelector } from 'shared/types/redux'
+import { ProductSelectors } from 'shared/selectors'
+import { Pagination } from 'shared/ui/material'
+import { PAGE_LIMIT } from 'app/config/globals'
+import { changeCommentsPage, productActions } from 'widgets/CurrentProduct'
+import { CommentBar } from 'features/ProductPage'
+import { CommentTemplate } from 'entities/Profile'
 
 
 const ProductComments : FC = () => {
@@ -24,7 +23,9 @@ const ProductComments : FC = () => {
 
   return <>
     <CommentBar />
-    {comments?.map((comment) => <Comment comment={comment} key={comment.commentId} />)}
+    {comments?.map((comment) => {
+      return <CommentTemplate comment={comment} key={comment.commentId} />
+    })}
     <Pagination count={totalCount / PAGE_LIMIT} onChange={onChange} page={page} />
   </>
 }

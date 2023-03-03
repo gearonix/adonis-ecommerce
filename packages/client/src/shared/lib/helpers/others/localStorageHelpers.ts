@@ -1,5 +1,5 @@
-import {LocalStorage} from 'shared/config/themes'
-import {Nullable} from 'shared/types/common'
+import { LocalStorage } from 'shared/config/themes'
+import { Nullable } from 'shared/types/common'
 
 
 export class ReduxLocalStorage<T> {

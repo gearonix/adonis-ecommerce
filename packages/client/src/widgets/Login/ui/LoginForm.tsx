@@ -1,16 +1,16 @@
-import {FC} from 'react'
-import {AuthTemplate} from 'entities/Auth/AuthTemplate'
-import {HeadField} from 'shared/ui/mui'
-import {useForm} from 'react-hook-form'
-import {LoginForm} from '../types'
-import {yupResolver} from '@hookform/resolvers/yup'
-import {loginSchema} from '../lib/formSchemes'
-import {useSubmitForm} from '../lib/hooks'
+import { FC } from 'react'
+import { HeadField } from 'shared/ui/material'
+import { useForm } from 'react-hook-form'
+import { LoginForm } from '../types'
+import { yupResolver } from '@hookform/resolvers/yup'
+import { loginSchema } from '../lib/formSchemes'
+import { useSubmitForm } from '../lib/hooks'
 import GoogleButton from './GoogleButton'
-import {createFieldValues} from 'shared/lib/helpers/others/formHelpers/createFieldValues'
+import { createFieldValues } from 'shared/lib/helpers/formHelpers/createFieldValues'
+import { AuthTemplate } from 'entities/Auth'
 
 const LoginForm: FC = () => {
-  const form = useForm<LoginForm>({resolver: yupResolver(loginSchema)})
+  const form = useForm<LoginForm>({ resolver: yupResolver(loginSchema) })
   const onSubmit = useSubmitForm(form.setError)
   const reg = createFieldValues<LoginForm>(form)
 

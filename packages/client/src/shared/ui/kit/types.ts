@@ -1,4 +1,4 @@
-import {FC} from 'react'
+import { FC } from 'react'
 
 export type ColorType = 'red' | 'green' | 'primary' | 'orange' | 'outlined' | 'blueBordered'
     | 'redColored' | 'greyBordered'

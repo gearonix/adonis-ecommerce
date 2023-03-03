@@ -1,1 +1,1 @@
-export {default as Advantage} from './ui/Advantage'
+export { default as Advantage } from './ui/Advantage'

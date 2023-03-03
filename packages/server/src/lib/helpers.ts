@@ -1,5 +1,5 @@
 import * as uuid from 'uuid'
-import {PAGE_LIMIT} from '@app/types/global'
+import { PAGE_LIMIT } from '@app/types/global'
 
 export const generateId = () => uuid.v4().slice(0, 8)
 
@@ -24,6 +24,6 @@ export const ifExist = <T, N>(name: T, value: N): N | undefined => {
 export const withLimit = (page: string | undefined, take = PAGE_LIMIT) => {
   return {
     take,
-    skip: page ? Number(page) * take : 0,
+    skip: page ? Number(page) * take : 0
   }
 }

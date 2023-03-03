@@ -1,4 +1,4 @@
-export {default as AsyncAuthorization} from './AsyncAuthorization'
-export {default as AuthGuard} from './AuthGuard'
+export { default as AsyncAuthorization } from './Authorization/Authorization'
+export { default as AuthGuard } from './Authorization/AuthRedirect'
 
-export {default as Layout} from './Layout'
+export { default as Layout } from './Layout'

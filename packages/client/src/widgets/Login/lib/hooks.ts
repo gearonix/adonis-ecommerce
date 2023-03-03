@@ -1,9 +1,9 @@
-import {useDispatch} from 'shared/types/redux'
-import {Forms, SignupForm} from 'widgets/Login/types'
-import {loginUser, makeRegistration} from 'widgets/Login/redux/thunks'
-import {UserRoles} from 'app/config/globals'
-import {UseFormSetError} from 'react-hook-form'
-import {onThunkError} from 'shared/lib/helpers/others/httpHelpers'
+import { useDispatch } from 'shared/types/redux'
+import { Forms, SignupForm } from 'widgets/Login/types'
+import { loginUser, makeRegistration } from 'widgets/Login/store/thunks'
+import { UserRoles } from 'app/config/globals'
+import { UseFormSetError } from 'react-hook-form'
+import { onThunkError } from 'shared/lib/helpers/others/httpHelpers'
 
 
 const isRegistration = (formValues: Forms): formValues is SignupForm => {
@@ -18,11 +18,11 @@ export const useSubmitForm = (setError: UseFormSetError<any>, role ?: UserRoles)
     if (!isRegistration(formValues)) {
       response = await dispatch(loginUser(formValues))
     } else {
-      response = await dispatch(makeRegistration({...formValues, role: role as UserRoles}))
+      response = await dispatch(makeRegistration({ ...formValues, role: role as UserRoles }))
     }
 
     const onError = onThunkError(response)
 
-    onError(() => setError('password', {message: response.payload as string}))
+    onError(() => setError('password', { message: response.payload as string }))
   }
 }

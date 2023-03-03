@@ -1,4 +1,4 @@
-import {UserRoles} from 'app/config/globals'
+import { UserRoles } from 'app/config/globals'
 
 export interface LoginForm {
     email: string,

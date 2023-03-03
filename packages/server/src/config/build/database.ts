@@ -1,9 +1,9 @@
 import * as process from 'process'
-import {TypeOrmModuleOptions} from '@nestjs/typeorm'
+import { TypeOrmModuleOptions } from '@nestjs/typeorm'
 import entities from '@app/entities'
 
 export const buildDBConfig = (): TypeOrmModuleOptions => {
-  const {HOST_NAME, DB_PORT, USER_NAME, PASSWORD, DATABASE_NAME} =
+  const { HOST_NAME, DB_PORT, USER_NAME, PASSWORD, DATABASE_NAME } =
     process.env
 
   return {
@@ -14,6 +14,6 @@ export const buildDBConfig = (): TypeOrmModuleOptions => {
     password: PASSWORD,
     database: DATABASE_NAME,
     synchronize: true,
-    entities,
+    entities
   }
 }

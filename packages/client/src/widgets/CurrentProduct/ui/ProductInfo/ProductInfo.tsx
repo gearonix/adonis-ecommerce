@@ -1,17 +1,14 @@
-import {FC, useEffect} from 'react'
+import { FC, useEffect } from 'react'
 import s from './style.module.scss'
-import {ProductImagesShowcase} from 'entities/ProductPage/ProductImage'
-import {ImageCarousel} from 'features/ProductPage/ImageCarousel'
-import {ProductParams} from 'entities/ProductPage/ProductParams'
-import {PurchaseProduct} from 'entities/ProductPage/PurchaseProduct'
-import {CartButton} from 'features/ProductPage/BuyProduct'
-import {useDispatch, useSelector} from 'shared/types/redux'
-import {getProduct} from '../../store/thunks/getProduct'
-import {useRouter} from 'next/router'
-import {productActions} from '../../store/productReducer'
-import {ProductSelectors} from 'shared/selectors'
-import {Product} from 'shared/types/slices'
-import SavedProvider from 'features/Saved/ui/SavedProvider/SavedProvider'
+import { ProductImages, ProductParams, PurchaseProduct } from 'entities/ProductPage'
+import { ImageCarousel, CartButton } from 'features/ProductPage'
+import { useDispatch, useSelector } from 'shared/types/redux'
+import { getProduct } from '../../store/thunks/getProduct'
+import { useRouter } from 'next/router'
+import { ProductSelectors } from 'shared/selectors'
+import { Product } from 'shared/types/slices'
+import { SavedProvider } from 'features/Saved'
+import { productActions } from 'widgets/CurrentProduct'
 
 const ProductInfo: FC = () => {
   const dispatch = useDispatch()
@@ -32,7 +29,7 @@ const ProductInfo: FC = () => {
   }
 
   return <article className={s.product_info}>
-    <ProductImagesShowcase ImageCarousel={ImageCarousel} files={productInfo.images}/>
+    <ProductImages ImageCarousel={ImageCarousel} files={productInfo.images}/>
     <ProductParams product={productInfo}/>
     <PurchaseProduct CartButton={CartButton} AddToSaved={SavedProvider} product={product}/>
   </article>

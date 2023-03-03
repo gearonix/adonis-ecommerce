@@ -1,6 +1,6 @@
-import {FC} from 'react'
+import { FC } from 'react'
 import s from './style.module.scss'
-import {NextImage} from 'shared/ui/kit'
+import { NextImage } from 'shared/ui/kit'
 
 export const UserInfo: FC = () => {
   return <div className={s.user_info_wrapper}>

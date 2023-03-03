@@ -1,12 +1,12 @@
-import {ProfileHeaderTemp} from 'entities/Profile/ProfileHeader'
-import {FC} from 'react'
-import {ChangeBackground} from 'features/Profile/ChangeBackground'
-import {OpenProfileEdit} from 'features/Profile/OpenProfileEdit'
-import {useSelector} from 'shared/types/redux'
-import {selectReformattedUser} from 'widgets/Profile/store/selectors'
-import {useBooleanState} from 'shared/lib/hooks/common'
-import {ContentModal} from 'shared/ui/mui'
-import {EditProfile} from 'widgets/Profile'
+import { ProfileHeader as ProfileHeaderTemp } from 'entities/Profile'
+import { FC } from 'react'
+import { ChangeBackground } from 'features/Profile'
+import { OpenProfileEdit } from 'features/Profile'
+import { useSelector } from 'shared/types/redux'
+import { selectReformattedUser } from 'widgets/Profile/store/selectors'
+import { ContentModal } from 'shared/ui/material'
+import { EditProfile } from 'widgets/Profile'
+import { useBooleanState } from 'shared/lib/hooks/useBooleanState'
 
 const ProfileHeader: FC = () => {
   const user = useSelector(selectReformattedUser)

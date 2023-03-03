@@ -1,10 +1,10 @@
-import {createSelector} from '@reduxjs/toolkit'
-import {UserSelectors} from 'shared/selectors'
-import {User} from 'shared/types/slices'
+import { createSelector } from '@reduxjs/toolkit'
+import { UserSelectors } from 'shared/selectors'
+import { User } from 'shared/types/slices'
 import Helpers from 'shared/lib/helpers/helpers'
-import {raiseGoogleImageQuality} from 'widgets/Profile/lib/helpers'
-import {Nullable} from 'shared/types/common'
-import {UserRoles} from 'app/config/globals'
+import { raiseGoogleImageQuality } from 'widgets/Profile/lib/helpers'
+import { Nullable } from 'shared/types/common'
+import { UserRoles } from 'app/config/globals'
 
 export interface FormattedUser {
   userName: string,
@@ -42,6 +42,6 @@ export const selectReformattedUser = createSelector(UserSelectors.user, (nullabl
     country: user.country,
     city: user.city,
     role: user.role,
-    date,
+    date
   }
 })

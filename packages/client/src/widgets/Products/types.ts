@@ -3,9 +3,9 @@ import {
   ProductModels,
   ProductRatings,
   ProductSizes,
-  ProductTypes,
+  ProductTypes
 } from 'shared/types/elements/productTypes'
-import {KeyOf} from 'shared/types/common'
+import { KeyOf } from 'shared/types/common'
 
 export interface AddProductForm {
     name: string

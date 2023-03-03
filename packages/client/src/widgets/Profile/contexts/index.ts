@@ -1,1 +1,1 @@
-export {default as ProfileWallContext} from './ProfileWall/ProfileWallContext'
+export { default as ProfileWallContext } from './ProfileWall/ProfileWallContext'

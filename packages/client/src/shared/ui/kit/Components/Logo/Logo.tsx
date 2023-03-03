@@ -1,7 +1,7 @@
-import React, {FC} from 'react'
+import React, { FC } from 'react'
 import s from './style.module.scss'
-import {NextImage} from 'shared/ui/kit'
-import {Assets} from 'shared/config/assets'
+import { NextImage } from 'shared/ui/kit'
+import { Assets } from 'shared/config/assets'
 
 
 export const Logo: FC = () => {

@@ -1,15 +1,15 @@
-import {UsersEntity} from './users.entity'
-import {ProductsEntity} from './products/products.entity'
-import {SavedEntity} from './saved.entity'
-import {ProductCommentsEntity} from './product_comments.entity'
-import {PostsEntity} from './posts.entity'
+import { UsersEntity } from './users.entity'
+import { ProductsEntity } from './products/products.entity'
+import { SavedEntity } from './saved.entity'
+import { ProductCommentsEntity } from './product_comments.entity'
+import { PostsEntity } from './posts.entity'
 
 export {
   UsersEntity,
   ProductsEntity,
   SavedEntity,
   ProductCommentsEntity,
-  PostsEntity,
+  PostsEntity
 }
 
 
@@ -18,6 +18,6 @@ export default [
   ProductsEntity,
   SavedEntity,
   ProductCommentsEntity,
-  PostsEntity,
+  PostsEntity
 ]
 

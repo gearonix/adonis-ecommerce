@@ -9,23 +9,23 @@ const googleClientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID
 const nextConfig = {
   reactStrictMode: true,
   sassOptions: {
-    includePaths: [path.join(__dirname, 'src/shared')],
+    includePaths: [path.join(__dirname, 'src/shared')]
   },
   env: {
     GOOGLE_CLIENT_ID: googleClientId,
     SERVER_URL: serverUrl,
-    IS_DEV: isDev,
+    IS_DEV: isDev
   },
   images: {
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'https://lh3.googleusercontent.com',
-        port: '',
-      },
+        port: ''
+      }
     ],
-    domains: ['lh3.googleusercontent.com', serverHost],
-  },
+    domains: ['lh3.googleusercontent.com', serverHost]
+  }
 }
 
 module.exports = nextConfig

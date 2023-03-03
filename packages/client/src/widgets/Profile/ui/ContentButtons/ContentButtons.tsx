@@ -1,7 +1,6 @@
-import {FC} from 'react'
-import {ContentButtonsTemplate} from 'features/Profile/ContentButtons'
-import {OpenAddProduct} from 'features/Profile/OpenAddProduct'
-import {OpenAddPost} from 'features/Profile/AddPost'
+import { OpenAddProduct, OpenAddPost } from 'features/Profile'
+import { FC } from 'react'
+import { ContentButtons as ContentButtonsTemplate } from 'features/Profile'
 
 interface ContentButtonsProps{
   openAddProduct: () => void,
@@ -9,7 +8,7 @@ interface ContentButtonsProps{
 }
 
 
-const ContentButtons: FC<ContentButtonsProps> = ({openAddProduct, openAddPost}) => {
+const ContentButtons: FC<ContentButtonsProps> = ({ openAddProduct, openAddPost }) => {
   return <ContentButtonsTemplate
     AddProduct={<OpenAddProduct open={openAddProduct}/>}
     AddPost={<OpenAddPost open={openAddPost}/>}

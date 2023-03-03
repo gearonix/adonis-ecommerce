@@ -1,13 +1,13 @@
-import React, {FC} from 'react'
+import React, { FC } from 'react'
 import s from './style.module.scss'
-import {FiHeart} from 'shared/ui/icons'
-import {ApiAnimation} from 'shared/ui/animations'
+import { FiHeart } from 'shared/ui/icons'
+import { ApiAnimation } from 'shared/lib/components'
 import cn from 'classnames'
-import {SharedSavedProps} from 'features/Saved'
+import { SharedSavedProps } from 'features/Saved'
 
 
-const SearchSaved: FC<SharedSavedProps> = ({onClick, isInSaved}) => {
-  return <ApiAnimation className={cn(s.heart, {[s.saved]: isInSaved})}
+const SearchSaved: FC<SharedSavedProps> = ({ onClick, isInSaved }) => {
+  return <ApiAnimation className={cn(s.heart, { [s.saved]: isInSaved })}
     type={'reverseScale'} onClick={onClick}>
     <FiHeart/>
   </ApiAnimation>

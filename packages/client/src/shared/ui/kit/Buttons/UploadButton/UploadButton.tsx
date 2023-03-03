@@ -1,4 +1,4 @@
-import {ButtonHTMLAttributes, ChangeEvent, FC} from 'react'
+import { ButtonHTMLAttributes, ChangeEvent, FC } from 'react'
 import s from './style.module.scss'
 import cn from 'classnames'
 
@@ -8,7 +8,7 @@ interface UploadButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
 }
 
 
-export const UploadButton: FC<UploadButtonProps> = ({className, children, handleChange, disabled}) => {
+export const UploadButton: FC<UploadButtonProps> = ({ className, children, handleChange, disabled }) => {
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e?.target?.files?.length === 0) return
     const file = e?.target?.files?.[0]

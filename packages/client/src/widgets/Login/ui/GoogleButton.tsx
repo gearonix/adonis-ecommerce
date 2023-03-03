@@ -1,18 +1,18 @@
-import {FC} from 'react'
-import {CredentialResponse, GoogleLogin} from '@react-oauth/google'
-import {registerByGoogle} from '../redux/thunks/makeRegistration'
-import {useDispatch} from 'shared/types/redux'
-import {loginByGoogle} from '../redux/thunks/loginUser'
-import {GoogleButtonProps, RegisterByGoogle} from '../types'
-import {useTheme} from 'shared/lib/hooks/common'
-import {Theme} from 'shared/config/themes'
+import { FC } from 'react'
+import { CredentialResponse, GoogleLogin } from '@react-oauth/google'
+import { registerByGoogle } from '../store/thunks/makeRegistration'
+import { useDispatch } from 'shared/types/redux'
+import { loginByGoogle } from '../store/thunks/loginUser'
+import { GoogleButtonProps, RegisterByGoogle } from '../types'
+import { Theme } from 'shared/config/themes'
+import { useTheme } from 'shared/lib/hooks/useTheme'
 
-const GoogleButton: FC<GoogleButtonProps> = ({role}) => {
+const GoogleButton: FC<GoogleButtonProps> = ({ role }) => {
   const dispatch = useDispatch()
-  const {theme} = useTheme()
-  const onSuccess = async ({credential}: CredentialResponse) => {
+  const { theme } = useTheme()
+  const onSuccess = async ({ credential }: CredentialResponse) => {
     if (role) {
-      dispatch(registerByGoogle({jwt: credential, role} as RegisterByGoogle))
+      dispatch(registerByGoogle({ jwt: credential, role } as RegisterByGoogle))
     } else {
       dispatch(loginByGoogle(credential as string))
     }

@@ -1,13 +1,13 @@
-import {FC} from 'react'
+import { FC } from 'react'
 import s from './style.module.scss'
-import {NextImage} from 'shared/ui/kit'
-import {Product} from 'shared/types/slices'
-import {Helpers} from 'shared/lib/helpers/others'
+import { NextImage } from 'shared/ui/kit'
+import { Product } from 'shared/types/slices'
+import { Helpers } from 'shared/lib/helpers'
 import Link from 'next/link'
-import {routes} from 'shared/config/routes'
-import {DefaultAssets} from 'shared/config/assets'
+import { routes } from 'shared/config/routes'
+import { DefaultAssets } from 'shared/config/assets'
 
-export const RecommendedItem: FC<{product: Product}> = ({product}) => {
+export const RecommendedItem: FC<{product: Product}> = ({ product }) => {
   const helpers = new Helpers()
   return <div className={s.item}>
     <Link href={`${routes.SEARCH}/${product.productId}`}>

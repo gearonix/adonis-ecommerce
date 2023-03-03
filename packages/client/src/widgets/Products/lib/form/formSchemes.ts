@@ -1,7 +1,7 @@
 import * as Yup from 'yup'
-import {asNormalString} from 'shared/lib/helpers/others/formHelpers/fieldAddons'
-import {formErrors} from 'shared/lib/helpers/others'
-import {FieldCreator} from 'shared/lib/helpers/others/formHelpers/fieldCreator'
+import { asNormalString } from 'shared/lib/helpers/formHelpers/fieldAddons'
+import { FormErrors } from 'shared/lib/helpers'
+import { FieldCreator } from 'shared/lib/helpers/formHelpers/fieldCreator'
 
 
 const creator = new FieldCreator()
@@ -18,7 +18,7 @@ export const addProductSchema = Yup.object().shape({
   size: creator.field('Product size', 1, 100),
   model: creator.field('Product model', 1, 100),
   features: Yup.array(),
-  images: Yup.array().min(1, formErrors.oneImage('Your product'))
-      .max(4, formErrors.moreImages('Your product', 4)),
-  material: asNormalString(creator.field('Product material', 4, 20), 'Product material'),
+  images: Yup.array().min(1, FormErrors.oneImage('Your product'))
+      .max(4, FormErrors.moreImages('Your product', 4)),
+  material: asNormalString(creator.field('Product material', 4, 20), 'Product material')
 })

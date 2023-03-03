@@ -1,21 +1,21 @@
-import {ComponentMeta, ComponentStory} from '@storybook/react'
-import {CartIcon} from './CartIcon'
-import {AiFillAccountBook, AiFillAlert} from 'react-icons/ai'
+import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { CartIcon } from './CartIcon'
+import { AiFillAccountBook, AiFillAlert } from 'react-icons/ai'
 
 export default {
   title: 'shared/kit/Typos/CartIcon',
   component: CartIcon,
-  argTypes: {},
+  argTypes: {}
 } as ComponentMeta<typeof CartIcon>
 
 const Template: ComponentStory<typeof CartIcon> = (args) => <CartIcon {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  Icon: AiFillAccountBook,
+  Icon: AiFillAccountBook
 }
 export const Alert = Template.bind({})
 
 Alert.args = {
-  Icon: AiFillAlert,
+  Icon: AiFillAlert
 }

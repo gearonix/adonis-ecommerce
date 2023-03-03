@@ -1,9 +1,9 @@
-import {forwardRef} from 'react'
-import {Button} from 'shared/ui/kit'
-import {useDispatch} from 'shared/types/redux'
-import {removeProductFromSaved} from 'features/Saved/store/thunks'
+import { forwardRef } from 'react'
+import { Button } from 'shared/ui/kit'
+import { useDispatch } from 'shared/types/redux'
+import { removeProductFromSaved } from 'features/Saved/store/thunks'
 
-const RemoveFromSaved = forwardRef<HTMLButtonElement, {productId: number}>(({productId}, ref) => {
+const RemoveFromSaved = forwardRef<HTMLButtonElement, {productId: number}>(({ productId }, ref) => {
   const dispatch = useDispatch()
 
   const onClick = () => {

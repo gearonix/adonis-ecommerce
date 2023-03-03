@@ -1,1 +1,1 @@
-export {default as CheckoutButton} from './ui/CheckoutButton'
+export { default as CheckoutButton } from './ui/CheckoutButton'

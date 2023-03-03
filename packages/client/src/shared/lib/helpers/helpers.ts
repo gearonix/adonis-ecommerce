@@ -1,7 +1,5 @@
-import {ObjectNullable, ObjectOptional} from 'shared/types/common'
 import dayjs from 'dayjs'
 import LocalizedFormat from 'dayjs/plugin/localizedFormat'
-import {User} from 'shared/types/slices'
 
 dayjs.extend(LocalizedFormat)
 
@@ -18,12 +16,12 @@ class Helpers {
     return args.join(' ')
   }
 
-  public isObjectEmpty(obj: any) {
+  public isObjectEmpty<T extends Object>(obj: T) {
     return Object.keys(obj).length === 0
   }
 
-  public differenceBetweenObjects<T extends Object>(initialObject: T, changedObject: T) {
-    const difference: ObjectOptional<T> = {}
+  public differenceBetweenObjects<T>(initialObject: T, changedObject: T) {
+    const difference: Partial<T> = {}
 
     for (const key in initialObject) {
       if (initialObject[key] !== changedObject[key]) {

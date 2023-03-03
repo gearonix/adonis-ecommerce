@@ -1,7 +1,7 @@
-import {AboutComponent} from 'entities/Others'
+import { AboutComponent } from 'entities/Others'
 import Head from 'next/head'
-import {WithSpring} from 'shared/ui/animations'
-import {FC} from 'react'
+import { WithSpring } from 'shared/lib/components'
+import { FC } from 'react'
 
 const AboutPage: FC = () => {
   return <WithSpring type={'opacityScale'}>

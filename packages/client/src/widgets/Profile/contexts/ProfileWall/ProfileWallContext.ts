@@ -1,5 +1,5 @@
-import {createContext} from 'react'
-import {WallPages} from 'widgets/Profile/types'
+import { createContext } from 'react'
+import { WallPages } from 'widgets/Profile/types'
 
 
 export interface ProfileWallContextProps {

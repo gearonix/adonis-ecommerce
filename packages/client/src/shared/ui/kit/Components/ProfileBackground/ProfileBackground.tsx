@@ -1,8 +1,7 @@
-import {FC, ReactElement, useState} from 'react'
-import {NextImage} from 'shared/ui/kit'
+import { FC, ReactElement } from 'react'
+import { NextImage } from 'shared/ui/kit'
 import s from './style.module.scss'
-import {ImageModal} from 'shared/ui/mui'
-import {useBooleanState} from 'shared/lib/hooks/common'
+import { useBooleanState } from 'shared/lib/hooks/useBooleanState'
 
 interface ProfileBackgroundProps{
     src: string | null,
@@ -10,7 +9,7 @@ interface ProfileBackgroundProps{
 }
 
 
-export const ProfileBackground : FC<ProfileBackgroundProps> = ({src, ChangeBackground}) => {
+export const ProfileBackground : FC<ProfileBackgroundProps> = ({ src, ChangeBackground }) => {
   const error = useBooleanState()
 
   return <>
@@ -20,7 +19,7 @@ export const ProfileBackground : FC<ProfileBackgroundProps> = ({src, ChangeBackg
   </>
 }
 
-const ExistingBackground: FC<{src: string, onError: () => void}> = ({src, onError}) => {
+const ExistingBackground: FC<{src: string, onError: () => void}> = ({ src, onError }) => {
   return <>
     <div className={s.image_wrapper}>
       <NextImage src={src} alt={''} priority={true} onError={onError}/>

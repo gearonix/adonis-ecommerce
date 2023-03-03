@@ -1,6 +1,6 @@
-import {createAsyncThunk} from '@reduxjs/toolkit'
-import {TypedUseSelectorHook, useDispatch as ReactReduxDispatch, useSelector as useReduxSelector} from 'react-redux'
-import store from 'app/redux/store'
+import { createAsyncThunk } from '@reduxjs/toolkit'
+import { TypedUseSelectorHook, useDispatch as ReactReduxDispatch, useSelector as useReduxSelector } from 'react-redux'
+import store from 'app/store/store'
 
 export type Store = typeof store;
 export type AppDispatch = Store['dispatch']

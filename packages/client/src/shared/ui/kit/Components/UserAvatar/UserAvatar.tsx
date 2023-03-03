@@ -1,15 +1,15 @@
-import {FC} from 'react'
+import { FC } from 'react'
 import s from './style.module.scss'
-import {NextImage} from 'shared/ui/kit'
-import {DefaultAssets} from 'shared/config/assets'
-import {useBooleanState} from 'shared/lib/hooks/common'
+import { NextImage } from 'shared/ui/kit'
+import { DefaultAssets } from 'shared/config/assets'
+import { useBooleanState } from 'shared/lib/hooks/useBooleanState'
 
 interface UserAvatarProps{
   src: string | null,
 }
 
 
-export const UserAvatar: FC<UserAvatarProps> = ({src}) => {
+export const UserAvatar: FC<UserAvatarProps> = ({ src }) => {
   const error = useBooleanState()
 
   return src && !error.isOpen ? <ExistingAvatar src={src} onError={error.open}/> : <DefaultAvatar/>
@@ -23,7 +23,7 @@ const DefaultAvatar = () => {
   </div>
 }
 
-const ExistingAvatar: FC<{src: string, onError: () => void}> = ({src, onError}) => {
+const ExistingAvatar: FC<{src: string, onError: () => void}> = ({ src, onError }) => {
   return <>
     <NextImage src={src} alt={''}
       quality={100} priority={true} onError={onError}/>

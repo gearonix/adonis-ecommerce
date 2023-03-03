@@ -1,6 +1,6 @@
-import {FC} from 'react'
+import { FC } from 'react'
 import s from './style.module.scss'
-import {AiOutlineSearch} from 'shared/ui/icons'
+import { AiOutlineSearch } from 'shared/ui/icons'
 
 export const ExtraService: FC = () => {
   return <div className={s.item}>

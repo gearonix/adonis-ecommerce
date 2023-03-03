@@ -3,7 +3,7 @@ import {
   ProductModels,
   ProductRatings,
   ProductSizes,
-  ProductTypes,
+  ProductTypes
 } from 'shared/types/elements/productTypes'
 
 const initialValues = {
@@ -13,30 +13,30 @@ const initialValues = {
         inStock: false,
         rating: 4 as ProductRatings,
         features: [],
-        images: [],
+        images: []
       },
       selectValues: {
         type: ProductTypes,
         model: ProductModels,
         size: ProductSizes,
-        features: ProductFeatures,
-      },
+        features: ProductFeatures
+      }
     }
   },
   searchAside(type: any) {
     return {
       defaultValues: {
-        type,
+        type
       },
       selectValues: {
         model: ProductModels,
         size: ProductSizes,
         type: ProductTypes,
-        rating: [5, 4, 3, 2, 1],
-      },
+        rating: [5, 4, 3, 2, 1]
+      }
 
     }
-  },
+  }
 }
 
 

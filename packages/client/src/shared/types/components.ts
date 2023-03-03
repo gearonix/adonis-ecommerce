@@ -1,4 +1,4 @@
-import {FC, ReactNode} from 'react'
+import { FC } from 'react'
 
-// Component with children
+// Component withHelpers children
 export type WC<T = {}> = FC<{ children: any } & T>

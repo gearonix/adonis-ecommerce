@@ -1,9 +1,9 @@
-import {createSelector} from '@reduxjs/toolkit'
-import {UserSelectors} from 'shared/selectors'
-import {User} from 'shared/types/slices'
+import { createSelector } from '@reduxjs/toolkit'
+import { UserSelectors } from 'shared/selectors'
+import { User } from 'shared/types/slices'
 
 export const selectEditProfileValues = createSelector(UserSelectors.user, (user) => {
-  const {firstName, lastName, description, country, city} = user as User
+  const { firstName, lastName, description, country, city } = user as User
 
   return {
     defaultValues: {
@@ -11,8 +11,8 @@ export const selectEditProfileValues = createSelector(UserSelectors.user, (user)
       lastName: lastName,
       description,
       country,
-      city,
-    },
+      city
+    }
   }
 }
 )

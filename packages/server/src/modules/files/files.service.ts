@@ -1,12 +1,12 @@
-import {HttpException, HttpStatus, Injectable} from '@nestjs/common'
-import {ServerExceptions} from '@app/types/exceptions'
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common'
+import { ServerExceptions } from '@app/types/exceptions'
 import * as fs from 'fs'
 import * as path from 'path'
 import * as uuid from 'uuid'
-import {RequestContext} from 'nestjs-request-context'
-import {FileDirectories} from '@app/types/global'
-import {appConfig} from '@app/config'
-import {getRequest, lastItemOf} from '@app/lib/helpers'
+import { RequestContext } from 'nestjs-request-context'
+import { FileDirectories } from '@app/types/global'
+import { appConfig } from '@app/config'
+import { getRequest, lastItemOf } from '@app/lib/helpers'
 
 @Injectable()
 export class FilesService {
@@ -60,7 +60,7 @@ export class FilesService {
 
   private createFolderIfNotExists(staticPath) {
     if (!fs.existsSync(staticPath)) {
-      fs.mkdirSync(staticPath, {recursive: true})
+      fs.mkdirSync(staticPath, { recursive: true })
     }
   }
 }

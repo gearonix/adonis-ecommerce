@@ -1,18 +1,18 @@
-import {FC} from 'react'
+import { FC } from 'react'
 import s from './style.module.scss'
-import {Button, RecommendedItem} from 'shared/ui/kit'
-import {routes} from 'shared/config/routes'
-import {productsActions, RecommendedItemProps} from 'widgets/Products'
-import {useDispatch} from 'shared/types/redux'
-import {useRouter} from 'next/router'
+import { Button, RecommendedItem } from 'shared/ui/kit'
+import { routes } from 'shared/config/routes'
+import { productsActions, RecommendedItemProps } from 'widgets/Products'
+import { useDispatch } from 'shared/types/redux'
+import { useRouter } from 'next/router'
 
 
-const SortedProducts: FC<RecommendedItemProps> = ({type, items}) => {
+const SortedProducts: FC<RecommendedItemProps> = ({ type, items }) => {
   const dispatch = useDispatch()
   const router = useRouter()
 
   const onSearch = () => {
-    dispatch(productsActions.changeFilter({type}))
+    dispatch(productsActions.changeFilter({ type }))
     router.push(routes.SEARCH)
   }
 

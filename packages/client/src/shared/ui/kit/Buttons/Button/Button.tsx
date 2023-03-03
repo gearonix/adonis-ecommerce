@@ -1,6 +1,6 @@
-import {ButtonHTMLAttributes, forwardRef, ReactNode} from 'react'
+import { ButtonHTMLAttributes, forwardRef, ReactNode } from 'react'
 import s from './style.module.scss'
-import {ColorType} from '../../types'
+import { ColorType } from '../../types'
 import cn from 'classnames'
 
 
@@ -12,8 +12,8 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
 }
 
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({color = 'primary', w, h, children, onClick}, ref) => {
-  return <button className={cn(s.button, s[color])} ref={ref} onClick={onClick} style={{width: w, height: h}}>
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ color = 'primary', w, h, children, onClick }, ref) => {
+  return <button className={cn(s.button, s[color])} ref={ref} onClick={onClick} style={{ width: w, height: h }}>
     {children}
   </button>
 })

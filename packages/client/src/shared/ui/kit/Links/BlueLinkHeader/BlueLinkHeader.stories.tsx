@@ -1,10 +1,10 @@
-import {ComponentMeta, ComponentStory} from '@storybook/react'
-import {BlueLinkHeader} from './BlueLinkHeader'
+import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { BlueLinkHeader } from './BlueLinkHeader'
 
 export default {
   title: 'shared/kit/Links/BlueLinkHeader',
   component: BlueLinkHeader,
-  argTypes: {},
+  argTypes: {}
 } as ComponentMeta<typeof BlueLinkHeader>
 
 const Template: ComponentStory<typeof BlueLinkHeader> = (args) => <BlueLinkHeader {...args} />

@@ -1,4 +1,4 @@
-import React, {FC} from 'react'
+import React, { FC } from 'react'
 import s from './style.module.scss'
 
 export const CategoriesList: FC = () => {

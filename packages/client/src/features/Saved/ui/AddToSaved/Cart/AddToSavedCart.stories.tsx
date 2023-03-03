@@ -1,10 +1,10 @@
-import {ComponentMeta, ComponentStory} from '@storybook/react'
+import { ComponentMeta, ComponentStory } from '@storybook/react'
 import CartSaved from './CartSaved'
 
 export default {
   title: 'features/SavedProvider/AddToSavedCart',
   component: CartSaved,
-  argTypes: {},
+  argTypes: {}
 } as ComponentMeta<typeof CartSaved>
 
 const Template: ComponentStory<typeof CartSaved> = (args) => <CartSaved {...args} />

@@ -1,12 +1,12 @@
-import {FC, useEffect} from 'react'
-import {useDispatch, useSelector} from 'shared/types/redux'
-import {getUserProducts, productsActions} from 'widgets/Products'
-import {SavedProvider} from 'features/Saved'
-import {ProductsSelectors} from 'shared/selectors'
-import {NoProducts, SearchedProduct} from 'shared/ui/kit'
-import UserSelectors from 'shared/selectors/userSelectors'
-import {CartButton} from 'features/ProductPage/BuyProduct'
-import {SearchPagination} from 'features/SearchPage/SearchPagination'
+import { FC, useEffect } from 'react'
+import { useDispatch, useSelector } from 'shared/types/redux'
+import { getUserProducts, productsActions } from 'widgets/Products'
+import { SavedProvider } from 'features/Saved'
+import { ProductsSelectors } from 'shared/selectors'
+import { NoProducts, SearchedProduct } from 'shared/ui/kit'
+import UserSelectors from 'shared/selectors/user'
+import { CartButton } from 'features/ProductPage'
+import { SearchPagination } from 'features/SearchPage'
 
 const MyProducts : FC = () => {
   const dispatch = useDispatch()

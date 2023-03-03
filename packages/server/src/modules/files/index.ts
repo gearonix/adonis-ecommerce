@@ -1,1 +1,1 @@
-export {FilesModule} from './files.module'
+export { FilesModule } from './files.module'

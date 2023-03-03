@@ -1,12 +1,12 @@
-import {FC, useEffect} from 'react'
-import {useDispatch, useSelector} from 'shared/types/redux'
-import {ProfileHeader, userActions} from 'widgets/Profile'
-import {WithSpring} from 'shared/ui/animations'
+import { FC, useEffect } from 'react'
+import { useDispatch, useSelector } from 'shared/types/redux'
+import { ProfileHeader, userActions } from 'widgets/Profile'
 import Head from 'next/head'
-import {ProfileWall} from 'widgets/Profile'
-import {UserSelectors} from 'shared/selectors'
-import {getUserById} from 'widgets/Login'
-import {useRouter} from 'next/router'
+import { ProfileWall } from 'widgets/Profile'
+import { UserSelectors } from 'shared/selectors'
+import { getUserById } from 'widgets/Login'
+import { useRouter } from 'next/router'
+import { WithSpring } from 'shared/lib/components'
 
 
 const Profile: FC = () => {
@@ -27,7 +27,9 @@ const Profile: FC = () => {
 
   return <WithSpring>
     <Head>
-      <title>Adonis - {userName}</title>
+      <title>
+        <>Adonis - {userName}</>
+      </title>
     </Head>
 
     <ProfileHeader />

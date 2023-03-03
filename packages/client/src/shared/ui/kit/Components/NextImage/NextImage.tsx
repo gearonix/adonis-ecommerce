@@ -1,5 +1,5 @@
-import {FC, SyntheticEvent, useState} from 'react'
-import Image, {ImageProps} from 'next/image'
+import { FC, SyntheticEvent, useState } from 'react'
+import Image, { ImageProps } from 'next/image'
 
 // @ts-ignore
 interface NextImageProps extends ImageProps {
@@ -8,8 +8,8 @@ interface NextImageProps extends ImageProps {
 }
 
 
-export const NextImage: FC<NextImageProps> = ({src: initialSrc, alt = '',
-  onClick = () => {}, def: defaultSrc, ...props}) => {
+export const NextImage: FC<NextImageProps> = ({ src: initialSrc, alt = '',
+  onClick = () => {}, def: defaultSrc, ...props }) => {
   const [src, setSrc] = useState(initialSrc)
 
   const onError = (e: SyntheticEvent<HTMLImageElement>) => {

@@ -1,10 +1,10 @@
-import {ComponentMeta, ComponentStory} from '@storybook/react'
-import {Button} from './Button'
+import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Button } from './Button'
 
 export default {
   title: 'shared/kit/Buttons/Button',
   component: Button,
-  argTypes: {},
+  argTypes: {}
 } as ComponentMeta<typeof Button>
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
@@ -13,7 +13,7 @@ export const PrimaryButton = Template.bind({})
 PrimaryButton.args = {
   w: 200,
   h: 40,
-  children: 'Button text',
+  children: 'Button text'
 }
 
 export const RedButton = Template.bind({})
@@ -21,7 +21,7 @@ RedButton.args = {
   w: 200,
   h: 40,
   children: 'Button text',
-  color: 'red',
+  color: 'red'
 }
 
 
@@ -30,7 +30,7 @@ GreenButton.args = {
   w: 200,
   h: 40,
   children: 'Button text',
-  color: 'green',
+  color: 'green'
 }
 
 
@@ -39,7 +39,7 @@ OrangeButton.args = {
   w: 200,
   h: 40,
   children: 'Button text',
-  color: 'orange',
+  color: 'orange'
 }
 
 export const OutlinedButton = Template.bind({})
@@ -47,7 +47,7 @@ OutlinedButton.args = {
   w: 200,
   h: 40,
   children: 'Button text',
-  color: 'outlined',
+  color: 'outlined'
 }
 
 export const BlueBorderedButton = Template.bind({})
@@ -55,7 +55,7 @@ BlueBorderedButton.args = {
   w: 200,
   h: 40,
   children: 'Button text',
-  color: 'blueBordered',
+  color: 'blueBordered'
 }
 
 export const RedColored = Template.bind({})
@@ -63,7 +63,7 @@ RedColored.args = {
   w: 200,
   h: 40,
   children: 'Button text',
-  color: 'redColored',
+  color: 'redColored'
 }
 
 
@@ -72,6 +72,6 @@ GreyBordered.args = {
   w: 200,
   h: 40,
   children: 'Button text',
-  color: 'greyBordered',
+  color: 'greyBordered'
 }
 

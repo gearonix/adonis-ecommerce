@@ -1,6 +1,6 @@
-import {FC} from 'react'
+import { FC } from 'react'
 import s from './style.module.scss'
-import {AiOutlineShoppingCart} from 'shared/ui/icons'
+import { AiOutlineShoppingCart } from 'shared/ui/icons'
 
 export const NoProducts : FC = () => {
   return <div className={s.no_products}>

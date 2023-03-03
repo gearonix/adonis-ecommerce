@@ -1,37 +1,37 @@
-import {Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn} from 'typeorm'
-import {Lengths, Roles} from '@app/lib'
-import {ProductCommentsEntity} from '@app/entities/product_comments.entity'
-import {PostsEntity} from '@app/entities/posts.entity'
+import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm'
+import { ProductCommentsEntity } from '@app/entities/product_comments.entity'
+import { PostsEntity } from '@app/entities/posts.entity'
+import { Lengths, Roles } from '@app/types/global'
 
 @Entity('users')
 export class UsersEntity {
-  @Column({type: 'enum', enum: Roles})
+  @Column({ type: 'enum', enum: Roles })
     role: Roles
-  @Column('varchar', {length: Lengths.TITLE, nullable: true})
+  @Column('varchar', { length: Lengths.TITLE, nullable: true })
     firstName: string
-  @Column('varchar', {length: Lengths.TITLE, nullable: true})
+  @Column('varchar', { length: Lengths.TITLE, nullable: true })
     lastName: string
-  @Column('varchar', {length: Lengths.TITLE})
+  @Column('varchar', { length: Lengths.TITLE })
     email: string
-  @Column('varchar', {length: Lengths.HASH, select: false})
+  @Column('varchar', { length: Lengths.HASH, select: false })
     password: string
-  @Column('varchar', {length: Lengths.IMAGE, nullable: true})
+  @Column('varchar', { length: Lengths.IMAGE, nullable: true })
     avatar: string
-  @Column('varchar', {length: Lengths.IMAGE, nullable: true})
+  @Column('varchar', { length: Lengths.IMAGE, nullable: true })
     background: string
-  @Column('varchar', {length: Lengths.LONGTEXT, nullable: true})
+  @Column('varchar', { length: Lengths.LONGTEXT, nullable: true })
     description: string
   @PrimaryGeneratedColumn()
     userId: number
-  @Column('varchar', {length: Lengths.TITLE, nullable: true})
+  @Column('varchar', { length: Lengths.TITLE, nullable: true })
     country: string
-  @Column('varchar', {length: Lengths.TITLE, nullable: true})
+  @Column('varchar', { length: Lengths.TITLE, nullable: true })
     city: string
   @CreateDateColumn()
     registration_date: Date
-  @Column('varchar', {length: Lengths.LONGTEXT, nullable: true})
+  @Column('varchar', { length: Lengths.LONGTEXT, nullable: true })
     google_sub: string
-  @OneToMany((type) => ProductCommentsEntity, (comment) => comment.user)
-  @OneToMany((type) => PostsEntity, (post) => post.user)
+  @OneToMany(() => ProductCommentsEntity, (comment) => comment.user)
+  @OneToMany(() => PostsEntity, (post) => post.user)
     user: UsersEntity[]
 }

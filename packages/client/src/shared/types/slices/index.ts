@@ -1,6 +1,7 @@
-export type {User} from './userSlice'
-export type {Products, Product} from './productsSlice'
-export type {CurrentProduct, ProductComment} from './currentProductSlice'
-export type {AuthSlice} from './authSlice'
-export type {SavedSlice} from './savedSlice'
-export type {Post} from './postSlice'
+export type { User, usersInitialState } from './user'
+export type { Products, Product, productsInitialState } from './products'
+export type { CurrentProduct, ProductComment,
+  ProductComments, productInitialState } from './currentProduct'
+export type { AuthSlice, authInitialState } from './auth'
+export type { SavedSlice } from './saved'
+export type { Post, PostsSlice, postsInitialState } from './post'

@@ -1,12 +1,12 @@
-import {FC, ReactNode, useEffect, useState} from 'react'
-import {useDispatch, useSelector} from 'shared/types/redux'
-import {CartSelectors} from 'shared/selectors'
-import {getCartProducts} from 'widgets/Cart/store/thunks/getCartProducts'
-import {Product} from 'shared/types/slices'
+import { FC, ReactNode, useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'shared/types/redux'
+import { CartSelectors } from 'shared/selectors'
+import { getCartProducts } from 'widgets/Cart/store/thunks/getCartProducts'
+import { Product } from 'shared/types/slices'
 import CartContext from 'widgets/Cart/providers/Cart/CartContext'
-import {Helpers} from 'shared/lib/helpers/others'
+import { Helpers } from 'shared/lib/helpers'
 
-const CartProvider : FC<{children: ReactNode}> = ({children}) => {
+const CartProvider : FC<{children: ReactNode}> = ({ children }) => {
   const [items, setItems] = useState<Product[]>([])
   const cart = useSelector(CartSelectors.productsByIds)
   const dispatch = useDispatch()
@@ -15,14 +15,14 @@ const CartProvider : FC<{children: ReactNode}> = ({children}) => {
 
   useEffect(() => {
     if (helpers.emptyArray(cart)) return setItems([])
-    dispatch(getCartProducts(cart)).then(({payload}) => {
+    dispatch(getCartProducts(cart)).then(({ payload }) => {
       if (payload) {
         setItems(payload as Product[])
       }
     })
   }, [cart])
 
-  return <CartContext.Provider value={{items, sum}}>
+  return <CartContext.Provider value={{ items, sum }}>
     {children}
   </CartContext.Provider>
 }

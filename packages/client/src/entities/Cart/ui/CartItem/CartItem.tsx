@@ -1,12 +1,19 @@
-import {FC, useRef, useState} from 'react'
+import { FC, MutableRefObject, useRef, useState } from 'react'
 import s from './style.module.scss'
-import {NextImage} from 'shared/ui/kit'
-import {ImageModal} from 'shared/ui/mui'
-import {CartItemProps} from '../../types'
-import {DefaultAssets} from 'shared/config/assets'
-import {CartSaved} from 'features/Saved'
+import { NextImage } from 'shared/ui/kit'
+import { ImageModal } from 'shared/ui/material'
+import { DefaultAssets } from 'shared/config/assets'
+import { CartSaved, SavedProps } from 'features/Saved'
+import { Nullable } from 'shared/types/common'
+import { Product } from 'shared/types/slices'
 
-const CartItem: FC<CartItemProps> = ({Remove, AddToSaved, product}) => {
+export interface CartItemProps {
+  Remove?: FC<{ ref?: MutableRefObject<undefined>, productId: number }>,
+  AddToSaved?: Nullable<FC<SavedProps>>,
+  product: Product
+}
+
+const CartItem: FC<CartItemProps> = ({ Remove, AddToSaved, product }) => {
   const [isOpen, openModal] = useState<boolean>(false)
   const removeBtnRef = useRef()
   // return <ApiAnimation className={s.item} type={'reduceLength'} param={140} subscriber={removeBtnRef}>

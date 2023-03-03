@@ -1,5 +1,5 @@
-import {AppRoutes} from 'app/config/globals'
-import {ValueOf} from 'shared/types/common'
+import { AppRoutes } from 'app/config/globals'
+import { ValueOf } from 'shared/types/common'
 
 export const routes : Record<AppRoutes, string> = {
   [AppRoutes.MAIN]: '/',
@@ -14,7 +14,7 @@ export const routes : Record<AppRoutes, string> = {
   [AppRoutes.SAVED]: '/saved',
   [AppRoutes.USERS]: '/users',
   [AppRoutes.USERS_ID]: '/users/[id]',
-  [AppRoutes.ABOUT]: '/about',
+  [AppRoutes.ABOUT]: '/about'
 }
 
 export type Routes = ValueOf<typeof routes>

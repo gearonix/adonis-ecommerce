@@ -1,0 +1,1 @@
+export { ProductDTO } from './productDTO'

@@ -1,5 +1,5 @@
-import {createContext} from 'react'
-import {Product} from 'shared/types/slices'
+import { createContext } from 'react'
+import { Product } from 'shared/types/slices'
 
 export interface CartContextProps{
     items: Product[],
@@ -9,7 +9,7 @@ export interface CartContextProps{
 
 const CartContext = createContext<CartContextProps>({
   items: [],
-  sum: 0,
+  sum: 0
 })
 
 export default CartContext

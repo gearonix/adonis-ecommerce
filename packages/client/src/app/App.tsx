@@ -1,14 +1,14 @@
-import type {AppProps} from 'next/app'
-import {Provider} from 'react-redux'
-import {GoogleOAuthProvider} from '@react-oauth/google'
+import type { AppProps } from 'next/app'
+import { Provider } from 'react-redux'
+import { GoogleOAuthProvider } from '@react-oauth/google'
 import Head from 'next/head'
-import {AsyncAuthorization, AuthGuard, Layout} from './providers'
-import store from './redux/store'
-import {useEffect} from 'react'
-import ThemeProvider from 'app/providers/ThemeProdiver'
+import { AsyncAuthorization, AuthGuard, Layout } from './providers'
+import store from './store/store'
+import { useEffect } from 'react'
+import ThemeProvider from 'app/providers/Theme/ThemeProdiver'
 
 
-const App = ({Component, pageProps}: AppProps) => {
+const App = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {
     if (window) {
       // @ts-ignore

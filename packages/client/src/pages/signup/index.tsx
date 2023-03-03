@@ -1,6 +1,6 @@
-import {SignupChoice} from 'entities/Auth/Choice'
+import { SignupChoice } from 'entities/Auth'
 import Head from 'next/head'
-import {WithSpring} from 'shared/ui/animations'
+import { WithSpring } from 'shared/lib/components'
 
 
 const SignUp = () => {

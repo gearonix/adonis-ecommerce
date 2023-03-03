@@ -1,6 +1,6 @@
-import {FC} from 'react'
+import { FC } from 'react'
 import s from './style.module.scss'
-import {MdOutlineDescription} from 'shared/ui/icons'
+import { MdOutlineDescription } from 'shared/ui/icons'
 
 export const BlueLinkHeader: FC = () => {
   return <div className={s.header}>

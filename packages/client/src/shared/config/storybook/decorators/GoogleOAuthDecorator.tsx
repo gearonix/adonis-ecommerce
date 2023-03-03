@@ -1,5 +1,5 @@
-import {Story as StoryType} from '@storybook/react'
-import {GoogleOAuthProvider} from '@react-oauth/google'
+import { Story as StoryType } from '@storybook/react'
+import { GoogleOAuthProvider } from '@react-oauth/google'
 
 
 export const GoogleOAuthDecorator = (Story: StoryType) => {

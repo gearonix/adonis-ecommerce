@@ -1,17 +1,17 @@
-import {FC} from 'react'
-import {AuthTemplate} from 'entities/Auth/AuthTemplate'
-import {HeadField} from 'shared/ui/mui'
-import {useForm} from 'react-hook-form'
-import {SignupForm} from '../types'
-import {yupResolver} from '@hookform/resolvers/yup'
-import {salesmanSchema} from '../lib/formSchemes'
-import {useSubmitForm} from '../lib/hooks'
-import {UserRoles} from 'app/config/globals'
+import { FC } from 'react'
+import { AuthTemplate } from 'entities/Auth'
+import { HeadField } from 'shared/ui/material'
+import { useForm } from 'react-hook-form'
+import { SignupForm } from '../types'
+import { yupResolver } from '@hookform/resolvers/yup'
+import { salesmanSchema } from '../lib/formSchemes'
+import { useSubmitForm } from '../lib/hooks'
+import { UserRoles } from 'app/config/globals'
 import GoogleButton from 'widgets/Login/ui/GoogleButton'
-import {createFieldValues} from 'shared/lib/helpers/others/formHelpers/createFieldValues'
+import { createFieldValues } from 'shared/lib/helpers/formHelpers/createFieldValues'
 
 const SalesmanForm: FC = () => {
-  const form = useForm<SignupForm>({resolver: yupResolver(salesmanSchema)})
+  const form = useForm<SignupForm>({ resolver: yupResolver(salesmanSchema) })
   const onSubmit = useSubmitForm(form.setError, UserRoles.SALESMAN)
   const reg = createFieldValues(form)
 

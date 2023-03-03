@@ -4,7 +4,7 @@ import appConfig from 'app/config/config'
 
 const axiosInstance = axios.create({
   baseURL: appConfig.SERVER_URL,
-  withCredentials: true,
+  withCredentials: true
 })
 
 const AUTH_TOKEN = typeof window !== 'undefined' ? localStorage.getItem('AUTH_TOKEN') : null

@@ -1,0 +1,6 @@
+export { default as CartIcons } from './ui/CartIcons/CartIcons'
+export { default as Categories } from './ui/Categories/Categories'
+export { default as ExtraServices } from './ui/ExtraServices/ExtraServices'
+export { default as FindProductBanner } from './ui/FindProductBanner/FindProductSkeleton'
+export { default as GithubBanner } from './ui/GithubBanner/GithubBanner'
+export { default as Languages } from './ui/Languages/Languages'

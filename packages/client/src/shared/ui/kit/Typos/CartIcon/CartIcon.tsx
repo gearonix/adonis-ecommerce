@@ -1,8 +1,8 @@
-import {FC} from 'react'
+import { FC } from 'react'
 import s from './style.module.scss'
-import {CartIconProps} from '../../types'
+import { CartIconProps } from '../../types'
 
-export const CartIcon: FC<CartIconProps> = ({Icon}) => {
+export const CartIcon: FC<CartIconProps> = ({ Icon }) => {
   return <div className={s.item}>
     <div className={s.icon_wrapper}>
       <Icon/>

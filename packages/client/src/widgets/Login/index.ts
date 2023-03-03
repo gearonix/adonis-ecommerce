@@ -1,8 +1,8 @@
-export {default as LoginForm} from './ui/LoginForm'
-export {default as CustomerForm} from './ui/CustomerForm'
-export {default as SalesmanForm} from './ui/SalesmanForm'
+export { default as LoginForm } from './ui/LoginForm'
+export { default as CustomerForm } from './ui/CustomerForm'
+export { default as SalesmanForm } from './ui/SalesmanForm'
 
-export {authorizeUser} from './redux/thunks'
-export {getUserById} from './redux/thunks'
+export { authorizeUser } from './store/thunks'
+export { getUserById } from './store/thunks'
 
-export {authSlice} from './redux/authReducer'
+export { authSlice } from './store/authReducer'

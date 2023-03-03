@@ -1,20 +1,20 @@
-import {FC, useState} from 'react'
+import { FC, useState } from 'react'
 import s from './style.module.scss'
 import cn from 'classnames'
-import {ImageModal} from 'shared/ui/mui'
-import {NextImage} from 'shared/ui/kit'
-import {BsCheck2} from 'shared/ui/icons'
-import {MessageProps} from '../../types'
-import {WithSpring} from 'shared/ui/animations'
+import { ImageModal } from 'shared/ui/material'
+import { NextImage } from 'shared/ui/kit'
+import { BsCheck2 } from 'shared/ui/icons'
+import { MessageProps } from '../../types'
 import useMeasure from 'react-use-measure'
+import { WithSpring } from 'shared/lib/components'
 
 
-export const Message: FC<MessageProps> = ({isMine = false, image, message}) => {
+export const Message: FC<MessageProps> = ({ isMine = false, image, message }) => {
   const [isOpened, openModal] = useState<boolean>(false)
-  const [bind, {height}] = useMeasure()
+  const [bind, { height }] = useMeasure()
   return <WithSpring className={cn(isMine ? s.my_message : s.opponent_message)}
     type={'opacityHeight'} param={height}>
-    {image && <ImageModal isOpen={isOpened} close={openModal} image={image}/>}
+    {image && <ImageModal isOpen={isOpened} close={openModal} image={image} />}
     <div className={s.wrapper} ref={bind}>
       {image && <WithSpring className={s.image_wrapper} onClick={() => openModal(true)}>
         <NextImage src={image}/>

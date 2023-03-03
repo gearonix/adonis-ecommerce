@@ -6,12 +6,12 @@ const EndPoints = {
     registration: '/auth/registration',
     deleteToken: '/auth/delete/token',
     googleRegistration: '/auth/registration/google',
-    googleLogin: '/auth/login/google',
+    googleLogin: '/auth/login/google'
   },
   USERS: {
     changeProfileData: '/users/change/users',
     changeUserBackground: '/users/change/background',
-    changeUserAvatar: '/users/change/avatar',
+    changeUserAvatar: '/users/change/avatar'
   },
   PRODUCTS: {
     createProduct: '/products/create',
@@ -22,17 +22,17 @@ const EndPoints = {
     productsByIds: '/products/ids',
     saved: '/products/saved',
     addToSaved: '/products/saved/add',
-    removeFromSaved: '/products/saved/remove',
+    removeFromSaved: '/products/saved/remove'
   },
   COMMENTS: {
     createProductComment: '/comments/products/create',
-    getProductComments: '/comments/products',
+    getProductComments: '/comments/products'
   },
   POSTS: {
     getPosts: '/posts',
     addPost: '/posts/create',
-    setPostImage: '/posts/set/images',
-  },
+    setPostImage: '/posts/set/images'
+  }
 } as const
 
 

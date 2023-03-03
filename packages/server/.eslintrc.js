@@ -2,7 +2,7 @@ module.exports = {
   env: {
     es6: true,
   },
-  ignorePatterns: ["**/dist/**", "**/node_modules/**"],
+  ignorePatterns: ["**/dist/**", "**/node_modules/**", "./tsconfig.json"],
   extends: ["plugin:@darraghor/nestjs-typed/recommended", "google",
     "plugin:@darraghor/nestjs-typed/no-swagger", "plugin:@typescript-eslint/recommended"],
   parser: "@typescript-eslint/parser",
@@ -28,6 +28,9 @@ module.exports = {
     "no-return-await": "error",
     "no-trailing-spaces": "off",
     "padded-blocks": "warn",
+    "object-curly-spacing": ["error", "always"],
+    "comma-dangle": ["error", "never"]
   },
   plugins: ["@darraghor/nestjs-typed","@typescript-eslint"],
+
 };

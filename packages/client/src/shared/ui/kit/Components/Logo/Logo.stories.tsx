@@ -1,10 +1,10 @@
-import {ComponentMeta, ComponentStory} from '@storybook/react'
-import {Logo} from './Logo'
+import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Logo } from './Logo'
 
 export default {
   title: 'shared/kit/Components/Logo',
   component: Logo,
-  argTypes: {},
+  argTypes: {}
 } as ComponentMeta<typeof Logo>
 
 const Template: ComponentStory<typeof Logo> = (args) => <Logo {...args} />

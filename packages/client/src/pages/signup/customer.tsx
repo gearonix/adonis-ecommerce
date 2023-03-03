@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import {WithSpring} from 'shared/ui/animations'
-import {CustomerForm} from 'widgets/Login'
+import { WithSpring } from 'shared/lib/components'
+import { CustomerForm } from 'widgets/Login'
 
 const Customer = () => {
   return <WithSpring>

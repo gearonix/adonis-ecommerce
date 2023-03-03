@@ -1,7 +1,7 @@
-import {FC} from 'react'
+import { FC } from 'react'
 import s from './style.module.scss'
-import {WithSpring} from 'shared/ui/animations'
-import {useTimeout} from 'shared/lib/hooks/shared'
+import { useTimeout } from 'shared/lib/hooks/useTimeout'
+import { WithSpring } from 'shared/lib/components'
 
 export const Preloader: FC = () => {
   const showPen = useTimeout()
