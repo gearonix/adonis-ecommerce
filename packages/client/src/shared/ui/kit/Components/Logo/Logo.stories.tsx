@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { Logo } from './Logo'
 
 export default {
-  title: 'shared/kit/Components/Logo',
+  title: 'shared/ui/Components/Logo',
   component: Logo,
   argTypes: {}
 } as ComponentMeta<typeof Logo>

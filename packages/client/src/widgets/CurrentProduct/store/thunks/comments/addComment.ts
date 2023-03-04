@@ -1,5 +1,4 @@
 import { createThunk } from 'shared/types/redux'
-import currentProductApi from 'widgets/CurrentProduct/api'
 import { ProductSelectors } from 'shared/selectors'
 import { isError as isError } from 'shared/lib/helpers/others/httpHelpers'
 import { productActions } from '../../productReducer'

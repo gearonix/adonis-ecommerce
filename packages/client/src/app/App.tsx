@@ -1,19 +1,10 @@
 import type { AppProps } from 'next/app'
 import { GoogleOAuthProvider } from '@react-oauth/google'
 import Head from 'next/head'
-import { AuthProvider, AuthGuard, Layout, StoreProvider, ThemeProvider } from './providers'
-import store from './store/store'
-import { useEffect } from 'react'
+import { AsyncAuthorization, AuthGuard, Layout, StoreProvider, ThemeProvider } from './providers'
 
 
 const App = ({ Component, pageProps }: AppProps) => {
-  useEffect(() => {
-    if (window) {
-      // @ts-ignore
-      window.s = process.env.IS_DEV ? store.getState : null
-    }
-  }, [])
-
   return <>
     <Head>
       <title>Adonis</title>
@@ -22,11 +13,11 @@ const App = ({ Component, pageProps }: AppProps) => {
       <StoreProvider>
         <ThemeProvider>
           <Layout>
-            <AuthProvider>
+            <AsyncAuthorization>
               <AuthGuard>
                 <Component {...pageProps} />
               </AuthGuard>
-            </AuthProvider>
+            </AsyncAuthorization>
           </Layout>
         </ThemeProvider>
       </StoreProvider>

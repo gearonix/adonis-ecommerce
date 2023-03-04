@@ -1,21 +1,32 @@
-import { WC } from 'shared/types/components'
-import createStore from 'app/store/store'
 import { Provider } from 'react-redux'
+import { CFC } from 'shared/types/components'
+import { useDevStore } from '../../../../dev/components/useDevStore'
+import createStore from 'app/store/store'
+import { useEffect, useState } from 'react'
+import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore'
 import { useRouter } from 'next/router'
 
-const StoreProvider: WC = ({ children }) => {
+const StoreProvider: CFC = ({ children }) => {
+  const [store, setStore] = useState<ToolkitStore>()
   const router = useRouter()
 
-  const storeProps = {
-    redirect: router.push
-  }
+  useEffect(() => {
+    const storeConfig = {
+      middleware: {
+        redirect: router.push
+      }
+    }
 
-  const store = createStore(storeProps)
 
-  return <Provider store={store}>
+    const store = createStore(storeConfig)
+    setStore(store)
+  }, [])
+
+
+  useDevStore(store)
+  return store ? <Provider store={store}>
     {children}
-  </Provider>
+  </Provider> : null
 }
-
 
 export default StoreProvider

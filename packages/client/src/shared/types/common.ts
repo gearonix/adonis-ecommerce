@@ -14,3 +14,7 @@ export type ValueOf<T> = T[keyof T];
 
 // remove it
 export type KeyOf<T> = T[any]
+
+export type Required<T> = {
+    [P in keyof T]-?: T[P];
+};

@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction as Action } from '@reduxjs/toolkit'
-import { ProductsWithCount, SearchQuery } from 'widgets/Products/types'
+import { SearchQuery, ProductsWithCount } from 'widgets/Products/types'
 import { productsInitialState as initialState } from 'shared/types/slices/products'
 
 

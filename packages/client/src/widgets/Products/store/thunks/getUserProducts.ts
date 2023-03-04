@@ -1,4 +1,5 @@
 import { createThunk } from 'shared/types/redux'
+import { productsApi } from 'widgets/Products/api'
 import isError from 'next/dist/lib/is-error'
 import { productsActions } from 'widgets/Products/store/productsReducer'
 import { Nullable } from 'shared/types/common'

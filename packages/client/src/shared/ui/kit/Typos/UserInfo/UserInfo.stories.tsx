@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { UserInfo } from './UserInfo'
 
 export default {
-  title: 'shared/kit/Typos/UserInfo',
+  title: 'shared/ui/Typos/UserInfo',
   component: UserInfo,
   argTypes: {}
 } as ComponentMeta<typeof UserInfo>

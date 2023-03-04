@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { HoverLink } from './HoverLink'
 
 export default {
-  title: 'shared/kit/Typos/HoverLink',
+  title: 'shared/ui/Typos/HoverLink',
   component: HoverLink,
   argTypes: {}
 } as ComponentMeta<typeof HoverLink>

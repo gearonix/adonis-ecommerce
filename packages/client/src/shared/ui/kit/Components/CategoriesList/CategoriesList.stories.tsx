@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { CategoriesList } from './CategoriesList'
 
 export default {
-  title: 'shared/kit/Components/CategoriesList',
+  title: 'shared/ui/Components/CategoriesList',
   component: CategoriesList,
   argTypes: {}
 } as ComponentMeta<typeof CategoriesList>

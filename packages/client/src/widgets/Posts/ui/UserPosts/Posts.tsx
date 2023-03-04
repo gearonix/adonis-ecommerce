@@ -3,11 +3,13 @@ import { useDispatch, useSelector } from 'shared/types/redux'
 import { PostSelectors, UserSelectors } from 'shared/selectors'
 import { getUserPosts } from 'widgets/Posts/store/thunks'
 import { Post } from 'entities/Profile'
-import { postActions } from 'widgets/Posts/store/postsReducer'
+import { postActions, postSlice } from 'widgets/Posts/store/postsReducer'
 import { Pagination } from 'shared/ui/material'
 import { PAGE_LIMIT } from 'app/config/globals'
+import { DynamicModuleLoader } from 'shared/lib/components'
 
 const Posts : FC = () => {
+  console.log('LOADED')
   const posts = useSelector(PostSelectors.posts)
   const dispatch = useDispatch()
   const page = useSelector(PostSelectors.page)
@@ -37,5 +39,10 @@ const Posts : FC = () => {
   </>
 }
 
+export const PostsWithReducer = () => {
+  return <DynamicModuleLoader name={'posts'} reducer={postSlice}>
+    <Posts/>
+  </DynamicModuleLoader>
+}
 
-export default Posts
+export default PostsWithReducer

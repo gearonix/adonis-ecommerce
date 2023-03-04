@@ -1,15 +1,14 @@
-import { ProfileApi } from 'widgets/Profile'
-import { ProductsApi } from 'widgets/Products'
+import { SavedApi } from 'features/Saved'
 import { CurrentProductApi } from 'widgets/CurrentProduct'
 import { AuthApi } from 'widgets/Login'
 import { PostsApi } from 'widgets/Posts'
-import { SavedApi } from 'features/Saved'
-import { ObjectNullable } from 'shared/types/common'
+import { ProductsApi } from 'widgets/Products'
+import { ProfileApi } from 'widgets/Profile'
+import { CreateMiddleWare } from 'app/store/config/createMiddleware'
+import { ObjectNullable, Required } from 'shared/types/common'
 import { AuthSlice, CurrentProduct, PostsSlice, Products, SavedSlice, User } from 'shared/types/slices'
-import { Url } from 'url'
 import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore'
 import { ReducerManager } from 'app/store/reducerManager'
-
 
 export interface ApiConfig {
     profile: ProfileApi
@@ -20,29 +19,29 @@ export interface ApiConfig {
     saved: SavedApi
 }
 
-export interface State{
+export interface Extra extends CreateMiddleWare{
+    api: ApiConfig,
+}
+
+export interface RequiredReducers{
     user: ObjectNullable<User>,
     products: Products,
-    currentProduct: CurrentProduct,
     auth: AuthSlice,
     cart: number[],
     saved: SavedSlice,
+}
+
+export interface OptionalReducers{
     posts: PostsSlice
+    currentProduct: CurrentProduct,
 }
 
-export type Redirect = (url: Url, as?: (Url | undefined), options?: any) => Promise<boolean>
-
-export interface CreateStoreProps {
-    redirect: Redirect
+export interface StoreWithManager extends ToolkitStore{
+    reducerManager: ReducerManager<StateSchema>
 }
 
-export type CreateReduxStore<T> = (props: CreateStoreProps) => ToolkitStore<T>
+export type StateSchema = RequiredReducers & Partial<OptionalReducers>
 
-export interface CustomStore extends ToolkitStore {
-    reducerManager: ReducerManager<State>
-}
+export type RequiredState = Required<StateSchema>
 
-export interface Extra{
-    api: ApiConfig,
-    redirect: Redirect
-}
+export type Redirect = (url: string, as?: (string | undefined), options?: any) => Promise<boolean>

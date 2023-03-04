@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { BlueLinkHeader } from './BlueLinkHeader'
 
 export default {
-  title: 'shared/kit/Links/BlueLinkHeader',
+  title: 'shared/ui/Links/BlueLinkHeader',
   component: BlueLinkHeader,
   argTypes: {}
 } as ComponentMeta<typeof BlueLinkHeader>

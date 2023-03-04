@@ -1,5 +1,5 @@
 import { AnyAction, CombinedState, combineReducers, Reducer, ReducersMapObject } from '@reduxjs/toolkit'
-import { State } from 'app/store/types'
+import { StateSchema } from 'app/store/types'
 
 export interface ReducerManager<T>{
     getReducerMap: () => void,
@@ -8,19 +8,19 @@ export interface ReducerManager<T>{
     remove: (key: keyof T) => void
 }
 
-type CreateReducerManager = (reducers: ReducersMapObject<State>) => ReducerManager<State>
+type CreateReducerManager = (reducers: ReducersMapObject<StateSchema>) => ReducerManager<StateSchema>
 
 export const createReducerManager: CreateReducerManager = (initialReducers) => {
   const reducers = { ...initialReducers }
 
   let combinedReducer = combineReducers(reducers)
 
-  let keysToRemove: Array<keyof State> = []
+  let keysToRemove: Array<keyof StateSchema> = []
 
   return {
     getReducerMap: () => reducers,
 
-    reduce: (state: State, action: AnyAction) => {
+    reduce: (state: StateSchema, action: AnyAction) => {
       if (keysToRemove.length > 0) {
         state = { ...state }
         for (const key of keysToRemove) {
@@ -31,7 +31,7 @@ export const createReducerManager: CreateReducerManager = (initialReducers) => {
 
       return combinedReducer(state, action)
     },
-    add: (key: keyof State, reducer: Reducer) => {
+    add: (key: keyof StateSchema, reducer: Reducer) => {
       if (!key || reducers[key]) {
         return
       }
@@ -40,7 +40,7 @@ export const createReducerManager: CreateReducerManager = (initialReducers) => {
       combinedReducer = combineReducers(reducers)
     },
 
-    remove: (key: keyof State) => {
+    remove: (key: keyof StateSchema) => {
       if (!key || !reducers[key]) {
         return
       }

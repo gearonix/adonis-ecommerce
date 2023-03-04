@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { ContainerTitle } from './ContainerTitle'
 
 export default {
-  title: 'shared/kit/Typos/ContainerTitle',
+  title: 'shared/ui/Typos/ContainerTitle',
   component: ContainerTitle,
   argTypes: {}
 } as ComponentMeta<typeof ContainerTitle>

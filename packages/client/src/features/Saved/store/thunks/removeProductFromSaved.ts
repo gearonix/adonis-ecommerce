@@ -1,4 +1,5 @@
 import { createThunk } from 'shared/types/redux'
+import { savedApi } from 'features/Saved/api'
 import { isError } from 'shared/lib/helpers/others/httpHelpers'
 import { savedActions } from 'features/Saved'
 

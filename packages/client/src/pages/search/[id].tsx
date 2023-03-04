@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { ProductInfo } from 'widgets/CurrentProduct'
+import { currentProductSlice, ProductInfo } from 'widgets/CurrentProduct'
 import { RecommendedItems } from 'widgets/Products'
 import { SortedProducts, YouMayLike } from 'entities/Products'
 import { ProductTypes } from 'shared/types/elements'
@@ -7,7 +7,7 @@ import { useSelector } from 'shared/types/redux'
 import { ProductSelectors } from 'shared/selectors'
 import ProductComments from 'widgets/CurrentProduct/ui/ProductComments/ProductComments'
 import { ProductDescription } from 'entities/ProductPage'
-import { WithSpring } from 'shared/lib/components'
+import { DynamicModuleLoader, WithSpring } from 'shared/lib/components'
 import { ExtraServices, GithubBanner } from 'entities/Banners'
 
 
@@ -31,4 +31,10 @@ const ProductPage = () => {
   </WithSpring>
 }
 
-export default ProductPage
+const ProductWithReducer = () => {
+  return <DynamicModuleLoader name={'currentProduct'} reducer={currentProductSlice}>
+    <ProductPage/>
+  </DynamicModuleLoader>
+}
+
+export default ProductWithReducer

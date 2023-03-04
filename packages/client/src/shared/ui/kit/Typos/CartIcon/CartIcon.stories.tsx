@@ -3,7 +3,7 @@ import { CartIcon } from './CartIcon'
 import { AiFillAccountBook, AiFillAlert } from 'react-icons/ai'
 
 export default {
-  title: 'shared/kit/Typos/CartIcon',
+  title: 'shared/ui/Typos/CartIcon',
   component: CartIcon,
   argTypes: {}
 } as ComponentMeta<typeof CartIcon>
