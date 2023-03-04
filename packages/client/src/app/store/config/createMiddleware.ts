@@ -1,9 +1,10 @@
 import { getDefaultMiddleware } from '@reduxjs/toolkit'
 import { apiConfig } from './apiConfig'
 import { Redirect } from 'app/store/types'
+import { notifyMiddleware } from 'app/store/middlewares'
 
 export interface CreateMiddleWare{
-  redirect: Redirect
+  redirect: Redirect,
 }
 
 export const createMiddleware = (config: CreateMiddleWare) => getDefaultMiddleware({
@@ -13,4 +14,4 @@ export const createMiddleware = (config: CreateMiddleWare) => getDefaultMiddlewa
       ...config
     }
   }
-})
+}).concat(notifyMiddleware)

@@ -1,7 +1,9 @@
 import type { AppProps } from 'next/app'
 import { GoogleOAuthProvider } from '@react-oauth/google'
 import Head from 'next/head'
-import { AuthProvider, AuthGuard, Layout, StoreProvider, ThemeProvider } from './providers'
+import { AuthProvider, AuthGuard, Layout, StoreProvider, ThemeProvider,
+  ErrorBoundary } from './providers'
+import { useEffect } from 'react'
 
 
 const App = ({ Component, pageProps }: AppProps) => {
@@ -11,15 +13,17 @@ const App = ({ Component, pageProps }: AppProps) => {
     </Head>
     <GoogleOAuthProvider clientId={process.env.GOOGLE_CLIENT_ID as string}>
       <StoreProvider>
-        <ThemeProvider>
-          <Layout>
-            <AuthProvider>
-              <AuthGuard>
-                <Component {...pageProps} />
-              </AuthGuard>
-            </AuthProvider>
-          </Layout>
-        </ThemeProvider>
+        <ErrorBoundary>
+          <ThemeProvider>
+            <Layout>
+              <AuthProvider>
+                <AuthGuard>
+                  <Component {...pageProps} />
+                </AuthGuard>
+              </AuthProvider>
+            </Layout>
+          </ThemeProvider>
+        </ErrorBoundary>
       </StoreProvider>
     </GoogleOAuthProvider>
   </>

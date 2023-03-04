@@ -14,7 +14,8 @@ export interface FormattedUser {
   country: Nullable<string>,
   city: Nullable<string>,
   date: string,
-  role: UserRoles
+  role: UserRoles,
+  userId: number
 }
 
 
@@ -42,6 +43,7 @@ export const selectReformattedUser = createSelector(UserSelectors.user, (nullabl
     country: user.country,
     city: user.city,
     role: user.role,
-    date
+    date,
+    userId: user.userId
   }
 })

@@ -11,6 +11,7 @@ export const useTheme = () => {
     setTheme?.(selectedTheme)
   }
 
+
   return { theme, toggleTheme, isLight: theme === Theme.LIGHT }
 }
 export const useMuiTheme = (theme: Theme) => {

@@ -7,9 +7,4 @@ const axiosInstance = axios.create({
   withCredentials: true
 })
 
-const AUTH_TOKEN = typeof window !== 'undefined' ? localStorage.getItem('AUTH_TOKEN') : null
-
-axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${AUTH_TOKEN}`
-
-
 export default axiosInstance

@@ -10,7 +10,8 @@ export type AppState = ReturnType<Store['getState']>;
 export const createThunk = createAsyncThunk.withTypes<{
     state: AppState,
     dispatch: AppDispatch,
-    extra: Extra
+    extra: Extra,
+    rejectValue: string
 }>()
 
 export const useSelector: TypedUseSelectorHook<Required<AppState>> = useReduxSelector

@@ -1,7 +1,6 @@
 import { createThunk } from 'shared/types/redux'
 import { UploadProperties } from 'app/config/globals'
 import { AddProductForm } from 'widgets/Products/types'
-import { productsApi } from 'widgets/Products/api'
 import { getUserProducts } from 'widgets/Products'
 import { withFormData } from 'shared/lib/helpers/withHelpers/withFormData'
 

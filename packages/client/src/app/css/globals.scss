@@ -20,6 +20,10 @@ body, input {
   padding: 0;
 }
 
+body.error{
+    background: #f7f7f7;
+}
+
 input {
   outline: none;
 }
@@ -80,17 +84,5 @@ h2 {
     display: flex;
 }
 
-.profile_wall {
-    width: 83%;
-    box-sizing: border-box;
-    border: 1px solid #E0E0E0;
-    border-radius: 6px;
-    background: $bg-absolute;
-    margin: 25px auto 40px;
-    padding: 15px 15px 30px;
-}
 
-.profile_wall article {
-    margin-left: 0;
-}
 

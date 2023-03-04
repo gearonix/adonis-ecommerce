@@ -42,6 +42,9 @@
       ],
       "icons": [
         "shared/helpers/icons.ts"
+      ],
+      "__DEV__": [
+        "../dev/components/index"
       ]
     }
   },

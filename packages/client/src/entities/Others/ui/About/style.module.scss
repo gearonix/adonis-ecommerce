@@ -1,10 +1,35 @@
 @use 'shared/css/common.scss' as *;
 
-.about {
+.container,.error_container {
   width: 80%;
   margin: 0 auto 30px;
   @include itemBorder;
   position: relative;
+}
+.error_container{
+  background: white;
+  box-shadow: $shadow;
+  padding: 14px;
+  @include flex(stretch, center,column);
+  margin-top: 60px;
+  .text{
+    color: #3a3a3a;
+    width: 54%;
+    line-height: 33px;
+  }
+  button{
+    background: #2a7dfc;
+    color: white;
+    border-radius: 6px;
+    height: 40px;
+    width: 220px;
+    font-size: 18px;
+    margin: 0 auto 30px;
+    transition: background 200ms;
+    &:hover{
+      background: #1d6dfc;
+    }
+  }
 }
 
 .title {
@@ -23,7 +48,7 @@
 .text {
   width: 65%;
   margin: 0 auto;
-  font-size: $xm;
+  font-size: $small-md;
   text-align: center;
 }
 
@@ -46,7 +71,7 @@
 }
 
 .image_wrapper {
-  @include imageWrapper(30%, 400px);
-  margin: 30px auto 0;
+  @include imageWrapper(30%, 270px);
+  margin: 70px auto;
 }
 

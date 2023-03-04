@@ -3,7 +3,7 @@ import { AiOutlineGithub } from 'shared/ui/icons'
 import { NextImage } from 'shared/ui/kit'
 
 const About = () => {
-  return <div className={s.about}>
+  return <div className={s.container}>
     <h1 className={s.title}>About us</h1>
     <p className={s.text}>Lorem ipsum dolor sit amet, consectetur adipisicing,
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

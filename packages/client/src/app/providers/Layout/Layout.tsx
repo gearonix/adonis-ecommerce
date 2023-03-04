@@ -1,10 +1,11 @@
 import { FC, ReactNode } from 'react'
 import { Inter } from '@next/font/google'
-import DevNavRouting from '../../../dev/components/nav_routing'
+import { DevNavigation } from '__DEV__'
 import { Header } from 'widgets/Header'
 import cn from 'classnames'
 import { useTheme } from 'shared/lib/hooks/useTheme'
 import { Footer } from 'entities/Others'
+import { WithNotifications } from 'app/lib/components'
 
 const interFont = Inter({ subsets: ['latin'] })
 
@@ -12,7 +13,9 @@ const Layout: FC<{ children: ReactNode }> = ({ children }) => {
   const { theme } = useTheme()
 
   return <div className={cn(interFont.className, theme, 'layout')}>
-    <DevNavRouting/>
+    <DevNavigation/>
+    <WithNotifications/>
+
     <Header/>
     <div className="container">
       {children}

@@ -8,10 +8,10 @@ export const authorizeUser = createThunk(
     async (_, { dispatch, extra }) => {
       const response = await extra.api.auth.getCurrentUser()
       const user = response.data
-      console.log(user)
 
       if (!user || isError(response)) {
-        return dispatch(authActions.authorizationFailed())
+        dispatch(authActions.authorizationFailed())
+        return
       }
 
       dispatch(authActions.authorizeUser(user))

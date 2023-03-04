@@ -28,7 +28,7 @@ const Profile: FC = () => {
   return <WithSpring>
     <Head>
       <title>
-        <>Adonis - {userName}</>
+        Adonis - {userName}
       </title>
     </Head>
 

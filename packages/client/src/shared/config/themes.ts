@@ -1,6 +1,6 @@
 export enum Theme {
-    LIGHT = 'theme-light',
-    DARK = 'theme-dark'
+    LIGHT = 'light',
+    DARK = 'dark'
 }
 
 export enum LocalStorage{

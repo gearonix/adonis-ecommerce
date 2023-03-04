@@ -1,40 +1,41 @@
 import { FC, ReactElement } from 'react'
 import s from './style.module.scss'
-import { ProfileBackground, Typo, UserAvatar } from 'shared/ui/kit'
-import { ObjectNullable } from 'shared/types/common'
+import { ProfileBackground, UserAvatar } from 'shared/ui/kit'
+import { Nullable, ObjectNullable } from 'shared/types/common'
 import { FormattedUser } from 'widgets/Profile/store/selectors'
+import { AiOutlineInfoCircle } from 'shared/ui/icons'
 
 
 export interface ProfileHeaderTemplate {
   ChangeBackground: ReactElement,
-  OpenProfileEdit: ReactElement,
-  user: ObjectNullable<FormattedUser>
+  openProfile: () => void,
+  openInfo: () => void
+  user: ObjectNullable<FormattedUser>,
+  isMe: Nullable<boolean>
 }
 
 
-const ProfileHeaderTemp: FC<ProfileHeaderTemplate> = ({ ChangeBackground, OpenProfileEdit, user }) => {
-  return <div className={s.profile_header}>
-    <div className={s.profile_background}>
-      <ProfileBackground src={user.background} ChangeBackground={ChangeBackground}/>
-    </div>
+const ProfileHeaderTemp: FC<ProfileHeaderTemplate> =
+    ({ ChangeBackground, openProfile, openInfo, user, isMe }) => {
+      return <div className={s.profile_header}>
+        <div className={s.profile_background}>
+          <ProfileBackground src={user.background} ChangeBackground={ChangeBackground}/>
+        </div>
 
-    <div className={s.info_block}>
-      <div className={s.avatar}>
-        <UserAvatar src={user.userImage}/>
+        <div className={s.info_block}>
+          <div className={s.avatar}>
+            <UserAvatar src={user.userImage}/>
+          </div>
+          <div className={s.user_info}>
+            <h2 className={s.user_name}>{user.userName}</h2>
+            <p className={s.description}>{user.description}</p>
+            <h2 onClick={openInfo} className={s.details}><AiOutlineInfoCircle/>Details</h2>
+          </div>
+          <div className={s.change_profile}>
+            {isMe && <button className="outlined_button" onClick={openProfile}>Change profile</button>}
+          </div>
+        </div>
       </div>
-      <div className={s.user_info}>
-        <h2 className={s.user_name}>{user.userName}</h2>
-        <p className={s.description}>{user.description}</p>
-      </div>
-      <div className={s.change_profile}>
-        {OpenProfileEdit}
-      </div>
-    </div>
-    <Typo>{user.country}</Typo>
-    <Typo>{user.city}</Typo>
-    <Typo>{user.role}</Typo>
-    <Typo>{user.date}</Typo>
-  </div>
-}
+    }
 
 export default ProfileHeaderTemp

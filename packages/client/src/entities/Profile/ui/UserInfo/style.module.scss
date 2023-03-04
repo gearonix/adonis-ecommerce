@@ -1,0 +1,41 @@
+@use 'src/shared/css/common.scss' as *;
+
+.info_container{
+  width: 100%;
+  border-bottom: 1px solid #424242;
+  padding-bottom: 8px;
+  padding-top: 8px;
+}
+
+
+
+.info_cell{
+  color: #b9b9b9;
+  @include flex(stretch,center);
+  height: 30px;
+  span{
+    font-size: 15px;
+    margin-left: 9px;
+    color: #b9b9b9;
+  }
+  svg{
+    @include size(19px,19px);
+  }
+
+}
+.link{
+  color: #4d91ef !important;
+  cursor: pointer;
+}
+
+.light{
+  span{
+    color: #3a3a3a;
+  }
+  svg{
+    color: #171717;
+  }
+  .info_container{
+    border-bottom: 1px solid #d3d3d3;
+  }
+}

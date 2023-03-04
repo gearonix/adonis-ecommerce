@@ -1,6 +1,6 @@
 import { Provider } from 'react-redux'
 import { CFC } from 'shared/types/components'
-import { useDevStore } from '../../../../dev/components/useDevStore'
+import { useDevStore } from '__DEV__'
 import createStore from 'app/store/store'
 import { useEffect, useState } from 'react'
 import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore'
@@ -22,8 +22,8 @@ const StoreProvider: CFC = ({ children }) => {
     setStore(store)
   }, [])
 
-
   useDevStore(store)
+
   return store ? <Provider store={store}>
     {children}
   </Provider> : null

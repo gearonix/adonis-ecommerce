@@ -1,11 +1,15 @@
 import dayjs from 'dayjs'
 import LocalizedFormat from 'dayjs/plugin/localizedFormat'
+import { UserRoles } from 'app/config/globals'
 
 dayjs.extend(LocalizedFormat)
 
 class Helpers {
   public emailToName(email: string) {
     return this.capitalize(email.split('@')[0])
+  }
+  public toNormalRole(role: UserRoles) {
+    return this.capitalize(role.toLowerCase())
   }
 
   public capitalize(str: string) {
@@ -54,7 +58,7 @@ class Helpers {
     return str === '' ? undefined : str
   }
   public cropped(str: string, char = 30) {
-    return str.length > 30 ? str.slice(0, char) + '...' : str
+    return str?.length > 30 ? str.slice(0, char) + '...' : str
   }
   public byDefault<T, N>(name: T, defaultValue: N): N | T {
     return name ? name : defaultValue
@@ -69,10 +73,8 @@ class Helpers {
     if (user.firstName) {
       return user.firstName
     }
-    if (!user.email) {
-      return 'User not found'
-    }
-    return this.emailToName(user.email || '')
+    console.log(user)
+    return user.email || 'User not found'
   }
   public removeSpaces(str: string) {
     return str.split(' ').join('')

@@ -2,7 +2,7 @@
 
 .profile_header {
   width: 83%;
-  margin: 30px auto 20px auto;
+  margin: 30px auto 35px auto;
   @include itemBorder;
   .profile_background {
     @include size(100%,360px);
@@ -37,7 +37,7 @@
     position: relative;
     padding: 20px;
     box-sizing: border-box;
-    @include size(100%, 123px);
+    @include size(100%, 165px);
     display: flex;
 
     .avatar {
@@ -77,4 +77,12 @@
 
   }
 
+}
+.details{
+  color: $color-absolute-200;
+  font-size: 17px;
+  @include flex(stretch, center);
+  gap: 10px;
+  margin-top: 10px;
+  cursor: pointer;
 }

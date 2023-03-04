@@ -4,6 +4,7 @@ import { addProductToSaved, removeProductFromSaved } from 'features/Saved/store/
 import { AuthSelectors, SavedSelectors } from 'shared/selectors'
 import { useRouter } from 'next/router'
 import { routes } from 'shared/config/routes'
+import { useUnauthorized } from 'shared/lib/hooks'
 
 
 export interface SavedProps{
@@ -19,9 +20,7 @@ export interface SharedSavedProps{
 const SavedProvider: FC<SavedProps> = ({ productId, Component }) => {
   const dispatch = useDispatch()
   const isInSaved = useSelector(SavedSelectors.isInSaved(productId))
-  const isAuthorized = useSelector(AuthSelectors.isAuthorized)
-  const router = useRouter()
-
+  const authorized = useUnauthorized()
   const addToSaved = () => {
     dispatch(addProductToSaved(productId))
   }
@@ -30,16 +29,12 @@ const SavedProvider: FC<SavedProps> = ({ productId, Component }) => {
     dispatch(removeProductFromSaved(productId))
   }
 
-  const onClick = () => {
-    if (!isAuthorized) {
-      return router.push(routes.LOGIN)
-    }
-
+  const onClick = authorized(() => {
     if (isInSaved) {
       return removeFromSaved()
     }
     addToSaved()
-  }
+  })
 
 
   return <Component onClick={onClick} isInSaved={isInSaved}/>

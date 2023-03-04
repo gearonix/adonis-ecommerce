@@ -7,5 +7,6 @@ export enum DefaultAssets{
 
 export enum Assets{
     LOGO = '/assets/logo.svg',
-    NOT_FOUND = '/assets/not_found.svg'
+    NOT_FOUND = '/assets/not_found.svg',
+    APP_ERROR = '/assets/app_error.png'
 }
