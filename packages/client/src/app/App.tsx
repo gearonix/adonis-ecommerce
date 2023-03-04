@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app'
 import { GoogleOAuthProvider } from '@react-oauth/google'
 import Head from 'next/head'
-import { AsyncAuthorization, AuthGuard, Layout, StoreProvider, ThemeProvider } from './providers'
+import { AuthProvider, AuthGuard, Layout, StoreProvider, ThemeProvider } from './providers'
 
 
 const App = ({ Component, pageProps }: AppProps) => {
@@ -13,11 +13,11 @@ const App = ({ Component, pageProps }: AppProps) => {
       <StoreProvider>
         <ThemeProvider>
           <Layout>
-            <AsyncAuthorization>
+            <AuthProvider>
               <AuthGuard>
                 <Component {...pageProps} />
               </AuthGuard>
-            </AsyncAuthorization>
+            </AuthProvider>
           </Layout>
         </ThemeProvider>
       </StoreProvider>

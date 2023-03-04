@@ -4,7 +4,3 @@ export { default as ThemeProvider } from './Theme/ThemeProvider'
 export { default as StoreProvider } from './Store/StoreProvider'
 
 export { default as Layout } from './Layout'
-
-export { default as StoreProvider } from './Store/StoreProvider'
-
-export { default as ThemeProvider } from './Theme/ThemeProdiver'
