@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 
-// Component withHelpers children
-export type WC<T = {}> = FC<{ children: any } & T>
+// Children functional component
+export type CWC<T = {}> = FC<{ children: ReactNode } & T>

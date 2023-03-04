@@ -1,35 +1,15 @@
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
+import { configureStore } from '@reduxjs/toolkit'
 import { createReducers } from './createReducers'
-
-import { profileApi } from 'widgets/Profile'
-import { productsApi } from 'widgets/Products'
-import { currentProductApi } from 'widgets/CurrentProduct'
-import { authApi } from 'widgets/Login'
-import { postsApi } from 'widgets/Posts'
-import { savedApi } from 'features/Saved'
-import { ApiConfig } from 'app/store/types'
+import { createMiddleware } from 'app/store/config/createMiddleware'
 
 
-const apiConfig: ApiConfig = {
-  profile: profileApi,
-  products: productsApi,
-  product: currentProductApi,
-  auth: authApi,
-  posts: postsApi,
-  saved: savedApi
+const createStore = () => {
+  const store = configureStore({
+    reducer: createReducers(),
+    middleware: createMiddleware()
+  })
+
+  return store
 }
 
-
-const store = configureStore({
-  reducer: createReducers(),
-  middleware: getDefaultMiddleware({
-    thunk: {
-      extraArgument: {
-        api: apiConfig
-      }
-    }
-  })
-})
-
-
-export default store
+export default createStore

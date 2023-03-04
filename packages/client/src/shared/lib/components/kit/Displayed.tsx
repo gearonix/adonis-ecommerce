@@ -1,4 +1,4 @@
-import { WC } from 'shared/types/components'
+import { CWC } from 'shared/types/components'
 import { FC } from 'react'
 
 interface DisplayedProps{
@@ -6,7 +6,7 @@ interface DisplayedProps{
 }
 
 
-const Displayed : WC<DisplayedProps> = ({ condition, children }) => {
+const Displayed : CWC<DisplayedProps> = ({ condition, children }) => {
   return condition ? children : null
 }
 
