@@ -6,14 +6,14 @@ import { AddPostForm } from 'widgets/Posts/types'
 import { withFormData, isError } from 'shared/lib/helpers'
 
 export const addPost = createThunk('posts/ADD_POST',
-    async (values: AddPostForm, { dispatch }) => {
-      const newPost = await postsApi.add(values.message)
+    async (values: AddPostForm, { dispatch, extra }) => {
+      const newPost = await extra.api.posts.add(values.message)
       if (isError(newPost)) return
 
       const createFormData = withFormData(UploadProperties.POST_IMAGES)
       const formData = createFormData(values.image)
 
-      const response = await postsApi.setImage(formData, newPost.data.postId)
+      const response = await extra.api.posts.setImage(formData, newPost.data.postId)
       if (isError(response)) return
       const image = response.data.fileUrl
 

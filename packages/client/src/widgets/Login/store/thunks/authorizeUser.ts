@@ -1,5 +1,4 @@
 import { createThunk } from 'shared/types/redux'
-import LoginApi from '../../api'
 import { authActions } from 'widgets/Login/store/authReducer'
 import { isError as isError } from 'shared/lib/helpers/others/httpHelpers'
 import { getSavedProducts } from 'features/Saved/store/thunks'

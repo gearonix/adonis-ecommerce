@@ -9,8 +9,8 @@ const storage = new LocalStorageHelper()
 
 export const logoutUser = createThunk(
     'users/LOGOUT_USER',
-    async (_, { dispatch }) => {
-      await authApi.clearAuthToken()
+    async (_, { dispatch, extra }) => {
+      await extra.api.auth.clearAuthToken()
       dispatch(userActions.clearUser())
       dispatch(authActions.logout())
       dispatch(cartActions.removeAll())

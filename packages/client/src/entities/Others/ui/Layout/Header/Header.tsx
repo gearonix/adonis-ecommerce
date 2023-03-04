@@ -11,7 +11,7 @@ export interface HeaderSkeletonProps {
 }
 
 
-const Header: FC<HeaderSkeletonProps> = ({ DropDowns, Burger }) => {
+const Header: FC<HeaderSkeletonProps> = ({ DropDowns, Burger, Search }) => {
   return <>
     <header className={s.header}>
       <div className={s.header_block}>
@@ -21,6 +21,7 @@ const Header: FC<HeaderSkeletonProps> = ({ DropDowns, Burger }) => {
             <Logo/>
           </Link>
         </div>
+        <Search/>
         <div className={s.options}>
           <div className={s.options_item}>
             <FaUserAlt/>

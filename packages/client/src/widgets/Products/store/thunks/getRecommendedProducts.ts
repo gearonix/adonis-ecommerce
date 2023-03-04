@@ -5,8 +5,8 @@ import { SearchControlsForm } from 'widgets/Products/types'
 
 
 export const getRecommendedProducts = createThunk('products/GET_RECOMMENDED_PRODUCTS',
-    async (filter: Partial<SearchControlsForm>, { rejectWithValue }) => {
-      const response = await productsApi.recommended(filter)
+    async (filter: Partial<SearchControlsForm>, { rejectWithValue, extra }) => {
+      const response = await extra.api.products.recommended(filter)
       if (!response.data || isError(response)) {
         return rejectWithValue(null)
       }

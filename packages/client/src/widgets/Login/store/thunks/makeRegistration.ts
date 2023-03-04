@@ -7,8 +7,8 @@ import { authorizeUser } from 'widgets/Login/store/thunks/authorizeUser'
 
 export const makeRegistration = createThunk(
     'users/MAKE_REGISTRATION',
-    async (data: SignupWithRoles, { dispatch, rejectWithValue }) => {
-      const response = await LoginApi.registerUser(data)
+    async (data: SignupWithRoles, { dispatch, rejectWithValue, extra }) => {
+      const response = await extra.api.auth.registerUser(data)
 
       if (isError(response)) return rejectWithValue(Exceptions.USER_ALREADY_EXISTS)
 
@@ -19,8 +19,8 @@ export const makeRegistration = createThunk(
 
 export const registerByGoogle = createThunk(
     'users/MAKE_REGISTRATION_BY_GOOGLE',
-    async (data: RegisterByGoogle, { dispatch, rejectWithValue }) => {
-      const response = await LoginApi.registerUserByGoogle(data)
+    async (data: RegisterByGoogle, { dispatch, rejectWithValue, extra }) => {
+      const response = await extra.api.auth.registerUserByGoogle(data)
 
       if (isError(response)) return rejectWithValue(Exceptions.REGISTRATION_FAILED)
 

@@ -5,10 +5,10 @@ import { isError } from 'shared/lib/helpers/others/httpHelpers'
 import { UserSelectors } from 'shared/selectors'
 
 export const getUserPosts = createThunk('posts/GET_USER_POSTS',
-    async (page : number, { dispatch, getState }) => {
+    async (page : number, { dispatch, getState, extra }) => {
       const userId = UserSelectors.userId(getState())
       if (!userId) return
-      const response = await postsApi.getPosts(userId, page)
+      const response = await extra.api.posts.getPosts(userId, page)
       if (isError(response)) return
       dispatch(postActions.setPosts(response.data))
     })

@@ -5,8 +5,8 @@ import { Product } from 'shared/types/slices'
 import { Nullable } from 'shared/types/common'
 
 export const getCartProducts = createThunk('cart/GET_CART_PRODUCTS',
-    async (ids: number[]): Promise<Nullable<Product[]>> => {
-      const response = await productsApi.getCartProducts(ids)
+    async (ids: number[], { extra }): Promise<Nullable<Product[]>> => {
+      const response = await extra.api.products.getCartProducts(ids)
       if (isError(response)) return null
       return response.data
     })

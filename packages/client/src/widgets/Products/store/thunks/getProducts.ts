@@ -6,8 +6,8 @@ import { SearchQuery } from 'widgets/Products/types'
 import { ObjectNullable } from 'shared/types/common'
 
 export const getProducts = createThunk('products/GET_PRODUCTS',
-    async (filter: ObjectNullable<SearchQuery>, { dispatch }) => {
-      const products = await productsApi.getProducts(filter)
+    async (filter: ObjectNullable<SearchQuery>, { dispatch, extra }) => {
+      const products = await extra.api.products.getProducts(filter)
       if (isError(products)) return
 
       dispatch(productsActions.setProducts(products.data))
