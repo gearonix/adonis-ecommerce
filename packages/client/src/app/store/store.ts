@@ -1,13 +1,27 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { createReducers } from './createReducers'
-import { createMiddleware } from 'app/store/config/createMiddleware'
+import { createReducers } from './config/createReducers'
+import { CreateMiddleWare, createMiddleware } from 'app/store/config/createMiddleware'
+import { createReducerManager } from 'app/store/reducerManager'
+import { StateSchema } from 'app/store/types'
 
 
-const createStore = () => {
+interface CreateStoreConfig{
+  middleware: CreateMiddleWare
+}
+
+const createStore = (config: CreateStoreConfig) => {
+  const rootReducers = createReducers()
+
+  const reducerManager = createReducerManager(rootReducers)
+
   const store = configureStore({
-    reducer: createReducers(),
-    middleware: createMiddleware()
+    // @ts-ignore
+    reducer: reducerManager.reduce,
+    middleware: createMiddleware(config.middleware)
   })
+
+  // @ts-ignore
+  store.reducerManager = reducerManager
 
   return store
 }

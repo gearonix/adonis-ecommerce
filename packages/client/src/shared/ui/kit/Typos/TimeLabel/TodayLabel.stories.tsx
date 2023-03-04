@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { TimeLabel } from './TodayLabel'
 
 export default {
-  title: 'shared/kit/Typos/TodayLabel',
+  title: 'shared/ui/Typos/TodayLabel',
   component: TimeLabel,
   argTypes: {}
 } as ComponentMeta<typeof TimeLabel>

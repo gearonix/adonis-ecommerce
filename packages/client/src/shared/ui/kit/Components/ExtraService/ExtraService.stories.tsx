@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { ExtraService } from './ExtraService'
 
 export default {
-  title: 'shared/kit/Components/ExtraService',
+  title: 'shared/ui/Components/ExtraService',
   component: ExtraService,
   argTypes: {}
 } as ComponentMeta<typeof ExtraService>

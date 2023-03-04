@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { Preloader } from './Preloader'
 
 export default {
-  title: 'shared/kit/Components/Preloader',
+  title: 'shared/ui/Components/Preloader',
   component: Preloader,
   argTypes: {}
 } as ComponentMeta<typeof Preloader>

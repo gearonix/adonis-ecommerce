@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import Advantage from './Advantage'
 
 export default {
-  title: 'shared/kit/Components/Advantage',
+  title: 'shared/ui/Components/Advantage',
   component: Advantage,
   argTypes: {}
 } as ComponentMeta<typeof Advantage>

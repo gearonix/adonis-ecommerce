@@ -1,10 +1,16 @@
 import { getDefaultMiddleware } from '@reduxjs/toolkit'
 import { apiConfig } from './apiConfig'
+import { Redirect } from 'app/store/types'
 
-export const createMiddleware = () => getDefaultMiddleware({
+export interface CreateMiddleWare{
+  redirect: Redirect
+}
+
+export const createMiddleware = (config: CreateMiddleWare) => getDefaultMiddleware({
   thunk: {
     extraArgument: {
-      api: apiConfig
+      api: apiConfig,
+      ...config
     }
   }
 })

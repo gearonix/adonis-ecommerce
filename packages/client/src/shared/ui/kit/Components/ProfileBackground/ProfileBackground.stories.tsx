@@ -3,7 +3,7 @@ import { ProfileBackground } from 'shared/ui/kit'
 import { ChangeBackground } from 'features/Profile'
 
 export default {
-  title: 'shared/kit/Components/ProfileBackground',
+  title: 'shared/ui/Components/ProfileBackground',
   component: ProfileBackground,
   argTypes: {}
 } as ComponentMeta<typeof ProfileBackground>

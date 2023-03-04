@@ -1,20 +1,18 @@
 import { userSlice } from 'widgets/Profile'
 import { productsSlice } from 'widgets/Products'
-import { currentProductSlice } from 'widgets/CurrentProduct'
 import { authSlice } from 'widgets/Login'
 import { cartSlice } from 'widgets/Cart'
 import { savedSlice } from 'features/Saved'
-import { postSlice } from 'widgets/Posts'
+import { ReducersMapObject } from '@reduxjs/toolkit'
+import { StateSchema } from 'app/store/types'
 
 
-export const createReducers = () => {
+export const createReducers = (): ReducersMapObject<StateSchema> => {
   return {
     user: userSlice,
     products: productsSlice,
-    currentProduct: currentProductSlice,
     auth: authSlice,
     cart: cartSlice,
-    saved: savedSlice,
-    posts: postSlice
+    saved: savedSlice
   }
 }

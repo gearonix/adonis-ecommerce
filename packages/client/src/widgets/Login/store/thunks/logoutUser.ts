@@ -4,6 +4,7 @@ import { userActions } from 'widgets/Profile'
 import { authActions } from 'widgets/Login/store/authReducer'
 import { LocalStorageHelper } from 'shared/lib/helpers/others/localStorageHelpers'
 import { cartActions } from 'widgets/Cart/store/cartReducer'
+import { routes } from 'shared/config/routes'
 
 const storage = new LocalStorageHelper()
 
@@ -15,5 +16,6 @@ export const logoutUser = createThunk(
       dispatch(authActions.logout())
       dispatch(cartActions.removeAll())
       storage.clear()
+      extra.redirect(routes.LOGIN)
     }
 )
