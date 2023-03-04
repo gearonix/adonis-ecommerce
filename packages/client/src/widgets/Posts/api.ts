@@ -1,20 +1,18 @@
 import axiosInstance from 'shared/config/axios'
 import Endpoints from 'shared/config/endpoints'
-import { AxiosResponse as Res } from 'shared/types/common'
-import { Post } from 'shared/types/slices'
-import { PostsSlice } from 'shared/types/slices/post'
+import { PostsApi } from 'widgets/Posts/types'
 
 
 const endpoint = Endpoints.POSTS
 
-export const PostsApi = {
-  getPosts(userId: number, page: number): Res<PostsSlice> {
+export const postsApi: PostsApi = {
+  getPosts(userId, page) {
     return axiosInstance.get(`${endpoint.getPosts}/${userId}?page=${page}`)
   },
-  addPosts(message: string): Res<Post> {
+  add(message) {
     return axiosInstance.post(endpoint.addPost, { message })
   },
-  setPostImage(image: FormData, postId: number): Res<{fileUrl: string}> {
+  setImage(image, postId) {
     return axiosInstance.post(`${endpoint.setPostImage}?post_id=${postId}`, image)
   }
 }

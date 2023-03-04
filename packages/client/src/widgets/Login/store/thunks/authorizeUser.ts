@@ -6,9 +6,10 @@ import { getSavedProducts } from 'features/Saved/store/thunks'
 
 export const authorizeUser = createThunk(
     'users/AUTHORIZE_USER',
-    async (_, { dispatch }) => {
-      const response = await LoginApi.getCurrentUser()
+    async (_, { dispatch, extra }) => {
+      const response = await extra.api.auth.getCurrentUser()
       const user = response.data
+      console.log(user)
 
       if (!user || isError(response)) {
         return dispatch(authActions.authorizationFailed())

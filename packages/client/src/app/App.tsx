@@ -4,18 +4,12 @@ import { GoogleOAuthProvider } from '@react-oauth/google'
 import Head from 'next/head'
 import { AsyncAuthorization, AuthGuard, Layout } from './providers'
 import store from './store/store'
-import { useEffect } from 'react'
 import ThemeProvider from 'app/providers/Theme/ThemeProdiver'
+import { useDevStore } from '../../dev/components/useDevStore'
 
 
 const App = ({ Component, pageProps }: AppProps) => {
-  useEffect(() => {
-    if (window) {
-      // @ts-ignore
-      window.s = process.env.IS_DEV ? store.getState : null
-    }
-  }, [])
-
+  useDevStore(store)
   return <>
     <Head>
       <title>Adonis</title>

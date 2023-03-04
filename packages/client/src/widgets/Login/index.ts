@@ -6,3 +6,6 @@ export { authorizeUser } from './store/thunks'
 export { getUserById } from './store/thunks'
 
 export { authSlice } from './store/authReducer'
+
+export { default as authApi } from './api'
+export type { AuthApi } from './types'

@@ -9,3 +9,6 @@ export { productsSlice, productsActions } from './store/productsReducer'
 export { getUserProducts } from './store/thunks/getUserProducts'
 
 export type { RecommendedItemProps } from './ui/RecommendedItems/RecommendedItems'
+
+export { productsApi } from './api'
+export type { ProductsApi } from './types'

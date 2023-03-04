@@ -1,22 +1,21 @@
 import endpoints from 'shared/config/endpoints'
 import axiosInstance from 'shared/config/axios'
-import { AxiosResponse as Res } from 'shared/types/common'
-import { SavedModel } from 'features/Saved/types'
-import { Product } from 'shared/types/slices'
+import { SavedApi } from 'features/Saved/types'
 
 const endpoint = endpoints.PRODUCTS
 
-export const SavedApi = {
-  getSavedProducts(): Res<SavedModel[]> {
+
+export const savedApi: SavedApi = {
+  getSaved() {
     return axiosInstance.get(endpoint.saved)
   },
-  addToSaved(productId : number): Res<void> {
+  add(productId) {
     return axiosInstance.post(endpoint.addToSaved, { productId })
   },
-  removeFromSaved(productId : number): Res<void> {
+  remove(productId) {
     return axiosInstance.delete(endpoint.removeFromSaved, { data: { productId } })
   },
-  setSavedProducts(userId: number): Res<Product[]> {
+  setProducts(userId) {
     return axiosInstance.get(`${endpoint.productsByIds}?userId=${userId}`)
   }
 }

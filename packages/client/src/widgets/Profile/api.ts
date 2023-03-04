@@ -5,7 +5,7 @@ import { User } from 'shared/types/slices'
 import EndPoints from 'shared/config/endpoints'
 
 
-interface ProfileApi {
+export interface ProfileApi {
     changeUserProfile(formValues: Partial<EditProfileForm>): Res<User>
 }
 
@@ -15,7 +15,6 @@ const profileApi: ProfileApi = {
   changeUserProfile(formValues) {
     return axiosInstance.post(EndPoint.changeProfileData, formValues)
   }
-
 }
 
 

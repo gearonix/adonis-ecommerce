@@ -1,4 +1,6 @@
 import { UserRoles } from 'app/config/globals'
+import { AxiosResponse as Res } from 'shared/types/common'
+import { User } from 'shared/types/slices'
 
 export interface LoginForm {
     email: string,
@@ -26,4 +28,22 @@ export interface GoogleButtonProps {
 export interface RegisterByGoogle {
     jwt: string,
     role: UserRoles
+}
+
+type Token = Res<{ token: string }>
+
+export interface AuthApi {
+    loginUser(formValues: LoginForm): Token,
+
+    getCurrentUser(): Res<User>,
+
+    authByCookie(): Token,
+
+    registerUser(formValues: SignupWithRoles): Token,
+
+    clearAuthToken(): Res<any>,
+
+    registerUserByGoogle(data: RegisterByGoogle): Token,
+
+    loginUserByGoogle(jwt: string): Token
 }

@@ -8,3 +8,5 @@ export { default as ProfileWall } from './ui/ProfileWall/ProfileWall'
 
 export { userSlice, userActions } from './store/userReducer'
 
+export { default as profileApi } from './api'
+export type { ProfileApi } from './api'

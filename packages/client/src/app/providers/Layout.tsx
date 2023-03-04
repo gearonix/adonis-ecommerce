@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react'
 import { Inter } from '@next/font/google'
-import DevNavRouting from '../../../dev/nav_routing'
+import DevNavRouting from '../../../dev/components/nav_routing'
 import { Header } from 'widgets/Header'
 import cn from 'classnames'
 import { useTheme } from 'shared/lib/hooks/useTheme'
