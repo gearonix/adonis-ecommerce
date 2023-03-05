@@ -7,9 +7,10 @@ import { postActions, postSlice } from 'widgets/Posts/store/postsReducer'
 import { Pagination } from 'shared/ui/material'
 import { PAGE_LIMIT } from 'app/config/globals'
 import { DynamicModuleLoader } from 'shared/lib/components'
+import { NoItems } from 'shared/ui/kit'
+import { BsFilePost } from 'shared/ui/icons'
 
 const Posts : FC = () => {
-  console.log('LOADED')
   const posts = useSelector(PostSelectors.posts)
   const dispatch = useDispatch()
   const page = useSelector(PostSelectors.page)
@@ -31,10 +32,10 @@ const Posts : FC = () => {
 
 
   return <>
-    <h2>{totalCount}</h2>
     {posts.map((post) => {
       return <Post post={post} key={post.postId} />
     })}
+    <NoItems condition={!posts.length} title={'Posts'} Icon={BsFilePost} />
     <Pagination count={totalCount / PAGE_LIMIT} onChange={onPageChange} page={page} />
   </>
 }

@@ -1,0 +1,17 @@
+@use 'src/shared/css/common.scss' as *;
+
+
+.no_products {
+  @include flex(stretch, center, column);
+
+  h2 {
+    font-size: $medium;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  svg {
+    margin: 30px auto;
+    @include size(120px, 120px);
+  }
+}

@@ -17,8 +17,8 @@ const ChangeBackground: FC<ButtonHTMLAttributes<HTMLButtonElement>> = () => {
     dispatch(changeBackground(formData))
   }
 
-  return isMe ? <UploadButton className={'primary_button'}
-    handleChange={handleBackground}><BsPen/> Change background</UploadButton> : null
+  return isMe ? <UploadButton
+    handleChange={handleBackground} width={200}><BsPen/> Change background</UploadButton> : null
 }
 
 export default ChangeBackground

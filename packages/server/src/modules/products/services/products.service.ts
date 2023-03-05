@@ -10,6 +10,7 @@ import { ifExist, withLimit } from '@app/lib/helpers'
 import { SearchDTO } from '@app/modules/products/dto/searchDTO'
 import { SavedService } from '@app/modules/products/services/saved.service'
 import { CommentsService } from '@app/modules/comments/comments.service'
+import { SearchByIdsDTO } from '@modules/products/dto'
 
 @Injectable()
 export class ProductsService {
@@ -75,7 +76,7 @@ export class ProductsService {
     return this.products.findBy({ productId: In(saved?.map((i) => i.productId)) })
   }
 
-  async getProductsByIds(ids: number[]) {
-    return this.products.findBy({ productId: In(ids) })
+  async getProductsByIds(body: SearchByIdsDTO) {
+    return this.products.findBy({ productId: In(body.ids) })
   }
 }

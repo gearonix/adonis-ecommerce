@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import { createReducers } from './config/createReducers'
 import { CreateMiddleWare, createMiddleware } from 'app/store/config/createMiddleware'
 import { createReducerManager } from 'app/store/reducerManager'
-import { DevStore } from '__DEV__'
+import { DevStore } from '__DEV__/components'
 
 
 interface CreateStoreConfig{

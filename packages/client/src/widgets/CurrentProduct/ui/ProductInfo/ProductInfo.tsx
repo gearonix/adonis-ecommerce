@@ -9,6 +9,8 @@ import { ProductSelectors } from 'shared/selectors'
 import { Product } from 'shared/types/slices'
 import { SavedProvider } from 'features/Saved'
 import { productActions } from 'widgets/CurrentProduct'
+import { NotFound } from 'shared/ui/kit'
+import { AiOutlineShoppingCart as CartIcon } from 'shared/ui/icons'
 
 const ProductInfo: FC = () => {
   const dispatch = useDispatch()
@@ -24,15 +26,13 @@ const ProductInfo: FC = () => {
     }
   }, [id])
 
-  if (!productInfo.productId) {
-    return null
-  }
-
-  return <article className={s.product_info}>
-    <ProductImages ImageCarousel={ImageCarousel} files={productInfo.images}/>
-    <ProductParams product={productInfo}/>
-    <PurchaseProduct CartButton={CartButton} AddToSaved={SavedProvider} product={product}/>
-  </article>
+  return <NotFound show={productInfo.productId} title={'Product'} Icon={CartIcon}>
+    <article className={s.product_info}>
+      <ProductImages ImageCarousel={ImageCarousel} files={productInfo.images}/>
+      <ProductParams product={productInfo}/>
+      <PurchaseProduct CartButton={CartButton} AddToSaved={SavedProvider} product={product}/>
+    </article>
+  </NotFound>
 }
 
 export default ProductInfo

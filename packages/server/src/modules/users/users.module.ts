@@ -1,15 +1,14 @@
 import { forwardRef, Module } from '@nestjs/common'
-import { UsersController } from './users.controller'
-import { UsersService } from './services/users.service'
+import { UsersController, ChangeProfileController } from './controllers'
+import { UsersService, ProfileService } from '@modules/users/services'
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { UsersEntity } from '@app/entities'
 import { AuthModule } from '@app/modules/auth'
 import { RequestContextModule } from 'nestjs-request-context'
 import { FilesModule } from '@app/modules/files'
-import { ProfileService } from './services/profile.service'
 
 @Module({
-  controllers: [UsersController],
+  controllers: [UsersController, ChangeProfileController],
   providers: [UsersService, ProfileService],
   imports: [
     TypeOrmModule.forFeature([UsersEntity]),

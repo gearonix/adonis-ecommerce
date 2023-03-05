@@ -2,16 +2,15 @@
 
 
 .add_product_block {
-  padding: 20px;
-
+  padding: 20px 20px 0;
   .title {
     font-size: $l-medium;
     text-align: center;
-    color: white;
+    color: $color-absolute;
   }
 
   .container {
-    padding: 30px 20px 30px 20px;
+    padding: 30px 20px 0px 20px;
     border-top: $br $bg-150;
     border-bottom: $br $bg-150;
     width: 70%;
@@ -46,7 +45,16 @@
       margin-top: 37px;
       width: 100%;
       display: flex;
-      gap: 15px;
+      gap: 19px;
+      .save{
+        background: #0D6EFD;
+        color: white;
+      }
+      .cancel{
+        background: white;
+        color: black;
+        box-shadow: $shadow;
+      }
     }
 
     .background {
@@ -79,5 +87,10 @@
       }
     }
 
+  }
+}
+.add_product_block.dark{
+  .title{
+    color: white
   }
 }

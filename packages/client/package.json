@@ -37,7 +37,9 @@
     "react-toastify": "^9.1.1",
     "react-use-measure": "^2.1.1",
     "storybook-addon-next": "^1.7.1",
-    "yup": "^0.32.11"
+    "yup": "^0.32.11",
+    "@react-buddy/ide-toolbox": "^2.3.1",
+    "@react-buddy/palette-mui": "^5.0.1"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^6.5.16",

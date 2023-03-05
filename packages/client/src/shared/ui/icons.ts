@@ -5,7 +5,9 @@ export {
   BsDot, BsThreeDotsVertical, BsCartPlus,
   BsTrash,
   BsInfoLg,
-  BsBuilding
+  BsBuilding,
+  BsPhone,
+  BsFilePost
 } from 'react-icons/bs'
 export {
   AiFillEye, AiFillEyeInvisible, AiFillLock, AiOutlineApi, AiOutlineArrowLeft,
@@ -13,6 +15,7 @@ export {
   AiOutlineFileAdd, AiOutlineUnorderedList, AiOutlineUpload,
   AiOutlineShoppingCart,
   AiOutlineCar,
+  AiOutlineUser,
   AiOutlineInfoCircle
 
 } from 'react-icons/ai'
@@ -23,4 +26,4 @@ export { FaHeart, FaInfo, FaShoppingCart, FaTruck, FaUserAlt } from 'react-icons
 export { FcGoogle } from 'react-icons/fc'
 export { RxCross1 } from 'react-icons/rx'
 export { SlPresent } from 'react-icons/sl'
-export { CiAt } from 'react-icons/ci'
+export { CiAt, CiWarning } from 'react-icons/ci'

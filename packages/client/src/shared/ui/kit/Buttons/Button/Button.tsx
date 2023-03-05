@@ -12,8 +12,10 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
 }
 
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ color = 'primary', w, h, children, onClick }, ref) => {
-  return <button className={cn(s.button, s[color])} ref={ref} onClick={onClick} style={{ width: w, height: h }}>
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
+  const { color = 'primary', w, h, children, onClick, className, style } = props
+  return <button className={cn(s.button, s[color], className)}
+    ref={ref} onClick={onClick} style={{ width: w, height: h, ...style }}>
     {children}
   </button>
 })

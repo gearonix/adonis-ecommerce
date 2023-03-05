@@ -6,7 +6,11 @@ const Notifications = () => {
   const { theme } = useTheme()
   return <ToastContainer
     position={'bottom-right'}
-    theme={theme}/>
+    theme={theme}
+    limit={1}
+
+    autoClose={1500}
+  />
 }
 
 

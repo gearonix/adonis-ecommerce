@@ -1,3 +1,6 @@
+@use 'src/shared/css/mixins.scss' as *;
+
+
 .css-m5hdmq-MuiInputBase-root-MuiInput-root-MuiSelect-root:before {
     border-color: #0D6EFD;
 }
@@ -24,4 +27,7 @@
 }
 .layout.theme-light .style_category__ilW_r span{
     color: #1e1e1e;
+}
+.css-10q087f{
+    @include customScroll;
 }

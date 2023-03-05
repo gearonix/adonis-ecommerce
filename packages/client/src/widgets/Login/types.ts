@@ -37,8 +37,6 @@ export interface AuthApi {
 
     getCurrentUser(): Res<User>,
 
-    authByCookie(): Token,
-
     registerUser(formValues: SignupWithRoles): Token,
 
     clearAuthToken(): Res<any>,

@@ -13,7 +13,7 @@ export interface MessageBarProps {
 
 const MessageBar: FC<MessageBarProps> = ({ placeholder = 'Message', reg, submit }) => {
   return <article className={s.message_bar}>
-    <div className={s.icon_wrapper}>
+    <div className={s.image_wrapper}>
       <AiFillFileAdd/>
     </div>
     <input placeholder={placeholder} maxLength={150} {...reg('message').inputProps}

@@ -7,4 +7,17 @@ const axiosInstance = axios.create({
   withCredentials: true
 })
 
+
+axios.interceptors.response.use(
+    (response) => {
+      return response
+    },
+    (error) => {
+      if (!error.response) {
+        throw Error('Please check your internet connection.')
+      }
+      return Promise.reject(error)
+    }
+)
+
 export default axiosInstance

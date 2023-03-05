@@ -1,15 +1,14 @@
 const EndPoints = {
   AUTH: {
     login: 'auth/login',
-    getUser: '/auth/get/me',
-    getToken: '/auth/get/token',
+    getUser: '/auth/token/me',
     registration: '/auth/registration',
-    deleteToken: '/auth/delete/token',
-    googleRegistration: '/auth/registration/google',
-    googleLogin: '/auth/login/google'
+    deleteToken: '/auth/token/remove',
+    googleRegistration: '/auth/google/registration',
+    googleLogin: '/auth/google/login'
   },
   USERS: {
-    changeProfileData: '/users/change/users',
+    changeProfileData: '/users/change',
     changeUserBackground: '/users/change/background',
     changeUserAvatar: '/users/change/avatar'
   },
@@ -20,9 +19,9 @@ const EndPoints = {
     products: '/products',
     recommended: '/products/recommended',
     productsByIds: '/products/ids',
-    saved: '/products/saved',
-    addToSaved: '/products/saved/add',
-    removeFromSaved: '/products/saved/remove'
+    saved: '/products/saved/items',
+    addToSaved: '/products/saved',
+    removeFromSaved: '/products/saved'
   },
   COMMENTS: {
     createProductComment: '/comments/products/create',

@@ -21,7 +21,7 @@ const ErrorTemplate : FC<ErrorTemplateProps> = ({ errorInfo }) => {
   }
 
   return <div className={s.error_container}>
-    <WithSpring type={'opacityScale'}>
+    <WithSpring>
       <AppError errorInfo={errorInfo} onRedirect={onRedirect}/>
     </WithSpring>
   </div>

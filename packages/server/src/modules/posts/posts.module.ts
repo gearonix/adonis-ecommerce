@@ -5,7 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm'
 import { PostsEntity } from '@app/entities'
 import { RequestContextModule } from 'nestjs-request-context'
 import { AuthModule } from '@app/modules/auth'
-import { FilesModule } from '../files/files.module'
+import { FilesModule } from '@modules/files'
 
 @Module({
   controllers: [PostsController],

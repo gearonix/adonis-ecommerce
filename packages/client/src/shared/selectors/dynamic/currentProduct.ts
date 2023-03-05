@@ -8,7 +8,8 @@ const ProductSelectors = {
   id: ({ currentProduct }: AppState) => currentProduct?.productInfo.productId,
   comments: ({ currentProduct }: RequiredState) => currentProduct.comments?.data,
   commentsPage: ({ currentProduct }: RequiredState) => currentProduct.comments?.page,
-  commentsCount: ({ currentProduct }: RequiredState) => currentProduct.comments.count
+  commentsCount: ({ currentProduct }: RequiredState) => currentProduct.comments.count,
+  isExists: ({ currentProduct }: RequiredState) => !!currentProduct.productInfo.productId
 }
 
 

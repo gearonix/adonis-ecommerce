@@ -1,15 +1,13 @@
 import { forwardRef, Module } from '@nestjs/common'
-import { AuthController } from './auth.controller'
-import { AuthService } from './services/auth.service'
+import { AuthController, GoogleController, TokenController } from './controllers'
+import { AuthService, GoogleService, TokenService } from '@modules/auth/services'
 import { JwtModule } from '@nestjs/jwt'
 import { appConfig } from '@app/config'
 import { UsersModule } from '../users'
 import { RequestContextModule } from 'nestjs-request-context'
-import { GoogleService } from '@app/modules/auth/services/google.service'
-import { TokenService } from '@app/modules/auth/services/token.service'
 
 @Module({
-  controllers: [AuthController],
+  controllers: [AuthController, GoogleController, TokenController],
   providers: [AuthService, GoogleService, TokenService],
   imports: [
     forwardRef(() => UsersModule),

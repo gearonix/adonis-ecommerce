@@ -5,7 +5,7 @@ import { ApiAnimation } from 'shared/lib/components'
 
 const CartSaved: FC<SharedSavedProps> = ({ onClick, isInSaved }) => {
   return <ApiAnimation type={'increaseSize'} onClick={onClick}>
-    <Button w={'114px'} h={'32px'} color={'blueBordered'}>
+    <Button w={'170px'} h={'32px'} color={'blueBordered'}>
       {!isInSaved ? 'Save for later' : 'Remove from saved'}
     </Button>
   </ApiAnimation>

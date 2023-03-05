@@ -4,8 +4,8 @@
 .you_may_like {
   @include itemBorder;
   @include size(19%, 553px);
-  margin-left: 20px;
   @include padding(16px, 20px);
+  margin-left: auto;
 
   .heading {
     font-weight: bold;

@@ -26,6 +26,7 @@ const ProfileWall : FC = () => {
       </ContentModal>
       <ContentButtons openAddProduct={addProduct.open} openAddPost={addPost.open}/>
       <ProfileWallSwitcher/>
+
     </div>
   </ProfileWallContext.Provider>
 }

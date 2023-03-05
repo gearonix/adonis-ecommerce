@@ -4,7 +4,7 @@ import { CartIconProps } from '../../types'
 
 export const CartIcon: FC<CartIconProps> = ({ Icon }) => {
   return <div className={s.item}>
-    <div className={s.icon_wrapper}>
+    <div className={s.image_wrapper}>
       <Icon/>
     </div>
     <div>

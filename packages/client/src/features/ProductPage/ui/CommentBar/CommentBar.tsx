@@ -1,11 +1,13 @@
 import { FC } from 'react'
-import { useDispatch } from 'shared/types/redux'
+import { useDispatch, useSelector } from 'shared/types/redux'
 import { addComment } from 'widgets/CurrentProduct/store/thunks'
 import Helpers from 'shared/lib/helpers/helpers'
 import { useForm } from 'shared/lib/hooks/useForm'
 import { MessageBar } from 'entities/Messenger'
 import { useRouter } from 'next/router'
 import { useUnauthorized } from 'shared/lib/hooks'
+import { ProductSelectors } from 'shared/selectors'
+import { Displayed } from 'shared/lib/components'
 
 interface CommentForm{
     message: string
@@ -16,6 +18,8 @@ export const CommentBar: FC = () => {
   const dispatch = useDispatch()
   const helpers = new Helpers()
   const authorized = useUnauthorized()
+  const isExists = useSelector(ProductSelectors.isExists)
+
 
   const onSubmit = authorized(({ message }: CommentForm) => {
     if (!helpers.removeSpaces(message)) {
@@ -25,5 +29,7 @@ export const CommentBar: FC = () => {
     dispatch(addComment(message))
     form.reset()
   })
-  return <MessageBar submit={submit(onSubmit)} reg={reg}/>
+  return <Displayed condition={isExists}>
+    <MessageBar submit={submit(onSubmit)} reg={reg}/>
+  </Displayed>
 }

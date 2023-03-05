@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react'
 import { Inter } from '@next/font/google'
-import { DevNavigation } from '__DEV__'
+import { DevNavigation } from '__DEV__/components'
 import { Header } from 'widgets/Header'
 import cn from 'classnames'
 import { useTheme } from 'shared/lib/hooks/useTheme'

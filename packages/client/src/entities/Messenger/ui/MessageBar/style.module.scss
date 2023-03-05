@@ -11,7 +11,7 @@
   margin: 20px auto 10px auto;
   @include size(72%, 56px);
 
-  .icon_wrapper {
+  .image_wrapper {
     svg {
       @include size(24px, 24px);
       color: $bg-300;

@@ -1,15 +1,19 @@
 import { FC } from 'react'
 import s from './style.module.scss'
-import { ProfileBackground, UserAvatar } from 'shared/ui/kit'
+import { Button, ProfileBackground, UserAvatar } from 'shared/ui/kit'
 import { HeadField, TextArea } from 'shared/ui/material'
 import { EditProfileProps } from './types'
 import countries from 'country-list-js'
 import SearchSelect from 'shared/ui/material/components/Selects/SearchSelect'
+import { useTheme } from 'shared/lib/hooks'
+import cn from 'classnames'
+import { AiOutlineCar, BsBuilding } from 'shared/ui/icons'
 
 
 const EditProfile: FC<EditProfileProps> = ({ ChangeBackground, ChangeAvatar,
   close, submitForm, reg, user }) => {
-  return <div className={s.add_product_block}>
+  const { theme } = useTheme()
+  return <div className={cn(s.add_product_block, s[theme || 'light'])}>
     <h2 className={s.title}>Change Profile</h2>
     <div className={s.container}>
 
@@ -26,12 +30,14 @@ const EditProfile: FC<EditProfileProps> = ({ ChangeBackground, ChangeAvatar,
         <HeadField title={'First Name'} values={reg('firstName')}/>
         <HeadField title={'Last Name'} values={reg('lastName')}/>
       </div>
-      <TextArea title={'Description'} values={reg('description')}/>
-      <SearchSelect values={countries.names()} inputValues={reg('country')} />
-      <SearchSelect values={countries.capitals()} inputValues={reg('city')} />
+      <TextArea title={'Description'} values={reg('description', 55)}/>
+      <SearchSelect values={countries.names()}
+        inputValues={reg('country')} Icon={AiOutlineCar}/>
+      <SearchSelect values={countries.capitals()}
+        inputValues={reg('city')} Icon={BsBuilding}/>
       <div className={s.save_buttons}>
-        <button className="primary_button" onClick={submitForm}>Save</button>
-        <button className="outlined_button" onClick={close}>Cancel</button>
+        <Button onClick={submitForm} w={140} className={s.save} h={30}>Save</Button>
+        <Button onClick={close} w={140} className={s.cancel} h={30}>Cancel</Button>
       </div>
     </div>
   </div>

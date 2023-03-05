@@ -1,0 +1,44 @@
+@use 'shared/css/common.scss' as *;
+
+
+.container {
+  margin: 0 auto 30px;
+  @include itemBorder;
+  position: relative;
+  height: 570px;
+  @include flex(stretch,center,column);
+}
+
+.title {
+  @include inlineStyles(35px, $bg-100);
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 32px;
+  svg{
+    @include size(30px,30px);
+    margin-right: 3px;
+  }
+}
+
+.text {
+  width: 65%;
+  font-size: $small-md;
+  color: $color-absolute-200;
+  text-align: center;
+  margin: 0 auto 30px;
+}
+
+.image_wrapper {
+  //@include imageWrapper(35%, 270px);
+  margin: 30px auto 70px;
+  svg{
+    @include size(200px,200px);
+    color: $color-absolute-200;
+  }
+}
+
+.link {
+  text-align: center;
+  margin-top: 50px;
+
+}

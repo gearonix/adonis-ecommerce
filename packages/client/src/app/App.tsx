@@ -1,9 +1,12 @@
 import type { AppProps } from 'next/app'
 import { GoogleOAuthProvider } from '@react-oauth/google'
 import Head from 'next/head'
-import { AuthProvider, AuthGuard, Layout, StoreProvider, ThemeProvider,
-  ErrorBoundary } from './providers'
-import { useEffect } from 'react'
+import {
+  AuthProvider, AuthGuard, Layout, StoreProvider, ThemeProvider,
+  ErrorBoundary
+} from './providers'
+import { DevSupport } from '@react-buddy/ide-toolbox'
+import { ComponentPreviews, useInitial } from '__DEV__/react-buddy'
 
 
 const App = ({ Component, pageProps }: AppProps) => {
@@ -18,7 +21,9 @@ const App = ({ Component, pageProps }: AppProps) => {
             <Layout>
               <AuthProvider>
                 <AuthGuard>
-                  <Component {...pageProps} />
+                  <DevSupport ComponentPreviews={ComponentPreviews} useInitialHook={useInitial}>
+                    <Component {...pageProps} />
+                  </DevSupport>
                 </AuthGuard>
               </AuthProvider>
             </Layout>
