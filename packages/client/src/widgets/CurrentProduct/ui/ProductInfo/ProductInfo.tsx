@@ -9,7 +9,8 @@ import { ProductSelectors } from 'shared/selectors'
 import { Product } from 'shared/types/slices'
 import { SavedProvider } from 'features/Saved'
 import { productActions } from 'widgets/CurrentProduct'
-import { NotFound } from 'shared/ui/kit'
+import { NotFound, WithLoading } from 'shared/ui/kit'
+import { ProductPreloader, UserPreloader } from 'shared/ui/material'
 import { AiOutlineShoppingCart as CartIcon } from 'shared/ui/icons'
 
 const ProductInfo: FC = () => {
@@ -17,6 +18,8 @@ const ProductInfo: FC = () => {
   const router = useRouter()
   const id = router.query.id as string
   const product = useSelector(ProductSelectors.currentProduct)
+  const isExists = useSelector(ProductSelectors.isExists)
+  const isLoading = useSelector(ProductSelectors.isLoading)
   const productInfo = product.productInfo as Product
 
   useEffect(() => {
@@ -26,13 +29,14 @@ const ProductInfo: FC = () => {
     }
   }, [id])
 
-  return <NotFound show={productInfo.productId} title={'Product'} Icon={CartIcon}>
+  return <WithLoading title={'Product'} Icon={CartIcon} when={!isExists} loading={isLoading}
+    NotFound={NotFound} Preloader={ProductPreloader} count={1}>
     <article className={s.product_info}>
       <ProductImages ImageCarousel={ImageCarousel} files={productInfo.images}/>
       <ProductParams product={productInfo}/>
       <PurchaseProduct CartButton={CartButton} AddToSaved={SavedProvider} product={product}/>
     </article>
-  </NotFound>
+  </WithLoading>
 }
 
 export default ProductInfo

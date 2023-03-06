@@ -11,18 +11,8 @@ interface NotFoundUIProps{
     Icon: FC,
     w?: number
 }
-interface NotFoundProps extends NotFoundUIProps{
-    show: any
-}
 
-
-export const NotFound : CFC<NotFoundProps> = ({ show, children, ...props }) => {
-  console.log(props.w)
-  return Boolean(show) ? children : <NotFoundUI {...props}/>
-}
-
-
-const NotFoundUI: FC<NotFoundUIProps> = ({ title, Icon, w = 74 }) => {
+export const NotFound: FC<NotFoundUIProps> = ({ title, Icon, w = 74 }) => {
   return <div className={s.container} style={{ width: `${w}%` }}>
     <h1 className={s.title}><Icon/> {title} is not found</h1>
     <p className={s.text}>Try to make a

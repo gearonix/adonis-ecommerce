@@ -1,6 +1,5 @@
 import { createThunk } from 'shared/types/redux'
 import { RegisterByGoogle, SignupWithRoles } from 'widgets/Login/types'
-import LoginApi from 'widgets/Login/api'
 import { isError } from 'shared/lib/helpers/others/httpHelpers'
 import { Exceptions } from 'app/config/globals'
 import { authorizeUser } from 'widgets/Login/store/thunks/authorizeUser'

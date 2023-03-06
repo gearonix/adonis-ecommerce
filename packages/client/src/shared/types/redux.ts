@@ -7,12 +7,16 @@ export type Store = ReturnType<typeof createStore>;
 export type AppDispatch = Store['dispatch']
 export type AppState = ReturnType<Store['getState']>;
 
-export const createThunk = createAsyncThunk.withTypes<{
+export interface AsyncThunkConfig{
     state: AppState,
     dispatch: AppDispatch,
     extra: Extra,
     rejectValue: string
-}>()
+}
+
+export const createThunk = createAsyncThunk.withTypes<AsyncThunkConfig>()
+
+export type AsyncThunk = ReturnType<typeof createThunk<void, any, AsyncThunkConfig>>
 
 export const useSelector: TypedUseSelectorHook<Required<AppState>> = useReduxSelector
 

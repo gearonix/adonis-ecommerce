@@ -9,7 +9,8 @@ const ProductSelectors = {
   comments: ({ currentProduct }: RequiredState) => currentProduct.comments?.data,
   commentsPage: ({ currentProduct }: RequiredState) => currentProduct.comments?.page,
   commentsCount: ({ currentProduct }: RequiredState) => currentProduct.comments.count,
-  isExists: ({ currentProduct }: RequiredState) => !!currentProduct.productInfo.productId
+  isExists: ({ currentProduct }: RequiredState) => !!currentProduct.productInfo.productId,
+  isLoading: ({ currentProduct }: RequiredState) => currentProduct.isLoading
 }
 
 

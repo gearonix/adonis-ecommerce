@@ -16,7 +16,11 @@ export interface User {
     isMe: boolean
 }
 
-export const usersInitialState: ObjectNullable<User> = {
+export interface UserSlice extends User{
+    isLoading: boolean
+}
+
+export const usersInitialState: ObjectNullable<UserSlice> = {
   role: null,
   firstName: null,
   lastName: null,
@@ -28,5 +32,6 @@ export const usersInitialState: ObjectNullable<User> = {
   city: null,
   userId: null,
   registration_date: null,
-  isMe: null
+  isMe: null,
+  isLoading: false
 }

@@ -3,7 +3,8 @@ import { User } from 'shared/types/slices'
 export interface PostsSlice{
     data: Post[],
     page: number,
-    count : number
+    count : number,
+    isLoading: boolean
 }
 
 export interface Post{
@@ -19,5 +20,6 @@ export interface Post{
 export const postsInitialState: PostsSlice = {
   data: [],
   page: 0,
-  count: 0
+  count: 0,
+  isLoading: false
 }

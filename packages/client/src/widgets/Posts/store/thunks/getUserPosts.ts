@@ -1,10 +1,10 @@
-import { createThunk } from 'shared/types/redux'
+import { AsyncThunkConfig, createThunk } from 'shared/types/redux'
 import { postsApi } from 'widgets/Posts/api'
 import { postActions } from 'widgets/Posts/store/postsReducer'
 import { isError } from 'shared/lib/helpers/others/httpHelpers'
 import { UserSelectors } from 'shared/selectors'
 
-export const getUserPosts = createThunk('posts/GET_USER_POSTS',
+export const getUserPosts: ReturnType<typeof createThunk<void, number, AsyncThunkConfig>> = createThunk<void, number, AsyncThunkConfig>('posts/GET_USER_POSTS',
     async (page : number, { dispatch, getState, extra }) => {
       const userId = UserSelectors.userId(getState())
       if (!userId) return

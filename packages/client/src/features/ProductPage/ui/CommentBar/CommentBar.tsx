@@ -7,7 +7,7 @@ import { MessageBar } from 'entities/Messenger'
 import { useRouter } from 'next/router'
 import { useUnauthorized } from 'shared/lib/hooks'
 import { ProductSelectors } from 'shared/selectors'
-import { Displayed } from 'shared/lib/components'
+import { Display } from 'shared/lib/components'
 
 interface CommentForm{
     message: string
@@ -29,7 +29,7 @@ export const CommentBar: FC = () => {
     dispatch(addComment(message))
     form.reset()
   })
-  return <Displayed condition={isExists}>
+  return <Display when={isExists}>
     <MessageBar submit={submit(onSubmit)} reg={reg}/>
-  </Displayed>
+  </Display>
 }

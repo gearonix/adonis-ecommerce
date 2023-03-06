@@ -4,12 +4,13 @@ import { useDispatch, useSelector } from 'shared/types/redux'
 import { getSavedByIds } from 'features/Saved/store/thunks/getSavedByIds'
 import { savedActions } from 'features/Saved'
 import { UserSelectors, SavedSelectors } from 'shared/selectors'
-import { FaHeart, FiHeart } from 'shared/ui/icons'
+import { FiHeart } from 'shared/ui/icons'
 
 const SavedItems : FC<CartItemsProps> = ({ Remove, AddToSaved, Component }) => {
   const products = useSelector(SavedSelectors.products)
   const savedIds = useSelector(SavedSelectors.saved)
   const userId = useSelector(UserSelectors.selectMyOrUserId)
+  const isLoading = useSelector(SavedSelectors.isLoading)
 
   const dispatch = useDispatch()
 
@@ -26,7 +27,7 @@ const SavedItems : FC<CartItemsProps> = ({ Remove, AddToSaved, Component }) => {
 
 
   return Component ? <Component Remove={Remove} AddToSaved={AddToSaved} items={products}
-    Icon={FiHeart} title={'Saved'}/> : null
+    Icon={FiHeart} title={'Saved'} loading={isLoading}/> : null
 }
 
 

@@ -6,7 +6,8 @@ const SavedSelectors = {
     return saved.saved.includes(productId)
   },
   products: ({ saved }: AppState) => saved.products,
-  count: ({ saved }: AppState) => saved.saved.length
+  count: ({ saved }: AppState) => saved.saved.length,
+  isLoading: ({ saved }: AppState) => saved.isLoading
 
 }
 

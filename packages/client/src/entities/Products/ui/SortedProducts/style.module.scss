@@ -22,8 +22,9 @@
   }
 
   .recommended_items {
-    @include size(80%);
     @include grid(4, 2);
+    @include size(100%);
+
 
     .item {
       @include padding(16px, 20px);

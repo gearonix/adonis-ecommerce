@@ -1,15 +1,16 @@
 import { Body, Controller, Get, Param, Put, Query } from '@nestjs/common'
 import { SearchDTO } from '@app/modules/products/dto/searchDTO'
-import { ProductsService } from './../services/products.service'
+import { ProductsService } from '@modules/products/services'
 import { SearchByUserIdDTO } from '@modules/products/dto'
 import { SearchByIdsDTO } from '@modules/products/dto/searchByIdsDTO'
+import { sleep } from '@app/lib/helpers'
 
 @Controller('products')
 export class ProductsController {
   constructor(private productsService: ProductsService) {}
 
   @Get()
-  getProducts(@Query() query: SearchDTO) {
+  async getProducts(@Query() query: SearchDTO) {
     return this.productsService.getProducts(query)
   }
 
@@ -30,12 +31,12 @@ export class ProductsController {
   }
 
   @Get(':id')
-  getProduct(@Param('id') id) {
+  async getProduct(@Param('id') id) {
     return this.productsService.getProduct(+id)
   }
 
   @Get('/user/:id')
-  getUserProducts(@Param('id') id, @Query('page') page) {
+  async getUserProducts(@Param('id') id, @Query('page') page) {
     return this.productsService.userProducts(+id, page)
   }
 }

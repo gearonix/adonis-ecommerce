@@ -2,10 +2,15 @@
 
 .profile_wall {
   width: 83%;
+  min-height: 500px;
   box-sizing: border-box;
   border: 1px solid #E0E0E0;
   border-radius: 6px;
   background: $bg-absolute;
   margin: 0px auto 60px;
   padding: 15px 15px 70px;
+}
+.wall{
+  width: 100%;
+
 }

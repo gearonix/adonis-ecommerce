@@ -5,3 +5,4 @@ export type { CurrentProduct, ProductComment,
 export type { AuthSlice, authInitialState } from './auth'
 export type { SavedSlice } from './saved'
 export type { Post, PostsSlice, postsInitialState } from './post'
+export type { CartSlice } from './cartSlice'

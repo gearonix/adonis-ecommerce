@@ -1,6 +1,9 @@
 import { createSlice, PayloadAction as Action } from '@reduxjs/toolkit'
 import { SearchQuery, ProductsWithCount } from 'widgets/Products/types'
 import { productsInitialState as initialState } from 'shared/types/slices/products'
+import { withLoading } from 'shared/lib/helpers/others/reduxHelpers'
+import { getSavedProducts } from 'features/Saved/store/thunks'
+import { getProducts, getUserProducts } from 'widgets/Products/store/thunks'
 
 
 const productsReducer = createSlice({
@@ -18,6 +21,9 @@ const productsReducer = createSlice({
       // @ts-ignore
       state.filter = { ...state.products.filter, ...payload }
     }
+  },
+  extraReducers: (builder) => {
+    withLoading(builder, getUserProducts, getProducts)
   }
 })
 

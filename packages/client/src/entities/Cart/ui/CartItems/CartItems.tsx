@@ -5,8 +5,8 @@ import { Product } from 'shared/types/slices'
 import { SavedProps } from 'features/Saved'
 import { CartIcons } from 'entities/Banners'
 import { AiOutlineShoppingCart as CartIcon } from 'shared/ui/icons'
-import { Displayed } from 'shared/lib/components'
-import { NoItems } from 'shared/ui/kit'
+import { Display } from 'shared/lib/components'
+import { WithLoading } from 'shared/ui/kit'
 
 export interface CartItemsProps{
   Remove?: FC<any>,
@@ -14,7 +14,8 @@ export interface CartItemsProps{
   RemoveAll?: FC,
   items: Product[],
   title?: string,
-  Icon?: FC
+  Icon?: FC,
+  loading: boolean
 }
 
 
@@ -23,10 +24,12 @@ const CartItems : FC<CartItemsProps> = (props) => {
   return <div style={{ width: '50%' }}>
     <div className={s.cart_container}>
       <div className={s.cart_layout}>
-        {items.map((product, idx) => {
-          return <CartItem Remove={Remove} AddToSaved={AddToSaved} key={idx} product={product}/>
-        })}
-        <NoItems condition={!items.length} title={title} Icon={Icon} />
+
+        <WithLoading when={!items.length} title={title} Icon={Icon}>
+          {items.map((product, idx) => {
+            return <CartItem Remove={Remove} AddToSaved={AddToSaved} key={idx} product={product}/>
+          })}
+        </WithLoading>
 
         <CartButtons BackColor={'primary'} RemoveAll={RemoveAll}/>
       </div>

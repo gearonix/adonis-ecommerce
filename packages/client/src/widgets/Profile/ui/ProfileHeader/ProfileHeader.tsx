@@ -1,7 +1,6 @@
 import { ProfileHeader as ProfileHeaderTemp } from 'entities/Profile'
 import { FC } from 'react'
 import { ChangeBackground } from 'features/Profile'
-import { OpenModal } from 'features/Profile'
 import { useSelector } from 'shared/types/redux'
 import { selectReformattedUser } from 'widgets/Profile/store/selectors'
 import { ContentModal, SimpleModal } from 'shared/ui/material'

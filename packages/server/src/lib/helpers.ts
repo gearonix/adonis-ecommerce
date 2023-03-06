@@ -27,3 +27,5 @@ export const withLimit = (page: string | undefined, take = PAGE_LIMIT) => {
     skip: page ? Number(page) * take : 0
   }
 }
+
+export const sleep = async () => new Promise((resolve) => setTimeout(resolve, 3000))

@@ -6,7 +6,8 @@ import { SearchQuery } from 'widgets/Products/types'
 export interface Products {
     products: Product[],
     count: number,
-    filter: ObjectNullable<SearchQuery>
+    filter: ObjectNullable<SearchQuery>,
+    isLoading: boolean
 }
 
 
@@ -39,5 +40,6 @@ export const productsInitialState: Products = {
     type: null,
     page: 0,
     inStock: null
-  }
+  },
+  isLoading: false
 }

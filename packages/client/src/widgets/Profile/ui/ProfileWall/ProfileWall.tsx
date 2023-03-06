@@ -33,7 +33,7 @@ const ProfileWall : FC = () => {
 
 const ProfileWallSwitcher: FC = () => {
   const { page } = useContext(ProfileWallContext)
-  return <div style={{ width: '100%' }}>
+  return <div className={s.wall}>
     {page === WallPages.products && <MyProducts/>}
     {page === WallPages.saved && <SavedItems Component={ProfileSaved} AddToSaved={SavedProvider}/>}
     {page === WallPages.posts && <MyPosts/>}

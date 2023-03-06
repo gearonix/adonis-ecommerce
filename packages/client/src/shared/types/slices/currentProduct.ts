@@ -6,7 +6,8 @@ import { ObjectNullable } from 'shared/types/common'
 export interface CurrentProduct{
     productInfo: ObjectNullable<Product>,
     salesman: ObjectNullable<User>,
-    comments: ProductComments
+    comments: ProductComments,
+    isLoading: boolean
 }
 export interface ProductComments{
     data: ProductComment[],
@@ -45,5 +46,6 @@ export const productInitialState: CurrentProduct = {
     data: [],
     page: 0,
     count: 0
-  }
+  },
+  isLoading: false
 }

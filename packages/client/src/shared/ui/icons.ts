@@ -6,8 +6,7 @@ export {
   BsTrash,
   BsInfoLg,
   BsBuilding,
-  BsPhone,
-  BsFilePost
+  BsPhone
 } from 'react-icons/bs'
 export {
   AiFillEye, AiFillEyeInvisible, AiFillLock, AiOutlineApi, AiOutlineArrowLeft,
@@ -16,7 +15,8 @@ export {
   AiOutlineShoppingCart,
   AiOutlineCar,
   AiOutlineUser,
-  AiOutlineInfoCircle
+  AiOutlineInfoCircle,
+  AiOutlineFileSearch
 
 } from 'react-icons/ai'
 export { MdMessage, MdOutlineDescription, MdSend } from 'react-icons/md'

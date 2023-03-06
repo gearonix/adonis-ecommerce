@@ -1,0 +1,20 @@
+@use '../../../../css/common' as *;
+
+
+.no_products {
+  @include flex(stretch, center, column);
+  margin-bottom: 30px;
+
+  h2 {
+    font-size: 27px;
+    text-align: center;
+    margin-top: 45px;
+    color: $color-absolute-200;
+  }
+
+  svg {
+    margin: 30px auto;
+    color: $color-absolute-200;
+    @include size(110px, 110px);
+  }
+}

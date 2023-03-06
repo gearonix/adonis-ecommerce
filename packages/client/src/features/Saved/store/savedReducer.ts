@@ -1,12 +1,9 @@
 import { createSlice, PayloadAction as Action } from '@reduxjs/toolkit'
 import { SavedModel } from 'features/Saved/types'
-import { SavedSlice } from 'shared/types/slices'
 import { Product } from 'shared/types/slices'
-
-const initialState: SavedSlice = {
-  saved: [],
-  products: []
-}
+import { savedInitialState as initialState } from 'shared/types/slices/saved'
+import { withLoading } from 'shared/lib/helpers/others/reduxHelpers'
+import { getSavedByIds } from 'features/Saved/store/thunks/getSavedByIds'
 
 
 const savedReducer = createSlice({
@@ -28,6 +25,9 @@ const savedReducer = createSlice({
     setSavedProducts(state, { payload }: Action<Product[]>) {
       state.products = payload
     }
+  },
+  extraReducers: (builder) => {
+    withLoading(builder, getSavedByIds)
   }
 })
 

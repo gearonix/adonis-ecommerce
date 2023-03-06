@@ -6,7 +6,7 @@ import Advantage from 'shared/ui/kit/Components/Advantage/ui/Advantage'
 import { ProductSelectors } from 'shared/selectors'
 import { Product } from 'shared/types/slices'
 import { useSelector } from 'shared/types/redux'
-import { Displayed } from 'shared/lib/components'
+import { Display } from 'shared/lib/components'
 import { CiWarning } from 'react-icons/ci'
 
 const ProductDescriptions: FC = () => {
@@ -17,7 +17,7 @@ const ProductDescriptions: FC = () => {
   return <div className={s.product_params}>
     <BlueLinkHeader/>
     <div className={s.wrapper}>
-      <Displayed condition={isExists}>
+      <Display when={isExists}>
         <div className={s.description}>
           {product.description}
         </div>
@@ -25,7 +25,7 @@ const ProductDescriptions: FC = () => {
         {product?.features?.map((feature, idx) => {
           return <Advantage title={feature} key={idx}/>
         })}
-      </Displayed>
+      </Display>
       {!isExists &&
           <div className={s.description}>
             <CiWarning/> Product has no description

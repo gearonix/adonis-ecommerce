@@ -5,7 +5,7 @@ import { useDispatch, useSelector, useStore } from 'react-redux'
 import { Reducer, useEffect } from 'react'
 import { AppState } from 'shared/types/redux'
 import { useRouter } from 'next/router'
-import { Displayed } from 'shared/lib/components'
+import { Display } from 'shared/lib/components'
 
 interface Props{
   name: keyof StateSchema
@@ -36,9 +36,9 @@ const DynamicModuleLoader: CFC<Props> = ({ name, reducer, children }) => {
     }
   }, [])
 
-  return <Displayed condition={isExists}>
+  return <Display when={isExists}>
     {children}
-  </Displayed>
+  </Display>
 }
 
 

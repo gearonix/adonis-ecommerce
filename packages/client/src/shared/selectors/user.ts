@@ -10,13 +10,13 @@ const UserSelectors = {
   userId: ({ user }: AppState) => user.userId,
   user: ({ user }: AppState) => user,
   userName: createSelector((state: AppState) => state.user, helpers.toNormalName),
-  userRole: ({ user }: AppState) => user.role,
   isSalesman: ({ user }: AppState) => user.role === UserRoles.SALESMAN,
   isMe: ({ user }: AppState) => user.isMe,
   selectMyOrUserId(state: AppState) {
     return (state.user.userId || state.auth.userId) as number
   },
-  isExists: ({ user }: AppState) => !!user.userId
+  isExists: ({ user }: AppState) => !!user.userId,
+  isLoading: ({ user }: AppState) => user.isLoading
 }
 
 

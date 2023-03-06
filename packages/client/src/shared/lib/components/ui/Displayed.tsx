@@ -2,12 +2,12 @@ import { CFC } from 'shared/types/components'
 import { FC } from 'react'
 
 interface DisplayedProps{
-    condition: any
+    when: any
 }
 
 
-const Displayed : CFC<DisplayedProps> = ({ condition, children }) => {
-  return Boolean(condition) ? children : null
+const Displayed : CFC<DisplayedProps> = ({ when, children }) => {
+  return Boolean(when) ? children : null
 }
 
 export default Displayed

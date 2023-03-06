@@ -7,11 +7,12 @@ import { postActions, postSlice } from 'widgets/Posts/store/postsReducer'
 import { Pagination } from 'shared/ui/material'
 import { PAGE_LIMIT } from 'app/config/globals'
 import { DynamicModuleLoader } from 'shared/lib/components'
-import { NoItems } from 'shared/ui/kit'
-import { BsFilePost } from 'shared/ui/icons'
+import { WithLoading } from 'shared/ui/kit'
+import { AiOutlineFileSearch as PostIcon } from 'shared/ui/icons'
 
 const Posts : FC = () => {
   const posts = useSelector(PostSelectors.posts)
+  const isLoading = useSelector(PostSelectors.isLoading)
   const dispatch = useDispatch()
   const page = useSelector(PostSelectors.page)
   const totalCount = useSelector(PostSelectors.count)
@@ -32,11 +33,12 @@ const Posts : FC = () => {
 
 
   return <>
-    {posts.map((post) => {
-      return <Post post={post} key={post.postId} />
-    })}
-    <NoItems condition={!posts.length} title={'Posts'} Icon={BsFilePost} />
-    <Pagination count={totalCount / PAGE_LIMIT} onChange={onPageChange} page={page} />
+    <WithLoading when={!posts.length} title={'Posts'} Icon={PostIcon} loading={isLoading}>
+      {posts.map((post) => {
+        return <Post post={post} key={post.postId} />
+      })}
+      <Pagination count={totalCount / PAGE_LIMIT} onChange={onPageChange} page={page} />
+    </WithLoading>
   </>
 }
 

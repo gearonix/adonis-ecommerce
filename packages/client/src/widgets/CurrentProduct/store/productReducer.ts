@@ -1,6 +1,8 @@
 import { createSlice, PayloadAction as Action } from '@reduxjs/toolkit'
+import { withLoading } from 'shared/lib/helpers'
 import { CurrentProduct, ProductComment } from 'shared/types/slices'
 import { ProductComments, productInitialState as initialState } from 'shared/types/slices/currentProduct'
+import { getProduct } from 'widgets/CurrentProduct/store/thunks'
 
 const productReducer = createSlice({
   name: 'currentProduct',
@@ -25,6 +27,9 @@ const productReducer = createSlice({
       state.comments.data = payload.data
       state.comments.count = payload.count
     }
+  },
+  extraReducers: (builder) => {
+    withLoading(builder, getProduct)
   }
 })
 

@@ -1,6 +1,8 @@
 import { Post } from 'shared/types/slices'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { postsInitialState as initialState, PostsSlice } from 'shared/types/slices/post'
+import { getUserPosts } from 'widgets/Posts/store/thunks'
+import { withLoading } from 'shared/lib/helpers/others/reduxHelpers'
 
 
 const postReducer = createSlice({
@@ -21,9 +23,12 @@ const postReducer = createSlice({
     setPage(state, { payload }: PayloadAction<number>) {
       state.page = payload
     }
-
+  },
+  extraReducers: (builder) => {
+    withLoading(builder, getUserPosts)
   }
 })
+
 
 export const postActions = postReducer.actions
 

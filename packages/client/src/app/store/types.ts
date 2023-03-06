@@ -9,6 +9,8 @@ import { ObjectNullable, Required } from 'shared/types/common'
 import { AuthSlice, CurrentProduct, PostsSlice, Products, SavedSlice, User } from 'shared/types/slices'
 import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore'
 import { ReducerManager } from 'app/store/reducerManager'
+import { CartSlice } from 'shared/types/slices/cartSlice'
+import { UserSlice } from 'shared/types/slices/user'
 
 export interface ApiConfig {
     profile: ProfileApi
@@ -24,12 +26,13 @@ export interface Extra extends CreateMiddleWare{
 }
 
 export interface RequiredReducers{
-    user: ObjectNullable<User>,
+    user: UserSlice,
     products: Products,
     auth: AuthSlice,
-    cart: number[],
+    cart: CartSlice,
     saved: SavedSlice,
 }
+
 
 export interface OptionalReducers{
     posts: PostsSlice

@@ -1,4 +1,4 @@
-@use 'src/shared/css/mixins.scss' as *;
+@use 'src/shared/css/common.scss' as *;
 
 
 .css-m5hdmq-MuiInputBase-root-MuiInput-root-MuiSelect-root:before {
@@ -30,4 +30,8 @@
 }
 .css-10q087f{
     @include customScroll;
+}
+
+.MuiPaper-elevation{
+    box-shadow: $shadow;
 }

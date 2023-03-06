@@ -6,7 +6,7 @@ import { Helpers } from 'shared/lib/helpers'
 import Link from 'next/link'
 import { routes } from 'shared/config/routes'
 import { CFC } from 'shared/types/components'
-import { Displayed } from 'shared/lib/components'
+import { Display } from 'shared/lib/components'
 import { useTheme } from 'shared/lib/hooks'
 
 interface UserInfoProps{
@@ -48,20 +48,20 @@ const UserInfo: FC<UserInfoProps> = ({ user }) => {
 }
 
 const InfoContainer : CFC<{condition?: boolean}> = ({ children, condition }) => {
-  return <Displayed condition={!!children && condition !== false}>
+  return <Display when={!!children && condition !== false}>
     <div className={s.info_container}>
       {children}
     </div>
-  </Displayed>
+  </Display>
 }
 
 const InfoCell: CFC<{Icon: FC, title?: string}> = ({ Icon, children, title }) => {
-  return <Displayed condition={!!children}>
+  return <Display when={!!children}>
     <div className={s.info_cell}>
       <Icon/>
       <span>{title && `${title}:`} {children}</span>
     </div>
-  </Displayed>
+  </Display>
 }
 
 
