@@ -30,7 +30,8 @@ const SearchList: FC = () => {
 
   return <div className={s.items_block}>
     <WithLoading when={!productsLength} title={'Products'} Icon={CartIcon}
-                 loading={isLoading} Preloader={ProductsPreloader} count={6} NotFound={NotFound}>
+      loading={isLoading} Preloader={ProductsPreloader} count={6} NotFound={() =>
+        <NotFound title={'Products'} Icon={CartIcon} w={100}/>}>
       {products.map((product) => <SearchedProduct AddToSaved={SavedProvider}
         product={product} key={product.productId} CartButton={CartButton}/>)}
     </WithLoading>

@@ -9,7 +9,7 @@ import { ProductSelectors } from 'shared/selectors'
 import { Product } from 'shared/types/slices'
 import { SavedProvider } from 'features/Saved'
 import { productActions } from 'widgets/CurrentProduct'
-import { NotFound, WithLoading } from 'shared/ui/kit'
+import { NotFound, PenPreloader, WithLoading } from 'shared/ui/kit'
 import { ProductPreloader, UserPreloader } from 'shared/ui/material'
 import { AiOutlineShoppingCart as CartIcon } from 'shared/ui/icons'
 
@@ -30,7 +30,7 @@ const ProductInfo: FC = () => {
   }, [id])
 
   return <WithLoading title={'Product'} Icon={CartIcon} when={!isExists} loading={isLoading}
-    NotFound={NotFound} Preloader={ProductPreloader} count={1}>
+    NotFound={NotFound} Preloader={() => <PenPreloader instantly/>} count={1}>
     <article className={s.product_info}>
       <ProductImages ImageCarousel={ImageCarousel} files={productInfo.images}/>
       <ProductParams product={productInfo}/>

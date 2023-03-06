@@ -1,6 +1,6 @@
 import { FC, ReactNode, useEffect, useState } from 'react'
 import { useDispatch } from 'shared/types/redux'
-import { Preloader } from 'shared/ui/kit'
+import { PenPreloader } from 'shared/ui/kit'
 import { authorizeUser } from 'widgets/Login/store/thunks/authorizeUser'
 
 
@@ -13,8 +13,7 @@ const Authorization: FC<{ children: ReactNode }> = ({ children }) => {
   }, [])
 
   return <>
-    {isLoaded ? children : <Preloader/>}
-
+    {isLoaded ? children : <PenPreloader/>}
   </>
 }
 

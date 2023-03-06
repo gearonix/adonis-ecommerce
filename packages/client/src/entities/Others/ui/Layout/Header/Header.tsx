@@ -1,8 +1,11 @@
 import { FC } from 'react'
 import s from './style.module.scss'
-import { FaHeart, FaInfo, FaShoppingCart, FaUserAlt, GiHamburgerMenu, MdMessage } from 'shared/ui/icons'
+import { AiOutlineSearch, FaHeart, FaInfo, FaShoppingCart, FaUserAlt, MdMessage } from 'shared/ui/icons'
 import Link from 'next/link'
 import { HoverLink, Logo } from 'shared/ui/kit'
+import { routes } from 'shared/config/routes'
+import { ThemeSwitcher } from 'shared/ui/material'
+import { useTheme } from 'shared/lib/hooks'
 
 export interface HeaderSkeletonProps {
   Search: FC,
@@ -23,29 +26,35 @@ const Header: FC<HeaderSkeletonProps> = ({ DropDowns, Burger, Search }) => {
         </div>
         <Search/>
         <div className={s.options}>
-          <div className={s.options_item}>
+          <Link className={s.options_item} href={routes.LOGIN}>
             <FaUserAlt/>
             <span>Profile</span>
-          </div>
-          <div className={s.options_item}>
+          </Link>
+          <Link className={s.options_item} href={routes.MESSENGER}>
             <MdMessage/>
             <span>Message</span>
-          </div>
-          <div className={s.options_item}>
+          </Link>
+          <Link className={s.options_item} href={routes.SAVED}>
             <FaHeart/>
             <span>Orders</span>
-          </div>
-          <div className={s.options_item}>
+          </Link>
+          <Link className={s.options_item} href={routes.CART}>
             <FaShoppingCart/>
             <span>My cart</span>
-          </div>
+          </Link>
         </div>
       </div>
       <div className={s.navbar_block}>
         <nav className={s.navbar}>
-          <HoverLink><GiHamburgerMenu/> All category</HoverLink>
-          <HoverLink><MdMessage/> Messages</HoverLink>
-          <HoverLink><FaInfo/> About</HoverLink>
+          <Link href={routes.SEARCH}>
+            <HoverLink><AiOutlineSearch/> Search</HoverLink>
+          </Link>
+          <Link href={routes.MESSENGER}>
+            <HoverLink><MdMessage/> Messages</HoverLink>
+          </Link>
+          <Link href={routes.ABOUT}>
+            <HoverLink><FaInfo/> About</HoverLink>
+          </Link>
         </nav>
         <DropDowns/>
       </div>

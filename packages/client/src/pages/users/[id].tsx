@@ -5,21 +5,17 @@ import Head from 'next/head'
 import { ProfileWall } from 'widgets/Profile'
 import { UserSelectors } from 'shared/selectors'
 import { useRouter } from 'next/router'
-import { WithLoading, WithSpring } from 'shared/lib/components'
-import { AiOutlineUser } from 'shared/ui/icons'
-import { NotFound } from 'shared/ui/kit'
-import { UserPreloader } from 'shared/ui/material'
+import { Ternary, WithSpring } from 'shared/lib/components'
 import { getUserById } from 'widgets/Login/store/thunks'
+import { PenPreloader } from 'shared/ui/kit'
 
 
 const Profile: FC = () => {
   const dispatch = useDispatch()
   const userName = useSelector(UserSelectors.userName)
-  const isExists = useSelector(UserSelectors.isExists)
   const isLoading = useSelector(UserSelectors.isLoading)
   const { query } = useRouter()
   const id = query.id as string
-
 
   useEffect(() => {
     if (id) {
@@ -37,11 +33,16 @@ const Profile: FC = () => {
       </title>
     </Head>
     <div className="users_page">
-      <WithLoading title={'User'} Icon={AiOutlineUser} when={!isExists} loading={isLoading}
-        NotFound={NotFound} Preloader={UserPreloader} count={1}>
-        <ProfileHeader />
-        <ProfileWall/>
-      </WithLoading>
+      <Ternary where={isLoading}>
+        <PenPreloader instantly/>
+        <>
+          <WithSpring>
+            <ProfileHeader />
+            <ProfileWall/>
+          </WithSpring>
+        </>
+      </Ternary>
+
     </div>
   </WithSpring>
 }

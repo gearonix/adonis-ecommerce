@@ -26,15 +26,15 @@ export class ProductsEntity {
       features: string[]
     @Column('varchar', { length: Lengths.TITLE, nullable: true })
       material: string
-    @Column('varchar', { length: Lengths.TINYTEXT, nullable: true })
+    @Column('varchar', { length: Lengths.MODEL, nullable: true })
       type: ProductTypes
-    @Column('varchar', { length: Lengths.TINY_TITLE, nullable: true })
+    @Column('varchar', { length: Lengths.MODEL, nullable: true })
       design: string
     @Column('tinyint')
       warrantyCount: number
-    @Column('varchar', { length: Lengths.TINY_TITLE, nullable: true })
+    @Column('varchar', { length: Lengths.MODEL, nullable: true })
       model: ProductModels
-    @Column('tinyint')
+    @Column('varchar', { length: Lengths.MODEL, nullable: true })
       size: typeof ProductSizes[number]
     @PrimaryGeneratedColumn()
       productId: number

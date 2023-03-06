@@ -34,10 +34,6 @@
         color: $bg-300;
         transition: background 200ms;
 
-        &:hover {
-          color: $hover-100;
-        }
-
       }
 
       .options_item {
@@ -52,6 +48,7 @@
         span {
           @include inlineStyles($xs, $bg-300);
           white-space: nowrap;
+          margin-top: 3px;
         }
       }
 

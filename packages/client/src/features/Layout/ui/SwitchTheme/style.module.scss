@@ -2,7 +2,7 @@
 
 .dropdowns {
   @include flex(space-between, center);
-  @include size(23%, 24px);
+  @include size(21%, 24px);
 
   select {
     @include flex(space-between);

@@ -1,15 +1,21 @@
 export type ProductRatings = 1 | 2 | 3 | 4 | 5
 
 export enum ProductTypes{
-    TYPE1 = 'TYPE1',
-    TYPE2 = 'TYPE2'
+    ELECTRONICS = 'Electronics',
+    CLOTHES = 'Clothes',
+    SHOES = 'Shoes',
+    CHILDREN = 'Children products',
+    SPORTS = 'Sports and recreation',
+    FOOD = 'Food'
 }
 
 export enum ProductModels{
-    MODEL1 = 'MODEL1',
-    MODEL2 = 'MODEL2'
+    LATEST = 'Latest',
+    NEW = 'New',
+    OLD = 'Slightly old',
+    OUTDATED = 'Outdated'
 }
-
-export const ProductSizes = [10, 20, 30, 40, 50] as const
+export const ProductSizes = ['Very little', 'Small', 'Medium',
+  'Massive', 'Large', 'Epic'] as const
 
 

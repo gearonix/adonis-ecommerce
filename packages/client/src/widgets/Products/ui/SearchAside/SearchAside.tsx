@@ -17,8 +17,8 @@ const SearchAside: FC = () => {
   }
 
   useEffect(() => {
-    const subscription = form.watch(onChange)
-    return () => subscription.unsubscribe()
+    const sub = form.watch(onChange)
+    return () => sub.unsubscribe()
   }, [])
 
 

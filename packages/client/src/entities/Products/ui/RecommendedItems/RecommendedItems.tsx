@@ -2,16 +2,25 @@ import s from './style.module.scss'
 import { ContainerTitle, RecommendedItemTall } from 'shared/ui/kit'
 import { FC } from 'react'
 import { RecommendedItemProps } from 'widgets/Products'
+import {Ternary } from 'shared/lib/components'
+import { GridPreloader } from 'shared/ui/material'
 
 
 const RecommendedItems: FC<RecommendedItemProps> = ({ items }) => {
-  return items.length > 0 ? <article className={s.recommended_items}>
+  return <article className={s.recommended_items}>
     <ContainerTitle>Recommended items</ContainerTitle>
     <div className={s.items_block}>
-      {items.slice(0, 10).map((product) =>
-        <RecommendedItemTall key={product.productId} product={product}/>)}
+      <Ternary where={items.length}>
+        <>
+          {items.slice(0, 10).map((product) =>
+            <RecommendedItemTall key={product.productId} product={product}/>)}
+        </>
+        <>
+          <GridPreloader/>
+        </>
+      </Ternary>
     </div>
-  </article> : null
+  </article>
 }
 
 export default RecommendedItems

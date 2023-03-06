@@ -3,8 +3,8 @@ import s from './style.module.scss'
 import { useTimeout } from 'shared/lib/hooks/useTimeout'
 import { WithSpring } from 'shared/lib/components'
 
-export const Preloader: FC = () => {
-  const showPen = useTimeout()
+export const PenPreloader: FC<{instantly: boolean}> = ({ instantly }) => {
+  const showPen = useTimeout(instantly ? 200 : 1800)
 
   return <div className={s.preloader}>
     {showPen && <PenAnimation/>}

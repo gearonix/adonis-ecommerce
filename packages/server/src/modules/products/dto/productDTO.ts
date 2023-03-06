@@ -26,23 +26,23 @@ export class ProductDTO {
     @IsOptional()
     readonly material?: string
     @IsString({ message: ValidationExceptions.MUST_BE_A_STRING })
-    @Length(3, Lengths.TINYTEXT, {
+    @Length(3, Lengths.MODEL, {
       message: ValidationExceptions.LENGTH_IS_NOT_CORRECT
     })
-    @IsIn([ProductTypes.TYPE1, ProductTypes.TYPE2])
+    @IsIn(Object.values(ProductTypes))
     readonly type: ProductTypes
     @IsString({ message: ValidationExceptions.MUST_BE_A_STRING })
-    @Length(3, Lengths.TINY_TITLE, {
+    @Length(3, Lengths.MODEL, {
       message: ValidationExceptions.LENGTH_IS_NOT_CORRECT
     })
     @IsOptional()
     readonly design?: string
     readonly warrantyCount?: number
     @IsString({ message: ValidationExceptions.MUST_BE_A_STRING })
-    @Length(3, Lengths.TINY_TITLE, {
+    @Length(3, Lengths.MODEL, {
       message: ValidationExceptions.LENGTH_IS_NOT_CORRECT
     })
-    @IsIn([ProductModels.MODEL1, ProductModels.MODEL2])
+    @IsIn(Object.values(ProductModels))
     readonly model: ProductModels
     @IsIn(ProductSizes)
     readonly size?: typeof ProductSizes[number]

@@ -2,6 +2,7 @@ export enum Lengths {
   TITLE = 40,
   IMAGE = 200,
   LONGTEXT = 60,
+  MODEL = 50,
   ID = 8,
   TINYTEXT = 10,
   HASH = 100,

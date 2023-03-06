@@ -1,5 +1,5 @@
 import { FC, ReactNode, useEffect } from 'react'
-import { Preloader } from 'shared/ui/kit'
+import { PenPreloader } from 'shared/ui/kit'
 import { useRouter } from 'next/router'
 import { useSelector } from 'react-redux'
 import appConfig from 'app/config/config'
@@ -40,7 +40,7 @@ const AuthRedirect: FC<{ children: ReactNode }> = ({ children }) => {
   }, [isAuthorized])
 
   return <>
-    {isLoaded ? children : <Preloader/>}
+    {isLoaded ? children : <PenPreloader/>}
   </>
 }
 

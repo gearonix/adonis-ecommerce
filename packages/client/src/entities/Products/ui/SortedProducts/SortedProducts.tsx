@@ -13,7 +13,6 @@ import { RecommendedPreloader } from 'shared/ui/material'
 const SortedProducts: FC<RecommendedItemProps> = ({ type, items }) => {
   const dispatch = useDispatch()
   const router = useRouter()
-  const isLoading = useSelector(ProductsSelectors.isLoading)
 
   const onSearch = () => {
     dispatch(productsActions.changeFilter({ type }))
