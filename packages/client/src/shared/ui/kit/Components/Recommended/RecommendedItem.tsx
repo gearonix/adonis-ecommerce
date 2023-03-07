@@ -4,8 +4,8 @@ import { NextImage } from 'shared/ui/kit'
 import { Product } from 'shared/types/slices'
 import { Helpers } from 'shared/lib/helpers'
 import Link from 'next/link'
-import { routes } from 'shared/config/routes'
-import { DefaultAssets } from 'shared/config/assets'
+import { routes } from 'shared/config/consts/routes'
+import { DefaultAssets } from 'shared/config/consts/assets'
 
 export const RecommendedItem: FC<{product: Product}> = ({ product }) => {
   const helpers = new Helpers()

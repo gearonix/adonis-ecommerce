@@ -2,7 +2,7 @@ import s from './../About/style.module.scss'
 import { AiOutlineGithub } from 'shared/ui/icons'
 import { Button, NextImage } from 'shared/ui/kit'
 import { FC } from 'react'
-import { Assets } from 'shared/config/assets'
+import { Assets } from 'shared/config/consts/assets'
 
 interface AppErrorProps{
     errorInfo: string,

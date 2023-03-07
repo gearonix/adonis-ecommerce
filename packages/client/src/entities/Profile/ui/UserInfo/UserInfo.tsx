@@ -4,7 +4,7 @@ import { BsInfoLg, GiTopHat, SlPresent, AiOutlineCar, BsBuilding, CiAt } from 's
 import s from './style.module.scss'
 import { Helpers } from 'shared/lib/helpers'
 import Link from 'next/link'
-import { routes } from 'shared/config/routes'
+import { routes } from 'shared/config/consts/routes'
 import { CFC } from 'shared/types/components'
 import { Display } from 'shared/lib/components'
 import { useTheme } from 'shared/lib/hooks'

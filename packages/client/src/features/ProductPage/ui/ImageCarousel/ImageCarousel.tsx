@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import s from './style.module.scss'
 import { NextImage } from 'shared/ui/kit'
-import { DefaultAssets } from 'shared/config/assets'
+import { DefaultAssets } from 'shared/config/consts/assets'
 
 export interface ImageCarouselProps{
   files: string[],

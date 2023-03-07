@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import s from './style.module.scss'
 import { ContainerTitle, DefaultExtraService, ExtraService } from 'shared/ui/kit'
-import { MyProjects } from 'shared/config/myLinks'
+import { MyProjects } from 'shared/config/consts/myLinks'
 import { Map } from 'shared/lib/components'
 
 

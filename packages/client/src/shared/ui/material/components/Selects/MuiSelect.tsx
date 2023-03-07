@@ -6,7 +6,7 @@ export const MuiSelect: FC<MuiSelectProps> = ({ title, values }) => {
   const selectValues = values.autoCompleteValues()
 
   const onChange = (e: SelectChangeEvent<number>) => {
-    console.log(selectValues[e.target.value as number])
+
   }
 
   return <FormControl sx={{ m: 1, minWidth: 120, marginTop: '-8px', marginLeft: '3px' }} size="small">

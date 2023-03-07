@@ -3,7 +3,7 @@ import s from './style.module.scss'
 import Link from 'next/link'
 import { AiOutlineApi, AiOutlineHome, GiTopHat } from 'shared/ui/icons'
 import { Button } from 'shared/ui/kit'
-import { routes } from 'shared/config/routes'
+import { routes } from 'shared/config/consts/routes'
 
 const SignupChoice: FC = () => {
   return <div className={s.signup_main}>

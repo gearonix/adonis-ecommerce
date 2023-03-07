@@ -1,4 +1,4 @@
-import { LocalStorage } from 'shared/config/themes'
+import { LocalStorage } from 'shared/config/consts/themes'
 import { Nullable } from 'shared/types/common'
 
 

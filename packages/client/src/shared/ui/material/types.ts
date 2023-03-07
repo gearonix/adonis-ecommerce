@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 import { FieldValues } from 'shared/lib/helpers'
-import { DefaultAssets } from 'shared/config/assets'
+import { DefaultAssets } from 'shared/config/consts/assets'
 
 export interface ModalProps {
     isOpen: boolean,

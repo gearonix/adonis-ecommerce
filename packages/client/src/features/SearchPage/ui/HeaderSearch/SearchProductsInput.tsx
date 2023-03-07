@@ -3,7 +3,7 @@ import { searchDefaultValues } from '../../lib/defaultValues'
 import { useDispatch, useSelector } from 'shared/types/redux'
 import { productsActions } from 'widgets/Products'
 import { useRouter } from 'next/router'
-import { routes } from 'shared/config/routes'
+import { routes } from 'shared/config/consts/routes'
 import { useForm } from 'shared/lib/hooks/useForm'
 import { FieldValues, Helpers } from 'shared/lib/helpers'
 import { HeaderInput } from 'shared/ui/kit'
@@ -24,7 +24,6 @@ const helpers = new Helpers()
 
 const SearchProductsInput: FC<HeaderInputProps> = ({ Component }) => {
   const filter = useSelector(ProductsSelectors.filter)
-  console.log(filter)
   const { reg, submit } = useForm<SearchForm>(null, searchDefaultValues(filter.search))
   const dispatch = useDispatch()
   const router = useRouter()

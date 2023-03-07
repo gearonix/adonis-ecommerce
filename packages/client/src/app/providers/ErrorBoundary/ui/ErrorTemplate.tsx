@@ -2,7 +2,7 @@ import { FC, useEffect } from 'react'
 import { AppError } from 'entities/Others'
 import { WithSpring } from 'shared/lib/components'
 import s from './style.module.scss'
-import { routes } from 'shared/config/routes'
+import { routes } from 'shared/config/consts/routes'
 import { useRouter } from 'next/router'
 
 

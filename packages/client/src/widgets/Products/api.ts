@@ -1,6 +1,6 @@
 import { ProductsApi } from 'widgets/Products/types'
-import axiosInstance from 'shared/config/axios'
-import Endpoints from 'shared/config/endpoints'
+import axiosInstance from 'shared/config/consts/axios'
+import Endpoints from 'shared/config/consts/endpoints'
 import { Helpers } from 'shared/lib/helpers'
 
 const endpoint = Endpoints.PRODUCTS

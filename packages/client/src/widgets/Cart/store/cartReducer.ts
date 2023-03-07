@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction as Action } from '@reduxjs/toolkit'
-import { LocalStorage } from 'shared/config/themes'
+import { LocalStorage } from 'shared/config/consts/themes'
 import { ReduxLocalStorage } from 'shared/lib/helpers'
 import { CartSlice } from 'shared/types/slices'
 

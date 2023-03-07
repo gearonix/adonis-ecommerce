@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { Button } from 'shared/ui/kit'
 import s from './style.module.scss'
 import Link from 'next/link'
-import { MyLinks } from 'shared/config/myLinks'
+import { MyLinks } from 'shared/config/consts/myLinks'
 
 const GithubBanner: FC = () => {
   return <article className={s.github_banner}>

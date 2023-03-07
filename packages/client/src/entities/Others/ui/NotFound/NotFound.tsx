@@ -3,7 +3,7 @@ import { NextImage } from 'shared/ui/kit'
 import cn from 'classnames'
 import Link from 'next/link'
 import React from 'react'
-import { Assets } from 'shared/config/assets'
+import { Assets } from 'shared/config/consts/assets'
 
 const NotFoundComponent = () => {
   return <div className={s.not_found}>

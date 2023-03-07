@@ -18,7 +18,6 @@ const SearchList: FC = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    console.log(filter)
     dispatch(getProducts(filter))
   }, [filter])
 

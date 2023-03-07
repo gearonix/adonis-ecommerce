@@ -6,7 +6,7 @@ import Typo from 'shared/ui/kit/Typos/Typo/Typo'
 import { BlueLink } from 'shared/ui/kit'
 import { Product } from 'shared/types/slices'
 import Link from 'next/link'
-import { routes } from 'shared/config/routes'
+import { routes } from 'shared/config/consts/routes'
 import { SavedProps, SearchSaved } from 'features/Saved'
 
 export interface SearchProductProps {

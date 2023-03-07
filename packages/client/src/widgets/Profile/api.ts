@@ -1,8 +1,8 @@
-import axiosInstance from 'shared/config/axios'
+import axiosInstance from 'shared/config/consts/axios'
 import { AxiosResponse as Res } from 'shared/types/common'
 import { EditProfileForm } from 'widgets/Profile/types'
 import { User } from 'shared/types/slices'
-import EndPoints from 'shared/config/endpoints'
+import EndPoints from 'shared/config/consts/endpoints'
 
 
 export interface ProfileApi {

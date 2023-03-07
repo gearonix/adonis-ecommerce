@@ -1,5 +1,5 @@
-import axiosInstance from 'shared/config/axios'
-import Endpoints from 'shared/config/endpoints'
+import axiosInstance from 'shared/config/consts/axios'
+import Endpoints from 'shared/config/consts/endpoints'
 import { PostsApi } from 'widgets/Posts/types'
 
 

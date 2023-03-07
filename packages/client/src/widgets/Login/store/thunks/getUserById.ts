@@ -1,5 +1,5 @@
 import { createThunk } from 'shared/types/redux'
-import axiosInstance from 'shared/config/axios'
+import axiosInstance from 'shared/config/consts/axios'
 import { userActions } from 'widgets/Profile'
 
 

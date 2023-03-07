@@ -3,7 +3,7 @@ import s from './style.module.scss'
 import { AiOutlineSearch } from 'shared/ui/icons'
 import { backgroundImage } from 'shared/lib/helpers'
 import Link from 'next/link'
-import { DefaultAssets } from 'shared/config/assets'
+import { DefaultAssets } from 'shared/config/consts/assets'
 import { ApiAnimation } from 'shared/lib/components'
 
 interface ExtraServiceProps{

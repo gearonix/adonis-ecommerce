@@ -1,5 +1,5 @@
-import endpoints from 'shared/config/endpoints'
-import axiosInstance from 'shared/config/axios'
+import endpoints from 'shared/config/consts/endpoints'
+import axiosInstance from 'shared/config/consts/axios'
 import { SavedApi } from 'features/Saved/types'
 
 const endpoint = endpoints.PRODUCTS

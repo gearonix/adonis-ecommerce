@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'shared/types/redux'
 import { addProductToSaved, removeProductFromSaved } from 'features/Saved/store/thunks'
 import { AuthSelectors, SavedSelectors } from 'shared/selectors'
 import { useRouter } from 'next/router'
-import { routes } from 'shared/config/routes'
+import { routes } from 'shared/config/consts/routes'
 import { useUnauthorized } from 'shared/lib/hooks'
 
 

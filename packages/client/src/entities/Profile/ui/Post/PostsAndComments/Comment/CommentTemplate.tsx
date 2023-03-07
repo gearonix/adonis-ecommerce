@@ -1,10 +1,10 @@
 import { FC } from 'react'
 import { NextImage } from 'shared/ui/kit'
-import { DefaultAssets } from 'shared/config/assets'
+import { DefaultAssets } from 'shared/config/consts/assets'
 import { BsDot, BsThreeDotsVertical } from 'shared/ui/icons'
 import s from '../style.module.scss'
 import Link from 'next/link'
-import { routes } from 'shared/config/routes'
+import { routes } from 'shared/config/consts/routes'
 import { ProductComment } from 'shared/types/slices'
 import { Helpers } from 'shared/lib/helpers'
 

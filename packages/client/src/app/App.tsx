@@ -7,6 +7,7 @@ import {
 } from './providers'
 import { DevSupport } from '@react-buddy/ide-toolbox'
 import { ComponentPreviews, useInitial } from '__DEV__/react-buddy'
+import 'shared/config/i18n'
 
 
 const App = ({ Component, pageProps }: AppProps) => {

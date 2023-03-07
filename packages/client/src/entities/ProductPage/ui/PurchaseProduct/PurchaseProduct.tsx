@@ -4,8 +4,8 @@ import { HiOutlineFlag, MdMessage, TfiWorld } from 'shared/ui/icons'
 import { Button, NextImage } from 'shared/ui/kit'
 import { CurrentProduct } from 'shared/types/slices'
 import Link from 'next/link'
-import { routes } from 'shared/config/routes'
-import { DefaultAssets } from 'shared/config/assets'
+import { routes } from 'shared/config/consts/routes'
+import { DefaultAssets } from 'shared/config/consts/assets'
 import { SavedProps, ProductSaved } from 'features/Saved'
 
 

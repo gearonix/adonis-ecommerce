@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import ThemeContext from 'app/providers/Theme/ThemeContext'
-import { Theme } from 'shared/config/themes'
+import { Theme } from 'shared/config/consts/themes'
 import { createTheme } from '@mui/material/styles'
 
 export const useTheme = () => {

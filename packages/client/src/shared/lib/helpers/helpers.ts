@@ -73,7 +73,6 @@ class Helpers {
     if (user.firstName) {
       return user.firstName
     }
-    console.log(user)
     return user.email || 'User not found'
   }
   public removeSpaces(str: string) {

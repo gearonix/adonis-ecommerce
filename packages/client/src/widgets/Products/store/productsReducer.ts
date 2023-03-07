@@ -10,16 +10,13 @@ const productsReducer = createSlice({
   initialState,
   reducers: {
     setProducts(state, { payload }: Action<ProductsWithCount>) {
-      console.log(payload)
       state.products = payload.data
       state.count = payload.count
     },
     clearProducts() {
-      console.log('CLEAR PRODUCTS')
       return initialState
     },
     changeFilter(state, { payload }: Action<Partial<SearchQuery>>) {
-      console.log('FILTER CHANGED', payload)
       // @ts-ignore
       state.filter = { ...state.products.filter, ...payload }
     }

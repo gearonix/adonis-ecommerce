@@ -3,7 +3,7 @@ import { PenPreloader } from 'shared/ui/kit'
 import { useRouter } from 'next/router'
 import { useSelector } from 'react-redux'
 import appConfig from 'app/config/config'
-import { Routes, routes } from 'shared/config/routes'
+import { Routes, routes } from 'shared/config/consts/routes'
 import { AuthSelectors } from 'shared/selectors'
 import { useBooleanState } from 'shared/lib/hooks/useBooleanState'
 

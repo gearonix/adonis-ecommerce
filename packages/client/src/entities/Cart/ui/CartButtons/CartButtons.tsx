@@ -3,7 +3,7 @@ import s from './style.module.scss'
 import { AiOutlineArrowLeft } from 'shared/ui/icons'
 import { Button } from 'shared/ui/kit'
 import Link from 'next/link'
-import { routes } from 'shared/config/routes'
+import { routes } from 'shared/config/consts/routes'
 
 export interface CartButtonsProps {
   RemoveAll?: FC,

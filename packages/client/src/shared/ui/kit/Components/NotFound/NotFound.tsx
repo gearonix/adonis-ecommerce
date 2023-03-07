@@ -3,7 +3,7 @@ import { CFC } from 'shared/types/components'
 import s from './style.module.scss'
 import { CiWarning } from 'react-icons/ci'
 import Link from 'next/link'
-import { routes } from 'shared/config/routes'
+import { routes } from 'shared/config/consts/routes'
 import cn from 'classnames'
 
 interface NotFoundUIProps{

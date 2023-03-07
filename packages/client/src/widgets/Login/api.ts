@@ -1,6 +1,6 @@
-import axiosInstance from 'shared/config/axios'
+import axiosInstance from 'shared/config/consts/axios'
 import { AuthApi } from './types'
-import EndPoints from 'shared/config/endpoints'
+import EndPoints from 'shared/config/consts/endpoints'
 
 
 const EndPoint = EndPoints.AUTH

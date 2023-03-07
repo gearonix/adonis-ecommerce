@@ -4,7 +4,7 @@ import { registerByGoogle } from '../store/thunks/makeRegistration'
 import { useDispatch } from 'shared/types/redux'
 import { loginByGoogle } from '../store/thunks/loginUser'
 import { GoogleButtonProps, RegisterByGoogle } from '../types'
-import { Theme } from 'shared/config/themes'
+import { Theme } from 'shared/config/consts/themes'
 import { useTheme } from 'shared/lib/hooks/useTheme'
 
 const GoogleButton: FC<GoogleButtonProps> = ({ role }) => {

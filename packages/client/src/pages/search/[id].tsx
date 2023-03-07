@@ -10,11 +10,13 @@ import { ProductDescription } from 'entities/ProductPage'
 import { DynamicModuleLoader, WithSpring } from 'shared/lib/components'
 import { ExtraServices, GithubBanner } from 'entities/Banners'
 import { useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 
 
 const ProductPage = () => {
   const productName = useSelector(ProductSelectors.name)
   const dispatch = useDispatch()
+  const { t } = useTranslation()
 
   useEffect(() => {
     return () => {
@@ -22,6 +24,7 @@ const ProductPage = () => {
     }
   }, [])
 
+  console.log(t('testTranslation'))
 
   return <WithSpring>
     <Head>

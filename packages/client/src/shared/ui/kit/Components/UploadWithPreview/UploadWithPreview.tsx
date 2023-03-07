@@ -2,7 +2,7 @@ import { FC, useState } from 'react'
 import { AiOutlineUpload } from 'react-icons/ai'
 import { NextImage, UploadButton } from 'shared/ui/kit'
 import { FieldValues } from 'shared/lib/helpers'
-import { DefaultAssets } from 'shared/config/assets'
+import { DefaultAssets } from 'shared/config/consts/assets'
 
 interface UploadWithPreviewProps{
   values: FieldValues

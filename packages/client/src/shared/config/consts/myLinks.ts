@@ -1,4 +1,4 @@
-import { MyProjectsAssets } from 'shared/config/assets'
+import { MyProjectsAssets } from 'shared/config/consts/assets'
 
 
 interface Project{

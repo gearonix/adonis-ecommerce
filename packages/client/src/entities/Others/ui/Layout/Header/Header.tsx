@@ -3,7 +3,7 @@ import s from './style.module.scss'
 import { AiOutlineSearch, FaHeart, FaInfo, FaShoppingCart, FaUserAlt, MdMessage } from 'shared/ui/icons'
 import Link from 'next/link'
 import { HoverLink, Logo } from 'shared/ui/kit'
-import { routes } from 'shared/config/routes'
+import { routes } from 'shared/config/consts/routes'
 import { ThemeSwitcher } from 'shared/ui/material'
 import { useTheme } from 'shared/lib/hooks'
 

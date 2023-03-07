@@ -1,5 +1,5 @@
 import * as process from 'process'
-import { routes } from 'shared/config/routes'
+import { routes } from 'shared/config/consts/routes'
 
 const appConfig = {
   SERVER_URL: process.env.SERVER_URL,
