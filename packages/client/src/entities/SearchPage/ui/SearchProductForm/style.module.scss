@@ -1,0 +1,20 @@
+@use 'shared/css/common.scss' as *;
+
+.form {
+  @include size(33%, 220px);
+  @include padding(20px, 22px);
+  position: absolute;
+  top: 33px;
+  right: 30px;
+  border-radius: $rounded;
+  background: $bg-absolute;
+
+  .form_title {
+    @include inlineStyles($xm, $bg-100, bold);
+    margin-bottom: 18px;
+  }
+
+  button {
+    margin-top: 12px;
+  }
+}

@@ -79,6 +79,12 @@ class Helpers {
   public removeSpaces(str: string) {
     return str.split(' ').join('')
   }
+  public strOrUndefined(condition: boolean, str : string) {
+    return condition ? str : undefined
+  }
+  public nextItem<T>(array: T[], current: T): T {
+    return array[array.indexOf(current) + 1] || array[0]
+  }
 }
 
 

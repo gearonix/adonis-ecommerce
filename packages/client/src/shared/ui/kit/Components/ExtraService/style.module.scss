@@ -2,7 +2,7 @@
 
 .item {
   @include itemHover;
-  @include size(23%);
+  @include size(375px);
   transition: background 200ms;
 
   &:hover {
@@ -14,10 +14,11 @@
   border: 2px solid $bg-150;
 
   .item_image {
-    @include backgroundImage('/assets/dev/square.png');
-    @include size(100%, 120px);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    @include size(100%, 180px);
     position: relative;
-    margin-bottom: 10px;
 
     .item_button {
       border-radius: 100%;
@@ -27,7 +28,7 @@
       @include flex(center, center);
       position: absolute;
       right: 21px;
-      bottom: -25px;
+      bottom: -17px;
 
       svg {
         @include size(24px, 24px);
@@ -36,7 +37,15 @@
   }
 
   .item_title {
-    @include padding(20px, 20px);
+    margin-left: 9px;
+    margin-top: 8px;
     color: $color-absolute-200;
+    font-size: 17px;
+
+    svg{
+      @include size(20px,20px);
+      margin-right: 4px;
+      margin-bottom: -4px;
+    }
   }
 }

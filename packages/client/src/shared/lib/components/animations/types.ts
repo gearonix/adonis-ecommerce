@@ -17,7 +17,8 @@ export interface WithSpringProps {
     type?: keyof typeof springs,
     param?: string | number,
     style?: CSSProperties,
-    onClick?: () => void
+    onClick?: () => void,
+    subscriber?: any
 }
 
 

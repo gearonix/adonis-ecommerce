@@ -27,3 +27,5 @@ export { UploadWithPreview } from './Components/UploadWithPreview/UploadWithPrev
 export { NotFound as NotFound } from './Components/NotFound/NotFound'
 export { WithLoading } from '../../lib/components/ui/WithLoading'
 export { DefaultPreloader } from './Loaders/DefaultPreloader/DefaultPreloader'
+export { HeaderInput } from './Inputs/HeaderInput/HeaderInput'
+export { DefaultExtraService } from './Components/ExtraService/ExtraService'

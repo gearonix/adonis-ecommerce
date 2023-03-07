@@ -8,7 +8,9 @@ const AuthSelectors = {
   userId: ({ auth }: AppState) => auth.userId,
   userName: ({ auth }: AppState) => {
     return helpers.toNormalName(auth)
-  }
+  },
+  avatar: ({ auth }: AppState) => auth.avatar,
+  user: ({ auth }: AppState) => auth
 }
 
 

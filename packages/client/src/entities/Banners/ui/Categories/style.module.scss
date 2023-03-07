@@ -14,12 +14,14 @@
   background: $bg-absolute;
   border-radius: 8px;
 
-  & div {
+  & > div {
     height: 92%;
   }
 
   .image_block {
-    @include backgroundImage("/assets/dev/electronic_prewiew.svg", 99%);
+    //@include backgroundImage("/assets/dev/electronic_prewiew.svg", 99%);
+    background-size: 99%;
+    background-repeat: no-repeat;
     width: 60%;
     position: relative;
     padding-left: 45px;
@@ -29,12 +31,14 @@
       margin-top: 53px;
       margin-bottom: 5px;
       font-size: $medium;
+      text-shadow: 2px 1px 2px $bg-absolute;
     }
 
     .title {
       margin-bottom: 19px;
       font-size: $l-medium;
       font-weight: bold;
+      text-shadow: 2px 1px 2px $bg-absolute;
     }
 
   }
@@ -43,22 +47,30 @@
     width: 16%;
 
     .user_block {
-      @include size(100%, 150px);
+      width: 100%;
       border-radius: 6px;
       background: $link-color-light;
-      padding-top: 17px;
+      padding-top: 13px;
+      padding-bottom: 3px;
+      box-sizing: border-box;
+      //min-height: 58px;
+      max-height: 170px;
 
       .user_block_container {
         @include size(93%, 48px);
 
         margin: 0 auto;
-        @include flex(space-between);
+        @include flex(space-between, center);
 
         .hi_user {
           height: 38px;
           margin-bottom: 17px;
           @include flex();
           align-items: center;
+          .image_wrapper{
+            @include imageWrapper(44px,44px,100%);
+            margin-right: 9px;
+          }
 
           img {
             @include size(47px, 47px);
@@ -79,10 +91,11 @@
       }
 
       button {
-        margin: 10px auto 0;
+        margin: 10px auto 10px;
 
         &[class*="outlined_button"] {
           color: $link-color;
+          margin-bottom: 20px;
         }
 
         @include size(90%, 30px);
@@ -92,7 +105,7 @@
     }
 
     .card, .greenCard {
-      @include size(calc(100% - 16px), 80px);
+      @include size(calc(100% - 16px), 71px);
       border-radius: 6px;
       background: #F38332;
       color: $color-absolute;
@@ -104,6 +117,10 @@
       h4 {
         font-size: $small;
         color: $color-absolute;
+      }
+      svg{
+        @include size(18px,18px);
+        margin-bottom: -4px;
       }
     }
 

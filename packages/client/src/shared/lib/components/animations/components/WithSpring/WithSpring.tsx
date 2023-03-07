@@ -4,10 +4,12 @@ import springs from 'shared/lib/components/animations/config/springs'
 import { WithSpringProps } from '../../types'
 
 
-const WithSpring: FC<WithSpringProps> = ({ className, children, type = 'opacity', param, style, onClick }) => {
+const WithSpring: FC<WithSpringProps> = ({ className, children, type = 'opacity',
+  param, style, onClick }) => {
   const spring = useSpring(springs[type](param))
   // @ts-ignore
-  return <animated.div className={className} style={{ ...spring, ...style }} onClick={onClick}>
+  return <animated.div className={className} style={{ ...spring, ...style }}
+    onClick={onClick}>
     {children}
   </animated.div>
 }

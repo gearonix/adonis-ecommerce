@@ -13,7 +13,8 @@ import { CartSelectors } from 'shared/selectors'
 import { SavedProvider } from 'features/Saved'
 import { WithSpring } from 'shared/lib/components'
 import { FindProductBanner, GithubBanner } from 'entities/Banners'
-import { SearchProductForm } from 'features/SearchPage'
+import { SearchProductsForm } from 'features/SearchPage'
+import { ProductBannerForm } from 'entities/SearchPage'
 
 const Cart = () => {
   const productsCount = useSelector(CartSelectors.count)
@@ -29,8 +30,9 @@ const Cart = () => {
         <Checkout CheckoutButton={CheckoutButton}/>
       </CartProdiver>
     </div>
-    <RecommendedItems Component={SortedProducts} type={ProductTypes[1]}/>
-    <FindProductBanner Form={SearchProductForm}/>
+    <RecommendedItems Component={SortedProducts} type={ProductTypes[4]}/>
+    <RecommendedItems Component={SortedProducts} type={ProductTypes[3]}/>
+    <FindProductBanner Form={<SearchProductsForm Component={ProductBannerForm}/>}/>
     <GithubBanner/>
   </WithSpring>
 }

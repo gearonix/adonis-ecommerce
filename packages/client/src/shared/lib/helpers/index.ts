@@ -9,3 +9,5 @@ export { ReduxLocalStorage, LocalStorageHelper } from './others/localStorageHelp
 export { withFormData } from './withHelpers/withFormData'
 export { withDelay } from './withHelpers/withDelay'
 export { withLoading } from './others/reduxHelpers'
+
+export { backgroundImage } from './common'

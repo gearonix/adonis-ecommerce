@@ -18,15 +18,9 @@ const SearchList: FC = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
+    console.log(filter)
     dispatch(getProducts(filter))
   }, [filter])
-
-  useEffect(() => {
-    return () => {
-      dispatch(productsActions.clearProducts())
-    }
-  }, [])
-
 
   return <div className={s.items_block}>
     <WithLoading when={!productsLength} title={'Products'} Icon={CartIcon}

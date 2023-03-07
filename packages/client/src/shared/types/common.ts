@@ -18,3 +18,7 @@ export type KeyOf<T> = T[any]
 export type Required<T> = {
     [P in keyof T]-?: T[P];
 };
+
+export type Mutable<T> = {
+    -readonly [P in keyof T]: T[P];
+};

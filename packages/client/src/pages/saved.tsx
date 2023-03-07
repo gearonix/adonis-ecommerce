@@ -1,12 +1,12 @@
 import Head from 'next/head'
-import { FC } from 'react'
+import React, { FC } from 'react'
 import { ContainerTitle } from 'shared/ui/kit'
 import { RemoveFromSaved } from 'features/Saved'
 import { RecommendedItems } from 'widgets/Products'
 import { GithubBanner } from 'entities/Banners'
 import { WithSpring } from 'shared/lib/components'
 import { ProductTypes } from 'shared/types/elements'
-import { SortedProducts } from 'entities/Products'
+import { RecommendedMap, SortedProducts } from 'entities/Products'
 import { SavedItems } from 'features/Saved'
 import { useSelector } from 'shared/types/redux'
 import { SavedSelectors } from 'shared/selectors'
@@ -22,6 +22,8 @@ const Saved: FC = () => {
     <SavedItems Remove={RemoveFromSaved} Component={CartItemsTemplate} />
     <RecommendedItems Component={SortedProducts} type={ProductTypes[0]}/>
     <GithubBanner/>
+    <RecommendedItems Component={SortedProducts} type={ProductTypes[1]}/>
+    <RecommendedItems Component={RecommendedMap}/>
   </WithSpring>
 }
 

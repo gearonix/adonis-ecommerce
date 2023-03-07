@@ -10,7 +10,6 @@ import { Product } from 'shared/types/slices'
 import { SavedProvider } from 'features/Saved'
 import { productActions } from 'widgets/CurrentProduct'
 import { NotFound, PenPreloader, WithLoading } from 'shared/ui/kit'
-import { ProductPreloader, UserPreloader } from 'shared/ui/material'
 import { AiOutlineShoppingCart as CartIcon } from 'shared/ui/icons'
 
 const ProductInfo: FC = () => {

@@ -4,8 +4,11 @@ import { RecommendedItems } from 'widgets/Products'
 import { RecommendedMap, SortedProducts } from 'entities/Products'
 import { ProductTypes } from 'shared/types/elements'
 import { WithSpring } from 'shared/lib/components'
-import { Categories, ExtraServices, FindProductBanner, Languages } from 'entities/Banners'
-import { SearchProductForm } from 'features/SearchPage'
+import { ExtraServices, FindProductBanner } from 'entities/Banners'
+import { Categories } from 'widgets/Banners'
+import { SearchProductsForm } from 'features/SearchPage'
+import { ProductBannerForm } from 'entities/SearchPage'
+
 
 const MainPage = () => {
   return <WithSpring>
@@ -13,12 +16,12 @@ const MainPage = () => {
       <title>Adonis - Online Shopping</title>
     </Head>
     <Categories/>
-    <RecommendedItems Component={SortedProducts} type={ProductTypes[0]}/>
     <RecommendedItems Component={SortedProducts} type={ProductTypes[1]}/>
-    <FindProductBanner Form={SearchProductForm}/>
+    <RecommendedItems Component={SortedProducts} type={ProductTypes[4]}/>
+    <FindProductBanner Form={<SearchProductsForm Component={ProductBannerForm}/>}/>
     <RecommendedItems Component={RecommendedMap}/>
     <ExtraServices/>
-    <Languages/>
+    <RecommendedItems Component={SortedProducts} type={ProductTypes[0]}/>
   </WithSpring>
 }
 

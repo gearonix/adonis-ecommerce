@@ -1,7 +1,12 @@
 import Head from 'next/head'
-import { FC } from 'react'
+import React, { FC } from 'react'
 import { WithSpring } from 'shared/lib/components'
 import { MessengerAside, MessengerContent, MessengerHeader } from 'widgets/Messenger'
+import { ExtraServices } from 'entities/Banners'
+import { RecommendedItems } from 'widgets/Products'
+import { SortedProducts } from 'entities/Products'
+import { ProductTypes } from 'shared/types/elements'
+
 
 const Messenger: FC = () => {
   return <>
@@ -15,7 +20,9 @@ const Messenger: FC = () => {
         <MessengerContent/>
       </div>
     </WithSpring>
-
+    <ExtraServices/>
+    <RecommendedItems Component={SortedProducts} type={ProductTypes[2]}/>
+    <RecommendedItems Component={SortedProducts} type={ProductTypes[4]}/>
   </>
 }
 

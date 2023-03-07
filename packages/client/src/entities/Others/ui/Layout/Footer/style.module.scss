@@ -12,7 +12,7 @@
     }
 
     @include size(85%, 234px);
-    @include flex(space-between);
+    @include flex();
     margin: 0 auto 59px;
 
     .brand_block {
@@ -20,8 +20,8 @@
 
       .brand_text {
         color: $bg-200;
-        margin-top: 18px;
-        margin-bottom: 12px;
+        margin-top: 13px;
+        margin-bottom: 14px;
         width: 60%;
       }
 
@@ -36,15 +36,11 @@
         .icon {
           @include size(32px, 32px);
           @include flex(center, center);
-          background: $color-absolute;
+          background: white;
           border-radius: 100%;
 
           svg {
-            path {
-              color: $bg-absolute;
-            }
-
-            @include size(25px, 25px);
+            @include size(23px, 23px);
           }
 
           margin-right: 14px;
@@ -71,9 +67,13 @@
         }
       }
     }
+    position: relative;
 
     .github_block {
       @include size(25%, 100%);
+      position: absolute;
+      right: 0;
+      top: 0;
       @include flex(start, center, column);
 
       h3 {
@@ -81,7 +81,7 @@
       }
 
       svg {
-        margin-top: 15px;
+        margin-top: 6px;
         @include size(55px, 55px);
         color: $color-absolute;
       }

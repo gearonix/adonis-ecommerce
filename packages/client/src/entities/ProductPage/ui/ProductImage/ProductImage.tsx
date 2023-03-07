@@ -3,6 +3,7 @@ import s from './style.module.scss'
 import { NextImage } from 'shared/ui/kit'
 import { ImageCarouselProps } from 'features/ProductPage'
 import { DefaultAssets } from 'shared/config/assets'
+import { ApiAnimation } from 'shared/lib/components'
 
 interface ProductImageProps{
   ImageCarousel: FC<ImageCarouselProps>,

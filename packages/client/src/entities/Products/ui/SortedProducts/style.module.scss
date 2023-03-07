@@ -3,12 +3,15 @@
 .recommended {
   @include size(100%, 270px);
   @include flex();
-  margin-top: 20px;
+  margin-top: 30px;
   background: $bg-absolute;
   border-radius: $rounded;
+  margin-bottom: 40px;
 
   .image_block {
-    @include backgroundImage('/assets/dev/square.png');
+    background-size: cover;
+    background-position: 70%;
+    background-repeat: no-repeat;
     @include size(20%);
     @include padding(20px, 20px);
     box-sizing: border-box;
@@ -17,6 +20,8 @@
       font-size: 20px;
       margin-bottom: 22px;
       font-weight: bold;
+      color: white;
+      text-shadow: 1px 1px 2px #171717;
     }
 
   }

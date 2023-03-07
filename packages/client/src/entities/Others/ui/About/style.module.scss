@@ -36,7 +36,7 @@
   @include inlineStyles(42px, $bg-100, bold);
   text-align: center;
   margin-top: 30px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 
   span {
     background-image: linear-gradient(to left, $link-color, $link-color);
@@ -47,9 +47,13 @@
 
 .text {
   width: 65%;
-  margin: 0 auto;
   font-size: $small-md;
-  text-align: center;
+  margin: 0 auto 20px;
+
+  span{
+    font-size: $small-md;
+    color: $link-color;
+  }
 }
 
 .link {
@@ -67,11 +71,29 @@
 
   svg {
     @include size(37px, 37px);
+    color: $color-absolute;
+  }
+}
+
+.links{
+  width: 65%;
+  padding: 0;
+  margin: 40px auto 0;
+  a{
+    display: block;
+    width: max-content;
+    margin-top: 5px;
+    color: $color-absolute-200;
+    font-size: $small-md;
+    svg{
+      margin-right: 10px;
+      @include size(21px,21px);
+    }
   }
 }
 
 .image_wrapper {
   @include imageWrapper(30%, 270px);
-  margin: 70px auto;
+  margin: 50px auto;
 }
 

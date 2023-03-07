@@ -1,18 +1,27 @@
 import Head from 'next/head'
 import { currentProductSlice, ProductInfo } from 'widgets/CurrentProduct'
-import { RecommendedItems } from 'widgets/Products'
+import { productsActions, RecommendedItems } from 'widgets/Products'
 import { SortedProducts, YouMayLike } from 'entities/Products'
 import { ProductTypes } from 'shared/types/elements'
-import { useSelector } from 'shared/types/redux'
+import { useDispatch, useSelector } from 'shared/types/redux'
 import { ProductSelectors } from 'shared/selectors'
 import ProductComments from 'widgets/CurrentProduct/ui/ProductComments/ProductComments'
 import { ProductDescription } from 'entities/ProductPage'
 import { DynamicModuleLoader, WithSpring } from 'shared/lib/components'
 import { ExtraServices, GithubBanner } from 'entities/Banners'
+import { useEffect } from 'react'
 
 
 const ProductPage = () => {
   const productName = useSelector(ProductSelectors.name)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    return () => {
+      dispatch(productsActions.clearProducts())
+    }
+  }, [])
+
 
   return <WithSpring>
     <Head>

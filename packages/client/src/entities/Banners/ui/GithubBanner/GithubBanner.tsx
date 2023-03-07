@@ -1,16 +1,20 @@
 import { FC } from 'react'
 import { Button } from 'shared/ui/kit'
 import s from './style.module.scss'
+import Link from 'next/link'
+import { MyLinks } from 'shared/config/myLinks'
 
 const GithubBanner: FC = () => {
   return <article className={s.github_banner}>
     <div>
-      <h2>Super discount on more than 100 USD</h2>
-      <span>Have you ever finally just write dummy info</span>
+      <h2>You can see the project on my GitHub</h2>
+      <span>Here you can see the project code</span>
     </div>
-    <Button w={'121px'} color={'orange'}>
-            Show more
-    </Button>
+    <Link href={MyLinks.PROJECT}>
+      <Button w={'121px'} color={'orange'}>
+        Show more
+      </Button>
+    </Link>
   </article>
 }
 

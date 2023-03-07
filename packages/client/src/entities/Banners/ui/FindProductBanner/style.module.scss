@@ -8,17 +8,16 @@
   margin-top: 20px;
   position: relative;
   box-sizing: border-box;
-  background: linear-gradient(to right, #09C6F9, #045DE9);
-
+  @include backgroundImage('/assets/search_form.png');
 
   .title {
     margin-bottom: 20px;
     width: 400px;
-    @include inlineStyles($l-medium, $color-absolute, bold);
+    @include inlineStyles($l-medium, white, bold);
   }
 
   .description {
-    color: $color-absolute;
+    color: white;
     width: 400px;
   }
 

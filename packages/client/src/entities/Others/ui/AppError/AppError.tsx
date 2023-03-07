@@ -15,9 +15,6 @@ const AppError: FC<AppErrorProps> = ({ errorInfo, onRedirect }) => {
     <p className={s.text}>If you see this page, something went wrong.
         Please return to the main page.
         If you still have this error, please wait and come back later!</p>
-    <div className={s.github_icon}>
-      <AiOutlineGithub/>
-    </div>
     <div className={s.image_wrapper}>
       <NextImage src={Assets.APP_ERROR}/>
     </div>

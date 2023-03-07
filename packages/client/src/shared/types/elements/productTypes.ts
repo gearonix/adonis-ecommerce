@@ -1,8 +1,14 @@
+import { KeyOf, Mutable } from 'shared/types/common'
+
 export type ProductRatings = 1 | 2 | 3 | 4 | 5
 
 export const ProductTypes = ['Electronics',
   'Clothes', 'Shoes', 'Children products',
   'Sports and recreation', 'Food'] as const
+
+export type ProductTypesKeys = KeyOf<typeof ProductTypes>
+
+export type MutableProductTypes = Mutable<typeof ProductTypes>
 
 export const ProductModels =
     ['Latest', 'New',

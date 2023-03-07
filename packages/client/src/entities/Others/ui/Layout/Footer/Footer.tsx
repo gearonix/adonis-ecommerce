@@ -3,6 +3,12 @@ import s from './style.module.scss'
 import { AiOutlineGithub } from 'shared/ui/icons'
 import { HoverLink, NextImage } from 'shared/ui/kit'
 import { Assets } from 'shared/config/assets'
+import Link from 'next/link'
+import { routes } from 'shared/config/routes'
+import { MyLinks } from 'shared/config/myLinks'
+import { SlSocialVkontakte } from 'react-icons/sl'
+import { BsTelegram } from 'react-icons/bs'
+import { HiOutlineDesktopComputer } from 'react-icons/hi'
 
 const Footer: FC = () => {
   return <footer className={s.footer}>
@@ -12,51 +18,79 @@ const Footer: FC = () => {
           <NextImage src={Assets.LOGO}/>
         </div>
         <p className={s.brand_text}>
-                    Best information about the company gies here
-                    but now lorem ipsum is
+          Why are you even reading this? Go shopping! ;)
         </p>
         <div className={s.icon_block}>
-          <div className={s.icon}>
-            <AiOutlineGithub/>
-          </div>
-          <div className={s.icon}>
-            <AiOutlineGithub/>
-          </div>
-          <div className={s.icon}>
-            <AiOutlineGithub/>
-          </div>
-          <div className={s.icon}>
-            <AiOutlineGithub/>
-          </div>
+          <Link href={MyLinks.GITHUB}>
+            <div className={s.icon}>
+              <AiOutlineGithub color={'#171515'}/>
+            </div>
+          </Link>
+          <Link href={MyLinks.VK}>
+            <div className={s.icon}>
+              <SlSocialVkontakte color={'#4C75A3'}/>
+            </div>
+          </Link>
+          <Link href={MyLinks.TELEGRAM}>
+            <div className={s.icon}>
+              <BsTelegram color={'#0088cc'}/>
+            </div>
+          </Link>
+          <Link href={MyLinks.PORTFOLIO}>
+            <div className={s.icon}>
+              <HiOutlineDesktopComputer color={'#424040'}/>
+            </div>
+          </Link>
+
+
         </div>
       </div>
       <nav className={s.navbar}>
         <div className={s.navbar_item}>
-          <HoverLink bold>About</HoverLink> <br/>
-          <HoverLink>About us</HoverLink> <br/>
+          <Link href={routes.SEARCH}>
+            <HoverLink bold>Search</HoverLink> <br/>
+          </Link>
+          <Link href={routes.ABOUT}>
+            <HoverLink>About project</HoverLink> <br/>
+          </Link>
         </div>
         <div className={s.navbar_item}>
-          <HoverLink bold>About</HoverLink> <br/>
-          <HoverLink>About us</HoverLink> <br/>
+          <Link href={routes.CART}>
+            <HoverLink bold>My Cart</HoverLink> <br/>
+          </Link>
+          <Link href={routes.SAVED}>
+            <HoverLink>Saved products</HoverLink> <br/>
+          </Link>
         </div>
         <div className={s.navbar_item}>
-          <HoverLink bold>About</HoverLink> <br/>
-          <HoverLink>About us</HoverLink> <br/>
+          <Link href={routes.MESSENGER}>
+            <HoverLink bold>Messenger</HoverLink> <br/>
+          </Link>
+          <Link href={routes.LOGIN}>
+            <HoverLink>Log in</HoverLink> <br/>
+          </Link>
         </div>
         <div className={s.navbar_item}>
-          <HoverLink bold>About</HoverLink> <br/>
-          <HoverLink>About us</HoverLink><br/>
+          <Link href={routes.LOGIN}>
+            <HoverLink bold>My Profile</HoverLink> <br/>
+          </Link>
+          <Link href={routes.SIGNUP}>
+            <HoverLink>Sign up</HoverLink><br/>
+          </Link>
         </div>
       </nav>
-      <div className={s.github_block}>
-        <HoverLink>Github</HoverLink>
-        <AiOutlineGithub/>
-      </div>
-
+      <Link href={MyLinks.PROJECT}>
+        <div className={s.github_block}>
+          <HoverLink>Github</HoverLink>
+          <AiOutlineGithub/>
+        </div>
+      </Link>
     </div>
     <div className={s.footer_bottom}>
       <div className={s.footer_bottom_block}>
-        <HoverLink>@ Gearonix</HoverLink>
+        <Link href={MyLinks.PORTFOLIO}>
+          <HoverLink>@ Egor Uzhanin (Gearonix). 2023</HoverLink>
+        </Link>
         <HoverLink>English</HoverLink>
       </div>
     </div>
