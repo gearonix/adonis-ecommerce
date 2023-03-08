@@ -5,6 +5,7 @@ import { backgroundImage } from 'shared/lib/helpers'
 import Link from 'next/link'
 import { DefaultAssets } from 'shared/config/consts/assets'
 import { ApiAnimation } from 'shared/lib/components'
+import { useTranslation } from 'react-i18next'
 
 interface ExtraServiceProps{
   image: string,
@@ -26,6 +27,7 @@ export const ExtraService: FC<ExtraServiceProps> = ({ image, link, title }) => {
 }
 
 export const DefaultExtraService: FC = () => {
+  const { t } = useTranslation()
   return <ApiAnimation type={'increaseSize'}>
     <div className={s.item}>
       <div className={s.item_image} style={backgroundImage(DefaultAssets.PROJECT)}>
@@ -33,7 +35,7 @@ export const DefaultExtraService: FC = () => {
           <AiOutlineSearch/>
         </div>
       </div>
-      <h3 className={s.item_title}>Coming soon...</h3>
+      <h3 className={s.item_title}>{t('Coming_soon..')}</h3>
     </div>
   </ApiAnimation>
 }

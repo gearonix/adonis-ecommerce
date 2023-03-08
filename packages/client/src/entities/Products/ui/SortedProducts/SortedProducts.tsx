@@ -8,11 +8,13 @@ import { useRouter } from 'next/router'
 import { RecommendedPreloader } from 'shared/ui/material'
 import { backgroundImage } from 'shared/lib/helpers'
 import { ProductTypesAssets } from 'shared/config/consts/assets'
+import { useTranslation } from 'react-i18next'
 
 
 const SortedProducts: FC<RecommendedItemProps> = ({ type = 'Electronics', items }) => {
   const dispatch = useDispatch()
   const router = useRouter()
+  const { t } = useTranslation()
 
   const onSearch = () => {
     dispatch(productsActions.changeFilter({ type }))
@@ -22,9 +24,9 @@ const SortedProducts: FC<RecommendedItemProps> = ({ type = 'Electronics', items 
   return <div className={s.recommended}>
     <div className={s.image_block}
       style={backgroundImage(ProductTypesAssets[type])}>
-      <div className={s.title}>{type}</div>
+      <div className={s.title}>{t(type)}</div>
 
-      <Button w={'119px'} color={'outlined'} onClick={onSearch}>Source now</Button>
+      <Button w={'119px'} color={'outlined'} onClick={onSearch}>{t('Source_now')}</Button>
     </div>
     <div className={s.recommended_items}>
       {items.length ? items.slice(0, 8).map((product, idx) => <RecommendedItem product={product}

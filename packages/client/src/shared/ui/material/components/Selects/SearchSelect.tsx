@@ -1,6 +1,7 @@
 import { Autocomplete, TextField, Typography } from '@mui/material'
 import { CSSProperties, FC } from 'react'
 import { useFormContext, UseFormRegisterReturn } from 'react-hook-form'
+import { useTranslation } from 'react-i18next'
 import { Helpers } from 'shared/lib/helpers'
 import { useTheme } from 'shared/lib/hooks'
 import { AiOutlineCar } from 'shared/ui/icons'
@@ -21,6 +22,7 @@ const SearchSelect: FC<SearchSelectProps> = ({ values, inputValues, Icon }) => {
   const helpers = new Helpers()
   const { isLight } = useTheme()
   const { setValue, getValues } = useFormContext()
+  const { t } = useTranslation()
 
   const handleChange = (e: any) => {
     setValue(fieldName, e.target.innerHTML)
@@ -30,7 +32,7 @@ const SearchSelect: FC<SearchSelectProps> = ({ values, inputValues, Icon }) => {
     <Typography sx={{ color: isLight ? 'black' : 'white',
       marginBottom: '5px', marginTop: '5px' }}>
       {Icon && <Icon style={{ marginRight: '5px' }}/>}
-      {helpers.capitalize(fieldName)}
+      {t(helpers.capitalize(fieldName))}
     </Typography>
     <Autocomplete
       freeSolo

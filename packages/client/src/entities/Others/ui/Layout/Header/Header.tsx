@@ -6,6 +6,7 @@ import { HoverLink, Logo } from 'shared/ui/kit'
 import { routes } from 'shared/config/consts/routes'
 import { ThemeSwitcher } from 'shared/ui/material'
 import { useTheme } from 'shared/lib/hooks'
+import { useTranslation } from 'react-i18next'
 
 export interface HeaderSkeletonProps {
   Search: FC,
@@ -15,6 +16,7 @@ export interface HeaderSkeletonProps {
 
 
 const Header: FC<HeaderSkeletonProps> = ({ DropDowns, Burger, Search }) => {
+  const { t } = useTranslation()
   return <>
     <header className={s.header}>
       <div className={s.header_block}>
@@ -28,32 +30,32 @@ const Header: FC<HeaderSkeletonProps> = ({ DropDowns, Burger, Search }) => {
         <div className={s.options}>
           <Link className={s.options_item} href={routes.LOGIN}>
             <FaUserAlt/>
-            <span>Profile</span>
+            <span>{t('Profile')}</span>
           </Link>
           <Link className={s.options_item} href={routes.MESSENGER}>
             <MdMessage/>
-            <span>Message</span>
+            <span>{t('Message')}</span>
           </Link>
           <Link className={s.options_item} href={routes.SAVED}>
             <FaHeart/>
-            <span>Orders</span>
+            <span>{t('Orders')}</span>
           </Link>
           <Link className={s.options_item} href={routes.CART}>
             <FaShoppingCart/>
-            <span>My cart</span>
+            <span>{t('My_Cart')}</span>
           </Link>
         </div>
       </div>
       <div className={s.navbar_block}>
         <nav className={s.navbar}>
           <Link href={routes.SEARCH}>
-            <HoverLink><AiOutlineSearch/> Search</HoverLink>
+            <HoverLink><AiOutlineSearch/> {t('Search')}</HoverLink>
           </Link>
           <Link href={routes.MESSENGER}>
-            <HoverLink><MdMessage/> Messages</HoverLink>
+            <HoverLink><MdMessage/> {t('Messages')}</HoverLink>
           </Link>
           <Link href={routes.ABOUT}>
-            <HoverLink><FaInfo/> About</HoverLink>
+            <HoverLink><FaInfo/> {t('About')}</HoverLink>
           </Link>
         </nav>
         <DropDowns/>

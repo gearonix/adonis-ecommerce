@@ -3,6 +3,7 @@ import { AiOutlineGithub } from 'shared/ui/icons'
 import { Button, NextImage } from 'shared/ui/kit'
 import { FC } from 'react'
 import { Assets } from 'shared/config/consts/assets'
+import { useTranslation } from 'react-i18next'
 
 interface AppErrorProps{
     errorInfo: string,
@@ -10,15 +11,14 @@ interface AppErrorProps{
 }
 
 const AppError: FC<AppErrorProps> = ({ errorInfo, onRedirect }) => {
+  const { t } = useTranslation()
   return <div className={s.error_container}>
-    <h1 className={s.title}>Seems like something went wrong :(</h1>
-    <p className={s.text}>If you see this page, something went wrong.
-        Please return to the main page.
-        If you still have this error, please wait and come back later!</p>
+    <h1 className={s.title}>{t('Seems_like')}</h1>
+    <p className={s.text}>{t('If_you')}</p>
     <div className={s.image_wrapper}>
       <NextImage src={Assets.APP_ERROR}/>
     </div>
-    <button onClick={onRedirect}>Return to the main page</button>
+    <button onClick={onRedirect}>{t('Return_to')}</button>
   </div>
 }
 

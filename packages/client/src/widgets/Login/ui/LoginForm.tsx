@@ -8,15 +8,17 @@ import { useSubmitForm } from '../lib/hooks'
 import GoogleButton from './GoogleButton'
 import { createFieldValues } from 'shared/lib/helpers/formHelpers/createFieldValues'
 import { AuthTemplate } from 'entities/Auth'
+import { useTranslation } from 'react-i18next'
 
 const LoginForm: FC = () => {
   const form = useForm<LoginForm>({ resolver: yupResolver(loginSchema) })
   const onSubmit = useSubmitForm(form.setError)
   const reg = createFieldValues<LoginForm>(form)
+  const { t } = useTranslation()
 
   return <AuthTemplate submit={form.handleSubmit(onSubmit)} GoogleButton={GoogleButton}>
-    <HeadField title={'Email'} values={reg('email')}/>
-    <HeadField title={'Password'} isPassword values={reg('password')}/>
+    <HeadField title={t('Email')} values={reg('email')}/>
+    <HeadField title={t('Password')} isPassword values={reg('password')}/>
   </AuthTemplate>
 }
 

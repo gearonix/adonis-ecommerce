@@ -4,11 +4,13 @@ import { YouMayLikeItem } from 'shared/ui/kit'
 import { RecommendedItemProps } from 'widgets/Products'
 import { Ternary } from 'shared/lib/components'
 import { YouMayLikePreloader } from 'shared/ui/material/components/Loaders/YouMayLikePreloader'
+import { useTranslation } from 'react-i18next'
 
 
 const YouMayLike: FC<RecommendedItemProps> = ({ items }) => {
+  const { t } = useTranslation()
   return <article className={s.you_may_like}>
-    <h4 className={s.heading}>You may like</h4>
+    <h4 className={s.heading}>{t('You_may')}</h4>
     <Ternary where={items.length}>
       <>
         {items.slice(0, 5).map((product) => {

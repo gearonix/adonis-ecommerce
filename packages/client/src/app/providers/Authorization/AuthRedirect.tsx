@@ -15,14 +15,14 @@ const AuthRedirect: FC<{ children: ReactNode }> = ({ children }) => {
 
   const authCheck = (url: string) => {
     const path: Routes = url.split('?')[0] as Routes
-    const { privatePaths } = appConfig
+    const { forbiddenPaths } = appConfig
 
     // redirect if not registered
-    if (!isAuthorized && privatePaths.unauthorized.includes(path)) {
+    if (!isAuthorized && forbiddenPaths.unauthorized.includes(path)) {
       return router.push(routes.LOGIN)
     }
     // redirect if registered
-    if (isAuthorized && privatePaths.authorized.includes(path)) {
+    if (isAuthorized && forbiddenPaths.authorized.includes(path)) {
       return router.push(`${routes.USERS}/${userId}`)
     }
 

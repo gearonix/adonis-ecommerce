@@ -8,6 +8,7 @@ import { routes } from 'shared/config/consts/routes'
 import { CFC } from 'shared/types/components'
 import { Display } from 'shared/lib/components'
 import { useTheme } from 'shared/lib/hooks'
+import { useTranslation } from 'react-i18next'
 
 interface UserInfoProps{
     user: FormattedUser
@@ -16,6 +17,7 @@ interface UserInfoProps{
 const UserInfo: FC<UserInfoProps> = ({ user }) => {
   const helpers = new Helpers()
   const { theme } = useTheme()
+  const { t } = useTranslation()
   return <div className={s[theme || 'light']}>
     <InfoContainer>
       <InfoCell Icon={BsInfoLg}>{helpers.cropped(user.description, 30)}</InfoCell>
@@ -27,20 +29,20 @@ const UserInfo: FC<UserInfoProps> = ({ user }) => {
       </div>
     </InfoContainer>
     <InfoContainer>
-      <InfoCell Icon={SlPresent} title={'Registration date'}>
+      <InfoCell Icon={SlPresent} title={t('Registration_date') || ''}>
         {user.date}
       </InfoCell>
     </InfoContainer>
     <InfoContainer condition={Boolean(user.country && user.city)}>
-      <InfoCell Icon={AiOutlineCar} title={'Country'}>
+      <InfoCell Icon={AiOutlineCar} title={t('Country') || ''}>
         {user.country}
       </InfoCell>
-      <InfoCell Icon={BsBuilding} title={'City'}>
+      <InfoCell Icon={BsBuilding} title={t('City') || ''}>
         {user.city}
       </InfoCell>
     </InfoContainer>
     <InfoContainer>
-      <InfoCell Icon={GiTopHat} title={'Role'}>
+      <InfoCell Icon={GiTopHat} title={t('Role') || ''}>
         {helpers.toNormalRole(user.role)}
       </InfoCell>
     </InfoContainer>

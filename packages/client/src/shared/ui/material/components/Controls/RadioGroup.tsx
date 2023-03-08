@@ -5,6 +5,7 @@ import {
   MuiRadioGroup
 } from '@mui/material'
 import { RadioControlProps } from 'shared/ui/material/components/Controls/Radio'
+import { useTranslation } from 'react-i18next'
 
 interface RadioGroupProps{
     values: FieldValues,
@@ -12,6 +13,8 @@ interface RadioGroupProps{
 }
 
 export const RadioGroup: FC<RadioGroupProps> = ({ values, Component }) => {
+  const { t } = useTranslation()
+
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value = (event.target as HTMLInputElement).value
     values.setValue(value)
@@ -30,7 +33,7 @@ export const RadioGroup: FC<RadioGroupProps> = ({ values, Component }) => {
       >
         {groupValues.map((label, idx) => {
           const name = groupValues[idx].toString()
-          return <Component key={idx} label={label} name={name} checked={currentValue === name}/>
+          return <Component key={idx} label={t(label)} name={name} checked={currentValue === name}/>
         })}
       </MuiRadioGroup>
     </FormControl>

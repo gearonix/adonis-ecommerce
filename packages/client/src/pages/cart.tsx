@@ -15,14 +15,16 @@ import { WithSpring } from 'shared/lib/components'
 import { FindProductBanner, GithubBanner } from 'entities/Banners'
 import { SearchProductsForm } from 'features/SearchPage'
 import { ProductBannerForm } from 'entities/SearchPage'
+import { useTranslation } from 'react-i18next'
 
 const Cart = () => {
   const productsCount = useSelector(CartSelectors.count)
+  const { t } = useTranslation()
   return <WithSpring>
     <Head>
       <title>Adonis - Shopping Cart ({productsCount})</title>
     </Head>
-    <ContainerTitle>My cart ({productsCount})</ContainerTitle>
+    <ContainerTitle>{t('My_Cart')} ({productsCount})</ContainerTitle>
     <div className={'cart_page'}>
       <CartProdiver>
         <CartItems RemoveAll={RemoveAllCard} Remove={RemoveFromCard}

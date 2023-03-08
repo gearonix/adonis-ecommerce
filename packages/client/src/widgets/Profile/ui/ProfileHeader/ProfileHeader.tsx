@@ -8,12 +8,14 @@ import { EditProfile } from 'widgets/Profile'
 import { useBooleanState } from 'shared/lib/hooks/useBooleanState'
 import { UserInfo } from 'entities/Profile'
 import { UserSelectors } from 'shared/selectors'
+import { useTranslation } from 'react-i18next'
 
 const ProfileHeader: FC = () => {
   const user = useSelector(selectReformattedUser)
   const isMe = useSelector(UserSelectors.isMe)
   const editProfile = useBooleanState()
   const profileInfo = useBooleanState()
+  const { t } = useTranslation()
   if (!user) return null
 
   return <>
@@ -21,7 +23,7 @@ const ProfileHeader: FC = () => {
       <EditProfile close={editProfile.close}/>
     </ContentModal>
     <SimpleModal isOpened={profileInfo.isOpen} close={profileInfo.close}
-      title={`Detailed information (${user.userName})`}>
+      title={`${t('Detailed_information')} (${user.userName})`}>
       <UserInfo user={user}/>
     </SimpleModal>
     <ProfileHeaderTemp ChangeBackground={<ChangeBackground/>}

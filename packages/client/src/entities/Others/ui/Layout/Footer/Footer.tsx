@@ -9,8 +9,10 @@ import { MyLinks } from 'shared/config/consts/myLinks'
 import { SlSocialVkontakte } from 'react-icons/sl'
 import { BsTelegram } from 'react-icons/bs'
 import { HiOutlineDesktopComputer } from 'react-icons/hi'
+import { useTranslation } from 'react-i18next'
 
 const Footer: FC = () => {
+  const { t } = useTranslation()
   return <footer className={s.footer}>
     <div className={s.footer_block}>
       <div className={s.brand_block}>
@@ -18,7 +20,7 @@ const Footer: FC = () => {
           <NextImage src={Assets.LOGO}/>
         </div>
         <p className={s.brand_text}>
-          Why are you even reading this? Go shopping! ;)
+          {t('Why_are')}
         </p>
         <div className={s.icon_block}>
           <Link href={MyLinks.GITHUB}>
@@ -48,40 +50,40 @@ const Footer: FC = () => {
       <nav className={s.navbar}>
         <div className={s.navbar_item}>
           <Link href={routes.SEARCH}>
-            <HoverLink bold>Search</HoverLink> <br/>
+            <HoverLink bold>{t('Search')}</HoverLink> <br/>
           </Link>
           <Link href={routes.ABOUT}>
-            <HoverLink>About project</HoverLink> <br/>
+            <HoverLink>{t('About_project')}</HoverLink> <br/>
           </Link>
         </div>
         <div className={s.navbar_item}>
           <Link href={routes.CART}>
-            <HoverLink bold>My Cart</HoverLink> <br/>
+            <HoverLink bold>{t('My_Cart')}</HoverLink> <br/>
           </Link>
           <Link href={routes.SAVED}>
-            <HoverLink>Saved products</HoverLink> <br/>
+            <HoverLink>{t('Saved_products')}</HoverLink> <br/>
           </Link>
         </div>
         <div className={s.navbar_item}>
           <Link href={routes.MESSENGER}>
-            <HoverLink bold>Messenger</HoverLink> <br/>
+            <HoverLink bold>{t('Messenger')}</HoverLink> <br/>
           </Link>
           <Link href={routes.LOGIN}>
-            <HoverLink>Log in</HoverLink> <br/>
+            <HoverLink>{t('Log_in')}</HoverLink> <br/>
           </Link>
         </div>
         <div className={s.navbar_item}>
           <Link href={routes.LOGIN}>
-            <HoverLink bold>My Profile</HoverLink> <br/>
+            <HoverLink bold>{t('My_Profile')}</HoverLink> <br/>
           </Link>
           <Link href={routes.SIGNUP}>
-            <HoverLink>Sign up</HoverLink><br/>
+            <HoverLink>{t('Sign_up')}</HoverLink><br/>
           </Link>
         </div>
       </nav>
       <Link href={MyLinks.PROJECT}>
         <div className={s.github_block}>
-          <HoverLink>Github</HoverLink>
+          <HoverLink>{t('Github')}</HoverLink>
           <AiOutlineGithub/>
         </div>
       </Link>

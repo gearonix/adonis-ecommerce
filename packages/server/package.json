@@ -27,6 +27,7 @@
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.3",
     "eslint-config-google": "^0.14.0",
+    "mysql": "^2.18.1",
     "nestjs-request-context": "^2.1.0",
     "passport": "^0.6.0",
     "passport-google-oauth20": "^2.0.0",

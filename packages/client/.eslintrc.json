@@ -2,7 +2,8 @@
   "extends": [
     "next/core-web-vitals",
     "google",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:i18next/recommended"
   ],
   "rules": {
     "max-len": "off",
@@ -25,7 +26,8 @@
     "no-trailing-spaces": "off",
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": ["warn"],
-    "react/display-name": "off"
+    "react/display-name": "off",
+    "i18next/no-literal-string": "off"
   },
   "ignorePatterns": ["**/dev/**", "next-env.d.ts","**/scripts/**"],
   "plugins": ["@typescript-eslint"],

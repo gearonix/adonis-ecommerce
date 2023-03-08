@@ -3,16 +3,18 @@ import { Button } from 'shared/ui/kit'
 import s from './style.module.scss'
 import Link from 'next/link'
 import { MyLinks } from 'shared/config/consts/myLinks'
+import { useTranslation } from 'react-i18next'
 
 const GithubBanner: FC = () => {
+  const { t } = useTranslation()
   return <article className={s.github_banner}>
     <div>
-      <h2>You can see the project on my GitHub</h2>
-      <span>Here you can see the project code</span>
+      <h2>{t('You_can')}</h2>
+      <span>{t('Here_you')}</span>
     </div>
     <Link href={MyLinks.PROJECT}>
       <Button w={'121px'} color={'orange'}>
-        Show more
+        {t('Show_more')}
       </Button>
     </Link>
   </article>

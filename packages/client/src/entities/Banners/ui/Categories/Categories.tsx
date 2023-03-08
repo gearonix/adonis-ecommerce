@@ -1,19 +1,16 @@
-import React, { FC, memo, useState } from 'react'
+import React, { FC, memo } from 'react'
 import s from './style.module.scss'
 import { Button, CategoriesList, NextImage } from 'shared/ui/kit'
 import { ProductTypesKeys } from 'shared/types/elements/productTypes'
-import { useDispatch, useSelector } from 'shared/types/redux'
-import { AuthSelectors } from 'shared/selectors'
 import { DefaultAssets, ProductTypesAssets } from 'shared/config/consts/assets'
 import Link from 'next/link'
 import { routes } from 'shared/config/consts/routes'
 import { AiOutlineFileSearch, AiOutlineShoppingCart } from 'shared/ui/icons'
 import { Display, Ternary, WithSpring } from 'shared/lib/components'
-import { useRouter } from 'next/router'
-import { productsActions } from 'widgets/Products'
 import { ProductTypesTitles } from 'widgets/Banners/lib/productTitles'
 import { Nullable } from 'shared/types/common'
 import { backgroundImage } from 'shared/lib/helpers'
+import { useTranslation } from 'react-i18next'
 
 
 interface CategoriesProps{
@@ -29,6 +26,7 @@ interface CategoriesProps{
 const Categories: FC<CategoriesProps> = memo((props) => {
   const { userName, category, setCategory,
     avatar, isAuthorized, onSearch } = props
+  const { t } = useTranslation()
 
   const { title, subtitle } = ProductTypesTitles[category]
 
@@ -37,9 +35,9 @@ const Categories: FC<CategoriesProps> = memo((props) => {
     <WithSpring key={category} type={'opacityHeight'}
       className={s.image_block} param={390}
       style={backgroundImage(ProductTypesAssets[category])}>
-      <h2 className={s.subtitle}>{subtitle}</h2>
-      <h2 className={s.title}>{title}</h2>
-      <Button w={'112px'} color={'outlined'} onClick={onSearch}>Learn more</Button>
+      <h2 className={s.subtitle}>{t(subtitle)}</h2>
+      <h2 className={s.title}>{t(title)}</h2>
+      <Button w={'112px'} color={'outlined'} onClick={onSearch}>{t('Learn_more')}</Button>
     </WithSpring>
     <div className={s.login_block}>
       <div className={s.user_block}>
@@ -49,39 +47,39 @@ const Categories: FC<CategoriesProps> = memo((props) => {
               <NextImage src={avatar} def={DefaultAssets.AVATAR}/>
             </div>
             <Ternary where={isAuthorized}>
-              <div className={s.user_title}>Hey, {userName}.<br/>
-                Welcome back!
+              <div className={s.user_title}>{t('Hey')} {userName}.<br/>
+                {t('Welcome_back')}
               </div>
-              <div className={s.user_title}>Hey!<br/>
-              Let&apos;s get started!
+              <div className={s.user_title}>{t('Hey')}<br/>
+                {t('Lets_get')}
               </div>
             </Ternary>
           </div>
         </div>
         <Display when={!isAuthorized}>
           <Link href={routes.SIGNUP}>
-            <Button w={'90%'} h={'30px'}>Join now</Button>
+            <Button w={'90%'} h={'30px'}>{t('Join_now')}</Button>
           </Link>
           <Link href={routes.LOGIN}>
-            <Button w={'90%'} h={'30px'} color={'outlined'}>Log in</Button>
+            <Button w={'90%'} h={'30px'} color={'outlined'}>{t('Log_in')}</Button>
           </Link>
         </Display>
       </div>
       <Link href={routes.SEARCH}>
         <div className={s.greenCard}>
-          <h4>The best goods for sports! <br/>
-            Get your discount! <AiOutlineShoppingCart/></h4>
+          <h4>{t('Best_goods')} <br/>
+            {t('Get_your')} <AiOutlineShoppingCart/></h4>
         </div>
       </Link>
       <Link href={routes.SEARCH}>
         <div className={s.card}>
-          <h4>The best electronics store is open!</h4>
+          <h4>{t('The_best')}</h4>
         </div>
       </Link>
       <Display when={isAuthorized}>
         <Link href={routes.SEARCH}>
           <div className={s.greenCard}>
-            <h4>Look how many products we have! <AiOutlineFileSearch/></h4>
+            <h4>{t('Look_how_many')}<AiOutlineFileSearch/></h4>
           </div>
         </Link>
       </Display>

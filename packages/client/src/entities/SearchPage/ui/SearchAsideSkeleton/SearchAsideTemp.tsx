@@ -5,6 +5,7 @@ import { CreateFieldValues } from 'shared/lib/helpers'
 import { RadioGroup } from 'shared/ui/kit'
 import { Radio, ReadonlyRating } from 'shared/ui/material'
 import { SearchControlsForm } from 'widgets/Products/types'
+import { useTranslation } from 'react-i18next'
 
 
 interface SearchAsideProps{
@@ -12,17 +13,18 @@ interface SearchAsideProps{
 }
 
 const SearchAsideTemp: FC<SearchAsideProps> = ({ reg }) => {
+  const { t } = useTranslation()
   return <aside className={s.aside}>
-    <Controls title={'Product Type'} values={reg('type')}>
+    <Controls title={t('Product_type')} values={reg('type')}>
       <RadioGroup values={reg('type')} Component={Radio}/>
     </Controls>
-    <Controls title={'Product Model'} values={reg('model')}>
+    <Controls title={t('Product_model')} values={reg('model')}>
       <RadioGroup values={reg('model')} Component={Radio}/>
     </Controls>
-    <Controls title={'Product Size'} values={reg('size')}>
+    <Controls title={t('Product_size')} values={reg('size')}>
       <RadioGroup values={reg('size')} Component={Radio}/>
     </Controls>
-    <Controls title={'Product Rating'} values={reg('rating')}>
+    <Controls title={t('Product_Rating')} values={reg('rating')}>
       <RadioGroup values={reg('rating')} Component={ReadonlyRating}/>
     </Controls>
   </aside>

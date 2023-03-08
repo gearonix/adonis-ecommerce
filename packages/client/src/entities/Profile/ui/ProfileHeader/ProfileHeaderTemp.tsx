@@ -4,6 +4,7 @@ import { ProfileBackground, UserAvatar } from 'shared/ui/kit'
 import { Nullable, ObjectNullable } from 'shared/types/common'
 import { FormattedUser } from 'widgets/Profile/store/selectors'
 import { AiOutlineInfoCircle } from 'shared/ui/icons'
+import { useTranslation } from 'react-i18next'
 
 
 export interface ProfileHeaderTemplate {
@@ -17,6 +18,7 @@ export interface ProfileHeaderTemplate {
 
 const ProfileHeaderTemp: FC<ProfileHeaderTemplate> =
     ({ ChangeBackground, openProfile, openInfo, user, isMe }) => {
+      const { t } = useTranslation()
       return <div className={s.profile_header}>
         <div className={s.profile_background}>
           <ProfileBackground src={user.background} ChangeBackground={ChangeBackground}/>
@@ -29,10 +31,10 @@ const ProfileHeaderTemp: FC<ProfileHeaderTemplate> =
           <div className={s.user_info}>
             <h2 className={s.user_name}>{user.userName}</h2>
             <p className={s.description}>{user.description}</p>
-            <h2 onClick={openInfo} className={s.details}><AiOutlineInfoCircle/>Details</h2>
+            <h2 onClick={openInfo} className={s.details}><AiOutlineInfoCircle/>{t('Details')}</h2>
           </div>
           <div className={s.change_profile}>
-            {isMe && <button className="outlined_button" onClick={openProfile}>Change profile</button>}
+            {isMe && <button className="outlined_button" onClick={openProfile}>{t('Change_profile')}</button>}
           </div>
         </div>
       </div>

@@ -8,19 +8,19 @@ import { Assets } from 'shared/config/consts/assets'
 import { SlSocialVkontakte } from 'react-icons/sl'
 import { BsTelegram } from 'react-icons/bs'
 import { HiOutlineDesktopComputer } from 'react-icons/hi'
+import { useTranslation } from 'react-i18next'
 
 const About = () => {
+  const { t } = useTranslation()
   return <div className={s.container}>
-    <h1 className={s.title}>About project</h1>
+    <h1 className={s.title}>{t('About_project')}</h1>
     <p className={s.text}>
-        The project was developed in 2023 by Uzhanin Egor (Gearonix). <br/>
-        The development took more than two months. <br/>
-
+      {t('The_project')}
+      <br/>
     </p>
     <p className={s.text}>
-        Detailed description about development difficulties, technology stack
-        and much more you can read <Link href={MyLinks.PORTFOLIO}><span>here</span></Link>.
-        Links:
+      {t('Detailed_description')} <Link href={MyLinks.PORTFOLIO}><span>{t('here')}. <br/></span></Link>
+      {t('links')}
     </p>
     <Link href={MyLinks.PROJECT}>
       <div className={s.github_icon}>
@@ -31,28 +31,29 @@ const About = () => {
       <Link href={MyLinks.PORTFOLIO}
         className={'hover_link'}>
         <HiOutlineDesktopComputer />
-        My portfolio
+        {t('My_portfolio')}
       </Link>
       <Link href={MyLinks.VK} className={'hover_link'}>
         <SlSocialVkontakte color={'#4C75A3'}/>
-        VK</Link>
+        {t('VK')}</Link>
       <Link href={MyLinks.TELEGRAM}
         className={'hover_link'}>
         <BsTelegram color={'#0088cc'}/>
-        Telegram</Link>
+        {t('Telegram')}</Link>
       <Link href={MyLinks.GITHUB} className={'hover_link'}>
         <AiOutlineGithub />
-        My Github</Link>
+        {t('My_Github')}</Link>
     </ul>
 
     <div className={s.image_wrapper}>
       <NextImage src={Assets.ABOUT}/>
     </div>
-    <h4 className={s.link}>
-        Return to <Link href={routes.MAIN}>
-        <span className={'hover_link'}>main page.</span>
-      </Link>
-    </h4>
+    <Link href={routes.MAIN}>
+      <h4 className={s.link}>
+        {t('Return_to')}
+
+      </h4>
+    </Link>
   </div>
 }
 

@@ -4,6 +4,7 @@ import { AiOutlineArrowLeft } from 'shared/ui/icons'
 import { Button } from 'shared/ui/kit'
 import Link from 'next/link'
 import { routes } from 'shared/config/consts/routes'
+import { useTranslation } from 'react-i18next'
 
 export interface CartButtonsProps {
   RemoveAll?: FC,
@@ -12,10 +13,11 @@ export interface CartButtonsProps {
 
 
 const CartButtons: FC<CartButtonsProps> = ({ RemoveAll, BackColor }) => {
+  const { t } = useTranslation()
   return <div className={s.cart_buttons}>
     <Link href={routes.SEARCH}>
       <Button w={'159px'} color={BackColor}>
-        <AiOutlineArrowLeft/> Back to shop
+        <AiOutlineArrowLeft/> {t('Back_to')}
       </Button>
     </Link>
     {RemoveAll && <RemoveAll/>}

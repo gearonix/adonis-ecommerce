@@ -1,13 +1,16 @@
+import { t } from 'i18next'
+
+
 export const getUIText = (mode: 'login' | 'signup') => {
   return mode == 'login' ? {
-    title: 'Log in',
-    linkText: 'Don’t have an account?',
+    title: t('Log_in'),
+    linkText: t('Dont_have'),
     linkHref: '/signup',
-    blueLinkText: 'Register now'
+    blueLinkText: t('Register_now')
   } : {
-    title: 'Register now',
-    linkText: 'Already have an account?',
+    title: t('Register_now'),
+    linkText: t('Already_have'),
     linkHref: '/login',
-    blueLinkText: 'Login in'
+    blueLinkText: t('Log_in')
   }
 }

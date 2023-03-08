@@ -13,6 +13,9 @@ export const notifyMiddleware: Middleware = () => (next) => (action: AnyAction) 
 
       })
     }
-    toast.warn(process.env.IS_DEV ? axiosMessage : message)
+    if (message === 'Please sign in') {
+      return toast.info(message)
+    }
+    toast.warn(message)
   }
 }

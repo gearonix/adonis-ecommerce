@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { routes } from 'shared/config/consts/routes'
 import { DefaultAssets } from 'shared/config/consts/assets'
 import { SavedProps, ProductSaved } from 'features/Saved'
+import { useTranslation } from 'react-i18next'
 
 
 export interface PurchaseProductP {
@@ -17,6 +18,7 @@ export interface PurchaseProductP {
 
 
 const PurchaseProduct: FC<PurchaseProductP> = ({ AddToSaved, CartButton, product }) => {
+  const { t } = useTranslation()
   const { salesman, productInfo } = product
   return <div className={s.purchase_block}>
     <div className={s.purchase_card}>
@@ -28,17 +30,17 @@ const PurchaseProduct: FC<PurchaseProductP> = ({ AddToSaved, CartButton, product
         </div>
 
         <h2>
-                    Supplier: <br/>
+          {t('Supplier')} <br/>
           {salesman.firstName} {salesman.lastName}
         </h2>
       </div>
       <span className={s.supplier_params}><MdMessage/>{salesman.email}</span>
       <span className={s.supplier_params}><TfiWorld/>{salesman.country ? salesman.country :
           'No Country'}</span>
-      <span className={s.supplier_params}><HiOutlineFlag/>{salesman.city ? salesman.city : 'No City'}</span>
+      <span className={s.supplier_params}><HiOutlineFlag/>{salesman.city ? salesman.city : t('No_City')}</span>
       <CartButton/>
       <Link href={`${routes.USERS}/${salesman.userId}`}>
-        <Button w={'100%'} color={'blueBordered'}>Seller’s profile</Button>
+        <Button w={'100%'} color={'blueBordered'}>{t('Sellers_profile')}</Button>
       </Link>
     </div>
     <AddToSaved productId={productInfo.productId as number} Component={ProductSaved}/>

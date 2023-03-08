@@ -1,6 +1,6 @@
 const i18nConfig = {
   fallbackLng: 'en',
-  debug: false,
+  debug: true,
   interpolation: {
     escapeValue: false
   },

@@ -3,12 +3,14 @@ import { Button } from 'shared/ui/kit'
 import { useDispatch, useSelector } from 'shared/types/redux'
 import { CartSelectors, ProductSelectors } from 'shared/selectors'
 import { cartActions } from 'widgets/Cart/store/cartReducer'
+import { useTranslation } from 'react-i18next'
 
 const CartButton: FC<{productId?: number}> = ({ productId: id }) => {
   const currentProductId = useSelector(ProductSelectors.id) as number
   const productId = id ?? currentProductId
   const isExists = useSelector(CartSelectors.existsInCart(productId))
   const dispatch = useDispatch()
+  const { t } = useTranslation()
 
   const onAdd = () => {
     dispatch(cartActions.addProduct(productId))
@@ -18,8 +20,8 @@ const CartButton: FC<{productId?: number}> = ({ productId: id }) => {
   }
 
 
-  return isExists ? <Button w={'100%'} onClick={onRemove} color={'red'}>Remove from Cart</Button> :
-      <Button w={'100%'} onClick={onAdd}>Add to Cart</Button>
+  return isExists ? <Button w={'100%'} onClick={onRemove} color={'red'}>{t('Remove')}t</Button> :
+      <Button w={'100%'} onClick={onAdd}>{t('Add_to')}</Button>
 }
 
 export default CartButton

@@ -4,8 +4,10 @@ import Link from 'next/link'
 import { AiOutlineApi, AiOutlineHome, GiTopHat } from 'shared/ui/icons'
 import { Button } from 'shared/ui/kit'
 import { routes } from 'shared/config/consts/routes'
+import { useTranslation } from 'react-i18next'
 
 const SignupChoice: FC = () => {
+  const { t } = useTranslation()
   return <div className={s.signup_main}>
     <div className={s.wrapper}>
       <div className={s.home}>
@@ -13,7 +15,7 @@ const SignupChoice: FC = () => {
           <AiOutlineHome/>
         </Link>
       </div>
-      <h1 className={s.title}>Who are you?</h1>
+      <h1 className={s.title}>{t('Who_are')}</h1>
       <div className={s.choice_container}>
         <Link href={routes.SIGNUP_CUSTOMER}>
           <div className={s.choice_block}>
@@ -27,17 +29,17 @@ const SignupChoice: FC = () => {
         </Link>
         <Link href={routes.SIGNUP_CUSTOMER}>
           <Button w={'150px'} color={'greyBordered'}>
-                        Customer
+            {t('Customer')}
           </Button>
         </Link>
         <Link href={routes.SIGNUP_SALESMAN}>
           <Button w={'150px'}>
-                        Salesman
+            {t('Salesman')}
           </Button>
         </Link>
       </div>
-      <p>Already have an account? <Link href={'/login'}>
-        <span>Log in</span>
+      <p>{t('Already_have')} <Link href={'/login'}>
+        <span>{t('Log_in')}</span>
       </Link></p>
     </div>
   </div>

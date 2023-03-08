@@ -6,6 +6,7 @@ import { DefaultAssets } from 'shared/config/consts/assets'
 import { CartSaved, SavedProps } from 'features/Saved'
 import { Nullable } from 'shared/types/common'
 import { Product } from 'shared/types/slices'
+import { useTranslation } from 'react-i18next'
 
 export interface CartItemProps {
   Remove?: FC<{ ref?: MutableRefObject<undefined>, productId: number }>,
@@ -16,6 +17,8 @@ export interface CartItemProps {
 const CartItem: FC<CartItemProps> = ({ Remove, AddToSaved, product }) => {
   const [isOpen, openModal] = useState<boolean>(false)
   const removeBtnRef = useRef()
+  const { t } = useTranslation()
+
   // return <ApiAnimation className={s.item} type={'reduceLength'} param={140} subscriber={removeBtnRef}>
   return <div className={s.item}> {product.images.length && <ImageModal isOpen={isOpen} close={openModal} image={product.images[0]}
     def={DefaultAssets.PRODUCT}/>}
@@ -25,8 +28,9 @@ const CartItem: FC<CartItemProps> = ({ Remove, AddToSaved, product }) => {
   </div>
   <div className={s.item_info}>
     <h4>{product.name}</h4>
-    <p>Size: {product.size}, Material: {product.material}, Type: {product.type}, Model: {product.model},
-        Seller: {product.salesmanId}</p>
+    <p>{t('Size')} {product.size}, {t('Material')}
+      {product.material}, {t('Type')} {product.type}, {t('Model')} {product.model},
+        {t('Supplier')} {product.salesmanId}</p>
     <div className={s.item_buttons}>
       {Remove && <Remove ref={removeBtnRef} productId={product.productId}/>}
       {AddToSaved && <AddToSaved productId={product.productId} Component={CartSaved}/>}

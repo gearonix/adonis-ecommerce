@@ -11,14 +11,16 @@ import { SavedItems } from 'features/Saved'
 import { useSelector } from 'shared/types/redux'
 import { SavedSelectors } from 'shared/selectors'
 import { CartItems as CartItemsTemplate } from 'entities/Cart'
+import { useTranslation } from 'react-i18next'
 
 const Saved: FC = () => {
   const savedCount = useSelector(SavedSelectors.count)
+  const { t } = useTranslation()
   return <WithSpring>
     <Head>
       <title>Adonis - Saved ({savedCount})</title>
     </Head>
-    <ContainerTitle>Saved products ({savedCount})</ContainerTitle>
+    <ContainerTitle>{t('Saved_products')} ({savedCount})</ContainerTitle>
     <SavedItems Remove={RemoveFromSaved} Component={CartItemsTemplate} />
     <RecommendedItems Component={SortedProducts} type={ProductTypes[0]}/>
     <GithubBanner/>
