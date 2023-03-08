@@ -1,20 +1,12 @@
 const readline = require('linebyline')
 const fs = require('fs')
-const translator = require('@parvineyvazov/json-translator')
+const translator = require('@parvineyvazov/json-translator');
 const path = require('path')
+const LANGUAGES = require('./config')
 
 const INPUT_PATH = 'input.txt'
 
-const LANGUAGE = {
-    translator: translator.languages.Russian,
-    name: 'russian'
-}
-
-const LANGUAGES = ['russian', 'chinese',
-'spanish', 'hindi', 'french',
-'italian', 'arabic', 'canada',
-'english', 'kazakh']
-
+const sleep = async (ms) => await new Promise(r => setTimeout(r, ms));
 
 fs.readFile(path.resolve(__dirname, INPUT_PATH), async (err, data) => {
   const removeDoubles = data.toString()
@@ -52,28 +44,41 @@ fs.readFile(path.resolve(__dirname, INPUT_PATH), async (err, data) => {
 
   reader.on('end', async () => {
     console.log('process finished.')
-    console.log('translating...')
+    console.log('translating...');
 
-    const TRANSLATED = (await translator.translateObject(
-        finalJSON,
-        translator.languages.English,
-        LANGUAGE.translator
-    ))
+    const maxLength = Object.values(finalJSON).length
 
-    if (!fs.existsSync(path.resolve(__dirname, 'translates'))) {
-      fs.mkdirSync(path.resolve(__dirname, 'translates'))
+
+      if (!fs.existsSync(path.resolve(__dirname, 'translates'))) {
+          fs.mkdirSync(path.resolve(__dirname, 'translates'))
+      }
+
+    for (language of LANGUAGES){
+        const translated = {}
+        let count = 0
+
+        for await ([key,value] of Object.entries(finalJSON)){
+            await sleep(2000)
+            const translatedWord = await translator.translateWord(value,
+                translator.languages.English,
+                language.translator
+            )
+            translated[key] = translatedWord
+            console.log(`language: ${language.name}, ${count++}/${maxLength} words`)
+            console.log(`translated: ${translatedWord}`)
+        }
+        console.log(`JSON TRANSLATED. LANGUAGE: ${language.name}`)
+
+        const dirPath = path.resolve(__dirname, 'translates', language.name)
+          if (!fs.existsSync(dirPath)) {
+            fs.mkdirSync(dirPath)
+          }
+        fs.writeFile(
+              path.resolve(dirPath, 'translation.json'),
+              JSON.stringify(translated, false, 4),
+              'utf-8',
+              onError)
     }
-
-  const dirPath = path.resolve(__dirname, 'translates', LANGUAGE.name)
-  if (!fs.existsSync(dirPath)) {
-    fs.mkdirSync(dirPath)
-  }
-
-  fs.writeFile(
-      path.resolve(dirPath, `translation.json`),
-      JSON.stringify(TRANSLATED, false, 4),
-      'utf-8',
-      onError)
     console.log('done.')
   })
 })
