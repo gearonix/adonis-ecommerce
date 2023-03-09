@@ -6,7 +6,8 @@ import { CartItems as CartItemsTemplate } from 'entities/Cart'
 const CartItems: FC<CartItemsProps> = ({ Remove, RemoveAll, AddToSaved }) => {
   const { items } = useContext(CartContext)
 
-  return <CartItemsTemplate items={items} Remove={Remove} RemoveAll={RemoveAll} AddToSaved={AddToSaved}/>
+  return <CartItemsTemplate items={items}
+    Remove={Remove} RemoveAll={RemoveAll} AddToSaved={AddToSaved} loading={false}/>
 }
 
 export default CartItems

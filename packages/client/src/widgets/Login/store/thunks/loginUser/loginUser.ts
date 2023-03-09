@@ -2,7 +2,7 @@ import { createThunk } from 'shared/types/redux'
 import { LoginForm } from 'widgets/Login/types'
 import { isError } from 'shared/lib/helpers/others/httpHelpers'
 import { Exceptions } from 'app/config/globals'
-import { authorizeUser } from 'widgets/Login/store/thunks/authorizeUser'
+import { authorizeUser } from 'widgets/Login/store/thunks/autorizeUser/authorizeUser'
 
 export const loginUser = createThunk(
     'users/LOGIN_USER',

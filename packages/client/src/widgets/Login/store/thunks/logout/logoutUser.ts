@@ -1,5 +1,4 @@
 import { createThunk } from 'shared/types/redux'
-import authApi from 'widgets/Login/api'
 import { userActions } from 'widgets/Profile'
 import { authActions } from 'widgets/Login/store/slice/authReducer'
 import { LocalStorageHelper } from 'shared/lib/helpers/others/localStorageHelpers'
@@ -16,6 +15,6 @@ export const logoutUser = createThunk(
       dispatch(authActions.logout())
       dispatch(cartActions.removeAll())
       storage.clear()
-      extra.redirect(routes.LOGIN)
+      extra.redirect?.(routes.LOGIN)
     }
 )

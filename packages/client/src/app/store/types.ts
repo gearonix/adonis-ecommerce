@@ -21,6 +21,8 @@ export interface ApiConfig {
     saved: SavedApi
 }
 
+export type ApiConfigKey = keyof ApiConfig
+
 export interface Extra extends CreateMiddleWare{
     api: ApiConfig,
 }

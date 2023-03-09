@@ -1,32 +1,67 @@
-import { ApiConfig, StateSchema } from 'app/store/types'
+import { ApiConfig, ApiConfigKey, StateSchema, StateSchemaKey } from 'app/store/types'
 import { AsyncThunkAction } from '@reduxjs/toolkit'
-import axios, { AxiosStatic } from 'axios'
 import { apiConfig } from 'app/store/config/apiConfig'
-
-jest.mock('axios')
-
-const mockedAxios = jest.mocked(axios)
+import { JestRedux } from 'shared/lib/jest/JestRedux'
+import { ValueOf } from 'shared/types/common'
 
 type ActionCreator<Return, Arg, Rejected> = (arg: Arg) =>
     AsyncThunkAction<Return, Arg, { rejectValue: Rejected }>
 
 export class JestAsyncThunk<Return, Arg, Rejected> {
-  dispatch: jest.MockedFn<any>
-  getState: () => StateSchema
-  actionCreator: ActionCreator<Return, Arg, Rejected>
-  api: any
-  constructor(actionCreator : ActionCreator<Return, Arg, Rejected>, apiName: keyof ApiConfig) {
+  private readonly dispatch: jest.MockedFn<any>
+  private readonly getState: () => StateSchema
+  private readonly api: any
+  private readonly actionCreator: ActionCreator<Return, Arg, Rejected>
+  private readonly apiKey: ApiConfigKey
+
+  constructor(
+      actionCreator : ActionCreator<Return, Arg, Rejected>,
+      apiKey: ApiConfigKey,
+      stateKey?: StateSchemaKey,
+      preloadedState?: ValueOf<StateSchema>
+  ) {
     this.actionCreator = actionCreator
     this.dispatch = jest.fn()
-    this.getState = jest.fn()
-    const currentApi = apiConfig[apiName]
-    const mockApi = Object.entries(currentApi).map(([key, value]) => [key, jest.fn()])
+
+    const testStore = new JestRedux()
+
+    this.getState = jest.fn(() => {
+      return testStore.configureTestStore(stateKey, preloadedState).getState()
+    })
+
+    this.apiKey = apiKey
+
+    const mockApi = Object.entries(apiConfig[apiKey]).map(([key]) => [key, jest.fn()])
     this.api = {
-      [apiName]: Object.fromEntries(mockApi)
+      [apiKey]: Object.fromEntries(mockApi)
     }
   }
-  async call(arg: Arg) {
+
+  public async call(arg: Arg) {
     const action = this.actionCreator(arg)
-    return action(this.dispatch, this.getState, { api: this.api })
+
+    const extra = {
+      api: this.api,
+      redirect: jest.fn()
+    }
+
+    const result = await action(this.dispatch, this.getState, extra)
+
+    return {
+      api: this.api[this.apiKey],
+      dispatch: this.dispatch,
+      status: result.meta.requestStatus,
+      payload: result.payload,
+      redirect: extra.redirect,
+      getState: this.getState
+    }
+  }
+
+  public async mock<T extends ApiConfigKey>(method: keyof ApiConfig[T], data: any, status: number = 200) {
+    const apiMethod = this.api[this.apiKey][method]
+    apiMethod.mockReturnValue(Promise.resolve({ data, status }))
+  }
+  public async errorMock<T extends ApiConfigKey>(method: keyof ApiConfig[T]) {
+    await this.mock(method, {}, 500)
   }
 }

@@ -1,5 +1,4 @@
 import { AsyncThunkConfig, createThunk } from 'shared/types/redux'
-import { postsApi } from 'widgets/Posts/api'
 import { postActions } from 'widgets/Posts/store/slice/postsReducer'
 import { isError } from 'shared/lib/helpers/others/httpHelpers'
 import { UserSelectors } from 'shared/selectors'

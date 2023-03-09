@@ -1,5 +1,4 @@
 import { createThunk } from 'shared/types/redux'
-import { postsApi } from 'widgets/Posts/api'
 import { postActions } from 'widgets/Posts'
 import { UploadProperties } from 'app/config/globals'
 import { AddPostForm } from 'widgets/Posts/types'

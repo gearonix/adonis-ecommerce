@@ -1,3 +1,3 @@
-export { addProductToSaved } from './addProductToSaved'
-export { getSavedProducts } from './getSavedProducts'
-export { removeProductFromSaved } from './removeProductFromSaved'
+export { addProductToSaved } from './addProductToSaved/addProductToSaved'
+export { getSavedProducts } from './getSavedProducts/getSavedProducts'
+export { removeProductFromSaved } from './removeProductFromSaved/removeFromSaved'

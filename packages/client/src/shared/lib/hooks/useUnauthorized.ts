@@ -10,7 +10,8 @@ export const useUnauthorized = () => {
   return <T>(callback: (arg: T) => void) => {
     return (arg: T) => {
       if (!isAuthorized) {
-        return router.push(routes.LOGIN)
+        router.push(routes.LOGIN)
+        return
       }
       callback(arg)
     }

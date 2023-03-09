@@ -24,7 +24,6 @@ describe('savedReducer', () => {
     expect(savedSlice(state, savedActions.addToSaved(2)).saved.at(-1)).toBe(2)
   })
   test('removeFromSaved', () => {
-    console.log(state.saved)
     expect(savedSlice(state, savedActions.removeFromSaved(2)).saved).toHaveLength(2)
     expect(savedSlice(state, savedActions.removeFromSaved(3)).saved).toHaveLength(1)
   })

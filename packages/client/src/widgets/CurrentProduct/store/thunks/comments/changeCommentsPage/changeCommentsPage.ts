@@ -1,13 +1,13 @@
 import { createThunk } from 'shared/types/redux'
 import { ProductSelectors } from 'shared/selectors'
 import { isError as isError } from 'shared/lib/helpers/others/httpHelpers'
-import { productActions } from '../../slice/productReducer'
+import { productActions } from 'widgets/CurrentProduct'
 
 export const changeCommentsPage = createThunk('currentProduct/SET_COMMENTS_PAGE',
     async (page: number, { dispatch, getState, extra }) => {
       const productId = ProductSelectors.id(getState()) as number
       if (!productId) {
-        return
+        return 'An error occurred.'
       }
       const response = await extra.api.product.setCommentsPage(productId, page)
       if (isError(response)) {

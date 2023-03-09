@@ -1,6 +1,5 @@
 /node_modules/
 pnpm-lock.yaml
-.idea/*
-!.idea/rcb-settings.xml
+.idea
 
 

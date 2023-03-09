@@ -1,5 +1,4 @@
 import { createThunk } from 'shared/types/redux'
-import { productsApi } from 'widgets/Products/api'
 import { isError } from 'shared/lib/helpers/others/httpHelpers'
 import { Product } from 'shared/types/slices'
 import { Nullable } from 'shared/types/common'

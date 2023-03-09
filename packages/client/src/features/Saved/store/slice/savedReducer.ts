@@ -3,7 +3,7 @@ import { SavedModel } from 'features/Saved/types'
 import { Product } from 'shared/types/slices'
 import { savedInitialState as initialState } from 'shared/types/slices/saved'
 import { withLoading } from 'shared/lib/helpers/others/reduxHelpers'
-import { getSavedByIds } from 'features/Saved/store/thunks/getSavedByIds'
+import { getSavedByIds } from 'features/Saved/store/thunks/getSavedByIds/getSavedByIds'
 
 
 const savedReducer = createSlice({

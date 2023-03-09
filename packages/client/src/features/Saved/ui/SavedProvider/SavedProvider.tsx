@@ -11,7 +11,7 @@ export interface SavedProps{
 }
 
 export interface SharedSavedProps{
-    onClick: () => void,
+    onClick: (arg?: unknown) => void,
     isInSaved: boolean
 }
 

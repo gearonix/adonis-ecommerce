@@ -11,7 +11,5 @@ const Template: ComponentStory<typeof FindProductSkeleton> = (args) => <FindProd
 
 export const Default = Template.bind({})
 Default.args = {
-  Form: () => {
-    return null
-  }
+  Form: <div></div>
 }

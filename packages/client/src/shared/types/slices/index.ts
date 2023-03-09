@@ -1,4 +1,5 @@
-export type { User, usersInitialState } from './user'
+export type { User } from './user'
+export { usersInitialState } from './user'
 export type { ProductsSlice, Product } from './products'
 export { productsInitialState } from './products'
 export type { CurrentProductSlice, ProductComment,

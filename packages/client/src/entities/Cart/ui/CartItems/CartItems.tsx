@@ -25,7 +25,7 @@ const CartItems : FC<CartItemsProps> = (props) => {
     <div className={s.cart_container}>
       <div className={s.cart_layout}>
 
-        <WithLoading when={!items.length} title={title} Icon={Icon}>
+        <WithLoading when={!items.length} title={title} Icon={Icon} loading={false}>
           {items.map((product, idx) => {
             return <CartItem Remove={Remove} AddToSaved={AddToSaved} key={idx} product={product}/>
           })}

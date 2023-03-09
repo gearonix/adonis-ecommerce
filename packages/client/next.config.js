@@ -1,4 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+// eslint-disable-next-line
 const path = require('path')
 
 const isDev = process.env.NODE_ENV === 'development'
@@ -25,6 +25,12 @@ const nextConfig = {
       }
     ],
     domains: ['lh3.googleusercontent.com', serverHost || 'localhost']
+  },
+  eslint: {
+    ignoreDuringBuilds: true
+  },
+  experimental: {
+    appDir: false
   }
 }
 

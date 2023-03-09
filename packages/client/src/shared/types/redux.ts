@@ -16,7 +16,7 @@ export interface AsyncThunkConfig{
 
 export const createThunk = createAsyncThunk.withTypes<AsyncThunkConfig>()
 
-export type AsyncThunk = ReturnType<typeof createThunk<void, any, AsyncThunkConfig>>
+export type AsyncThunk = ReturnType<typeof createThunk<any, any, AsyncThunkConfig>>
 
 export const useSelector: TypedUseSelectorHook<Required<AppState>> = useReduxSelector
 
