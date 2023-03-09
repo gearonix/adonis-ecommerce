@@ -24,7 +24,7 @@ const nextConfig = {
         port: ''
       }
     ],
-    domains: ['lh3.googleusercontent.com', serverHost]
+    domains: ['lh3.googleusercontent.com', serverHost || 'localhost']
   }
 }
 
