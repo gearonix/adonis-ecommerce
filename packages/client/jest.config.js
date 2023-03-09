@@ -16,7 +16,10 @@ const customJestConfig = {
   moduleDirectories: ['node_modules', 'src'],
   modulePaths: [
     '<rootDir>'
-  ]
+  ],
+  moduleNameMapper: {
+    'src/(.*)': '<rootDir>/src/$1'
+  }
 }
 
 module.exports = createJestConfig(customJestConfig)
