@@ -5,7 +5,7 @@ import { Pagination } from 'shared/ui/material'
 import { PAGE_LIMIT } from 'app/config/globals'
 import { changeCommentsPage, productActions } from 'widgets/CurrentProduct'
 import { CommentBar } from 'features/ProductPage'
-import { CommentTemplate } from 'entities/Profile'
+import { CommentTemplate } from './../../../../entities/Profile'
 
 
 const ProductComments : FC = () => {

@@ -7,7 +7,6 @@ import { useTranslation } from 'react-i18next'
 import { useLanguage } from 'shared/lib/hooks/useLanguage'
 
 
-
 const HeaderDropDowns: FC = () => {
   const { toggleTheme, isLight } = useTheme()
   const { toggleLang, isEnglish } = useLanguage()

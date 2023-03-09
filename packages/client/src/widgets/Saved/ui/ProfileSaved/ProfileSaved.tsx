@@ -8,7 +8,7 @@ import { ProductsPreloader } from 'shared/ui/material'
 const ProfileSaved: FC<CartItemsEntity> = ({ items, AddToSaved, loading }) => {
   return <>
     <WithLoading when={!items.length} title={'Saved'} Icon={FiHeart} loading={loading}
-                 Preloader={ProductsPreloader} count={3}>
+      Preloader={ProductsPreloader} count={3}>
       {items.map((product) => <SearchedProduct AddToSaved={AddToSaved}
         CartButton={CartButton} product={product} key={product.productId}/>)}
     </WithLoading>

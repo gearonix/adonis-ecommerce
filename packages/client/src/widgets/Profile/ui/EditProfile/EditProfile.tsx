@@ -9,7 +9,7 @@ import UserSelectors from 'shared/selectors/user'
 import { selectEditProfileValues } from 'widgets/Profile/store/selectors'
 import { createFieldValues, Helpers } from 'shared/lib/helpers'
 import { ChangeAvatar, ChangeBackground } from 'features/Profile'
-import { EditProfile as EditProfileTemplate } from 'entities/Profile'
+import { EditProfile as EditProfileTemplate } from './../../../../entities/Profile'
 
 const EditProfile: FC<{ close: () => void }> = ({ close }) => {
   const user = useSelector(UserSelectors.user)

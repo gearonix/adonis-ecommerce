@@ -1,4 +1,4 @@
-import { ProfileHeader as ProfileHeaderTemp } from 'entities/Profile'
+import { ProfileHeader as ProfileHeaderTemp, UserInfo } from './../../../../entities/Profile'
 import { FC } from 'react'
 import { ChangeBackground } from 'features/Profile'
 import { useSelector } from 'shared/types/redux'
@@ -6,7 +6,6 @@ import { selectReformattedUser } from 'widgets/Profile/store/selectors'
 import { ContentModal, SimpleModal } from 'shared/ui/material'
 import { EditProfile } from 'widgets/Profile'
 import { useBooleanState } from 'shared/lib/hooks/useBooleanState'
-import { UserInfo } from 'entities/Profile'
 import { UserSelectors } from 'shared/selectors'
 import { useTranslation } from 'react-i18next'
 

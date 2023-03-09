@@ -5,7 +5,7 @@ import { addProduct } from 'widgets/Products/store/thunks/addProduct'
 import { AddProductForm } from 'widgets/Products/types'
 import { addProductSchema } from 'widgets/Products/lib/form/formSchemes'
 import { useForm } from 'shared/lib/hooks'
-import { AddProductTemplate } from 'entities/Profile'
+import { AddProductTemplate } from './../../../../entities/Profile'
 import { ProductImages } from 'features/Profile'
 
 const AddProduct: FC<{ cancel: () => void }> = ({ cancel }) => {

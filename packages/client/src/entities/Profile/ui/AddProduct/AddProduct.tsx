@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import s from './style.module.scss'
 import { AutoComplete, Checkbox, HeadField, NumberField, Rating, StandardSelect, TextArea } from 'shared/ui/material'
-import { AddProductProps } from 'entities/Profile/ui/AddProduct/types'
+import { AddProductProps } from './types'
 
 
 const AddProduct: FC<AddProductProps> = ({ submitForm, cancel, ProductImages, reg }) => {

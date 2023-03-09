@@ -4,7 +4,7 @@ import { addPost } from 'widgets/Posts/store/thunks'
 import { addPostSchema } from 'widgets/Posts/lib/formSchemes'
 import { AddPostForm } from 'widgets/Posts/types'
 import { useForm } from 'shared/lib/hooks/useForm'
-import { AddPostTemplate } from 'entities/Profile'
+import { AddPostTemplate } from './../../../../entities/Profile'
 
 interface AddPostProps{
   close: () => void

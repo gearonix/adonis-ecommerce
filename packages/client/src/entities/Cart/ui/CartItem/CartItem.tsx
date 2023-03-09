@@ -30,7 +30,7 @@ const CartItem: FC<CartItemProps> = ({ Remove, AddToSaved, product }) => {
     <h4>{product.name}</h4>
     <p>{t('Size')} {product.size}, {t('Material')}
       {product.material}, {t('Type')} {product.type}, {t('Model')} {product.model},
-        {t('Supplier')} {product.salesmanId}</p>
+      {t('Supplier')} {product.salesmanId}</p>
     <div className={s.item_buttons}>
       {Remove && <Remove ref={removeBtnRef} productId={product.productId}/>}
       {AddToSaved && <AddToSaved productId={product.productId} Component={CartSaved}/>}
