@@ -3,7 +3,7 @@ import { User, usersInitialState } from 'shared/types/slices/user'
 import { ObjectNullable } from 'shared/types/common'
 
 
-export interface CurrentProduct{
+export interface CurrentProductSlice {
     productInfo: ObjectNullable<Product>,
     salesman: ObjectNullable<User>,
     comments: ProductComments,
@@ -23,7 +23,7 @@ export interface ProductComment{
     user: User
 }
 
-export const productInitialState: CurrentProduct = {
+export const productInitialState: CurrentProductSlice = {
   productInfo: {
     name: null,
     description: null,

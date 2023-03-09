@@ -4,7 +4,7 @@ import { AiOutlineSearch, FaHeart, FaInfo, FaShoppingCart, FaUserAlt, MdMessage 
 import Link from 'next/link'
 import { HoverLink, Logo } from 'shared/ui/kit'
 import { routes } from 'shared/config/consts/routes'
-import { ThemeSwitcher } from 'shared/ui/material'
+import { Switcher } from 'shared/ui/material'
 import { useTheme } from 'shared/lib/hooks'
 import { useTranslation } from 'react-i18next'
 

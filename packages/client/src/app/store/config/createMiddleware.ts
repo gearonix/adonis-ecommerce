@@ -4,10 +4,10 @@ import { Redirect } from 'app/store/types'
 import { notifyMiddleware } from 'app/store/middlewares'
 
 export interface CreateMiddleWare{
-  redirect: Redirect,
+  redirect?: Redirect,
 }
 
-export const createMiddleware = (config: CreateMiddleWare) => getDefaultMiddleware({
+export const createMiddleware = (config: CreateMiddleWare = {}) => getDefaultMiddleware({
   thunk: {
     extraArgument: {
       api: apiConfig,

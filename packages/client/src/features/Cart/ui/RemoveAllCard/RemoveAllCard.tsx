@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { Button } from 'shared/ui/kit'
 import { useDispatch } from 'shared/types/redux'
-import { cartActions } from 'widgets/Cart/store/cartReducer'
+import { cartActions } from 'widgets/Cart/store/slice/cartReducer'
 import { useTranslation } from 'react-i18next'
 
 const RemoveAllCart: FC = () => {

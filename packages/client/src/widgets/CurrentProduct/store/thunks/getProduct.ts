@@ -1,5 +1,5 @@
 import { createThunk } from 'shared/types/redux'
-import { productActions } from 'widgets/CurrentProduct/store/productReducer'
+import { productActions } from 'widgets/CurrentProduct/store/slice/productReducer'
 
 export const getProduct = createThunk('currentProduct/GET_PRODUCT',
     async (id: string, { dispatch, extra }) => {

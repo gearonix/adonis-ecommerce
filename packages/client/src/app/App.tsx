@@ -6,7 +6,7 @@ import {
   ErrorBoundary
 } from './providers'
 import { DevSupport } from '@react-buddy/ide-toolbox'
-import { ComponentPreviews, useInitial } from '__DEV__/react-buddy'
+import { ComponentPreviews, useInitial } from 'dev/react-buddy'
 import 'shared/config/i18n'
 
 

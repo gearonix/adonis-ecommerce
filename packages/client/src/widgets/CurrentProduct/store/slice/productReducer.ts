@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction as Action } from '@reduxjs/toolkit'
 import { withLoading } from 'shared/lib/helpers'
-import { CurrentProduct, ProductComment } from 'shared/types/slices'
+import { CurrentProductSlice, ProductComment } from 'shared/types/slices'
 import { ProductComments, productInitialState as initialState } from 'shared/types/slices/currentProduct'
 import { getProduct } from 'widgets/CurrentProduct/store/thunks'
 
@@ -8,7 +8,7 @@ const productReducer = createSlice({
   name: 'currentProduct',
   initialState,
   reducers: {
-    setProduct(state, { payload }: Action<CurrentProduct>) {
+    setProduct(state, { payload }: Action<CurrentProductSlice>) {
       state.productInfo = payload.productInfo
       state.comments.data = payload.comments.data
       state.comments.count = payload.comments.count

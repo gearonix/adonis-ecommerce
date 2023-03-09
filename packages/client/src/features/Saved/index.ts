@@ -4,7 +4,7 @@ export { default as CartSaved } from './ui/AddToSaved/Cart/CartSaved'
 export { default as RemoveFromSaved } from './ui/RemoveFromSaved/RemoveFromSaved'
 export { default as SavedItems } from '../../widgets/Saved/ui/SavedItems/SavedItems'
 
-export { savedSlice, savedActions } from './store/savedReducer'
+export { savedSlice, savedActions } from './store/slice/savedReducer'
 
 export type { SharedSavedProps, SavedProps } from './ui/SavedProvider/SavedProvider'
 

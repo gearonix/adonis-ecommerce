@@ -26,6 +26,7 @@ const ProductPage = () => {
 
   console.log(t('testTranslation'))
 
+
   return <WithSpring>
     <Head>
       <title>Adonis - {productName}</title>

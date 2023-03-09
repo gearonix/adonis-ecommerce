@@ -84,6 +84,7 @@ class Helpers {
   public nextItem<T>(array: T[], current: T): T {
     return array[array.indexOf(current) + 1] || array[0]
   }
+
 }
 
 

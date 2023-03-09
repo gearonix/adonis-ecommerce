@@ -1,7 +1,7 @@
 import { createThunk } from 'shared/types/redux'
 import { productsApi } from 'widgets/Products/api'
 import isError from 'next/dist/lib/is-error'
-import { productsActions } from 'widgets/Products/store/productsReducer'
+import { productsActions } from 'widgets/Products/store/slice/productsReducer'
 import { Nullable } from 'shared/types/common'
 import UserSelectors from 'shared/selectors/user'
 

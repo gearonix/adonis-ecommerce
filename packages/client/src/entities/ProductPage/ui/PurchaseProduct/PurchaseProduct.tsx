@@ -2,7 +2,7 @@ import { FC } from 'react'
 import s from './style.module.scss'
 import { HiOutlineFlag, MdMessage, TfiWorld } from 'shared/ui/icons'
 import { Button, NextImage } from 'shared/ui/kit'
-import { CurrentProduct } from 'shared/types/slices'
+import { CurrentProductSlice } from 'shared/types/slices'
 import Link from 'next/link'
 import { routes } from 'shared/config/consts/routes'
 import { DefaultAssets } from 'shared/config/consts/assets'
@@ -13,7 +13,7 @@ import { useTranslation } from 'react-i18next'
 export interface PurchaseProductP {
   CartButton: FC,
   AddToSaved: FC<SavedProps>,
-  product: CurrentProduct,
+  product: CurrentProductSlice,
 }
 
 

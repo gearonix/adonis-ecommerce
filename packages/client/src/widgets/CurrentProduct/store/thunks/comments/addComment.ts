@@ -1,7 +1,7 @@
 import { createThunk } from 'shared/types/redux'
 import { ProductSelectors } from 'shared/selectors'
 import { isError as isError } from 'shared/lib/helpers/others/httpHelpers'
-import { productActions } from '../../productReducer'
+import { productActions } from '../../slice/productReducer'
 
 export const addComment = createThunk('currentProduct/ADD_COMMENT',
     async (message: string, { dispatch, getState, extra }) => {

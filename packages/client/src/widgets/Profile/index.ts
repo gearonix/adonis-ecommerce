@@ -6,7 +6,7 @@ export { default as ProfileHeader } from './ui/ProfileHeader/ProfileHeader'
 export { default as ProfileWall } from './ui/ProfileWall/ProfileWall'
 
 
-export { userSlice, userActions } from './store/userReducer'
+export { userSlice, userActions } from './store/slice/userReducer'
 
 export { default as profileApi } from './api'
 export type { ProfileApi } from './api'

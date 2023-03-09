@@ -6,7 +6,7 @@ import {
   ProductTypes
 } from 'shared/types/elements/productTypes'
 import { AxiosResponse as Res, KeyOf, Nullable, ObjectNullable } from 'shared/types/common'
-import { CurrentProduct, Product } from 'shared/types/slices'
+import { CurrentProductSlice, Product } from 'shared/types/slices'
 
 export interface AddProductForm {
     name: string
@@ -53,7 +53,7 @@ export interface ProductsApi {
 
     recommended(filter: Partial<SearchControlsForm>): Res<Product[]>
 
-    getProduct(id: number): Res<CurrentProduct>
+    getProduct(id: number): Res<CurrentProductSlice>
 
     getCartProducts(ids: number[]): Res<Product[]>
 }

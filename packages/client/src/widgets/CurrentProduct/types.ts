@@ -1,5 +1,5 @@
 import { AxiosResponse as Res } from 'shared/types/common'
-import { CurrentProduct, ProductComment, ProductComments } from 'shared/types/slices'
+import { CurrentProductSlice, ProductComment, ProductComments } from 'shared/types/slices'
 
 export interface AddComment{
     message: string,
@@ -7,7 +7,7 @@ export interface AddComment{
 }
 
 export interface CurrentProductApi {
-    getProduct(id: number): Res<CurrentProduct>
+    getProduct(id: number): Res<CurrentProductSlice>
 
     createComment(comment: AddComment): Res<ProductComment>
 

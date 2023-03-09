@@ -1,6 +1,6 @@
 import { Provider } from 'react-redux'
 import { CFC } from 'shared/types/components'
-import { useDevStore } from '__DEV__/components'
+import { useDevStore } from 'dev/components'
 import createStore from 'app/store/store'
 import { useEffect, useState } from 'react'
 import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore'

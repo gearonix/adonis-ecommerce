@@ -6,7 +6,7 @@ import { ProductsApi } from 'widgets/Products'
 import { ProfileApi } from 'widgets/Profile'
 import { CreateMiddleWare } from 'app/store/config/createMiddleware'
 import { ObjectNullable, Required } from 'shared/types/common'
-import { AuthSlice, CurrentProduct, PostsSlice, Products, SavedSlice, User } from 'shared/types/slices'
+import { AuthSlice, CurrentProductSlice, PostsSlice, ProductsSlice, SavedSlice, User } from 'shared/types/slices'
 import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore'
 import { ReducerManager } from 'app/store/reducerManager'
 import { CartSlice } from 'shared/types/slices/cartSlice'
@@ -26,24 +26,27 @@ export interface Extra extends CreateMiddleWare{
 }
 
 export interface RequiredReducers{
-    user: UserSlice,
-    products: Products,
+    user: ObjectNullable<UserSlice>,
+    products: ProductsSlice,
     auth: AuthSlice,
     cart: CartSlice,
     saved: SavedSlice,
+
 }
 
 
 export interface OptionalReducers{
-    posts: PostsSlice
-    currentProduct: CurrentProduct,
+    posts?: PostsSlice
+    currentProduct?: CurrentProductSlice,
 }
 
 export interface StoreWithManager extends ToolkitStore{
     reducerManager: ReducerManager<StateSchema>
 }
 
-export type StateSchema = RequiredReducers & Partial<OptionalReducers>
+export type StateSchema = RequiredReducers & OptionalReducers
+
+export type StateSchemaKey = keyof StateSchema
 
 export type RequiredState = Required<StateSchema>
 

@@ -3,7 +3,7 @@ import { KeyOf, ObjectNullable } from 'shared/types/common'
 import { SearchQuery } from 'widgets/Products/types'
 
 
-export interface Products {
+export interface ProductsSlice {
     products: Product[],
     count: number,
     filter: ObjectNullable<SearchQuery>,
@@ -29,7 +29,7 @@ export interface Product{
     productId: number
 }
 
-export const productsInitialState: Products = {
+export const productsInitialState: ProductsSlice = {
   products: [],
   count: 0,
   filter: {

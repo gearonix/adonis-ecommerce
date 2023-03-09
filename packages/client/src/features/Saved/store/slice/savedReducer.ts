@@ -14,7 +14,7 @@ const savedReducer = createSlice({
       state.saved.push(payload)
     },
     removeFromSaved(state, { payload }: Action<number>) {
-      state.saved.splice(state.saved.indexOf(payload), 1)
+      state.saved = state.saved.filter((productId) => productId !== payload)
     },
     setSaved(state, { payload }: Action<SavedModel[]>) {
       state.saved = payload.map((model) => model.productId)

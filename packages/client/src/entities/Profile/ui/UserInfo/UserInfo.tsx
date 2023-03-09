@@ -43,7 +43,7 @@ const UserInfo: FC<UserInfoProps> = ({ user }) => {
     </InfoContainer>
     <InfoContainer>
       <InfoCell Icon={GiTopHat} title={t('Role') || ''}>
-        {helpers.toNormalRole(user.role)}
+        {t(helpers.toNormalRole(user.role))}
       </InfoCell>
     </InfoContainer>
   </div>

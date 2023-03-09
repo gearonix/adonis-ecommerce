@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { Button } from 'shared/ui/kit'
 import { useDispatch, useSelector } from 'shared/types/redux'
 import { CartSelectors, ProductSelectors } from 'shared/selectors'
-import { cartActions } from 'widgets/Cart/store/cartReducer'
+import { cartActions } from 'widgets/Cart/store/slice/cartReducer'
 import { useTranslation } from 'react-i18next'
 
 const CartButton: FC<{productId?: number}> = ({ productId: id }) => {
