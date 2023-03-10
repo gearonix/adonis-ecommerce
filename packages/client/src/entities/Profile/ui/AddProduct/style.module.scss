@@ -13,9 +13,30 @@
     padding: 30px 20px 30px 20px;
     border-top: $br $bg-150;
     border-bottom: $br $bg-150;
-    width: 70%;
+    width: 60%;
     gap: 25px;
     margin: 20px auto 25px;
+    .flex{
+      display: flex;
+      gap: 50px;
+      & > *{
+        width: 373px;
+      }
+    }
+    .numberFields{
+      & > p{
+        margin-top: 20px;
+      }
+      & > div{
+        margin-bottom: 20px;
+      }
+    }
+    .greyLine{
+      height: 1px;
+      background: #e1e1e1;
+      margin-bottom: 25px;
+      margin-top: 30px;
+    }
 
     .title {
       text-align: left;
@@ -28,7 +49,10 @@
     }
 
     .select_container {
-      @include flex(space-around);
+      & > * {
+        display: block;
+        width: 100%;
+      }
     }
 
     .save_buttons {

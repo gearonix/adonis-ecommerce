@@ -35,3 +35,21 @@
 .MuiPaper-elevation{
     box-shadow: $shadow;
 }
+.css-1v6440l{
+    @include customScroll;
+}
+.css-1q6at85-MuiInputBase-root-MuiOutlinedInput-root{
+    width: 373px;
+    height: 42px;
+}
+.css-bd3p20-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root{
+    width: 373px !important;
+}
+.MuiRating-sizeLarge{
+    .css-dqr9h-MuiRating-label{
+        *{
+            font-size: 28px;
+        }
+    }
+}
+

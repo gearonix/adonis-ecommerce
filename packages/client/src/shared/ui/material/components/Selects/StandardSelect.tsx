@@ -1,4 +1,4 @@
-import { FormControl, MenuItem, Select, SelectChangeEvent, Typography } from '@mui/material'
+import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, Typography } from '@mui/material'
 import { FieldValues } from 'shared/lib/helpers'
 import { FC } from 'react'
 
@@ -17,16 +17,16 @@ export const StandardSelect: FC<StandardSelectProps> = ({ title, values }) => {
     values.setValue(value)
   }
 
-  return <FormControl size={'small'} sx={{ width: '30%' }}>
+  return <FormControl size={'small'} sx={{ width: '30%', marginTop: '20px', marginBottom: '20px' }}>
     <Typography>{title}</Typography>
     <Select
       labelId="demo-simple-select-label"
       id="demo-simple-select"
-      label="Age"
       error={!!values.error}
-      value={values.getValue()}
+      value={values.getValue() || 0}
       onChange={onChange}
       sx={{ marginTop: '8px' }}
+      label={title}
     >
       {selectValues.map((item, idx) =>
         <MenuItem value={selectValues.indexOf(item)} key={idx}>{item}</MenuItem>)}

@@ -5,6 +5,7 @@ import { ImageCarousel } from 'features/ProductPage'
 import { AiOutlineUpload, BsTrash } from 'shared/ui/icons'
 import { UploadButton } from 'shared/ui/kit'
 import { FieldValues } from 'shared/lib/helpers'
+import AddProductImage from '../../../../entities/Profile/ui/AddProductImage/AddProductImage';
 
 export interface ProductImagesProps{
   values: FieldValues
@@ -28,21 +29,16 @@ const UploadProductImages: FC<ProductImagesProps> = ({ values }) => {
 
 
   return <div className={s.flex}>
-    {files.length && <ProductImages ImageCarousel={ImageCarousel} files={files}/>}
+    <AddProductImage ImageCarousel={ImageCarousel} files={files}/>
     <div className={s.add_image_block}>
-      <p className={s.text}>
-                Lorem ipsum dolor sit amet, consectetur adipis
-                Lorem ipsum dolor sit amet
-      </p>
-      <div className={s.flex}>
+      <div className={s.buttons}>
         {/* @ts-ignore*/}
         <UploadButton className={'primary_button'}
           handleChange={onUpload} disabled={files.length === 4}>
           <AiOutlineUpload/> Upload Files</UploadButton>
-        <button className={'outlined_button'} onClick={removeFiles}><BsTrash/> Remove all</button>
+        <button className={'outlined_button'} onClick={removeFiles} >
+          <BsTrash/> Remove all</button>
       </div>
-      <h2 className={s.title}>Product Name</h2>
-      <h2 className={s.title}>Price: <b>$123</b></h2>
       <span>{values.error}</span>
     </div>
   </div>

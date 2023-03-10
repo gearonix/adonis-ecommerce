@@ -8,7 +8,8 @@ export const TextArea: FC<MuiLoginFieldProps> = ({ title, values }) => {
   const { error, inputProps, maxLength } = values
 
   return <FormControl variant="outlined" fullWidth size={'small'} sx={{
-    marginBottom: '26px'
+    marginBottom: '26px',
+    marginTop: '14px'
   }}>
     <Typography sx={{ color: isLight ? 'black' : 'white' }}>{title}</Typography>
     <TextField
@@ -17,8 +18,7 @@ export const TextArea: FC<MuiLoginFieldProps> = ({ title, values }) => {
       multiline
       rows={4}
       placeholder={'Description'}
-      defaultValue="Default Value"
-      sx={{ marginTop: '10px' }}
+      sx={{ marginTop: '10px', width: '98%' }}
       inputProps={{ ...inputProps, maxLength }}
     />
   </FormControl>

@@ -7,12 +7,11 @@ import { WallPages } from 'widgets/Profile/types'
 import { ProfileWallContext } from 'widgets/Profile/contexts'
 import { SavedItems, SavedProvider } from 'features/Saved'
 import { ProfileSaved } from 'widgets/Saved'
-import { MyPosts } from 'widgets/Posts'
-import AddPost from '../../../Posts/ui/AddPost/AddPost'
+import { MyPosts, AddPost } from 'widgets/Posts'
 import { useBooleanState } from 'shared/lib/hooks/useBooleanState'
 
 const ProfileWall : FC = () => {
-  const addProduct = useBooleanState()
+  const addProduct = useBooleanState(true)
   const addPost = useBooleanState()
   const [page, setPage] = useState<WallPages>(WallPages.posts)
 

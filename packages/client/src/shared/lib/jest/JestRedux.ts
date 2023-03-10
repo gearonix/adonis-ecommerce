@@ -30,4 +30,9 @@ export class JestRedux {
       preloadedState
     })
   }
+  public selector(key: StateSchemaKey, state: ValueOf<StateSchema>): any {
+    return {
+      [key]: state
+    }
+  }
 }

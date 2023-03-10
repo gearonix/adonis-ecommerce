@@ -57,7 +57,7 @@ export class JestAsyncThunk<Return, Arg, Rejected> {
     }
   }
 
-  public async mock<T extends ApiConfigKey>(method: keyof ApiConfig[T], data: any, status: number = 200) {
+  public async mock<T extends ApiConfigKey>(method: keyof ApiConfig[T], data = {}, status = 200) {
     const apiMethod = this.api[this.apiKey][method]
     apiMethod.mockReturnValue(Promise.resolve({ data, status }))
   }

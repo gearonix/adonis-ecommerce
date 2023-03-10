@@ -1,6 +1,5 @@
+import { isError } from 'shared/lib/helpers'
 import { createThunk } from 'shared/types/redux'
-import { productsApi } from 'widgets/Products/api'
-import isError from 'next/dist/lib/is-error'
 import { SearchControlsForm } from 'widgets/Products/types'
 
 

@@ -4,7 +4,7 @@ import { UploadButton } from 'shared/ui/kit'
 import { UploadProperties } from 'app/config/globals'
 import { useDispatch, useSelector } from 'shared/types/redux'
 import { changeBackground } from 'features/Profile/thunks/changeBackground'
-import userSelectors from 'shared/selectors/user'
+import userSelectors from 'shared/selectors/user/user.selectors'
 import { withFormData } from 'shared/lib/helpers'
 import { useTranslation } from 'react-i18next'
 

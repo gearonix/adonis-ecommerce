@@ -13,13 +13,19 @@ const customJestConfig = {
       'tsConfig': 'tsconfig.json'
     }
   },
-  moduleDirectories: ['node_modules', 'src'],
+  moduleDirectories: ['node_modules', 'src', 'dev'],
   modulePaths: [
     '<rootDir>'
   ],
   moduleNameMapper: {
-    'src/(.*)': '<rootDir>/src/$1'
-  }
+    '^app/(.*)': '<rootDir>/src/app/$1',
+    '^widgets/(.*)': '<rootDir>/src/widgets/$1',
+    '^entities/(.*)': '<rootDir>/src/entities/$1',
+    '^features/(.*)': '<rootDir>/src/features/$1',
+    '^pages/(.*)': '<rootDir>/src/pages/$1',
+    '^shared/(.*)': '<rootDir>/src/shared/$1'
+  },
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts']
 }
 
 module.exports = createJestConfig(customJestConfig)

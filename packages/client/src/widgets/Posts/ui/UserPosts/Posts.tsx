@@ -10,7 +10,7 @@ import { DynamicModuleLoader } from 'shared/lib/components'
 import { WithLoading } from 'shared/ui/kit'
 import { AiOutlineFileSearch as PostIcon } from 'shared/ui/icons'
 
-const Posts : FC = () => {
+export const Posts : FC = () => {
   const posts = useSelector(PostSelectors.posts)
   const isLoading = useSelector(PostSelectors.isLoading)
   const dispatch = useDispatch()

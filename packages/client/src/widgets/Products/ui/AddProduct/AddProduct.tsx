@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import DefaultValues from 'widgets/Products/lib/form/initialValues'
 import { useDispatch } from 'shared/types/redux'
-import { addProduct } from 'widgets/Products/store/thunks/addProduct'
+import { addProduct } from 'widgets/Products/store/thunks/addProduct/addProduct'
 import { AddProductForm } from 'widgets/Products/types'
 import { addProductSchema } from 'widgets/Products/lib/form/formSchemes'
 import { useForm } from 'shared/lib/hooks'

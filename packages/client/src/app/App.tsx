@@ -5,8 +5,6 @@ import {
   AuthProvider, AuthGuard, Layout, StoreProvider, ThemeProvider,
   ErrorBoundary
 } from './providers'
-import { DevSupport } from '@react-buddy/ide-toolbox'
-import { ComponentPreviews, useInitial } from 'dev/react-buddy'
 import 'shared/config/i18n'
 
 
@@ -22,9 +20,7 @@ const App = ({ Component, pageProps }: AppProps) => {
             <Layout>
               <AuthProvider>
                 <AuthGuard>
-                  <DevSupport ComponentPreviews={ComponentPreviews} useInitialHook={useInitial}>
-                    <Component {...pageProps} />
-                  </DevSupport>
+                  <Component {...pageProps} />
                 </AuthGuard>
               </AuthProvider>
             </Layout>

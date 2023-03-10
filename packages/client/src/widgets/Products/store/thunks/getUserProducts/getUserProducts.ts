@@ -1,9 +1,8 @@
 import { createThunk } from 'shared/types/redux'
-import { productsApi } from 'widgets/Products/api'
-import isError from 'next/dist/lib/is-error'
 import { productsActions } from 'widgets/Products/store/slice/productsReducer'
 import { Nullable } from 'shared/types/common'
-import UserSelectors from 'shared/selectors/user'
+import UserSelectors from 'shared/selectors/user/user.selectors'
+import { isError } from 'shared/lib/helpers'
 
 export const getUserProducts = createThunk('products/GET_MY_PRODUCTS',
     async (page: Nullable<number>, { dispatch, getState, extra }) => {
