@@ -12,14 +12,15 @@
     "loki:approve": "npx loki approve",
     "loki:build": "loki --requireReference --reactUri file:./storybook-static",
     "storybook:build": "build-storybook",
-    "test": "jest --watch"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@hookform/resolvers": "^2.9.11",
     "@mui/material": "^5.11.9",
-    "@next/font": "^13.1.6",
+    "@next/font": "^13.2.4",
     "@parvineyvazov/json-translator": "^1.6.3",
     "@react-buddy/ide-toolbox": "^2.3.1",
     "@react-buddy/palette-mui": "^5.0.1",
