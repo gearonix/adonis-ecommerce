@@ -3,7 +3,7 @@ import { CFC } from 'shared/types/components'
 import s from './style.module.scss'
 import { useTheme } from 'shared/lib/hooks'
 import cn from 'classnames'
-import { Inter } from '@next/font/google'
+import { Inter } from 'next/font/google'
 import { RxCross1 } from 'shared/ui/icons'
 import { WithSpring } from 'shared/lib/components'
 

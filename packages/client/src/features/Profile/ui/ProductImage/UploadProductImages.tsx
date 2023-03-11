@@ -5,7 +5,7 @@ import { ImageCarousel } from 'features/ProductPage'
 import { AiOutlineUpload, BsTrash } from 'shared/ui/icons'
 import { UploadButton } from 'shared/ui/kit'
 import { FieldValues } from 'shared/lib/helpers'
-import AddProductImage from '../../../../entities/Profile/ui/AddProductImage/AddProductImage';
+import AddProductImage from '../../../../entities/Profile/ui/AddProductImage/AddProductImage'
 
 export interface ProductImagesProps{
   values: FieldValues

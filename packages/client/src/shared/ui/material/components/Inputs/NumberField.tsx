@@ -1,7 +1,7 @@
-import {InputAdornment, TextField, Typography} from '@mui/material'
-import {FieldValues, FormErrors} from 'shared/lib/helpers'
-import {FC} from 'react'
-import {useTheme} from 'shared/lib/hooks'
+import { InputAdornment, TextField, Typography } from '@mui/material'
+import { FieldValues, FormErrors } from 'shared/lib/helpers'
+import { FC } from 'react'
+import { useTheme } from 'shared/lib/hooks'
 
 
 interface NumberFieldProps{
