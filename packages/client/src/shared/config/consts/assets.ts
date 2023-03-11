@@ -11,7 +11,10 @@ export enum Assets{
     LOGO = '/assets/logo.svg',
     NOT_FOUND = '/assets/not_found.svg',
     APP_ERROR = '/assets/app_error.png',
-    ABOUT = '/assets/about.png'
+    ABOUT = '/assets/about.png',
+    BICYCLE = '/assets/bicycle.png',
+    ROCKET = '/assets/rocket.png',
+    THANKS = '/assets/thanks.png'
 }
 
 export const ProductTypesAssets: Record<ProductTypesKeys, string> = {

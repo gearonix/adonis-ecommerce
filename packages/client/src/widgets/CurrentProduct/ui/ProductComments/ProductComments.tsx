@@ -5,7 +5,8 @@ import { Pagination } from 'shared/ui/material'
 import { PAGE_LIMIT } from 'app/config/globals'
 import { changeCommentsPage, productActions } from 'widgets/CurrentProduct'
 import { CommentBar } from 'features/ProductPage'
-import { CommentTemplate } from './../../../../entities/Profile'
+import { CommentTemplate } from 'entities/Profile'
+import s from './style.module.scss'
 
 
 const ProductComments : FC = () => {
@@ -21,13 +22,15 @@ const ProductComments : FC = () => {
     dispatch(changeCommentsPage(page))
   }, [page])
 
-  return <>
+  return <div className={s.container}>
     <CommentBar />
-    {comments?.map((comment) => {
-      return <CommentTemplate comment={comment} key={comment.commentId} />
-    })}
+    <div className={s.comments_block}>
+      {comments?.map((comment) => {
+        return <CommentTemplate comment={comment} key={comment.commentId}/>
+      })}
+    </div>
     <Pagination count={totalCount / PAGE_LIMIT} onChange={onChange} page={page} />
-  </>
+  </div>
 }
 
 

@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { routes } from 'shared/config/consts/routes'
 import { ProductComment } from 'shared/types/slices'
 import { Helpers } from 'shared/lib/helpers'
+import { WithSpring } from 'shared/lib/components'
 
 interface CommentProps{
   comment: ProductComment
@@ -16,7 +17,7 @@ export const CommentTemplate: FC<CommentProps> = ({ comment }) => {
   const helpers = new Helpers()
   const { user } = comment
   return <>
-    <div className={s.post}>
+    <WithSpring className={s.comment}>
       <Link className={s.user_image} href={`${routes.USERS}/${user.userId}`}>
         <NextImage src={user.avatar} def={DefaultAssets.AVATAR}/>
       </Link>
@@ -32,6 +33,6 @@ export const CommentTemplate: FC<CommentProps> = ({ comment }) => {
           <BsThreeDotsVertical/>
         </div>
       </div>
-    </div>
+    </WithSpring>
   </>
 }

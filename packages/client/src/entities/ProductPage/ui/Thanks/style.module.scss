@@ -1,0 +1,19 @@
+@use 'src/shared/css/common.scss' as *;
+
+.image_block{
+  width: 35%;
+  height: 330px;
+  @include itemBorder;
+  .title{
+    font-size: $xm;
+    color: $color-absolute-200;
+  }
+  .thanks_bar{
+    padding-left: 17px;
+    padding-top: 15px;
+  }
+  .image_wrapper{
+    @include imageWrapper(76%, 180px);
+    margin: 30px auto 0;
+  }
+}

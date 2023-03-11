@@ -7,7 +7,7 @@ import { useLocalStorage } from 'shared/lib/hooks/useLocalStorage'
 
 
 const ThemeProvider: FC<{ children: ReactNode }> = ({ children }) => {
-  const { value: theme, save: setTheme } = useLocalStorage(LocalStorage.THEME, Theme.DARK)
+  const { value: theme, save: setTheme } = useLocalStorage(LocalStorage.THEME, Theme.LIGHT)
   const muiTheme = useMuiTheme(theme)
 
   const defaultProps = useMemo(() => ({

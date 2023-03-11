@@ -26,6 +26,8 @@ export const WithLoading: CFC<NoItemsProps> = (props) => {
   const { title, Icon, when: noItems, children,
     NotFound = DefaultPreloader, ...preloaderProps } = props
 
+  console.log(preloaderProps.loading)
+
   return <PreloaderWrapper {...preloaderProps}>
     <Display when={Boolean(noItems)}>
       <NotFound title={title} Icon={Icon}/>
@@ -42,6 +44,7 @@ export const WithLoading: CFC<NoItemsProps> = (props) => {
 const PreloaderWrapper: CFC<PreloaderWrapperProps> = (props) => {
   const { children, loading,
     Preloader = PostsPreloader, count = 2 } = props
+  console.log('loading', loading)
 
   return !loading ? children :
           <WithSpring>

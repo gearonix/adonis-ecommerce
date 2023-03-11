@@ -1,14 +1,19 @@
-import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, Typography } from '@mui/material'
+import { FormControl, FormHelperText, InputLabel, MenuItem, Select, SelectChangeEvent, Typography } from '@mui/material'
 import { FieldValues } from 'shared/lib/helpers'
 import { FC } from 'react'
+import { IoIosResize } from 'react-icons/io'
+import { Display } from 'shared/lib/components'
+import { useTranslation } from 'react-i18next'
 
 interface StandardSelectProps{
   title: string,
-  values: FieldValues
+  values: FieldValues,
+  Icon?: FC
 }
 
 
-export const StandardSelect: FC<StandardSelectProps> = ({ title, values }) => {
+export const StandardSelect: FC<StandardSelectProps> = ({ title, values, Icon }) => {
+  const { t } = useTranslation()
   const selectValues = values.autoCompleteValues()
 
 
@@ -18,7 +23,7 @@ export const StandardSelect: FC<StandardSelectProps> = ({ title, values }) => {
   }
 
   return <FormControl size={'small'} sx={{ width: '30%', marginTop: '20px', marginBottom: '20px' }}>
-    <Typography>{title}</Typography>
+    <Typography>{Icon && <Icon/>} {title}</Typography>
     <Select
       labelId="demo-simple-select-label"
       id="demo-simple-select"
@@ -29,8 +34,12 @@ export const StandardSelect: FC<StandardSelectProps> = ({ title, values }) => {
       label={title}
     >
       {selectValues.map((item, idx) =>
-        <MenuItem value={selectValues.indexOf(item)} key={idx}>{item}</MenuItem>)}
+        <MenuItem value={selectValues.indexOf(item)} key={idx}>{t(item)}</MenuItem>)}
     </Select>
-    <span>{values.error}</span>
+    <Display when={values.error}>
+      <FormHelperText error id="accountId-error" sx={{ fontSize: 14, marginTop: '3px' }}>
+        {values.error}
+      </FormHelperText>
+    </Display>
   </FormControl>
 }

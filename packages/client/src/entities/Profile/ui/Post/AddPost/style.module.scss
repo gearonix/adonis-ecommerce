@@ -1,0 +1,29 @@
+@use 'src/shared/css/common.scss' as *;
+
+.title {
+  font-size: $l-medium;
+  text-align: center;
+  color: $color-absolute;
+  margin-bottom: 45px;
+}
+.container{
+  width: 50%;
+  margin: 0 auto 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: $br $bg-150;
+}
+.save_buttons {
+  button:first-child{
+    background: #0D6EFD;
+    color: white;
+  }
+  button{
+    min-width: 145px;
+    height: 34px;
+  }
+  margin-top: 18px;
+  width: 100%;
+  display: flex;
+  gap: 15px;
+}

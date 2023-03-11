@@ -6,6 +6,9 @@ import { AiOutlineUpload, BsTrash } from 'shared/ui/icons'
 import { UploadButton } from 'shared/ui/kit'
 import { FieldValues } from 'shared/lib/helpers'
 import AddProductImage from '../../../../entities/Profile/ui/AddProductImage/AddProductImage'
+import { FormHelperText } from '@mui/material'
+import { Display } from 'shared/lib/components'
+import { useTranslation } from 'react-i18next'
 
 export interface ProductImagesProps{
   values: FieldValues
@@ -14,6 +17,7 @@ export interface ProductImagesProps{
 const UploadProductImages: FC<ProductImagesProps> = ({ values }) => {
   const [files, setFiles] = useState<string[]>([])
   const currentValues = values.getValue()
+  const { t } = useTranslation()
 
   const onUpload = (file: File) => {
     const fileUrl = URL?.createObjectURL(file)
@@ -34,12 +38,17 @@ const UploadProductImages: FC<ProductImagesProps> = ({ values }) => {
       <div className={s.buttons}>
         {/* @ts-ignore*/}
         <UploadButton className={'primary_button'}
-          handleChange={onUpload} disabled={files.length === 4}>
-          <AiOutlineUpload/> Upload Files</UploadButton>
+          handleChange={onUpload} disabled={files.length === 5}>
+          <AiOutlineUpload/>{t('Upload files')}</UploadButton>
         <button className={'outlined_button'} onClick={removeFiles} >
-          <BsTrash/> Remove all</button>
+          <BsTrash/> {t('Remove all')}</button>
       </div>
-      <span>{values.error}</span>
+      <Display when={values.error}>
+        <FormHelperText error id="accountId-error" sx={{ fontSize: 14, marginTop: 0,
+          marginLeft: '26px' }}>
+          {values.error}
+        </FormHelperText>
+      </Display>
     </div>
   </div>
 }

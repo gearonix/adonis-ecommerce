@@ -1,4 +1,4 @@
-.layout.light{
+.layout.light,.with_theme.light{
   --bg-100: #1C1C1C;
   --bg-300: #8B96A5;
   --link-color: #0D6EFD;
@@ -19,10 +19,10 @@
   --color-absolute: #171717;
   --color-absolute-200: #3a3a3a;
   --bg-light-blue: #E3E8EE;
-  --bg-absolute-hover: #dcdcdc;
+  --bg-absolute-hover: #eae9e9;
 }
 
-.layout.dark{
+.layout.dark ,.with_theme.dark{
   --bg-100: #eaeaea;
   --bg-300: #e3e3e3;
   --link-color: #a154e8;
@@ -35,7 +35,7 @@
   --color-100: #E3E8EE;
   --green: #00B517;
   --orange: #FF9017;
-  --red: #FA3434;
+  --red: #ee5656;
   --color-max: #FAFAFA;
   --color-300: #242424;
   --bg-absolute: #171717;

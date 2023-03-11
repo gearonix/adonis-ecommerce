@@ -3,7 +3,11 @@ import { animated, useSpring } from '@react-spring/web'
 import { ApiAnimationProps } from '../../types'
 import callbackSprings from '../../config/callbackSprings'
 
-const ApiAnimation: FC<ApiAnimationProps> = ({ className, children, onClick, type, param, subscriber, subscriberValue }) => {
+const ApiAnimation: FC<ApiAnimationProps> = (props) => {
+  const { className, children,
+    onClick, type, param,
+    subscriber, subscriberValue, style } = props
+
   const [from, to, config] = callbackSprings[type](param)
   const [styles, api] = useSpring(() => from)
 
@@ -23,8 +27,8 @@ const ApiAnimation: FC<ApiAnimationProps> = ({ className, children, onClick, typ
   }, [subscriberValue])
 
 
-  return <animated.div className={className} style={styles} onClick={!subscriber ? handler : () => {
-  }}>
+  return <animated.div className={className} style={{ ...style, ...styles }}
+    onClick={!subscriber ? handler : () => {}}>
     {children}
   </animated.div>
 }

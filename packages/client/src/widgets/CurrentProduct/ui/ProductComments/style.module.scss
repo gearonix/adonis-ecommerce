@@ -1,0 +1,12 @@
+@use 'src/shared/css/common.scss' as *;
+
+
+.container{
+  width: 100%;
+  .comments_block{
+    margin-top: 20px;
+    @include itemBorder;
+    margin-bottom: 20px;
+  }
+  //@include testBorder;
+}

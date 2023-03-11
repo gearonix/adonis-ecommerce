@@ -3,7 +3,7 @@ import s from './style.module.scss'
 import { ProfileBackground, UserAvatar } from 'shared/ui/kit'
 import { Nullable, ObjectNullable } from 'shared/types/common'
 import { FormattedUser } from 'widgets/Profile/store/selectors'
-import { AiOutlineInfoCircle } from 'shared/ui/icons'
+import {AiOutlineInfoCircle, AiOutlineUser, BsPen} from 'shared/ui/icons'
 import { useTranslation } from 'react-i18next'
 
 
@@ -34,7 +34,8 @@ const ProfileHeaderTemp: FC<ProfileHeaderTemplate> =
             <h2 onClick={openInfo} className={s.details}><AiOutlineInfoCircle/>{t('Details')}</h2>
           </div>
           <div className={s.change_profile}>
-            {isMe && <button className="outlined_button" onClick={openProfile}>{t('Change_profile')}</button>}
+            {isMe && <button className="outlined_button"
+              onClick={openProfile}><BsPen/> {t('Change_profile')}</button>}
           </div>
         </div>
       </div>

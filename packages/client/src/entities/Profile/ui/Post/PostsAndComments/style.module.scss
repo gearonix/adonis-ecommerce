@@ -1,7 +1,7 @@
 @use 'shared/css/common.scss' as *;
 
 
-.post {
+.post,.comment {
   width: 100%;
   min-height: 157px;
   padding: 25px 25px 25px 25px;
@@ -81,6 +81,10 @@
   }
 }
 
+.comment{
+  min-height: 100px;
+  padding-bottom: 16px;
+}
 
 .comments {
   width: 95%;

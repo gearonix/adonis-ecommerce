@@ -19,9 +19,9 @@ const ContentButtons: FC<ContentButtonsProps> = ({ AddProduct, AddPost }) => {
     <ContentButton page={WallPages.products}><AiOutlineUnorderedList/> {t('Products')}</ContentButton>
     <ContentButton page={WallPages.saved}><FiHeart/> {t('Saved')}</ContentButton>
     <div className={s.add_product}>
+      {AddPost}
       {AddProduct}
     </div>
-    {AddPost}
   </div>
 }
 

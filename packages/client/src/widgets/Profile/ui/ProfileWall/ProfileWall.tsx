@@ -11,7 +11,7 @@ import { MyPosts, AddPost } from 'widgets/Posts'
 import { useBooleanState } from 'shared/lib/hooks/useBooleanState'
 
 const ProfileWall : FC = () => {
-  const addProduct = useBooleanState(true)
+  const addProduct = useBooleanState()
   const addPost = useBooleanState()
   const [page, setPage] = useState<WallPages>(WallPages.posts)
 

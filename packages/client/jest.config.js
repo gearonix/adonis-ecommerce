@@ -22,7 +22,7 @@ const customJestConfig = {
     '^widgets/(.*)': '<rootDir>/src/widgets/$1',
     '^entities/(.*)': '<rootDir>/src/entities/$1',
     '^features/(.*)': '<rootDir>/src/features/$1',
-    '^pages/(.*)': '<rootDir>/src/pages/$1',
+    '^pages/(.*)': '<rootDir>/src/common/$1',
     '^shared/(.*)': '<rootDir>/src/shared/$1'
   },
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts']

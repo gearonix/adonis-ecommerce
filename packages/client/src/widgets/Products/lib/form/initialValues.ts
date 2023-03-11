@@ -10,7 +10,7 @@ const initialValues = {
   addProduct() {
     return {
       defaultValues: {
-        inStock: false,
+        inStock: true,
         rating: 4 as ProductRatings,
         features: [],
         images: []

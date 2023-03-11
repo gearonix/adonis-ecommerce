@@ -11,7 +11,8 @@ interface UploadButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
 }
 
 
-export const UploadButton: FC<UploadButtonProps> = ({ className, children, handleChange, disabled, width = 150 }) => {
+export const UploadButton: FC<UploadButtonProps> = ({ className, children, handleChange,
+  disabled, width = 150 }) => {
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e?.target?.files?.length === 0) return
     const file = e?.target?.files?.[0]
@@ -20,8 +21,7 @@ export const UploadButton: FC<UploadButtonProps> = ({ className, children, handl
   }
   const { isLight } = useTheme()
 
-  return <Button className={cn(s.UploadButton, className)} w={width}
-    style={{ background: 'white', color: '#171717' }}>
+  return <Button className={cn(s.UploadButton, className, { [s.disabled]: disabled })} w={width}>
     {children}
     {!disabled && <input type={'file'} onChange={onChange}/>}
 

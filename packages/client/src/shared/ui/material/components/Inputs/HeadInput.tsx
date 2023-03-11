@@ -4,7 +4,7 @@ import { FormControl, FormHelperText, IconButton, InputAdornment, OutlinedInput,
 import { AiFillEye, AiFillEyeInvisible } from 'shared/ui/icons'
 import { useTheme } from 'shared/lib/hooks/useTheme'
 
-export const HeadField: FC<MuiLoginFieldProps> = ({ title, isPassword, readOnly = false, values }) => {
+export const HeadField: FC<MuiLoginFieldProps> = ({ title, isPassword, readOnly = false, values, Icon }) => {
   const [showPassword, setShowPassword] = useState(true)
   const { isLight } = useTheme()
 
@@ -12,8 +12,8 @@ export const HeadField: FC<MuiLoginFieldProps> = ({ title, isPassword, readOnly 
 
   return <FormControl variant="outlined" fullWidth size={'small'} sx={{
     marginBottom: '26px'
-  }}>
-    <Typography sx={{ color: isLight ? 'black' : 'white' }}>{title}</Typography>
+  }} className={'number_field'}>
+    <Typography sx={{ color: isLight ? 'black' : 'white' }}>{Icon && <Icon/> } {title}</Typography>
     <OutlinedInput
       readOnly={readOnly}
       placeholder={title}

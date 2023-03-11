@@ -1,4 +1,4 @@
-import { InputAdornment, TextField, Typography } from '@mui/material'
+import { FormHelperText, InputAdornment, TextField, Typography } from '@mui/material'
 import { FieldValues, FormErrors } from 'shared/lib/helpers'
 import { FC } from 'react'
 import { useTheme } from 'shared/lib/hooks'
@@ -16,7 +16,7 @@ export const NumberField: FC<NumberFieldProps> = ({ title, values, Icon }) => {
   const { isLight } = useTheme()
   return <>
     <Typography sx={{ color: isLight ? 'black' : 'white' }}
-      style={{ marginBottom: 4 }}>{title}</Typography>
+      style={{ marginBottom: 4, marginTop: '20px' }}>{Icon && <Icon/>} {title}</Typography>
     <TextField
       id="outlined-number"
       type="number"
@@ -30,9 +30,12 @@ export const NumberField: FC<NumberFieldProps> = ({ title, values, Icon }) => {
         </InputAdornment>,
         ...values.inputProps
       }}
-      sx={{ display: 'block', width: '353px' }}
+      sx={{ display: 'block', width: '353px', marginBottom: '10px' }}
       placeholder={title}
     />
-    <span>{error}</span>
+    {error && <FormHelperText error id="accountId-error" sx={{ fontSize: 14, marginTop: 0 }}>
+      {error}
+    </FormHelperText>
+    }
   </>
 }

@@ -10,5 +10,6 @@ export const addComment = createThunk('currentProduct/ADD_COMMENT',
       if (isError(response)) {
         return 'An error occurred.'
       }
+      dispatch(productActions.setCommentsPage(0))
       dispatch(productActions.addComment(response.data))
     })

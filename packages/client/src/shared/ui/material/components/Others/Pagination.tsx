@@ -18,6 +18,7 @@ export const Pagination: FC<PaginationProps> = ({ count, onChange, page }) => {
 
   return <MuiPagination count={Math.ceil(count)} variant="outlined" shape="rounded" sx={{
     float: 'right',
-    marginTop: '18px'
+    marginTop: '18px',
+    marginBottom: '23px'
   }} onChange={handleChange} page={page + 1}/>
 }

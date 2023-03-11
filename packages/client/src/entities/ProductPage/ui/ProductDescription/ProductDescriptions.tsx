@@ -8,14 +8,17 @@ import { Product } from 'shared/types/slices'
 import { useSelector } from 'shared/types/redux'
 import { Display } from 'shared/lib/components'
 import { CiWarning } from 'react-icons/ci'
+import { useTranslation } from 'react-i18next'
+import { MdOutlineDescription } from 'shared/ui/icons'
 
 const ProductDescriptions: FC = () => {
   const product = useSelector(ProductSelectors.product) as Product
   const isExists = useSelector(ProductSelectors.isExists)
+  const { t } = useTranslation()
 
 
   return <div className={s.product_params}>
-    <BlueLinkHeader/>
+    <BlueLinkHeader label={t('Product_description')} Icon={MdOutlineDescription}/>
     <div className={s.wrapper}>
       <Display when={isExists}>
         <div className={s.description}>

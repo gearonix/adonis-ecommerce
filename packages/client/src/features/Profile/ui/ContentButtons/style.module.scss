@@ -27,12 +27,15 @@
   }
 
   .add_product {
+    display: flex;
+    gap: 15px;
     position: absolute;
     right: 0;
     top: 0;
 
     button {
-      @include size(167px, 33px);
+      min-width: 167px;
+      height: 33px;
 
       svg {
         @include size(16px, 16px);

@@ -3,6 +3,7 @@
 
 .container {
   width: 90%;
+  min-height: 1000px;
   margin: 0 auto;
 }
 
@@ -40,7 +41,9 @@
   }
 }
 
-
+.primary_button{
+  color: white;
+}
 
 
 .outlined_button {
@@ -48,6 +51,7 @@
   color: $color-absolute;
   box-shadow: $shadow;
   border: $br $bg-150;
+  transition: background 200ms;
 
   &:hover {
     background: $bg-absolute-hover;

@@ -1,0 +1,23 @@
+@use 'src/shared/css/common.scss' as *;
+
+.comment_bar{
+  @include itemBorder;
+  width: 54%;
+  height: 330px;
+  margin-bottom: 45px;
+}
+.textarea{
+  width: 90%;
+  @include padding(17px,0);
+  p{
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: $color-absolute-200;
+  }
+  div{
+    width: 100%;
+  }
+  .submit_button{
+    float: right;
+  }
+}

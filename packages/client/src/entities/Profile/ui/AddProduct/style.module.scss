@@ -2,11 +2,19 @@
 
 .add_product_block {
   padding: 20px;
+  position: relative;
 
   .title {
     font-size: $l-medium;
     text-align: center;
     color: $color-absolute;
+  }
+  .background_image{
+    @include imageWrapper(130px,130px);
+    @include absolute(30px, 40px);
+    img{
+      opacity: 0.8;
+    }
   }
 
   .container {
@@ -23,14 +31,7 @@
         width: 373px;
       }
     }
-    .numberFields{
-      & > p{
-        margin-top: 20px;
-      }
-      & > div{
-        margin-bottom: 20px;
-      }
-    }
+
     .greyLine{
       height: 1px;
       background: #e1e1e1;
@@ -51,11 +52,27 @@
     .select_container {
       & > * {
         display: block;
+
         width: 100%;
+      }
+      position: relative;
+      .product_image_wrapper{
+        @include imageWrapper(270px,270px);
+        position: absolute;
+        right: 50px;
+        top: 20px;
       }
     }
 
     .save_buttons {
+      button:first-child{
+        background: #0D6EFD;
+        color: white;
+      }
+      button{
+        min-width: 145px;
+        height: 34px;
+      }
       margin-top: 37px;
       width: 100%;
       display: flex;

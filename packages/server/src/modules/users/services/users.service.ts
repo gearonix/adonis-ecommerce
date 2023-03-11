@@ -31,6 +31,10 @@ export class UsersService {
     }
     const sessionId = await this.authService.getUserId()
     const user = await this.users.findOneBy({ userId })
+
+    if (!user?.userId) {
+      throw new HttpException(ServerExceptions.USER_NOT_EXIST, HttpStatus.NOT_FOUND)
+    }
     return {
       ...user,
       isMe: sessionId === user.userId

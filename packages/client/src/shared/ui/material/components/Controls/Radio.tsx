@@ -9,6 +9,7 @@ export interface RadioControlProps{
 }
 
 export const Radio: FC<RadioControlProps> = ({ label, name, checked }) => {
-  return <FormControlLabel value={name} control={<MuiRadio style={{ marginTop: -20, height: 25 }} checked={checked}/>}
-    label={label} sx={{ display: 'block', height: 25 }} />
+  return <FormControlLabel value={name} control={<MuiRadio
+    style={{ marginTop: -20, height: 25 }} checked={checked}/>}
+  label={label} sx={{ display: 'block', height: 25 }} />
 }

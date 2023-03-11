@@ -1,6 +1,7 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import { Checkbox as MuiCheckBox, FormControlLabel } from '@mui/material'
 import { FieldValues } from 'shared/lib/helpers'
+import { Display } from 'shared/lib/components'
 
 interface Checkbox{
   title: string,
@@ -14,14 +15,14 @@ export const Checkbox: FC<Checkbox> = ({ title, values }) => {
   const onChange = () => {
     setValue(!currentValue)
   }
-  if (!values) {
-    return null
-  }
-  return <FormControlLabel control={<MuiCheckBox
-    style={{ marginTop: -8, height: 25 }}
-    onChange={onChange}
-  />
-  }
-  label={title} sx={{ display: 'block', height: 25 }} />
+
+  return <Display when={values}>
+    <FormControlLabel control={<MuiCheckBox
+      style={{ marginTop: -10, height: 25 }}
+      onChange={onChange}
+    />
+    }
+    label={title} sx={{ display: 'block', height: 25 }} />
+  </Display>
 }
 
