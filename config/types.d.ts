@@ -5,6 +5,7 @@ export interface AppConfig {
     appVersion: string;
     docsPrefix: string;
     privateKey: string;
+    socketPort: number;
 }
 export interface CorsConfig {
     origin: string;

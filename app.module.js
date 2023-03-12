@@ -19,6 +19,7 @@ const products_1 = require("./modules/products");
 const comments_1 = require("./modules/comments");
 const nestjs_request_context_1 = require("nestjs-request-context");
 const posts_module_1 = require("./modules/posts/posts.module");
+const messenger_1 = require("./modules/messenger");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -38,6 +39,7 @@ AppModule = __decorate([
             products_1.ProductsModule,
             comments_1.CommentsModule,
             posts_module_1.PostsModule,
+            messenger_1.MessengerModule,
             nestjs_request_context_1.RequestContextModule
         ],
         controllers: [],

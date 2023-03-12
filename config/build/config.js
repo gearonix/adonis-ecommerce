@@ -7,6 +7,7 @@ exports.appConfig = {
     appName: 'Adonis API',
     appVersion: '1.0.0',
     docsPrefix: '/api/docs',
-    privateKey: '1b94326c'
+    privateKey: '1b94326c',
+    socketPort: 9090
 };
 //# sourceMappingURL=config.js.map

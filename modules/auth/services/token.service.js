@@ -46,12 +46,7 @@ let TokenService = class TokenService {
             throw new common_1.HttpException(exceptions_1.ServerExceptions.INCORRECT_TOKEN, common_1.HttpStatus.NO_CONTENT);
         }
         try {
-            const tokenData = await this.jwtService.verify(token);
-            const userId = tokenData.payload.userId;
-            if (!userId) {
-                throw new common_1.HttpException(exceptions_1.ServerExceptions.NO_TOKEN, common_1.HttpStatus.NO_CONTENT);
-            }
-            return userId;
+            return this.verifyToken(token);
         }
         catch (e) {
             throw new common_1.HttpException(exceptions_1.ServerExceptions.INCORRECT_TOKEN, common_1.HttpStatus.NO_CONTENT);
@@ -61,6 +56,14 @@ let TokenService = class TokenService {
         const res = (0, helpers_1.getResponse)(nestjs_request_context_1.RequestContext);
         res.cookie('AUTH_TOKEN', tokenData.token);
         return tokenData;
+    }
+    async verifyToken(token) {
+        const tokenData = await this.jwtService.verify(token);
+        const userId = tokenData.payload.userId;
+        if (!userId) {
+            throw new common_1.HttpException(exceptions_1.ServerExceptions.NO_TOKEN, common_1.HttpStatus.NO_CONTENT);
+        }
+        return userId;
     }
 };
 TokenService = __decorate([

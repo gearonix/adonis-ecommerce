@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PAGE_LIMIT = exports.FileDirectories = exports.Roles = exports.Lengths = void 0;
+exports.PAGE_LIMIT = exports.SocketGateWays = exports.FileDirectories = exports.Roles = exports.Lengths = void 0;
 var Lengths;
 (function (Lengths) {
     Lengths[Lengths["TITLE"] = 40] = "TITLE";
@@ -25,5 +25,10 @@ var FileDirectories;
     FileDirectories["PRODUCT_IMAGES"] = "product_images";
     FileDirectories["POST_IMAGES"] = "post_images";
 })(FileDirectories = exports.FileDirectories || (exports.FileDirectories = {}));
+var SocketGateWays;
+(function (SocketGateWays) {
+    SocketGateWays["MESSENGER"] = "messenger";
+    SocketGateWays["AUTH"] = "auth";
+})(SocketGateWays = exports.SocketGateWays || (exports.SocketGateWays = {}));
 exports.PAGE_LIMIT = 6;
 //# sourceMappingURL=global.js.map

@@ -30,7 +30,7 @@ AuthModule = __decorate([
             }),
             nestjs_request_context_1.RequestContextModule
         ],
-        exports: [services_1.AuthService, jwt_1.JwtModule]
+        exports: [services_1.AuthService, jwt_1.JwtModule, services_1.TokenService, services_1.GoogleService]
     })
 ], AuthModule);
 exports.AuthModule = AuthModule;

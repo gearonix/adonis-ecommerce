@@ -19,4 +19,8 @@ export declare enum FileDirectories {
     PRODUCT_IMAGES = "product_images",
     POST_IMAGES = "post_images"
 }
+export declare enum SocketGateWays {
+    MESSENGER = "messenger",
+    AUTH = "auth"
+}
 export declare const PAGE_LIMIT: 6;

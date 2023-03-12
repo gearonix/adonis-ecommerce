@@ -12,4 +12,5 @@ export declare class TokenService {
     }>;
     getUserIdByCookie(): Promise<number>;
     setAuthCookie(tokenData: ReturnToken): Promise<ReturnToken>;
+    verifyToken(token: string): Promise<number>;
 }

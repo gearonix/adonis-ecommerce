@@ -9,3 +9,5 @@ export declare const withLimit: (page: string | undefined, take?: 6) => {
     skip: number;
 };
 export declare const sleep: () => Promise<unknown>;
+export declare const addIfNotExists: (array: any, element: any) => any;
+export declare const removeElement: (array: any, element: any) => any;
