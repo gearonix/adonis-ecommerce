@@ -1,7 +1,6 @@
 import { JestAsyncThunk } from 'shared/lib/jest'
 import { addProduct } from './addProduct'
 import { AddProductForm } from 'widgets/Products/types'
-import { getUserProducts } from 'widgets/Products'
 
 describe('addProduct', () => {
   let args: Partial<AddProductForm>

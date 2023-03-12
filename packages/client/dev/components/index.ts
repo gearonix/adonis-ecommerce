@@ -1,3 +1,3 @@
 export { DevGlobalVars } from './DevGlobalVars'
-export { DevStore } from './DevStore'
+export { DevStore } from './devStore'
 export { default as DevNavigation } from './DevNavigation'
