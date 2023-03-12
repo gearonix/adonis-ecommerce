@@ -22,5 +22,9 @@ export enum FileDirectories{
   POST_IMAGES = 'post_images'
 }
 
+export enum SocketGateWays{
+  MESSENGER = 'messenger',
+  AUTH = 'auth'
+}
 
 export const PAGE_LIMIT = 6 as const

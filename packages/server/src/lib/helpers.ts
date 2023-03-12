@@ -29,3 +29,13 @@ export const withLimit = (page: string | undefined, take = PAGE_LIMIT) => {
 }
 
 export const sleep = async () => new Promise((resolve) => setTimeout(resolve, 3000))
+
+export const addIfNotExists = (array, element) => {
+  if (!element) {
+    return array
+  }
+
+  return [...new Set([...array, element])]
+}
+
+export const removeElement = (array, element) => array.filter((item) => item !== element)

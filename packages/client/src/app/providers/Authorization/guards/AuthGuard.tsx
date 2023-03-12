@@ -7,7 +7,7 @@ import { Routes, routes } from 'shared/config/consts/routes'
 import { AuthSelectors } from 'shared/selectors'
 import { useBooleanState } from 'shared/lib/hooks/useBooleanState'
 
-const AuthRedirect: FC<{ children: ReactNode }> = ({ children }) => {
+const AuthGuard: FC<{ children: ReactNode }> = ({ children }) => {
   const { isOpen: isLoaded, open: openLoading, close: closeLoading } = useBooleanState()
   const router = useRouter()
   const isAuthorized = useSelector(AuthSelectors.isAuthorized)
@@ -44,4 +44,4 @@ const AuthRedirect: FC<{ children: ReactNode }> = ({ children }) => {
   </>
 }
 
-export default AuthRedirect
+export default AuthGuard

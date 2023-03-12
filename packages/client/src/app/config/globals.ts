@@ -41,12 +41,9 @@ export enum UploadProperties{
     POST_IMAGES = 'post_images',
 }
 
-
-export enum AppMethods{
-    GET = 'get',
-    POST = 'post',
-    PUT = 'put',
-    DELETE = 'delete'
+export enum SocketGateWays{
+    MESSENGER = 'messenger',
+    AUTH = 'auth'
 }
 
 export const PAGE_LIMIT = 6 as const

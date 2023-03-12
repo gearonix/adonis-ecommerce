@@ -10,6 +10,7 @@ import { ProductsModule } from '@app/modules/products'
 import { CommentsModule } from '@app/modules/comments'
 import { RequestContextModule } from 'nestjs-request-context'
 import { PostsModule } from '@app/modules/posts/posts.module'
+import { MessengerModule } from '@modules/messenger'
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { PostsModule } from '@app/modules/posts/posts.module'
     ProductsModule,
     CommentsModule,
     PostsModule,
+    MessengerModule,
     RequestContextModule
   ],
 

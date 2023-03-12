@@ -19,6 +19,6 @@ import { RequestContextModule } from 'nestjs-request-context'
     }),
     RequestContextModule
   ],
-  exports: [AuthService, JwtModule]
+  exports: [AuthService, JwtModule, TokenService, GoogleService]
 })
 export class AuthModule {}

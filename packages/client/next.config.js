@@ -1,10 +1,11 @@
-// eslint-disable-next-line
 const path = require('path')
 
-const isDev = process.env.NODE_ENV === 'development'
-const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL
-const serverHost = process.env.NEXT_PUBLIC_SERVER_HOST
-const googleClientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID
+// .env variables
+const IS_DEV = process.env.NODE_ENV === 'development'
+const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL
+const SERVER_HOST = process.env.NEXT_PUBLIC_SERVER_HOST
+const GOOGLE_CLIENT_ID = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID
+const WEBSOCKET_URL = process.env.NEXT_PUBLIC_WEBSOCKET_URL
 
 const nextConfig = {
   reactStrictMode: true,
@@ -12,9 +13,10 @@ const nextConfig = {
     includePaths: [path.join(__dirname, 'src/shared')]
   },
   env: {
-    GOOGLE_CLIENT_ID: googleClientId,
-    SERVER_URL: serverUrl,
-    IS_DEV: isDev
+    GOOGLE_CLIENT_ID,
+    SERVER_URL,
+    IS_DEV,
+    WEBSOCKET_URL
   },
   images: {
     remotePatterns: [
@@ -24,7 +26,7 @@ const nextConfig = {
         port: ''
       }
     ],
-    domains: ['lh3.googleusercontent.com', serverHost || 'localhost']
+    domains: ['lh3.googleusercontent.com', SERVER_HOST || 'localhost']
   },
   eslint: {
     ignoreDuringBuilds: true

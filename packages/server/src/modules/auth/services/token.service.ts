@@ -45,15 +45,7 @@ export class TokenService {
       )
     }
     try {
-      const tokenData = await this.jwtService.verify(token)
-      const userId: number = tokenData.payload.userId
-      if (!userId) {
-        throw new HttpException(
-            ServerExceptions.NO_TOKEN,
-            HttpStatus.NO_CONTENT
-        )
-      }
-      return userId
+      return this.verifyToken(token)
     } catch (e) {
       throw new HttpException(
           ServerExceptions.INCORRECT_TOKEN,
@@ -66,5 +58,18 @@ export class TokenService {
     const res = getResponse(RequestContext)
     res.cookie('AUTH_TOKEN', tokenData.token)
     return tokenData
+  }
+
+  async verifyToken(token: string) {
+    const tokenData = await this.jwtService.verify(token)
+    const userId: number = tokenData.payload.userId
+
+    if (!userId) {
+      throw new HttpException(
+          ServerExceptions.NO_TOKEN,
+          HttpStatus.NO_CONTENT
+      )
+    }
+    return userId
   }
 }

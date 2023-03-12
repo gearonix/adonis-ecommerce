@@ -29,7 +29,8 @@ module.exports = {
     "no-trailing-spaces": "off",
     "padded-blocks": "warn",
     "object-curly-spacing": ["error", "always"],
-    "comma-dangle": ["error", "never"]
+    "comma-dangle": ["error", "never"],
+    "@darraghor/nestjs-typed/injectable-should-be-provided": "warn"
   },
   plugins: ["@darraghor/nestjs-typed","@typescript-eslint"],
 
