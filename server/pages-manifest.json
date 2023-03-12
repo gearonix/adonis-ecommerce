@@ -1,0 +1,18 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.html",
+  "/about": "pages/about.html",
+  "/cart": "pages/cart.html",
+  "/": "pages/index.html",
+  "/login": "pages/login.html",
+  "/messenger": "pages/messenger.html",
+  "/saved": "pages/saved.html",
+  "/search/[id]": "pages/search/[id].html",
+  "/search": "pages/search.html",
+  "/signup/customer": "pages/signup/customer.html",
+  "/signup": "pages/signup.html",
+  "/signup/salesman": "pages/signup/salesman.html",
+  "/users/[id]": "pages/users/[id].html"
+}
