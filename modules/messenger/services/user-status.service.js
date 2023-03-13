@@ -6,10 +6,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OnlineUsersService = void 0;
+exports.UserStatusService = void 0;
 const common_1 = require("@nestjs/common");
 const helpers_1 = require("../../../lib/helpers");
-let OnlineUsersService = class OnlineUsersService {
+const global_1 = require("../../../types/global");
+let UserStatusService = class UserStatusService {
     onlineUsers = [];
     addUser(userId) {
         this.onlineUsers = (0, helpers_1.addIfNotExists)(this.onlineUsers, userId);
@@ -19,9 +20,12 @@ let OnlineUsersService = class OnlineUsersService {
         this.onlineUsers = (0, helpers_1.removeElement)(this.onlineUsers, userId);
         console.log(this.onlineUsers);
     }
+    getOnlineStatus(userId) {
+        return this.onlineUsers.includes(userId) ? global_1.UserStatus.ONLINE : global_1.UserStatus.OFFLINE;
+    }
 };
-OnlineUsersService = __decorate([
+UserStatusService = __decorate([
     (0, common_1.Injectable)()
-], OnlineUsersService);
-exports.OnlineUsersService = OnlineUsersService;
-//# sourceMappingURL=onlineUsers.service.js.map
+], UserStatusService);
+exports.UserStatusService = UserStatusService;
+//# sourceMappingURL=user-status.service.js.map

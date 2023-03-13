@@ -20,11 +20,26 @@ export declare class ProductsService {
     randomProducts(query: SearchDTO): Promise<ProductsEntity[]>;
     getProduct(productId: number): Promise<{
         productInfo: ProductsEntity;
-        salesman: import("../../../entities/users.entity").UsersEntity & {
+        salesman: {
             isMe: boolean;
+            status: import("@app/types/global").UserStatus;
+            role: import("@app/types/global").Roles;
+            firstName: string;
+            lastName: string;
+            email: string;
+            password: string;
+            avatar: string;
+            background: string;
+            description: string;
+            userId: number;
+            country: string;
+            city: string;
+            registration_date: Date;
+            google_sub: string;
+            user: import("../../../entities/users.entity").UsersEntity[];
         };
         comments: {
-            data: import("../../../entities/product_comments.entity").ProductCommentsEntity[];
+            data: import("../../../entities/product-comments.entity").ProductCommentsEntity[];
             count: number;
         };
     }>;

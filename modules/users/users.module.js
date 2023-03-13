@@ -15,6 +15,7 @@ const entities_1 = require("../../entities");
 const auth_1 = require("../auth");
 const nestjs_request_context_1 = require("nestjs-request-context");
 const files_1 = require("../files");
+const messenger_1 = require("../messenger");
 let UsersModule = class UsersModule {
 };
 UsersModule = __decorate([
@@ -25,7 +26,8 @@ UsersModule = __decorate([
             typeorm_1.TypeOrmModule.forFeature([entities_1.UsersEntity]),
             (0, common_1.forwardRef)(() => auth_1.AuthModule),
             nestjs_request_context_1.RequestContextModule,
-            files_1.FilesModule
+            files_1.FilesModule,
+            (0, common_1.forwardRef)(() => messenger_1.MessengerModule)
         ],
         exports: [services_1.UsersService]
     })

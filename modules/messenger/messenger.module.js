@@ -8,17 +8,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MessengerModule = void 0;
 const common_1 = require("@nestjs/common");
-const chat_gateway_1 = require("./gateways/chat.gateway");
+const chat_gateway_1 = require("./gateways/chat/chat.gateway");
 const auth_1 = require("../auth");
-const auth_gateway_1 = require("./gateways/auth.gateway");
-const onlineUsers_service_1 = require("./services/onlineUsers.service");
+const status_gateway_1 = require("./gateways/status/status.gateway");
+const user_status_service_1 = require("./services/user-status.service");
+const typeorm_1 = require("@nestjs/typeorm");
+const entities_1 = require("../../entities");
+const messenger_rooms_service_1 = require("./services/messenger-rooms.service");
+const controllers_1 = require("./controllers");
 let MessengerModule = class MessengerModule {
 };
 MessengerModule = __decorate([
     (0, common_1.Module)({
-        providers: [chat_gateway_1.ChatGateway, auth_gateway_1.AuthGateway, onlineUsers_service_1.OnlineUsersService],
+        providers: [chat_gateway_1.ChatGateway, status_gateway_1.StatusGateway,
+            user_status_service_1.UserStatusService, messenger_rooms_service_1.MessengerRoomsService],
+        controllers: [controllers_1.MessengerController],
         imports: [
-            auth_1.AuthModule
+            typeorm_1.TypeOrmModule.forFeature([entities_1.MessengerRoomsEntity]),
+            (0, common_1.forwardRef)(() => auth_1.AuthModule)
+        ],
+        exports: [
+            user_status_service_1.UserStatusService,
+            messenger_rooms_service_1.MessengerRoomsService
         ]
     })
 ], MessengerModule);

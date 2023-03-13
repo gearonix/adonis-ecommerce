@@ -19,12 +19,15 @@ const typeorm_2 = require("typeorm");
 const common_1 = require("@nestjs/common");
 const auth_1 = require("../../auth");
 const exceptions_1 = require("../../../types/exceptions");
+const messenger_1 = require("../../messenger");
 let UsersService = class UsersService {
     users;
     authService;
-    constructor(users, authService) {
+    userStatusService;
+    constructor(users, authService, userStatusService) {
         this.users = users;
         this.authService = authService;
+        this.userStatusService = userStatusService;
     }
     async getIdAndPasswordByEmail(email) {
         return this.users.findOne({
@@ -44,9 +47,12 @@ let UsersService = class UsersService {
         if (!user?.userId) {
             throw new common_1.HttpException(exceptions_1.ServerExceptions.USER_NOT_EXIST, common_1.HttpStatus.NOT_FOUND);
         }
+        const status = await this.userStatusService.getOnlineStatus(user.userId);
+        const isMe = sessionId === user.userId;
         return {
             ...user,
-            isMe: sessionId === user.userId
+            isMe,
+            status
         };
     }
     async getIdByGoogleSub(googleSub) {
@@ -77,8 +83,10 @@ let UsersService = class UsersService {
 UsersService = __decorate([
     __param(0, (0, typeorm_1.InjectRepository)(entities_1.UsersEntity)),
     __param(1, (0, common_1.Inject)((0, common_1.forwardRef)(() => auth_1.AuthService))),
+    __param(2, (0, common_1.Inject)((0, common_1.forwardRef)(() => messenger_1.UserStatusService))),
     __metadata("design:paramtypes", [typeorm_2.Repository,
-        auth_1.AuthService])
+        auth_1.AuthService,
+        messenger_1.UserStatusService])
 ], UsersService);
 exports.UsersService = UsersService;
 //# sourceMappingURL=users.service.js.map

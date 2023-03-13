@@ -54,4 +54,4 @@ ProductCommentsEntity = __decorate([
     (0, typeorm_1.Entity)('product_comments')
 ], ProductCommentsEntity);
 exports.ProductCommentsEntity = ProductCommentsEntity;
-//# sourceMappingURL=product_comments.entity.js.map
+//# sourceMappingURL=product-comments.entity.js.map

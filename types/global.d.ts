@@ -23,4 +23,8 @@ export declare enum SocketGateWays {
     MESSENGER = "messenger",
     AUTH = "auth"
 }
+export declare enum UserStatus {
+    ONLINE = "online",
+    OFFLINE = "offline"
+}
 export declare const PAGE_LIMIT: 6;

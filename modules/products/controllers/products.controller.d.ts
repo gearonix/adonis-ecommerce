@@ -14,11 +14,26 @@ export declare class ProductsController {
     getProductsByIds(body: SearchByIdsDTO): Promise<import("../../../entities/index").ProductsEntity[]>;
     getProduct(id: any): Promise<{
         productInfo: import("../../../entities/index").ProductsEntity;
-        salesman: import("../../../entities/users.entity").UsersEntity & {
+        salesman: {
             isMe: boolean;
+            status: import("../../../types/global").UserStatus;
+            role: import("../../../types/global").Roles;
+            firstName: string;
+            lastName: string;
+            email: string;
+            password: string;
+            avatar: string;
+            background: string;
+            description: string;
+            userId: number;
+            country: string;
+            city: string;
+            registration_date: Date;
+            google_sub: string;
+            user: import("../../../entities/users.entity").UsersEntity[];
         };
         comments: {
-            data: import("../../../entities/product_comments.entity").ProductCommentsEntity[];
+            data: import("../../../entities/product-comments.entity").ProductCommentsEntity[];
             count: number;
         };
     }>;

@@ -1,1 +1,0 @@
-{"version":3,"file":"createGateway.js","sourceRoot":"","sources":["../../../../src/modules/messenger/config/createGateway.ts"],"names":[],"mappings":";;;AACA,4CAAwC;AAEjC,MAAM,aAAa,GAAG,CAAC,OAAuB,EAAE,EAAE,CAAC,CAAC;IACzD,SAAS,EAAE,OAAO;IAClB,IAAI,EAAE,mBAAU;IAChB,MAAM,EAAE,IAAI;CACb,CAAC,CAAA;AAJW,QAAA,aAAa,iBAIxB"}

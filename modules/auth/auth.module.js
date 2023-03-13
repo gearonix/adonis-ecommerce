@@ -25,7 +25,7 @@ AuthModule = __decorate([
             jwt_1.JwtModule.register({
                 secret: process.env.PRIVATE_KEY || config_1.appConfig.privateKey,
                 signOptions: {
-                    expiresIn: '24h'
+                    expiresIn: '7d'
                 }
             }),
             nestjs_request_context_1.RequestContextModule

@@ -59,6 +59,7 @@ let GoogleService = class GoogleService {
 };
 GoogleService = __decorate([
     __param(0, (0, common_1.Inject)((0, common_1.forwardRef)(() => users_1.UsersService))),
+    __param(2, (0, common_1.Inject)((0, common_1.forwardRef)(() => auth_1.AuthService))),
     __metadata("design:paramtypes", [users_1.UsersService,
         jwt_1.JwtService,
         auth_1.AuthService,
