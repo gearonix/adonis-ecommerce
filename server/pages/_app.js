@@ -197,10 +197,8 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var shared_types_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(46391);
 /* harmony import */ var shared_ui_kit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(72665);
 /* harmony import */ var widgets_Login__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(71248);
-/* harmony import */ var _socket__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(91243);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shared_ui_kit__WEBPACK_IMPORTED_MODULE_3__, widgets_Login__WEBPACK_IMPORTED_MODULE_4__, _socket__WEBPACK_IMPORTED_MODULE_5__]);
-([shared_ui_kit__WEBPACK_IMPORTED_MODULE_3__, widgets_Login__WEBPACK_IMPORTED_MODULE_4__, _socket__WEBPACK_IMPORTED_MODULE_5__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
-
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shared_ui_kit__WEBPACK_IMPORTED_MODULE_3__, widgets_Login__WEBPACK_IMPORTED_MODULE_4__]);
+([shared_ui_kit__WEBPACK_IMPORTED_MODULE_3__, widgets_Login__WEBPACK_IMPORTED_MODULE_4__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
@@ -212,7 +210,7 @@ const Authorization = ({ children  })=>{
     (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{
         dispatch((0,widgets_Login__WEBPACK_IMPORTED_MODULE_4__/* .authorizeUser */ .mQ)()).then(()=>setIsLoaded(true));
     }, []);
-    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_socket__WEBPACK_IMPORTED_MODULE_5__/* .AuthSocketProvider */ .e, {
+    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: isLoaded ? children : /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_3__/* .PenPreloader */ .Ki, {})
     });
 };
@@ -244,8 +242,10 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(42740);
 /* harmony import */ var shared_selectors__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(9535);
 /* harmony import */ var shared_lib_hooks_useBooleanState__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(93933);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shared_ui_kit__WEBPACK_IMPORTED_MODULE_2__, shared_selectors__WEBPACK_IMPORTED_MODULE_7__]);
-([shared_ui_kit__WEBPACK_IMPORTED_MODULE_2__, shared_selectors__WEBPACK_IMPORTED_MODULE_7__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+/* harmony import */ var _socket__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(91243);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shared_ui_kit__WEBPACK_IMPORTED_MODULE_2__, shared_selectors__WEBPACK_IMPORTED_MODULE_7__, _socket__WEBPACK_IMPORTED_MODULE_9__]);
+([shared_ui_kit__WEBPACK_IMPORTED_MODULE_2__, shared_selectors__WEBPACK_IMPORTED_MODULE_7__, _socket__WEBPACK_IMPORTED_MODULE_9__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
 
 
 
@@ -269,6 +269,7 @@ const AuthGuard = ({ children  })=>{
         }
         // redirect if registered
         if (isAuthorized && forbiddenPaths.authorized.includes(path)) {
+            console.log("YES");
             return router.push(`${shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_6__/* .routes.USERS */ ._.USERS}/${userId}`);
         }
         openLoading();
@@ -284,87 +285,11 @@ const AuthGuard = ({ children  })=>{
     }, [
         isAuthorized
     ]);
-    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_socket__WEBPACK_IMPORTED_MODULE_9__/* .AuthSocketProvider */ .eB, {
         children: isLoaded ? children : /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_2__/* .PenPreloader */ .Ki, {})
     });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AuthGuard);
-
-__webpack_async_result__();
-} catch(e) { __webpack_async_result__(e); } });
-
-/***/ }),
-
-/***/ 23032:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(16689);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-const AuthSocketContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)({});
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AuthSocketContext);
-
-
-/***/ }),
-
-/***/ 34277:
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20997);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(14612);
-/* harmony import */ var app_config_config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(34734);
-/* harmony import */ var dev_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(11985);
-/* harmony import */ var app_config_globals__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(94254);
-/* harmony import */ var _AuthSocketContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(23032);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([socket_io_client__WEBPACK_IMPORTED_MODULE_1__, dev_components__WEBPACK_IMPORTED_MODULE_3__]);
-([socket_io_client__WEBPACK_IMPORTED_MODULE_1__, dev_components__WEBPACK_IMPORTED_MODULE_3__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
-
-
-
-
-
-
-const AuthSocketProvider = ({ children  })=>{
-    const connection = (0,socket_io_client__WEBPACK_IMPORTED_MODULE_1__.io)(`${app_config_config__WEBPACK_IMPORTED_MODULE_2__/* ["default"].WEBSOCKET_URL */ .Z.WEBSOCKET_URL}/${app_config_globals__WEBPACK_IMPORTED_MODULE_4__/* .SocketGateWays.AUTH */ .oV.AUTH}`, {
-        withCredentials: true
-    });
-    dev_components__WEBPACK_IMPORTED_MODULE_3__/* .DevGlobalVars.setSocket */ .Pd.setSocket("auth", connection);
-    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_AuthSocketContext__WEBPACK_IMPORTED_MODULE_5__/* ["default"].Provider */ .Z.Provider, {
-        value: connection,
-        children: children
-    });
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AuthSocketProvider);
-
-__webpack_async_result__();
-} catch(e) { __webpack_async_result__(e); } });
-
-/***/ }),
-
-/***/ 91243:
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "e": () => (/* reexport safe */ _AuthSocketProvider__WEBPACK_IMPORTED_MODULE_1__.Z)
-/* harmony export */ });
-/* harmony import */ var _AuthSocketContext__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(23032);
-/* harmony import */ var _AuthSocketProvider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(34277);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_AuthSocketProvider__WEBPACK_IMPORTED_MODULE_1__]);
-_AuthSocketProvider__WEBPACK_IMPORTED_MODULE_1__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
-
-
 
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });
@@ -589,6 +514,8 @@ __webpack_async_result__();
 /* harmony import */ var _mui_material_styles__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_mui_material_styles__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var shared_lib_hooks_useTheme__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(62757);
 /* harmony import */ var shared_lib_hooks_useLocalStorage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(68508);
+/* harmony import */ var shared_config_consts_others__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(33683);
+
 
 
 
@@ -597,7 +524,7 @@ __webpack_async_result__();
 
 
 const ThemeProvider = ({ children  })=>{
-    const { value: theme , save: setTheme  } = (0,shared_lib_hooks_useLocalStorage__WEBPACK_IMPORTED_MODULE_6__/* .useLocalStorage */ ._)(shared_config_consts_themes__WEBPACK_IMPORTED_MODULE_3__/* .LocalStorage.THEME */ .m.THEME, shared_config_consts_themes__WEBPACK_IMPORTED_MODULE_3__/* .Theme.LIGHT */ .Q.LIGHT);
+    const { value: theme , save: setTheme  } = (0,shared_lib_hooks_useLocalStorage__WEBPACK_IMPORTED_MODULE_6__/* .useLocalStorage */ ._)(shared_config_consts_others__WEBPACK_IMPORTED_MODULE_7__/* .LocalStorage.THEME */ .m.THEME, shared_config_consts_themes__WEBPACK_IMPORTED_MODULE_3__/* .Theme.LIGHT */ .Q.LIGHT);
     const muiTheme = (0,shared_lib_hooks_useTheme__WEBPACK_IMPORTED_MODULE_5__/* .useMuiTheme */ .$)(theme);
     const defaultProps = (0,react__WEBPACK_IMPORTED_MODULE_1__.useMemo)(()=>({
             theme,
@@ -665,8 +592,10 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var widgets_Login__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(71248);
 /* harmony import */ var widgets_Posts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(44956);
 /* harmony import */ var features_Saved__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(33207);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([widgets_Profile__WEBPACK_IMPORTED_MODULE_0__, widgets_Products__WEBPACK_IMPORTED_MODULE_1__, widgets_CurrentProduct__WEBPACK_IMPORTED_MODULE_2__, widgets_Login__WEBPACK_IMPORTED_MODULE_3__, widgets_Posts__WEBPACK_IMPORTED_MODULE_4__, features_Saved__WEBPACK_IMPORTED_MODULE_5__]);
-([widgets_Profile__WEBPACK_IMPORTED_MODULE_0__, widgets_Products__WEBPACK_IMPORTED_MODULE_1__, widgets_CurrentProduct__WEBPACK_IMPORTED_MODULE_2__, widgets_Login__WEBPACK_IMPORTED_MODULE_3__, widgets_Posts__WEBPACK_IMPORTED_MODULE_4__, features_Saved__WEBPACK_IMPORTED_MODULE_5__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+/* harmony import */ var widgets_Messenger__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(71341);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([widgets_Profile__WEBPACK_IMPORTED_MODULE_0__, widgets_Products__WEBPACK_IMPORTED_MODULE_1__, widgets_CurrentProduct__WEBPACK_IMPORTED_MODULE_2__, widgets_Login__WEBPACK_IMPORTED_MODULE_3__, widgets_Posts__WEBPACK_IMPORTED_MODULE_4__, features_Saved__WEBPACK_IMPORTED_MODULE_5__, widgets_Messenger__WEBPACK_IMPORTED_MODULE_6__]);
+([widgets_Profile__WEBPACK_IMPORTED_MODULE_0__, widgets_Products__WEBPACK_IMPORTED_MODULE_1__, widgets_CurrentProduct__WEBPACK_IMPORTED_MODULE_2__, widgets_Login__WEBPACK_IMPORTED_MODULE_3__, widgets_Posts__WEBPACK_IMPORTED_MODULE_4__, features_Saved__WEBPACK_IMPORTED_MODULE_5__, widgets_Messenger__WEBPACK_IMPORTED_MODULE_6__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
 
 
 
@@ -679,7 +608,8 @@ const apiConfig = {
     product: widgets_CurrentProduct__WEBPACK_IMPORTED_MODULE_2__/* .currentProductApi */ .$Z,
     auth: widgets_Login__WEBPACK_IMPORTED_MODULE_3__/* .authApi */ .iJ,
     posts: widgets_Posts__WEBPACK_IMPORTED_MODULE_4__/* .postsApi */ .F5,
-    saved: features_Saved__WEBPACK_IMPORTED_MODULE_5__/* .savedApi */ .OG
+    saved: features_Saved__WEBPACK_IMPORTED_MODULE_5__/* .savedApi */ .OG,
+    messenger: widgets_Messenger__WEBPACK_IMPORTED_MODULE_6__/* .messengerApi */ .bC
 };
 
 __webpack_async_result__();
@@ -1650,7 +1580,7 @@ module.exports = import("socket.io-client");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [809,327,631,665,319,423,157,958,248,894,980,985,989], () => (__webpack_exec__(12903)));
+var __webpack_exports__ = __webpack_require__.X(0, [809,631,327,665,157,958,248,894,980,989], () => (__webpack_exec__(12903)));
 module.exports = __webpack_exports__;
 
 })();
