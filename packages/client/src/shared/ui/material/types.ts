@@ -1,4 +1,4 @@
-import {FC, ReactNode} from 'react'
+import { FC, ReactNode } from 'react'
 import { FieldValues } from 'shared/lib/helpers'
 import { DefaultAssets } from 'shared/config/consts/assets'
 

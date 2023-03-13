@@ -7,7 +7,7 @@ import s from './style.module.scss'
 import cn from 'classnames'
 import { useTheme } from 'shared/lib/hooks'
 import { useTranslation } from 'react-i18next'
-import {BsFileEarmarkPost, MdMessage } from 'shared/ui/icons'
+import { BsFileEarmarkPost, MdMessage } from 'shared/ui/icons'
 
 interface AddPostProps{
   reg: CreateFieldValues<AddPostForm>,

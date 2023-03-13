@@ -35,7 +35,7 @@ const Profile: FC = () => {
       </title>
     </Head>
     <div className="users_page">
-      <WithLoading when={!isExists} title={'User'} Icon={AiOutlineUser} loading={isLoading}
+      <WithLoading when={!isExists} title={'User'} Icon={AiOutlineUser} loading={isLoading || false}
         Preloader={() => <PenPreloader instantly/>} NotFound={NotFound}>
         <WithSpring>
           <ProfileHeader />

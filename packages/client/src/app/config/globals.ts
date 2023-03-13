@@ -42,8 +42,8 @@ export enum UploadProperties{
 }
 
 export enum SocketGateWays{
-    MESSENGER = 'messenger',
-    AUTH = 'auth'
+    messenger = 'messenger',
+    auth = 'auth'
 }
 
 export const PAGE_LIMIT = 6 as const

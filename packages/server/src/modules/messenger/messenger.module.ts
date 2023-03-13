@@ -1,13 +1,24 @@
-import { Module } from '@nestjs/common'
-import { ChatGateway } from './gateways/chat.gateway'
+import { forwardRef, Module } from '@nestjs/common'
+import { ChatGateway } from './gateways/chat/chat.gateway'
 import { AuthModule } from '@modules/auth'
-import { AuthGateway } from './gateways/auth.gateway'
-import { OnlineUsersService } from './services/onlineUsers.service'
+import { StatusGateway } from './gateways/status/status.gateway'
+import { UserStatusService } from './services/user-status.service'
+import { TypeOrmModule } from '@nestjs/typeorm'
+import { MessengerRoomsEntity } from '@app/entities'
+import { MessengerRoomsService } from './services/messenger-rooms.service'
+import { MessengerController } from './controllers'
 
 @Module({
-  providers: [ChatGateway, AuthGateway, OnlineUsersService],
+  providers: [ChatGateway, StatusGateway,
+    UserStatusService, MessengerRoomsService],
+  controllers: [MessengerController],
   imports: [
-    AuthModule
+    TypeOrmModule.forFeature([MessengerRoomsEntity]),
+    forwardRef(() => AuthModule)
+  ],
+  exports: [
+    UserStatusService,
+    MessengerRoomsService
   ]
 })
 export class MessengerModule {}

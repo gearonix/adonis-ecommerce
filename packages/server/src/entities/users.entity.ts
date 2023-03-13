@@ -1,5 +1,5 @@
 import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm'
-import { ProductCommentsEntity } from '@app/entities/product_comments.entity'
+import { ProductCommentsEntity } from '@entities/product-comments.entity'
 import { PostsEntity } from '@app/entities/posts.entity'
 import { Lengths, Roles } from '@app/types/global'
 

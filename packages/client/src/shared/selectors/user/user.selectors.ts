@@ -16,7 +16,8 @@ const UserSelectors = {
     return (state.user.userId || state.auth.userId) as number
   },
   isExists: ({ user }: AppState) => !!user.userId,
-  isLoading: ({ user }: AppState) => user.isLoading
+  isLoading: ({ user }: AppState) => user.isLoading,
+  status: ({ user }: AppState) => user.status
 }
 
 

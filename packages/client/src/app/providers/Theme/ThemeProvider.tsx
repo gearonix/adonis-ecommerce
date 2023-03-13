@@ -1,9 +1,10 @@
 import { FC, ReactNode, useMemo } from 'react'
 import ThemeContext from 'app/providers/Theme/ThemeContext'
-import { LocalStorage, Theme } from 'shared/config/consts/themes'
+import { Theme } from 'shared/config/consts/themes'
 import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles'
 import { useMuiTheme } from 'shared/lib/hooks/useTheme'
 import { useLocalStorage } from 'shared/lib/hooks/useLocalStorage'
+import { LocalStorage } from 'shared/config/consts/others'
 
 
 const ThemeProvider: FC<{ children: ReactNode }> = ({ children }) => {

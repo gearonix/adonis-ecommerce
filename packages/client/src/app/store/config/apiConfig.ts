@@ -5,6 +5,7 @@ import { currentProductApi } from 'widgets/CurrentProduct'
 import { authApi } from 'widgets/Login'
 import { postsApi } from 'widgets/Posts'
 import { savedApi } from 'features/Saved'
+import { messengerApi } from 'widgets/Messenger'
 
 export const apiConfig: ApiConfig = {
   profile: profileApi,
@@ -12,5 +13,6 @@ export const apiConfig: ApiConfig = {
   product: currentProductApi,
   auth: authApi,
   posts: postsApi,
-  saved: savedApi
+  saved: savedApi,
+  messenger: messengerApi
 }

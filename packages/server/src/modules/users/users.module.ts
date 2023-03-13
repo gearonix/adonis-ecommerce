@@ -6,6 +6,7 @@ import { UsersEntity } from '@app/entities'
 import { AuthModule } from '@app/modules/auth'
 import { RequestContextModule } from 'nestjs-request-context'
 import { FilesModule } from '@app/modules/files'
+import { MessengerModule } from '@modules/messenger'
 
 @Module({
   controllers: [UsersController, ChangeProfileController],
@@ -14,7 +15,8 @@ import { FilesModule } from '@app/modules/files'
     TypeOrmModule.forFeature([UsersEntity]),
     forwardRef(() => AuthModule),
     RequestContextModule,
-    FilesModule
+    FilesModule,
+    forwardRef(() => MessengerModule)
   ],
   exports: [UsersService]
 })

@@ -2,7 +2,6 @@ import { FC, ReactNode, useEffect, useState } from 'react'
 import { useDispatch } from 'shared/types/redux'
 import { PenPreloader } from 'shared/ui/kit'
 import { authorizeUser } from 'widgets/Login'
-import { AuthSocketProvider } from './socket'
 
 
 const Authorization: FC<{ children: ReactNode }> = ({ children }) => {
@@ -13,9 +12,9 @@ const Authorization: FC<{ children: ReactNode }> = ({ children }) => {
     dispatch(authorizeUser()).then(() => setIsLoaded(true))
   }, [])
 
-  return <AuthSocketProvider>
+  return <>
     {isLoaded ? children : <PenPreloader />}
-  </AuthSocketProvider>
+  </>
 }
 
 export default Authorization

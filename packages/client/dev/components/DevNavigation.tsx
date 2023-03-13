@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'shared/types/redux'
 import { AuthSelectors } from 'shared/selectors'
 import { useTheme } from 'shared/lib/hooks/useTheme'
 import { useTranslation } from 'react-i18next'
+import { useSocket } from 'shared/lib/hooks'
 
 // !!!
 // This file is for development mode only.
@@ -14,6 +15,7 @@ const DevNavigation: FC = () => {
   const { toggleTheme } = useTheme()
   const userId = useSelector(AuthSelectors.userId)
   const { i18n } = useTranslation()
+  const authSocket = useSocket('auth')
 
   const logout = async () => {
     dispatch(logoutUser())
@@ -58,6 +60,9 @@ const DevNavigation: FC = () => {
         </Link>
         <Link href={userId ? `/users/${userId}` : '/login'}>
           <button>profile</button>
+        </Link>
+        <Link href={`/users/66`}>
+          <button>user_66</button>
         </Link>
         <Link href={'/about'}>
           <button>about</button>

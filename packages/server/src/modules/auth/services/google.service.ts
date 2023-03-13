@@ -14,6 +14,7 @@ export class GoogleService {
         @Inject(forwardRef(() => UsersService))
         private usersService: UsersService,
         private jwtService: JwtService,
+        @Inject(forwardRef(() => AuthService))
         private authService: AuthService,
         private tokenService: TokenService
   ) {}

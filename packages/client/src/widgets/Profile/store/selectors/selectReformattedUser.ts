@@ -6,13 +6,13 @@ import { raiseGoogleImageQuality } from 'widgets/Profile/lib/helpers'
 import { Nullable } from 'shared/types/common'
 import { UserRoles } from 'app/config/globals'
 
-export interface FormattedUser {
+export interface FormattedUser extends User{
   userName: string,
   description: string,
   userImage: Nullable<string>,
   background: string,
-  country: Nullable<string>,
-  city: Nullable<string>,
+  country: string,
+  city: string,
   date: string,
   role: UserRoles,
   userId: number
@@ -36,6 +36,7 @@ export const selectReformattedUser = createSelector(UserSelectors.user, (nullabl
   const date = helpers.reformatMysqlDate(user.registration_date)
 
   return {
+    ...user,
     userName,
     description: user.description,
     userImage,

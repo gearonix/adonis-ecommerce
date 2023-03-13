@@ -3,7 +3,3 @@ export enum Theme {
     DARK = 'dark'
 }
 
-export enum LocalStorage{
-    THEME = 'theme',
-    CART = 'cart'
-}

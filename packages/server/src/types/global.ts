@@ -27,4 +27,10 @@ export enum SocketGateWays{
   AUTH = 'auth'
 }
 
+export enum UserStatus{
+  ONLINE = 'online',
+  OFFLINE = 'offline'
+}
+
+
 export const PAGE_LIMIT = 6 as const

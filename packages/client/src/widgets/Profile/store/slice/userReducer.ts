@@ -1,25 +1,29 @@
 import { User } from 'shared/types/slices'
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction as Action } from '@reduxjs/toolkit'
 import { usersInitialState as initialState } from 'shared/types/slices/user'
 import { withLoading } from 'shared/lib/helpers'
 import { getUserById } from 'widgets/Login/store/thunks'
+import { UserStatus } from 'shared/config/consts/others'
 
 
 const userReducer = createSlice({
   name: 'users',
   initialState,
   reducers: {
-    setUser(state, { payload }: PayloadAction<User>) {
+    setUser(state, { payload }: Action<User>) {
       return { ...state, ...payload }
     },
     clearUser() {
       return initialState
     },
-    changeUserAvatar(state, { payload }: PayloadAction<{ fileUrl: string }>) {
+    changeUserAvatar(state, { payload }: Action<{ fileUrl: string }>) {
       state.avatar = payload.fileUrl
     },
-    changeUserBackground(state, { payload }: PayloadAction<{ fileUrl: string }>) {
+    changeUserBackground(state, { payload }: Action<{ fileUrl: string }>) {
       state.background = payload.fileUrl
+    },
+    setStatus(state, { payload }: Action<UserStatus>) {
+      state.status = payload
     }
   },
   extraReducers: (builder) => {

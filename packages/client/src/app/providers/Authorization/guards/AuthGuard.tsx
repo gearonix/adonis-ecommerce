@@ -6,6 +6,7 @@ import appConfig from 'app/config/config'
 import { Routes, routes } from 'shared/config/consts/routes'
 import { AuthSelectors } from 'shared/selectors'
 import { useBooleanState } from 'shared/lib/hooks/useBooleanState'
+import { AuthSocketProvider } from '../socket'
 
 const AuthGuard: FC<{ children: ReactNode }> = ({ children }) => {
   const { isOpen: isLoaded, open: openLoading, close: closeLoading } = useBooleanState()
@@ -23,6 +24,7 @@ const AuthGuard: FC<{ children: ReactNode }> = ({ children }) => {
     }
     // redirect if registered
     if (isAuthorized && forbiddenPaths.authorized.includes(path)) {
+      console.log('YES')
       return router.push(`${routes.USERS}/${userId}`)
     }
 
@@ -39,9 +41,9 @@ const AuthGuard: FC<{ children: ReactNode }> = ({ children }) => {
     }
   }, [isAuthorized])
 
-  return <>
+  return <AuthSocketProvider>
     {isLoaded ? children : <PenPreloader/>}
-  </>
+  </AuthSocketProvider>
 }
 
 export default AuthGuard

@@ -1,10 +1,10 @@
 import { FC, useEffect } from 'react'
 import s from './style.module.scss'
 import { MessengerContent as MessengerContentTemp } from 'entities/Messenger'
-import { useSocket } from 'widgets/Messenger/lib/hooks'
+import { useSocket } from 'shared/lib/hooks'
 
 const MessengerContent: FC = () => {
-  const socket = useSocket()
+  const socket = useSocket('messenger')
 
   useEffect(() => {
     socket.on('message', (data: any) => {

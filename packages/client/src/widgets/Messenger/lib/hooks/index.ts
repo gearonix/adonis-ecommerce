@@ -1,1 +1,1 @@
-export { useSocket } from './useSocket'
+export { useMessengerSocket } from './useMessengerSocket'

@@ -1,5 +1,6 @@
 import { UserRoles } from 'app/config/globals'
 import { ObjectNullable } from 'shared/types/common'
+import { UserStatus } from 'shared/config/consts/others'
 
 export interface User {
     role: UserRoles,
@@ -13,7 +14,8 @@ export interface User {
     city: string
     userId: number,
     registration_date: string,
-    isMe: boolean
+    isMe: boolean,
+    status: UserStatus
 }
 
 export interface UserSlice extends User{
@@ -33,5 +35,6 @@ export const usersInitialState: ObjectNullable<UserSlice> = {
   userId: null,
   registration_date: null,
   isMe: null,
-  isLoading: false
+  isLoading: false,
+  status: null
 }

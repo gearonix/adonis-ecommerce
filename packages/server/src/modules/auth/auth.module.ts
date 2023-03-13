@@ -14,7 +14,7 @@ import { RequestContextModule } from 'nestjs-request-context'
     JwtModule.register({
       secret: process.env.PRIVATE_KEY || appConfig.privateKey,
       signOptions: {
-        expiresIn: '24h'
+        expiresIn: '7d'
       }
     }),
     RequestContextModule

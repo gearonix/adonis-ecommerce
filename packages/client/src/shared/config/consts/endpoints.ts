@@ -31,6 +31,9 @@ const EndPoints = {
     getPosts: '/posts',
     addPost: '/posts/create',
     setPostImage: '/posts/set/images'
+  },
+  MESSENGER: {
+    getRooms: '/messenger/rooms'
   }
 } as const
 
