@@ -9,6 +9,8 @@ var MessengerEvents;
     MessengerEvents["SEND_MESSAGE"] = "sendMessage";
     MessengerEvents["ADD_MESSAGE"] = "addMessage";
     MessengerEvents["UNSUBSCRIBE_FROM_ROOM"] = "unsubscribeFromRoom";
+    MessengerEvents["TYPING"] = "userTyping";
+    MessengerEvents["NO_LONGER_TYPING"] = "userTypingStopped";
 })(MessengerEvents = exports.MessengerEvents || (exports.MessengerEvents = {}));
 var MessengerGroups;
 (function (MessengerGroups) {

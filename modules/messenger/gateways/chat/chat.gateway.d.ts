@@ -11,5 +11,7 @@ export declare class ChatGateway {
     makeRoomSubscription(roomId: number, client: Socket): Promise<void>;
     unsubscribeFromRoom(roomId: number, client: Socket): Promise<void>;
     sendMessage(message: NewMessage, client: Socket): Promise<void>;
+    userTyping(roomId: number, client: Socket): Promise<void>;
+    noLongerTyping(roomId: number, client: Socket): Promise<void>;
     private getUserIdByHeaders;
 }

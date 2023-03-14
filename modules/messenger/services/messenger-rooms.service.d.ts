@@ -7,9 +7,9 @@ export declare class MessengerRoomsService {
     private messages;
     private authService;
     constructor(rooms: Repository<MessengerRoomsEntity>, messages: Repository<UserMessagesEntity>, authService: AuthService);
-    startChat(members: number[]): Promise<MessengerRoomsEntity>;
+    startChat(starterId: number, invitedId: number): Promise<MessengerRoomsEntity>;
     private getRoomByMembers;
-    getUserRooms(userId: number): Promise<any>;
+    getUserRooms(userId: number): Promise<MessengerRoomsEntity[]>;
     selectRoom(roomId: number, userId: number): Promise<UserMessagesEntity[]>;
     saveMessage(message: NewMessage): Promise<NewMessage & UserMessagesEntity>;
     private checkUserHasRoom;

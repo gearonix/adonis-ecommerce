@@ -28,23 +28,25 @@ let MessengerRoomsService = class MessengerRoomsService {
         this.messages = messages;
         this.authService = authService;
     }
-    async startChat(members) {
-        const room = await this.getRoomByMembers(members);
+    async startChat(starterId, invitedId) {
+        const room = await this.getRoomByMembers(starterId, invitedId);
         if (!room) {
-            return this.rooms.save({ members });
+            return this.rooms.save({ starterId, invitedId });
         }
         return room;
     }
-    async getRoomByMembers(members) {
-        const [room] = await this.rooms.query(`SELECT * FROM messenger_rooms WHERE 
-    json_contains(members, json_array(${members.join(', ')}))`);
-        if (room) {
-            return { ...room, members: JSON.parse(room.members) };
-        }
+    async getRoomByMembers(starterId, invitedId) {
+        return this.rooms.findOneBy([{ starterId, invitedId },
+            { starterId: invitedId, invitedId: starterId }]);
     }
     async getUserRooms(userId) {
-        return this.rooms.query(`SELECT * FROM messenger_rooms WHERE 
-    json_contains(members, json_array(${userId}))`);
+        return this.rooms.find({
+            where: [{ starterId: userId }, { invitedId: userId }],
+            relations: {
+                starterUser: true,
+                invitedUser: true
+            }
+        });
     }
     async selectRoom(roomId, userId) {
         await this.checkUserHasRoom(roomId, userId);

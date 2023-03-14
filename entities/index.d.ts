@@ -6,5 +6,5 @@ import { PostsEntity } from './posts.entity';
 import { MessengerRoomsEntity } from './messenger-rooms.entity';
 import { UserMessagesEntity } from './user-messages.entity';
 export { UsersEntity, ProductsEntity, SavedEntity, ProductCommentsEntity, PostsEntity, MessengerRoomsEntity, UserMessagesEntity };
-declare const _default: (typeof ProductCommentsEntity | typeof UsersEntity | typeof PostsEntity | typeof ProductsEntity | typeof SavedEntity | typeof UserMessagesEntity | typeof MessengerRoomsEntity)[];
+declare const _default: (typeof ProductCommentsEntity | typeof UsersEntity | typeof PostsEntity | typeof UserMessagesEntity | typeof MessengerRoomsEntity | typeof ProductsEntity | typeof SavedEntity)[];
 export default _default;

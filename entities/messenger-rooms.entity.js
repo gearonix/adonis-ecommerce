@@ -11,23 +11,41 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MessengerRoomsEntity = void 0;
 const typeorm_1 = require("typeorm");
+const users_entity_1 = require("./users.entity");
 let MessengerRoomsEntity = class MessengerRoomsEntity {
     creationDate;
-    members;
+    starterId;
+    invitedId;
     roomId;
+    starterUser;
+    invitedUser;
 };
 __decorate([
     (0, typeorm_1.CreateDateColumn)(),
     __metadata("design:type", Date)
 ], MessengerRoomsEntity.prototype, "creationDate", void 0);
 __decorate([
-    (0, typeorm_1.Column)('json'),
-    __metadata("design:type", Array)
-], MessengerRoomsEntity.prototype, "members", void 0);
+    (0, typeorm_1.Column)('int'),
+    __metadata("design:type", Number)
+], MessengerRoomsEntity.prototype, "starterId", void 0);
+__decorate([
+    (0, typeorm_1.Column)('int'),
+    __metadata("design:type", Number)
+], MessengerRoomsEntity.prototype, "invitedId", void 0);
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
     __metadata("design:type", Number)
 ], MessengerRoomsEntity.prototype, "roomId", void 0);
+__decorate([
+    (0, typeorm_1.ManyToOne)(() => users_entity_1.UsersEntity),
+    (0, typeorm_1.JoinColumn)({ name: 'starterId', foreignKeyConstraintName: 'FK_rooms_starterId_users', referencedColumnName: 'userId' }),
+    __metadata("design:type", users_entity_1.UsersEntity)
+], MessengerRoomsEntity.prototype, "starterUser", void 0);
+__decorate([
+    (0, typeorm_1.ManyToOne)(() => users_entity_1.UsersEntity),
+    (0, typeorm_1.JoinColumn)({ name: 'invitedId', foreignKeyConstraintName: 'FK_rooms_invitedId_users', referencedColumnName: 'userId' }),
+    __metadata("design:type", users_entity_1.UsersEntity)
+], MessengerRoomsEntity.prototype, "invitedUser", void 0);
 MessengerRoomsEntity = __decorate([
     (0, typeorm_1.Entity)('messenger_rooms')
 ], MessengerRoomsEntity);

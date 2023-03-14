@@ -1,5 +1,9 @@
+import { UsersEntity } from '@entities/users.entity';
 export declare class MessengerRoomsEntity {
     creationDate: Date;
-    members: number[];
+    starterId: number;
+    invitedId: number;
     roomId: number;
+    starterUser: UsersEntity;
+    invitedUser: UsersEntity;
 }

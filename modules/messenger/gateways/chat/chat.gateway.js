@@ -33,7 +33,7 @@ let ChatGateway = class ChatGateway {
     }
     async startChat(invitedId, client) {
         const starterId = await this.getUserIdByHeaders(client);
-        const room = await this.roomsService.startChat([starterId, invitedId]);
+        const room = await this.roomsService.startChat(starterId, invitedId);
         client.emit(types_1.MessengerEvents.ADD_ROOM, room);
     }
     async makeRoomSubscription(roomId, client) {
@@ -48,6 +48,14 @@ let ChatGateway = class ChatGateway {
         client.emit(types_1.MessengerEvents.ADD_MESSAGE, newMessage);
         client.to((0, gatewayGroup_1.gatewayGroup)(types_1.MessengerGroups.MESSENGER_ROOM, message.roomId))
             .emit(types_1.MessengerEvents.ADD_MESSAGE, newMessage);
+    }
+    async userTyping(roomId, client) {
+        client.to((0, gatewayGroup_1.gatewayGroup)(types_1.MessengerGroups.MESSENGER_ROOM, roomId))
+            .emit(types_1.MessengerEvents.TYPING);
+    }
+    async noLongerTyping(roomId, client) {
+        client.to((0, gatewayGroup_1.gatewayGroup)(types_1.MessengerGroups.MESSENGER_ROOM, roomId))
+            .emit(types_1.MessengerEvents.NO_LONGER_TYPING);
     }
     async getUserIdByHeaders(client) {
         const userId = Number(client.handshake.headers.userid);
@@ -90,6 +98,22 @@ __decorate([
     __metadata("design:paramtypes", [Object, socket_io_1.Socket]),
     __metadata("design:returntype", Promise)
 ], ChatGateway.prototype, "sendMessage", null);
+__decorate([
+    (0, websockets_1.SubscribeMessage)(types_1.MessengerEvents.TYPING),
+    __param(0, (0, websockets_1.MessageBody)('roomId')),
+    __param(1, (0, websockets_1.ConnectedSocket)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number, socket_io_1.Socket]),
+    __metadata("design:returntype", Promise)
+], ChatGateway.prototype, "userTyping", null);
+__decorate([
+    (0, websockets_1.SubscribeMessage)(types_1.MessengerEvents.NO_LONGER_TYPING),
+    __param(0, (0, websockets_1.MessageBody)('roomId')),
+    __param(1, (0, websockets_1.ConnectedSocket)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number, socket_io_1.Socket]),
+    __metadata("design:returntype", Promise)
+], ChatGateway.prototype, "noLongerTyping", null);
 ChatGateway = __decorate([
     (0, websockets_1.WebSocketGateway)(config_1.appConfig.socketPort, (0, createGateway_1.createGateway)(global_1.SocketGateWays.MESSENGER)),
     __param(1, (0, common_1.Inject)((0, common_1.forwardRef)(() => messenger_1.MessengerRoomsService))),
