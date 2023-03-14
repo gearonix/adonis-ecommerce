@@ -1,15 +1,23 @@
 import { Nullable } from 'shared/types/common'
+import { User } from 'shared/types/slices/user'
 
 export interface MessengerSlice{
-    rooms: Room[],
+    rooms: {
+        data: Room[],
+        filter: Nullable<string>
+    },
     messages: Message[],
-    selectedId: Nullable<number>
+    selectedId: Nullable<number>,
+    isTyping: boolean
 }
 
 export interface Room{
     roomId: number,
-    members: number[],
-    creationDate: string
+    starterId: number,
+    invitedId: number,
+    creationDate: string,
+    starterUser: User,
+    invitedUser: User
 }
 
 export interface Message{
@@ -21,7 +29,11 @@ export interface Message{
 }
 
 export const messengerInitialState: MessengerSlice = {
-  rooms: [],
+  rooms: {
+    data: [],
+    filter: null
+  },
   messages: [],
-  selectedId: null
+  selectedId: null,
+  isTyping: false
 }

@@ -38,8 +38,8 @@ class Helpers {
 
     return difference
   }
-  public reformatMysqlDate(date: string) {
-    return dayjs(date).format('LL')
+  public reformatMysqlDate(date: string, format = 'LL') {
+    return dayjs(date).format(format)
   }
   public partial<T extends Object>(obj: T): Partial<T> {
     const newObj: Partial<T> = {}

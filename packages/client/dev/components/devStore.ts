@@ -16,6 +16,7 @@ export const DevStore = {
     return null
   },
   set(state: any) {
+    return {}
     if (window) {
       if (process.env.NODE_ENV === 'development') {
         window.onbeforeunload = () => {

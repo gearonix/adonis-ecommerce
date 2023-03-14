@@ -4,20 +4,24 @@ import { SearchMessages } from 'features/Messenger'
 import { useRouter } from 'next/router'
 import { useFilteredEffect } from 'shared/lib/hooks'
 import { useMessengerSocket } from 'widgets/Messenger/lib/hooks'
-import { useDispatch } from 'shared/types/redux'
+import { useDispatch, useSelector } from 'shared/types/redux'
 import { getRooms } from 'widgets/Messenger/store/thunks'
 import { messengerActions } from 'widgets/Messenger'
+import { MessengerSelectors } from 'shared/selectors'
 
 const MessengerHeader: FC = () => {
+  const opponent = useSelector(MessengerSelectors.opponentUser)
   const router = useRouter()
   const targetId = router.query.targetId as string
   const { actions, subscribes } = useMessengerSocket()
   const dispatch = useDispatch()
+  const isTyping = useSelector(MessengerSelectors.isTyping)
 
   useFilteredEffect(() => {
     subscribes.onAddGroup((room) => {
       dispatch(messengerActions.addRoom(room))
     })
+
     actions.startChat(targetId)
   }, [targetId])
 
@@ -25,7 +29,8 @@ const MessengerHeader: FC = () => {
     dispatch(getRooms())
   }, [])
 
-  return <MessengerHeaderTemp Search={SearchMessages}/>
+  return <MessengerHeaderTemp Search={SearchMessages}
+    user={opponent} label={JSON.stringify(isTyping)}/>
 }
 
 export default MessengerHeader

@@ -8,14 +8,12 @@ const messengerSlice = createSlice({
   initialState,
   reducers: {
     setRooms(state, { payload }: Action<Room[]>) {
-      state.rooms = payload.map((room) => {
-        return { ...room, members: JSON.parse(room.members as any) }
-      })
+      state.rooms.data = payload
     },
     addRoom(state, { payload }: Action<Room>) {
-      const ids = state.rooms.map((room) => room.roomId)
+      const ids = state.rooms.data.map((room) => room.roomId)
       if (!ids.includes(payload.roomId)) {
-        state.rooms.unshift(payload)
+        state.rooms.data.unshift(payload)
       }
     },
     setMessages(state, { payload }: Action<Message[]>) {
@@ -32,6 +30,12 @@ const messengerSlice = createSlice({
     },
     clearRoom(state) {
       state.messages = []
+    },
+    changeRoomsFilter(state, { payload }: Action<string>) {
+      state.rooms.filter = payload
+    },
+    setIsTyping(state, { payload }: Action<boolean>) {
+      state.isTyping = payload
     }
   }
 })

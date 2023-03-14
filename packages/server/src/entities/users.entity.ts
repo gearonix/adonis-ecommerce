@@ -2,6 +2,7 @@ import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn } f
 import { ProductCommentsEntity } from '@entities/product-comments.entity'
 import { PostsEntity } from '@app/entities/posts.entity'
 import { Lengths, Roles } from '@app/types/global'
+import { MessengerRoomsEntity } from '@entities/messenger-rooms.entity'
 
 @Entity('users')
 export class UsersEntity {
@@ -33,5 +34,7 @@ export class UsersEntity {
     google_sub: string
   @OneToMany(() => ProductCommentsEntity, (comment) => comment.user)
   @OneToMany(() => PostsEntity, (post) => post.user)
+  @OneToMany(() => MessengerRoomsEntity, (room) => room.starterId)
+  @OneToMany(() => MessengerRoomsEntity, (room) => room.invitedId)
     user: UsersEntity[]
 }

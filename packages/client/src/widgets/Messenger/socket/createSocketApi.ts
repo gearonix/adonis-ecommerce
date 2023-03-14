@@ -11,6 +11,16 @@ const createMessengerSocketApi = (socket: Socket) => {
       onAddMessage(callback: (message: Message) => void) {
         socket.off(MessengerEvents.ADD_MESSAGE)
         socket.on(MessengerEvents.ADD_MESSAGE, callback)
+      },
+      onUserTyping(callback: () => void) {
+        socket.on(MessengerEvents.TYPING, () => {
+          callback()
+        })
+      },
+      onNoLongerTyping(callback: () => void) {
+        socket.on(MessengerEvents.NO_LONGER_TYPING, () => {
+          callback()
+        })
       }
     },
     actions: {
@@ -26,6 +36,14 @@ const createMessengerSocketApi = (socket: Socket) => {
       sendMessage(roomId: number, messageText: string) {
         if (!roomId) return
         socket.emit(MessengerEvents.SEND_MESSAGE, { roomId, messageText })
+      },
+      startTyping(roomId: number) {
+        console.log(roomId)
+        socket.emit(MessengerEvents.TYPING, { roomId })
+      },
+      typingStopped(roomId: number) {
+        console.log(roomId)
+        socket.emit(MessengerEvents.NO_LONGER_TYPING, { roomId })
       }
     }
   }

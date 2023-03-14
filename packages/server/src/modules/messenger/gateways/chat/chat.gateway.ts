@@ -27,7 +27,7 @@ export class ChatGateway {
     ) {
       const starterId = await this.getUserIdByHeaders(client)
 
-      const room = await this.roomsService.startChat([starterId, invitedId])
+      const room = await this.roomsService.startChat(starterId, invitedId)
 
       client.emit(MessengerEvents.ADD_ROOM, room)
     }
@@ -58,6 +58,24 @@ export class ChatGateway {
       client.emit(MessengerEvents.ADD_MESSAGE, newMessage)
       client.to(gatewayGroup(MessengerGroups.MESSENGER_ROOM, message.roomId))
           .emit(MessengerEvents.ADD_MESSAGE, newMessage)
+    }
+
+    @SubscribeMessage(MessengerEvents.TYPING)
+    async userTyping(
+        @MessageBody('roomId') roomId: number,
+        @ConnectedSocket() client: Socket
+    ) {
+      client.to(gatewayGroup(MessengerGroups.MESSENGER_ROOM, roomId))
+          .emit(MessengerEvents.TYPING)
+    }
+
+    @SubscribeMessage(MessengerEvents.NO_LONGER_TYPING)
+    async noLongerTyping(
+        @MessageBody('roomId') roomId: number,
+        @ConnectedSocket() client: Socket
+    ) {
+      client.to(gatewayGroup(MessengerGroups.MESSENGER_ROOM, roomId))
+          .emit(MessengerEvents.NO_LONGER_TYPING)
     }
 
     private async getUserIdByHeaders(client: Socket) {

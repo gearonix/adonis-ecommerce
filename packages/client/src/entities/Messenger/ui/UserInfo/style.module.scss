@@ -9,11 +9,8 @@
 }
 
 .image {
-  position: relative;
-  @include size(48px, 48px);
-  border-radius: 100%;
+  @include  imageWrapper(48px, 48px, 100%);
   margin-right: 17px;
-  overflow: hidden;
 }
 
 .info {

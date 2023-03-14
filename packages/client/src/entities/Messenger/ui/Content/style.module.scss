@@ -2,15 +2,21 @@
 
 .messages_block {
   @include size(100%, calc(88%));
-  overflow-y: auto;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  position: relative;
 
   .messages_wrapper {
     width: 72%;
+    overflow-y: auto;
+    height: 100%;
     margin: 0 auto 20px;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  .scrollToBottom{
+    position: absolute;
+    bottom: 0;
+    right: 0;
   }
 }
 

@@ -9,7 +9,7 @@ import useMeasure from 'react-use-measure'
 import { WithSpring } from 'shared/lib/components'
 
 
-export const Message: FC<MessageProps> = ({ isMine = false, image, message }) => {
+export const Message: FC<MessageProps> = ({ isMine = false, image, message, time }) => {
   const [isOpened, openModal] = useState<boolean>(false)
   const [bind, { height }] = useMeasure()
   return <WithSpring className={cn(isMine ? s.my_message : s.opponent_message)}
@@ -24,7 +24,7 @@ export const Message: FC<MessageProps> = ({ isMine = false, image, message }) =>
         <h4 className={s.title}>{message}</h4>
       </div>
       <div className={s.time_block}>
-        <span>19:48</span>
+        <span>{time}</span>
         <BsCheck2/>
       </div>
     </div>

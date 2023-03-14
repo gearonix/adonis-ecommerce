@@ -1,7 +1,7 @@
 import { forwardRef, HttpException, HttpStatus, Inject, Injectable } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
 import { MessengerRoomsEntity, UserMessagesEntity } from '@app/entities'
-import { Repository } from 'typeorm'
+import { ArrayContains, In, Like, Repository } from 'typeorm'
 import { AuthService } from '@modules/auth'
 import { ServerExceptions } from '@app/types/exceptions'
 import { NewMessage } from '@modules/messenger/gateways/chat/requestTypes'
@@ -17,30 +17,31 @@ export class MessengerRoomsService {
         private authService: AuthService
   ) {}
 
-  async startChat(members: number[]): Promise<MessengerRoomsEntity> {
-    const room = await this.getRoomByMembers(members)
+  async startChat(starterId: number, invitedId: number): Promise<MessengerRoomsEntity> {
+    const room = await this.getRoomByMembers(starterId, invitedId)
 
     if (!room) {
-      return this.rooms.save({ members })
+      return this.rooms.save({ starterId, invitedId })
     }
 
     return room
   }
 
 
-  private async getRoomByMembers(members: number[]) {
-    const [room] = await this.rooms.query(`SELECT * FROM messenger_rooms WHERE 
-    json_contains(members, json_array(${members.join(', ')}))`)
-
-    if (room) {
-      return { ...room, members: JSON.parse(room.members) }
-    }
+  private async getRoomByMembers(starterId: number, invitedId: number) {
+    return this.rooms.findOneBy([{ starterId, invitedId },
+      { starterId: invitedId, invitedId: starterId }])
   }
 
 
   async getUserRooms(userId: number) {
-    return this.rooms.query(`SELECT * FROM messenger_rooms WHERE 
-    json_contains(members, json_array(${userId}))`)
+    return this.rooms.find({
+      where: [{ starterId: userId }, { invitedId: userId }],
+      relations: {
+        starterUser: true,
+        invitedUser: true
+      }
+    })
   }
 
   async selectRoom(roomId: number, userId: number) {

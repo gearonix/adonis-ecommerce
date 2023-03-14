@@ -1,0 +1,1 @@
+export { selectOpponentUser } from './selectOpponentUser'

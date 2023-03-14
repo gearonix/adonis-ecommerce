@@ -13,9 +13,6 @@ export class UserMessagesEntity {
       messageId: number
     @Column('varchar', { length: 200 })
       messageText: string
-  // @JoinColumn({ name: 'roomId', foreignKeyConstraintName:
-  //         'FK_messages_roomId', referencedColumnName: 'roomId' })
-  //   room: MessengerRoomsEntity
 }
 
 

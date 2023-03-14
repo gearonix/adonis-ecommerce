@@ -11,5 +11,6 @@ export interface CartIconProps {
 export interface MessageProps {
     isMine?: boolean,
     message: string,
-    image?: string
+    image?: string,
+    time: string
 }

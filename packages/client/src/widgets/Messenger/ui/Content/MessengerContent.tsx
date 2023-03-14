@@ -9,6 +9,7 @@ import { MessengerSelectors, AuthSelectors } from 'shared/selectors'
 import MessengerInput from '../MessengerInput/MessengerInput'
 import { messengerActions } from 'widgets/Messenger'
 import { useMessengerSocket } from 'widgets/Messenger/lib/hooks'
+import { selectOpponentUser } from 'widgets/Messenger/lib/helpers'
 
 const MessengerContent: FC = () => {
   const dispatch = useDispatch()

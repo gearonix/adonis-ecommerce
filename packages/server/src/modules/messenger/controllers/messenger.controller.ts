@@ -1,6 +1,6 @@
-import { Body, Controller, forwardRef, Get, Inject, Param, Put, UseGuards } from '@nestjs/common'
+import { Body, Controller, forwardRef, Get, Inject, Param, Put } from '@nestjs/common'
 import { MessengerRoomsService } from '@modules/messenger'
-import { AuthGuard, AuthService } from '@modules/auth'
+import { AuthService } from '@modules/auth'
 
 @Controller('messenger')
 export class MessengerController {

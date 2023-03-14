@@ -1,5 +1,5 @@
 export { default as MessengerContent } from './ui/Content/MessengerContent'
 export { default as MessengerUser } from './ui/User/MessengerUser'
-export { default as MessengerHeaderTemp } from './ui/Header/MessengerHeaderTemp'
+export { default as MessengerHeaderTemp } from './ui/Header/MessengerHeaderTemplate'
 export { default as UserInfo } from './ui/UserInfo/UserInfo'
 export { default as MessageBar } from './ui/MessageBar/MessageBar'

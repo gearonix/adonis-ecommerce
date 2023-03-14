@@ -4,7 +4,7 @@
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  margin-top: 17px;
+  margin-bottom: 20px;
   color: black;
 
   .wrapper:has(.image_wrapper) {
@@ -13,13 +13,14 @@
 
   .wrapper {
     margin: 0;
-    min-height: 28px;
+    min-height: 24px;
+    height: max-content;
     max-width: 243px;
     background: #F5F5F5;
     border-radius: 12px;
     position: relative;
     padding: 0 0 10px;
-    min-width: 100px;
+    min-width: 170px;
 
     .image_wrapper {
       cursor: pointer;
@@ -33,7 +34,8 @@
     }
 
     .title_wrapper {
-      @include size(70%);
+      @include size(67%);
+      margin-right: 10px;
 
       .title {
         text-align: left;
@@ -71,14 +73,9 @@
     background: #218aff;
     transition: background 200ms;
 
-    * {
-      color: $color-absolute;
+    .title {
+      color: white;
     }
-
-    .time_block span {
-      color: $color-absolute;
-    }
-
     &:hover {
       background: #3192FF;
     }
@@ -86,7 +83,7 @@
     cursor: pointer;
 
     svg, span {
-      color: $bg-100;
+      color: white;
     }
 
   }

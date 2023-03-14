@@ -1,14 +1,14 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import MessengerHeaderTemp from './MessengerHeaderTemp'
+import MessengerHeaderTemplate from './MessengerHeaderTemplate'
 import { SearchInput } from 'shared/ui/material'
 
 export default {
   title: 'entities/Messenger/MessengerHeaderTemp',
-  component: MessengerHeaderTemp,
+  component: MessengerHeaderTemplate,
   argTypes: {}
-} as ComponentMeta<typeof MessengerHeaderTemp>
+} as ComponentMeta<typeof MessengerHeaderTemplate>
 
-const Template: ComponentStory<typeof MessengerHeaderTemp> = (args) => <MessengerHeaderTemp {...args} />
+const Template: ComponentStory<typeof MessengerHeaderTemplate> = (args) => <MessengerHeaderTemplate {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
