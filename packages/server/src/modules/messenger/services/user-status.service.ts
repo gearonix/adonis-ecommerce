@@ -12,7 +12,6 @@ export class UserStatusService {
 
   removeUser(userId : number) {
     this.onlineUsers = removeElement(this.onlineUsers, userId)
-    console.log(this.onlineUsers)
   }
   getOnlineStatus(userId: number): UserStatus {
     return this.onlineUsers.includes(userId) ? UserStatus.ONLINE: UserStatus.OFFLINE

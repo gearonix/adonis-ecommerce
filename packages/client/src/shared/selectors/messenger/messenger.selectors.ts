@@ -3,7 +3,7 @@ import { RequiredState } from 'app/store/types'
 const MessengerSelectors = {
   rooms: ({ messenger }: RequiredState) => messenger.rooms,
   messages: ({ messenger }: RequiredState) => messenger.messages,
-  selectedId: ({ messenger }: RequiredState) => messenger.selectedId
+  selectedId: ({ messenger }: RequiredState) => messenger.selectedId as number
 }
 
 

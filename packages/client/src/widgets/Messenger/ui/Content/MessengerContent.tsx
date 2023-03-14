@@ -1,7 +1,6 @@
 import { FC, useEffect } from 'react'
 import s from './style.module.scss'
-import { MessageBar, MessengerContent as MessengerContentTemp } from 'entities/Messenger'
-import { useRouter } from 'next/router'
+import { MessengerContent as MessengerContentTemp } from 'entities/Messenger'
 import { useFilteredEffect } from 'shared/lib/hooks'
 import { useDispatch, useSelector } from 'shared/types/redux'
 import { selectRoom } from 'widgets/Messenger/store/thunks'
@@ -12,10 +11,9 @@ import { messengerActions } from 'widgets/Messenger'
 import { useMessengerSocket } from 'widgets/Messenger/lib/hooks'
 
 const MessengerContent: FC = () => {
-  const router = useRouter()
-  const roomId = router.query.roomId as string
   const dispatch = useDispatch()
   const messages = useSelector(MessengerSelectors.messages)
+  const roomId = useSelector(MessengerSelectors.selectedId)
   const userId = useSelector(AuthSelectors.userId)
   const { actions, subscribes } = useMessengerSocket()
 
@@ -28,8 +26,8 @@ const MessengerContent: FC = () => {
 
   useFilteredEffect(() => {
     dispatch(messengerActions.clearRoom())
-    actions.subscribeToRoom(Number(roomId))
-    dispatch(selectRoom(Number(roomId)))
+    actions.subscribeToRoom(roomId)
+    dispatch(selectRoom(roomId))
   }, [roomId])
 
   return <div className={s.messages_main}>

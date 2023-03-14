@@ -20,7 +20,10 @@ const createMessengerSocketApi = (socket: Socket) => {
       subscribeToRoom(roomId: number) {
         socket.emit(MessengerEvents.SUBSCRIBE_TO_ROOM, { roomId })
       },
-      sendMessage(roomId: string, messageText: string) {
+      unsubscribeFromRoom(roomId: number) {
+        socket.emit(MessengerEvents.UNSUBSCRIBE_FROM_ROOM, { roomId })
+      },
+      sendMessage(roomId: number, messageText: string) {
         if (!roomId) return
         socket.emit(MessengerEvents.SEND_MESSAGE, { roomId, messageText })
       }

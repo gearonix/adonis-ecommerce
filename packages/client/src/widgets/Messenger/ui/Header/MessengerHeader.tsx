@@ -18,9 +18,6 @@ const MessengerHeader: FC = () => {
     subscribes.onAddGroup((room) => {
       dispatch(messengerActions.addRoom(room))
     })
-
-
-    console.log('CHANGED', targetId)
     actions.startChat(targetId)
   }, [targetId])
 

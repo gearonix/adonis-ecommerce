@@ -2,25 +2,23 @@ import { FC, ReactNode } from 'react'
 import s from './style.module.scss'
 import { NextImage } from 'shared/ui/kit'
 import { Room } from 'shared/types/slices'
-import Link from 'next/link'
-import { routes } from 'shared/config/consts/routes'
+
 
 interface Props{
-  room: Room
+  room: Room,
+  switchRoom: (id : number) => void,
+  selected: boolean
 }
 
-const MessengerUser: FC<Props> = ({ room }) => {
-  return <Link href={{
-    pathname: routes.MESSENGER,
-    query: { roomId: room.roomId }
-  }}>
+const MessengerUser: FC<Props> = ({ room, switchRoom, selected }) => {
+  return <div onClick={() => switchRoom(room.roomId)}>
     <div className={s.user}>
       <div className={s.wrapper}>
         <div className={s.image}>
           <NextImage src={'/assets/dev/avatar.jpg'}/>
         </div>
         <div className={s.info}>
-          <h3>ROOM_ID: {room.roomId}</h3>
+          <h3>ROOM_ID: {room.roomId} {selected && '#'}</h3>
           <span>Members: {room.members.join(', ')}</span>
         </div>
         <div className={s.time}>
@@ -29,7 +27,7 @@ const MessengerUser: FC<Props> = ({ room }) => {
         </div>
       </div>
     </div>
-  </Link>
+  </div>
 }
 
 export default MessengerUser

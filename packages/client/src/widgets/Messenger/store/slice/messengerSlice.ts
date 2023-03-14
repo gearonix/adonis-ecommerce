@@ -26,23 +26,12 @@ const messengerSlice = createSlice({
     },
     addMessage(state, { payload }: Action<Message>) {
       const ids = state.messages.map(({ messageId }) => messageId)
-      if (!state.messages.length) {
-        state.messages.push(payload)
-        return
-      }
-      console.log(state.messages.length)
-      const roomId = state.messages[0]?.roomId
-      console.log(payload)
-      console.log(roomId)
-      console.log(ids)
-      // remove this
-      if (!ids.includes(payload.messageId) && Number(payload.roomId) === Number(roomId)) {
+      if (!ids.includes(payload.messageId)) {
         state.messages.push(payload)
       }
     },
     clearRoom(state) {
       state.messages = []
-      state.selectedId = null
     }
   }
 })

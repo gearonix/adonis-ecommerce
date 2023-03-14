@@ -31,6 +31,7 @@ export class ChatGateway {
 
       client.emit(MessengerEvents.ADD_ROOM, room)
     }
+
     @SubscribeMessage(MessengerEvents.SUBSCRIBE_TO_ROOM)
     async makeRoomSubscription(
         @MessageBody('roomId') roomId: number,
@@ -38,6 +39,14 @@ export class ChatGateway {
     ) {
       client.join(gatewayGroup(MessengerGroups.MESSENGER_ROOM, roomId))
     }
+    @SubscribeMessage(MessengerEvents.UNSUBSCRIBE_FROM_ROOM)
+    async unsubscribeFromRoom(
+        @MessageBody('roomId') roomId: number,
+        @ConnectedSocket() client: Socket
+    ) {
+      client.leave(gatewayGroup(MessengerGroups.MESSENGER_ROOM, roomId))
+    }
+
     @SubscribeMessage(MessengerEvents.SEND_MESSAGE)
     async sendMessage(
         @MessageBody() message: NewMessage,
@@ -51,10 +60,8 @@ export class ChatGateway {
           .emit(MessengerEvents.ADD_MESSAGE, newMessage)
     }
 
-    async getUserIdByHeaders(client: Socket) {
-      const userId = client.handshake.headers.userid
-      if (userId) {
-        return Number(userId)
-      }
+    private async getUserIdByHeaders(client: Socket) {
+      const userId = Number(client.handshake.headers.userid)
+      return isNaN(userId) ? null : userId
     }
 }

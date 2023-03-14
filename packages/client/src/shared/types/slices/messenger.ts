@@ -1,4 +1,4 @@
-import {Nullable} from 'shared/types/common';
+import { Nullable } from 'shared/types/common'
 
 export interface MessengerSlice{
     rooms: Room[],

@@ -39,7 +39,6 @@ export class MessengerRoomsService {
 
 
   async getUserRooms(userId: number) {
-    console.log(userId)
     return this.rooms.query(`SELECT * FROM messenger_rooms WHERE 
     json_contains(members, json_array(${userId}))`)
   }

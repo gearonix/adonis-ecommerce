@@ -18,7 +18,6 @@ import { forwardRef, Inject, Logger } from '@nestjs/common'
 import { gatewayGroup } from '@modules/messenger/lib/gatewayGroup'
 import { StatusEvents, StatusGroups } from '@modules/messenger/gateways/status/types'
 import { MessengerRoomsService } from '@modules/messenger'
-import { MessengerGroups } from '@modules/messenger/gateways/chat/types'
 
 @WebSocketGateway(appConfig.socketPort, createGateway(SocketGateWays.AUTH))
 export class StatusGateway implements OnGatewayConnection, OnGatewayDisconnect {
