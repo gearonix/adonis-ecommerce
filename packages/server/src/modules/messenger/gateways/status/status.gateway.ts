@@ -38,13 +38,6 @@ export class StatusGateway implements OnGatewayConnection, OnGatewayDisconnect {
     const userId = await this.getUserId(client)
     this.onlineUsers.addUser(userId)
 
-    const rooms = await this.roomsService.getUserRooms(userId)
-
-    for (const room of rooms) {
-      client.join(gatewayGroup(MessengerGroups.MESSENGER_ROOM, room.roomId))
-    }
-
-
     client.to(gatewayGroup(StatusGroups.ONLINE_STATUS, userId))
         .emit(StatusEvents.STATUS_CHANGED, { status: UserStatus.ONLINE })
 

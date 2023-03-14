@@ -4,6 +4,7 @@ import { SavedEntity } from './saved.entity'
 import { ProductCommentsEntity } from './product-comments.entity'
 import { PostsEntity } from './posts.entity'
 import { MessengerRoomsEntity } from './messenger-rooms.entity'
+import { UserMessagesEntity } from './user-messages.entity'
 
 export {
   UsersEntity,
@@ -11,7 +12,8 @@ export {
   SavedEntity,
   ProductCommentsEntity,
   PostsEntity,
-  MessengerRoomsEntity
+  MessengerRoomsEntity,
+  UserMessagesEntity
 }
 
 
@@ -21,6 +23,7 @@ export default [
   SavedEntity,
   ProductCommentsEntity,
   PostsEntity,
-  MessengerRoomsEntity
+  MessengerRoomsEntity,
+  UserMessagesEntity
 ]
 

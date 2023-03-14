@@ -1,6 +1,6 @@
-import { Controller, forwardRef, Get, Inject } from '@nestjs/common'
+import { Body, Controller, forwardRef, Get, Inject, Param, Put, UseGuards } from '@nestjs/common'
 import { MessengerRoomsService } from '@modules/messenger'
-import { AuthService } from '@modules/auth'
+import { AuthGuard, AuthService } from '@modules/auth'
 
 @Controller('messenger')
 export class MessengerController {
@@ -10,10 +10,12 @@ export class MessengerController {
       @Inject(forwardRef(() => AuthService))
       private authService: AuthService
   ) {}
-
-  @Get('/rooms')
-  async getUserRooms() {
-    const userId = await this.authService.getUserId()
+  @Put('/rooms')
+  async getUserRooms(@Body('userId') userId: number) {
     return this.roomsService.getUserRooms(userId)
+  }
+  @Put(':id')
+  async selectRoom(@Param('id') id: string, @Body('userId') userId: number) {
+    return this.roomsService.selectRoom(Number(id), userId)
   }
 }

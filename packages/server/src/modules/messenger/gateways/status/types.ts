@@ -4,7 +4,8 @@ export enum StatusEvents{
 }
 
 export enum StatusGroups{
-    ONLINE_STATUS = 'ONLINE_STATUS'
+    ONLINE_STATUS = 'ONLINE_STATUS',
+    USERS = 'USERS'
 }
 
 

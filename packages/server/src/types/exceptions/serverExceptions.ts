@@ -10,5 +10,6 @@ export enum ServerExceptions {
   FILE_UPLOAD_ERROR = 'An error occurred while writing the file',
   FILE_REMOVAL_ERROR = 'An error occurred while removing the file',
   FORBIDDEN = 'Forbidden for you',
-  INCORRECT_DATA = 'Your data is incorrect'
+  INCORRECT_DATA = 'Your data is incorrect',
+  GROUP_FORBIDDEN = 'User does not have this group'
 }

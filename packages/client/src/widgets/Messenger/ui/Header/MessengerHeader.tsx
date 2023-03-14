@@ -6,6 +6,7 @@ import { useFilteredEffect } from 'shared/lib/hooks'
 import { useMessengerSocket } from 'widgets/Messenger/lib/hooks'
 import { useDispatch } from 'shared/types/redux'
 import { getRooms } from 'widgets/Messenger/store/thunks'
+import { messengerActions } from 'widgets/Messenger'
 
 const MessengerHeader: FC = () => {
   const router = useRouter()
@@ -14,6 +15,11 @@ const MessengerHeader: FC = () => {
   const dispatch = useDispatch()
 
   useFilteredEffect(() => {
+    subscribes.onAddGroup((room) => {
+      dispatch(messengerActions.addRoom(room))
+    })
+
+
     console.log('CHANGED', targetId)
     actions.startChat(targetId)
   }, [targetId])

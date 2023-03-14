@@ -24,7 +24,6 @@ const AuthGuard: FC<{ children: ReactNode }> = ({ children }) => {
     }
     // redirect if registered
     if (isAuthorized && forbiddenPaths.authorized.includes(path)) {
-      console.log('YES')
       return router.push(`${routes.USERS}/${userId}`)
     }
 

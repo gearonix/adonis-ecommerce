@@ -27,7 +27,6 @@ const ProductInfo: FC = () => {
       dispatch(productActions.clearProduct())
     }
   }, [id])
-  console.log(isExists)
 
   return <WithLoading title={'Product'} Icon={CartIcon} when={!isExists} loading={isLoading}
     NotFound={NotFound} Preloader={() => <PenPreloader instantly/>} count={1}>

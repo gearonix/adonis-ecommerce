@@ -4,7 +4,7 @@ import { authSlice } from 'widgets/Login'
 import { cartSlice } from 'widgets/Cart'
 import { savedSlice } from 'features/Saved'
 import { ReducersMapObject } from '@reduxjs/toolkit'
-import { OptionalReducers, RequiredReducers, StateSchema } from 'app/store/types'
+import { StateSchema } from 'app/store/types'
 
 
 interface CreateReducers{

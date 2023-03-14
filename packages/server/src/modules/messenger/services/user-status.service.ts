@@ -8,7 +8,6 @@ export class UserStatusService {
 
   addUser(userId: number) {
     this.onlineUsers = addIfNotExists(this.onlineUsers, userId)
-    console.log(this.onlineUsers)
   }
 
   removeUser(userId : number) {

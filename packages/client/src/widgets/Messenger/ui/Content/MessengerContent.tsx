@@ -1,29 +1,43 @@
 import { FC, useEffect } from 'react'
 import s from './style.module.scss'
-import { MessengerContent as MessengerContentTemp } from 'entities/Messenger'
-import { useSocket } from 'shared/lib/hooks'
+import { MessageBar, MessengerContent as MessengerContentTemp } from 'entities/Messenger'
+import { useRouter } from 'next/router'
+import { useFilteredEffect } from 'shared/lib/hooks'
+import { useDispatch, useSelector } from 'shared/types/redux'
+import { selectRoom } from 'widgets/Messenger/store/thunks'
+import { Display } from 'shared/lib/components'
+import { MessengerSelectors, AuthSelectors } from 'shared/selectors'
+import MessengerInput from '../MessengerInput/MessengerInput'
+import { messengerActions } from 'widgets/Messenger'
+import { useMessengerSocket } from 'widgets/Messenger/lib/hooks'
 
 const MessengerContent: FC = () => {
-  const socket = useSocket('messenger')
+  const router = useRouter()
+  const roomId = router.query.roomId as string
+  const dispatch = useDispatch()
+  const messages = useSelector(MessengerSelectors.messages)
+  const userId = useSelector(AuthSelectors.userId)
+  const { actions, subscribes } = useMessengerSocket()
+
 
   useEffect(() => {
-    socket.on('message', (data: any) => {
-      console.log('RECEIVED SOCKET FROM SERVER:')
-      console.log(data)
+    subscribes.onAddMessage((message) => {
+      dispatch(messengerActions.addMessage(message))
     })
-  }, [socket])
+  }, [])
 
-
-  const TestingSocket = () => {
-    socket.emit('message', {
-      testing: 'immense'
-    })
-  }
+  useFilteredEffect(() => {
+    dispatch(messengerActions.clearRoom())
+    actions.subscribeToRoom(Number(roomId))
+    dispatch(selectRoom(Number(roomId)))
+  }, [roomId])
 
   return <div className={s.messages_main}>
-    <button onClick={TestingSocket}>test socket</button>
     <div className={s.wrapper}>
-      <MessengerContentTemp/>
+      <Display when={roomId}>
+        <MessengerContentTemp messages={messages} userId={userId}/>
+      </Display>
+      <MessengerInput/>
     </div>
   </div>
 }

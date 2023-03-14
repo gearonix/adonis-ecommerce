@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import React, { FC } from 'react'
-import { WithSpring } from 'shared/lib/components'
-import { MessengerAside, MessengerContent, MessengerHeader } from 'widgets/Messenger'
+import { DynamicModuleLoader, WithSpring } from 'shared/lib/components'
+import { MessengerAside, MessengerContent, MessengerHeader, messengerReducer } from 'widgets/Messenger'
 import { ExtraServices } from 'entities/Banners'
 import { RecommendedItems } from 'widgets/Products'
 import { SortedProducts } from 'entities/Products'
@@ -27,4 +27,10 @@ const Messenger: FC = () => {
   </SocketProvider>
 }
 
-export default Messenger
+const MessengerWithReducer: FC = () => {
+  return <DynamicModuleLoader name={'messenger'} reducer={messengerReducer}>
+    <Messenger/>
+  </DynamicModuleLoader>
+}
+
+export default MessengerWithReducer

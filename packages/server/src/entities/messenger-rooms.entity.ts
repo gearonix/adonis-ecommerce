@@ -1,4 +1,5 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from 'typeorm'
+import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm'
+import { UserMessagesEntity } from '@entities/user-messages.entity'
 
 @Entity('messenger_rooms')
 export class MessengerRoomsEntity {
@@ -8,6 +9,8 @@ export class MessengerRoomsEntity {
       members: number[]
     @PrimaryGeneratedColumn()
       roomId: number
+  // @OneToMany(() => UserMessagesEntity, (message) => message.room)
+  //   room: MessengerRoomsEntity[]
 }
 
 
