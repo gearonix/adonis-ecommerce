@@ -29,7 +29,6 @@ const common_1 = require("@nestjs/common");
 const gatewayGroup_1 = require("../../lib/gatewayGroup");
 const types_1 = require("./types");
 const messenger_1 = require("../..");
-const types_2 = require("../chat/types");
 let StatusGateway = StatusGateway_1 = class StatusGateway {
     tokenService;
     onlineUsers;
@@ -44,10 +43,6 @@ let StatusGateway = StatusGateway_1 = class StatusGateway {
     async handleConnection(client) {
         const userId = await this.getUserId(client);
         this.onlineUsers.addUser(userId);
-        const rooms = await this.roomsService.getUserRooms(userId);
-        for (const room of rooms) {
-            client.join((0, gatewayGroup_1.gatewayGroup)(types_2.MessengerGroups.MESSENGER_ROOM, room.roomId));
-        }
         client.to((0, gatewayGroup_1.gatewayGroup)(types_1.StatusGroups.ONLINE_STATUS, userId))
             .emit(types_1.StatusEvents.STATUS_CHANGED, { status: global_1.UserStatus.ONLINE });
         this.logger.log(`Amount of connected sockets: ${this.authServer.sockets.size}`);

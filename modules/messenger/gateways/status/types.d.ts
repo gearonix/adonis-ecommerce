@@ -3,5 +3,6 @@ export declare enum StatusEvents {
     SUBSCRIBE_TO_STATUS = "subscribeToStatus"
 }
 export declare enum StatusGroups {
-    ONLINE_STATUS = "ONLINE_STATUS"
+    ONLINE_STATUS = "ONLINE_STATUS",
+    USERS = "USERS"
 }

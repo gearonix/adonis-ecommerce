@@ -24,7 +24,7 @@ MessengerModule = __decorate([
             user_status_service_1.UserStatusService, messenger_rooms_service_1.MessengerRoomsService],
         controllers: [controllers_1.MessengerController],
         imports: [
-            typeorm_1.TypeOrmModule.forFeature([entities_1.MessengerRoomsEntity]),
+            typeorm_1.TypeOrmModule.forFeature([entities_1.MessengerRoomsEntity, entities_1.UserMessagesEntity]),
             (0, common_1.forwardRef)(() => auth_1.AuthModule)
         ],
         exports: [

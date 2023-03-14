@@ -23,17 +23,28 @@ let MessengerController = class MessengerController {
         this.roomsService = roomsService;
         this.authService = authService;
     }
-    async getUserRooms() {
-        const userId = await this.authService.getUserId();
+    async getUserRooms(userId) {
         return this.roomsService.getUserRooms(userId);
+    }
+    async selectRoom(id, userId) {
+        return this.roomsService.selectRoom(Number(id), userId);
     }
 };
 __decorate([
-    (0, common_1.Get)('/rooms'),
+    (0, common_1.Put)('/rooms'),
+    __param(0, (0, common_1.Body)('userId')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)
 ], MessengerController.prototype, "getUserRooms", null);
+__decorate([
+    (0, common_1.Put)(':id'),
+    __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Body)('userId')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Number]),
+    __metadata("design:returntype", Promise)
+], MessengerController.prototype, "selectRoom", null);
 MessengerController = __decorate([
     (0, common_1.Controller)('messenger'),
     __param(0, (0, common_1.Inject)((0, common_1.forwardRef)(() => messenger_1.MessengerRoomsService))),

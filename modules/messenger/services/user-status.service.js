@@ -14,11 +14,9 @@ let UserStatusService = class UserStatusService {
     onlineUsers = [];
     addUser(userId) {
         this.onlineUsers = (0, helpers_1.addIfNotExists)(this.onlineUsers, userId);
-        console.log(this.onlineUsers);
     }
     removeUser(userId) {
         this.onlineUsers = (0, helpers_1.removeElement)(this.onlineUsers, userId);
-        console.log(this.onlineUsers);
     }
     getOnlineStatus(userId) {
         return this.onlineUsers.includes(userId) ? global_1.UserStatus.ONLINE : global_1.UserStatus.OFFLINE;

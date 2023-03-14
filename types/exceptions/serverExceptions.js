@@ -15,5 +15,6 @@ var ServerExceptions;
     ServerExceptions["FILE_REMOVAL_ERROR"] = "An error occurred while removing the file";
     ServerExceptions["FORBIDDEN"] = "Forbidden for you";
     ServerExceptions["INCORRECT_DATA"] = "Your data is incorrect";
+    ServerExceptions["GROUP_FORBIDDEN"] = "User does not have this group";
 })(ServerExceptions = exports.ServerExceptions || (exports.ServerExceptions = {}));
 //# sourceMappingURL=serverExceptions.js.map

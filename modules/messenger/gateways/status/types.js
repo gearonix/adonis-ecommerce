@@ -9,5 +9,6 @@ var StatusEvents;
 var StatusGroups;
 (function (StatusGroups) {
     StatusGroups["ONLINE_STATUS"] = "ONLINE_STATUS";
+    StatusGroups["USERS"] = "USERS";
 })(StatusGroups = exports.StatusGroups || (exports.StatusGroups = {}));
 //# sourceMappingURL=types.js.map
