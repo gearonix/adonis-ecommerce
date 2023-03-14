@@ -269,7 +269,6 @@ const AuthGuard = ({ children  })=>{
         }
         // redirect if registered
         if (isAuthorized && forbiddenPaths.authorized.includes(path)) {
-            console.log("YES");
             return router.push(`${shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_6__/* .routes.USERS */ ._.USERS}/${userId}`);
         }
         openLoading();

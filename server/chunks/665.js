@@ -25,6 +25,19 @@ module.exports = {
 
 /***/ }),
 
+/***/ 64366:
+/***/ ((module) => {
+
+// Exports
+module.exports = {
+	"message_bar": "style_message_bar__09neC",
+	"image_wrapper": "style_image_wrapper__PWe2o",
+	"send": "style_send__hN2nS"
+};
+
+
+/***/ }),
+
 /***/ 48762:
 /***/ ((module) => {
 
@@ -877,6 +890,7 @@ __webpack_async_result__();
 // This file is for development mode only.
 const DevStore = {
     get () {
+        return {};
         if (window) {
             if (false) {}
         }
@@ -1159,7 +1173,8 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony export */   "AK": () => (/* reexport safe */ _ui_Header_MessengerHeaderTemp__WEBPACK_IMPORTED_MODULE_2__.Z),
 /* harmony export */   "S1": () => (/* reexport safe */ _ui_User_MessengerUser__WEBPACK_IMPORTED_MODULE_1__.Z),
 /* harmony export */   "ao": () => (/* reexport safe */ _ui_UserInfo_UserInfo__WEBPACK_IMPORTED_MODULE_3__.Z),
-/* harmony export */   "cF": () => (/* reexport safe */ _ui_Content_MessengerContent__WEBPACK_IMPORTED_MODULE_0__.Z)
+/* harmony export */   "cF": () => (/* reexport safe */ _ui_Content_MessengerContent__WEBPACK_IMPORTED_MODULE_0__.Z),
+/* harmony export */   "cb": () => (/* reexport safe */ _ui_MessageBar_MessageBar__WEBPACK_IMPORTED_MODULE_4__.Z)
 /* harmony export */ });
 /* harmony import */ var _ui_Content_MessengerContent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71378);
 /* harmony import */ var _ui_User_MessengerUser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(54736);
@@ -1197,30 +1212,18 @@ shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__ = (__webpack_async_dependencies__.the
 
 
 
-const MessengerContent = ()=>{
+const MessengerContent = ({ messages , userId  })=>{
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
         className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_2___default().messages_block),
         children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
             className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_2___default().messages_wrapper),
             children: [
                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__/* .TimeLabel */ .rf, {}),
-                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__/* .Message */ .v0, {
-                    isMine: true,
-                    image: "/assets/dev/electronic_prewiew.svg",
-                    message: "Hello"
-                }),
-                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__/* .Message */ .v0, {
-                    message: "Hi"
-                }),
-                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__/* .Message */ .v0, {
-                    message: "Hi"
-                }),
-                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__/* .Message */ .v0, {
-                    message: "Hi"
-                }),
-                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__/* .Message */ .v0, {
-                    message: "Hi",
-                    isMine: true
+                messages.map((message)=>{
+                    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__/* .Message */ .v0, {
+                        message: message.messageText,
+                        isMine: message.senderId === userId
+                    }, message.messageId);
                 })
             ]
         })
@@ -1268,13 +1271,19 @@ __webpack_async_result__();
 /***/ }),
 
 /***/ 3284:
-/***/ ((module, __unused_webpack___webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20997);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(64366);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_style_module_scss__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var shared_ui_icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(78372);
+/* harmony import */ var features_SearchPage_lib_helpers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6408);
 /* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(57987);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([react_i18next__WEBPACK_IMPORTED_MODULE_2__]);
 react_i18next__WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
@@ -1284,29 +1293,29 @@ react_i18next__WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependencies__.the
 
 
 const MessageBar = ({ placeholder , reg , submit  })=>{
-    const { t  } = useTranslation();
-    return /*#__PURE__*/ _jsxs("article", {
-        className: s.message_bar,
+    const { t  } = (0,react_i18next__WEBPACK_IMPORTED_MODULE_2__.useTranslation)();
+    return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("article", {
+        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_3___default().message_bar),
         children: [
-            /*#__PURE__*/ _jsx("div", {
-                className: s.image_wrapper,
-                children: /*#__PURE__*/ _jsx(AiFillFileAdd, {})
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_3___default().image_wrapper),
+                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_1__/* .AiFillFileAdd */ .QZ, {})
             }),
-            /*#__PURE__*/ _jsx("input", {
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("input", {
                 placeholder: t("Message") || placeholder,
                 maxLength: 150,
                 ...reg("message").inputProps,
-                onKeyDown: onEnter(submit)
+                onKeyDown: (0,features_SearchPage_lib_helpers__WEBPACK_IMPORTED_MODULE_4__/* .onEnter */ .g)(submit)
             }),
-            /*#__PURE__*/ _jsx("div", {
-                className: s.send,
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_3___default().send),
                 onClick: submit,
-                children: /*#__PURE__*/ _jsx(MdSend, {})
+                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_1__/* .MdSend */ .D6, {})
             })
         ]
     });
 };
-/* unused harmony default export */ var __WEBPACK_DEFAULT_EXPORT__ = ((/* unused pure expression or super */ null && (MessageBar)));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MessageBar);
 
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });
@@ -1331,8 +1340,9 @@ shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__ = (__webpack_async_dependencies__.the
 
 
 
-const MessengerUser = ({ SelectUser  })=>{
-    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(SelectUser, {
+const MessengerUser = ({ room , switchRoom , selected  })=>{
+    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+        onClick: ()=>switchRoom(room.roomId),
         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
             className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_2___default().user),
             children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
@@ -1347,11 +1357,19 @@ const MessengerUser = ({ SelectUser  })=>{
                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                         className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_2___default().info),
                         children: [
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h3", {
-                                children: "Test User"
+                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h3", {
+                                children: [
+                                    "ROOM_ID: ",
+                                    room.roomId,
+                                    " ",
+                                    selected && "#"
+                                ]
                             }),
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
-                                children: "Chadgram Web was updated."
+                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("span", {
+                                children: [
+                                    "Members: ",
+                                    room.members.join(", ")
+                                ]
                             })
                         ]
                     }),
@@ -3124,16 +3142,13 @@ __webpack_async_result__();
 "use strict";
 __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "QL": () => (/* reexport safe */ _ui_SearchMessages_SearchMessages__WEBPACK_IMPORTED_MODULE_0__.Z),
-/* harmony export */   "Zd": () => (/* reexport safe */ _ui_SearchUsers_SearchUsers__WEBPACK_IMPORTED_MODULE_1__.Z),
-/* harmony export */   "sq": () => (/* reexport safe */ _ui_SelectUser_SelectUser__WEBPACK_IMPORTED_MODULE_2__.Z)
+/* harmony export */   "Q": () => (/* reexport safe */ _ui_SearchMessages_SearchMessages__WEBPACK_IMPORTED_MODULE_0__.Z),
+/* harmony export */   "Z": () => (/* reexport safe */ _ui_SearchUsers_SearchUsers__WEBPACK_IMPORTED_MODULE_1__.Z)
 /* harmony export */ });
 /* harmony import */ var _ui_SearchMessages_SearchMessages__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(73078);
 /* harmony import */ var _ui_SearchUsers_SearchUsers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(17032);
-/* harmony import */ var _ui_SelectUser_SelectUser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(84287);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_ui_SearchUsers_SearchUsers__WEBPACK_IMPORTED_MODULE_1__]);
 _ui_SearchUsers_SearchUsers__WEBPACK_IMPORTED_MODULE_1__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
-
 
 
 
@@ -3195,26 +3210,6 @@ const SearchUsers = ()=>{
 
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });
-
-/***/ }),
-
-/***/ 84287:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20997);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-
-const SelectUser = ({ children  })=>{
-    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-        children: children
-    });
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SelectUser);
-
 
 /***/ }),
 
@@ -4854,7 +4849,8 @@ const EndPoints = {
         setPostImage: "/posts/set/images"
     },
     MESSENGER: {
-        getRooms: "/messenger/rooms"
+        getRooms: "/messenger/rooms",
+        selectRoom: "/messenger"
     }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (EndPoints);
@@ -6109,6 +6105,7 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony export */   "G0": () => (/* reexport safe */ _user_user_selectors__WEBPACK_IMPORTED_MODULE_0__.Z),
 /* harmony export */   "Jl": () => (/* reexport safe */ _saved_saved_selectors__WEBPACK_IMPORTED_MODULE_5__.Z),
 /* harmony export */   "Um": () => (/* reexport safe */ _dynamicSelectors_post__WEBPACK_IMPORTED_MODULE_6__.Z),
+/* harmony export */   "_5": () => (/* reexport safe */ _messenger_messenger_selectors__WEBPACK_IMPORTED_MODULE_7__.Z),
 /* harmony export */   "ce": () => (/* reexport safe */ _auth_auth_selectors__WEBPACK_IMPORTED_MODULE_3__.Z),
 /* harmony export */   "pQ": () => (/* reexport safe */ _dynamicSelectors_currentProduct__WEBPACK_IMPORTED_MODULE_2__.Z),
 /* harmony export */   "v9": () => (/* reexport safe */ _products_products_selectors__WEBPACK_IMPORTED_MODULE_1__.Z),
@@ -6121,6 +6118,7 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var _cart_cart_selectors__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(35239);
 /* harmony import */ var _saved_saved_selectors__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(74442);
 /* harmony import */ var _dynamicSelectors_post__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(10804);
+/* harmony import */ var _messenger_messenger_selectors__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(63670);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_user_user_selectors__WEBPACK_IMPORTED_MODULE_0__, _auth_auth_selectors__WEBPACK_IMPORTED_MODULE_3__]);
 ([_user_user_selectors__WEBPACK_IMPORTED_MODULE_0__, _auth_auth_selectors__WEBPACK_IMPORTED_MODULE_3__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
@@ -6131,8 +6129,26 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_use
 
 
 
+
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });
+
+/***/ }),
+
+/***/ 63670:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const MessengerSelectors = {
+    rooms: ({ messenger  })=>messenger.rooms,
+    messages: ({ messenger  })=>messenger.messages,
+    selectedId: ({ messenger  })=>messenger.selectedId
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MessengerSelectors);
+
 
 /***/ }),
 
@@ -6308,6 +6324,24 @@ const useDispatch = react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch;
 
 /***/ }),
 
+/***/ 27135:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "y": () => (/* binding */ authInitialState)
+/* harmony export */ });
+const authInitialState = {
+    isAuthorized: null,
+    userId: null,
+    avatar: null,
+    firstName: null,
+    email: null
+};
+
+
+/***/ }),
+
 /***/ 13611:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -6440,6 +6474,7 @@ const usersInitialState = {
 /* harmony export */   "$": () => (/* reexport safe */ react_icons_fi__WEBPACK_IMPORTED_MODULE_0__.FiHeart),
 /* harmony export */   "$0": () => (/* reexport safe */ react_icons_fa__WEBPACK_IMPORTED_MODULE_7__.FaHeart),
 /* harmony export */   "$m": () => (/* reexport safe */ react_icons_ai__WEBPACK_IMPORTED_MODULE_3__.AiOutlineCar),
+/* harmony export */   "D6": () => (/* reexport safe */ react_icons_md__WEBPACK_IMPORTED_MODULE_4__.MdSend),
 /* harmony export */   "Dp": () => (/* reexport safe */ react_icons_bs__WEBPACK_IMPORTED_MODULE_2__.BsInfoLg),
 /* harmony export */   "Eh": () => (/* reexport safe */ react_icons_ai__WEBPACK_IMPORTED_MODULE_3__.AiOutlineFileSearch),
 /* harmony export */   "FQ": () => (/* reexport safe */ react_icons_bs__WEBPACK_IMPORTED_MODULE_2__.BsThreeDotsVertical),
@@ -6451,6 +6486,7 @@ const usersInitialState = {
 /* harmony export */   "LL": () => (/* reexport safe */ react_icons_fa__WEBPACK_IMPORTED_MODULE_7__.FaInfo),
 /* harmony export */   "O1": () => (/* reexport safe */ react_icons_ai__WEBPACK_IMPORTED_MODULE_3__.AiOutlineFileAdd),
 /* harmony export */   "QN": () => (/* reexport safe */ react_icons_hi__WEBPACK_IMPORTED_MODULE_5__.HiOutlineFlag),
+/* harmony export */   "QZ": () => (/* reexport safe */ react_icons_ai__WEBPACK_IMPORTED_MODULE_3__.AiFillFileAdd),
 /* harmony export */   "RB": () => (/* reexport safe */ react_icons_ai__WEBPACK_IMPORTED_MODULE_3__.AiOutlineSearch),
 /* harmony export */   "RF": () => (/* reexport safe */ react_icons_bs__WEBPACK_IMPORTED_MODULE_2__.BsCartPlus),
 /* harmony export */   "RU": () => (/* reexport safe */ react_icons_fi__WEBPACK_IMPORTED_MODULE_0__.FiType),
@@ -10067,7 +10103,6 @@ const ProductInfo = ()=>{
     }, [
         id
     ]);
-    console.log(isExists);
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_10__/* .WithLoading */ .uQ, {
         title: "Product",
         Icon: shared_ui_icons__WEBPACK_IMPORTED_MODULE_11__/* .AiOutlineShoppingCart */ .nx,
@@ -10104,34 +10139,22 @@ __webpack_async_result__();
 
 /***/ }),
 
-/***/ 91730:
+/***/ 26550:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  "Y": () => (/* binding */ authActions),
-  "G": () => (/* binding */ authSlice)
-});
-
-// EXTERNAL MODULE: external "@reduxjs/toolkit"
-var toolkit_ = __webpack_require__(75184);
-;// CONCATENATED MODULE: ./src/shared/types/slices/auth.ts
-const authInitialState = {
-    isAuthorized: null,
-    userId: null,
-    avatar: null,
-    firstName: null,
-    email: null
-};
-
-;// CONCATENATED MODULE: ./src/widgets/Login/store/slice/authReducer.ts
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "G": () => (/* binding */ authSlice),
+/* harmony export */   "Y": () => (/* binding */ authActions)
+/* harmony export */ });
+/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75184);
+/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var shared_types_slices_auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(27135);
 
 
-const authReducer = (0,toolkit_.createSlice)({
+const authReducer = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__.createSlice)({
     name: "auth",
-    initialState: authInitialState,
+    initialState: shared_types_slices_auth__WEBPACK_IMPORTED_MODULE_1__/* .authInitialState */ .y,
     reducers: {
         authorizeUser (state, { payload  }) {
             state.userId = payload.userId;
@@ -10144,7 +10167,7 @@ const authReducer = (0,toolkit_.createSlice)({
             state.isAuthorized = false;
         },
         logout () {
-            return authInitialState;
+            return shared_types_slices_auth__WEBPACK_IMPORTED_MODULE_1__/* .authInitialState */ .y;
         }
     }
 });
@@ -10163,7 +10186,7 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony export */   "m": () => (/* binding */ authorizeUser)
 /* harmony export */ });
 /* harmony import */ var shared_types_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(46391);
-/* harmony import */ var widgets_Login_store_slice_authReducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(91730);
+/* harmony import */ var widgets_Login_store_slice_authReducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(26550);
 /* harmony import */ var shared_lib_helpers_others_httpHelpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(25498);
 /* harmony import */ var features_Saved_store_thunks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(68553);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shared_lib_helpers_others_httpHelpers__WEBPACK_IMPORTED_MODULE_2__, features_Saved_store_thunks__WEBPACK_IMPORTED_MODULE_3__]);
@@ -10289,7 +10312,7 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony export */ });
 /* harmony import */ var shared_types_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(46391);
 /* harmony import */ var widgets_Profile__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51432);
-/* harmony import */ var widgets_Login_store_slice_authReducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(91730);
+/* harmony import */ var widgets_Login_store_slice_authReducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(26550);
 /* harmony import */ var shared_lib_helpers_others_localStorageHelpers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(55045);
 /* harmony import */ var widgets_Cart_store_slice_cartReducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(62273);
 /* harmony import */ var shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(42740);
@@ -10367,8 +10390,15 @@ shared_config_consts_axios__WEBPACK_IMPORTED_MODULE_1__ = (__webpack_async_depen
 
 const endpoint = shared_config_consts_endpoints__WEBPACK_IMPORTED_MODULE_0__/* ["default"].MESSENGER */ .Z.MESSENGER;
 const messengerApi = {
-    getRooms () {
-        return shared_config_consts_axios__WEBPACK_IMPORTED_MODULE_1__/* ["default"].get */ .Z.get(endpoint.getRooms);
+    getRooms (userId) {
+        return shared_config_consts_axios__WEBPACK_IMPORTED_MODULE_1__/* ["default"].put */ .Z.put(endpoint.getRooms, {
+            userId
+        });
+    },
+    selectRoom (roomId, userId) {
+        return shared_config_consts_axios__WEBPACK_IMPORTED_MODULE_1__/* ["default"].put */ .Z.put(`${endpoint.selectRoom}/${roomId}`, {
+            userId
+        });
     }
 };
 
@@ -10386,7 +10416,9 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony export */   "FZ": () => (/* reexport safe */ _ui_Aside_MessengerAside__WEBPACK_IMPORTED_MODULE_0__.Z),
 /* harmony export */   "Jb": () => (/* reexport safe */ _socket_provider_SocketContext__WEBPACK_IMPORTED_MODULE_4__.Z),
 /* harmony export */   "Mn": () => (/* reexport safe */ _ui_Header_MessengerHeader__WEBPACK_IMPORTED_MODULE_2__.Z),
-/* harmony export */   "bC": () => (/* reexport safe */ _api__WEBPACK_IMPORTED_MODULE_5__.b),
+/* harmony export */   "XB": () => (/* reexport safe */ _store_slice_messengerSlice__WEBPACK_IMPORTED_MODULE_7__.X),
+/* harmony export */   "_I": () => (/* reexport safe */ _store_slice_messengerSlice__WEBPACK_IMPORTED_MODULE_7__._),
+/* harmony export */   "bC": () => (/* reexport safe */ _api__WEBPACK_IMPORTED_MODULE_6__.b),
 /* harmony export */   "cF": () => (/* reexport safe */ _ui_Content_MessengerContent__WEBPACK_IMPORTED_MODULE_1__.Z),
 /* harmony export */   "wP": () => (/* reexport safe */ _socket_provider_SocketProvider__WEBPACK_IMPORTED_MODULE_3__.Z)
 /* harmony export */ });
@@ -10395,9 +10427,13 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var _ui_Header_MessengerHeader__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(90327);
 /* harmony import */ var _socket_provider_SocketProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(93405);
 /* harmony import */ var _socket_provider_SocketContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9759);
-/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(73699);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_ui_Aside_MessengerAside__WEBPACK_IMPORTED_MODULE_0__, _ui_Content_MessengerContent__WEBPACK_IMPORTED_MODULE_1__, _ui_Header_MessengerHeader__WEBPACK_IMPORTED_MODULE_2__, _socket_provider_SocketProvider__WEBPACK_IMPORTED_MODULE_3__, _api__WEBPACK_IMPORTED_MODULE_5__]);
-([_ui_Aside_MessengerAside__WEBPACK_IMPORTED_MODULE_0__, _ui_Content_MessengerContent__WEBPACK_IMPORTED_MODULE_1__, _ui_Header_MessengerHeader__WEBPACK_IMPORTED_MODULE_2__, _socket_provider_SocketProvider__WEBPACK_IMPORTED_MODULE_3__, _api__WEBPACK_IMPORTED_MODULE_5__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+/* harmony import */ var _ui_MessengerInput_MessengerInput__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(74279);
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(73699);
+/* harmony import */ var _store_slice_messengerSlice__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(91030);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_ui_Aside_MessengerAside__WEBPACK_IMPORTED_MODULE_0__, _ui_Content_MessengerContent__WEBPACK_IMPORTED_MODULE_1__, _ui_Header_MessengerHeader__WEBPACK_IMPORTED_MODULE_2__, _socket_provider_SocketProvider__WEBPACK_IMPORTED_MODULE_3__, _ui_MessengerInput_MessengerInput__WEBPACK_IMPORTED_MODULE_5__, _api__WEBPACK_IMPORTED_MODULE_6__]);
+([_ui_Aside_MessengerAside__WEBPACK_IMPORTED_MODULE_0__, _ui_Content_MessengerContent__WEBPACK_IMPORTED_MODULE_1__, _ui_Header_MessengerHeader__WEBPACK_IMPORTED_MODULE_2__, _socket_provider_SocketProvider__WEBPACK_IMPORTED_MODULE_3__, _ui_MessengerInput_MessengerInput__WEBPACK_IMPORTED_MODULE_5__, _api__WEBPACK_IMPORTED_MODULE_6__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
+
 
 
 
@@ -10466,19 +10502,51 @@ __webpack_require__.d(__webpack_exports__, {
 var MessengerEvents;
 (function(MessengerEvents) {
     MessengerEvents["START_CHAT"] = "startChat";
+    MessengerEvents["ADD_ROOM"] = "addRoom";
+    MessengerEvents["SUBSCRIBE_TO_ROOM"] = "subscribeToRoom";
+    MessengerEvents["SEND_MESSAGE"] = "sendMessage";
+    MessengerEvents["ADD_MESSAGE"] = "addMessage";
+    MessengerEvents["UNSUBSCRIBE_FROM_ROOM"] = "unsubscribeFromRoom";
 })(MessengerEvents || (MessengerEvents = {}));
 var MessengerGroups;
-(function(MessengerGroups) {})(MessengerGroups || (MessengerGroups = {}));
+(function(MessengerGroups) {
+    MessengerGroups["MESSENGER_ROOM"] = "MESSENGER_ROOM";
+})(MessengerGroups || (MessengerGroups = {}));
 
 ;// CONCATENATED MODULE: ./src/widgets/Messenger/socket/createSocketApi.ts
 
 const createMessengerSocketApi = (socket)=>{
     return {
-        subscribes: {},
+        subscribes: {
+            onAddGroup (callback) {
+                socket.on(MessengerEvents.ADD_ROOM, callback);
+            },
+            onAddMessage (callback) {
+                socket.off(MessengerEvents.ADD_MESSAGE);
+                socket.on(MessengerEvents.ADD_MESSAGE, callback);
+            }
+        },
         actions: {
             startChat (targetId) {
                 socket.emit(MessengerEvents.START_CHAT, {
                     targetId: Number(targetId)
+                });
+            },
+            subscribeToRoom (roomId) {
+                socket.emit(MessengerEvents.SUBSCRIBE_TO_ROOM, {
+                    roomId
+                });
+            },
+            unsubscribeFromRoom (roomId) {
+                socket.emit(MessengerEvents.UNSUBSCRIBE_FROM_ROOM, {
+                    roomId
+                });
+            },
+            sendMessage (roomId, messageText) {
+                if (!roomId) return;
+                socket.emit(MessengerEvents.SEND_MESSAGE, {
+                    roomId,
+                    messageText
                 });
             }
         }
@@ -10520,8 +10588,12 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var dev_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(11985);
 /* harmony import */ var widgets_Messenger_socket_provider_SocketContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9759);
 /* harmony import */ var app_config_globals__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(94254);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([socket_io_client__WEBPACK_IMPORTED_MODULE_1__, dev_components__WEBPACK_IMPORTED_MODULE_3__]);
-([socket_io_client__WEBPACK_IMPORTED_MODULE_1__, dev_components__WEBPACK_IMPORTED_MODULE_3__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+/* harmony import */ var shared_types_redux__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(46391);
+/* harmony import */ var shared_selectors__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(9535);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([socket_io_client__WEBPACK_IMPORTED_MODULE_1__, dev_components__WEBPACK_IMPORTED_MODULE_3__, shared_selectors__WEBPACK_IMPORTED_MODULE_7__]);
+([socket_io_client__WEBPACK_IMPORTED_MODULE_1__, dev_components__WEBPACK_IMPORTED_MODULE_3__, shared_selectors__WEBPACK_IMPORTED_MODULE_7__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
+
 
 
 
@@ -10529,8 +10601,12 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([sock
 
 
 const SocketProvider = ({ children  })=>{
+    const userId = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_6__/* .useSelector */ .v9)(shared_selectors__WEBPACK_IMPORTED_MODULE_7__/* .AuthSelectors.userId */ .ce.userId);
     const connection = (0,socket_io_client__WEBPACK_IMPORTED_MODULE_1__.io)(`${app_config_config__WEBPACK_IMPORTED_MODULE_2__/* ["default"].WEBSOCKET_URL */ .Z.WEBSOCKET_URL}/${app_config_globals__WEBPACK_IMPORTED_MODULE_5__/* .SocketGateWays.messenger */ .oV.messenger}`, {
-        withCredentials: true
+        withCredentials: true,
+        extraHeaders: {
+            userId: userId.toString()
+        }
     });
     dev_components__WEBPACK_IMPORTED_MODULE_3__/* .DevGlobalVars.setSocket */ .Pd.setSocket("messenger", connection);
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(widgets_Messenger_socket_provider_SocketContext__WEBPACK_IMPORTED_MODULE_4__/* ["default"].Provider */ .Z.Provider, {
@@ -10545,28 +10621,170 @@ __webpack_async_result__();
 
 /***/ }),
 
-/***/ 37027:
+/***/ 91030:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "A": () => (/* reexport */ getRooms)
+  "_": () => (/* binding */ messengerActions),
+  "X": () => (/* binding */ messengerReducer)
 });
 
-// EXTERNAL MODULE: ./src/shared/types/redux.ts
-var redux = __webpack_require__(46391);
-;// CONCATENATED MODULE: ./src/widgets/Messenger/store/thunks/getRooms.ts
+// EXTERNAL MODULE: external "@reduxjs/toolkit"
+var toolkit_ = __webpack_require__(75184);
+// EXTERNAL MODULE: ./src/shared/types/slices/user.ts
+var user = __webpack_require__(64187);
+// EXTERNAL MODULE: ./src/shared/types/slices/products.ts
+var products = __webpack_require__(73888);
+// EXTERNAL MODULE: ./src/shared/types/slices/currentProduct.ts
+var currentProduct = __webpack_require__(13611);
+// EXTERNAL MODULE: ./src/shared/types/slices/auth.ts
+var auth = __webpack_require__(27135);
+// EXTERNAL MODULE: ./src/shared/types/slices/post.ts
+var post = __webpack_require__(87262);
+;// CONCATENATED MODULE: ./src/shared/types/slices/messenger.ts
+const messengerInitialState = {
+    rooms: [],
+    messages: [],
+    selectedId: null
+};
 
-const getRooms = (0,redux/* createThunk */.L3)("messenger/GET_ROOMS", async (_, { dispatch , extra  })=>{
-    const rooms = await extra.api.messenger.getRooms();
-    console.log(rooms);
+;// CONCATENATED MODULE: ./src/shared/types/slices/index.ts
+
+
+
+
+
+
+
+;// CONCATENATED MODULE: ./src/widgets/Messenger/store/slice/messengerSlice.ts
+
+
+const messengerSlice = (0,toolkit_.createSlice)({
+    name: "messenger",
+    initialState: messengerInitialState,
+    reducers: {
+        setRooms (state, { payload  }) {
+            state.rooms = payload.map((room)=>{
+                return {
+                    ...room,
+                    members: JSON.parse(room.members)
+                };
+            });
+        },
+        addRoom (state, { payload  }) {
+            const ids = state.rooms.map((room)=>room.roomId);
+            if (!ids.includes(payload.roomId)) {
+                state.rooms.unshift(payload);
+            }
+        },
+        setMessages (state, { payload  }) {
+            state.messages = payload;
+        },
+        changeSelectedRoomId (state, { payload  }) {
+            state.selectedId = payload;
+        },
+        addMessage (state, { payload  }) {
+            const ids = state.messages.map(({ messageId  })=>messageId);
+            if (!ids.includes(payload.messageId)) {
+                state.messages.push(payload);
+            }
+        },
+        clearRoom (state) {
+            state.messages = [];
+        }
+    }
+});
+const messengerActions = messengerSlice.actions;
+const messengerReducer = messengerSlice.reducer;
+
+
+/***/ }),
+
+/***/ 67168:
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "A": () => (/* binding */ getRooms)
+/* harmony export */ });
+/* harmony import */ var shared_types_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(46391);
+/* harmony import */ var shared_lib_helpers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(76460);
+/* harmony import */ var widgets_Messenger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(71341);
+/* harmony import */ var shared_selectors__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9535);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shared_lib_helpers__WEBPACK_IMPORTED_MODULE_1__, widgets_Messenger__WEBPACK_IMPORTED_MODULE_2__, shared_selectors__WEBPACK_IMPORTED_MODULE_3__]);
+([shared_lib_helpers__WEBPACK_IMPORTED_MODULE_1__, widgets_Messenger__WEBPACK_IMPORTED_MODULE_2__, shared_selectors__WEBPACK_IMPORTED_MODULE_3__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
+
+
+
+const getRooms = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_0__/* .createThunk */ .L3)("messenger/GET_ROOMS", async (_, { dispatch , extra , getState  })=>{
+    const userId = shared_selectors__WEBPACK_IMPORTED_MODULE_3__/* .AuthSelectors.userId */ .ce.userId(getState());
+    const rooms = await extra.api.messenger.getRooms(userId);
+    if ((0,shared_lib_helpers__WEBPACK_IMPORTED_MODULE_1__/* .isError */ .VZ)(rooms)) {
+        return;
+    }
+    dispatch(widgets_Messenger__WEBPACK_IMPORTED_MODULE_2__/* .messengerActions.setRooms */ ._I.setRooms(rooms.data));
 });
 
-;// CONCATENATED MODULE: ./src/widgets/Messenger/store/thunks/index.ts
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
+
+/***/ }),
+
+/***/ 37357:
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "A": () => (/* reexport safe */ _getRooms__WEBPACK_IMPORTED_MODULE_0__.A),
+/* harmony export */   "c": () => (/* reexport safe */ _selectRoom__WEBPACK_IMPORTED_MODULE_1__.c)
+/* harmony export */ });
+/* harmony import */ var _getRooms__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67168);
+/* harmony import */ var _selectRoom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6533);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_getRooms__WEBPACK_IMPORTED_MODULE_0__, _selectRoom__WEBPACK_IMPORTED_MODULE_1__]);
+([_getRooms__WEBPACK_IMPORTED_MODULE_0__, _selectRoom__WEBPACK_IMPORTED_MODULE_1__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
+
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
+
+/***/ }),
+
+/***/ 6533:
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "c": () => (/* binding */ selectRoom)
+/* harmony export */ });
+/* harmony import */ var shared_types_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(46391);
+/* harmony import */ var shared_lib_helpers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(76460);
+/* harmony import */ var widgets_Messenger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(71341);
+/* harmony import */ var shared_selectors__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9535);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shared_lib_helpers__WEBPACK_IMPORTED_MODULE_1__, widgets_Messenger__WEBPACK_IMPORTED_MODULE_2__, shared_selectors__WEBPACK_IMPORTED_MODULE_3__]);
+([shared_lib_helpers__WEBPACK_IMPORTED_MODULE_1__, widgets_Messenger__WEBPACK_IMPORTED_MODULE_2__, shared_selectors__WEBPACK_IMPORTED_MODULE_3__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
+
+
+
+const selectRoom = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_0__/* .createThunk */ .L3)("messenger/SELECT_ROOM", async (roomId, { dispatch , extra , getState  })=>{
+    const userId = shared_selectors__WEBPACK_IMPORTED_MODULE_3__/* .AuthSelectors.userId */ .ce.userId(getState());
+    const messages = await extra.api.messenger.selectRoom(roomId, userId);
+    if ((0,shared_lib_helpers__WEBPACK_IMPORTED_MODULE_1__/* .isError */ .VZ)(messages)) {
+        return;
+    }
+    dispatch(widgets_Messenger__WEBPACK_IMPORTED_MODULE_2__/* .messengerActions.setMessages */ ._I.setMessages(messages.data));
+});
+
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -10580,31 +10798,43 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20997);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(32717);
-/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_style_module_scss__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(32717);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_style_module_scss__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var features_Messenger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(59831);
 /* harmony import */ var entities_Messenger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(39252);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([features_Messenger__WEBPACK_IMPORTED_MODULE_1__, entities_Messenger__WEBPACK_IMPORTED_MODULE_2__]);
-([features_Messenger__WEBPACK_IMPORTED_MODULE_1__, entities_Messenger__WEBPACK_IMPORTED_MODULE_2__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+/* harmony import */ var shared_types_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(46391);
+/* harmony import */ var shared_selectors__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9535);
+/* harmony import */ var widgets_Messenger__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(71341);
+/* harmony import */ var widgets_Messenger_lib_hooks__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(50670);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([features_Messenger__WEBPACK_IMPORTED_MODULE_1__, entities_Messenger__WEBPACK_IMPORTED_MODULE_2__, shared_selectors__WEBPACK_IMPORTED_MODULE_4__, widgets_Messenger__WEBPACK_IMPORTED_MODULE_5__, widgets_Messenger_lib_hooks__WEBPACK_IMPORTED_MODULE_6__]);
+([features_Messenger__WEBPACK_IMPORTED_MODULE_1__, entities_Messenger__WEBPACK_IMPORTED_MODULE_2__, shared_selectors__WEBPACK_IMPORTED_MODULE_4__, widgets_Messenger__WEBPACK_IMPORTED_MODULE_5__, widgets_Messenger_lib_hooks__WEBPACK_IMPORTED_MODULE_6__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
+
+
 
 
 
 
 
 const MessengerAside = ()=>{
+    const rooms = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_3__/* .useSelector */ .v9)(shared_selectors__WEBPACK_IMPORTED_MODULE_4__/* .MessengerSelectors.rooms */ ._5.rooms);
+    const selectedId = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_3__/* .useSelector */ .v9)(shared_selectors__WEBPACK_IMPORTED_MODULE_4__/* .MessengerSelectors.selectedId */ ._5.selectedId);
+    const dispatch = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_3__/* .useDispatch */ .I0)();
+    const { actions  } = (0,widgets_Messenger_lib_hooks__WEBPACK_IMPORTED_MODULE_6__/* .useMessengerSocket */ ._)();
+    const switchRoom = (id)=>{
+        actions.unsubscribeFromRoom(selectedId);
+        dispatch(widgets_Messenger__WEBPACK_IMPORTED_MODULE_5__/* .messengerActions.changeSelectedRoomId */ ._I.changeSelectedRoomId(id));
+    };
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("aside", {
-        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_3___default().messenger_aside),
+        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().messenger_aside),
         children: [
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(features_Messenger__WEBPACK_IMPORTED_MODULE_1__/* .SearchUsers */ .Zd, {}),
-            [
-                1,
-                2,
-                3,
-                4
-            ].map((i)=>{
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(features_Messenger__WEBPACK_IMPORTED_MODULE_1__/* .SearchUsers */ .Z, {}),
+            rooms.map((room, idx)=>{
                 return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(entities_Messenger__WEBPACK_IMPORTED_MODULE_2__/* .MessengerUser */ .S1, {
-                    SelectUser: features_Messenger__WEBPACK_IMPORTED_MODULE_1__/* .SelectUser */ .sq
-                }, i);
+                    room: room,
+                    switchRoom: switchRoom,
+                    selected: room.roomId === selectedId
+                }, idx);
             })
         ]
     });
@@ -10628,44 +10858,64 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(16689);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(62084);
-/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_style_module_scss__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(62084);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_style_module_scss__WEBPACK_IMPORTED_MODULE_11__);
 /* harmony import */ var entities_Messenger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(39252);
 /* harmony import */ var shared_lib_hooks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(50575);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([entities_Messenger__WEBPACK_IMPORTED_MODULE_2__, shared_lib_hooks__WEBPACK_IMPORTED_MODULE_3__]);
-([entities_Messenger__WEBPACK_IMPORTED_MODULE_2__, shared_lib_hooks__WEBPACK_IMPORTED_MODULE_3__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+/* harmony import */ var shared_types_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(46391);
+/* harmony import */ var widgets_Messenger_store_thunks__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(37357);
+/* harmony import */ var shared_lib_components__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(23296);
+/* harmony import */ var shared_selectors__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(9535);
+/* harmony import */ var _MessengerInput_MessengerInput__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(74279);
+/* harmony import */ var widgets_Messenger__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(71341);
+/* harmony import */ var widgets_Messenger_lib_hooks__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(50670);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([entities_Messenger__WEBPACK_IMPORTED_MODULE_2__, shared_lib_hooks__WEBPACK_IMPORTED_MODULE_3__, widgets_Messenger_store_thunks__WEBPACK_IMPORTED_MODULE_5__, shared_lib_components__WEBPACK_IMPORTED_MODULE_6__, shared_selectors__WEBPACK_IMPORTED_MODULE_7__, _MessengerInput_MessengerInput__WEBPACK_IMPORTED_MODULE_8__, widgets_Messenger__WEBPACK_IMPORTED_MODULE_9__, widgets_Messenger_lib_hooks__WEBPACK_IMPORTED_MODULE_10__]);
+([entities_Messenger__WEBPACK_IMPORTED_MODULE_2__, shared_lib_hooks__WEBPACK_IMPORTED_MODULE_3__, widgets_Messenger_store_thunks__WEBPACK_IMPORTED_MODULE_5__, shared_lib_components__WEBPACK_IMPORTED_MODULE_6__, shared_selectors__WEBPACK_IMPORTED_MODULE_7__, _MessengerInput_MessengerInput__WEBPACK_IMPORTED_MODULE_8__, widgets_Messenger__WEBPACK_IMPORTED_MODULE_9__, widgets_Messenger_lib_hooks__WEBPACK_IMPORTED_MODULE_10__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
+
+
+
+
+
+
 
 
 
 
 
 const MessengerContent = ()=>{
-    const socket = (0,shared_lib_hooks__WEBPACK_IMPORTED_MODULE_3__/* .useSocket */ .sV)("messenger");
+    const dispatch = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_4__/* .useDispatch */ .I0)();
+    const messages = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_4__/* .useSelector */ .v9)(shared_selectors__WEBPACK_IMPORTED_MODULE_7__/* .MessengerSelectors.messages */ ._5.messages);
+    const roomId = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_4__/* .useSelector */ .v9)(shared_selectors__WEBPACK_IMPORTED_MODULE_7__/* .MessengerSelectors.selectedId */ ._5.selectedId);
+    const userId = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_4__/* .useSelector */ .v9)(shared_selectors__WEBPACK_IMPORTED_MODULE_7__/* .AuthSelectors.userId */ .ce.userId);
+    const { actions , subscribes  } = (0,widgets_Messenger_lib_hooks__WEBPACK_IMPORTED_MODULE_10__/* .useMessengerSocket */ ._)();
     (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{
-        socket.on("message", (data)=>{
-            console.log("RECEIVED SOCKET FROM SERVER:");
-            console.log(data);
+        subscribes.onAddMessage((message)=>{
+            dispatch(widgets_Messenger__WEBPACK_IMPORTED_MODULE_9__/* .messengerActions.addMessage */ ._I.addMessage(message));
         });
+    }, []);
+    (0,shared_lib_hooks__WEBPACK_IMPORTED_MODULE_3__/* .useFilteredEffect */ .El)(()=>{
+        dispatch(widgets_Messenger__WEBPACK_IMPORTED_MODULE_9__/* .messengerActions.clearRoom */ ._I.clearRoom());
+        actions.subscribeToRoom(roomId);
+        dispatch((0,widgets_Messenger_store_thunks__WEBPACK_IMPORTED_MODULE_5__/* .selectRoom */ .c)(roomId));
     }, [
-        socket
+        roomId
     ]);
-    const TestingSocket = ()=>{
-        socket.emit("message", {
-            testing: "immense"
-        });
-    };
-    return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_4___default().messages_main),
-        children: [
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
-                onClick: TestingSocket,
-                children: "test socket"
-            }),
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_4___default().wrapper),
-                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(entities_Messenger__WEBPACK_IMPORTED_MODULE_2__/* .MessengerContent */ .cF, {})
-            })
-        ]
+    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_11___default().messages_main),
+        children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+            className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_11___default().wrapper),
+            children: [
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_lib_components__WEBPACK_IMPORTED_MODULE_6__/* .Display */ .sS, {
+                    when: roomId,
+                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(entities_Messenger__WEBPACK_IMPORTED_MODULE_2__/* .MessengerContent */ .cF, {
+                        messages: messages,
+                        userId: userId
+                    })
+                }),
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_MessengerInput_MessengerInput__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {})
+            ]
+        })
     });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MessengerContent);
@@ -10694,9 +10944,11 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var shared_lib_hooks__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(50575);
 /* harmony import */ var widgets_Messenger_lib_hooks__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(50670);
 /* harmony import */ var shared_types_redux__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(46391);
-/* harmony import */ var widgets_Messenger_store_thunks__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(37027);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([entities_Messenger__WEBPACK_IMPORTED_MODULE_2__, features_Messenger__WEBPACK_IMPORTED_MODULE_3__, shared_lib_hooks__WEBPACK_IMPORTED_MODULE_5__, widgets_Messenger_lib_hooks__WEBPACK_IMPORTED_MODULE_6__]);
-([entities_Messenger__WEBPACK_IMPORTED_MODULE_2__, features_Messenger__WEBPACK_IMPORTED_MODULE_3__, shared_lib_hooks__WEBPACK_IMPORTED_MODULE_5__, widgets_Messenger_lib_hooks__WEBPACK_IMPORTED_MODULE_6__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+/* harmony import */ var widgets_Messenger_store_thunks__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(37357);
+/* harmony import */ var widgets_Messenger__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(71341);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([entities_Messenger__WEBPACK_IMPORTED_MODULE_2__, features_Messenger__WEBPACK_IMPORTED_MODULE_3__, shared_lib_hooks__WEBPACK_IMPORTED_MODULE_5__, widgets_Messenger_lib_hooks__WEBPACK_IMPORTED_MODULE_6__, widgets_Messenger_store_thunks__WEBPACK_IMPORTED_MODULE_8__, widgets_Messenger__WEBPACK_IMPORTED_MODULE_9__]);
+([entities_Messenger__WEBPACK_IMPORTED_MODULE_2__, features_Messenger__WEBPACK_IMPORTED_MODULE_3__, shared_lib_hooks__WEBPACK_IMPORTED_MODULE_5__, widgets_Messenger_lib_hooks__WEBPACK_IMPORTED_MODULE_6__, widgets_Messenger_store_thunks__WEBPACK_IMPORTED_MODULE_8__, widgets_Messenger__WEBPACK_IMPORTED_MODULE_9__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
 
 
 
@@ -10712,7 +10964,9 @@ const MessengerHeader = ()=>{
     const { actions , subscribes  } = (0,widgets_Messenger_lib_hooks__WEBPACK_IMPORTED_MODULE_6__/* .useMessengerSocket */ ._)();
     const dispatch = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_7__/* .useDispatch */ .I0)();
     (0,shared_lib_hooks__WEBPACK_IMPORTED_MODULE_5__/* .useFilteredEffect */ .El)(()=>{
-        console.log("CHANGED", targetId);
+        subscribes.onAddGroup((room)=>{
+            dispatch(widgets_Messenger__WEBPACK_IMPORTED_MODULE_9__/* .messengerActions.addRoom */ ._I.addRoom(room));
+        });
         actions.startChat(targetId);
     }, [
         targetId
@@ -10721,10 +10975,52 @@ const MessengerHeader = ()=>{
         dispatch((0,widgets_Messenger_store_thunks__WEBPACK_IMPORTED_MODULE_8__/* .getRooms */ .A)());
     }, []);
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(entities_Messenger__WEBPACK_IMPORTED_MODULE_2__/* .MessengerHeaderTemp */ .AK, {
-        Search: features_Messenger__WEBPACK_IMPORTED_MODULE_3__/* .SearchMessages */ .QL
+        Search: features_Messenger__WEBPACK_IMPORTED_MODULE_3__/* .SearchMessages */ .Q
     });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MessengerHeader);
+
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
+
+/***/ }),
+
+/***/ 74279:
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20997);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var shared_lib_hooks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(50575);
+/* harmony import */ var entities_Messenger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(39252);
+/* harmony import */ var widgets_Messenger_lib_hooks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(50670);
+/* harmony import */ var shared_types_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(46391);
+/* harmony import */ var shared_selectors__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9535);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shared_lib_hooks__WEBPACK_IMPORTED_MODULE_1__, entities_Messenger__WEBPACK_IMPORTED_MODULE_2__, widgets_Messenger_lib_hooks__WEBPACK_IMPORTED_MODULE_3__, shared_selectors__WEBPACK_IMPORTED_MODULE_5__]);
+([shared_lib_hooks__WEBPACK_IMPORTED_MODULE_1__, entities_Messenger__WEBPACK_IMPORTED_MODULE_2__, widgets_Messenger_lib_hooks__WEBPACK_IMPORTED_MODULE_3__, shared_selectors__WEBPACK_IMPORTED_MODULE_5__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
+
+
+
+
+
+const MessengerInput = ()=>{
+    const { submit , reg  } = (0,shared_lib_hooks__WEBPACK_IMPORTED_MODULE_1__/* .useForm */ .cI)(null);
+    const { actions  } = (0,widgets_Messenger_lib_hooks__WEBPACK_IMPORTED_MODULE_3__/* .useMessengerSocket */ ._)();
+    const roomId = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_4__/* .useSelector */ .v9)(shared_selectors__WEBPACK_IMPORTED_MODULE_5__/* .MessengerSelectors.selectedId */ ._5.selectedId);
+    const onSubmit = ({ message  })=>{
+        actions.sendMessage(roomId, message);
+    };
+    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(entities_Messenger__WEBPACK_IMPORTED_MODULE_2__/* .MessageBar */ .cb, {
+        submit: submit(onSubmit),
+        reg: reg
+    });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MessengerInput);
 
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });
