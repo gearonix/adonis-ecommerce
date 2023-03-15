@@ -8,18 +8,20 @@ import { useTranslation } from 'react-i18next'
 export interface MessageBarProps {
   placeholder?: string,
   reg: CreateFieldValues<{message: string}>,
-  submit: () => void
+  submit: () => void,
+  onChange: () => void
 }
 
 
-const MessageBar: FC<MessageBarProps> = ({ placeholder, reg, submit }) => {
+const MessageBar: FC<MessageBarProps> = ({ placeholder, reg, submit, onChange }) => {
   const { t } = useTranslation()
   return <article className={s.message_bar}>
     <div className={s.image_wrapper}>
       <AiFillFileAdd/>
     </div>
-    <input placeholder={t('Message') || placeholder } maxLength={150} {...reg('message').inputProps}
-      onKeyDown={onEnter(submit)}/>
+    <input placeholder={t('Message') || placeholder }
+      maxLength={150} {...reg('message').inputProps}
+      onKeyDown={onChange}/>
     <div className={s.send} onClick={submit}>
       <MdSend/>
     </div>

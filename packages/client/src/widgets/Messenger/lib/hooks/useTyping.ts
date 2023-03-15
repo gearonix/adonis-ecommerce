@@ -30,7 +30,9 @@ export const useTyping = () => {
   }, [])
 
   return (roomId: number) => {
+    console.log('roomId', roomId)
     if (!timeout.current) {
+      console.log('no timeout current')
       actions.startTyping(roomId)
       timeout.current = setTimeout(onEndTyping(roomId), 3000)
       return

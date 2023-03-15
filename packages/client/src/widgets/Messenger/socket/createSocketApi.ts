@@ -38,11 +38,9 @@ const createMessengerSocketApi = (socket: Socket) => {
         socket.emit(MessengerEvents.SEND_MESSAGE, { roomId, messageText })
       },
       startTyping(roomId: number) {
-        console.log(roomId)
         socket.emit(MessengerEvents.TYPING, { roomId })
       },
       typingStopped(roomId: number) {
-        console.log(roomId)
         socket.emit(MessengerEvents.NO_LONGER_TYPING, { roomId })
       }
     }

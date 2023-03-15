@@ -7,7 +7,7 @@ import { useMessengerSocket } from 'widgets/Messenger/lib/hooks'
 import { useDispatch, useSelector } from 'shared/types/redux'
 import { getRooms } from 'widgets/Messenger/store/thunks'
 import { messengerActions } from 'widgets/Messenger'
-import { MessengerSelectors } from 'shared/selectors'
+import { AuthSelectors, MessengerSelectors } from 'shared/selectors'
 
 const MessengerHeader: FC = () => {
   const opponent = useSelector(MessengerSelectors.opponentUser)
@@ -16,6 +16,8 @@ const MessengerHeader: FC = () => {
   const { actions, subscribes } = useMessengerSocket()
   const dispatch = useDispatch()
   const isTyping = useSelector(MessengerSelectors.isTyping)
+  const authUserId = useSelector(AuthSelectors.userId)
+
 
   useFilteredEffect(() => {
     subscribes.onAddGroup((room) => {
@@ -24,6 +26,15 @@ const MessengerHeader: FC = () => {
 
     actions.startChat(targetId)
   }, [targetId])
+
+  useEffect(() => {
+    subscribes.onUserTyping(() => {
+      dispatch(messengerActions.setIsTyping(true))
+    })
+    subscribes.onNoLongerTyping(() => {
+      dispatch(messengerActions.setIsTyping(false))
+    })
+  }, [])
 
   useEffect(() => {
     dispatch(getRooms())

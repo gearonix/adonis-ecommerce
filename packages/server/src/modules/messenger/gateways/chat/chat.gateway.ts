@@ -65,8 +65,9 @@ export class ChatGateway {
         @MessageBody('roomId') roomId: number,
         @ConnectedSocket() client: Socket
     ) {
+      const userId = await this.getUserIdByHeaders(client)
       client.to(gatewayGroup(MessengerGroups.MESSENGER_ROOM, roomId))
-          .emit(MessengerEvents.TYPING)
+          .emit(MessengerEvents.TYPING, { userId })
     }
 
     @SubscribeMessage(MessengerEvents.NO_LONGER_TYPING)
@@ -74,8 +75,9 @@ export class ChatGateway {
         @MessageBody('roomId') roomId: number,
         @ConnectedSocket() client: Socket
     ) {
+      const userId = await this.getUserIdByHeaders(client)
       client.to(gatewayGroup(MessengerGroups.MESSENGER_ROOM, roomId))
-          .emit(MessengerEvents.NO_LONGER_TYPING)
+          .emit(MessengerEvents.NO_LONGER_TYPING, { userId })
     }
 
     private async getUserIdByHeaders(client: Socket) {

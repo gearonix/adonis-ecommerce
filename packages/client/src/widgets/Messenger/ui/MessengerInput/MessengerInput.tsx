@@ -1,10 +1,10 @@
-import { FC, useEffect } from 'react'
+import { FC, useEffect, useRef, useState } from 'react'
 import { useForm } from 'shared/lib/hooks'
 import { MessageBar } from 'entities/Messenger'
 import { useMessengerSocket } from 'widgets/Messenger/lib/hooks'
-import { useSelector } from 'shared/types/redux'
-import { MessengerSelectors } from 'shared/selectors'
-import { useTyping } from 'widgets/Messenger/lib/hooks/useTyping'
+import { useDispatch, useSelector } from 'shared/types/redux'
+import { MessengerSelectors, AuthSelectors } from 'shared/selectors'
+import { messengerActions } from 'widgets/Messenger'
 
 
 interface MessengerForm{
@@ -12,10 +12,24 @@ interface MessengerForm{
 }
 
 const MessengerInput : FC = () => {
-  const { submit, reg, setValue, watch, getValues } = useForm<MessengerForm>(null)
-  const { actions } = useMessengerSocket()
+  const { submit, reg, setValue } = useForm<MessengerForm>(null)
+  const { actions, subscribes } = useMessengerSocket()
   const roomId = useSelector(MessengerSelectors.selectedId)
-  const onChange = useTyping()
+  const dispatch = useDispatch()
+  const timeout = useRef<any>()
+  const userId = useSelector(AuthSelectors.userId)
+  const [isTyping, setIsTyping] = useState(false)
+
+  // const onChange = useTyping()
+
+  useEffect(() => {
+    subscribes.onUserTyping(() => {
+      dispatch(messengerActions.setIsTyping(true))
+    })
+    subscribes.onNoLongerTyping(() => {
+      dispatch(messengerActions.setIsTyping(false))
+    })
+  }, [])
 
   const onSubmit = ({ message }: MessengerForm) => {
     if (message) {
@@ -25,17 +39,26 @@ const MessengerInput : FC = () => {
     setValue('message', '')
   }
 
-  useEffect(() => {
-    const sub = watch(() => {
-      if (getValues().message) {
-        onChange(roomId)
-      }
-    })
-    return () => sub.unsubscribe()
-  }, [])
+  const onEndTyping = () => {
+    actions.typingStopped(roomId)
+    setIsTyping(false)
+  }
+
+  const onChange = () => {
+    console.log('roomId', roomId)
+    if (!isTyping) {
+      console.log('no isTyping')
+      actions.startTyping(roomId)
+      setIsTyping(true)
+      timeout.current = setTimeout(onEndTyping, 3000)
+      return
+    }
+    clearTimeout(timeout.current)
+    timeout.current = setTimeout(onEndTyping, 3000)
+  }
 
 
-  return <MessageBar submit={submit(onSubmit)} reg={reg}/>
+  return <MessageBar submit={submit(onSubmit)} reg={reg} onChange={onChange}/>
 }
 
 
