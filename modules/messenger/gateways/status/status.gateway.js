@@ -45,6 +45,10 @@ let StatusGateway = StatusGateway_1 = class StatusGateway {
         this.onlineUsers.addUser(userId);
         client.to((0, gatewayGroup_1.gatewayGroup)(types_1.StatusGroups.ONLINE_STATUS, userId))
             .emit(types_1.StatusEvents.STATUS_CHANGED, { status: global_1.UserStatus.ONLINE });
+        const rooms = await this.roomsService.getUserRooms(userId);
+        for (const room of rooms) {
+            client.join((0, gatewayGroup_1.gatewayGroup)(types_1.StatusGroups.LISTENERS, room.roomId));
+        }
         this.logger.log(`Amount of connected sockets: ${this.authServer.sockets.size}`);
     }
     async handleDisconnect(client) {
@@ -56,6 +60,8 @@ let StatusGateway = StatusGateway_1 = class StatusGateway {
     }
     async subscribeUser(targetId, client) {
         client.join((0, gatewayGroup_1.gatewayGroup)(types_1.StatusGroups.ONLINE_STATUS, targetId));
+        const status = this.onlineUsers.getOnlineStatus(targetId);
+        client.emit(types_1.StatusEvents.STATUS_CHANGED, { status });
     }
     async getUserId(client) {
         const cookies = client.handshake.headers.cookie;

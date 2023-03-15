@@ -35,7 +35,6 @@ const exceptions_1 = require("../../types/exceptions");
 const fs = __importStar(require("fs"));
 const path = __importStar(require("path"));
 const uuid = __importStar(require("uuid"));
-const nestjs_request_context_1 = require("nestjs-request-context");
 const config_1 = require("../../config");
 const helpers_1 = require("../../lib/helpers");
 let FilesService = class FilesService {
@@ -62,8 +61,7 @@ let FilesService = class FilesService {
         }
     }
     async fileToUrl(fileName, mode) {
-        const req = (0, helpers_1.getRequest)(nestjs_request_context_1.RequestContext);
-        return `${req.protocol}://${req.get('Host')}/${config_1.appConfig.globalPrefix}/static/${mode}/${fileName}`;
+        return `${config_1.appConfig.serverUrl}/${config_1.appConfig.globalPrefix}/static/${mode}/${fileName}`;
     }
     async urlToFile(fileUrl, mode) {
         return (0, helpers_1.lastItemOf)(fileUrl.split(`/static/${mode}/`));

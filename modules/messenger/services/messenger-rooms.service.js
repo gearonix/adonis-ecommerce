@@ -19,14 +19,18 @@ const entities_1 = require("../../../entities");
 const typeorm_2 = require("typeorm");
 const auth_1 = require("../../auth");
 const exceptions_1 = require("../../../types/exceptions");
+const global_1 = require("../../../types/global");
+const files_service_1 = require("../../files/files.service");
 let MessengerRoomsService = class MessengerRoomsService {
     rooms;
     messages;
     authService;
-    constructor(rooms, messages, authService) {
+    fileService;
+    constructor(rooms, messages, authService, fileService) {
         this.rooms = rooms;
         this.messages = messages;
         this.authService = authService;
+        this.fileService = fileService;
     }
     async startChat(starterId, invitedId) {
         const room = await this.getRoomByMembers(starterId, invitedId);
@@ -54,7 +58,23 @@ let MessengerRoomsService = class MessengerRoomsService {
             where: { roomId }
         });
     }
-    async saveMessage(message) {
+    async makeMessagesRead(roomId, userId) {
+        const senderId = await this.getOpponentId(roomId, userId);
+        return this.messages.update({ senderId }, { isRead: true });
+    }
+    async makeMessageRead(messageId) {
+        return this.messages.update({ messageId }, { isRead: true });
+    }
+    async getOpponentId(roomId, userId) {
+        const room = await this.rooms.findOneBy({ roomId });
+        return userId === room.starterId ? room.invitedId : room.starterId;
+    }
+    async saveMessage({ file, ...message }) {
+        if (file) {
+            const fileUrl = await this.fileService
+                .uploadFile(file, global_1.FileDirectories.MESSENGER_ATTACHMENTS);
+            return this.messages.save({ ...message, image: fileUrl });
+        }
         return this.messages.save(message);
     }
     async checkUserHasRoom(roomId, userId) {
@@ -75,7 +95,8 @@ MessengerRoomsService = __decorate([
     __param(2, (0, common_1.Inject)((0, common_1.forwardRef)(() => auth_1.AuthService))),
     __metadata("design:paramtypes", [typeorm_2.Repository,
         typeorm_2.Repository,
-        auth_1.AuthService])
+        auth_1.AuthService,
+        files_service_1.FilesService])
 ], MessengerRoomsService);
 exports.MessengerRoomsService = MessengerRoomsService;
 //# sourceMappingURL=messenger-rooms.service.js.map

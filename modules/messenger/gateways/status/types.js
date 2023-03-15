@@ -5,10 +5,11 @@ var StatusEvents;
 (function (StatusEvents) {
     StatusEvents["STATUS_CHANGED"] = "statusChanged";
     StatusEvents["SUBSCRIBE_TO_STATUS"] = "subscribeToStatus";
+    StatusEvents["SHOW_NOTIFICATION"] = "showNotification";
 })(StatusEvents = exports.StatusEvents || (exports.StatusEvents = {}));
 var StatusGroups;
 (function (StatusGroups) {
     StatusGroups["ONLINE_STATUS"] = "ONLINE_STATUS";
-    StatusGroups["USERS"] = "USERS";
+    StatusGroups["LISTENERS"] = "LISTENERS";
 })(StatusGroups = exports.StatusGroups || (exports.StatusGroups = {}));
 //# sourceMappingURL=types.js.map

@@ -4,4 +4,6 @@ export declare class UserMessagesEntity {
     senderId: number;
     messageId: number;
     messageText: string;
+    image: string;
+    isRead: boolean;
 }

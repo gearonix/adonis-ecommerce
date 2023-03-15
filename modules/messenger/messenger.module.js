@@ -16,6 +16,7 @@ const typeorm_1 = require("@nestjs/typeorm");
 const entities_1 = require("../../entities");
 const messenger_rooms_service_1 = require("./services/messenger-rooms.service");
 const controllers_1 = require("./controllers");
+const files_1 = require("../files");
 let MessengerModule = class MessengerModule {
 };
 MessengerModule = __decorate([
@@ -25,7 +26,8 @@ MessengerModule = __decorate([
         controllers: [controllers_1.MessengerController],
         imports: [
             typeorm_1.TypeOrmModule.forFeature([entities_1.MessengerRoomsEntity, entities_1.UserMessagesEntity]),
-            (0, common_1.forwardRef)(() => auth_1.AuthModule)
+            (0, common_1.forwardRef)(() => auth_1.AuthModule),
+            files_1.FilesModule
         ],
         exports: [
             user_status_service_1.UserStatusService,

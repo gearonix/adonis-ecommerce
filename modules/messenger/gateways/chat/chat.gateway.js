@@ -23,6 +23,9 @@ const messenger_1 = require("../..");
 const types_1 = require("./types");
 const common_1 = require("@nestjs/common");
 const gatewayGroup_1 = require("../../lib/gatewayGroup");
+const entities_1 = require("../../../../entities");
+const gateways_1 = require("..");
+const types_2 = require("../status/types");
 let ChatGateway = class ChatGateway {
     statusGateway;
     roomsService;
@@ -37,10 +40,16 @@ let ChatGateway = class ChatGateway {
         client.emit(types_1.MessengerEvents.ADD_ROOM, room);
     }
     async makeRoomSubscription(roomId, client) {
+        const userId = await this.getUserIdByHeaders(client);
+        await this.roomsService.makeMessagesRead(roomId, userId);
         client.join((0, gatewayGroup_1.gatewayGroup)(types_1.MessengerGroups.MESSENGER_ROOM, roomId));
+        client.to((0, gatewayGroup_1.gatewayGroup)(types_1.MessengerGroups.MESSENGER_ROOM, roomId))
+            .emit(types_1.MessengerEvents.MESSAGE_READ);
     }
     async unsubscribeFromRoom(roomId, client) {
         client.leave((0, gatewayGroup_1.gatewayGroup)(types_1.MessengerGroups.MESSENGER_ROOM, roomId));
+        client.to((0, gatewayGroup_1.gatewayGroup)(types_1.MessengerGroups.MESSENGER_ROOM, roomId))
+            .emit(types_1.MessengerEvents.NO_LONGER_TYPING);
     }
     async sendMessage(message, client) {
         const senderId = await this.getUserIdByHeaders(client);
@@ -48,14 +57,24 @@ let ChatGateway = class ChatGateway {
         client.emit(types_1.MessengerEvents.ADD_MESSAGE, newMessage);
         client.to((0, gatewayGroup_1.gatewayGroup)(types_1.MessengerGroups.MESSENGER_ROOM, message.roomId))
             .emit(types_1.MessengerEvents.ADD_MESSAGE, newMessage);
+        this.statusGateway.authServer.to((0, gatewayGroup_1.gatewayGroup)(gateways_1.StatusGroups.LISTENERS, message.roomId))
+            .emit(types_2.StatusEvents.SHOW_NOTIFICATION, newMessage);
+    }
+    async makeMessageRead(message, client) {
+        console.log(message);
+        await this.roomsService.makeMessageRead(message.messageId);
+        client.to((0, gatewayGroup_1.gatewayGroup)(types_1.MessengerGroups.MESSENGER_ROOM, message.roomId))
+            .emit(types_1.MessengerEvents.MESSAGE_READ);
     }
     async userTyping(roomId, client) {
+        const userId = await this.getUserIdByHeaders(client);
         client.to((0, gatewayGroup_1.gatewayGroup)(types_1.MessengerGroups.MESSENGER_ROOM, roomId))
-            .emit(types_1.MessengerEvents.TYPING);
+            .emit(types_1.MessengerEvents.TYPING, { userId });
     }
     async noLongerTyping(roomId, client) {
+        const userId = await this.getUserIdByHeaders(client);
         client.to((0, gatewayGroup_1.gatewayGroup)(types_1.MessengerGroups.MESSENGER_ROOM, roomId))
-            .emit(types_1.MessengerEvents.NO_LONGER_TYPING);
+            .emit(types_1.MessengerEvents.NO_LONGER_TYPING, { userId });
     }
     async getUserIdByHeaders(client) {
         const userId = Number(client.handshake.headers.userid);
@@ -98,6 +117,15 @@ __decorate([
     __metadata("design:paramtypes", [Object, socket_io_1.Socket]),
     __metadata("design:returntype", Promise)
 ], ChatGateway.prototype, "sendMessage", null);
+__decorate([
+    (0, websockets_1.SubscribeMessage)(types_1.MessengerEvents.MESSAGE_READ),
+    __param(0, (0, websockets_1.MessageBody)()),
+    __param(1, (0, websockets_1.ConnectedSocket)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [entities_1.UserMessagesEntity,
+        socket_io_1.Socket]),
+    __metadata("design:returntype", Promise)
+], ChatGateway.prototype, "makeMessageRead", null);
 __decorate([
     (0, websockets_1.SubscribeMessage)(types_1.MessengerEvents.TYPING),
     __param(0, (0, websockets_1.MessageBody)('roomId')),

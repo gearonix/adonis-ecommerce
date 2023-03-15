@@ -11,12 +11,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserMessagesEntity = void 0;
 const typeorm_1 = require("typeorm");
+const global_1 = require("../types/global");
 let UserMessagesEntity = class UserMessagesEntity {
     creationDate;
     roomId;
     senderId;
     messageId;
     messageText;
+    image;
+    isRead;
 };
 __decorate([
     (0, typeorm_1.CreateDateColumn)(),
@@ -38,6 +41,14 @@ __decorate([
     (0, typeorm_1.Column)('varchar', { length: 200 }),
     __metadata("design:type", String)
 ], UserMessagesEntity.prototype, "messageText", void 0);
+__decorate([
+    (0, typeorm_1.Column)('varchar', { length: global_1.Lengths.IMAGE, nullable: true }),
+    __metadata("design:type", String)
+], UserMessagesEntity.prototype, "image", void 0);
+__decorate([
+    (0, typeorm_1.Column)('boolean', { default: false, nullable: true }),
+    __metadata("design:type", Boolean)
+], UserMessagesEntity.prototype, "isRead", void 0);
 UserMessagesEntity = __decorate([
     (0, typeorm_1.Entity)('messages')
 ], UserMessagesEntity);

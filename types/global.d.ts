@@ -17,7 +17,8 @@ export declare enum FileDirectories {
     USER_AVATAR = "user_avatars",
     USER_BACKGROUND = "user_backgrounds",
     PRODUCT_IMAGES = "product_images",
-    POST_IMAGES = "post_images"
+    POST_IMAGES = "post_images",
+    MESSENGER_ATTACHMENTS = "messenger_attachments"
 }
 export declare enum SocketGateWays {
     MESSENGER = "messenger",

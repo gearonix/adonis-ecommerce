@@ -24,6 +24,7 @@ var FileDirectories;
     FileDirectories["USER_BACKGROUND"] = "user_backgrounds";
     FileDirectories["PRODUCT_IMAGES"] = "product_images";
     FileDirectories["POST_IMAGES"] = "post_images";
+    FileDirectories["MESSENGER_ATTACHMENTS"] = "messenger_attachments";
 })(FileDirectories = exports.FileDirectories || (exports.FileDirectories = {}));
 var SocketGateWays;
 (function (SocketGateWays) {

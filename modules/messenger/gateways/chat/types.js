@@ -11,6 +11,7 @@ var MessengerEvents;
     MessengerEvents["UNSUBSCRIBE_FROM_ROOM"] = "unsubscribeFromRoom";
     MessengerEvents["TYPING"] = "userTyping";
     MessengerEvents["NO_LONGER_TYPING"] = "userTypingStopped";
+    MessengerEvents["MESSAGE_READ"] = "messageAlreadyRead";
 })(MessengerEvents = exports.MessengerEvents || (exports.MessengerEvents = {}));
 var MessengerGroups;
 (function (MessengerGroups) {
