@@ -17,7 +17,7 @@ const MessengerHeader: FC = () => {
   const userStatus = useSelector(MessengerSelectors.userStatus)
   const router = useRouter()
   const targetId = router.query.targetId as string
-  const { actions, subscribes } = useMessengerSocket()
+  const { actions, subscribes, socket } = useMessengerSocket()
   const authSocket = useAuthSocket()
   const dispatch = useDispatch()
 
@@ -40,6 +40,9 @@ const MessengerHeader: FC = () => {
     authSocket.subscribes.onStatusChanged((status: UserStatus) => {
       dispatch(messengerActions.changeUserStatus(status))
     })
+    return () => {
+      dispatch(messengerActions.clearMessenger())
+    }
   }, [])
 
   return <MessengerHeaderTemp Search={SearchMessages}

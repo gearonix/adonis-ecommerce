@@ -1,9 +1,14 @@
 import { Socket } from 'socket.io-client'
 import { MessengerEvents } from 'widgets/Messenger/socket/types'
 import { Message, Room } from 'shared/types/slices'
+import { MessengerForm } from 'widgets/Messenger/ui/MessengerInput/MessengerInput'
+import { withFormData } from 'shared/lib/helpers'
+import { UploadProperties } from 'app/config/globals'
+import { reformatAttachedImage } from 'widgets/Messenger/lib/helpers/reformatAttachedImage'
 
 const createMessengerSocketApi = (socket: Socket) => {
   return {
+    socket,
     subscribes: {
       onAddGroup(callback: (room: Room) => void) {
         socket.on(MessengerEvents.ADD_ROOM, callback)
@@ -21,6 +26,11 @@ const createMessengerSocketApi = (socket: Socket) => {
         socket.on(MessengerEvents.NO_LONGER_TYPING, () => {
           callback()
         })
+      },
+      onMessagesRead(callback: () => void) {
+        socket.on(MessengerEvents.MESSAGE_READ, () => {
+          callback()
+        })
       }
     },
     actions: {
@@ -33,15 +43,22 @@ const createMessengerSocketApi = (socket: Socket) => {
       unsubscribeFromRoom(roomId: number) {
         socket.emit(MessengerEvents.UNSUBSCRIBE_FROM_ROOM, { roomId })
       },
-      sendMessage(roomId: number, messageText: string) {
-        if (!roomId) return
-        socket.emit(MessengerEvents.SEND_MESSAGE, { roomId, messageText })
+      sendMessage(roomId: number, { message, file }: MessengerForm) {
+        if (!roomId) {
+          return
+        }
+
+        socket.emit(MessengerEvents.SEND_MESSAGE, { roomId,
+          messageText: message, file: reformatAttachedImage(file) })
       },
       startTyping(roomId: number) {
         socket.emit(MessengerEvents.TYPING, { roomId })
       },
       typingStopped(roomId: number) {
         socket.emit(MessengerEvents.NO_LONGER_TYPING, { roomId })
+      },
+      makeMessagesRead(message: Message) {
+        socket.emit(MessengerEvents.MESSAGE_READ, message)
       }
     }
   }

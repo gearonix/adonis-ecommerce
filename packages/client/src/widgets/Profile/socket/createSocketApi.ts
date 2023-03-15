@@ -1,7 +1,8 @@
 import { Socket } from 'socket.io-client'
 import { StatusEvents } from 'app/providers/Authorization/socket'
 import { UserStatus } from 'shared/config/consts/others'
-import { Nullable } from 'shared/types/common'
+import { Message } from 'shared/types/slices'
+import { toast } from 'react-toastify'
 
 const createAuthSocketApi = (socket: Socket) => {
   return {
@@ -9,6 +10,12 @@ const createAuthSocketApi = (socket: Socket) => {
       onStatusChanged(callback: (status: UserStatus) => void) {
         socket.on?.(StatusEvents.STATUS_CHANGED, (data: {status: UserStatus}) => {
           callback(data.status)
+        })
+      },
+      onReceivedNotification(callback: (message: Message) => void) {
+        const event = StatusEvents.SHOW_NOTIFICATION
+        socket.off?.(event)?.on?.(event, (message: Message) => {
+          callback(message)
         })
       }
     },

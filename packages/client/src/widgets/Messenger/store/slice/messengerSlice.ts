@@ -42,6 +42,14 @@ const messengerSlice = createSlice({
     changeUserStatus(state, { payload }: Action<UserStatus>) {
       state.status = payload
       state.isTyping = false
+    },
+    makeMessagesRead(state) {
+      state.messages = state.messages.map((message) => {
+        return { ...message, isRead: true }
+      })
+    },
+    clearMessenger() {
+      return initialState
     }
   }
 })

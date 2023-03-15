@@ -1,31 +1,34 @@
-import { FC, useState } from 'react'
+import { FC } from 'react'
 import s from './style.module.scss'
 import cn from 'classnames'
-import { ImageModal } from 'shared/ui/material'
 import { NextImage } from 'shared/ui/kit'
-import { BsCheck2 } from 'shared/ui/icons'
+import { BsCheck2, BsCheck2All } from 'shared/ui/icons'
 import { MessageProps } from '../../types'
 import useMeasure from 'react-use-measure'
-import { WithSpring } from 'shared/lib/components'
+import { Display, WithSpring } from 'shared/lib/components'
+import { Helpers } from 'shared/lib/helpers'
+import { DefaultAssets } from 'shared/config/consts/assets'
 
 
-export const Message: FC<MessageProps> = ({ isMine = false, image, message, time }) => {
-  const [isOpened, openModal] = useState<boolean>(false)
+export const Message: FC<MessageProps> = ({ isMine = false, message }) => {
+  const helpers = new Helpers()
   const [bind, { height }] = useMeasure()
   return <WithSpring className={cn(isMine ? s.my_message : s.opponent_message)}
     type={'opacityHeight'} param={height}>
-    {image && <ImageModal isOpen={isOpened} close={openModal} image={image} />}
     <div className={s.wrapper} ref={bind}>
-      {image && <WithSpring className={s.image_wrapper} onClick={() => openModal(true)}>
-        <NextImage src={image}/>
-      </WithSpring>
+      {message.image &&
+          <WithSpring className={s.image_wrapper}>
+            <NextImage src={message.image} def={DefaultAssets.MESSAGE}/>
+          </WithSpring>
       }
       <div className={s.title_wrapper}>
-        <h4 className={s.title}>{message}</h4>
+        <h4 className={s.title}>{message.messageText}</h4>
       </div>
       <div className={s.time_block}>
-        <span>{time}</span>
-        <BsCheck2/>
+        <span>{helpers.reformatMysqlDate(message.creationDate, 'HH:mm')}</span>
+        <Display when={isMine}>
+          {message.isRead ? <BsCheck2All color={'#0D6EFD'}/> : <BsCheck2/>}
+        </Display>
       </div>
     </div>
   </WithSpring>

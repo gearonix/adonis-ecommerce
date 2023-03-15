@@ -42,8 +42,7 @@ export class FilesService {
 
 
   private async fileToUrl(fileName: string, mode: FileDirectories): Promise<string> {
-    const req = getRequest(RequestContext)
-    return `${req.protocol}://${req.get('Host')}/${appConfig.globalPrefix}/static/${mode}/${fileName}`
+    return `${appConfig.serverUrl}/${appConfig.globalPrefix}/static/${mode}/${fileName}`
   }
 
   private async urlToFile(fileUrl: string, mode: FileDirectories): Promise<string> {

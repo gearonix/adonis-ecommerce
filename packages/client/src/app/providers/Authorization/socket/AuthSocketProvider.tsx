@@ -20,6 +20,7 @@ const AuthSocketProvider: CFC = ({ children }) => {
 
     const connectionUrl = `${appConfig.WEBSOCKET_URL}/${SocketGateWays.auth}`
     const connection = io(connectionUrl, { withCredentials: true })
+
     DevGlobalVars.setSocket('auth', connection)
     setSocket(connection)
   }, [isAuthorized])

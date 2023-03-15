@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { Message } from 'shared/types/slices'
 
 export type ColorType = 'red' | 'green' | 'primary' | 'orange' | 'outlined' | 'blueBordered'
     | 'redColored' | 'greyBordered'
@@ -10,7 +11,5 @@ export interface CartIconProps {
 
 export interface MessageProps {
     isMine?: boolean,
-    message: string,
-    image?: string,
-    time: string
+    message: Message,
 }

@@ -9,6 +9,9 @@ import { MessengerEvents, MessengerGroups } from './types'
 import { forwardRef, Inject } from '@nestjs/common'
 import { gatewayGroup } from '@modules/messenger/lib/gatewayGroup'
 import { NewMessage } from './requestTypes'
+import { UserMessagesEntity } from '@app/entities'
+import { StatusGroups } from '@modules/messenger/gateways'
+import { StatusEvents } from '@modules/messenger/gateways/status/types'
 
 @WebSocketGateway(appConfig.socketPort, createGateway(SocketGateWays.MESSENGER))
 export class ChatGateway {
@@ -37,7 +40,13 @@ export class ChatGateway {
         @MessageBody('roomId') roomId: number,
         @ConnectedSocket() client: Socket
     ) {
+      const userId = await this.getUserIdByHeaders(client)
+      await this.roomsService.makeMessagesRead(roomId, userId)
+
       client.join(gatewayGroup(MessengerGroups.MESSENGER_ROOM, roomId))
+
+      client.to(gatewayGroup(MessengerGroups.MESSENGER_ROOM, roomId))
+          .emit(MessengerEvents.MESSAGE_READ)
     }
     @SubscribeMessage(MessengerEvents.UNSUBSCRIBE_FROM_ROOM)
     async unsubscribeFromRoom(
@@ -60,6 +69,19 @@ export class ChatGateway {
       client.emit(MessengerEvents.ADD_MESSAGE, newMessage)
       client.to(gatewayGroup(MessengerGroups.MESSENGER_ROOM, message.roomId))
           .emit(MessengerEvents.ADD_MESSAGE, newMessage)
+      this.statusGateway.authServer.to(gatewayGroup(StatusGroups.LISTENERS, message.roomId))
+          .emit(StatusEvents.SHOW_NOTIFICATION, newMessage)
+    }
+
+    @SubscribeMessage(MessengerEvents.MESSAGE_READ)
+    async makeMessageRead(
+        @MessageBody() message: UserMessagesEntity,
+        @ConnectedSocket() client: Socket
+    ) {
+      console.log(message)
+      await this.roomsService.makeMessageRead(message.messageId)
+      client.to(gatewayGroup(MessengerGroups.MESSENGER_ROOM, message.roomId))
+          .emit(MessengerEvents.MESSAGE_READ)
     }
 
     @SubscribeMessage(MessengerEvents.TYPING)

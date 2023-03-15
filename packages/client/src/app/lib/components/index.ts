@@ -1,1 +1,1 @@
-export { default as WithNotifications } from './Notifications'
+export { default as WithNotifications } from './WithNotifications'

@@ -29,10 +29,8 @@ const DynamicModuleLoader: CFC<Props> = ({ name, reducer, children }) => {
 
   useEffect(() => {
     return () => {
-      if (!process.env.IS_DEV) {
-        store.reducerManager.remove(name)
-        dispatch({ type: `@DESTROY ${name}` })
-      }
+      store.reducerManager.remove(name)
+      dispatch({ type: `@DESTROY ${name}` })
     }
   }, [])
 

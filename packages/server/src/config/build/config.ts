@@ -7,5 +7,6 @@ export const appConfig: AppConfig = {
   appVersion: '1.0.0',
   docsPrefix: '/api/docs',
   privateKey: '1b94326c',
+  serverUrl: process.env.SERVER_URL || 'http://localhost:6868',
   socketPort: 9090
 }

@@ -11,9 +11,17 @@
   @include size(72%, 56px);
 
   .image_wrapper {
+
     svg {
       @include size(24px, 24px);
       color: $bg-300;
+    }
+    position: relative;
+    input{
+      @include absolute;
+      @include size;
+      margin: 0;
+      opacity: 0;
     }
   }
 

@@ -16,6 +16,7 @@ export const useBottomScroll = (...deps: DependencyList) => {
     setTimeout(scrollToBottom, 550)
   }, [...deps, ref])
 
+
   const onScroll = () => {
     if (containerRef.current) {
       const scrollBottom = containerRef.current.scrollHeight -

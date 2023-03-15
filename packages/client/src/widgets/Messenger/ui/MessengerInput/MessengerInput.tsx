@@ -5,26 +5,28 @@ import { useMessengerSocket } from 'widgets/Messenger/lib/hooks'
 import { useSelector } from 'shared/types/redux'
 import { MessengerSelectors } from 'shared/selectors'
 import { useTyping } from 'widgets/Messenger/lib/hooks/useTyping'
+import { Nullable } from 'shared/types/common'
 
 
-interface MessengerForm{
-    message: string
+export interface MessengerForm{
+    message: string,
+    file: Nullable<File>
 }
 
 const MessengerInput : FC = () => {
-  const { submit, setValue, register } = useForm<MessengerForm>(null)
+  const { submit, form } = useForm<MessengerForm>(null)
   const { actions } = useMessengerSocket()
   const roomId = useSelector(MessengerSelectors.selectedId)
   const onChange = useTyping()
 
   const resetValue = () => {
-    setValue('message', '')
+    form.setValue('message', '')
+    form.setValue('file', null)
   }
 
-  const onSubmit = ({ message }: MessengerForm) => {
-    console.log(message)
-    if (message) {
-      actions.sendMessage(roomId, message)
+  const onSubmit = (values : MessengerForm) => {
+    if (values.message) {
+      actions.sendMessage(roomId, values)
     }
     resetValue()
   }
@@ -32,7 +34,8 @@ const MessengerInput : FC = () => {
   useEffect(resetValue, [roomId])
 
 
-  return <MessageBar submit={submit(onSubmit)} reg={register} onChange={onChange}/>
+  return <MessageBar submit={submit(onSubmit)} form={form}
+    onChange={onChange} />
 }
 
 

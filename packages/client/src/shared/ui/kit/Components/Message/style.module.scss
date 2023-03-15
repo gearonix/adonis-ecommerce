@@ -49,13 +49,16 @@
       position: absolute;
       right: 12px;
       bottom: 4px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 4px;
 
       span {
         font-size: 12px;
+        display: block;
       }
 
       @include size(48px, 16px);
-      @include flex(space-between);
 
       svg {
         @include size(14px, 14px);

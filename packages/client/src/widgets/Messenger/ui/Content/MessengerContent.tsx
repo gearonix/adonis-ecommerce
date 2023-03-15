@@ -21,6 +21,10 @@ const MessengerContent: FC = () => {
   useEffect(() => {
     subscribes.onAddMessage((message) => {
       dispatch(messengerActions.addMessage(message))
+      actions.makeMessagesRead(message)
+    })
+    subscribes.onMessagesRead(() => {
+      dispatch(messengerActions.makeMessagesRead())
     })
   }, [])
 

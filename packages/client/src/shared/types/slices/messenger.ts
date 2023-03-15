@@ -27,7 +27,9 @@ export interface Message{
     senderId: number,
     messageText: string
     creationDate: string,
-    messageId: number
+    messageId: number,
+    image: Nullable<string>,
+    isRead: boolean
 }
 
 export const messengerInitialState: MessengerSlice = {

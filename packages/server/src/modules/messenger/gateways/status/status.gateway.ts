@@ -40,6 +40,12 @@ export class StatusGateway implements OnGatewayConnection, OnGatewayDisconnect {
     client.to(gatewayGroup(StatusGroups.ONLINE_STATUS, userId))
         .emit(StatusEvents.STATUS_CHANGED, { status: UserStatus.ONLINE })
 
+    const rooms = await this.roomsService.getUserRooms(userId)
+
+    for (const room of rooms) {
+      client.join(gatewayGroup(StatusGroups.LISTENERS, room.roomId))
+    }
+
     this.logger.log(`Amount of connected sockets: ${this.authServer.sockets.size}`)
   }
   async handleDisconnect(@ConnectedSocket() client: Socket) {
@@ -48,6 +54,7 @@ export class StatusGateway implements OnGatewayConnection, OnGatewayDisconnect {
 
     client.to(gatewayGroup(StatusGroups.ONLINE_STATUS, userId))
         .emit(StatusEvents.STATUS_CHANGED, { status: UserStatus.OFFLINE })
+
 
     this.logger.log(`Amount of connected sockets: ${this.authServer.sockets.size}`)
   }

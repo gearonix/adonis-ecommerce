@@ -17,13 +17,13 @@ const App = ({ Component, pageProps }: AppProps) => {
       <StoreProvider>
         <ErrorBoundary>
           <ThemeProvider>
-            <Layout>
-              <AuthProvider>
-                <AuthGuard>
+            <AuthProvider>
+              <AuthGuard>
+                <Layout>
                   <Component {...pageProps} />
-                </AuthGuard>
-              </AuthProvider>
-            </Layout>
+                </Layout>
+              </AuthGuard>
+            </AuthProvider>
           </ThemeProvider>
         </ErrorBoundary>
       </StoreProvider>

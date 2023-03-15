@@ -3,7 +3,7 @@ export { FiHeart, FiType } from 'react-icons/fi'
 export { GiHamburgerMenu, GiTopHat, GiMaterialsScience } from 'react-icons/gi'
 
 export { BsGridFill, BsCheck2, BsPen, BsDot, BsThreeDotsVertical, BsCartPlus,
-  BsTrash, BsInfoLg, BsBuilding, BsPhone, BsFileEarmarkPost } from 'react-icons/bs'
+  BsTrash, BsInfoLg, BsBuilding, BsPhone, BsFileEarmarkPost, BsCheck2All } from 'react-icons/bs'
 
 export { AiFillEye, AiFillEyeInvisible, AiFillLock, AiOutlineApi, AiOutlineArrowLeft,
   AiOutlineCheck, AiOutlineGithub, AiOutlineHome, AiOutlineSearch, AiFillFileAdd,

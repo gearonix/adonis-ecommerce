@@ -6,7 +6,8 @@ export enum MessengerEvents{
     ADD_MESSAGE = 'addMessage',
     UNSUBSCRIBE_FROM_ROOM = 'unsubscribeFromRoom',
     TYPING = 'userTyping',
-    NO_LONGER_TYPING = 'userTypingStopped'
+    NO_LONGER_TYPING = 'userTypingStopped',
+    MESSAGE_READ = 'messageAlreadyRead',
 }
 
 export enum MessengerGroups{

@@ -4,8 +4,8 @@ import { ModalProps } from '../../types'
 import Image from 'next/image'
 
 export const ImageModal: FC<ModalProps> = ({ isOpen, close, image, def }) => {
-  const [src, setSrc] = useState<string>(image)
-  return <Modal
+  const [src, setSrc] = useState<string>(image as string)
+  return image ? <Modal
     open={isOpen}
     onClose={() => close(false)}
     closeAfterTransition
@@ -25,5 +25,5 @@ export const ImageModal: FC<ModalProps> = ({ isOpen, close, image, def }) => {
     <Fade in={isOpen} timeout={500}>
       <Image src={src} alt={''} fill onError={() => def && setSrc(def)}/>
     </Fade>
-  </Modal>
+  </Modal> : null
 }

@@ -1,11 +1,12 @@
 import { FC, ReactNode } from 'react'
 import { FieldValues } from 'shared/lib/helpers'
 import { DefaultAssets } from 'shared/config/consts/assets'
+import { Nullable } from 'shared/types/common'
 
 export interface ModalProps {
     isOpen: boolean,
     close: (value: boolean) => void,
-    image: string,
+    image?: Nullable<string>,
     def?: DefaultAssets
 }
 

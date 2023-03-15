@@ -1,5 +1,5 @@
-import { Column, CreateDateColumn, Entity, JoinColumn, PrimaryGeneratedColumn } from 'typeorm'
-import { MessengerRoomsEntity } from '@entities/messenger-rooms.entity'
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from 'typeorm'
+import { Lengths } from '@app/types/global'
 
 @Entity('messages')
 export class UserMessagesEntity {
@@ -13,6 +13,10 @@ export class UserMessagesEntity {
       messageId: number
     @Column('varchar', { length: 200 })
       messageText: string
+    @Column('varchar', { length: Lengths.IMAGE, nullable: true })
+      image: string
+    @Column('boolean', { default: false, nullable: true })
+      isRead: boolean
 }
 
 

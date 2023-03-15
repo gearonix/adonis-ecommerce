@@ -7,6 +7,7 @@ import { TypeOrmModule } from '@nestjs/typeorm'
 import { MessengerRoomsEntity, UserMessagesEntity } from '@app/entities'
 import { MessengerRoomsService } from './services/messenger-rooms.service'
 import { MessengerController } from './controllers'
+import { FilesModule } from '@modules/files'
 
 @Module({
   providers: [ChatGateway, StatusGateway,
@@ -14,7 +15,8 @@ import { MessengerController } from './controllers'
   controllers: [MessengerController],
   imports: [
     TypeOrmModule.forFeature([MessengerRoomsEntity, UserMessagesEntity]),
-    forwardRef(() => AuthModule)
+    forwardRef(() => AuthModule),
+    FilesModule
   ],
   exports: [
     UserStatusService,

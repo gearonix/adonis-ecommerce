@@ -1,4 +1,4 @@
-import { FC, UIEvent, useCallback, useEffect, useRef, useState } from 'react'
+import { FC } from 'react'
 import s from './style.module.scss'
 import { Message as MessageUI, TimeLabel } from 'shared/ui/kit'
 import { Message } from 'shared/types/slices'
@@ -6,7 +6,6 @@ import { Nullable } from 'shared/types/common'
 import { Helpers } from 'shared/lib/helpers'
 import { useBottomScroll } from 'shared/lib/hooks/useBottomScroll'
 import { Display, WithSpring } from 'shared/lib/components'
-import { selectOpponentUser } from 'widgets/Messenger/lib/helpers'
 
 interface Props{
   messages: Message[],
@@ -14,7 +13,6 @@ interface Props{
 }
 
 const MessengerContent: FC<Props> = ({ messages, userId }) => {
-  const helpers = new Helpers()
   const scrollable = useBottomScroll(messages)
 
   return <div className={s.messages_block}>
@@ -22,10 +20,10 @@ const MessengerContent: FC<Props> = ({ messages, userId }) => {
       ref={scrollable.containerRef}>
       <TimeLabel/>
       {messages.map((message) => {
-        return <MessageUI message={message.messageText}
+        return <MessageUI message={message}
           isMine={message.senderId === userId}
           key={message.messageId}
-          time={helpers.reformatMysqlDate(message.creationDate, 'HH:mm')}/>
+        />
       })}
       <div ref={scrollable.bottomRef} />
     </div>

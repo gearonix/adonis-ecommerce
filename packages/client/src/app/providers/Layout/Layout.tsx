@@ -13,6 +13,7 @@ const Layout: FC<{ children: ReactNode }> = ({ children }) => {
   const { theme } = useTheme()
 
   return <div className={cn(interFont.className, theme, 'layout')}>
+    {/* middlewares*/}
     <DevNavigation/>
     <WithNotifications/>
 

@@ -4,7 +4,8 @@ export enum DefaultAssets{
     PRODUCT = '/assets/defaults/default_product.png',
     AVATAR = '/assets/defaults/default_avatar.png',
     POST = '/assets/defaults/default_post.jpg',
-    PROJECT = '/assets/defaults/default_project.png'
+    PROJECT = '/assets/defaults/default_project.png',
+    MESSAGE = '/assets/defaults/default_message.jpg'
 }
 
 export enum Assets{
