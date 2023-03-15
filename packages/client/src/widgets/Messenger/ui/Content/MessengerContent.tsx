@@ -9,7 +9,6 @@ import { MessengerSelectors, AuthSelectors } from 'shared/selectors'
 import MessengerInput from '../MessengerInput/MessengerInput'
 import { messengerActions } from 'widgets/Messenger'
 import { useMessengerSocket } from 'widgets/Messenger/lib/hooks'
-import { selectOpponentUser } from 'widgets/Messenger/lib/helpers'
 
 const MessengerContent: FC = () => {
   const dispatch = useDispatch()
@@ -35,8 +34,8 @@ const MessengerContent: FC = () => {
     <div className={s.wrapper}>
       <Display when={roomId}>
         <MessengerContentTemp messages={messages} userId={userId}/>
+        <MessengerInput/>
       </Display>
-      <MessengerInput/>
     </div>
   </div>
 }

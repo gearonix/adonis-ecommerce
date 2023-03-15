@@ -1,6 +1,7 @@
 import { Socket } from 'socket.io-client'
 import { StatusEvents } from 'app/providers/Authorization/socket'
 import { UserStatus } from 'shared/config/consts/others'
+import { Nullable } from 'shared/types/common'
 
 const createAuthSocketApi = (socket: Socket) => {
   return {
@@ -12,8 +13,10 @@ const createAuthSocketApi = (socket: Socket) => {
       }
     },
     actions: {
-      subscribeToStatus(targetId: number) {
-        socket.emit?.(StatusEvents.SUBSCRIBE_TO_STATUS, { targetId })
+      subscribeToStatus(targetId: number | undefined) {
+        if (targetId) {
+          socket.emit?.(StatusEvents.SUBSCRIBE_TO_STATUS, { targetId })
+        }
       }
 
     }

@@ -24,7 +24,10 @@ const MessengerSelectors = {
     return filter ? rooms.filter((room) => helpers.toNormalName(getOpponentUser(room))
         .toLowerCase().includes(filter)) : rooms
   },
-  isTyping: ({ messenger }: RequiredState) => messenger.isTyping
+  isTyping: ({ messenger }: RequiredState) => messenger.isTyping,
+  userStatus: ({ messenger }: RequiredState) => {
+    return !messenger.isTyping ? messenger.status : 'typing...'
+  }
 }
 
 

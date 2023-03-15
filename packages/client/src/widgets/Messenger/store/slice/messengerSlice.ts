@@ -2,6 +2,7 @@ import { createSlice, PayloadAction as Action } from '@reduxjs/toolkit'
 import { messengerInitialState as initialState } from 'shared/types/slices'
 import { Room } from 'shared/types/slices'
 import { Message } from 'shared/types/slices'
+import { UserStatus } from 'shared/config/consts/others'
 
 const messengerSlice = createSlice({
   name: 'messenger',
@@ -21,6 +22,7 @@ const messengerSlice = createSlice({
     },
     changeSelectedRoomId(state, { payload }: Action<number>) {
       state.selectedId = payload
+      state.isTyping = false
     },
     addMessage(state, { payload }: Action<Message>) {
       const ids = state.messages.map(({ messageId }) => messageId)
@@ -36,6 +38,10 @@ const messengerSlice = createSlice({
     },
     setIsTyping(state, { payload }: Action<boolean>) {
       state.isTyping = payload
+    },
+    changeUserStatus(state, { payload }: Action<UserStatus>) {
+      state.status = payload
+      state.isTyping = false
     }
   }
 })

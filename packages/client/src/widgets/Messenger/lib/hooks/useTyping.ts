@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'shared/types/redux'
 import { MessengerSelectors } from 'shared/selectors'
 import { useMessengerSocket } from 'widgets/Messenger/lib/hooks/useMessengerSocket'
@@ -6,37 +6,37 @@ import { messengerActions } from 'widgets/Messenger'
 
 export const useTyping = () => {
   const roomId = useSelector(MessengerSelectors.selectedId)
-  const { actions, subscribes } = useMessengerSocket()
   const dispatch = useDispatch()
   const timeout = useRef<any>()
+  const [isTyping, setIsTyping] = useState(false)
+  const { actions, subscribes } = useMessengerSocket()
 
-  const onEndTyping = (roomId: number) => () => {
-    if (timeout.current) {
-      actions.typingStopped(roomId)
-    }
-    clearTimeout(timeout.current)
-    timeout.current = null
+  const onEndTyping = () => {
+    actions.typingStopped(roomId)
+    setIsTyping(false)
   }
 
   useEffect(() => {
     subscribes.onUserTyping(() => {
-      console.log('user typing...')
       dispatch(messengerActions.setIsTyping(true))
     })
     subscribes.onNoLongerTyping(() => {
-      console.log('typing stopped.')
       dispatch(messengerActions.setIsTyping(false))
     })
   }, [])
 
-  return (roomId: number) => {
-    console.log('roomId', roomId)
-    if (!timeout.current) {
-      console.log('no timeout current')
+  useEffect(() => {
+    setIsTyping(false)
+  }, [roomId])
+
+  return () => {
+    if (!isTyping) {
       actions.startTyping(roomId)
-      timeout.current = setTimeout(onEndTyping(roomId), 3000)
+      setIsTyping(true)
+      timeout.current = setTimeout(onEndTyping, 1000)
       return
     }
-    timeout.current = setTimeout(onEndTyping(roomId), 3000)
+    clearTimeout(timeout.current)
+    timeout.current = setTimeout(onEndTyping, 1000)
   }
 }

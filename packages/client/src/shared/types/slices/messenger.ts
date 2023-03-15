@@ -1,5 +1,6 @@
 import { Nullable } from 'shared/types/common'
 import { User } from 'shared/types/slices/user'
+import { UserStatus } from 'shared/config/consts/others'
 
 export interface MessengerSlice{
     rooms: {
@@ -8,7 +9,8 @@ export interface MessengerSlice{
     },
     messages: Message[],
     selectedId: Nullable<number>,
-    isTyping: boolean
+    isTyping: boolean,
+    status: UserStatus
 }
 
 export interface Room{
@@ -35,5 +37,6 @@ export const messengerInitialState: MessengerSlice = {
   },
   messages: [],
   selectedId: null,
-  isTyping: false
+  isTyping: false,
+  status: UserStatus.OFFLINE
 }

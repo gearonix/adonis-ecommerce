@@ -1,10 +1,10 @@
-import { FC, useEffect, useRef, useState } from 'react'
+import { FC, useEffect } from 'react'
 import { useForm } from 'shared/lib/hooks'
 import { MessageBar } from 'entities/Messenger'
 import { useMessengerSocket } from 'widgets/Messenger/lib/hooks'
-import { useDispatch, useSelector } from 'shared/types/redux'
-import { MessengerSelectors, AuthSelectors } from 'shared/selectors'
-import { messengerActions } from 'widgets/Messenger'
+import { useSelector } from 'shared/types/redux'
+import { MessengerSelectors } from 'shared/selectors'
+import { useTyping } from 'widgets/Messenger/lib/hooks/useTyping'
 
 
 interface MessengerForm{
@@ -12,53 +12,27 @@ interface MessengerForm{
 }
 
 const MessengerInput : FC = () => {
-  const { submit, reg, setValue } = useForm<MessengerForm>(null)
-  const { actions, subscribes } = useMessengerSocket()
+  const { submit, setValue, register } = useForm<MessengerForm>(null)
+  const { actions } = useMessengerSocket()
   const roomId = useSelector(MessengerSelectors.selectedId)
-  const dispatch = useDispatch()
-  const timeout = useRef<any>()
-  const userId = useSelector(AuthSelectors.userId)
-  const [isTyping, setIsTyping] = useState(false)
+  const onChange = useTyping()
 
-  // const onChange = useTyping()
-
-  useEffect(() => {
-    subscribes.onUserTyping(() => {
-      dispatch(messengerActions.setIsTyping(true))
-    })
-    subscribes.onNoLongerTyping(() => {
-      dispatch(messengerActions.setIsTyping(false))
-    })
-  }, [])
-
-  const onSubmit = ({ message }: MessengerForm) => {
-    if (message) {
-      actions.sendMessage(roomId, message)
-    }
-
+  const resetValue = () => {
     setValue('message', '')
   }
 
-  const onEndTyping = () => {
-    actions.typingStopped(roomId)
-    setIsTyping(false)
-  }
-
-  const onChange = () => {
-    console.log('roomId', roomId)
-    if (!isTyping) {
-      console.log('no isTyping')
-      actions.startTyping(roomId)
-      setIsTyping(true)
-      timeout.current = setTimeout(onEndTyping, 3000)
-      return
+  const onSubmit = ({ message }: MessengerForm) => {
+    console.log(message)
+    if (message) {
+      actions.sendMessage(roomId, message)
     }
-    clearTimeout(timeout.current)
-    timeout.current = setTimeout(onEndTyping, 3000)
+    resetValue()
   }
 
+  useEffect(resetValue, [roomId])
 
-  return <MessageBar submit={submit(onSubmit)} reg={reg} onChange={onChange}/>
+
+  return <MessageBar submit={submit(onSubmit)} reg={register} onChange={onChange}/>
 }
 
 

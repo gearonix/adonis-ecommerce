@@ -7,16 +7,19 @@ import { useMessengerSocket } from 'widgets/Messenger/lib/hooks'
 import { useDispatch, useSelector } from 'shared/types/redux'
 import { getRooms } from 'widgets/Messenger/store/thunks'
 import { messengerActions } from 'widgets/Messenger'
-import { AuthSelectors, MessengerSelectors } from 'shared/selectors'
+import { MessengerSelectors } from 'shared/selectors'
+import { useAuthSocket } from 'widgets/Profile/lib/hooks/useAuthSocket'
+import { UserStatus } from 'shared/config/consts/others'
 
 const MessengerHeader: FC = () => {
   const opponent = useSelector(MessengerSelectors.opponentUser)
+  const roomId = useSelector(MessengerSelectors.selectedId)
+  const userStatus = useSelector(MessengerSelectors.userStatus)
   const router = useRouter()
   const targetId = router.query.targetId as string
   const { actions, subscribes } = useMessengerSocket()
+  const authSocket = useAuthSocket()
   const dispatch = useDispatch()
-  const isTyping = useSelector(MessengerSelectors.isTyping)
-  const authUserId = useSelector(AuthSelectors.userId)
 
 
   useFilteredEffect(() => {
@@ -28,20 +31,19 @@ const MessengerHeader: FC = () => {
   }, [targetId])
 
   useEffect(() => {
-    subscribes.onUserTyping(() => {
-      dispatch(messengerActions.setIsTyping(true))
-    })
-    subscribes.onNoLongerTyping(() => {
-      dispatch(messengerActions.setIsTyping(false))
-    })
-  }, [])
+    authSocket.actions.subscribeToStatus(opponent?.userId)
+  }, [roomId, opponent])
 
   useEffect(() => {
     dispatch(getRooms())
+
+    authSocket.subscribes.onStatusChanged((status: UserStatus) => {
+      dispatch(messengerActions.changeUserStatus(status))
+    })
   }, [])
 
   return <MessengerHeaderTemp Search={SearchMessages}
-    user={opponent} label={JSON.stringify(isTyping)}/>
+    user={opponent} label={userStatus}/>
 }
 
 export default MessengerHeader

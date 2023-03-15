@@ -12,7 +12,6 @@ export const DevGlobalVars = {
       window.s = process.env.IS_DEV ? store.getState : null
       // window.localStorage.setItem('DEV_STORE', JSON.stringify(store.getState()))
     }
-    const a = 222
   },
   setSocket(key: string, socket: Socket) {
     if (!process.env.IS_DEV) return

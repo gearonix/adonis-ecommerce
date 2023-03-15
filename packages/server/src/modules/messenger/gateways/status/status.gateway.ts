@@ -58,6 +58,8 @@ export class StatusGateway implements OnGatewayConnection, OnGatewayDisconnect {
       @ConnectedSocket() client: Socket
   ) {
     client.join(gatewayGroup(StatusGroups.ONLINE_STATUS, targetId))
+    const status = this.onlineUsers.getOnlineStatus(targetId)
+    client.emit(StatusEvents.STATUS_CHANGED, { status })
   }
 
   async getUserId(client: Socket) {

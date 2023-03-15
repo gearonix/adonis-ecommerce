@@ -45,6 +45,8 @@ export class ChatGateway {
         @ConnectedSocket() client: Socket
     ) {
       client.leave(gatewayGroup(MessengerGroups.MESSENGER_ROOM, roomId))
+      client.to(gatewayGroup(MessengerGroups.MESSENGER_ROOM, roomId))
+          .emit(MessengerEvents.NO_LONGER_TYPING)
     }
 
     @SubscribeMessage(MessengerEvents.SEND_MESSAGE)

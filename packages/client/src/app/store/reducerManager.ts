@@ -1,6 +1,5 @@
 import { AnyAction, CombinedState, combineReducers, Reducer, ReducersMapObject } from '@reduxjs/toolkit'
 import { StateSchema } from 'app/store/types'
-import { DevStore } from 'dev/components'
 
 export interface ReducerManager<T>{
     getReducerMap: () => void,
@@ -22,7 +21,6 @@ export const createReducerManager: CreateReducerManager = (initialReducers) => {
     getReducerMap: () => reducers,
 
     reduce: (state: StateSchema, action: AnyAction) => {
-      DevStore.set(state)
       if (keysToRemove.length > 0) {
         state = { ...state }
         for (const key of keysToRemove) {
