@@ -58,7 +58,7 @@ class Helpers {
     return str === '' ? undefined : str
   }
   public cropped(str: string, char = 30) {
-    return str?.length > 30 ? str.slice(0, char) + '...' : str
+    return str?.length > char ? str.slice(0, char) + '...' : str
   }
   public byDefault<T, N>(name: T, defaultValue: N): N | T {
     return name ? name : defaultValue

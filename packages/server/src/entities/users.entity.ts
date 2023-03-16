@@ -3,6 +3,7 @@ import { ProductCommentsEntity } from '@entities/product-comments.entity'
 import { PostsEntity } from '@app/entities/posts.entity'
 import { Lengths, Roles } from '@app/types/global'
 import { MessengerRoomsEntity } from '@entities/messenger-rooms.entity'
+import { UserMessagesEntity } from '@entities/user-messages.entity'
 
 @Entity('users')
 export class UsersEntity {
@@ -36,5 +37,6 @@ export class UsersEntity {
   @OneToMany(() => PostsEntity, (post) => post.user)
   @OneToMany(() => MessengerRoomsEntity, (room) => room.starterId)
   @OneToMany(() => MessengerRoomsEntity, (room) => room.invitedId)
+  @OneToMany(() => UserMessagesEntity, (message) => message.user)
     user: UsersEntity[]
 }

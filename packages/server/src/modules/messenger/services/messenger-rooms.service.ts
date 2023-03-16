@@ -51,7 +51,10 @@ export class MessengerRoomsService {
     await this.checkUserHasRoom(roomId, userId)
 
     return this.messages.find({
-      where: { roomId }
+      where: { roomId },
+      relations: {
+        user: true
+      }
     })
   }
 
@@ -69,12 +72,16 @@ export class MessengerRoomsService {
   }
 
   async saveMessage({ file, ...message }: NewMessage) {
+    let fileUrl = null
     if (file) {
-      const fileUrl = await this.fileService
+      fileUrl = await this.fileService
           .uploadFile(file, FileDirectories.MESSENGER_ATTACHMENTS)
-      return this.messages.save({ ...message, image: fileUrl })
     }
-    return this.messages.save(message)
+    const { messageId } = await this.messages.save({ ...message, image: fileUrl })
+    return this.messages.findOne({
+      where: { messageId },
+      relations: { user: true }
+    })
   }
 
   private async checkUserHasRoom(roomId: number, userId: number) {

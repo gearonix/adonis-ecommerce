@@ -6,6 +6,7 @@ import {
   ErrorBoundary
 } from './providers'
 import 'shared/config/i18n'
+import { WithNotifications } from 'app/lib/components'
 
 
 const App = ({ Component, pageProps }: AppProps) => {
@@ -17,13 +18,14 @@ const App = ({ Component, pageProps }: AppProps) => {
       <StoreProvider>
         <ErrorBoundary>
           <ThemeProvider>
-            <AuthProvider>
-              <AuthGuard>
-                <Layout>
+            <Layout>
+              <AuthProvider>
+                <AuthGuard>
+                  <WithNotifications/>
                   <Component {...pageProps} />
-                </Layout>
-              </AuthGuard>
-            </AuthProvider>
+                </AuthGuard>
+              </AuthProvider>
+            </Layout>
           </ThemeProvider>
         </ErrorBoundary>
       </StoreProvider>

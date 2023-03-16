@@ -7,7 +7,7 @@ import { ProfileApi } from 'widgets/Profile'
 import { CreateMiddleWare } from 'app/store/config/createMiddleware'
 import { ObjectNullable, Required } from 'shared/types/common'
 import {
-  AuthSlice, CurrentProductSlice, MessengerSlice, PostsSlice,
+  AuthSlice, CurrentProductSlice, Message, MessengerSlice, PostsSlice,
   ProductsSlice, SavedSlice
 } from 'shared/types/slices'
 import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore'
@@ -38,6 +38,7 @@ export interface RequiredReducers{
     auth: AuthSlice,
     cart: CartSlice,
     saved: SavedSlice,
+    notifications: Message[]
 }
 
 

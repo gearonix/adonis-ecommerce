@@ -5,6 +5,7 @@ import { cartSlice } from 'widgets/Cart'
 import { savedSlice } from 'features/Saved'
 import { ReducersMapObject } from '@reduxjs/toolkit'
 import { StateSchema } from 'app/store/types'
+import { notifySlice } from 'app/lib/components/notificationsReducer'
 
 
 interface CreateReducers{
@@ -18,6 +19,7 @@ export const createReducers: CreateReducers = (asyncReducers) => {
     auth: authSlice,
     cart: cartSlice,
     saved: savedSlice,
+    notifications: notifySlice,
     ...asyncReducers
   }
 }

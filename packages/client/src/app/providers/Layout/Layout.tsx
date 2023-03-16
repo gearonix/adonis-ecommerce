@@ -15,7 +15,6 @@ const Layout: FC<{ children: ReactNode }> = ({ children }) => {
   return <div className={cn(interFont.className, theme, 'layout')}>
     {/* middlewares*/}
     <DevNavigation/>
-    <WithNotifications/>
 
     <Header/>
     <div className="container">

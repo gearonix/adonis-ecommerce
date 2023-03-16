@@ -1,5 +1,8 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from 'typeorm'
+import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm'
 import { Lengths } from '@app/types/global'
+import { ProductCommentsEntity } from '@entities/product-comments.entity'
+import { MessengerRoomsEntity } from '@entities/messenger-rooms.entity'
+import { UsersEntity } from '@entities/users.entity'
 
 @Entity('messages')
 export class UserMessagesEntity {
@@ -17,6 +20,10 @@ export class UserMessagesEntity {
       image: string
     @Column('boolean', { default: false, nullable: true })
       isRead: boolean
+    @ManyToOne(() => UsersEntity)
+    @JoinColumn({ name: 'senderId', foreignKeyConstraintName:
+            'FK_messages_senderId_users', referencedColumnName: 'userId' })
+      user: UsersEntity
 }
 
 

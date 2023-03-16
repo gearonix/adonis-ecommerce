@@ -5,7 +5,7 @@ import { Helpers } from 'shared/lib/helpers'
 const MessengerSelectors = {
   rooms: ({ messenger }: RequiredState) => messenger.rooms.data,
   messages: ({ messenger }: RequiredState) => messenger.messages,
-  selectedId: ({ messenger }: RequiredState) => messenger.selectedId as number,
+  selectedId: ({ messenger }: RequiredState) => messenger?.selectedId,
   filter: ({ messenger }: RequiredState) => messenger.rooms.filter,
   opponentUser: ({ auth, messenger }: RequiredState) => {
     const selectedId = messenger.selectedId
