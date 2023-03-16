@@ -9,9 +9,9 @@ import { ProductTypes } from 'shared/types/elements'
 import { RecommendedMap, SortedProducts } from 'entities/Products'
 import { SavedItems } from 'features/Saved'
 import { useSelector } from 'shared/types/redux'
-import { SavedSelectors } from 'shared/selectors'
 import { CartItems as CartItemsTemplate } from 'entities/Cart'
 import { useTranslation } from 'react-i18next'
+import { SavedSelectors } from 'features/Saved'
 
 const Saved: FC = () => {
   const savedCount = useSelector(SavedSelectors.count)

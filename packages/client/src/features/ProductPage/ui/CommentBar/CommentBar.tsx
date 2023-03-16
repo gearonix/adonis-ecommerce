@@ -4,11 +4,11 @@ import { addComment } from 'widgets/CurrentProduct/store/thunks'
 import Helpers from 'shared/lib/helpers/helpers'
 import { useForm } from 'shared/lib/hooks/useForm'
 import { useUnauthorized } from 'shared/lib/hooks'
-import { ProductSelectors } from 'shared/selectors'
 import { Display } from 'shared/lib/components'
 import { addCommentSchema } from 'features/ProductPage/lib/formSchemes'
 import { useTranslation } from 'react-i18next'
 import { CommentBar as CommentBarTemplate, Thanks } from 'entities/ProductPage'
+import { ProductSelectors } from 'widgets/CurrentProduct'
 
 export interface CommentForm{
     message: string

@@ -1,7 +1,7 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common'
 import { ProductDTO } from './../dto'
 import { InjectRepository } from '@nestjs/typeorm'
-import { ProductsEntity } from '@app/entities/products/products.entity'
+import { ProductsEntity } from '@entities/products.entity'
 import { Repository } from 'typeorm'
 import { AuthService } from '@app/modules/auth'
 import { UsersService } from '@app/modules/users'

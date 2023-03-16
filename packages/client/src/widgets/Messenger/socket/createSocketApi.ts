@@ -1,9 +1,7 @@
 import { Socket } from 'socket.io-client'
 import { MessengerEvents } from 'widgets/Messenger/socket/types'
-import { Message, Room } from 'shared/types/slices'
+import { Message, Room } from 'widgets/Messenger'
 import { MessengerForm } from 'widgets/Messenger/ui/MessengerInput/MessengerInput'
-import { withFormData } from 'shared/lib/helpers'
-import { UploadProperties } from 'app/config/globals'
 import { reformatAttachedImage } from 'widgets/Messenger/lib/helpers/reformatAttachedImage'
 
 const createMessengerSocketApi = (socket: Socket) => {

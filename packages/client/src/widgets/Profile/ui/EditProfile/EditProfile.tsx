@@ -5,11 +5,11 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { editProfileSchema } from '../../lib/form/formSchemes'
 import { useDispatch, useSelector } from 'shared/types/redux'
 import { changeUserProfile } from '../../store/thunks/changeUserProfile'
-import UserSelectors from 'shared/selectors/user/user.selectors'
+import UserSelectors from 'widgets/Profile/store/selectors/users/user.selectors'
 import { selectEditProfileValues } from 'widgets/Profile/store/selectors'
 import { createFieldValues, Helpers } from 'shared/lib/helpers'
 import { ChangeAvatar, ChangeBackground } from 'features/Profile'
-import { EditProfile as EditProfileTemplate } from './../../../../entities/Profile'
+import { EditProfile as EditProfileTemplate } from 'entities/Profile'
 
 const EditProfile: FC<{ close: () => void }> = ({ close }) => {
   const user = useSelector(UserSelectors.user)

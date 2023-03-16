@@ -1,7 +1,6 @@
 import { JestRedux } from 'shared/lib/jest'
 import { Store } from 'app/store/store'
-import { SavedSlice } from 'shared/types/slices'
-import { savedInitialState } from 'shared/types/slices/saved'
+import { savedInitialState, SavedSlice } from 'features/Saved/store/slice/initialState'
 import { savedActions, savedSlice } from 'features/Saved'
 
 

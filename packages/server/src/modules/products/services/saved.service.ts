@@ -21,10 +21,9 @@ export class SavedService {
     return this.saved.delete({ productId, userId })
   }
   async getSavedProducts(id?: number) {
-    if (id) {
-      return this.saved.findBy({ userId: id })
-    }
     const userId = await this.authService.getUserId()
-    return this.saved.findBy({ userId })
+    return this.saved.find(
+        { where: { userId: id || userId },
+          order: { savedId: 'DESC' } })
   }
 }

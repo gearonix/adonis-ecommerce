@@ -12,3 +12,7 @@ export type { RecommendedItemProps } from './ui/RecommendedItems/RecommendedItem
 
 export { productsApi } from './api'
 export type { ProductsApi } from './types'
+
+export type { Product, ProductsSlice } from './store/slice/initialState'
+
+export { default as ProductsSelectors } from './store/selectors/products.selectors'

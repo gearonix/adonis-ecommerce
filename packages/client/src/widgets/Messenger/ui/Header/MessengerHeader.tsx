@@ -6,13 +6,12 @@ import { useFilteredEffect } from 'shared/lib/hooks'
 import { useMessengerSocket } from 'widgets/Messenger/lib/hooks'
 import { useDispatch, useSelector } from 'shared/types/redux'
 import { getRooms } from 'widgets/Messenger/store/thunks'
-import { messengerActions } from 'widgets/Messenger'
-import { MessengerSelectors } from 'shared/selectors'
+import { messengerActions, MessengerSelectors, selectOpponentUser } from 'widgets/Messenger'
 import { useAuthSocket } from 'widgets/Profile/lib/hooks/useAuthSocket'
 import { UserStatus } from 'shared/config/consts/others'
 
 const MessengerHeader: FC = () => {
-  const opponent = useSelector(MessengerSelectors.opponentUser)
+  const opponent = useSelector(selectOpponentUser)
   const roomId = useSelector(MessengerSelectors.selectedId)
   const userStatus = useSelector(MessengerSelectors.userStatus)
   const router = useRouter()

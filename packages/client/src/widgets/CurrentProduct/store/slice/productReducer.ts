@@ -1,12 +1,14 @@
 import { createSlice, PayloadAction as Action } from '@reduxjs/toolkit'
 import { withLoading } from 'shared/lib/helpers'
-import { CurrentProductSlice, ProductComment } from 'shared/types/slices'
-import { ProductComments, productInitialState as initialState } from 'shared/types/slices/currentProduct'
+import { ProductComments, CurrentProductSlice, ProductComment } from
+  'widgets/CurrentProduct'
+import { productInitialState } from 'widgets/CurrentProduct/store/slice/initialState'
 import { getProduct } from 'widgets/CurrentProduct/store/thunks'
+
 
 const productReducer = createSlice({
   name: 'currentProduct',
-  initialState,
+  initialState: productInitialState,
   reducers: {
     setProduct(state, { payload }: Action<CurrentProductSlice>) {
       state.productInfo = payload.productInfo
@@ -15,7 +17,7 @@ const productReducer = createSlice({
       state.salesman = payload.salesman
     },
     clearProduct() {
-      return initialState
+      return productInitialState
     },
     addComment(state, { payload }: Action<ProductComment>) {
       state.comments?.data.unshift(payload)

@@ -84,6 +84,9 @@
         //margin: 0 auto;
         @include size(163px, 30px);
         margin-top: 10px;
+        background: white;
+        color: black;
+        box-shadow: $shadow;
       }
     }
 

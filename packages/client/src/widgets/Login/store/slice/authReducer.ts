@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { User } from 'shared/types/slices'
-import { authInitialState as initialState } from 'shared/types/slices/auth'
+import { initialState as initialState } from 'widgets/Login/store/slice/initialState'
+import { User } from 'widgets/Profile'
 
 
 const authReducer = createSlice({

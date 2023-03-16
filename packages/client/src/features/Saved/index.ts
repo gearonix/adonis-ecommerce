@@ -12,3 +12,8 @@ export { default as SavedProvider } from './ui/SavedProvider/SavedProvider'
 
 export { savedApi } from './api'
 export type { SavedApi } from './types'
+
+
+export type { SavedSlice } from './store/slice/initialState'
+
+export { default as SavedSelectors } from './store/selectors/saved.selectors'

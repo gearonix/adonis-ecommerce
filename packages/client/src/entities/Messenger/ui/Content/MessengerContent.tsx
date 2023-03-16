@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import s from './style.module.scss'
 import { Message as MessageUI, TimeLabel } from 'shared/ui/kit'
-import { Message } from 'shared/types/slices'
+import { Message } from 'widgets/Messenger'
 import { Nullable } from 'shared/types/common'
 import { Helpers } from 'shared/lib/helpers'
 import { useBottomScroll } from 'shared/lib/hooks/useBottomScroll'

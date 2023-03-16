@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction as Action } from '@reduxjs/toolkit'
 import { SavedModel } from 'features/Saved/types'
-import { Product } from 'shared/types/slices'
-import { savedInitialState as initialState } from 'shared/types/slices/saved'
+import { savedInitialState as initialState } from 'features/Saved/store/slice/initialState'
 import { withLoading } from 'shared/lib/helpers/others/reduxHelpers'
 import { getSavedByIds } from 'features/Saved/store/thunks/getSavedByIds/getSavedByIds'
+import { Product } from 'widgets/Products'
 
 
 const savedReducer = createSlice({

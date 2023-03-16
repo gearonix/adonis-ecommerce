@@ -1,14 +1,14 @@
 import { FC, useEffect } from 'react'
 import { useDispatch, useSelector } from 'shared/types/redux'
-import { PostSelectors, UserSelectors } from 'shared/selectors'
 import { getUserPosts } from 'widgets/Posts/store/thunks'
-import { Post } from './../../../../entities/Profile'
-import { postActions, postSlice } from 'widgets/Posts/store/slice/postsReducer'
+import { Post } from 'entities/Profile'
+import { postActions, postSlice, PostSelectors } from 'widgets/Posts'
 import { Pagination } from 'shared/ui/material'
 import { PAGE_LIMIT } from 'app/config/globals'
 import { DynamicModuleLoader } from 'shared/lib/components'
 import { WithLoading } from 'shared/ui/kit'
 import { AiOutlineFileSearch as PostIcon } from 'shared/ui/icons'
+import { UserSelectors } from 'widgets/Profile'
 
 export const Posts : FC = () => {
   const posts = useSelector(PostSelectors.posts)

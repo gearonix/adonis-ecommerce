@@ -5,7 +5,7 @@ import { Header } from 'widgets/Header'
 import cn from 'classnames'
 import { useTheme } from 'shared/lib/hooks/useTheme'
 import { Footer } from 'entities/Others'
-import { WithNotifications } from 'app/lib/components'
+import { WithNotifications } from 'app/providers/Notifications'
 
 const interFont = Inter({ subsets: ['latin'] })
 

@@ -1,11 +1,9 @@
 import createAuthSocketApi from 'widgets/Profile/socket/createSocketApi'
-import { useSocket } from 'shared/lib/hooks'
-import { Helpers } from 'shared/lib/helpers'
+import { useContext } from 'react'
+import { AuthSocketContext } from 'app/providers/Authorization/socket'
 
 export const useAuthSocket = () => {
-  const helpers = new Helpers()
-  const socket = useSocket('auth')
-  const socketApi = createAuthSocketApi(socket)
+  const socket = useContext(AuthSocketContext)
 
-  return socketApi
+  return createAuthSocketApi(socket)
 }

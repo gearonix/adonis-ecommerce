@@ -2,9 +2,9 @@ import { FC } from 'react'
 import s from './style.module.scss'
 import { FaShoppingCart, MdMessage } from 'shared/ui/icons'
 import { Rating } from '@mui/material'
-import { Product } from 'shared/types/slices'
 import { InStock } from 'shared/ui/kit'
 import { useTranslation } from 'react-i18next'
+import { Product } from 'widgets/Products'
 
 
 interface ProductParamsProps{

@@ -1,7 +1,7 @@
 import { Lengths } from '@app/types/global'
 import { IsIn, IsOptional, IsString, Length } from 'class-validator'
 import { ValidationExceptions } from '@app/types/exceptions'
-import { ProductModels, ProductRatings, ProductSizes, ProductTypes } from '@app/entities/products/types'
+import { ProductModels, ProductRatings, ProductSizes, ProductTypes } from '@app/types/elements/types'
 
 export class ProductDTO {
     @IsString({ message: ValidationExceptions.MUST_BE_A_STRING })

@@ -11,4 +11,11 @@ export { messengerApi } from './api'
 
 export type { MessengerApi } from './types'
 
-export { messengerReducer, messengerActions } from './store/slice/messengerSlice'
+export { messengerSlice, messengerActions } from './store/slice/messengerReducer'
+
+export { default as MessengerSelectors } from './store/selectors/messenger.selectors'
+export { selectFilteredRooms } from './store/selectors/others/selectFilteredRooms'
+export { selectOpponentUser } from './store/selectors/others/selectOpponentUser'
+export { selectUserStatus } from './store/selectors/others/selectUserStatus'
+
+export type { MessengerSlice, Room, Message } from './store/slice/initialState'

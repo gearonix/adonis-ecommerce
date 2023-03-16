@@ -6,7 +6,7 @@ import {
   ErrorBoundary
 } from './providers'
 import 'shared/config/i18n'
-import { WithNotifications } from 'app/lib/components'
+import { WithNotifications } from 'app/providers/Notifications'
 
 
 const App = ({ Component, pageProps }: AppProps) => {

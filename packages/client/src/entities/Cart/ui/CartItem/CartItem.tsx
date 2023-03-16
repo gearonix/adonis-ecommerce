@@ -5,8 +5,8 @@ import { ImageModal } from 'shared/ui/material'
 import { DefaultAssets } from 'shared/config/consts/assets'
 import { CartSaved, SavedProps } from 'features/Saved'
 import { Nullable } from 'shared/types/common'
-import { Product } from 'shared/types/slices'
 import { useTranslation } from 'react-i18next'
+import { Product } from 'widgets/Products'
 
 export interface CartItemProps {
   Remove?: FC<{ ref?: MutableRefObject<undefined>, productId: number }>,

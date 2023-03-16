@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { Message } from 'shared/types/slices'
+import { Message } from 'widgets/Messenger'
 
 export type ColorType = 'red' | 'green' | 'primary' | 'orange' | 'outlined' | 'blueBordered'
     | 'redColored' | 'greyBordered'

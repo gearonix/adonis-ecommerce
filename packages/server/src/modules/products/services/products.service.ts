@@ -1,6 +1,6 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
-import { ProductsEntity } from '@app/entities/products/products.entity'
+import { ProductsEntity } from '@entities/products.entity'
 import { In, Like, Repository } from 'typeorm'
 import { AuthService } from '@app/modules/auth'
 import { UsersService } from '@app/modules/users'
@@ -63,6 +63,7 @@ export class ProductsService {
   async userProducts(salesmanId: number, page: string) {
     const [data, count] = await this.products.findAndCount({
       where: { salesmanId },
+      order: { productId: 'DESC' },
       ...withLimit(page)
     })
     return { data, count }
@@ -73,10 +74,12 @@ export class ProductsService {
     }
     const saved = await this.savedService.getSavedProducts(salesmanId)
 
-    return this.products.findBy({ productId: In(saved?.map((i) => i.productId)) })
+    return this.products.find(
+        { where: { productId: In(saved?.map((i) => i.productId)) },
+          order: { productId: 'DESC' } })
   }
 
   async getProductsByIds(body: SearchByIdsDTO) {
-    return this.products.findBy({ productId: In(body.ids) })
+    return this.products.find({ where: { productId: In(body.ids) } })
   }
 }

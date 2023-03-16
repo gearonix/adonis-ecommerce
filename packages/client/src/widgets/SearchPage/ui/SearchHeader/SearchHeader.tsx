@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { SearchHeaderFilters } from 'features/SearchPage'
 import { SearchHeader as SearchHeaderTemplate } from 'entities/SearchPage'
 import { useSelector } from 'shared/types/redux'
-import { ProductsSelectors } from 'shared/selectors'
+import { ProductsSelectors } from 'widgets/Products'
 
 const SearchHeader: FC = () => {
   const itemsAmount = useSelector(ProductsSelectors.total)

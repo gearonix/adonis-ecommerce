@@ -1,9 +1,9 @@
 import { FC, useEffect, useState } from 'react'
 import { useDispatch } from 'shared/types/redux'
 import { getRecommendedProducts } from 'widgets/Products/store/thunks'
-import { Product } from 'shared/types/slices'
 import { KeyOf } from 'shared/types/common'
 import { ProductTypes } from 'shared/types/elements'
+import { Product } from 'widgets/Products'
 
 interface RecommendedItemsProps{
   Component: FC<RecommendedItemProps>,

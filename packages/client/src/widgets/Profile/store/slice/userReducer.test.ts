@@ -1,6 +1,6 @@
 import { JestRedux } from 'shared/lib/jest'
 import { Store } from 'app/store/store'
-import { User, usersInitialState, UserSlice } from 'shared/types/slices/user'
+import { User, usersInitialState, UserSlice } from 'widgets/Profile/store/slice/initialState/userInitialState'
 import { userActions, userSlice } from 'widgets/Profile'
 import { ObjectNullable } from 'shared/types/common'
 

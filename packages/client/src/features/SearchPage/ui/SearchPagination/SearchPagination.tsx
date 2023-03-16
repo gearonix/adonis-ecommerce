@@ -1,8 +1,7 @@
 import { FC } from 'react'
 import { Pagination } from 'shared/ui/material'
 import { useDispatch, useSelector } from 'shared/types/redux'
-import { ProductsSelectors } from 'shared/selectors'
-import { productsActions } from 'widgets/Products'
+import { productsActions, ProductsSelectors } from 'widgets/Products'
 import { PAGE_LIMIT } from 'app/config/globals'
 
 const SearchPagination : FC = () => {

@@ -28,7 +28,6 @@ export const StandardSelect: FC<StandardSelectProps> = ({ title, values, Icon })
       labelId="demo-simple-select-label"
       id="demo-simple-select"
       error={!!values.error}
-      value={values.getValue() || 0}
       onChange={onChange}
       sx={{ marginTop: '8px' }}
       label={title}

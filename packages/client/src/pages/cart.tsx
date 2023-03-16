@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import React from 'react'
-import { CartItems, CartProdiver } from 'widgets/Cart'
+import { CartItems, CartProvider } from 'widgets/Cart'
 import { ContainerTitle } from 'shared/ui/kit'
 import { Checkout } from 'entities/Cart'
 import { CheckoutButton } from 'features/Checkout'
@@ -9,13 +9,13 @@ import { RemoveAllCard, RemoveFromCard } from 'features/Cart'
 import { ProductTypes } from 'shared/types/elements'
 import { SortedProducts } from 'entities/Products'
 import { useSelector } from 'shared/types/redux'
-import { CartSelectors } from 'shared/selectors'
 import { SavedProvider } from 'features/Saved'
 import { WithSpring } from 'shared/lib/components'
 import { FindProductBanner, GithubBanner } from 'entities/Banners'
 import { SearchProductsForm } from 'features/SearchPage'
 import { ProductBannerForm } from 'entities/SearchPage'
 import { useTranslation } from 'react-i18next'
+import { CartSelectors } from 'widgets/Cart'
 
 const Cart = () => {
   const productsCount = useSelector(CartSelectors.count)
@@ -26,11 +26,11 @@ const Cart = () => {
     </Head>
     <ContainerTitle>{t('My_Cart')} ({productsCount})</ContainerTitle>
     <div className={'cart_page'}>
-      <CartProdiver>
+      <CartProvider>
         <CartItems RemoveAll={RemoveAllCard} Remove={RemoveFromCard}
           AddToSaved={SavedProvider} />
         <Checkout CheckoutButton={CheckoutButton}/>
-      </CartProdiver>
+      </CartProvider>
     </div>
     <RecommendedItems Component={SortedProducts} type={ProductTypes[4]}/>
     <RecommendedItems Component={SortedProducts} type={ProductTypes[3]}/>

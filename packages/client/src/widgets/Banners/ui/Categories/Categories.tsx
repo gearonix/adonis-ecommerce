@@ -1,13 +1,13 @@
 import { FC, useEffect, useState } from 'react'
 import { MutableProductTypes, ProductTypes, ProductTypesKeys } from 'shared/types/elements/productTypes'
 import { useDispatch, useSelector } from 'shared/types/redux'
-import { AuthSelectors } from 'shared/selectors'
 import { routes } from 'shared/config/consts/routes'
 import { useRouter } from 'next/router'
 import { productsActions } from 'widgets/Products'
 import { Categories as CategoriesTemplate } from 'entities/Banners'
 import { Helpers } from 'shared/lib/helpers'
 import { useInterval } from 'shared/lib/hooks'
+import { AuthSelectors } from 'widgets/Login'
 
 const Categories: FC = () => {
   const [category, setCategory] = useState<ProductTypesKeys>('Electronics')

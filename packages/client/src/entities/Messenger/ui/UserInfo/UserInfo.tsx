@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import s from './style.module.scss'
 import { NextImage } from 'shared/ui/kit'
-import { User } from 'shared/types/slices'
+import { User } from 'widgets/Profile'
 import { DefaultAssets } from 'shared/config/consts/assets'
 import { Helpers } from 'shared/lib/helpers'
 import { WithSpring } from 'shared/lib/components'

@@ -1,10 +1,10 @@
 import { FC, ReactNode, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'shared/types/redux'
-import { CartSelectors } from 'shared/selectors'
 import { getCartProducts } from 'widgets/Cart/store/thunks/getCartProducts/getCartProducts'
-import { Product } from 'shared/types/slices'
 import CartContext from 'widgets/Cart/providers/Cart/CartContext'
 import { Helpers } from 'shared/lib/helpers'
+import { Product } from 'widgets/Products'
+import { CartSelectors } from 'widgets/Cart'
 
 const CartProvider : FC<{children: ReactNode}> = ({ children }) => {
   const [items, setItems] = useState<Product[]>([])

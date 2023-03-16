@@ -3,9 +3,9 @@ import { SizeButtons } from 'shared/ui/material'
 import { useDispatch, useSelector } from 'shared/types/redux'
 import { productsActions } from 'widgets/Products'
 import { Checkbox } from '@mui/material'
-import { ProductsSelectors } from 'shared/selectors'
 import s from './style.module.scss'
 import { useTranslation } from 'react-i18next'
+import { ProductsSelectors } from 'widgets/Products'
 
 const SearchHeaderFilters: FC = () => {
   const dispatch = useDispatch()

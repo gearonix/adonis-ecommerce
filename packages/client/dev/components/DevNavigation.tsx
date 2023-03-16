@@ -2,10 +2,9 @@ import Link from 'next/link'
 import { FC } from 'react'
 import { logoutUser } from 'widgets/Login/store/thunks'
 import { useDispatch, useSelector } from 'shared/types/redux'
-import { AuthSelectors } from 'shared/selectors'
 import { useTheme } from 'shared/lib/hooks/useTheme'
 import { useTranslation } from 'react-i18next'
-import { useSocket } from 'shared/lib/hooks'
+import { AuthSelectors } from 'widgets/Login'
 
 // !!!
 // This file is for development mode only.
@@ -15,7 +14,6 @@ const DevNavigation: FC = () => {
   const { toggleTheme } = useTheme()
   const userId = useSelector(AuthSelectors.userId)
   const { i18n } = useTranslation()
-  const authSocket = useSocket('auth')
 
   const logout = async () => {
     dispatch(logoutUser())

@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
 import { useDispatch, useSelector } from 'shared/types/redux'
 import { addProductToSaved, removeProductFromSaved } from 'features/Saved/store/thunks'
-import { SavedSelectors } from 'shared/selectors'
 import { useUnauthorized } from 'shared/lib/hooks'
+import { SavedSelectors } from 'features/Saved'
 
 
 export interface SavedProps{

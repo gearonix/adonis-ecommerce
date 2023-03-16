@@ -1,6 +1,5 @@
 import { AxiosResponse as Res, Nullable } from 'shared/types/common'
-import { Room } from 'shared/types/slices'
-import { Message } from 'shared/types/slices/messenger'
+import { Message, Room } from 'widgets/Messenger/store/slice/initialState'
 
 export interface MessengerApi {
     getRooms(userId: Nullable<number>): Res<Room[]>,

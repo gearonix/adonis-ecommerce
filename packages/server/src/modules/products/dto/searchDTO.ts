@@ -1,4 +1,4 @@
-import { ProductModels, ProductRatings, ProductSizes, ProductTypes } from '@app/entities/products/types'
+import { ProductModels, ProductRatings, ProductSizes, ProductTypes } from '@app/types/elements/types'
 
 export interface SearchDTO{
     size: typeof ProductSizes[number],

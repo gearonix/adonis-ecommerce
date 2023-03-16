@@ -5,9 +5,9 @@ import SocketContext from 'widgets/Messenger/socket/provider/SocketContext'
 import { CFC } from 'shared/types/components'
 import { SocketGateWays } from 'app/config/globals'
 import { useSelector } from 'shared/types/redux'
-import { AuthSelectors } from 'shared/selectors'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
+import { AuthSelectors } from 'widgets/Login'
 
 const SocketProvider: CFC = ({ children }) => {
   const userId = useSelector(AuthSelectors.userId) as number

@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { useSelector } from 'shared/types/redux'
-import userSelectors from 'shared/selectors/user/user.selectors'
+import userSelectors from 'widgets/Profile/store/selectors/users/user.selectors'
 import { AiOutlineUser } from 'shared/ui/icons'
 
 const ChangeProfile: FC<{ openProfile: () => void }> = ({ openProfile }) => {

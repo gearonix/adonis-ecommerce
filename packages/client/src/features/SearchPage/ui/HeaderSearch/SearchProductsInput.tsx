@@ -1,13 +1,11 @@
 import { FC } from 'react'
 import { searchDefaultValues } from '../../lib/defaultValues'
 import { useDispatch, useSelector } from 'shared/types/redux'
-import { productsActions } from 'widgets/Products'
+import { productsActions, ProductsSelectors } from 'widgets/Products'
 import { useRouter } from 'next/router'
 import { routes } from 'shared/config/consts/routes'
 import { useForm } from 'shared/lib/hooks/useForm'
 import { FieldValues, Helpers } from 'shared/lib/helpers'
-import { HeaderInput } from 'shared/ui/kit'
-import { ProductsSelectors } from 'shared/selectors'
 
 interface SearchForm{
     search: string,

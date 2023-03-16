@@ -35,7 +35,7 @@ const AddProduct: FC<AddProductProps> = ({ submitForm, cancel, ProductImages, re
         <div className={s.flex}>
           <div className={s.numberFields}>
             <NumberField title={t('Price')} values={reg('price')} Icon={BiDollar}/>
-            <NumberField title={t('Warranty count')}
+            <NumberField title={t('Warranty (years)')}
               values={reg('warrantyCount')}
               Icon={CartIcon}/>
           </div>

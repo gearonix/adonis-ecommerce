@@ -8,7 +8,6 @@ export enum MessengerEvents{
     TYPING = 'userTyping',
     NO_LONGER_TYPING = 'userTypingStopped',
     MESSAGE_READ = 'messageAlreadyRead',
-    SHOW_NOTIFICATION = 'showNotification'
 }
 
 

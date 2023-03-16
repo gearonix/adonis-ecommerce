@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction as Action } from '@reduxjs/toolkit'
 import { ReduxLocalStorage } from 'shared/lib/helpers'
-import { CartSlice } from 'shared/types/slices'
 import { LocalStorage } from 'shared/config/consts/others'
+import { CartSlice } from 'widgets/Cart'
 
 const storage = new ReduxLocalStorage<number[]>(LocalStorage.CART)
 

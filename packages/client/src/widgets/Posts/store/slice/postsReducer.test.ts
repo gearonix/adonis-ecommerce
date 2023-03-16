@@ -1,8 +1,8 @@
 import { JestRedux } from 'shared/lib/jest'
+import { postsInitialState } from 'widgets/Posts/store/slice/initialState'
 import { Store } from 'app/store/store'
-import { postsInitialState, PostsSlice } from 'shared/types/slices'
 import { postActions, postSlice } from 'widgets/Posts'
-
+import { PostsSlice } from 'widgets/Profile'
 
 describe('postsReducer', () => {
   const tests = new JestRedux()

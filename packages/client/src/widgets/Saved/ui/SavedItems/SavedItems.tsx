@@ -2,9 +2,9 @@ import { FC, useEffect } from 'react'
 import { CartItemsProps } from 'widgets/Cart/types'
 import { useDispatch, useSelector } from 'shared/types/redux'
 import { getSavedByIds } from 'features/Saved/store/thunks/getSavedByIds/getSavedByIds'
-import { savedActions } from 'features/Saved'
-import { UserSelectors, SavedSelectors } from 'shared/selectors'
+import { savedActions, SavedSelectors } from 'features/Saved'
 import { FiHeart } from 'shared/ui/icons'
+import { UserSelectors } from 'widgets/Profile'
 
 const SavedItems : FC<CartItemsProps> = ({ Remove, AddToSaved, Component }) => {
   const products = useSelector(SavedSelectors.products)

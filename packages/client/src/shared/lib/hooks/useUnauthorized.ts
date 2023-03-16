@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
-import { AuthSelectors } from 'shared/selectors'
 import { useRouter } from 'next/router'
 import { routes } from 'shared/config/consts/routes'
+import { AuthSelectors } from 'widgets/Login'
 
 export const useUnauthorized = () => {
   const isAuthorized = useSelector(AuthSelectors.isAuthorized)

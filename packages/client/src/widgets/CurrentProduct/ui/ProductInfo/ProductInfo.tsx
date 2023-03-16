@@ -3,14 +3,13 @@ import s from './style.module.scss'
 import { ProductImages, ProductParams, PurchaseProduct } from 'entities/ProductPage'
 import { ImageCarousel, CartButton } from 'features/ProductPage'
 import { useDispatch, useSelector } from 'shared/types/redux'
-import { getProduct } from '../../store/thunks/getProduct/getProduct'
+import { getProduct } from 'widgets/CurrentProduct/store/thunks'
 import { useRouter } from 'next/router'
-import { ProductSelectors } from 'shared/selectors'
-import { Product } from 'shared/types/slices'
 import { SavedProvider } from 'features/Saved'
-import { productActions } from 'widgets/CurrentProduct'
+import { productActions, ProductSelectors } from 'widgets/CurrentProduct'
 import { NotFound, PenPreloader, WithLoading } from 'shared/ui/kit'
 import { AiOutlineShoppingCart as CartIcon } from 'shared/ui/icons'
+import { Product } from 'widgets/Products'
 
 const ProductInfo: FC = () => {
   const dispatch = useDispatch()

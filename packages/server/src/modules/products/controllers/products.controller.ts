@@ -3,7 +3,6 @@ import { SearchDTO } from '@app/modules/products/dto/searchDTO'
 import { ProductsService } from '@modules/products/services'
 import { SearchByUserIdDTO } from '@modules/products/dto'
 import { SearchByIdsDTO } from '@modules/products/dto/searchByIdsDTO'
-import { sleep } from '@app/lib/helpers'
 
 @Controller('products')
 export class ProductsController {

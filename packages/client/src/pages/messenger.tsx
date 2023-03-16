@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import React, { FC, useEffect } from 'react'
 import { DynamicModuleLoader, WithSpring } from 'shared/lib/components'
-import { MessengerAside, MessengerContent, MessengerHeader, messengerReducer } from 'widgets/Messenger'
+import { MessengerAside, MessengerContent, MessengerHeader, messengerSlice } from 'widgets/Messenger'
 import { ExtraServices } from 'entities/Banners'
 import { RecommendedItems } from 'widgets/Products'
 import { SortedProducts } from 'entities/Products'
@@ -30,7 +30,7 @@ const Messenger: FC = () => {
 
 const MessengerBuilder: FC = () => {
   return <SocketProvider>
-    <DynamicModuleLoader name={'messenger'} reducer={messengerReducer}>
+    <DynamicModuleLoader name={'messenger'} reducer={messengerSlice}>
       <Messenger/>
     </DynamicModuleLoader>
   </SocketProvider>

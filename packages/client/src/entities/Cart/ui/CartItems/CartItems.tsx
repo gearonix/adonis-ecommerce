@@ -1,12 +1,11 @@
 import { FC } from 'react'
 import { CartButtons, CartItem } from 'entities/Cart'
 import s from './style.module.scss'
-import { Product } from 'shared/types/slices'
 import { SavedProps } from 'features/Saved'
 import { CartIcons } from 'entities/Banners'
 import { AiOutlineShoppingCart as CartIcon } from 'shared/ui/icons'
-import { Display } from 'shared/lib/components'
 import { WithLoading } from 'shared/ui/kit'
+import { Product } from 'widgets/Products'
 
 export interface CartItemsProps{
   Remove?: FC<any>,

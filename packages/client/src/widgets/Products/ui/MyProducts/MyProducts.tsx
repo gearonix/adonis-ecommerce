@@ -2,13 +2,13 @@ import { FC, useEffect } from 'react'
 import { useDispatch, useSelector } from 'shared/types/redux'
 import { getUserProducts, productsActions } from 'widgets/Products'
 import { SavedProvider } from 'features/Saved'
-import { ProductsSelectors } from 'shared/selectors'
 import { WithLoading, SearchedProduct } from 'shared/ui/kit'
-import UserSelectors from 'shared/selectors/user/user.selectors'
+import UserSelectors from 'widgets/Profile/store/selectors/users/user.selectors'
 import { CartButton } from 'features/ProductPage'
 import { SearchPagination } from 'features/SearchPage'
 import { AiOutlineShoppingCart as CartIcon } from 'shared/ui/icons'
 import { ProductsPreloader } from 'shared/ui/material'
+import { ProductsSelectors } from 'widgets/Products'
 
 const MyProducts : FC = () => {
   const dispatch = useDispatch()

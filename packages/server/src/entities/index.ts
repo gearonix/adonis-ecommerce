@@ -1,5 +1,5 @@
 import { UsersEntity } from './users.entity'
-import { ProductsEntity } from './products/products.entity'
+import { ProductsEntity } from './products.entity'
 import { SavedEntity } from './saved.entity'
 import { ProductCommentsEntity } from './product-comments.entity'
 import { PostsEntity } from './posts.entity'

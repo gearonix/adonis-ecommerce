@@ -5,10 +5,11 @@ import { useFilteredEffect } from 'shared/lib/hooks'
 import { useDispatch, useSelector } from 'shared/types/redux'
 import { selectRoom } from 'widgets/Messenger/store/thunks'
 import { Display } from 'shared/lib/components'
-import { MessengerSelectors, AuthSelectors } from 'shared/selectors'
 import MessengerInput from '../MessengerInput/MessengerInput'
 import { messengerActions } from 'widgets/Messenger'
 import { useMessengerSocket } from 'widgets/Messenger/lib/hooks'
+import { MessengerSelectors } from 'widgets/Messenger'
+import { AuthSelectors } from 'widgets/Login'
 
 const MessengerContent: FC = () => {
   const dispatch = useDispatch()

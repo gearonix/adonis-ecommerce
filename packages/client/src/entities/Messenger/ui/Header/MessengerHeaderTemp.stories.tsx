@@ -12,5 +12,5 @@ const Template: ComponentStory<typeof MessengerHeaderTemplate> = (args) => <Mess
 
 export const Default = Template.bind({})
 Default.args = {
-  Search: SearchInput
+
 }

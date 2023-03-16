@@ -1,11 +1,11 @@
 import { FC } from 'react'
 import s from './style.module.scss'
 import { NextImage } from 'shared/ui/kit'
-import { Product } from 'shared/types/slices'
 import { Helpers } from 'shared/lib/helpers'
 import Link from 'next/link'
 import { routes } from 'shared/config/consts/routes'
 import { DefaultAssets } from 'shared/config/consts/assets'
+import { Product } from 'widgets/Products'
 
 export const RecommendedItem: FC<{product: Product}> = ({ product }) => {
   const helpers = new Helpers()

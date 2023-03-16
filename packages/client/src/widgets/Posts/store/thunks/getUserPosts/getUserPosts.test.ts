@@ -1,7 +1,7 @@
 import { JestAsyncThunk } from 'shared/lib/jest'
 import { getUserPosts } from './getUserPosts'
 import { postActions } from 'widgets/Posts'
-import { usersInitialState } from 'shared/types/slices'
+import { usersInitialState } from 'widgets/Profile'
 
 describe('getUserPosts', () => {
   let arg: any

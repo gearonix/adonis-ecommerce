@@ -1,20 +1,15 @@
-import { SavedApi } from 'features/Saved'
-import { CurrentProductApi } from 'widgets/CurrentProduct'
-import { AuthApi } from 'widgets/Login'
+import { SavedApi, SavedSlice } from 'features/Saved'
+import { CurrentProductApi, CurrentProductSlice } from 'widgets/CurrentProduct'
+import { AuthApi, AuthSlice } from 'widgets/Login'
 import { PostsApi } from 'widgets/Posts'
-import { ProductsApi } from 'widgets/Products'
-import { ProfileApi } from 'widgets/Profile'
+import { ProductsApi, ProductsSlice } from 'widgets/Products'
+import { ProfileApi, PostsSlice, UserSlice } from 'widgets/Profile'
 import { CreateMiddleWare } from 'app/store/config/createMiddleware'
 import { ObjectNullable, Required } from 'shared/types/common'
-import {
-  AuthSlice, CurrentProductSlice, Message, MessengerSlice, PostsSlice,
-  ProductsSlice, SavedSlice
-} from 'shared/types/slices'
 import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore'
 import { ReducerManager } from 'app/store/reducerManager'
-import { CartSlice } from 'shared/types/slices/cartSlice'
-import { UserSlice } from 'shared/types/slices/user'
-import { MessengerApi } from 'widgets/Messenger'
+import { CartSlice } from 'widgets/Cart'
+import { Message, MessengerApi, MessengerSlice } from 'widgets/Messenger'
 
 export interface ApiConfig {
     profile: ProfileApi

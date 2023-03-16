@@ -6,7 +6,8 @@ import {
   ProductTypes
 } from 'shared/types/elements/productTypes'
 import { AxiosResponse as Res, KeyOf, Nullable, ObjectNullable } from 'shared/types/common'
-import { CurrentProductSlice, Product } from 'shared/types/slices'
+import { Product } from './store/slice/initialState'
+import { CurrentProductSlice } from 'widgets/CurrentProduct'
 
 export interface AddProductForm {
     name: string

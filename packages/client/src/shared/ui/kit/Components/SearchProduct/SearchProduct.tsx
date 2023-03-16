@@ -4,11 +4,11 @@ import Image from 'next/image'
 import { Rating } from '@mui/material'
 import Typo from 'shared/ui/kit/Typos/Typo/Typo'
 import { BlueLink } from 'shared/ui/kit'
-import { Product } from 'shared/types/slices'
 import Link from 'next/link'
 import { routes } from 'shared/config/consts/routes'
 import { SavedProps, SearchSaved } from 'features/Saved'
 import { useTranslation } from 'react-i18next'
+import { Product } from 'widgets/Products'
 
 export interface SearchProductProps {
   AddToSaved?: FC<SavedProps>,

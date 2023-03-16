@@ -1,19 +1,20 @@
 import { authActions, authSlice } from './authReducer'
 import { Store } from 'app/store/store'
-import { AuthSlice, User, authInitialState } from 'shared/types/slices'
+import { AuthSlice, initialState } from './initialState'
 import { JestRedux } from 'shared/lib/jest'
+import { User } from 'widgets/Profile'
 
 
 describe('Auth reducer', () => {
   const tests = new JestRedux()
   let store: Store
   let state: AuthSlice
-  const initialState: AuthSlice = {
-    ...authInitialState,
+  const defaultState: AuthSlice = {
+    ...initialState,
     email: 'test'
   }
   beforeEach(() => {
-    store = tests.configureTestStore('auth', initialState)
+    store = tests.configureTestStore('auth', defaultState)
     state = tests.createReducerState(store, 'auth')
   })
 
@@ -24,7 +25,7 @@ describe('Auth reducer', () => {
     expect(authSlice(state, authActions.authorizationFailed()).isAuthorized).toEqual(false)
   })
   test('logout', () => {
-    expect(authSlice(state, authActions.logout())).toEqual(authInitialState)
+    expect(authSlice(state, authActions.logout())).toEqual(defaultState)
   })
   test('authorizeUser', () => {
     const user = { userId: 1, avatar: 'avatar' } as User

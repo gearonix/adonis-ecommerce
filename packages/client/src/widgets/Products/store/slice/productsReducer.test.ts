@@ -1,9 +1,8 @@
 import { JestRedux } from 'shared/lib/jest'
 import { Store } from 'app/store/store'
-import { productsInitialState, ProductsSlice } from 'shared/types/slices'
-import { productsActions, productsSlice } from 'widgets/Products'
-import { DeepPartial } from '@reduxjs/toolkit'
+import { productsActions, ProductsSlice, productsSlice } from 'widgets/Products'
 import { ProductsWithCount } from 'widgets/Products/types'
+import { productsInitialState } from './initialState'
 
 
 describe('productsReducer', () => {

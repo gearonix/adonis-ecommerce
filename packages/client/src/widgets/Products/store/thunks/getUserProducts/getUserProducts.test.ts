@@ -1,8 +1,7 @@
 import { JestAsyncThunk } from 'shared/lib/jest'
-import { getUserProducts } from './getUserProducts'
-import { usersInitialState } from 'shared/types/slices'
-import { Nullable, ObjectNullable } from 'shared/types/common'
-import { UserSlice } from 'shared/types/slices/user'
+import { getUserProducts } from 'widgets/Products'
+import { ObjectNullable } from 'shared/types/common'
+import { usersInitialState, UserSlice } from 'widgets/Profile'
 import { productsActions } from 'widgets/Products'
 
 describe('getUserProducts', () => {

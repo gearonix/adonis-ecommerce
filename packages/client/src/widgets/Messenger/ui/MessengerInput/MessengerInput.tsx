@@ -3,7 +3,7 @@ import { useForm } from 'shared/lib/hooks'
 import { MessageBar } from 'entities/Messenger'
 import { useMessengerSocket } from 'widgets/Messenger/lib/hooks'
 import { useSelector } from 'shared/types/redux'
-import { MessengerSelectors } from 'shared/selectors'
+import { MessengerSelectors } from 'widgets/Messenger'
 import { useTyping } from 'widgets/Messenger/lib/hooks/useTyping'
 import { Nullable } from 'shared/types/common'
 

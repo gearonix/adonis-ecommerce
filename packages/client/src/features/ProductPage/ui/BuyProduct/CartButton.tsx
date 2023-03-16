@@ -1,9 +1,10 @@
 import { FC } from 'react'
 import { Button } from 'shared/ui/kit'
 import { useDispatch, useSelector } from 'shared/types/redux'
-import { CartSelectors, ProductSelectors } from 'shared/selectors'
 import { cartActions } from 'widgets/Cart/store/slice/cartReducer'
 import { useTranslation } from 'react-i18next'
+import { ProductSelectors } from 'widgets/CurrentProduct'
+import { CartSelectors } from 'widgets/Cart'
 
 const CartButton: FC<{productId?: number}> = ({ productId: id }) => {
   const currentProductId = useSelector(ProductSelectors.id) as number

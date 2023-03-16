@@ -1,7 +1,7 @@
 import { createThunk } from 'shared/types/redux'
 import { isError } from 'shared/lib/helpers/others/httpHelpers'
-import { Product } from 'shared/types/slices'
 import { Nullable } from 'shared/types/common'
+import { Product } from 'widgets/Products'
 
 export const getCartProducts = createThunk('cart/GET_CART_PRODUCTS',
     async (ids: number[], { extra }): Promise<Nullable<Product[]>> => {

@@ -1,6 +1,6 @@
 import { UserRoles } from 'app/config/globals'
 import { AxiosResponse as Res } from 'shared/types/common'
-import { User } from 'shared/types/slices'
+import { User } from 'widgets/Profile'
 
 export interface LoginForm {
     email: string,

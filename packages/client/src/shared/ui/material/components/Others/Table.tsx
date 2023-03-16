@@ -1,8 +1,8 @@
 import { Paper, Table as MuiTable, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
 import { FC } from 'react'
-import { Product } from 'shared/types/slices'
 import { useTheme } from 'shared/lib/hooks/useTheme'
 import { useTranslation } from 'react-i18next'
+import { Product } from 'widgets/Products'
 
 export const Table: FC<{product: Product}> = ({ product }) => {
   const { isLight } = useTheme()

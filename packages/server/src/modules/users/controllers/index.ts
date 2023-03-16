@@ -1,2 +1,2 @@
-export { ChangeProfileController } from './changeProfile.controller'
+export { ChangeProfileController } from './change.profile.controller'
 export { UsersController } from './users.controller'

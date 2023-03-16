@@ -1,6 +1,6 @@
-import { User } from 'shared/types/slices'
 import { createSlice, PayloadAction as Action } from '@reduxjs/toolkit'
-import { usersInitialState as initialState } from 'shared/types/slices/user'
+import { User, usersInitialState as initialState } from
+  'widgets/Profile/store/slice/initialState/userInitialState'
 import { withLoading } from 'shared/lib/helpers'
 import { getUserById } from 'widgets/Login/store/thunks'
 import { UserStatus } from 'shared/config/consts/others'

@@ -1,8 +1,8 @@
 import { Socket } from 'socket.io-client'
 import { StatusEvents } from 'app/providers/Authorization/socket'
 import { UserStatus } from 'shared/config/consts/others'
-import { Message } from 'shared/types/slices'
 import { toast } from 'react-toastify'
+import { Message } from 'widgets/Messenger'
 
 const createAuthSocketApi = (socket: Socket) => {
   return {

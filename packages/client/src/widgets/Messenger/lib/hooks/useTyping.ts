@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'shared/types/redux'
-import { MessengerSelectors } from 'shared/selectors'
-import { useMessengerSocket } from 'widgets/Messenger/lib/hooks/useMessengerSocket'
+import { MessengerSelectors } from 'widgets/Messenger'
+import { useMessengerSocket } from 'widgets/Messenger/lib/hooks'
 import { messengerActions } from 'widgets/Messenger'
 
 export const useTyping = () => {

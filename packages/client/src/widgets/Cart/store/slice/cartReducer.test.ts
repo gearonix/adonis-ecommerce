@@ -1,7 +1,6 @@
 import { JestRedux } from 'shared/lib/jest'
 import { Store } from 'app/store/store'
-import { CartSlice } from 'shared/types/slices'
-import { cartSlice } from 'widgets/Cart'
+import {CartSlice, cartSlice } from 'widgets/Cart'
 import { cartActions } from 'widgets/Cart/store/slice/cartReducer'
 
 

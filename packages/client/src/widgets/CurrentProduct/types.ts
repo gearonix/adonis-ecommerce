@@ -1,5 +1,5 @@
 import { AxiosResponse as Res } from 'shared/types/common'
-import { CurrentProductSlice, ProductComment, ProductComments } from 'shared/types/slices'
+import { CurrentProductSlice, ProductComment, ProductComments } from './store/slice/initialState'
 
 export interface AddComment{
     message: string,

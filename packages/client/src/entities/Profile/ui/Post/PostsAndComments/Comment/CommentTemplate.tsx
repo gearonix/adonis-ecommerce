@@ -5,9 +5,9 @@ import { BsDot, BsThreeDotsVertical } from 'shared/ui/icons'
 import s from '../style.module.scss'
 import Link from 'next/link'
 import { routes } from 'shared/config/consts/routes'
-import { ProductComment } from 'shared/types/slices'
 import { Helpers } from 'shared/lib/helpers'
 import { WithSpring } from 'shared/lib/components'
+import { ProductComment } from 'widgets/CurrentProduct'
 
 interface CommentProps{
   comment: ProductComment

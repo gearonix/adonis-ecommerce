@@ -9,3 +9,7 @@ export { default as authApi } from './api'
 export type { AuthApi } from './types'
 
 export { authorizeUser } from './store/thunks'
+
+export { default as AuthSelectors } from './store/selectors/auth.selectors'
+
+export type { AuthSlice } from './store/slice/initialState'

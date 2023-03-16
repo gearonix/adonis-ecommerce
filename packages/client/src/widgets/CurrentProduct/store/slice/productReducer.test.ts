@@ -1,20 +1,20 @@
 import { JestRedux } from 'shared/lib/jest'
 import { Store } from 'app/store/store'
 import { currentProductSlice, productActions } from 'widgets/CurrentProduct'
-import { CurrentProductSlice, productInitialState } from 'shared/types/slices'
+import { CurrentProductSlice, initialState } from 'widgets/CurrentProduct'
 
 
 describe('productReducer', () => {
   const tests = new JestRedux()
   let store: Store
   let state: CurrentProductSlice
-  const initialState: CurrentProductSlice = {
-    ...productInitialState,
+  const defaultState: CurrentProductSlice = {
+    ...initialState,
     isLoading: true
   }
 
   beforeEach(() => {
-    store = tests.configureTestStore('currentProduct', initialState)
+    store = tests.configureTestStore('currentProduct', defaultState)
     state = tests.createReducerState(store, 'currentProduct') as CurrentProductSlice
   })
 
@@ -27,7 +27,7 @@ describe('productReducer', () => {
         .toEqual({ ...state, comments: { ...state.comments, page: 4 } })
   })
   test('clearProduct', () => {
-    expect(currentProductSlice(state, productActions.clearProduct())).toEqual(productInitialState)
+    expect(currentProductSlice(state, productActions.clearProduct())).toEqual(initialState)
   })
   test('addComment', () => {
     const comment = 'test_comment'

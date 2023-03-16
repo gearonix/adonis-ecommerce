@@ -1,5 +1,5 @@
 import { createContext } from 'react'
-import { Product } from 'shared/types/slices'
+import { Product } from 'widgets/Products'
 
 export interface CartContextProps{
     items: Product[],

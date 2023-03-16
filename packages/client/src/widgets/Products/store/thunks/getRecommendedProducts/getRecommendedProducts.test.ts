@@ -1,7 +1,7 @@
 import { JestAsyncThunk } from 'shared/lib/jest'
 import { getRecommendedProducts } from './getRecommendedProducts'
 import { SearchControlsForm } from 'widgets/Products/types'
-import { Product } from 'shared/types/slices'
+import { Product } from 'widgets/Products'
 
 describe('getRecommendedProducts', () => {
   let args: Partial<SearchControlsForm>

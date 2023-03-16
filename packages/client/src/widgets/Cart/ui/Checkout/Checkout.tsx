@@ -1,9 +1,9 @@
 import { FC, useContext } from 'react'
 import s from './style.module.scss'
 import { useSelector } from 'shared/types/redux'
-import { AuthSelectors } from 'shared/selectors'
 import CartContext from 'widgets/Cart/providers/Cart/CartContext'
 import { useTranslation } from 'react-i18next'
+import { AuthSelectors } from 'widgets/Login'
 
 
 interface CheckoutProps{

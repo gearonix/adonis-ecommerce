@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'shared/types/redux'
 import { SearchControlsForm } from 'widgets/Products/types'
 import initialValues from 'widgets/Products/lib/form/initialValues'
 import { productsActions } from 'widgets/Products'
-import productSelectors from 'shared/selectors/products/products.selectors'
+import productSelectors from 'widgets/Products/store/selectors/products.selectors'
 import { useForm } from 'shared/lib/hooks/useForm'
 
 const SearchAside: FC = () => {

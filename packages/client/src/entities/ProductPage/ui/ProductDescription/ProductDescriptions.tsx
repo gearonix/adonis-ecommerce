@@ -3,13 +3,13 @@ import s from './style.module.scss'
 import { Table } from 'shared/ui/material'
 import { BlueLinkHeader } from 'shared/ui/kit'
 import Advantage from 'shared/ui/kit/Components/Advantage/ui/Advantage'
-import { ProductSelectors } from 'shared/selectors'
-import { Product } from 'shared/types/slices'
 import { useSelector } from 'shared/types/redux'
 import { Display } from 'shared/lib/components'
 import { CiWarning } from 'react-icons/ci'
 import { useTranslation } from 'react-i18next'
 import { MdOutlineDescription } from 'shared/ui/icons'
+import { ProductSelectors } from 'widgets/CurrentProduct'
+import { Product } from 'widgets/Products'
 
 const ProductDescriptions: FC = () => {
   const product = useSelector(ProductSelectors.product) as Product

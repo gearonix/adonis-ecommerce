@@ -35,8 +35,8 @@ export enum Exceptions {
 
 
 export enum UploadProperties{
-    USER_AVATAR = 'avatar',
-    USER_BACKGROUND = 'user_background',
+    USER_AVATAR = 'user_avatars',
+    USER_BACKGROUND = 'user_backgrounds',
     PRODUCT_IMAGES = 'product_images',
     POST_IMAGES = 'post_images',
 }

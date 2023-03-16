@@ -5,8 +5,8 @@ import { CFC } from 'shared/types/components'
 import { SocketGateWays } from 'app/config/globals'
 import AuthSocketContext from './AuthSocketContext'
 import { useSelector } from 'react-redux'
-import { AuthSelectors } from 'shared/selectors'
 import { useEffect, useState } from 'react'
+import { AuthSelectors } from 'widgets/Login'
 
 const AuthSocketProvider: CFC = ({ children }) => {
   const isAuthorized = useSelector(AuthSelectors.isAuthorized)

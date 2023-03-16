@@ -2,12 +2,12 @@ import { FC } from 'react'
 import s from './style.module.scss'
 import { HiOutlineFlag, MdMessage, TfiWorld } from 'shared/ui/icons'
 import { Button, NextImage } from 'shared/ui/kit'
-import { CurrentProductSlice } from 'shared/types/slices'
 import Link from 'next/link'
 import { routes } from 'shared/config/consts/routes'
 import { DefaultAssets } from 'shared/config/consts/assets'
 import { SavedProps, ProductSaved } from 'features/Saved'
 import { useTranslation } from 'react-i18next'
+import { CurrentProductSlice } from 'widgets/CurrentProduct'
 
 
 export interface PurchaseProductP {
