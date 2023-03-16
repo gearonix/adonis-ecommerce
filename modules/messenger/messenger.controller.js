@@ -14,20 +14,23 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MessengerController = void 0;
 const common_1 = require("@nestjs/common");
-const messenger_1 = require("..");
-const auth_1 = require("../../auth");
+const index_1 = require("./index");
+const auth_1 = require("../auth");
+const messages_service_1 = require("./services/messages.service");
 let MessengerController = class MessengerController {
     roomsService;
+    messagesService;
     authService;
-    constructor(roomsService, authService) {
+    constructor(roomsService, messagesService, authService) {
         this.roomsService = roomsService;
+        this.messagesService = messagesService;
         this.authService = authService;
     }
     async getUserRooms(userId) {
         return this.roomsService.getUserRooms(userId);
     }
     async selectRoom(id, userId) {
-        return this.roomsService.selectRoom(Number(id), userId);
+        return this.messagesService.selectRoom(Number(id), userId);
     }
 };
 __decorate([
@@ -47,9 +50,11 @@ __decorate([
 ], MessengerController.prototype, "selectRoom", null);
 MessengerController = __decorate([
     (0, common_1.Controller)('messenger'),
-    __param(0, (0, common_1.Inject)((0, common_1.forwardRef)(() => messenger_1.MessengerRoomsService))),
-    __param(1, (0, common_1.Inject)((0, common_1.forwardRef)(() => auth_1.AuthService))),
-    __metadata("design:paramtypes", [messenger_1.MessengerRoomsService,
+    __param(0, (0, common_1.Inject)((0, common_1.forwardRef)(() => index_1.RoomsService))),
+    __param(1, (0, common_1.Inject)((0, common_1.forwardRef)(() => messages_service_1.MessagesService))),
+    __param(2, (0, common_1.Inject)((0, common_1.forwardRef)(() => auth_1.AuthService))),
+    __metadata("design:paramtypes", [index_1.RoomsService,
+        messages_service_1.MessagesService,
         auth_1.AuthService])
 ], MessengerController);
 exports.MessengerController = MessengerController;

@@ -1,3 +1,4 @@
+import { UsersEntity } from '@entities/users.entity';
 export declare class UserMessagesEntity {
     creationDate: Date;
     roomId: number;
@@ -6,4 +7,5 @@ export declare class UserMessagesEntity {
     messageText: string;
     image: string;
     isRead: boolean;
+    user: UsersEntity;
 }

@@ -1,5 +1,5 @@
 import { ProductDTO } from './../dto';
-import { ProductsEntity } from '@app/entities/products/products.entity';
+import { ProductsEntity } from '@entities/products.entity';
 import { Repository } from 'typeorm';
 import { AuthService } from '@app/modules/auth';
 import { UsersService } from '@app/modules/users';
@@ -14,16 +14,16 @@ export declare class CreateProductService {
         salesmanId: number;
         name: string;
         price: number;
-        rating: import("../../../entities/products/types").ProductRatings;
+        rating: import("../../../types/elements/types").ProductRatings;
         description: string;
         inStock: boolean;
         images: string[];
         features: string[];
         material?: string;
-        type: import("../../../entities/products/types").ProductTypes;
+        type: import("../../../types/elements/types").ProductTypes;
         design?: string;
         warrantyCount?: number;
-        model: import("../../../entities/products/types").ProductModels;
+        model: import("../../../types/elements/types").ProductModels;
         size?: "Very little" | "Small" | "Medium" | "Massive" | "Large" | "Epic";
     } & ProductsEntity>;
     setImages(images: any[], productId: string): Promise<ProductsEntity>;

@@ -1,2 +1,2 @@
-export { StatusGroups as StatusGroups } from './status/types';
-export { MessengerGroups as ChatGroups } from './chat/types';
+export { StatusGroups as StatusGroups } from './statusGateway/types';
+export { MessengerGroups as ChatGroups } from './chatGateway/types';

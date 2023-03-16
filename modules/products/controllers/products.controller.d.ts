@@ -6,14 +6,14 @@ export declare class ProductsController {
     private productsService;
     constructor(productsService: ProductsService);
     getProducts(query: SearchDTO): Promise<{
-        data: import("../../../entities/index").ProductsEntity[];
+        data: import("../../../entities/products.entity").ProductsEntity[];
         count: number;
     }>;
-    getRecommendedProducts(query: SearchDTO): Promise<import("../../../entities/index").ProductsEntity[]>;
-    getProductsIdsByUserId(query: SearchByUserIdDTO): Promise<import("../../../entities/index").ProductsEntity[]>;
-    getProductsByIds(body: SearchByIdsDTO): Promise<import("../../../entities/index").ProductsEntity[]>;
+    getRecommendedProducts(query: SearchDTO): Promise<import("../../../entities/products.entity").ProductsEntity[]>;
+    getProductsIdsByUserId(query: SearchByUserIdDTO): Promise<import("../../../entities/products.entity").ProductsEntity[]>;
+    getProductsByIds(body: SearchByIdsDTO): Promise<import("../../../entities/products.entity").ProductsEntity[]>;
     getProduct(id: any): Promise<{
-        productInfo: import("../../../entities/index").ProductsEntity;
+        productInfo: import("../../../entities/products.entity").ProductsEntity;
         salesman: {
             isMe: boolean;
             status: import("../../../types/global").UserStatus;
@@ -38,7 +38,7 @@ export declare class ProductsController {
         };
     }>;
     getUserProducts(id: any, page: any): Promise<{
-        data: import("../../../entities/index").ProductsEntity[];
+        data: import("../../../entities/products.entity").ProductsEntity[];
         count: number;
     }>;
 }

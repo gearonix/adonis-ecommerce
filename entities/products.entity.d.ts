@@ -1,4 +1,4 @@
-import { ProductModels, ProductRatings, ProductSizes, ProductTypes } from './types';
+import { ProductModels, ProductRatings, ProductSizes, ProductTypes } from '@app/types/elements/types';
 export declare class ProductsEntity {
     name: string;
     price: number;
@@ -16,5 +16,4 @@ export declare class ProductsEntity {
     model: ProductModels;
     size: typeof ProductSizes[number];
     productId: number;
-    commentId: number;
 }

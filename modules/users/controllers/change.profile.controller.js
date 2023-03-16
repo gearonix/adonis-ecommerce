@@ -16,7 +16,7 @@ exports.ChangeProfileController = void 0;
 const common_1 = require("@nestjs/common");
 const auth_guard_1 = require("../../auth/auth.guard");
 const platform_express_1 = require("@nestjs/platform-express");
-const profile_service_1 = require("./../services/profile.service");
+const services_1 = require("../services");
 const global_1 = require("../../../types/global");
 let ChangeProfileController = class ChangeProfileController {
     profileService;
@@ -31,6 +31,7 @@ let ChangeProfileController = class ChangeProfileController {
         return { fileUrl };
     }
     async changeUserBackground(background) {
+        console.log('test');
         const fileUrl = await this.profileService.changeUserBackground(background);
         return { fileUrl };
     }
@@ -63,7 +64,7 @@ __decorate([
 ], ChangeProfileController.prototype, "changeUserBackground", null);
 ChangeProfileController = __decorate([
     (0, common_1.Controller)('users/change'),
-    __metadata("design:paramtypes", [profile_service_1.ProfileService])
+    __metadata("design:paramtypes", [services_1.ProfileService])
 ], ChangeProfileController);
 exports.ChangeProfileController = ChangeProfileController;
-//# sourceMappingURL=changeProfile.controller.js.map
+//# sourceMappingURL=change.profile.controller.js.map

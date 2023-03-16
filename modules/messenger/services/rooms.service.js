@@ -12,25 +12,19 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MessengerRoomsService = void 0;
+exports.RoomsService = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const entities_1 = require("../../../entities");
 const typeorm_2 = require("typeorm");
 const auth_1 = require("../../auth");
 const exceptions_1 = require("../../../types/exceptions");
-const global_1 = require("../../../types/global");
-const files_service_1 = require("../../files/files.service");
-let MessengerRoomsService = class MessengerRoomsService {
+let RoomsService = class RoomsService {
     rooms;
-    messages;
     authService;
-    fileService;
-    constructor(rooms, messages, authService, fileService) {
+    constructor(rooms, authService) {
         this.rooms = rooms;
-        this.messages = messages;
         this.authService = authService;
-        this.fileService = fileService;
     }
     async startChat(starterId, invitedId) {
         const room = await this.getRoomByMembers(starterId, invitedId);
@@ -52,31 +46,6 @@ let MessengerRoomsService = class MessengerRoomsService {
             }
         });
     }
-    async selectRoom(roomId, userId) {
-        await this.checkUserHasRoom(roomId, userId);
-        return this.messages.find({
-            where: { roomId }
-        });
-    }
-    async makeMessagesRead(roomId, userId) {
-        const senderId = await this.getOpponentId(roomId, userId);
-        return this.messages.update({ senderId }, { isRead: true });
-    }
-    async makeMessageRead(messageId) {
-        return this.messages.update({ messageId }, { isRead: true });
-    }
-    async getOpponentId(roomId, userId) {
-        const room = await this.rooms.findOneBy({ roomId });
-        return userId === room.starterId ? room.invitedId : room.starterId;
-    }
-    async saveMessage({ file, ...message }) {
-        if (file) {
-            const fileUrl = await this.fileService
-                .uploadFile(file, global_1.FileDirectories.MESSENGER_ATTACHMENTS);
-            return this.messages.save({ ...message, image: fileUrl });
-        }
-        return this.messages.save(message);
-    }
     async checkUserHasRoom(roomId, userId) {
         if (isNaN(roomId)) {
             throw new common_1.HttpException(exceptions_1.ServerExceptions.INCORRECT_DATA, common_1.HttpStatus.BAD_REQUEST);
@@ -87,16 +56,17 @@ let MessengerRoomsService = class MessengerRoomsService {
             throw new common_1.HttpException(exceptions_1.ServerExceptions.GROUP_FORBIDDEN, common_1.HttpStatus.FORBIDDEN);
         }
     }
+    async getOpponentId(roomId, userId) {
+        const room = await this.rooms.findOneBy({ roomId });
+        return userId === room.starterId ? room.invitedId : room.starterId;
+    }
 };
-MessengerRoomsService = __decorate([
+RoomsService = __decorate([
     (0, common_1.Injectable)(),
     __param(0, (0, typeorm_1.InjectRepository)(entities_1.MessengerRoomsEntity)),
-    __param(1, (0, typeorm_1.InjectRepository)(entities_1.UserMessagesEntity)),
-    __param(2, (0, common_1.Inject)((0, common_1.forwardRef)(() => auth_1.AuthService))),
+    __param(1, (0, common_1.Inject)((0, common_1.forwardRef)(() => auth_1.AuthService))),
     __metadata("design:paramtypes", [typeorm_2.Repository,
-        typeorm_2.Repository,
-        auth_1.AuthService,
-        files_service_1.FilesService])
-], MessengerRoomsService);
-exports.MessengerRoomsService = MessengerRoomsService;
-//# sourceMappingURL=messenger-rooms.service.js.map
+        auth_1.AuthService])
+], RoomsService);
+exports.RoomsService = RoomsService;
+//# sourceMappingURL=rooms.service.js.map

@@ -13,7 +13,7 @@ exports.ProductDTO = void 0;
 const global_1 = require("../../../types/global");
 const class_validator_1 = require("class-validator");
 const exceptions_1 = require("../../../types/exceptions");
-const types_1 = require("../../../entities/products/types");
+const types_1 = require("../../../types/elements/types");
 class ProductDTO {
     name;
     price;

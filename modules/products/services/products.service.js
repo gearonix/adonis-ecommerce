@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProductsService = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
-const products_entity_1 = require("../../../entities/products/products.entity");
+const products_entity_1 = require("../../../entities/products.entity");
 const typeorm_2 = require("typeorm");
 const auth_1 = require("../../auth");
 const users_1 = require("../../users");
@@ -72,6 +72,7 @@ let ProductsService = class ProductsService {
     async userProducts(salesmanId, page) {
         const [data, count] = await this.products.findAndCount({
             where: { salesmanId },
+            order: { productId: 'DESC' },
             ...(0, helpers_1.withLimit)(page)
         });
         return { data, count };
@@ -81,10 +82,11 @@ let ProductsService = class ProductsService {
             throw new common_1.HttpException(exceptions_1.ServerExceptions.INCORRECT_DATA, common_1.HttpStatus.BAD_REQUEST);
         }
         const saved = await this.savedService.getSavedProducts(salesmanId);
-        return this.products.findBy({ productId: (0, typeorm_2.In)(saved?.map((i) => i.productId)) });
+        return this.products.find({ where: { productId: (0, typeorm_2.In)(saved?.map((i) => i.productId)) },
+            order: { productId: 'DESC' } });
     }
     async getProductsByIds(body) {
-        return this.products.findBy({ productId: (0, typeorm_2.In)(body.ids) });
+        return this.products.find({ where: { productId: (0, typeorm_2.In)(body.ids) } });
     }
 };
 ProductsService = __decorate([

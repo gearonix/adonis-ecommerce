@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserMessagesEntity = exports.MessengerRoomsEntity = exports.PostsEntity = exports.ProductCommentsEntity = exports.SavedEntity = exports.ProductsEntity = exports.UsersEntity = void 0;
 const users_entity_1 = require("./users.entity");
 Object.defineProperty(exports, "UsersEntity", { enumerable: true, get: function () { return users_entity_1.UsersEntity; } });
-const products_entity_1 = require("./products/products.entity");
+const products_entity_1 = require("./products.entity");
 Object.defineProperty(exports, "ProductsEntity", { enumerable: true, get: function () { return products_entity_1.ProductsEntity; } });
 const saved_entity_1 = require("./saved.entity");
 Object.defineProperty(exports, "SavedEntity", { enumerable: true, get: function () { return saved_entity_1.SavedEntity; } });

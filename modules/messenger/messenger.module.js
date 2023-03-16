@@ -8,22 +8,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MessengerModule = void 0;
 const common_1 = require("@nestjs/common");
-const chat_gateway_1 = require("./gateways/chat/chat.gateway");
+const chat_gateway_1 = require("./gateways/chatGateway/chat.gateway");
 const auth_1 = require("../auth");
-const status_gateway_1 = require("./gateways/status/status.gateway");
+const status_gateway_1 = require("./gateways/statusGateway/status.gateway");
 const user_status_service_1 = require("./services/user-status.service");
 const typeorm_1 = require("@nestjs/typeorm");
 const entities_1 = require("../../entities");
-const messenger_rooms_service_1 = require("./services/messenger-rooms.service");
-const controllers_1 = require("./controllers");
+const messenger_controller_1 = require("./messenger.controller");
 const files_1 = require("../files");
+const rooms_service_1 = require("./services/rooms.service");
+const messages_service_1 = require("./services/messages.service");
 let MessengerModule = class MessengerModule {
 };
 MessengerModule = __decorate([
     (0, common_1.Module)({
         providers: [chat_gateway_1.ChatGateway, status_gateway_1.StatusGateway,
-            user_status_service_1.UserStatusService, messenger_rooms_service_1.MessengerRoomsService],
-        controllers: [controllers_1.MessengerController],
+            user_status_service_1.UserStatusService, rooms_service_1.RoomsService, messages_service_1.MessagesService],
+        controllers: [messenger_controller_1.MessengerController],
         imports: [
             typeorm_1.TypeOrmModule.forFeature([entities_1.MessengerRoomsEntity, entities_1.UserMessagesEntity]),
             (0, common_1.forwardRef)(() => auth_1.AuthModule),
@@ -31,7 +32,8 @@ MessengerModule = __decorate([
         ],
         exports: [
             user_status_service_1.UserStatusService,
-            messenger_rooms_service_1.MessengerRoomsService
+            rooms_service_1.RoomsService,
+            messages_service_1.MessagesService
         ]
     })
 ], MessengerModule);

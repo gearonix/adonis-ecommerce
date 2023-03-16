@@ -1,6 +1,6 @@
 import { EditProfileForm } from './../dto/editProfileDTO';
 import { ObjectOptional } from '@app/types/helpers';
-import { ProfileService } from './../services/profile.service';
+import { ProfileService } from '@modules/users/services';
 export declare class ChangeProfileController {
     private profileService;
     constructor(profileService: ProfileService);

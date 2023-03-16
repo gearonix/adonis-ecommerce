@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateProductService = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
-const products_entity_1 = require("../../../entities/products/products.entity");
+const products_entity_1 = require("../../../entities/products.entity");
 const typeorm_2 = require("typeorm");
 const auth_1 = require("../../auth");
 const users_1 = require("../../users");

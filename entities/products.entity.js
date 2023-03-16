@@ -11,9 +11,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProductsEntity = void 0;
 const typeorm_1 = require("typeorm");
-const users_entity_1 = require("../users.entity");
-const types_1 = require("./types");
-const global_1 = require("../../types/global");
+const users_entity_1 = require("./users.entity");
+const types_1 = require("../types/elements/types");
+const global_1 = require("../types/global");
 let ProductsEntity = class ProductsEntity {
     name;
     price;
@@ -31,7 +31,6 @@ let ProductsEntity = class ProductsEntity {
     model;
     size;
     productId;
-    commentId;
 };
 __decorate([
     (0, typeorm_1.Column)('varchar', { length: global_1.Lengths.TINY_TITLE, nullable: true }),
@@ -98,10 +97,6 @@ __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
     __metadata("design:type", Number)
 ], ProductsEntity.prototype, "productId", void 0);
-__decorate([
-    (0, typeorm_1.Column)('int'),
-    __metadata("design:type", Number)
-], ProductsEntity.prototype, "commentId", void 0);
 ProductsEntity = __decorate([
     (0, typeorm_1.Entity)('products')
 ], ProductsEntity);

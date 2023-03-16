@@ -100,10 +100,10 @@ __decorate([
 StatusGateway = StatusGateway_1 = __decorate([
     (0, websockets_1.WebSocketGateway)(config_1.appConfig.socketPort, (0, createGateway_1.createGateway)(global_1.SocketGateWays.AUTH)),
     __param(0, (0, common_1.Inject)((0, common_1.forwardRef)(() => services_1.TokenService))),
-    __param(2, (0, common_1.Inject)((0, common_1.forwardRef)(() => messenger_1.MessengerRoomsService))),
+    __param(2, (0, common_1.Inject)((0, common_1.forwardRef)(() => messenger_1.RoomsService))),
     __metadata("design:paramtypes", [services_1.TokenService,
         user_status_service_1.UserStatusService,
-        messenger_1.MessengerRoomsService])
+        messenger_1.RoomsService])
 ], StatusGateway);
 exports.StatusGateway = StatusGateway;
 //# sourceMappingURL=status.gateway.js.map

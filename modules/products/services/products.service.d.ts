@@ -1,4 +1,4 @@
-import { ProductsEntity } from '@app/entities/products/products.entity';
+import { ProductsEntity } from '@entities/products.entity';
 import { Repository } from 'typeorm';
 import { AuthService } from '@app/modules/auth';
 import { UsersService } from '@app/modules/users';

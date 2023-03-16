@@ -17,7 +17,7 @@ const common_1 = require("@nestjs/common");
 const dto_1 = require("./../dto");
 const auth_guard_1 = require("../../auth/auth.guard");
 const platform_express_1 = require("@nestjs/platform-express");
-const createProduct_service_1 = require("./../services/createProduct.service");
+const services_1 = require("../services");
 const global_1 = require("../../../types/global");
 let CreateProductController = class CreateProductController {
     createProductService;
@@ -51,7 +51,7 @@ __decorate([
 ], CreateProductController.prototype, "setProductImages", null);
 CreateProductController = __decorate([
     (0, common_1.Controller)('products'),
-    __metadata("design:paramtypes", [createProduct_service_1.CreateProductService])
+    __metadata("design:paramtypes", [services_1.CreateProductService])
 ], CreateProductController);
 exports.CreateProductController = CreateProductController;
-//# sourceMappingURL=createProduct.controller.js.map
+//# sourceMappingURL=create.product.controller.js.map

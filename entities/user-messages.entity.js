@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserMessagesEntity = void 0;
 const typeorm_1 = require("typeorm");
 const global_1 = require("../types/global");
+const users_entity_1 = require("./users.entity");
 let UserMessagesEntity = class UserMessagesEntity {
     creationDate;
     roomId;
@@ -20,6 +21,7 @@ let UserMessagesEntity = class UserMessagesEntity {
     messageText;
     image;
     isRead;
+    user;
 };
 __decorate([
     (0, typeorm_1.CreateDateColumn)(),
@@ -49,6 +51,11 @@ __decorate([
     (0, typeorm_1.Column)('boolean', { default: false, nullable: true }),
     __metadata("design:type", Boolean)
 ], UserMessagesEntity.prototype, "isRead", void 0);
+__decorate([
+    (0, typeorm_1.ManyToOne)(() => users_entity_1.UsersEntity),
+    (0, typeorm_1.JoinColumn)({ name: 'senderId', foreignKeyConstraintName: 'FK_messages_senderId_users', referencedColumnName: 'userId' }),
+    __metadata("design:type", users_entity_1.UsersEntity)
+], UserMessagesEntity.prototype, "user", void 0);
 UserMessagesEntity = __decorate([
     (0, typeorm_1.Entity)('messages')
 ], UserMessagesEntity);
