@@ -17,9 +17,13 @@
   @include size(75%, 48px);
 
   span {
+    margin-top: 2px;
     color: $bg-300;
     display: block;
     font-size: 15px;
     width: 90%;
+  }
+  .online{
+    color: #4bb34b;
   }
 }

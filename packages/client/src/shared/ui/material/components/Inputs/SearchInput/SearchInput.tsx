@@ -18,7 +18,7 @@ export const SearchInput: FC<Props> = ({ values }) => {
       endAdornment={
         <InputAdornment position="end">
           <IconButton edge="end">
-            <AiOutlineSearch/>
+            <AiOutlineSearch size={'19px'}/>
           </IconButton>
         </InputAdornment>
       }

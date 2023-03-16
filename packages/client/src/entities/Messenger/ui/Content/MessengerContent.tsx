@@ -1,11 +1,14 @@
 import { FC } from 'react'
 import s from './style.module.scss'
-import { Message as MessageUI, TimeLabel } from 'shared/ui/kit'
+import { Message as MessageUI, NextImage, ScrollToBottom, TimeLabel } from 'shared/ui/kit'
 import { Message } from 'widgets/Messenger'
 import { Nullable } from 'shared/types/common'
-import { Helpers } from 'shared/lib/helpers'
 import { useBottomScroll } from 'shared/lib/hooks/useBottomScroll'
 import { Display, WithSpring } from 'shared/lib/components'
+import Link from 'next/link'
+import { routes } from 'shared/config/consts/routes'
+import { Assets } from 'shared/config/consts/assets'
+import { useTimeout } from 'shared/lib/hooks'
 
 interface Props{
   messages: Message[],
@@ -28,14 +31,29 @@ const MessengerContent: FC<Props> = ({ messages, userId }) => {
       <div ref={scrollable.bottomRef} />
     </div>
     <div className={s.bottomWrapper}>
-      <Display when={scrollable.scrollBottomSize > 300}>
-        <WithSpring>
-          <button onClick={scrollable.scrollToBottom}
-            className={s.scrollToBottom}>to bottom</button>
-        </WithSpring>
+      <Display when={scrollable.scrollBottomSize > 100}>
+        <ScrollToBottom onClick={scrollable.scrollToBottom}/>
       </Display>
     </div>
   </div>
 }
+
+
+export const DefaultChat: FC = () => {
+  const toShow = useTimeout(300)
+  return <Display when={toShow}>
+    <WithSpring>
+      <div className={s.default_chat_image}>
+        <NextImage src={Assets.CHAT} />
+      </div>
+      <h2 className={s.default_title}>Choose a chat
+    or create a <Link href={routes.USERS}>
+        <span>new one</span>
+      </Link>
+      </h2>
+    </WithSpring>
+  </Display>
+}
+
 
 export default MessengerContent

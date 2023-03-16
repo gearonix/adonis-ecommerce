@@ -12,8 +12,8 @@ const RemoveFromSaved = forwardRef<HTMLButtonElement, {productId: number}>(({ pr
     dispatch(removeProductFromSaved(productId))
   }
 
-  return <Button w={'114px'} color={'redColored'} h={'32px'} ref={ref} onClick={onClick}>
-    {t('Remove')}</Button>
+  return <Button w={'180px'} color={'redColored'} h={'32px'} ref={ref} onClick={onClick}>
+    {t('Remove from saved')}</Button>
 })
 
 RemoveFromSaved.displayName = 'RemoveFromSaved'

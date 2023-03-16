@@ -34,7 +34,7 @@ const Header: FC<HeaderSkeletonProps> = ({ DropDowns, Burger, Search }) => {
           </Link>
           <Link className={s.options_item} href={routes.MESSENGER}>
             <MdMessage/>
-            <span>{t('Message')}</span>
+            <span>{t('Messenger')}</span>
           </Link>
           <Link className={s.options_item} href={routes.SAVED}>
             <FaHeart/>

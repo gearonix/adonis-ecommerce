@@ -24,6 +24,7 @@ const Post: FC<PostProps> = ({ post }) => {
         <Link className={s.user_image} href={`${routes.USERS}/${user.userId}`}>
           <span className={'hover_link'}>{helpers.toNormalName(user)}</span>
         </Link>
+        <span><BsDot/>{user.email.split('@')[0]}</span>
         <span><BsDot/>{helpers.reformatMysqlDate(post.date)}</span></h2>
       <p className={s.post_text}>{helpers.capitalize(post.message)}
       </p>

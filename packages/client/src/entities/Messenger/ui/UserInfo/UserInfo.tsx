@@ -5,6 +5,8 @@ import { User } from 'widgets/Profile'
 import { DefaultAssets } from 'shared/config/consts/assets'
 import { Helpers } from 'shared/lib/helpers'
 import { WithSpring } from 'shared/lib/components'
+import cn from 'classnames'
+import { UserStatus } from 'shared/config/consts/others'
 
 interface UserInfoProps{
   user: User,
@@ -19,7 +21,8 @@ const UserInfo: FC<UserInfoProps> = ({ user, label }) => {
     </div>
     <div className={s.info}>
       <h3>{helpers.toNormalName(user)}</h3>
-      <span>{label}</span>
+      <span className={cn({ [s.online]: label === UserStatus.ONLINE })}>
+        {label}</span>
     </div>
   </WithSpring>
 }

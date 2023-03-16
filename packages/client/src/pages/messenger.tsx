@@ -7,7 +7,6 @@ import { RecommendedItems } from 'widgets/Products'
 import { SortedProducts } from 'entities/Products'
 import { ProductTypes } from 'shared/types/elements'
 import { SocketProvider } from 'widgets/Messenger'
-import { useRouter } from 'next/router'
 
 
 const Messenger: FC = () => {

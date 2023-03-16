@@ -21,7 +21,6 @@ const SearchHeaderFilters: FC = () => {
       <Checkbox onChange={onChangeInStock} title={'In stock'} value={inStock}/>
       <span>{t('Verified only')}</span>
     </div>
-    <SizeButtons/>
   </div>
 }
 

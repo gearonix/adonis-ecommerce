@@ -8,7 +8,7 @@ const CartSaved: FC<SquareButtonProps> = ({ onClick, isChecked }) => {
   const { t } = useTranslation()
   return <ApiAnimation type={'increaseSize'} onClick={onClick}>
     <Button w={'170px'} h={'32px'} color={'blueBordered'}>
-      {!isChecked ? t('Save_for') : t('Remove_for_saved')}
+      {!isChecked ? t('Save_for') : t('Remove from saved')}
     </Button>
   </ApiAnimation>
 }

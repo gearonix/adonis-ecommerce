@@ -16,7 +16,7 @@ const MessengerHeader: FC = () => {
   const userStatus = useSelector(MessengerSelectors.userStatus)
   const router = useRouter()
   const targetId = router.query.targetId as string
-  const { actions, subscribes, socket } = useMessengerSocket()
+  const { actions, subscribes } = useMessengerSocket()
   const authSocket = useAuthSocket()
   const dispatch = useDispatch()
 

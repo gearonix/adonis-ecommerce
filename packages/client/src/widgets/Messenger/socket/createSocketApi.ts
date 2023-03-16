@@ -6,7 +6,6 @@ import { reformatAttachedImage } from 'widgets/Messenger/lib/helpers/reformatAtt
 
 const createMessengerSocketApi = (socket: Socket) => {
   return {
-    socket,
     subscribes: {
       onAddGroup(callback: (room: Room) => void) {
         socket.on(MessengerEvents.ADD_ROOM, callback)

@@ -11,7 +11,7 @@ const RemoveFromCard = forwardRef<HTMLButtonElement, {productId: number}>(({ pro
   }
 
 
-  return <Button w={'114px'} color={'redColored'} h={'32px'} ref={ref}
+  return <Button w={'140px'} color={'redColored'} h={'32px'} ref={ref}
     onClick={withDelay(removeFromCard)}>Remove</Button>
 })
 

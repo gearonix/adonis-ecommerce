@@ -1,0 +1,20 @@
+@use 'src/shared/css/common.scss' as *;
+
+
+
+.scrollToBottom{
+  position: absolute;
+  opacity: 0.64;
+  bottom: 0;
+  right: 100px;
+  background: $bg-absolute;
+  border: $br $bg-150;
+  @include size(45px, 37px);
+  @include flex(center,center);
+  border-radius: $rounded;
+  cursor: pointer;
+  svg{
+    @include size(28px, 28px);
+    color: $color-absolute-200;
+  }
+}

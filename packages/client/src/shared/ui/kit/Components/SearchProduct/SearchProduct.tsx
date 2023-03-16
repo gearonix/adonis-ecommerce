@@ -3,7 +3,7 @@ import s from './style.module.scss'
 import Image from 'next/image'
 import { Rating } from '@mui/material'
 import Typo from 'shared/ui/kit/Typos/Typo/Typo'
-import { BlueLink } from 'shared/ui/kit'
+import { BlueLink, InStock } from 'shared/ui/kit'
 import Link from 'next/link'
 import { routes } from 'shared/config/consts/routes'
 import { SavedProps, SquareButton } from 'features/Saved'
@@ -13,6 +13,7 @@ import { CFC } from 'shared/types/components'
 import { DefaultAssets } from 'shared/config/consts/assets'
 import { BsCart } from 'react-icons/bs'
 import { CartButtonProps, CartButtonUIProps } from 'features/ProductPage'
+import { MdMessage } from 'shared/ui/icons'
 
 export interface SearchProductProps {
   AddToSaved?: FC<SavedProps>,
@@ -29,10 +30,15 @@ export const SearchProduct: FC<SearchProductProps> = ({ AddToSaved, product, Car
         width={190} height={190} priority={true}/>
     </LinkToProduct>
     <div className={s.info_block}>
-      <Typo>{product.name}</Typo>
+      <Typo className={s.name}>
+        {product.name} <InStock inStock={product.inStock} withoutTitle/></Typo>
       <h3 className={s.price}>${product.price}.00</h3>
-      <Rating name="size-small" readOnly
-        defaultValue={product.rating} size="small"/>
+      <div className={s.ratings}>
+        <Rating name="size-small" readOnly
+          defaultValue={product.rating} size="small"/>
+        <h2><MdMessage size={'14px'}/> 154 Orders</h2>
+      </div>
+
       <Typo>{product.description}</Typo>
       <LinkToProduct productId={product.productId}>
         <BlueLink>{t('View_details')}</BlueLink>

@@ -15,8 +15,33 @@
   }
   .scrollToBottom{
     position: absolute;
+    opacity: 0.74;
     bottom: 0;
-    right: 0;
+    right: 100px;
+    background: $bg-absolute;
+    border: $br $bg-150;
+    @include size(45px, 37px);
+    @include flex(center,center);
+    border-radius: $rounded;
+    svg{
+      @include size(28px, 28px);
+      color: $color-absolute-200;
+    }
+  }
+}
+
+.default_chat_image{
+  @include imageWrapper(490px, 360px);
+  margin: 70px auto 0;
+}
+.default_title{
+  margin-top: 50px;
+  text-align: center;
+  @include inlineStyles(23px, $color-absolute-200);
+  span{
+    cursor: pointer;
+    color: $link-color !important;
+    font-size: 23px;
   }
 }
 

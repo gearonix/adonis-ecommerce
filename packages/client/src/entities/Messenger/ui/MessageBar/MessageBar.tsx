@@ -1,9 +1,10 @@
 import { ChangeEvent, FC } from 'react'
 import s from './style.module.scss'
-import { AiFillFileAdd, MdSend } from 'shared/ui/icons'
-import { createFieldValues } from 'shared/lib/helpers'
+import { AiFillFileAdd } from 'shared/ui/icons'
 import { onEnter } from 'features/SearchPage/lib/helpers'
 import { useTranslation } from 'react-i18next'
+import { BiSend } from 'react-icons/bi'
+import { WithSpring } from 'shared/lib/components'
 
 export interface MessageBarProps {
   placeholder?: string,
@@ -22,19 +23,21 @@ const MessageBar: FC<MessageBarProps> = ({ placeholder, submit, onChange, form }
     }
   }
 
-  return <article className={s.message_bar}>
-    <div className={s.image_wrapper}>
-      <AiFillFileAdd/>
-      <input type={'file'} onChange={onFileChange}/>
-    </div>
+  return <WithSpring className={s.message_bar}>
     <input placeholder={t('Message') || placeholder }
       maxLength={150}
       onKeyDown={onEnter(submit)}
       autoComplete={'off'} {...form.register('message', { onChange })}/>
-    <div className={s.send} onClick={submit}>
-      <MdSend/>
+    <div className={s.buttons}>
+      <div className={s.image_wrapper}>
+        <AiFillFileAdd/>
+        <input type={'file'} onChange={onFileChange}/>
+      </div>
+      <div className={s.send} onClick={submit}>
+        <BiSend/>
+      </div>
     </div>
-  </article>
+  </WithSpring>
 }
 
 

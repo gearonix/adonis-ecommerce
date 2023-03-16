@@ -38,7 +38,7 @@ export interface CartButtonUIProps{
 const DefaultCartUI: FC<CartButtonUIProps> = ({ onAdd, isExists, onRemove }) => {
   const { t } = useTranslation()
   return isExists ?
-      <Button w={'100%'} onClick={onRemove} color={'red'}>{t('Remove')}t</Button> :
+      <Button w={'100%'} onClick={onRemove} color={'red'}>{t('Remove')}</Button> :
       <Button w={'100%'} onClick={onAdd}>{t('Add_to')}</Button>
 }
 

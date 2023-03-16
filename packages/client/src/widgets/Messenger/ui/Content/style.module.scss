@@ -1,13 +1,15 @@
 @use 'shared/css/common.scss' as *;
 
 .messages_main {
-  @include size(100%, 652px);
+  @include size(100%);
   background: $bg-absolute;
   margin: 0 auto;
   position: relative;
   border: 1px solid transparent;
 
   .wrapper {
-    @include size(100%, calc(100% - 24px));
+    padding: 0;
+    @include size(100%, calc(100% - 80px));
   }
 }
+

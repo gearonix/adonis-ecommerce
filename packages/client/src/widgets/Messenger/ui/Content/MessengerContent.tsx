@@ -10,6 +10,8 @@ import { messengerActions } from 'widgets/Messenger'
 import { useMessengerSocket } from 'widgets/Messenger/lib/hooks'
 import { MessengerSelectors } from 'widgets/Messenger'
 import { AuthSelectors } from 'widgets/Login'
+import { NextImage } from 'shared/ui/kit'
+import { DefaultChat } from 'entities/Messenger/ui/Content/MessengerContent'
 
 const MessengerContent: FC = () => {
   const dispatch = useDispatch()
@@ -41,8 +43,12 @@ const MessengerContent: FC = () => {
         <MessengerContentTemp messages={messages} userId={userId}/>
         <MessengerInput/>
       </Display>
+      <Display when={!roomId}>
+        <DefaultChat/>
+      </Display>
     </div>
   </div>
 }
+
 
 export default MessengerContent

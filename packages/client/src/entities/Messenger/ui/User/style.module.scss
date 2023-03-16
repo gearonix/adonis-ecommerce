@@ -5,6 +5,7 @@
   @include size(100%, 78px);
   cursor: pointer;
   transition: background 400ms;
+  border-bottom: $br $color-300;
 
   &:hover {
     background: $bg-absolute-hover;

@@ -11,6 +11,9 @@ import { notifyActions, NotifySelectors } from 'app/providers/Notifications'
 import { useRouter } from 'next/router'
 import { useFilteredEffect } from 'shared/lib/hooks'
 import { getRoomByTargetId } from 'widgets/Messenger/lib/helpers/getRoomByTargetId'
+import { Display } from 'shared/lib/components'
+import { AiOutlineSearch } from 'shared/ui/icons'
+import { AiOutlineSmile } from 'react-icons/ai'
 
 const MessengerAside: FC = () => {
   const selectedId = useSelector(MessengerSelectors.selectedId)
@@ -46,7 +49,19 @@ const MessengerAside: FC = () => {
         user={getOpponentUser(room)}
         notification={notifications[idx]}/>
     })}
+    <Display when={!rooms.length}>
+      <NothingFound/>
+    </Display>
   </aside>
+}
+
+export const NothingFound: FC = () => {
+  return <div className={s.nothing_found}>
+    <h2>
+      Nothing found.
+    </h2>
+    <AiOutlineSmile/>
+  </div>
 }
 
 export default MessengerAside

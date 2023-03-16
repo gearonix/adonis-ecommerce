@@ -1,20 +1,24 @@
 @use 'shared/css/common.scss' as *;
 
 .message_bar {
-  border-radius: 12px;
+  border-radius: 8px;
   background: $bg-absolute;
-  border: $br $bg-150;position: relative;
-  padding: 15px;
+  border: $br $bg-150;
+  position: relative;
+  padding: 10px 15px 10px 10px;
   box-sizing: border-box;
-  display: flex;
+  @include flex(space-between);
   margin: 20px auto 10px auto;
-  @include size(72%, 56px);
+  @include size(700px, 52px);
+  .buttons{
+    display: flex;
+    gap: 16px;
+  }
 
   .image_wrapper {
-
     svg {
-      @include size(24px, 24px);
-      color: $bg-300;
+      @include size(27px, 27px);
+      color: $hover-100;
     }
     position: relative;
     input{
@@ -29,13 +33,13 @@
     @include size(85%);
     width: 85%;
     border: none;
-    margin-left: 18px;
+    margin-left: 0;
     font-size: 17px;
     color: $color-absolute;
     background: $bg-absolute;
 
     &::placeholder {
-      color: $bg-300;
+      color: $bg-150-hover;
     }
   }
 
@@ -43,14 +47,10 @@
 
 
 .send {
-  margin-left: 16px;
-  position: absolute;
-  top: 15px;
-  right: 25px;
 
   svg {
-    color: #8BABD8;
-    @include size(26px, 26px);
+    color: $hover-100;
+    @include size(27px, 27px);
     transition: color 200ms;
 
     &:hover {

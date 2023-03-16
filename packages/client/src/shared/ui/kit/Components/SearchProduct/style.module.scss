@@ -14,6 +14,14 @@
     right: 20px;
     top: 20px;
   }
+  .name{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    svg{
+      margin-bottom: -3px;
+    }
+  }
 
   img {
     cursor: pointer;
@@ -28,6 +36,12 @@
     .price {
       @include inlineStyles($xm, $bg-100, bold);
       margin-top: 16px;
+      margin-bottom: 5px;
+    }
+    .ratings{
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
   }
 

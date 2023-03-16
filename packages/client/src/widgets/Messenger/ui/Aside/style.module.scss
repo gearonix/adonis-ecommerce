@@ -1,13 +1,29 @@
 @use 'shared/css/common.scss' as *;
 
 .messenger_aside {
-  @include size(22%, 720px);
+  @include size(22%);
   background: $bg-absolute;
+  position: relative;
   overflow-y: auto;
   overflow-x: hidden;
   box-sizing: border-box;
   border-right: $br $bg-150;
   @include customScroll;
+}
 
+.nothing_found{
+  @include absolute(50%,40%);
+  transform: translate(-50%,-50%);
+  @include flex(stretch, center, column);
+  h2{
+    text-align: center;
+    margin-top: 50px;
+    @include inlineStyles($xm, $color-absolute-200);
+  }
+  svg{
+    @include size(48px,48px);
+    margin: 20px auto 0;
+    color: $color-absolute-200;
+  }
 }
 
