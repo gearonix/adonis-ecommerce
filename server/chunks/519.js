@@ -328,6 +328,8 @@ module.exports = {
 	"image_wrapper": "style_image_wrapper__hF2TM",
 	"info_block": "style_info_block__bVvnn",
 	"avatar": "style_avatar__88wSz",
+	"user_status": "style_user_status__3uz2X",
+	"write_to_user": "style_write_to_user__AbmCu",
 	"user_info": "style_user_info__SFrri",
 	"user_name": "style_user_name__daPS6",
 	"description": "style_description__qu9Hb",
@@ -630,6 +632,7 @@ module.exports = {
 // Exports
 module.exports = {
 	"search_item": "style_search_item__qDRBM",
+	"buttons": "style_buttons__Azny_",
 	"info_block": "style_info_block__dnTXt",
 	"price": "style_price__O6DcX"
 };
@@ -657,6 +660,18 @@ module.exports = {
 // Exports
 module.exports = {
 	"default_avatar": "style_default_avatar__zp950"
+};
+
+
+/***/ }),
+
+/***/ 95037:
+/***/ ((module) => {
+
+// Exports
+module.exports = {
+	"user_status": "style_user_status__qfSro",
+	"circle": "style_circle__z6Tem"
 };
 
 
@@ -3423,10 +3438,6 @@ const Post = ({ post  })=>{
                             src: post.image,
                             def: shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_2__/* .DefaultAssets.POST */ .h9.POST
                         })
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().options),
-                        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_4__/* .BsThreeDotsVertical */ .FQ, {})
                     })
                 ]
             })
@@ -3450,18 +3461,15 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20997);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(3632);
-/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_style_module_scss__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(3632);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_style_module_scss__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(21519);
 /* harmony import */ var shared_ui_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(83720);
 /* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(57987);
 /* harmony import */ var shared_lib_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7562);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(20926);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(13048);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__, react_i18next__WEBPACK_IMPORTED_MODULE_3__, shared_lib_components__WEBPACK_IMPORTED_MODULE_4__]);
-([shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__, react_i18next__WEBPACK_IMPORTED_MODULE_3__, shared_lib_components__WEBPACK_IMPORTED_MODULE_4__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
-
+/* harmony import */ var shared_ui_kit_Components_UserStatus_UserStatus__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(44127);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__, react_i18next__WEBPACK_IMPORTED_MODULE_3__, shared_lib_components__WEBPACK_IMPORTED_MODULE_4__, shared_ui_kit_Components_UserStatus_UserStatus__WEBPACK_IMPORTED_MODULE_5__]);
+([shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__, react_i18next__WEBPACK_IMPORTED_MODULE_3__, shared_lib_components__WEBPACK_IMPORTED_MODULE_4__, shared_ui_kit_Components_UserStatus_UserStatus__WEBPACK_IMPORTED_MODULE_5__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
@@ -3473,72 +3481,71 @@ const ProfileHeaderTemp = (props)=>{
     const { t  } = (0,react_i18next__WEBPACK_IMPORTED_MODULE_3__.useTranslation)();
     const { ChangeBackground , openProfile , openInfo , user , isMe  } = props;
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().profile_header),
+        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_6___default().profile_header),
         children: [
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().profile_background),
+                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_6___default().profile_background),
                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__/* .ProfileBackground */ .Om, {
                     src: user.background,
                     ChangeBackground: ChangeBackground
                 })
             }),
             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().info_block),
+                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_6___default().info_block),
                 children: [
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().avatar),
-                        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__/* .UserAvatar */ .Yt, {
-                            src: user.userImage
-                        })
+                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_6___default().avatar),
+                        children: [
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__/* .UserAvatar */ .Yt, {
+                                src: user.userImage
+                            }),
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit_Components_UserStatus_UserStatus__WEBPACK_IMPORTED_MODULE_5__/* .UserStatus */ .J, {
+                                status: user.status,
+                                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_6___default().user_status)
+                            })
+                        ]
                     }),
                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().user_info),
+                        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_6___default().user_info),
                         children: [
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h2", {
-                                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().user_name),
+                                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_6___default().user_name),
                                 children: user.userName
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("p", {
-                                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().description),
+                                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_6___default().description),
                                 children: user.description
                             }),
                             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h2", {
                                 onClick: openInfo,
-                                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().details),
+                                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_6___default().details),
                                 children: [
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_2__/* .AiOutlineInfoCircle */ .oc, {}),
                                     t("Details")
                                 ]
-                            }),
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
-                                children: user.status
-                            }),
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_lib_components__WEBPACK_IMPORTED_MODULE_4__/* .Display */ .sS, {
-                                when: !isMe,
-                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_5___default()), {
-                                    href: {
-                                        pathname: shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_6__/* .routes.MESSENGER */ ._.MESSENGER,
-                                        query: {
-                                            targetId: user.userId
-                                        }
-                                    },
-                                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
-                                        children: "write to user"
-                                    })
-                                })
                             })
                         ]
                     }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().change_profile),
-                        children: isMe && /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("button", {
-                            className: "outlined_button",
-                            onClick: openProfile,
-                            children: [
-                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_2__/* .BsPen */ .bB, {}),
-                                " ",
-                                t("Change_profile")
-                            ]
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_lib_components__WEBPACK_IMPORTED_MODULE_4__/* .Display */ .sS, {
+                        when: !isMe,
+                        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__/* .WriteToUser */ .nD, {
+                            className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_6___default().change_profile),
+                            targetId: user.userId
+                        })
+                    }),
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_lib_components__WEBPACK_IMPORTED_MODULE_4__/* .Display */ .sS, {
+                        when: isMe,
+                        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                            className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_6___default().change_profile),
+                            children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("button", {
+                                className: "outlined_button",
+                                onClick: openProfile,
+                                children: [
+                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_2__/* .BsPen */ .bB, {}),
+                                    " ",
+                                    t("Change_profile")
+                                ]
+                            })
                         })
                     })
                 ]
@@ -3960,18 +3967,25 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shar
 
 
 
-const CartButton = ({ productId: id  })=>{
+const CartButton = ({ productId: id , Component =DefaultCartUI  })=>{
     const currentProductId = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_2__/* .useSelector */ .v9)(widgets_CurrentProduct__WEBPACK_IMPORTED_MODULE_5__/* .ProductSelectors.id */ .pQ.id);
     const productId = id ?? currentProductId;
     const isExists = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_2__/* .useSelector */ .v9)(widgets_Cart__WEBPACK_IMPORTED_MODULE_6__/* .CartSelectors.existsInCart */ .y8.existsInCart(productId));
     const dispatch = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_2__/* .useDispatch */ .I0)();
-    const { t  } = (0,react_i18next__WEBPACK_IMPORTED_MODULE_4__.useTranslation)();
     const onAdd = ()=>{
         dispatch(widgets_Cart_store_slice_cartReducer__WEBPACK_IMPORTED_MODULE_3__/* .cartActions.addProduct */ .U.addProduct(productId));
     };
     const onRemove = ()=>{
         dispatch(widgets_Cart_store_slice_cartReducer__WEBPACK_IMPORTED_MODULE_3__/* .cartActions.removeProduct */ .U.removeProduct(productId));
     };
+    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Component, {
+        isExists: isExists,
+        onAdd: onAdd,
+        onRemove: onRemove
+    });
+};
+const DefaultCartUI = ({ onAdd , isExists , onRemove  })=>{
+    const { t  } = (0,react_i18next__WEBPACK_IMPORTED_MODULE_4__.useTranslation)();
     return isExists ? /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__/* .Button */ .zx, {
         w: "100%",
         onClick: onRemove,
@@ -4684,9 +4698,9 @@ __webpack_async_result__();
 __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Jl": () => (/* reexport safe */ _store_selectors_saved_selectors__WEBPACK_IMPORTED_MODULE_8__.Z),
+/* harmony export */   "LE": () => (/* reexport safe */ _ui_AddToSaved_Search_SquareButton__WEBPACK_IMPORTED_MODULE_0__.Z),
 /* harmony export */   "OG": () => (/* reexport safe */ _api__WEBPACK_IMPORTED_MODULE_7__.O),
 /* harmony export */   "Yd": () => (/* reexport safe */ _store_slice_savedReducer__WEBPACK_IMPORTED_MODULE_5__.Y),
-/* harmony export */   "bO": () => (/* reexport safe */ _ui_AddToSaved_Search_SearchSaved__WEBPACK_IMPORTED_MODULE_0__.Z),
 /* harmony export */   "cR": () => (/* reexport safe */ _ui_AddToSaved_Cart_CartSaved__WEBPACK_IMPORTED_MODULE_2__.Z),
 /* harmony export */   "ex": () => (/* reexport safe */ _store_slice_savedReducer__WEBPACK_IMPORTED_MODULE_5__.e),
 /* harmony export */   "gH": () => (/* reexport safe */ _ui_AddToSaved_Product_ProductSaved__WEBPACK_IMPORTED_MODULE_1__.Z),
@@ -4694,7 +4708,7 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony export */   "kP": () => (/* reexport safe */ _widgets_Saved_ui_SavedItems_SavedItems__WEBPACK_IMPORTED_MODULE_4__.Z),
 /* harmony export */   "ph": () => (/* reexport safe */ _ui_RemoveFromSaved_RemoveFromSaved__WEBPACK_IMPORTED_MODULE_3__.Z)
 /* harmony export */ });
-/* harmony import */ var _ui_AddToSaved_Search_SearchSaved__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(36805);
+/* harmony import */ var _ui_AddToSaved_Search_SquareButton__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7982);
 /* harmony import */ var _ui_AddToSaved_Product_ProductSaved__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(66768);
 /* harmony import */ var _ui_AddToSaved_Cart_CartSaved__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(59133);
 /* harmony import */ var _ui_RemoveFromSaved_RemoveFromSaved__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(20716);
@@ -4703,8 +4717,8 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var _ui_SavedProvider_SavedProvider__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(90366);
 /* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(79641);
 /* harmony import */ var _store_selectors_saved_selectors__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(93845);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_ui_AddToSaved_Search_SearchSaved__WEBPACK_IMPORTED_MODULE_0__, _ui_AddToSaved_Product_ProductSaved__WEBPACK_IMPORTED_MODULE_1__, _ui_AddToSaved_Cart_CartSaved__WEBPACK_IMPORTED_MODULE_2__, _ui_RemoveFromSaved_RemoveFromSaved__WEBPACK_IMPORTED_MODULE_3__, _widgets_Saved_ui_SavedItems_SavedItems__WEBPACK_IMPORTED_MODULE_4__, _store_slice_savedReducer__WEBPACK_IMPORTED_MODULE_5__, _ui_SavedProvider_SavedProvider__WEBPACK_IMPORTED_MODULE_6__, _api__WEBPACK_IMPORTED_MODULE_7__]);
-([_ui_AddToSaved_Search_SearchSaved__WEBPACK_IMPORTED_MODULE_0__, _ui_AddToSaved_Product_ProductSaved__WEBPACK_IMPORTED_MODULE_1__, _ui_AddToSaved_Cart_CartSaved__WEBPACK_IMPORTED_MODULE_2__, _ui_RemoveFromSaved_RemoveFromSaved__WEBPACK_IMPORTED_MODULE_3__, _widgets_Saved_ui_SavedItems_SavedItems__WEBPACK_IMPORTED_MODULE_4__, _store_slice_savedReducer__WEBPACK_IMPORTED_MODULE_5__, _ui_SavedProvider_SavedProvider__WEBPACK_IMPORTED_MODULE_6__, _api__WEBPACK_IMPORTED_MODULE_7__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_ui_AddToSaved_Search_SquareButton__WEBPACK_IMPORTED_MODULE_0__, _ui_AddToSaved_Product_ProductSaved__WEBPACK_IMPORTED_MODULE_1__, _ui_AddToSaved_Cart_CartSaved__WEBPACK_IMPORTED_MODULE_2__, _ui_RemoveFromSaved_RemoveFromSaved__WEBPACK_IMPORTED_MODULE_3__, _widgets_Saved_ui_SavedItems_SavedItems__WEBPACK_IMPORTED_MODULE_4__, _store_slice_savedReducer__WEBPACK_IMPORTED_MODULE_5__, _ui_SavedProvider_SavedProvider__WEBPACK_IMPORTED_MODULE_6__, _api__WEBPACK_IMPORTED_MODULE_7__]);
+([_ui_AddToSaved_Search_SquareButton__WEBPACK_IMPORTED_MODULE_0__, _ui_AddToSaved_Product_ProductSaved__WEBPACK_IMPORTED_MODULE_1__, _ui_AddToSaved_Cart_CartSaved__WEBPACK_IMPORTED_MODULE_2__, _ui_RemoveFromSaved_RemoveFromSaved__WEBPACK_IMPORTED_MODULE_3__, _widgets_Saved_ui_SavedItems_SavedItems__WEBPACK_IMPORTED_MODULE_4__, _store_slice_savedReducer__WEBPACK_IMPORTED_MODULE_5__, _ui_SavedProvider_SavedProvider__WEBPACK_IMPORTED_MODULE_6__, _api__WEBPACK_IMPORTED_MODULE_7__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
@@ -4960,7 +4974,7 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shar
 
 
 
-const CartSaved = ({ onClick , isInSaved  })=>{
+const CartSaved = ({ onClick , isChecked  })=>{
     const { t  } = (0,react_i18next__WEBPACK_IMPORTED_MODULE_3__.useTranslation)();
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_lib_components__WEBPACK_IMPORTED_MODULE_2__/* .ApiAnimation */ .j9, {
         type: "increaseSize",
@@ -4969,7 +4983,7 @@ const CartSaved = ({ onClick , isInSaved  })=>{
             w: "170px",
             h: "32px",
             color: "blueBordered",
-            children: !isInSaved ? t("Save_for") : t("Remove_for_saved")
+            children: !isChecked ? t("Save_for") : t("Remove_for_saved")
         })
     });
 };
@@ -5001,7 +5015,7 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shar
 
 
 
-const ProductSaved = ({ onClick , isInSaved  })=>{
+const ProductSaved = ({ onClick , isChecked  })=>{
     const { t  } = (0,react_i18next__WEBPACK_IMPORTED_MODULE_4__.useTranslation)();
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_lib_components__WEBPACK_IMPORTED_MODULE_3__/* .ApiAnimation */ .j9, {
         type: "increaseSize",
@@ -5019,7 +5033,7 @@ const ProductSaved = ({ onClick , isInSaved  })=>{
             children: [
                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_1__/* .FiHeart */ .$, {}),
                 " ",
-                !isInSaved ? t("Save for later") : t("Remove from saved")
+                !isChecked ? t("Save for later") : t("Remove from saved")
             ]
         })
     });
@@ -5031,7 +5045,7 @@ __webpack_async_result__();
 
 /***/ }),
 
-/***/ 36805:
+/***/ 7982:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -5057,17 +5071,18 @@ shared_lib_components__WEBPACK_IMPORTED_MODULE_3__ = (__webpack_async_dependenci
 
 
 
-const SearchSaved = ({ onClick , isInSaved  })=>{
+const SquareButton = (props)=>{
+    const { onClick , isChecked , Icon =shared_ui_icons__WEBPACK_IMPORTED_MODULE_2__/* .FiHeart */ .$  } = props;
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_lib_components__WEBPACK_IMPORTED_MODULE_3__/* .ApiAnimation */ .j9, {
         className: classnames__WEBPACK_IMPORTED_MODULE_4___default()((_style_module_scss__WEBPACK_IMPORTED_MODULE_5___default().heart), {
-            [(_style_module_scss__WEBPACK_IMPORTED_MODULE_5___default().saved)]: isInSaved
+            [(_style_module_scss__WEBPACK_IMPORTED_MODULE_5___default().saved)]: isChecked
         }),
         type: "reverseScale",
         onClick: onClick,
-        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_2__/* .FiHeart */ .$, {})
+        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Icon, {})
     });
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SearchSaved);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SquareButton);
 
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });
@@ -5163,7 +5178,7 @@ const SavedProvider = ({ productId , Component  })=>{
     });
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Component, {
         onClick: onClick,
-        isInSaved: isInSaved
+        isChecked: isInSaved
     });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SavedProvider);
@@ -5383,13 +5398,17 @@ const SearchHeaderFilters = ()=>{
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
         className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().controls_buttons),
         children: [
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_mui_material__WEBPACK_IMPORTED_MODULE_5__.Checkbox, {
-                onChange: onChangeInStock,
-                title: "In Stock",
-                value: inStock
-            }),
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
-                children: t("In_Stock")
+            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                children: [
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_mui_material__WEBPACK_IMPORTED_MODULE_5__.Checkbox, {
+                        onChange: onChangeInStock,
+                        title: "In stock",
+                        value: inStock
+                    }),
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
+                        children: t("Verified only")
+                    })
+                ]
             }),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_material__WEBPACK_IMPORTED_MODULE_2__/* .SizeButtons */ .dJ, {})
         ]
@@ -7622,14 +7641,15 @@ __webpack_async_result__();
 "use strict";
 __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "y": () => (/* binding */ SearchProduct)
+/* harmony export */   "j": () => (/* binding */ SearchProduct)
 /* harmony export */ });
+/* unused harmony export LinkToProduct */
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20997);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(16689);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(96214);
-/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_style_module_scss__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(96214);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_style_module_scss__WEBPACK_IMPORTED_MODULE_12__);
 /* harmony import */ var next_image__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(63082);
 /* harmony import */ var next_image__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_image__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(65692);
@@ -7641,8 +7661,13 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(13048);
 /* harmony import */ var features_Saved__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(78842);
 /* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(57987);
+/* harmony import */ var shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(567);
+/* harmony import */ var react_icons_bs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(10567);
+/* harmony import */ var react_icons_bs__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react_icons_bs__WEBPACK_IMPORTED_MODULE_11__);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shared_ui_kit__WEBPACK_IMPORTED_MODULE_5__, features_Saved__WEBPACK_IMPORTED_MODULE_8__, react_i18next__WEBPACK_IMPORTED_MODULE_9__]);
 ([shared_ui_kit__WEBPACK_IMPORTED_MODULE_5__, features_Saved__WEBPACK_IMPORTED_MODULE_8__, react_i18next__WEBPACK_IMPORTED_MODULE_9__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
+
 
 
 
@@ -7657,23 +7682,26 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shar
 const SearchProduct = ({ AddToSaved , product , CartButton  })=>{
     const { t  } = (0,react_i18next__WEBPACK_IMPORTED_MODULE_9__.useTranslation)();
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().search_item),
+        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_12___default().search_item),
         children: [
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_image__WEBPACK_IMPORTED_MODULE_2___default()), {
-                src: product.images[0] || "assets/default_product.png",
-                alt: "Check it!",
-                width: 190,
-                height: 190,
-                priority: true
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(LinkToProduct, {
+                productId: product.productId,
+                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_image__WEBPACK_IMPORTED_MODULE_2___default()), {
+                    src: product.images[0] || shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_10__/* .DefaultAssets.PRODUCT */ .h9.PRODUCT,
+                    alt: "Check it!",
+                    width: 190,
+                    height: 190,
+                    priority: true
+                })
             }),
             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().info_block),
+                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_12___default().info_block),
                 children: [
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit_Typos_Typo_Typo__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {
                         children: product.name
                     }),
                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h3", {
-                        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().price),
+                        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_12___default().price),
                         children: [
                             "$",
                             product.price,
@@ -7689,27 +7717,41 @@ const SearchProduct = ({ AddToSaved , product , CartButton  })=>{
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit_Typos_Typo_Typo__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {
                         children: product.description
                     }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_6___default()), {
-                        href: `${shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_7__/* .routes.SEARCH */ ._.SEARCH}/${product.productId}`,
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(LinkToProduct, {
+                        productId: product.productId,
                         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_5__/* .BlueLink */ .sJ, {
                             children: t("View_details")
                         })
                     }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                        style: {
-                            width: "200px"
-                        },
-                        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(CartButton, {
-                            productId: product.productId
-                        })
-                    }),
-                    AddToSaved && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(AddToSaved, {
-                        productId: product.productId,
-                        Component: features_Saved__WEBPACK_IMPORTED_MODULE_8__/* .SearchSaved */ .bO
+                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_12___default().buttons),
+                        children: [
+                            AddToSaved && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(AddToSaved, {
+                                productId: product.productId,
+                                Component: features_Saved__WEBPACK_IMPORTED_MODULE_8__/* .SquareButton */ .LE
+                            }),
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(CartButton, {
+                                productId: product.productId,
+                                Component: CartSquareButton
+                            })
+                        ]
                     })
                 ]
             })
         ]
+    });
+};
+const CartSquareButton = ({ onAdd , isExists , onRemove  })=>{
+    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(features_Saved__WEBPACK_IMPORTED_MODULE_8__/* .SquareButton */ .LE, {
+        Icon: react_icons_bs__WEBPACK_IMPORTED_MODULE_11__.BsCart,
+        isChecked: isExists,
+        onClick: !isExists ? onAdd : onRemove
+    });
+};
+const LinkToProduct = ({ productId , children  })=>{
+    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_6___default()), {
+        href: `${shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_7__/* .routes.SEARCH */ ._.SEARCH}/${productId}`,
+        children: children
     });
 };
 
@@ -7843,6 +7885,88 @@ const ExistingAvatar = ({ src , onError  })=>{
 
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });
+
+/***/ }),
+
+/***/ 44127:
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "J": () => (/* binding */ UserStatus)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20997);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var shared_config_consts_others__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10301);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(95037);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_style_module_scss__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var shared_lib_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7562);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(59003);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_3__);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shared_lib_components__WEBPACK_IMPORTED_MODULE_2__]);
+shared_lib_components__WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+
+
+
+
+
+const UserStatus = ({ status , className  })=>{
+    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_lib_components__WEBPACK_IMPORTED_MODULE_2__/* .Display */ .sS, {
+        when: status === shared_config_consts_others__WEBPACK_IMPORTED_MODULE_1__/* .UserStatus.ONLINE */ .J.ONLINE,
+        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_lib_components__WEBPACK_IMPORTED_MODULE_2__/* .WithSpring */ .xM, {
+            className: classnames__WEBPACK_IMPORTED_MODULE_3___default()((_style_module_scss__WEBPACK_IMPORTED_MODULE_4___default().user_status), className),
+            children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_4___default().circle)
+            })
+        })
+    });
+};
+
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
+
+/***/ }),
+
+/***/ 38826:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "n": () => (/* binding */ WriteToUser)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20997);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_icons_fi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(92750);
+/* harmony import */ var react_icons_fi__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_icons_fi__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(13048);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(20926);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+const WriteToUser = ({ className , targetId  })=>{
+    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_3___default()), {
+        href: {
+            pathname: shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_2__/* .routes.MESSENGER */ ._.MESSENGER,
+            query: {
+                targetId
+            }
+        },
+        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+            className: className,
+            children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("button", {
+                className: "outlined_button",
+                children: [
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_icons_fi__WEBPACK_IMPORTED_MODULE_1__.FiMessageCircle, {}),
+                    " Write message"
+                ]
+            })
+        })
+    });
+};
+
 
 /***/ }),
 
@@ -8409,7 +8533,7 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony export */   "Om": () => (/* reexport safe */ _Components_ProfileBackground_ProfileBackground__WEBPACK_IMPORTED_MODULE_18__.O),
 /* harmony export */   "TR": () => (/* reexport safe */ _Components_Logo_Logo__WEBPACK_IMPORTED_MODULE_0__.T),
 /* harmony export */   "TX": () => (/* reexport safe */ _Components_NotFound_NotFound__WEBPACK_IMPORTED_MODULE_26__.T),
-/* harmony export */   "Vh": () => (/* reexport safe */ _Components_SearchProduct_SearchProduct__WEBPACK_IMPORTED_MODULE_21__.y),
+/* harmony export */   "Vh": () => (/* reexport safe */ _Components_SearchProduct_SearchProduct__WEBPACK_IMPORTED_MODULE_21__.j),
 /* harmony export */   "Wr": () => (/* reexport safe */ _Typos_ContainerTitle_ContainerTitle__WEBPACK_IMPORTED_MODULE_6__.W),
 /* harmony export */   "Xn": () => (/* reexport safe */ _Components_ExtraService_ExtraService__WEBPACK_IMPORTED_MODULE_7__.X),
 /* harmony export */   "Yt": () => (/* reexport safe */ _Components_UserAvatar_UserAvatar__WEBPACK_IMPORTED_MODULE_17__.Y),
@@ -8419,6 +8543,7 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony export */   "eM": () => (/* reexport safe */ _Components_ExtraService_ExtraService__WEBPACK_IMPORTED_MODULE_7__.e),
 /* harmony export */   "fn": () => (/* reexport safe */ _Components_YouMayLikeItem_YouMayLikeItem__WEBPACK_IMPORTED_MODULE_20__.f),
 /* harmony export */   "jN": () => (/* reexport safe */ _Links_BlueLinkHeader_BlueLinkHeader__WEBPACK_IMPORTED_MODULE_10__.j),
+/* harmony export */   "nD": () => (/* reexport safe */ _Components_WriteToUser_WriteToUser__WEBPACK_IMPORTED_MODULE_31__.n),
 /* harmony export */   "oH": () => (/* reexport safe */ _Components_NextImage_NextImage__WEBPACK_IMPORTED_MODULE_1__.o),
 /* harmony export */   "pF": () => (/* reexport safe */ _Buttons_UploadButton_UploadButton__WEBPACK_IMPORTED_MODULE_16__.p),
 /* harmony export */   "rf": () => (/* reexport safe */ _Typos_TimeLabel_TodayLabel__WEBPACK_IMPORTED_MODULE_13__.r),
@@ -8460,8 +8585,12 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var _lib_components_ui_WithLoading__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(72308);
 /* harmony import */ var _Loaders_DefaultPreloader_DefaultPreloader__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(19303);
 /* harmony import */ var _Inputs_HeaderInput_HeaderInput__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(31984);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_Components_Logo_Logo__WEBPACK_IMPORTED_MODULE_0__, _Components_NextImage_NextImage__WEBPACK_IMPORTED_MODULE_1__, _Components_CategoriesList_CategoriesList__WEBPACK_IMPORTED_MODULE_5__, _Components_ExtraService_ExtraService__WEBPACK_IMPORTED_MODULE_7__, _Links_BlueLink_BlueLink__WEBPACK_IMPORTED_MODULE_8__, _Typos_UserInfo_UserInfo__WEBPACK_IMPORTED_MODULE_12__, _Components_Message_Message__WEBPACK_IMPORTED_MODULE_14__, _Loaders_PenPreloader_PenPreloader__WEBPACK_IMPORTED_MODULE_15__, _Buttons_UploadButton_UploadButton__WEBPACK_IMPORTED_MODULE_16__, _Components_UserAvatar_UserAvatar__WEBPACK_IMPORTED_MODULE_17__, _Components_ProfileBackground_ProfileBackground__WEBPACK_IMPORTED_MODULE_18__, _material_components_Controls_RadioGroup__WEBPACK_IMPORTED_MODULE_19__, _Components_YouMayLikeItem_YouMayLikeItem__WEBPACK_IMPORTED_MODULE_20__, _Components_SearchProduct_SearchProduct__WEBPACK_IMPORTED_MODULE_21__, _Components_RecommendedTall_RecommendedItemTall__WEBPACK_IMPORTED_MODULE_22__, _Components_Recommended_RecommendedItem__WEBPACK_IMPORTED_MODULE_23__, _Links_InStock_InStock__WEBPACK_IMPORTED_MODULE_24__, _Components_UploadWithPreview_UploadWithPreview__WEBPACK_IMPORTED_MODULE_25__, _Components_NotFound_NotFound__WEBPACK_IMPORTED_MODULE_26__, _lib_components_ui_WithLoading__WEBPACK_IMPORTED_MODULE_27__, _Loaders_DefaultPreloader_DefaultPreloader__WEBPACK_IMPORTED_MODULE_28__, _Inputs_HeaderInput_HeaderInput__WEBPACK_IMPORTED_MODULE_29__]);
-([_Components_Logo_Logo__WEBPACK_IMPORTED_MODULE_0__, _Components_NextImage_NextImage__WEBPACK_IMPORTED_MODULE_1__, _Components_CategoriesList_CategoriesList__WEBPACK_IMPORTED_MODULE_5__, _Components_ExtraService_ExtraService__WEBPACK_IMPORTED_MODULE_7__, _Links_BlueLink_BlueLink__WEBPACK_IMPORTED_MODULE_8__, _Typos_UserInfo_UserInfo__WEBPACK_IMPORTED_MODULE_12__, _Components_Message_Message__WEBPACK_IMPORTED_MODULE_14__, _Loaders_PenPreloader_PenPreloader__WEBPACK_IMPORTED_MODULE_15__, _Buttons_UploadButton_UploadButton__WEBPACK_IMPORTED_MODULE_16__, _Components_UserAvatar_UserAvatar__WEBPACK_IMPORTED_MODULE_17__, _Components_ProfileBackground_ProfileBackground__WEBPACK_IMPORTED_MODULE_18__, _material_components_Controls_RadioGroup__WEBPACK_IMPORTED_MODULE_19__, _Components_YouMayLikeItem_YouMayLikeItem__WEBPACK_IMPORTED_MODULE_20__, _Components_SearchProduct_SearchProduct__WEBPACK_IMPORTED_MODULE_21__, _Components_RecommendedTall_RecommendedItemTall__WEBPACK_IMPORTED_MODULE_22__, _Components_Recommended_RecommendedItem__WEBPACK_IMPORTED_MODULE_23__, _Links_InStock_InStock__WEBPACK_IMPORTED_MODULE_24__, _Components_UploadWithPreview_UploadWithPreview__WEBPACK_IMPORTED_MODULE_25__, _Components_NotFound_NotFound__WEBPACK_IMPORTED_MODULE_26__, _lib_components_ui_WithLoading__WEBPACK_IMPORTED_MODULE_27__, _Loaders_DefaultPreloader_DefaultPreloader__WEBPACK_IMPORTED_MODULE_28__, _Inputs_HeaderInput_HeaderInput__WEBPACK_IMPORTED_MODULE_29__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+/* harmony import */ var _Components_UserStatus_UserStatus__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(44127);
+/* harmony import */ var _Components_WriteToUser_WriteToUser__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(38826);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_Components_Logo_Logo__WEBPACK_IMPORTED_MODULE_0__, _Components_NextImage_NextImage__WEBPACK_IMPORTED_MODULE_1__, _Components_CategoriesList_CategoriesList__WEBPACK_IMPORTED_MODULE_5__, _Components_ExtraService_ExtraService__WEBPACK_IMPORTED_MODULE_7__, _Links_BlueLink_BlueLink__WEBPACK_IMPORTED_MODULE_8__, _Typos_UserInfo_UserInfo__WEBPACK_IMPORTED_MODULE_12__, _Components_Message_Message__WEBPACK_IMPORTED_MODULE_14__, _Loaders_PenPreloader_PenPreloader__WEBPACK_IMPORTED_MODULE_15__, _Buttons_UploadButton_UploadButton__WEBPACK_IMPORTED_MODULE_16__, _Components_UserAvatar_UserAvatar__WEBPACK_IMPORTED_MODULE_17__, _Components_ProfileBackground_ProfileBackground__WEBPACK_IMPORTED_MODULE_18__, _material_components_Controls_RadioGroup__WEBPACK_IMPORTED_MODULE_19__, _Components_YouMayLikeItem_YouMayLikeItem__WEBPACK_IMPORTED_MODULE_20__, _Components_SearchProduct_SearchProduct__WEBPACK_IMPORTED_MODULE_21__, _Components_RecommendedTall_RecommendedItemTall__WEBPACK_IMPORTED_MODULE_22__, _Components_Recommended_RecommendedItem__WEBPACK_IMPORTED_MODULE_23__, _Links_InStock_InStock__WEBPACK_IMPORTED_MODULE_24__, _Components_UploadWithPreview_UploadWithPreview__WEBPACK_IMPORTED_MODULE_25__, _Components_NotFound_NotFound__WEBPACK_IMPORTED_MODULE_26__, _lib_components_ui_WithLoading__WEBPACK_IMPORTED_MODULE_27__, _Loaders_DefaultPreloader_DefaultPreloader__WEBPACK_IMPORTED_MODULE_28__, _Inputs_HeaderInput_HeaderInput__WEBPACK_IMPORTED_MODULE_29__, _Components_UserStatus_UserStatus__WEBPACK_IMPORTED_MODULE_30__]);
+([_Components_Logo_Logo__WEBPACK_IMPORTED_MODULE_0__, _Components_NextImage_NextImage__WEBPACK_IMPORTED_MODULE_1__, _Components_CategoriesList_CategoriesList__WEBPACK_IMPORTED_MODULE_5__, _Components_ExtraService_ExtraService__WEBPACK_IMPORTED_MODULE_7__, _Links_BlueLink_BlueLink__WEBPACK_IMPORTED_MODULE_8__, _Typos_UserInfo_UserInfo__WEBPACK_IMPORTED_MODULE_12__, _Components_Message_Message__WEBPACK_IMPORTED_MODULE_14__, _Loaders_PenPreloader_PenPreloader__WEBPACK_IMPORTED_MODULE_15__, _Buttons_UploadButton_UploadButton__WEBPACK_IMPORTED_MODULE_16__, _Components_UserAvatar_UserAvatar__WEBPACK_IMPORTED_MODULE_17__, _Components_ProfileBackground_ProfileBackground__WEBPACK_IMPORTED_MODULE_18__, _material_components_Controls_RadioGroup__WEBPACK_IMPORTED_MODULE_19__, _Components_YouMayLikeItem_YouMayLikeItem__WEBPACK_IMPORTED_MODULE_20__, _Components_SearchProduct_SearchProduct__WEBPACK_IMPORTED_MODULE_21__, _Components_RecommendedTall_RecommendedItemTall__WEBPACK_IMPORTED_MODULE_22__, _Components_Recommended_RecommendedItem__WEBPACK_IMPORTED_MODULE_23__, _Links_InStock_InStock__WEBPACK_IMPORTED_MODULE_24__, _Components_UploadWithPreview_UploadWithPreview__WEBPACK_IMPORTED_MODULE_25__, _Components_NotFound_NotFound__WEBPACK_IMPORTED_MODULE_26__, _lib_components_ui_WithLoading__WEBPACK_IMPORTED_MODULE_27__, _Loaders_DefaultPreloader_DefaultPreloader__WEBPACK_IMPORTED_MODULE_28__, _Inputs_HeaderInput_HeaderInput__WEBPACK_IMPORTED_MODULE_29__, _Components_UserStatus_UserStatus__WEBPACK_IMPORTED_MODULE_30__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
+
 
 
 
@@ -8935,6 +9064,7 @@ const SearchInput = ({ values  })=>{
             inputProps: {
                 ...values.inputProps
             },
+            autoComplete: "off",
             endAdornment: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_mui_material__WEBPACK_IMPORTED_MODULE_1__.InputAdornment, {
                 position: "end",
                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_mui_material__WEBPACK_IMPORTED_MODULE_1__.IconButton, {
