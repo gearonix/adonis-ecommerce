@@ -7,12 +7,13 @@ import { SavedSelectors } from 'features/Saved'
 
 export interface SavedProps{
     productId: number,
-    Component: FC<SharedSavedProps>
+    Component: FC<SquareButtonProps>
 }
 
-export interface SharedSavedProps{
-    onClick: (arg?: unknown) => void,
-    isInSaved: boolean
+export interface SquareButtonProps {
+    onClick?: (arg?: unknown) => void,
+    isChecked?: boolean,
+    Icon?: FC
 }
 
 const SavedProvider: FC<SavedProps> = ({ productId, Component }) => {
@@ -35,7 +36,7 @@ const SavedProvider: FC<SavedProps> = ({ productId, Component }) => {
   })
 
 
-  return <Component onClick={onClick} isInSaved={isInSaved}/>
+  return <Component onClick={onClick} isChecked={isInSaved}/>
 }
 
 export default SavedProvider

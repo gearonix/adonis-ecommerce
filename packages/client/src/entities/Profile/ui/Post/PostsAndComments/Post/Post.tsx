@@ -30,9 +30,6 @@ const Post: FC<PostProps> = ({ post }) => {
       <div className={s.attached_image} >
         <NextImage src={post.image} def={DefaultAssets.POST}/>
       </div>
-      <div className={s.options}>
-        <BsThreeDotsVertical/>
-      </div>
     </div>
   </div>
 }

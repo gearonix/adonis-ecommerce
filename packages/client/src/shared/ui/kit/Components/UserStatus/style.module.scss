@@ -1,0 +1,13 @@
+@use 'src/shared/css/common.scss' as *;
+
+.user_status{
+  @include size(26px, 26px);
+  border-radius: 100%;
+  @include flex(center,center);
+  background: $bg-absolute;
+  .circle{
+    @include size(17px,17px);
+    border-radius: 100%;
+    background: #4bb34b;
+  }
+}

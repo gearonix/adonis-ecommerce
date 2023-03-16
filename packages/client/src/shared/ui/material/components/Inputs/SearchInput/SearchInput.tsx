@@ -14,6 +14,7 @@ export const SearchInput: FC<Props> = ({ values }) => {
       sx={{ height: 42 }}
       placeholder={'Search'}
       inputProps={{ ...values.inputProps }}
+      autoComplete={'off'}
       endAdornment={
         <InputAdornment position="end">
           <IconButton edge="end">

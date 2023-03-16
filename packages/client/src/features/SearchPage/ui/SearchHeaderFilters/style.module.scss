@@ -2,10 +2,13 @@
 
 
 .controls_buttons {
-  @include size(40%);
+  @include size(30%);
   margin-right: 30px;
-  @include flex(space-between, center);
-
+  @include flex(flex-end, center);
+  gap: 35px;
+  span{
+    margin-top: -5px;
+  }
 }
 
 .controls_select {

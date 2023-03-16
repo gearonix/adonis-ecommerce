@@ -9,6 +9,11 @@
   @include flex(stretch, center);
   position: relative;
   background: $bg-absolute;
+  .buttons{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
 
   img {
     cursor: pointer;

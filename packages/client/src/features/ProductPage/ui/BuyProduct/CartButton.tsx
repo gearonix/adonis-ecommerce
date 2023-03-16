@@ -6,12 +6,16 @@ import { useTranslation } from 'react-i18next'
 import { ProductSelectors } from 'widgets/CurrentProduct'
 import { CartSelectors } from 'widgets/Cart'
 
-const CartButton: FC<{productId?: number}> = ({ productId: id }) => {
+export interface CartButtonProps{
+  productId?: number,
+  Component?: FC<CartButtonUIProps>
+}
+
+const CartButton: FC<CartButtonProps> = ({ productId: id, Component = DefaultCartUI }) => {
   const currentProductId = useSelector(ProductSelectors.id) as number
   const productId = id ?? currentProductId
   const isExists = useSelector(CartSelectors.existsInCart(productId))
   const dispatch = useDispatch()
-  const { t } = useTranslation()
 
   const onAdd = () => {
     dispatch(cartActions.addProduct(productId))
@@ -21,7 +25,20 @@ const CartButton: FC<{productId?: number}> = ({ productId: id }) => {
   }
 
 
-  return isExists ? <Button w={'100%'} onClick={onRemove} color={'red'}>{t('Remove')}t</Button> :
+  return <Component isExists={isExists} onAdd={onAdd} onRemove={onRemove}/>
+}
+
+export interface CartButtonUIProps{
+  onRemove: () => void,
+  onAdd: () => void,
+  isExists: boolean
+}
+
+
+const DefaultCartUI: FC<CartButtonUIProps> = ({ onAdd, isExists, onRemove }) => {
+  const { t } = useTranslation()
+  return isExists ?
+      <Button w={'100%'} onClick={onRemove} color={'red'}>{t('Remove')}t</Button> :
       <Button w={'100%'} onClick={onAdd}>{t('Add_to')}</Button>
 }
 

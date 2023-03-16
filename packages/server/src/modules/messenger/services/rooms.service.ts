@@ -19,16 +19,23 @@ export class RoomsService {
     const room = await this.getRoomByMembers(starterId, invitedId)
 
     if (!room) {
-      return this.rooms.save({ starterId, invitedId })
+      await this.rooms.save({ starterId, invitedId })
+      return this.getRoomByMembers(starterId, invitedId)
+    } else {
+      return room
     }
-
-    return room
   }
 
 
   private async getRoomByMembers(starterId: number, invitedId: number) {
-    return this.rooms.findOneBy([{ starterId, invitedId },
-      { starterId: invitedId, invitedId: starterId }])
+    return this.rooms.findOne({
+      where: [{ starterId, invitedId },
+        { starterId: invitedId, invitedId: starterId }],
+      relations: {
+        starterUser: true,
+        invitedUser: true
+      }
+    })
   }
 
 
@@ -38,6 +45,9 @@ export class RoomsService {
       relations: {
         starterUser: true,
         invitedUser: true
+      },
+      order: {
+        creationDate: 'DESC'
       }
     })
   }

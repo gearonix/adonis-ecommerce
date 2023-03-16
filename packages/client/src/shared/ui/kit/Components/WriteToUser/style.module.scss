@@ -1,0 +1,13 @@
+@use 'src/shared/css/common.scss' as *;
+
+
+.button{
+  @include size(40px,40px, $rounded);
+  @include flex(center,center);
+  background: $color-300;
+  color: $color-absolute;
+  border: $br $bg-150;
+  svg{
+    @include size(24px, 24px);
+  }
+}

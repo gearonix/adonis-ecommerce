@@ -17,8 +17,10 @@ const SearchHeaderFilters: FC = () => {
   }
 
   return <div className={s.controls_buttons}>
-    <Checkbox onChange={onChangeInStock} title={'In Stock'} value={inStock}/>
-    <span>{t('In_Stock')}</span>
+    <div>
+      <Checkbox onChange={onChangeInStock} title={'In stock'} value={inStock}/>
+      <span>{t('Verified only')}</span>
+    </div>
     <SizeButtons/>
   </div>
 }

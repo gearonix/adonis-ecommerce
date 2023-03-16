@@ -4,6 +4,7 @@
 .default_avatar{
   @include absolute(50%,50%);
   transform: translate(-50%,-52%);
-  @include imageWrapper(85%,85%,0);
+  @include imageWrapper(85%,85%,100%);
+  overflow: hidden;
   background: white;
 }

@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import s from './style.module.scss'
 import { SearchUsers } from 'features/Messenger'
 import { MessengerUser } from 'entities/Messenger'
@@ -8,6 +8,9 @@ import { useMessengerSocket } from 'widgets/Messenger/lib/hooks'
 import { selectOpponentUser } from 'widgets/Messenger/lib/helpers'
 import { AuthSelectors } from 'widgets/Login'
 import { notifyActions, NotifySelectors } from 'app/providers/Notifications'
+import { useRouter } from 'next/router'
+import { useFilteredEffect } from 'shared/lib/hooks'
+import { getRoomByTargetId } from 'widgets/Messenger/lib/helpers/getRoomByTargetId'
 
 const MessengerAside: FC = () => {
   const selectedId = useSelector(MessengerSelectors.selectedId)
@@ -15,6 +18,8 @@ const MessengerAside: FC = () => {
   const rooms = useSelector(selectFilteredRooms)
   const notifications = useSelector(NotifySelectors.selectByRooms(rooms))
   const dispatch = useDispatch()
+  const router = useRouter()
+  const targetId = router.query.targetId as string
   const { actions } = useMessengerSocket()
   const getOpponentUser = selectOpponentUser(userId)
 
@@ -23,6 +28,14 @@ const MessengerAside: FC = () => {
     dispatch(messengerActions.changeSelectedRoomId(id))
     dispatch(notifyActions.clearNotifications(id))
   }
+
+  useFilteredEffect(() => {
+    const roomId = getRoomByTargetId(targetId, rooms)
+
+    if (roomId) {
+      switchRoom(Number(roomId))
+    }
+  }, [targetId, rooms.length])
 
   return <aside className={s.messenger_aside}>
     <SearchUsers/>

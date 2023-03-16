@@ -42,10 +42,25 @@
 
     .avatar {
       @include imageWrapper(170px, 170px, 100%);
+      overflow: initial;
+      img{
+        border-radius: 100%;
+      }
       border: 1px solid $bg-150;
       margin-left: 20px;
       margin-top: -7%;
       background: white;
+      .user_status{
+        position: absolute;
+        z-index: 3;
+        right: 13px;
+        bottom: 13px;
+      }
+    }
+    .write_to_user{
+      position: absolute;
+      right: 18px;
+      top: 18px;
     }
 
     .user_info {
@@ -71,7 +86,13 @@
       top: 20px;
 
       button {
+        cursor: pointer;
         @include size(183px, 33px);
+        svg{
+          margin-right: 3px;
+          @include size(18px, 18px);
+          margin-bottom: -2px;
+        }
       }
     }
 
