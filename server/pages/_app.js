@@ -668,11 +668,9 @@ const notifyMiddleware = ()=>(next)=>(action)=>{
             next(action);
             if (action?.meta?.requestStatus === "rejected") {
                 const message = action?.payload;
-                if (message === "An error was occurred.") return;
                 if (message === "Please sign in") {
                     return react_toastify__WEBPACK_IMPORTED_MODULE_0__.toast.info(message);
                 }
-                react_toastify__WEBPACK_IMPORTED_MODULE_0__.toast.warn(message);
             }
         };
 

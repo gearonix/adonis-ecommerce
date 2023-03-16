@@ -661,7 +661,7 @@ const Header = ({ DropDowns , Burger , Search  })=>{
                                     children: [
                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_1__/* .MdMessage */ .a9, {}),
                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
-                                            children: t("Message")
+                                            children: t("Messenger")
                                         })
                                     ]
                                 }),
