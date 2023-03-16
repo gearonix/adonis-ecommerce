@@ -29,13 +29,22 @@ let RoomsService = class RoomsService {
     async startChat(starterId, invitedId) {
         const room = await this.getRoomByMembers(starterId, invitedId);
         if (!room) {
-            return this.rooms.save({ starterId, invitedId });
+            await this.rooms.save({ starterId, invitedId });
+            return this.getRoomByMembers(starterId, invitedId);
         }
-        return room;
+        else {
+            return room;
+        }
     }
     async getRoomByMembers(starterId, invitedId) {
-        return this.rooms.findOneBy([{ starterId, invitedId },
-            { starterId: invitedId, invitedId: starterId }]);
+        return this.rooms.findOne({
+            where: [{ starterId, invitedId },
+                { starterId: invitedId, invitedId: starterId }],
+            relations: {
+                starterUser: true,
+                invitedUser: true
+            }
+        });
     }
     async getUserRooms(userId) {
         return this.rooms.find({
@@ -43,6 +52,9 @@ let RoomsService = class RoomsService {
             relations: {
                 starterUser: true,
                 invitedUser: true
+            },
+            order: {
+                creationDate: 'DESC'
             }
         });
     }
