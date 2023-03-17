@@ -1,13 +1,13 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import RemoveFromCard from './RemoveFromCard'
+import RemoveFromCart from './RemoveFromCart'
 
 export default {
-  title: 'features/Cart/RemoveFromCard',
-  component: RemoveFromCard,
+  title: 'features/Cart/RemoveFromCart',
+  component: RemoveFromCart,
   argTypes: {}
-} as ComponentMeta<typeof RemoveFromCard>
+} as ComponentMeta<typeof RemoveFromCart>
 
-const Template: ComponentStory<typeof RemoveFromCard> = (args) => <RemoveFromCard {...args} />
+const Template: ComponentStory<typeof RemoveFromCart> = (args) => <RemoveFromCart {...args} />
 
 export const Default = Template.bind({})
 Default.args = {

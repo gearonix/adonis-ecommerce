@@ -8,6 +8,7 @@ import { DefaultAssets } from 'shared/config/consts/assets'
 import cn from 'classnames'
 import { getMembers } from 'entities/Messenger/lib/getMembers'
 import { Display, Ternary } from 'shared/lib/components'
+import { useTranslation } from 'react-i18next'
 
 interface Props{
   room: Room,
@@ -19,6 +20,7 @@ interface Props{
 
 const MessengerUser: FC<Props> = ({ room, switchRoom, selected, user, notification }) => {
   const helpers = new Helpers()
+  const { t } = useTranslation()
   const notify = notification?.at(-1)
   return <div onClick={() => switchRoom(room.roomId)}>
     <div className={cn(s.user, { [s.selected]: selected })}>
@@ -29,8 +31,8 @@ const MessengerUser: FC<Props> = ({ room, switchRoom, selected, user, notificati
         <div className={s.info}>
           <h3>{helpers.toNormalName(user)}</h3>
           <Ternary where={notify?.messageText}>
-            <span>New message: {notify?.messageText}</span>
-            <span>Members: {getMembers(room)}</span>
+            <span>{t('New message:')} {notify?.messageText}</span>
+            <span>{t('Members:')} {getMembers(room)}</span>
           </Ternary>
         </div>
         <div className={s.time}>

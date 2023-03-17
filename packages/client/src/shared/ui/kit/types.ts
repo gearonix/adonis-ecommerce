@@ -7,6 +7,8 @@ export type ColorType = 'red' | 'green' | 'primary' | 'orange' | 'outlined' | 'b
 
 export interface CartIconProps {
     Icon: FC,
+    title: string,
+    subtitle: string
 }
 
 export interface MessageProps {

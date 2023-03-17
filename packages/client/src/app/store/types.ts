@@ -3,13 +3,14 @@ import { CurrentProductApi, CurrentProductSlice } from 'widgets/CurrentProduct'
 import { AuthApi, AuthSlice } from 'widgets/Login'
 import { PostsApi } from 'widgets/Posts'
 import { ProductsApi, ProductsSlice } from 'widgets/Products'
-import { ProfileApi, PostsSlice, UserSlice } from 'widgets/Profile'
+import { ProfileApi, PostsSlice, UserSlice, User } from 'widgets/Profile'
 import { CreateMiddleWare } from 'app/store/config/createMiddleware'
 import { ObjectNullable, Required } from 'shared/types/common'
 import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore'
 import { ReducerManager } from 'app/store/reducerManager'
 import { CartSlice } from 'widgets/Cart'
 import { Message, MessengerApi, MessengerSlice } from 'widgets/Messenger'
+import { UsersSlice } from 'widgets/Users/store/slice/initialState'
 
 export interface ApiConfig {
     profile: ProfileApi
@@ -40,7 +41,8 @@ export interface RequiredReducers{
 export interface OptionalReducers{
     posts?: PostsSlice
     currentProduct?: CurrentProductSlice,
-    messenger?: MessengerSlice
+    messenger?: MessengerSlice,
+    users?: UsersSlice
 }
 
 export interface StoreWithManager extends ToolkitStore{

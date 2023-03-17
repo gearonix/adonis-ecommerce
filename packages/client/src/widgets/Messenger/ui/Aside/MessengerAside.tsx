@@ -14,6 +14,7 @@ import { getRoomByTargetId } from 'widgets/Messenger/lib/helpers/getRoomByTarget
 import { Display } from 'shared/lib/components'
 import { AiOutlineSearch } from 'shared/ui/icons'
 import { AiOutlineSmile } from 'react-icons/ai'
+import { useTranslation } from 'react-i18next'
 
 const MessengerAside: FC = () => {
   const selectedId = useSelector(MessengerSelectors.selectedId)
@@ -56,9 +57,10 @@ const MessengerAside: FC = () => {
 }
 
 export const NothingFound: FC = () => {
+  const { t } = useTranslation()
   return <div className={s.nothing_found}>
     <h2>
-      Nothing found.
+      {t('Nothing found.')}
     </h2>
     <AiOutlineSmile/>
   </div>

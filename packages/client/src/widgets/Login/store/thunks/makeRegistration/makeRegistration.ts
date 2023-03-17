@@ -5,7 +5,7 @@ import { Exceptions } from 'app/config/globals'
 import { authorizeUser } from 'widgets/Login/store/thunks/autorizeUser/authorizeUser'
 
 export const makeRegistration = createThunk(
-    'users/MAKE_REGISTRATION',
+    'profile/MAKE_REGISTRATION',
     async (data: SignupWithRoles, { dispatch, rejectWithValue, extra }) => {
       const response = await extra.api.auth.registerUser(data)
 
@@ -17,7 +17,7 @@ export const makeRegistration = createThunk(
 
 
 export const registerByGoogle = createThunk(
-    'users/MAKE_REGISTRATION_BY_GOOGLE',
+    'profile/MAKE_REGISTRATION_BY_GOOGLE',
     async (data: RegisterByGoogle, { dispatch, rejectWithValue, extra }) => {
       const response = await extra.api.auth.registerUserByGoogle(data)
 

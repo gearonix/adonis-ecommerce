@@ -6,7 +6,7 @@ import { UserRoles } from 'app/config/globals'
 
 const helpers = new Helpers()
 
-const UserSelectors = {
+const ProfileSelectors = {
   userId: ({ user }: AppState) => user.userId,
   user: ({ user }: AppState) => user,
   userName: createSelector((state: AppState) => state.user, helpers.toNormalName),
@@ -21,4 +21,4 @@ const UserSelectors = {
 }
 
 
-export default UserSelectors
+export default ProfileSelectors

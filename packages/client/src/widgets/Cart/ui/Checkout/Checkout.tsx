@@ -11,11 +11,10 @@ interface CheckoutProps{
 }
 
 const Checkout: FC<CheckoutProps> = ({ CheckoutButton }) => {
-  const userName = useSelector(AuthSelectors.userName)
   const { t } = useTranslation()
   const { sum } = useContext(CartContext)
   return <div className={s.checkout_block}>
-    <p>{userName}, Lorem ipsum dolor sit amet, consectetur adipisicing elit </p>
+    <p>{t('Not a real service')} </p>
     <div className={s.total_block}>
       <h4>{t('Total')}</h4>
       <h4>${sum}.00</h4>

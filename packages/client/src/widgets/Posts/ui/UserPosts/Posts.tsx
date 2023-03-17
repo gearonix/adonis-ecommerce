@@ -33,7 +33,7 @@ export const Posts : FC = () => {
 
 
   return <>
-    <WithLoading when={!posts.length} title={'Posts'} Icon={PostIcon} loading={isLoading}>
+    <WithLoading when={!posts.length} title={'Posts_n'} Icon={PostIcon} loading={isLoading}>
       {posts.map((post) => {
         return <Post post={post} key={post.postId} />
       })}

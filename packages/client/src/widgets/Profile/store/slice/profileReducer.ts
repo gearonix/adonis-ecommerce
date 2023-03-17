@@ -6,7 +6,7 @@ import { getUserById } from 'widgets/Login/store/thunks'
 import { UserStatus } from 'shared/config/consts/others'
 
 
-const userReducer = createSlice({
+const profileReducer = createSlice({
   name: 'users',
   initialState,
   reducers: {
@@ -31,6 +31,6 @@ const userReducer = createSlice({
   }
 })
 
-export const userActions = userReducer.actions
+export const userActions = profileReducer.actions
 
-export const userSlice = userReducer.reducer
+export const userSlice = profileReducer.reducer

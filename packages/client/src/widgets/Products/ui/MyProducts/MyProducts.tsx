@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'shared/types/redux'
 import { getUserProducts, productsActions } from 'widgets/Products'
 import { SavedProvider } from 'features/Saved'
 import { WithLoading, SearchedProduct } from 'shared/ui/kit'
-import UserSelectors from 'widgets/Profile/store/selectors/users/user.selectors'
+import ProfileSelectors from 'widgets/Profile/store/selectors/profile/profile.selectors'
 import { CartButton } from 'features/ProductPage'
 import { SearchPagination } from 'features/SearchPage'
 import { AiOutlineShoppingCart as CartIcon } from 'shared/ui/icons'
@@ -14,7 +14,7 @@ const MyProducts : FC = () => {
   const dispatch = useDispatch()
   const myProducts = useSelector(ProductsSelectors.products)
   const page = useSelector(ProductsSelectors.page)
-  const userId = useSelector(UserSelectors.userId)
+  const userId = useSelector(ProfileSelectors.userId)
   const isLoading = useSelector(ProductsSelectors.isLoading)
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const MyProducts : FC = () => {
 
   return <>
 
-    <WithLoading when={!myProducts.length} title={'Products'} Icon={CartIcon}
+    <WithLoading when={!myProducts.length} title={'Products_n'} Icon={CartIcon}
       loading={isLoading} Preloader={ProductsPreloader} count={3}>
       {myProducts.map((product) => {
         return <SearchedProduct AddToSaved={SavedProvider}

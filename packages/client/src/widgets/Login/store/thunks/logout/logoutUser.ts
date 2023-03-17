@@ -8,7 +8,7 @@ import { routes } from 'shared/config/consts/routes'
 const storage = new LocalStorageHelper()
 
 export const logoutUser = createThunk(
-    'users/LOGOUT_USER',
+    'profile/LOGOUT_USER',
     async (_, { dispatch, extra }) => {
       await extra.api.auth.clearAuthToken()
       dispatch(userActions.clearUser())

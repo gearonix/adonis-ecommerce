@@ -10,7 +10,8 @@ const EndPoints = {
   USERS: {
     changeProfileData: '/users/change',
     changeUserBackground: '/users/change/background',
-    changeUserAvatar: '/users/change/avatar'
+    changeUserAvatar: '/users/change/avatar',
+    getUsers: '/users'
   },
   PRODUCTS: {
     createProduct: '/products/create',

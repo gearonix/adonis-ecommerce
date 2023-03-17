@@ -13,7 +13,7 @@ const HeaderDropDowns: FC = () => {
   const { t } = useTranslation()
   return <div className={s.dropdowns}>
     <Switcher onChange={toggleTheme} value={!isLight} label={t('Dark_mode')} color={'secondary'}/>
-    <Switcher onChange={toggleLang} value={!isEnglish} label={'Russian'} />
+    <Switcher onChange={toggleLang} value={!isEnglish} label={t('Russian')} />
   </div>
 }
 

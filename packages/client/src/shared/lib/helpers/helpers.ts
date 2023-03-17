@@ -13,7 +13,7 @@ class Helpers {
   }
 
   public capitalize(str: string) {
-    return str.toUpperCase()[0] + str.slice(1)
+    return str.toUpperCase()[0] + str.slice(1).toLowerCase()
   }
 
   public attachStrings(...args: string[]) {

@@ -87,7 +87,8 @@
 
       button {
         cursor: pointer;
-        @include size(183px, 33px);
+        min-width: 183px;
+        height: 33px;
         svg{
           margin-right: 3px;
           @include size(18px, 18px);

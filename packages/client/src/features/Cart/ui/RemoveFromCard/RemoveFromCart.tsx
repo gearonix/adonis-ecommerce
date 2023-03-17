@@ -3,18 +3,20 @@ import { Button } from 'shared/ui/kit'
 import { useDispatch } from 'shared/types/redux'
 import { cartActions } from 'widgets/Cart/store/slice/cartReducer'
 import { withDelay } from 'shared/lib/helpers/withHelpers/withDelay'
+import { useTranslation } from 'react-i18next'
 
-const RemoveFromCard = forwardRef<HTMLButtonElement, {productId: number}>(({ productId }, ref) => {
+const RemoveFromCart = forwardRef<HTMLButtonElement, {productId: number}>(({ productId }, ref) => {
   const dispatch = useDispatch()
+  const { t } = useTranslation()
   const removeFromCard = () => {
     dispatch(cartActions.removeProduct(productId))
   }
 
 
   return <Button w={'140px'} color={'redColored'} h={'32px'} ref={ref}
-    onClick={withDelay(removeFromCard)}>Remove</Button>
+    onClick={withDelay(removeFromCard)}>{t('Remove')}</Button>
 })
 
-RemoveFromCard.displayName = 'RemoveFromCard'
+RemoveFromCart.displayName = 'RemoveFromCart'
 
-export default RemoveFromCard
+export default RemoveFromCart

@@ -1,0 +1,27 @@
+@use 'src/shared/css/common.scss' as *;
+
+.header{
+  border: 1px solid $bg-150;
+  padding-left: 19px;
+  padding-right: 19px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  background: $bg-absolute;
+  color: $color-absolute;
+  @include size(100%, 47px);
+  @include itemHover;
+  @include flex(space-between, center);
+  .search{
+    width: 29%;
+  }
+}
+
+.controls_buttons {
+  @include size(30%);
+  margin-right: 30px;
+  @include flex(flex-end, center);
+  gap: 35px;
+  span{
+    margin-top: -5px;
+  }
+}

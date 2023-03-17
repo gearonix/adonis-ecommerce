@@ -68,6 +68,9 @@ const DevNavigation: FC = () => {
         <Link href={'/not_found'}>
           <button>not_found</button>
         </Link>
+        <Link href={'/users'}>
+          <button>users</button>
+        </Link>
         <button onClick={logout} style={{ color: '#83a6de' }}>logout</button>
         <button style={{ color: '#83a6de' }} onClick={toggleTheme}>theme</button>
         <button style={{ color: '#83a6de' }} onClick={changeLanguage}>lang</button>

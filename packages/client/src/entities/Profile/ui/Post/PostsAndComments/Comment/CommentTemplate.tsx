@@ -29,9 +29,6 @@ export const CommentTemplate: FC<CommentProps> = ({ comment }) => {
           <span><BsDot/>{helpers.reformatMysqlDate(comment.date)}</span></h2>
         <p className={s.post_text}>{helpers.capitalize(comment.message)}
         </p>
-        <div className={s.options}>
-          <BsThreeDotsVertical/>
-        </div>
       </div>
     </WithSpring>
   </>

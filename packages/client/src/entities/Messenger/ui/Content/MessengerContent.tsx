@@ -9,6 +9,7 @@ import Link from 'next/link'
 import { routes } from 'shared/config/consts/routes'
 import { Assets } from 'shared/config/consts/assets'
 import { useTimeout } from 'shared/lib/hooks'
+import { useTranslation } from 'react-i18next'
 
 interface Props{
   messages: Message[],
@@ -41,6 +42,7 @@ const MessengerContent: FC<Props> = ({ messages, userId }) => {
 
 export const DefaultChat: FC = () => {
   const toShow = useTimeout(300)
+  const { t } = useTranslation()
   return <Display when={toShow}>
     <WithSpring>
       <div className={s.default_chat_image}>

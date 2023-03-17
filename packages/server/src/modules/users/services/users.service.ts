@@ -1,12 +1,14 @@
 import { InjectRepository } from '@nestjs/typeorm'
 import { UsersEntity } from '@app/entities'
-import { Repository } from 'typeorm'
+import { Like, Repository } from 'typeorm'
 import { RegisterUserDTO } from '@app/modules/users/dto/authDTO'
 import { forwardRef, HttpException, HttpStatus, Inject } from '@nestjs/common'
 import { AuthService } from '@app/modules/auth'
 import { ServerExceptions } from '@app/types/exceptions'
 import { UserStatusService } from '@modules/messenger'
-import { UserStatus } from '@app/types/global'
+import { UsersDTO } from '@modules/users/dto/usersDTO'
+import { withLimit } from '@lib/helpers'
+import { createUsersQuery } from '@modules/users/lib/createUsersQuery'
 
 export class UsersService {
   constructor(
@@ -17,6 +19,19 @@ export class UsersService {
     @Inject(forwardRef(() => UserStatusService))
     private userStatusService: UserStatusService
   ) {}
+
+  async getUsers(query: UsersDTO) {
+    const users = await this.users.find({
+      where: createUsersQuery(query),
+      order: { registration_date: 'DESC' },
+      ...withLimit(query.page)
+    })
+    const count = await this.users.count()
+    return {
+      data: users,
+      count
+    }
+  }
 
   async getIdAndPasswordByEmail(email: string) {
     return this.users.findOne({

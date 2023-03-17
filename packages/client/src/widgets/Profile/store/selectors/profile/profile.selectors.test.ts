@@ -3,10 +3,10 @@ import { Store } from 'shared/types/redux'
 import { ObjectNullable } from 'shared/types/common'
 import { UserSlice } from 'widgets/Profile/store/slice/initialState/userInitialState'
 import { UserRoles } from 'app/config/globals'
-import UserSelectors from './user.selectors'
+import ProfileSelectors from './profile.selectors'
 
 
-describe('UserSelectors', () => {
+describe('ProfileSelectors', () => {
   const tests = new JestRedux()
   let store: Store
   let state: ObjectNullable<UserSlice>
@@ -22,22 +22,22 @@ describe('UserSelectors', () => {
   })
 
   test('userId', () => {
-    expect(UserSelectors.userId(tests.selector('user', state))).toBe(77)
+    expect(ProfileSelectors.userId(tests.selector('user', state))).toBe(77)
   })
   test('user', () => {
-    expect(UserSelectors.user(tests.selector('user', state))).toStrictEqual(state)
+    expect(ProfileSelectors.user(tests.selector('user', state))).toStrictEqual(state)
   })
   test('isSalesman', () => {
-    expect(UserSelectors.isSalesman(tests.selector('user', state))).toBeFalsy()
+    expect(ProfileSelectors.isSalesman(tests.selector('user', state))).toBeFalsy()
   })
   test('isMe', () => {
-    expect(UserSelectors.isSalesman(tests.selector('user', state))).toBeFalsy()
+    expect(ProfileSelectors.isSalesman(tests.selector('user', state))).toBeFalsy()
   })
   test('isExists', () => {
-    expect(UserSelectors.isExists(tests.selector('user', state))).toBeTruthy()
+    expect(ProfileSelectors.isExists(tests.selector('user', state))).toBeTruthy()
   })
   test('isLoading', () => {
-    expect(UserSelectors.isLoading(tests.selector('user', state))).not.toBeDefined()
+    expect(ProfileSelectors.isLoading(tests.selector('user', state))).not.toBeDefined()
   })
 })
 

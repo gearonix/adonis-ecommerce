@@ -6,7 +6,7 @@ import { HttpStatusCode } from 'axios'
 import EndPoints from 'shared/config/consts/endpoints'
 
 
-export const changeBackground = createThunk('users/CHANGE_AVATAR',
+export const changeBackground = createThunk('profile/CHANGE_AVATAR',
     async (background: FormData, { dispatch }) => {
       const response = await requestBackgroundToServer(background)
       if (response.status !== HttpStatusCode.Created) return

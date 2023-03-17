@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { BsFileEarmarkPost } from 'shared/ui/icons'
 import { useSelector } from 'shared/types/redux'
-import userSelectors from 'widgets/Profile/store/selectors/users/user.selectors'
+import userSelectors from 'widgets/Profile/store/selectors/profile/profile.selectors'
 import { Display } from 'shared/lib/components'
 import { useTranslation } from 'react-i18next'
 

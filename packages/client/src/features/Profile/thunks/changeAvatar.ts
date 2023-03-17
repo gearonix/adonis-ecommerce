@@ -6,7 +6,7 @@ import { HttpStatusCode } from 'axios'
 import EndPoints from 'shared/config/consts/endpoints'
 
 
-export const changeAvatar = createThunk('users/CHANGE_AVATAR',
+export const changeAvatar = createThunk('profile/CHANGE_AVATAR',
     async (avatar: FormData, { dispatch, extra }) => {
       const response = await requestAvatarToServer(avatar)
       if (response.status !== HttpStatusCode.Created) return

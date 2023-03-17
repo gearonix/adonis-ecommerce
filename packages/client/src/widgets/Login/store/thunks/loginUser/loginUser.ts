@@ -5,7 +5,7 @@ import { Exceptions } from 'app/config/globals'
 import { authorizeUser } from 'widgets/Login/store/thunks/autorizeUser/authorizeUser'
 
 export const loginUser = createThunk(
-    'users/LOGIN_USER',
+    'profile/LOGIN_USER',
     async (formValues: LoginForm, { dispatch, rejectWithValue, extra }) => {
       const response = await extra.api.auth.loginUser(formValues)
 
@@ -17,7 +17,7 @@ export const loginUser = createThunk(
 
 
 export const loginByGoogle = createThunk(
-    'users/LOGIN_BY_GOOGLE',
+    'profile/LOGIN_BY_GOOGLE',
     async (jwt: string, { dispatch, rejectWithValue, extra }) => {
       const response = await extra.api.auth.loginUserByGoogle(jwt)
 

@@ -8,6 +8,7 @@
   border-radius: $rounded;
   transition: background 200ms;
   display: block;
+  width: max-content;
 
   &:hover {
     background: $link-color-hover;
