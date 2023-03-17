@@ -1,4 +1,5 @@
 import { UsersService } from '@modules/users';
+import { UsersDTO } from '@modules/users/dto/usersDTO';
 export declare class UsersController {
     private usersService;
     constructor(usersService: UsersService);
@@ -19,5 +20,9 @@ export declare class UsersController {
         registration_date: Date;
         google_sub: string;
         user: import("../../../entities/users.entity").UsersEntity[];
+    }>;
+    getUsers(query: UsersDTO): Promise<{
+        data: import("../../../entities/users.entity").UsersEntity[];
+        count: number;
     }>;
 }

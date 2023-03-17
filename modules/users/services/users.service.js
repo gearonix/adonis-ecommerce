@@ -20,6 +20,8 @@ const common_1 = require("@nestjs/common");
 const auth_1 = require("../../auth");
 const exceptions_1 = require("../../../types/exceptions");
 const messenger_1 = require("../../messenger");
+const helpers_1 = require("../../../lib/helpers");
+const createUsersQuery_1 = require("../lib/createUsersQuery");
 let UsersService = class UsersService {
     users;
     authService;
@@ -28,6 +30,18 @@ let UsersService = class UsersService {
         this.users = users;
         this.authService = authService;
         this.userStatusService = userStatusService;
+    }
+    async getUsers(query) {
+        const users = await this.users.find({
+            where: (0, createUsersQuery_1.createUsersQuery)(query),
+            order: { registration_date: 'DESC' },
+            ...(0, helpers_1.withLimit)(query.page)
+        });
+        const count = await this.users.count();
+        return {
+            data: users,
+            count
+        };
     }
     async getIdAndPasswordByEmail(email) {
         return this.users.findOne({
