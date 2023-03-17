@@ -1,8 +1,0 @@
-@use 'shared/css/common.scss' as *;
-
-.animated{
-  background: black;
-  @include absolute;
-  @include size;
-
-}

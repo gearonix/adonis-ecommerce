@@ -1,9 +1,9 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Button } from 'shared/ui/kit'
 import { toast } from 'react-toastify'
 
-const CheckoutButton: FC = () => {
+const CheckoutButton: FC = memo(() => {
   const { t } = useTranslation()
 
   const onClick = () => {
@@ -11,6 +11,6 @@ const CheckoutButton: FC = () => {
   }
 
   return <Button color={'green'} w={'100%'} h={'54px'} onClick={onClick}>{t('Checkout')}</Button>
-}
+})
 
 export default CheckoutButton

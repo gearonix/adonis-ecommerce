@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import {FC, memo} from 'react'
 import s from './style.module.scss'
 import { Button, RecommendedItem } from 'shared/ui/kit'
 import { routes } from 'shared/config/consts/routes'
@@ -11,7 +11,7 @@ import { ProductTypesAssets } from 'shared/config/consts/assets'
 import { useTranslation } from 'react-i18next'
 
 
-const SortedProducts: FC<RecommendedItemProps> = ({ type = 'Electronics', items }) => {
+const SortedProducts = memo<RecommendedItemProps>(({ type = 'Electronics', items }) => {
   const dispatch = useDispatch()
   const router = useRouter()
   const { t } = useTranslation()
@@ -33,5 +33,7 @@ const SortedProducts: FC<RecommendedItemProps> = ({ type = 'Electronics', items 
         key={`${product.productId}_${idx}`}/>) : <RecommendedPreloader/>}
     </div>
   </div>
-}
+})
+
+
 export default SortedProducts

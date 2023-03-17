@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import {FC, memo, useState} from 'react'
 import s from './style.module.scss'
 import { NextImage } from 'shared/ui/kit'
 import { ImageCarouselProps } from 'features/ProductPage'
@@ -10,7 +10,7 @@ interface ProductImageProps{
 }
 
 
-const AddProductImage: FC<ProductImageProps> = ({ ImageCarousel, files }) => {
+const AddProductImage = memo<ProductImageProps>(({ ImageCarousel, files }) => {
   const [index, setIndex] = useState<number>(-1)
 
   return <>
@@ -23,6 +23,6 @@ const AddProductImage: FC<ProductImageProps> = ({ ImageCarousel, files }) => {
       }}/>
     </div>
   </>
-}
+})
 
 export default AddProductImage

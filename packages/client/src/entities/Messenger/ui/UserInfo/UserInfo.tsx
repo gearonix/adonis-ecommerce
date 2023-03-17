@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import s from './style.module.scss'
 import { NextImage } from 'shared/ui/kit'
 import { User } from 'widgets/Profile'
@@ -13,7 +13,7 @@ interface UserInfoProps{
   label: string
 }
 
-const UserInfo: FC<UserInfoProps> = ({ user, label }) => {
+const UserInfo = memo<UserInfoProps>(({ user, label }) => {
   const helpers = new Helpers()
   return <WithSpring className={s.user_info_wrapper} key={user.userId}>
     <div className={s.image}>
@@ -25,6 +25,6 @@ const UserInfo: FC<UserInfoProps> = ({ user, label }) => {
         {label}</span>
     </div>
   </WithSpring>
-}
+})
 
 export default UserInfo

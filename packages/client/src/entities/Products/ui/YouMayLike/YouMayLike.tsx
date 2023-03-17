@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import {FC, memo} from 'react'
 import s from './style.module.scss'
 import { YouMayLikeItem } from 'shared/ui/kit'
 import { RecommendedItemProps } from 'widgets/Products'
@@ -7,7 +7,7 @@ import { YouMayLikePreloader } from 'shared/ui/material/components/Loaders/YouMa
 import { useTranslation } from 'react-i18next'
 
 
-const YouMayLike: FC<RecommendedItemProps> = ({ items }) => {
+const YouMayLike = memo<RecommendedItemProps>(({ items }) => {
   const { t } = useTranslation()
   return <article className={s.you_may_like}>
     <h4 className={s.heading}>{t('You_may')}</h4>
@@ -20,6 +20,6 @@ const YouMayLike: FC<RecommendedItemProps> = ({ items }) => {
       <YouMayLikePreloader/>
     </Ternary>
   </article>
-}
+})
 
 export default YouMayLike

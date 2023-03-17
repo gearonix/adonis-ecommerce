@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import s from './style.module.scss'
 import Link from 'next/link'
 import { AiOutlineApi, AiOutlineHome, GiTopHat } from 'shared/ui/icons'
@@ -6,7 +6,7 @@ import { Button } from 'shared/ui/kit'
 import { routes } from 'shared/config/consts/routes'
 import { useTranslation } from 'react-i18next'
 
-const SignupChoice: FC = () => {
+const SignupChoice = memo(() => {
   const { t } = useTranslation()
   return <div className={s.signup_main}>
     <div className={s.wrapper}>
@@ -43,6 +43,6 @@ const SignupChoice: FC = () => {
       </Link></p>
     </div>
   </div>
-}
+})
 
 export default SignupChoice

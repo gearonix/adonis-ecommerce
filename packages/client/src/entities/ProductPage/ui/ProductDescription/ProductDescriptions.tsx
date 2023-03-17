@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import s from './style.module.scss'
 import { Table } from 'shared/ui/material'
 import { BlueLinkHeader } from 'shared/ui/kit'
@@ -11,7 +11,7 @@ import { MdOutlineDescription } from 'shared/ui/icons'
 import { ProductSelectors } from 'widgets/CurrentProduct'
 import { Product } from 'widgets/Products'
 
-const ProductDescriptions: FC = () => {
+const ProductDescriptions = memo(() => {
   const product = useSelector(ProductSelectors.product) as Product
   const isExists = useSelector(ProductSelectors.isExists)
   const { t } = useTranslation()
@@ -36,5 +36,5 @@ const ProductDescriptions: FC = () => {
       }
     </div>
   </div>
-}
+})
 export default ProductDescriptions

@@ -9,8 +9,9 @@ import { SlSocialVkontakte } from 'react-icons/sl'
 import { BsTelegram } from 'react-icons/bs'
 import { HiOutlineDesktopComputer } from 'react-icons/hi'
 import { useTranslation } from 'react-i18next'
+import { memo } from 'react'
 
-const About = () => {
+const About = memo(() => {
   const { t } = useTranslation()
   return <div className={s.container}>
     <h1 className={s.title}>{t('About_project')}</h1>
@@ -51,10 +52,9 @@ const About = () => {
     <Link href={routes.MAIN}>
       <h4 className={s.link}>
         {t('Return_to')}
-
       </h4>
     </Link>
   </div>
-}
+})
 
 export default About

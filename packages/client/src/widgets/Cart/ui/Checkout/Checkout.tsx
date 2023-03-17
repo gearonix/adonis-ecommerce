@@ -1,16 +1,14 @@
-import { FC, useContext } from 'react'
+import { FC, memo, useContext } from 'react'
 import s from './style.module.scss'
-import { useSelector } from 'shared/types/redux'
 import CartContext from 'widgets/Cart/providers/Cart/CartContext'
 import { useTranslation } from 'react-i18next'
-import { AuthSelectors } from 'widgets/Login'
 
 
 interface CheckoutProps{
   CheckoutButton: FC
 }
 
-const Checkout: FC<CheckoutProps> = ({ CheckoutButton }) => {
+const Checkout = memo<CheckoutProps>(({ CheckoutButton }) => {
   const { t } = useTranslation()
   const { sum } = useContext(CartContext)
   return <div className={s.checkout_block}>
@@ -21,6 +19,6 @@ const Checkout: FC<CheckoutProps> = ({ CheckoutButton }) => {
     </div>
     <CheckoutButton/>
   </div>
-}
+})
 
 export default Checkout

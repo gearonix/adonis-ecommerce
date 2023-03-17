@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react'
+import { memo, useEffect } from 'react'
 import { useDispatch, useSelector } from 'shared/types/redux'
 import { getUserProducts, productsActions } from 'widgets/Products'
 import { SavedProvider } from 'features/Saved'
@@ -10,7 +10,7 @@ import { AiOutlineShoppingCart as CartIcon } from 'shared/ui/icons'
 import { ProductsPreloader } from 'shared/ui/material'
 import { ProductsSelectors } from 'widgets/Products'
 
-const MyProducts : FC = () => {
+const MyProducts = memo(() => {
   const dispatch = useDispatch()
   const myProducts = useSelector(ProductsSelectors.products)
   const page = useSelector(ProductsSelectors.page)
@@ -28,7 +28,6 @@ const MyProducts : FC = () => {
   }, [])
 
   return <>
-
     <WithLoading when={!myProducts.length} title={'Products_n'} Icon={CartIcon}
       loading={isLoading} Preloader={ProductsPreloader} count={3}>
       {myProducts.map((product) => {
@@ -38,7 +37,7 @@ const MyProducts : FC = () => {
       <SearchPagination/>
     </WithLoading>
   </>
-}
+})
 
 
 export default MyProducts

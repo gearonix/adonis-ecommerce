@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react'
+import { FC, memo, useCallback, useEffect } from 'react'
 import { useDispatch, useSelector } from 'shared/types/redux'
 import { Pagination } from 'shared/ui/material'
 import { PAGE_LIMIT } from 'app/config/globals'
@@ -8,15 +8,16 @@ import { CommentTemplate } from 'entities/Profile'
 import s from './style.module.scss'
 
 
-const ProductComments : FC = () => {
+const ProductComments : FC = memo(() => {
   const comments = useSelector(ProductSelectors.comments)
   const page = useSelector(ProductSelectors.commentsPage)
   const totalCount = useSelector(ProductSelectors.commentsCount)
   const dispatch = useDispatch()
 
-  const onChange = (page : number) => {
+  const onChange = useCallback((page : number) => {
     dispatch(productActions.setCommentsPage(page))
-  }
+  }, [])
+
   useEffect(() => {
     dispatch(changeCommentsPage(page))
   }, [page])
@@ -30,7 +31,7 @@ const ProductComments : FC = () => {
     </div>
     <Pagination count={totalCount / PAGE_LIMIT} onChange={onChange} page={page} />
   </div>
-}
+})
 
 
 export default ProductComments

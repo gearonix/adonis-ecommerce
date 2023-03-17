@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react'
+import { FC, memo, useEffect, useState } from 'react'
 import { useDispatch } from 'shared/types/redux'
 import { getRecommendedProducts } from 'widgets/Products/store/thunks'
 import { KeyOf } from 'shared/types/common'
@@ -15,7 +15,7 @@ export interface RecommendedItemProps{
   type?: KeyOf<typeof ProductTypes>
 }
 
-const RecommendedItems: FC<RecommendedItemsProps> = ({ Component, ...filter }) => {
+const RecommendedItems= memo<RecommendedItemsProps>(({ Component, ...filter }) => {
   const dispatch = useDispatch()
   const [items, setItems] = useState<Product[]>([])
 
@@ -27,6 +27,6 @@ const RecommendedItems: FC<RecommendedItemsProps> = ({ Component, ...filter }) =
   }, [])
 
   return <Component items={items} {...filter}/>
-}
+})
 
 export default RecommendedItems

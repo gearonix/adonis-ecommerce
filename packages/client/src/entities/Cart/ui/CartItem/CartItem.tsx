@@ -1,4 +1,4 @@
-import { FC, MutableRefObject, useRef, useState } from 'react'
+import {FC, memo, MutableRefObject, useRef, useState} from 'react'
 import s from './style.module.scss'
 import { NextImage } from 'shared/ui/kit'
 import { ImageModal } from 'shared/ui/material'
@@ -14,7 +14,7 @@ export interface CartItemProps {
   product: Product
 }
 
-const CartItem: FC<CartItemProps> = ({ Remove, AddToSaved, product }) => {
+const CartItem = memo<CartItemProps>(({ Remove, AddToSaved, product }) => {
   const [isOpen, openModal] = useState<boolean>(false)
   const removeBtnRef = useRef()
   const { t } = useTranslation()
@@ -40,6 +40,6 @@ const CartItem: FC<CartItemProps> = ({ Remove, AddToSaved, product }) => {
     <h2>${product.price}.00</h2>
   </div>
   </div>
-}
+})
 
 export default CartItem

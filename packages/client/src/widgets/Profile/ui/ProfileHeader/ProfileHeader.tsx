@@ -1,5 +1,5 @@
 import { ProfileHeader as ProfileHeaderTemp, UserInfo } from 'entities/Profile'
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import { ChangeBackground } from 'features/Profile'
 import { useDispatch, useSelector } from 'shared/types/redux'
 import { selectReformattedUser } from 'widgets/Profile/store/selectors'
@@ -14,7 +14,7 @@ import { UserStatus } from 'shared/config/consts/others'
 import { FormattedUser } from 'widgets/Profile/store/selectors'
 
 
-const ProfileHeader: FC = () => {
+const ProfileHeader = memo(() => {
   const user = useSelector(selectReformattedUser) as FormattedUser
   const isMe = useSelector(UserSelectors.isMe)
   const editProfile = useBooleanState()
@@ -46,7 +46,7 @@ const ProfileHeader: FC = () => {
       isMe={isMe}
     />
   </Display>
-}
+})
 
 
 export default ProfileHeader

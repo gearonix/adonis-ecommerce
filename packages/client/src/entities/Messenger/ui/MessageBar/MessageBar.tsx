@@ -1,4 +1,4 @@
-import { ChangeEvent, FC } from 'react'
+import { ChangeEvent, FC, memo, useCallback } from 'react'
 import s from './style.module.scss'
 import { AiFillFileAdd } from 'shared/ui/icons'
 import { onEnter } from 'features/SearchPage/lib/helpers'
@@ -14,14 +14,14 @@ export interface MessageBarProps {
 }
 
 
-const MessageBar: FC<MessageBarProps> = ({ placeholder, submit, onChange, form }) => {
+const MessageBar = memo<MessageBarProps>(({ placeholder, submit, onChange, form }) => {
   const { t } = useTranslation()
 
-  const onFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const onFileChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files?.length) {
       form.setValue('file', e.target.files[0])
     }
-  }
+  }, [])
 
   return <WithSpring className={s.message_bar}>
     <input placeholder={t('Message') || placeholder }
@@ -38,7 +38,7 @@ const MessageBar: FC<MessageBarProps> = ({ placeholder, submit, onChange, form }
       </div>
     </div>
   </WithSpring>
-}
+})
 
 
 export default MessageBar

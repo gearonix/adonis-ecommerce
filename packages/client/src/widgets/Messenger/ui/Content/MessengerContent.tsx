@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react'
+import {FC, memo, useEffect} from 'react'
 import s from './style.module.scss'
 import { MessengerContent as MessengerContentTemp } from 'entities/Messenger'
 import { useFilteredEffect } from 'shared/lib/hooks'
@@ -10,10 +10,9 @@ import { messengerActions } from 'widgets/Messenger'
 import { useMessengerSocket } from 'widgets/Messenger/lib/hooks'
 import { MessengerSelectors } from 'widgets/Messenger'
 import { AuthSelectors } from 'widgets/Login'
-import { NextImage } from 'shared/ui/kit'
 import { DefaultChat } from 'entities/Messenger/ui/Content/MessengerContent'
 
-const MessengerContent: FC = () => {
+const MessengerContent = memo(() => {
   const dispatch = useDispatch()
   const messages = useSelector(MessengerSelectors.messages)
   const roomId = useSelector(MessengerSelectors.selectedId)
@@ -48,7 +47,7 @@ const MessengerContent: FC = () => {
       </Display>
     </div>
   </div>
-}
+})
 
 
 export default MessengerContent

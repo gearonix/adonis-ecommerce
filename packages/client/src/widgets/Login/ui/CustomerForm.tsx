@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import { HeadField } from 'shared/ui/material'
 import { SignupForm } from '../types'
 import { customerSchema } from '../lib/formSchemes'
@@ -9,7 +9,7 @@ import { useForm } from 'shared/lib/hooks/useForm'
 import { AuthTemplate } from 'entities/Auth'
 import { useTranslation } from 'react-i18next'
 
-const CustomerForm: FC = () => {
+const CustomerForm = memo(() => {
   const { form, reg } = useForm<SignupForm>(customerSchema)
   const onSubmit = useSubmitForm(form.setError, UserRoles.CUSTOMER)
   const { t } = useTranslation()
@@ -21,5 +21,6 @@ const CustomerForm: FC = () => {
     <HeadField title={t('Repeat_password')} isPassword values={reg('repeatPassword')}/>
   </AuthTemplate>
 }
+)
 
 export default CustomerForm

@@ -1,3 +1,6 @@
-export { default as SearchAside } from './ui/SearchAsideSkeleton/SearchAsideTemp'
-export { default as SearchHeader } from './ui/SearchHeader/SearchHeader'
-export { default as ProductBannerForm } from './ui/SearchProductForm/ProductBannerForm'
+import dynamic from 'next/dynamic'
+
+export const ProductBannerForm = dynamic(() => import('./ui/SearchProductForm/ProductBannerForm'))
+export const SearchHeader = dynamic(() => import('./ui/SearchHeader/SearchHeader'))
+export const SearchAside = dynamic(() => import('./ui/SearchAsideSkeleton/SearchAsideTemplate'))
+

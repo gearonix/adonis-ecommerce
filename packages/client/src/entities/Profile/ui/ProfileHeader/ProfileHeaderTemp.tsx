@@ -1,13 +1,11 @@
-import { FC, ReactElement } from 'react'
+import { FC, memo, ReactElement } from 'react'
 import s from './style.module.scss'
 import { ProfileBackground, UserAvatar, WriteToUser } from 'shared/ui/kit'
 import { Nullable, ObjectNullable } from 'shared/types/common'
 import { FormattedUser } from 'widgets/Profile/store/selectors'
-import { AiOutlineInfoCircle, AiOutlineUser, BsPen } from 'shared/ui/icons'
+import { AiOutlineInfoCircle, BsPen } from 'shared/ui/icons'
 import { useTranslation } from 'react-i18next'
-import { Display, Ternary } from 'shared/lib/components'
-import Link from 'next/link'
-import { routes } from 'shared/config/consts/routes'
+import { Display } from 'shared/lib/components'
 import { UserStatus } from 'shared/ui/kit/Components/UserStatus/UserStatus'
 
 
@@ -20,7 +18,7 @@ export interface ProfileHeaderTemplate {
 }
 
 
-const ProfileHeaderTemp: FC<ProfileHeaderTemplate> = (props) => {
+const ProfileHeaderTemp = memo<ProfileHeaderTemplate>((props) => {
   const { t } = useTranslation()
   const { ChangeBackground, openProfile,
     openInfo, user, isMe } = props
@@ -51,6 +49,6 @@ const ProfileHeaderTemp: FC<ProfileHeaderTemplate> = (props) => {
       </Display>
     </div>
   </div>
-}
+})
 
 export default ProfileHeaderTemp

@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import {FC, memo} from 'react'
 import s from './style.module.scss'
 import { Button, ProfileBackground, UserAvatar } from 'shared/ui/kit'
 import { HeadField, TextArea } from 'shared/ui/material'
@@ -11,7 +11,7 @@ import { AiOutlineCar, BsBuilding } from 'shared/ui/icons'
 import { useTranslation } from 'react-i18next'
 
 
-const EditProfile: FC<EditProfileProps> = ({ ChangeBackground, ChangeAvatar,
+const EditProfile = memo<EditProfileProps>(({ ChangeBackground, ChangeAvatar,
   close, submitForm, reg, user }) => {
   const { theme } = useTheme()
   const { t } = useTranslation()
@@ -44,6 +44,6 @@ const EditProfile: FC<EditProfileProps> = ({ ChangeBackground, ChangeAvatar,
       </div>
     </div>
   </div>
-}
+})
 
 export default EditProfile

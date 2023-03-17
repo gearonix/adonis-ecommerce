@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react'
+import {FC, memo, useEffect} from 'react'
 import { useForm } from 'shared/lib/hooks'
 import { createDefaultValues } from 'widgets/Users/lib/defaultValues'
 import { UsersHeader as UsersHeaderTemplate } from 'entities/Users'
@@ -8,7 +8,7 @@ import { UsersForm } from 'widgets/Users/types'
 import { UsersSelectors } from 'widgets/Users'
 
 
-const UsersHeader : FC = () => {
+const UsersHeader = memo(() => {
   const { watch, reg, getValues, form } = useForm<UsersForm>(null, createDefaultValues())
   const dispatch = useDispatch()
   const page = useSelector(UsersSelectors.page)
@@ -27,7 +27,7 @@ const UsersHeader : FC = () => {
   }, [page])
 
   return <UsersHeaderTemplate form={form} reg={reg}/>
-}
+})
 
 
 export default UsersHeader

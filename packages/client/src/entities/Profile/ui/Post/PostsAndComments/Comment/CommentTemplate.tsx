@@ -1,7 +1,7 @@
-import { FC } from 'react'
+import {FC, memo} from 'react'
 import { NextImage } from 'shared/ui/kit'
 import { DefaultAssets } from 'shared/config/consts/assets'
-import { BsDot, BsThreeDotsVertical } from 'shared/ui/icons'
+import { BsDot } from 'shared/ui/icons'
 import s from '../style.module.scss'
 import Link from 'next/link'
 import { routes } from 'shared/config/consts/routes'
@@ -13,7 +13,7 @@ interface CommentProps{
   comment: ProductComment
 }
 
-export const CommentTemplate: FC<CommentProps> = ({ comment }) => {
+export const CommentTemplate = memo<CommentProps>(({ comment }) => {
   const helpers = new Helpers()
   const { user } = comment
   return <>
@@ -32,4 +32,4 @@ export const CommentTemplate: FC<CommentProps> = ({ comment }) => {
       </div>
     </WithSpring>
   </>
-}
+})

@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import {FC, memo} from 'react'
 import { useTranslation } from 'react-i18next'
 import s from './style.module.scss'
 import { RiQuestionAnswerLine } from 'shared/ui/icons'
@@ -13,7 +13,7 @@ interface CommentBarProps{
 }
 
 
-const CommentBar : FC<CommentBarProps> = ({ reg, submit }) => {
+const CommentBar = memo<CommentBarProps>(({ reg, submit }) => {
   const { t } = useTranslation()
   return <div className={s.comment_bar}>
     <BlueLinkHeader label={t('What are your thoughts?')} Icon={RiQuestionAnswerLine}/>
@@ -25,7 +25,7 @@ const CommentBar : FC<CommentBarProps> = ({ reg, submit }) => {
       </Button>
     </div>
   </div>
-}
+})
 
 
 export default CommentBar

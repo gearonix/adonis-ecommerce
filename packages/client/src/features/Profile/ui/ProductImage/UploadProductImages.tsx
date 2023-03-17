@@ -1,11 +1,10 @@
-import { FC, useState } from 'react'
+import { FC, memo, useCallback, useState } from 'react'
 import s from './style.module.scss'
-import { ProductImages } from 'entities/ProductPage'
 import { ImageCarousel } from 'features/ProductPage'
 import { AiOutlineUpload, BsTrash } from 'shared/ui/icons'
 import { UploadButton } from 'shared/ui/kit'
 import { FieldValues } from 'shared/lib/helpers'
-import AddProductImage from '../../../../entities/Profile/ui/AddProductImage/AddProductImage'
+import AddProductImage from 'entities/Profile/ui/AddProductImage/AddProductImage'
 import { FormHelperText } from '@mui/material'
 import { Display } from 'shared/lib/components'
 import { useTranslation } from 'react-i18next'
@@ -14,17 +13,17 @@ export interface ProductImagesProps{
   values: FieldValues
 }
 
-const UploadProductImages: FC<ProductImagesProps> = ({ values }) => {
+const UploadProductImages = memo<ProductImagesProps>(({ values }) => {
   const [files, setFiles] = useState<string[]>([])
   const currentValues = values.getValue()
   const { t } = useTranslation()
 
-  const onUpload = (file: File) => {
+  const onUpload = useCallback((file: File) => {
     const fileUrl = URL?.createObjectURL(file)
 
     values.setValue([...currentValues, file])
     setFiles([...files, fileUrl])
-  }
+  }, [values])
 
   const removeFiles = () => {
     values.setValue([])
@@ -51,6 +50,6 @@ const UploadProductImages: FC<ProductImagesProps> = ({ values }) => {
       </Display>
     </div>
   </div>
-}
+})
 
 export default UploadProductImages

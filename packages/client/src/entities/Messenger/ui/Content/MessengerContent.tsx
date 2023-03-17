@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import {FC, memo} from 'react'
 import s from './style.module.scss'
 import { Message as MessageUI, NextImage, ScrollToBottom, TimeLabel } from 'shared/ui/kit'
 import { Message } from 'widgets/Messenger'
@@ -16,7 +16,7 @@ interface Props{
   userId: Nullable<number>
 }
 
-const MessengerContent: FC<Props> = ({ messages, userId }) => {
+const MessengerContent = memo<Props>(({ messages, userId }) => {
   const scrollable = useBottomScroll(messages)
 
   return <div className={s.messages_block}>
@@ -37,12 +37,11 @@ const MessengerContent: FC<Props> = ({ messages, userId }) => {
       </Display>
     </div>
   </div>
-}
+})
 
 
 export const DefaultChat: FC = () => {
   const toShow = useTimeout(300)
-  const { t } = useTranslation()
   return <Display when={toShow}>
     <WithSpring>
       <div className={s.default_chat_image}>

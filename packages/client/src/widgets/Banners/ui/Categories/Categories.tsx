@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react'
+import { FC, useCallback, useEffect, useState } from 'react'
 import { MutableProductTypes, ProductTypes, ProductTypesKeys } from 'shared/types/elements/productTypes'
 import { useDispatch, useSelector } from 'shared/types/redux'
 import { routes } from 'shared/config/consts/routes'
@@ -22,10 +22,11 @@ const Categories: FC = () => {
     setCategory(newCategory)
   }, 7)
 
-  const onSearch = () => {
+  const onSearch = useCallback(() => {
     dispatch(productsActions.changeFilter({ type: category }))
     router.push(routes.SEARCH)
-  }
+  }, [category])
+
   return <CategoriesTemplate category={category}
     setCategory={setCategory} avatar={avatar}
     userName={userName} isAuthorized={isAuthorized} onSearch={onSearch}/>

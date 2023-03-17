@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import {FC, memo} from 'react'
 import s from './style.module.scss'
 import { AutoComplete, Checkbox, HeadField, NumberField, Rating,
   StandardSelect, TextArea } from 'shared/ui/material'
@@ -13,7 +13,7 @@ import cn from 'classnames'
 import { Assets } from 'shared/config/consts/assets'
 import { useTranslation } from 'react-i18next'
 
-const AddProduct: FC<AddProductProps> = ({ submitForm, cancel, ProductImages, reg }) => {
+const AddProduct = memo<AddProductProps>(({ submitForm, cancel, ProductImages, reg }) => {
   const { theme } = useTheme()
   const { t } = useTranslation()
   return <div className={cn(s.add_product_block, 'with_theme', theme)}>
@@ -64,6 +64,6 @@ const AddProduct: FC<AddProductProps> = ({ submitForm, cancel, ProductImages, re
       </div>
     </div>
   </div>
-}
+})
 
 export default AddProduct

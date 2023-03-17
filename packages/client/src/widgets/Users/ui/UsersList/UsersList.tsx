@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react'
+import { FC, memo, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'shared/types/redux'
 import { getUsers } from 'widgets/Users/store/thunks/getUsers'
 import { RequiredState } from 'app/store/types'
@@ -10,7 +10,7 @@ import { usersActions } from 'widgets/Users/store/slice/usersReducer'
 import { UsersSelectors } from 'widgets/Users'
 
 
-const UsersList : FC = () => {
+const UsersList = memo(() => {
   const users = useSelector(UsersSelectors.users)
   const count = useSelector(UsersSelectors.count)
   const page = useSelector(UsersSelectors.page)
@@ -30,7 +30,7 @@ const UsersList : FC = () => {
     }
     <Pagination count={count / PAGE_LIMIT} onChange={onPageChange} page={page} />
   </>
-}
+})
 
 
 export default UsersList

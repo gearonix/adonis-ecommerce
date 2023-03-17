@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import s from './style.module.scss'
 import { FaShoppingCart, MdMessage } from 'shared/ui/icons'
 import { Rating } from '@mui/material'
@@ -11,7 +11,7 @@ interface ProductParamsProps{
   product: Product
 }
 
-const ProductParams: FC<ProductParamsProps> = ({ product }) => {
+const ProductParams = memo<ProductParamsProps>(({ product }) => {
   const { t } = useTranslation()
   return <div className={s.product_info_block}>
     <InStock inStock={product.inStock}/>
@@ -52,6 +52,6 @@ const ProductParams: FC<ProductParamsProps> = ({ product }) => {
       </div>
     </div>
   </div>
-}
+})
 
 export default ProductParams

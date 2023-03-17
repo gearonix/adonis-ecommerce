@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import {FC, memo} from 'react'
 import s from './style.module.scss'
 import { AiOutlineArrowLeft } from 'shared/ui/icons'
 import { Button } from 'shared/ui/kit'
@@ -12,7 +12,7 @@ export interface CartButtonsProps {
 }
 
 
-const CartButtons: FC<CartButtonsProps> = ({ RemoveAll, BackColor }) => {
+const CartButtons = memo<CartButtonsProps>(({ RemoveAll, BackColor }) => {
   const { t } = useTranslation()
   return <div className={s.cart_buttons}>
     <Link href={routes.SEARCH}>
@@ -23,6 +23,6 @@ const CartButtons: FC<CartButtonsProps> = ({ RemoveAll, BackColor }) => {
     {RemoveAll && <RemoveAll/>}
 
   </div>
-}
+})
 
 export default CartButtons

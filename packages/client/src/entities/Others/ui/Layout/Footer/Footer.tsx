@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import {FC, memo} from 'react'
 import s from './style.module.scss'
 import { AiOutlineGithub } from 'shared/ui/icons'
 import { HoverLink, NextImage } from 'shared/ui/kit'
@@ -11,7 +11,7 @@ import { BsTelegram } from 'react-icons/bs'
 import { HiOutlineDesktopComputer } from 'react-icons/hi'
 import { useTranslation } from 'react-i18next'
 
-const Footer: FC = () => {
+const Footer: FC = memo(() => {
   const { t } = useTranslation()
   return <footer className={s.footer}>
     <div className={s.footer_block}>
@@ -97,6 +97,6 @@ const Footer: FC = () => {
       </div>
     </div>
   </footer>
-}
+})
 
 export default Footer

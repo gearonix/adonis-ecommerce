@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import s from './style.module.scss'
 import Controls from 'features/SearchPage/ui/AsideControls/Controls'
 import { CreateFieldValues } from 'shared/lib/helpers'
@@ -12,7 +12,7 @@ interface SearchAsideProps{
   reg: CreateFieldValues<SearchControlsForm>,
 }
 
-const SearchAsideTemp: FC<SearchAsideProps> = ({ reg }) => {
+const SearchAsideTemplate = memo<SearchAsideProps>(({ reg }) => {
   const { t } = useTranslation()
   return <aside className={s.aside}>
     <Controls title={t('Product_type')} values={reg('type')}>
@@ -28,6 +28,6 @@ const SearchAsideTemp: FC<SearchAsideProps> = ({ reg }) => {
       <RadioGroup values={reg('rating')} Component={ReadonlyRating}/>
     </Controls>
   </aside>
-}
+})
 
-export default SearchAsideTemp
+export default SearchAsideTemplate

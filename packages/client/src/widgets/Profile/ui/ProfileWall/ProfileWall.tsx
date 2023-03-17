@@ -1,4 +1,4 @@
-import { FC, useContext, useState } from 'react'
+import {FC, memo, useContext, useState} from 'react'
 import s from './style.module.scss'
 import { ContentButtons } from 'widgets/Profile'
 import { ContentModal } from 'shared/ui/material'
@@ -10,7 +10,7 @@ import { ProfileSaved } from 'widgets/Saved'
 import { MyPosts, AddPost } from 'widgets/Posts'
 import { useBooleanState } from 'shared/lib/hooks/useBooleanState'
 
-const ProfileWall : FC = () => {
+const ProfileWall = memo(() => {
   const addProduct = useBooleanState()
   const addPost = useBooleanState()
   const [page, setPage] = useState<WallPages>(WallPages.posts)
@@ -28,7 +28,7 @@ const ProfileWall : FC = () => {
 
     </div>
   </ProfileWallContext.Provider>
-}
+})
 
 const ProfileWallSwitcher: FC = () => {
   const { page } = useContext(ProfileWallContext)

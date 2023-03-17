@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, memo, useCallback } from 'react'
 import { Button } from 'shared/ui/kit'
 import { useDispatch, useSelector } from 'shared/types/redux'
 import { cartActions } from 'widgets/Cart/store/slice/cartReducer'
@@ -11,22 +11,23 @@ export interface CartButtonProps{
   Component?: FC<CartButtonUIProps>
 }
 
-const CartButton: FC<CartButtonProps> = ({ productId: id, Component = DefaultCartUI }) => {
+const CartButton = memo<CartButtonProps>(({ productId: id, Component = DefaultCartUI }) => {
   const currentProductId = useSelector(ProductSelectors.id) as number
   const productId = id ?? currentProductId
   const isExists = useSelector(CartSelectors.existsInCart(productId))
   const dispatch = useDispatch()
 
-  const onAdd = () => {
+  const onAdd = useCallback(() => {
     dispatch(cartActions.addProduct(productId))
-  }
-  const onRemove = () => {
+  },[productId])
+
+  const onRemove = useCallback(() => {
     dispatch(cartActions.removeProduct(productId))
-  }
+  },[productId])
 
 
   return <Component isExists={isExists} onAdd={onAdd} onRemove={onRemove}/>
-}
+})
 
 export interface CartButtonUIProps{
   onRemove: () => void,

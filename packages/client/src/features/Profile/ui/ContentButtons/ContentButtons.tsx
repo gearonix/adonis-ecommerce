@@ -1,4 +1,4 @@
-import { FC, ReactElement, ReactNode, useContext } from 'react'
+import { FC, memo, ReactElement, ReactNode, useContext } from 'react'
 import s from './style.module.scss'
 import { AiOutlineFileAdd, AiOutlineUnorderedList, FiHeart } from 'shared/ui/icons'
 import { WallPages } from 'widgets/Profile/types'
@@ -12,7 +12,7 @@ export interface ContentButtonsProps {
 }
 
 
-const ContentButtons: FC<ContentButtonsProps> = ({ AddProduct, AddPost }) => {
+const ContentButtons = memo<ContentButtonsProps>(({ AddProduct, AddPost }) => {
   const { t } = useTranslation()
   return <div className={s.content_buttons}>
     <ContentButton page={WallPages.posts}><AiOutlineFileAdd/> {t('Posts')}</ContentButton>
@@ -23,7 +23,7 @@ const ContentButtons: FC<ContentButtonsProps> = ({ AddProduct, AddPost }) => {
       {AddProduct}
     </div>
   </div>
-}
+})
 
 interface ContentButtonProps{
   page: WallPages,

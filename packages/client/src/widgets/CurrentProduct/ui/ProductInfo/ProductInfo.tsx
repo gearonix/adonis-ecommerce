@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react'
+import { FC, memo, useEffect } from 'react'
 import s from './style.module.scss'
 import { ProductImages, ProductParams, PurchaseProduct } from 'entities/ProductPage'
 import { ImageCarousel, CartButton } from 'features/ProductPage'
@@ -11,7 +11,7 @@ import { NotFound, PenPreloader, WithLoading } from 'shared/ui/kit'
 import { AiOutlineShoppingCart as CartIcon } from 'shared/ui/icons'
 import { Product } from 'widgets/Products'
 
-const ProductInfo: FC = () => {
+const ProductInfo = memo(() => {
   const dispatch = useDispatch()
   const router = useRouter()
   const id = router.query.id as string
@@ -35,6 +35,6 @@ const ProductInfo: FC = () => {
       <PurchaseProduct CartButton={CartButton} AddToSaved={SavedProvider} product={product}/>
     </article>
   </WithLoading>
-}
+})
 
 export default ProductInfo

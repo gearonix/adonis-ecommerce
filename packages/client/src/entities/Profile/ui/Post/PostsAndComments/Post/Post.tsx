@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { FC } from 'react'
+import {FC, memo} from 'react'
 import { DefaultAssets } from 'shared/config/consts/assets'
 import { routes } from 'shared/config/consts/routes'
 import { Post } from 'widgets/Profile'
@@ -12,7 +12,7 @@ interface PostProps{
   post: Post
 }
 
-const Post: FC<PostProps> = ({ post }) => {
+const Post: FC<PostProps> = memo(({ post }) => {
   const { user } = post
   const helpers = new Helpers()
   return <div className={s.post}>
@@ -33,6 +33,6 @@ const Post: FC<PostProps> = ({ post }) => {
       </div>
     </div>
   </div>
-}
+})
 
 export default Post

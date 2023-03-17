@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react'
+import { FC, memo, useCallback, useEffect } from 'react'
 import { useForm } from 'shared/lib/hooks'
 import { MessageBar } from 'entities/Messenger'
 import { useMessengerSocket } from 'widgets/Messenger/lib/hooks'
@@ -13,30 +13,30 @@ export interface MessengerForm{
     file: Nullable<File>
 }
 
-const MessengerInput : FC = () => {
+const MessengerInput = memo(() => {
   const { submit, form } = useForm<MessengerForm>(null)
   const { actions } = useMessengerSocket()
   const roomId = useSelector(MessengerSelectors.selectedId)
   const onChange = useTyping()
 
-  const resetValue = () => {
+  const resetValue = useCallback(() => {
     form.setValue('message', '')
     form.setValue('file', null)
-  }
+  }, [])
 
-  const onSubmit = (values : MessengerForm) => {
+  const onSubmit = useCallback((values : MessengerForm) => {
     if (values.message) {
       actions.sendMessage(roomId, values)
     }
     resetValue()
-  }
+  }, [])
 
   useEffect(resetValue, [roomId])
 
 
   return <MessageBar submit={submit(onSubmit)} form={form}
     onChange={onChange} />
-}
+})
 
 
 export default MessengerInput

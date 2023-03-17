@@ -1,5 +1,5 @@
 import { UserInfo } from 'entities/Messenger'
-import { FC } from 'react'
+import { FC, memo, useCallback } from 'react'
 import { User } from 'widgets/Profile'
 import s from './style.module.scss'
 import { Nullable } from 'shared/types/common'
@@ -12,18 +12,18 @@ interface Props{
   label: string
 }
 
-const MessengerHeaderTemplate: FC<Props> = ({ user, label }) => {
+const MessengerHeaderTemplate = memo<Props>(({ user, label }) => {
   const router = useRouter()
-  const onClick = () => {
+  const onClick = useCallback(() => {
     if (user?.userId) {
       router.push(`${routes.USERS}/${user.userId}`)
     }
-  }
+  }, [user])
 
   return <div className={s.messages_header} onClick={onClick}>
     {user && <UserInfo user={user} label={label}/>}
   </div>
-}
+})
 
 
 export default MessengerHeaderTemplate

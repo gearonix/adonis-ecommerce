@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { memo } from 'react'
 import { TextArea } from 'shared/ui/material'
 import { UploadWithPreview } from 'shared/ui/kit'
 import { AddPostForm } from 'widgets/Posts/types'
@@ -7,7 +7,7 @@ import s from './style.module.scss'
 import cn from 'classnames'
 import { useTheme } from 'shared/lib/hooks'
 import { useTranslation } from 'react-i18next'
-import { BsFileEarmarkPost, MdMessage } from 'shared/ui/icons'
+import { BsFileEarmarkPost } from 'shared/ui/icons'
 
 interface AddPostProps{
   reg: CreateFieldValues<AddPostForm>,
@@ -16,7 +16,7 @@ interface AddPostProps{
 }
 
 
-const AddPostTemplate : FC<AddPostProps> = ({ reg, submit, close }) => {
+const AddPostTemplate = memo<AddPostProps>(({ reg, submit, close }) => {
   const { theme } = useTheme()
   const { t } = useTranslation()
   return <div className={cn('with_theme', theme)}>
@@ -36,7 +36,6 @@ const AddPostTemplate : FC<AddPostProps> = ({ reg, submit, close }) => {
       </div>
     </div>
   </div>
-}
-
+})
 
 export default AddPostTemplate

@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react'
+import { FC, memo, useCallback, useEffect } from 'react'
 import s from './style.module.scss'
 import { SearchUsers } from 'features/Messenger'
 import { MessengerUser } from 'entities/Messenger'
@@ -16,7 +16,7 @@ import { AiOutlineSearch } from 'shared/ui/icons'
 import { AiOutlineSmile } from 'react-icons/ai'
 import { useTranslation } from 'react-i18next'
 
-const MessengerAside: FC = () => {
+const MessengerAside: FC = memo(() => {
   const selectedId = useSelector(MessengerSelectors.selectedId)
   const userId = useSelector(AuthSelectors.userId)
   const rooms = useSelector(selectFilteredRooms)
@@ -27,11 +27,11 @@ const MessengerAside: FC = () => {
   const { actions } = useMessengerSocket()
   const getOpponentUser = selectOpponentUser(userId)
 
-  const switchRoom = (id : number) => {
+  const switchRoom = useCallback((id : number) => {
     actions.unsubscribeFromRoom(selectedId)
     dispatch(messengerActions.changeSelectedRoomId(id))
     dispatch(notifyActions.clearNotifications(id))
-  }
+  }, [])
 
   useFilteredEffect(() => {
     const roomId = getRoomByTargetId(targetId, rooms)
@@ -54,7 +54,7 @@ const MessengerAside: FC = () => {
       <NothingFound/>
     </Display>
   </aside>
-}
+})
 
 export const NothingFound: FC = () => {
   const { t } = useTranslation()

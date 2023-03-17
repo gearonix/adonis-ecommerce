@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react'
+import { FC, useCallback, useEffect } from 'react'
 import { useDispatch, useSelector } from 'shared/types/redux'
 import { getUserPosts } from 'widgets/Posts/store/thunks'
 import { Post } from 'entities/Profile'
@@ -17,6 +17,7 @@ export const Posts : FC = () => {
   const page = useSelector(PostSelectors.page)
   const totalCount = useSelector(PostSelectors.count)
   const userId = useSelector(UserSelectors.userId)
+
   useEffect(() => {
     dispatch(getUserPosts(page))
   }, [page, userId])
@@ -27,9 +28,9 @@ export const Posts : FC = () => {
     }
   }, [])
 
-  const onPageChange = (page: number) => {
+  const onPageChange = useCallback((page: number) => {
     dispatch(postActions.setPage(page))
-  }
+  }, [])
 
 
   return <>

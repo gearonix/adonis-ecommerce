@@ -1,13 +1,13 @@
 import s from './style.module.scss'
 import { ContainerTitle, RecommendedItemTall } from 'shared/ui/kit'
-import { FC } from 'react'
+import {FC, memo} from 'react'
 import { RecommendedItemProps } from 'widgets/Products'
 import { Ternary } from 'shared/lib/components'
 import { GridPreloader } from 'shared/ui/material'
 import { useTranslation } from 'react-i18next'
 
 
-const RecommendedItems: FC<RecommendedItemProps> = ({ items }) => {
+const RecommendedItems = memo<RecommendedItemProps>(({ items }) => {
   const { t } = useTranslation()
   return <article className={s.recommended_items}>
     <ContainerTitle>{t('Recommended_items')}</ContainerTitle>
@@ -23,6 +23,6 @@ const RecommendedItems: FC<RecommendedItemProps> = ({ items }) => {
       </Ternary>
     </div>
   </article>
-}
+})
 
 export default RecommendedItems

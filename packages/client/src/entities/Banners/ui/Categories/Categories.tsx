@@ -23,7 +23,7 @@ interface CategoriesProps{
 }
 
 
-const Categories: FC<CategoriesProps> = memo((props) => {
+const Categories= memo<CategoriesProps>((props) => {
   const { userName, category, setCategory,
     avatar, isAuthorized, onSearch } = props
   const { t } = useTranslation()

@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, FC } from 'react'
+import { ButtonHTMLAttributes, FC, memo } from 'react'
 import { UploadButton } from 'shared/ui/kit'
 import { UploadProperties } from 'app/config/globals'
 import { useDispatch, useSelector } from 'shared/types/redux'
@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next'
 import { BsPencil } from 'react-icons/bs'
 import s from './style.module.scss'
 
-const ChangeBackground: FC<ButtonHTMLAttributes<HTMLButtonElement>> = () => {
+const ChangeBackground = memo<ButtonHTMLAttributes<HTMLButtonElement>>(() => {
   const dispatch = useDispatch()
   const createFormData = withFormData(UploadProperties.USER_BACKGROUND)
   const isMe = useSelector(userSelectors.isMe)
@@ -23,6 +23,6 @@ const ChangeBackground: FC<ButtonHTMLAttributes<HTMLButtonElement>> = () => {
   return isMe ? <UploadButton
     handleChange={handleBackground} width={200} className={s.button}>
     <BsPencil/> {t('Change_backgroundNo')}</UploadButton> : null
-}
+})
 
 export default ChangeBackground

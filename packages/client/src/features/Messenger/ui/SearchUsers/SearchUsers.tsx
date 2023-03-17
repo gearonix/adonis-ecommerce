@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react'
+import { FC, memo, useCallback, useEffect } from 'react'
 import { SearchInput } from 'shared/ui/material'
 import { useForm } from 'shared/lib/hooks'
 import { useDispatch } from 'shared/types/redux'
@@ -8,14 +8,14 @@ interface SearchForm{
   search: string
 }
 
-const SearchUsers: FC = () => {
+const SearchUsers: FC = memo(() => {
   const { reg, watch, getValues } = useForm<SearchForm>(null)
   const dispatch = useDispatch()
 
-  const onChange = () => {
+  const onChange = useCallback(() => {
     const filter = getValues().search
     dispatch(messengerActions.changeRoomsFilter(filter))
-  }
+  }, [])
 
   useEffect(() => {
     const sub = watch(onChange)
@@ -25,6 +25,6 @@ const SearchUsers: FC = () => {
   return <div style={{ width: '90%', margin: '0 auto' }}>
     <SearchInput values={reg('search')} />
   </div>
-}
+})
 
 export default SearchUsers

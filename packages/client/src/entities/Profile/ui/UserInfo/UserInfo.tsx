@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import {FC, memo} from 'react'
 import { FormattedUser } from 'widgets/Profile/store/selectors'
 import { BsInfoLg, GiTopHat, SlPresent, AiOutlineCar, BsBuilding, CiAt } from 'shared/ui/icons'
 import s from './style.module.scss'
@@ -14,7 +14,7 @@ interface UserInfoProps{
     user: FormattedUser
 }
 
-const UserInfo: FC<UserInfoProps> = ({ user }) => {
+const UserInfo = memo<UserInfoProps>(({ user }) => {
   const helpers = new Helpers()
   const { theme } = useTheme()
   const { t } = useTranslation()
@@ -47,7 +47,7 @@ const UserInfo: FC<UserInfoProps> = ({ user }) => {
       </InfoCell>
     </InfoContainer>
   </div>
-}
+})
 
 const InfoContainer : CFC<{condition?: boolean}> = ({ children, condition }) => {
   return <Display when={!!children && condition !== false}>

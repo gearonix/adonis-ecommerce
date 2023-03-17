@@ -1,3 +1,5 @@
-export { default as RecommendedMap } from './ui/RecommendedItems/RecommendedItems'
-export { default as YouMayLike } from './ui/YouMayLike/YouMayLike'
-export { default as SortedProducts } from './ui/SortedProducts/SortedProducts'
+import dynamic from 'next/dynamic'
+
+export const RecommendedMap = dynamic(() => import('./ui/RecommendedItems/RecommendedItems'))
+export const YouMayLike = dynamic(() => import('./ui/YouMayLike/YouMayLike'))
+export const SortedProducts = dynamic(() => import('./ui/SortedProducts/SortedProducts'))

@@ -1,7 +1,7 @@
 import s from './../About/style.module.scss'
 import { AiOutlineGithub } from 'shared/ui/icons'
 import { Button, NextImage } from 'shared/ui/kit'
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import { Assets } from 'shared/config/consts/assets'
 import { useTranslation } from 'react-i18next'
 
@@ -10,7 +10,7 @@ interface AppErrorProps{
     onRedirect: () => void
 }
 
-const AppError: FC<AppErrorProps> = ({ errorInfo, onRedirect }) => {
+const AppError = memo<AppErrorProps>(({ errorInfo, onRedirect }) => {
   const { t } = useTranslation()
   return <div className={s.error_container}>
     <h1 className={s.title}>{t('Seems_like')}</h1>
@@ -20,6 +20,6 @@ const AppError: FC<AppErrorProps> = ({ errorInfo, onRedirect }) => {
     </div>
     <button onClick={onRedirect}>{t('Return_to')}</button>
   </div>
-}
+})
 
 export default AppError

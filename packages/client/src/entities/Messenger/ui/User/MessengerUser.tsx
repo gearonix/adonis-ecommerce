@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import s from './style.module.scss'
 import { NextImage } from 'shared/ui/kit'
 import { Message, Room } from 'widgets/Messenger'
@@ -18,7 +18,7 @@ interface Props{
   notification: Message[]
 }
 
-const MessengerUser: FC<Props> = ({ room, switchRoom, selected, user, notification }) => {
+const MessengerUser = memo<Props>(({ room, switchRoom, selected, user, notification }) => {
   const helpers = new Helpers()
   const { t } = useTranslation()
   const notify = notification?.at(-1)
@@ -47,6 +47,6 @@ const MessengerUser: FC<Props> = ({ room, switchRoom, selected, user, notificati
       </div>
     </div>
   </div>
-}
+})
 
 export default MessengerUser

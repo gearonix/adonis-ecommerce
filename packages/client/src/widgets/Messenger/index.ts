@@ -1,6 +1,8 @@
-export { default as MessengerAside } from './ui/Aside/MessengerAside'
-export { default as MessengerContent } from './ui/Content/MessengerContent'
-export { default as MessengerHeader } from './ui/Header/MessengerHeader'
+import dynamic from 'next/dynamic'
+
+export const MessengerHeader = dynamic(() => import('./ui/Header/MessengerHeader'))
+export const MessengerAside = dynamic(() => import('./ui/Aside/MessengerAside'))
+export const MessengerContent = dynamic(() => import('./ui/Content/MessengerContent'))
 
 export { default as SocketProvider } from './socket/provider/SocketProvider'
 export { default as SocketContext } from './socket/provider/SocketContext'

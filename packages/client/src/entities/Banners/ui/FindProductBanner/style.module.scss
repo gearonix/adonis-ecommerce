@@ -8,7 +8,7 @@
   margin-top: 20px;
   position: relative;
   box-sizing: border-box;
-  @include backgroundImage('/assets/search_form.png');
+  @include backgroundImage('/assets/common/search_form.png');
 
   .title {
     margin-bottom: 20px;

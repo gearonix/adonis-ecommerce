@@ -1,11 +1,9 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import s from './style.module.scss'
 import { AiOutlineSearch, FaHeart, FaInfo, FaShoppingCart, FaUserAlt, MdMessage } from 'shared/ui/icons'
 import Link from 'next/link'
 import { HoverLink, Logo } from 'shared/ui/kit'
 import { routes } from 'shared/config/consts/routes'
-import { Switcher } from 'shared/ui/material'
-import { useTheme } from 'shared/lib/hooks'
 import { useTranslation } from 'react-i18next'
 
 export interface HeaderSkeletonProps {
@@ -15,7 +13,7 @@ export interface HeaderSkeletonProps {
 }
 
 
-const Header: FC<HeaderSkeletonProps> = ({ DropDowns, Burger, Search }) => {
+const Header: FC<HeaderSkeletonProps> = memo(({ DropDowns, Burger, Search }) => {
   const { t } = useTranslation()
   return <>
     <header className={s.header}>
@@ -63,6 +61,6 @@ const Header: FC<HeaderSkeletonProps> = ({ DropDowns, Burger, Search }) => {
     </header>
 
   </>
-}
+})
 
 export default Header

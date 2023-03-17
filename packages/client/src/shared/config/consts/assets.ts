@@ -13,9 +13,9 @@ export enum Assets{
     NOT_FOUND = '/assets/common/not_found.svg',
     APP_ERROR = '/assets/common/app_error.png',
     ABOUT = '/assets/common/about.png',
-    BICYCLE = '/assets/bicycle.png',
-    ROCKET = '/assets/rocket.png',
-    THANKS = '/assets/thanks.png',
+    BICYCLE = '/assets/common/bicycle.png',
+    ROCKET = '/assets/common/rocket.png',
+    THANKS = '/assets/common/thanks.png',
     CHAT = '/assets/common/chat.png'
 }
 

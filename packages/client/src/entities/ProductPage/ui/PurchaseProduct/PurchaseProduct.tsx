@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import {FC, memo} from 'react'
 import s from './style.module.scss'
 import { HiOutlineFlag, MdMessage, TfiWorld } from 'shared/ui/icons'
 import { Button, NextImage } from 'shared/ui/kit'
@@ -17,7 +17,7 @@ export interface PurchaseProductP {
 }
 
 
-const PurchaseProduct: FC<PurchaseProductP> = ({ AddToSaved, CartButton, product }) => {
+const PurchaseProduct = memo<PurchaseProductP>(({ AddToSaved, CartButton, product }) => {
   const { t } = useTranslation()
   const { salesman, productInfo } = product
   return <div className={s.purchase_block}>
@@ -45,6 +45,6 @@ const PurchaseProduct: FC<PurchaseProductP> = ({ AddToSaved, CartButton, product
     </div>
     <AddToSaved productId={productInfo.productId as number} Component={ProductSaved}/>
   </div>
-}
+})
 
 export default PurchaseProduct

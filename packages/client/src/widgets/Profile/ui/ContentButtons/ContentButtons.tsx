@@ -1,5 +1,5 @@
 import { OpenAddProduct, OpenAddPost } from 'features/Profile'
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import { ContentButtons as ContentButtonsTemplate } from 'features/Profile'
 
 interface ContentButtonsProps{
@@ -8,11 +8,11 @@ interface ContentButtonsProps{
 }
 
 
-const ContentButtons: FC<ContentButtonsProps> = ({ openAddProduct, openAddPost }) => {
+const ContentButtons = memo<ContentButtonsProps>(({ openAddProduct, openAddPost }) => {
   return <ContentButtonsTemplate
     AddProduct={<OpenAddProduct open={openAddProduct}/>}
     AddPost={<OpenAddPost open={openAddPost}/>}
   />
-}
+})
 
 export default ContentButtons

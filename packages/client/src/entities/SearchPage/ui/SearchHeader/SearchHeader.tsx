@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, {FC, memo} from 'react'
 import s from './style.module.scss'
 import { ObjectNullable } from 'shared/types/common'
 import { SearchQuery } from 'widgets/Products/types'
@@ -11,7 +11,8 @@ interface SearchHeaderProps{
   filter: ObjectNullable<SearchQuery>
 }
 
-const SearchHeader: FC<SearchHeaderProps> = ({ Filters, amount, filter: { page, inStock, ...filter } }) => {
+const SearchHeader = memo<SearchHeaderProps>((props) => {
+  const { Filters, amount, filter: { page, inStock, ...filter } } = props
   const helpers = new Helpers()
   const categories = Object.values(helpers.partial(filter)).join(', ')
   const { t } = useTranslation()
@@ -22,6 +23,6 @@ const SearchHeader: FC<SearchHeaderProps> = ({ Filters, amount, filter: { page, 
     </div>
     <Filters/>
   </div>
-}
+})
 
 export default SearchHeader

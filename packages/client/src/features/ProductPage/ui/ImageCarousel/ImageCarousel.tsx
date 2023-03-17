@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import s from './style.module.scss'
 import { NextImage } from 'shared/ui/kit'
 import { DefaultAssets } from 'shared/config/consts/assets'
@@ -9,7 +9,7 @@ export interface ImageCarouselProps{
   onSelect: (idx: number) => void
 }
 
-const ImageCarousel: FC<ImageCarouselProps> = ({ files, onSelect }) => {
+const ImageCarousel = memo<ImageCarouselProps>(({ files, onSelect }) => {
   return <Display when={files.length}>
     <div className={s.image_carousel}>
       {files.map((url: string, idx) => {
@@ -19,7 +19,7 @@ const ImageCarousel: FC<ImageCarouselProps> = ({ files, onSelect }) => {
       })}
     </div>
   </Display>
-}
+})
 
 
 export default ImageCarousel

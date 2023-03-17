@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react'
+import {FC, memo, useEffect} from 'react'
 import { MessengerHeaderTemp } from 'entities/Messenger'
 import { SearchMessages } from 'features/Messenger'
 import { useRouter } from 'next/router'
@@ -10,7 +10,7 @@ import { messengerActions, MessengerSelectors, selectOpponentUser } from 'widget
 import { useAuthSocket } from 'widgets/Profile/lib/hooks/useAuthSocket'
 import { UserStatus } from 'shared/config/consts/others'
 
-const MessengerHeader: FC = () => {
+const MessengerHeader = memo(() => {
   const opponent = useSelector(selectOpponentUser)
   const roomId = useSelector(MessengerSelectors.selectedId)
   const userStatus = useSelector(MessengerSelectors.userStatus)
@@ -46,6 +46,6 @@ const MessengerHeader: FC = () => {
 
   return <MessengerHeaderTemp Search={SearchMessages}
     user={opponent} label={userStatus}/>
-}
+})
 
 export default MessengerHeader

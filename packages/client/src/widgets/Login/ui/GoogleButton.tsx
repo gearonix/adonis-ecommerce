@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import { CredentialResponse, GoogleLogin } from '@react-oauth/google'
 import { registerByGoogle } from '../store/thunks/makeRegistration/makeRegistration'
 import { useDispatch } from 'shared/types/redux'
@@ -7,7 +7,7 @@ import { GoogleButtonProps, RegisterByGoogle } from '../types'
 import { Theme } from 'shared/config/consts/themes'
 import { useTheme } from 'shared/lib/hooks/useTheme'
 
-const GoogleButton: FC<GoogleButtonProps> = ({ role }) => {
+const GoogleButton = memo<GoogleButtonProps>(({ role }) => {
   const dispatch = useDispatch()
   const { theme } = useTheme()
   const onSuccess = async ({ credential }: CredentialResponse) => {
@@ -26,6 +26,6 @@ const GoogleButton: FC<GoogleButtonProps> = ({ role }) => {
     width={'310'}
     theme={theme === Theme.LIGHT ? undefined : 'filled_black'}
   />
-}
+})
 
 export default GoogleButton

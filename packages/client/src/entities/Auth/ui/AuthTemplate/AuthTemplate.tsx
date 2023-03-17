@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react'
+import { FC, memo, ReactNode } from 'react'
 import s from './style.module.scss'
 import Link from 'next/link'
 import { getUIText } from '../../lib/helpers'
@@ -14,7 +14,7 @@ interface AuthTemplateProps {
     role?: UserRoles
 }
 
-const RegTemplate: FC<AuthTemplateProps> = ({ children, submit, role }) => {
+const RegTemplate = memo<AuthTemplateProps>(({ children, submit, role }) => {
   const mode = !!role ? 'signup' : 'login'
   const { title, linkHref, linkText, blueLinkText } = getUIText(mode)
 
@@ -29,6 +29,6 @@ const RegTemplate: FC<AuthTemplateProps> = ({ children, submit, role }) => {
         {linkText} <Link className="hover_link" href={linkHref}>  {blueLinkText} </Link></h4>
     </div>
   </form>
-}
+})
 
 export default RegTemplate

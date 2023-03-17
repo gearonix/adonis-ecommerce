@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import { useDispatch, useSelector } from 'shared/types/redux'
 import { addComment } from 'widgets/CurrentProduct/store/thunks'
 import Helpers from 'shared/lib/helpers/helpers'
@@ -6,7 +6,6 @@ import { useForm } from 'shared/lib/hooks/useForm'
 import { useUnauthorized } from 'shared/lib/hooks'
 import { Display } from 'shared/lib/components'
 import { addCommentSchema } from 'features/ProductPage/lib/formSchemes'
-import { useTranslation } from 'react-i18next'
 import { CommentBar as CommentBarTemplate, Thanks } from 'entities/ProductPage'
 import { ProductSelectors } from 'widgets/CurrentProduct'
 
@@ -14,7 +13,7 @@ export interface CommentForm{
     message: string
 }
 
-export const CommentBar: FC = () => {
+export const CommentBar = memo(() => {
   const { submit, reg, form } = useForm<CommentForm>(addCommentSchema)
   const dispatch = useDispatch()
   const helpers = new Helpers()
@@ -36,4 +35,4 @@ export const CommentBar: FC = () => {
       <Thanks />
     </article>
   </Display>
-}
+})

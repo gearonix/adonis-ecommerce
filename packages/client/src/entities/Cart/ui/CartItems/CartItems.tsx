@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import {FC, memo} from 'react'
 import { CartButtons, CartItem } from 'entities/Cart'
 import s from './style.module.scss'
 import { SavedProps } from 'features/Saved'
@@ -18,7 +18,7 @@ export interface CartItemsProps{
 }
 
 
-const CartItems : FC<CartItemsProps> = (props) => {
+const CartItems = memo<CartItemsProps>((props) => {
   const { items, RemoveAll, AddToSaved, Remove, Icon = CartIcon, title = 'Cart' } = props
   return <div style={{ width: '50%' }}>
     <div className={s.cart_container}>
@@ -35,7 +35,7 @@ const CartItems : FC<CartItemsProps> = (props) => {
     </div>
     <CartIcons/>
   </div>
-}
+})
 
 
 export default CartItems
