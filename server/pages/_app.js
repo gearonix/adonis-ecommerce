@@ -828,41 +828,44 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20997);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(56496);
-/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_style_module_scss__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var shared_ui_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(94628);
-/* harmony import */ var shared_lib_hooks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(59684);
-/* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(57987);
-/* harmony import */ var shared_lib_hooks_useLanguage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(75750);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shared_ui_material__WEBPACK_IMPORTED_MODULE_1__, shared_lib_hooks__WEBPACK_IMPORTED_MODULE_2__, react_i18next__WEBPACK_IMPORTED_MODULE_3__, shared_lib_hooks_useLanguage__WEBPACK_IMPORTED_MODULE_4__]);
-([shared_ui_material__WEBPACK_IMPORTED_MODULE_1__, shared_lib_hooks__WEBPACK_IMPORTED_MODULE_2__, react_i18next__WEBPACK_IMPORTED_MODULE_3__, shared_lib_hooks_useLanguage__WEBPACK_IMPORTED_MODULE_4__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(16689);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(56496);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_style_module_scss__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var shared_ui_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(94628);
+/* harmony import */ var shared_lib_hooks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(59684);
+/* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(57987);
+/* harmony import */ var shared_lib_hooks_useLanguage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(75750);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shared_ui_material__WEBPACK_IMPORTED_MODULE_2__, shared_lib_hooks__WEBPACK_IMPORTED_MODULE_3__, react_i18next__WEBPACK_IMPORTED_MODULE_4__, shared_lib_hooks_useLanguage__WEBPACK_IMPORTED_MODULE_5__]);
+([shared_ui_material__WEBPACK_IMPORTED_MODULE_2__, shared_lib_hooks__WEBPACK_IMPORTED_MODULE_3__, react_i18next__WEBPACK_IMPORTED_MODULE_4__, shared_lib_hooks_useLanguage__WEBPACK_IMPORTED_MODULE_5__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
 
 
 
-const HeaderDropDowns = ()=>{
-    const { toggleTheme , isLight  } = (0,shared_lib_hooks__WEBPACK_IMPORTED_MODULE_2__/* .useTheme */ .Fg)();
-    const { toggleLang , isEnglish  } = (0,shared_lib_hooks_useLanguage__WEBPACK_IMPORTED_MODULE_4__/* .useLanguage */ .Z)();
-    const { t  } = (0,react_i18next__WEBPACK_IMPORTED_MODULE_3__.useTranslation)();
+
+const HeaderDropDowns = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)(()=>{
+    const { toggleTheme , isLight  } = (0,shared_lib_hooks__WEBPACK_IMPORTED_MODULE_3__/* .useTheme */ .Fg)();
+    const { toggleLang , isEnglish  } = (0,shared_lib_hooks_useLanguage__WEBPACK_IMPORTED_MODULE_5__/* .useLanguage */ .Z)();
+    const { t  } = (0,react_i18next__WEBPACK_IMPORTED_MODULE_4__.useTranslation)();
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_5___default().dropdowns),
+        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_6___default().dropdowns),
         children: [
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_material__WEBPACK_IMPORTED_MODULE_1__/* .Switcher */ .T5, {
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_material__WEBPACK_IMPORTED_MODULE_2__/* .Switcher */ .T5, {
                 onChange: toggleTheme,
                 value: !isLight,
                 label: t("Dark_mode"),
                 color: "secondary"
             }),
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_material__WEBPACK_IMPORTED_MODULE_1__/* .Switcher */ .T5, {
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_material__WEBPACK_IMPORTED_MODULE_2__/* .Switcher */ .T5, {
                 onChange: toggleLang,
                 value: !isEnglish,
                 label: t("Russian")
             })
         ]
     });
-};
+});
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HeaderDropDowns);
 
 __webpack_async_result__();
@@ -1159,6 +1162,14 @@ module.exports = require("next/dist/shared/lib/image-loader");
 
 "use strict";
 module.exports = require("next/dist/shared/lib/is-plain-object.js");
+
+/***/ }),
+
+/***/ 95832:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/loadable.js");
 
 /***/ }),
 
@@ -1505,7 +1516,7 @@ module.exports = import("socket.io-client");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [356,689,18,519,640,342], () => (__webpack_exec__(17774)));
+var __webpack_exports__ = __webpack_require__.X(0, [356,689,205,519,921,640,854,342,126,786], () => (__webpack_exec__(17774)));
 module.exports = __webpack_exports__;
 
 })();
