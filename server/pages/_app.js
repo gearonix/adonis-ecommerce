@@ -858,7 +858,7 @@ const HeaderDropDowns = ()=>{
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_material__WEBPACK_IMPORTED_MODULE_1__/* .Switcher */ .T5, {
                 onChange: toggleLang,
                 value: !isEnglish,
-                label: "Russian"
+                label: t("Russian")
             })
         ]
     });

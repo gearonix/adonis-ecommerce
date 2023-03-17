@@ -14,5 +14,6 @@
   "/signup/customer": "pages/signup/customer.html",
   "/signup": "pages/signup.html",
   "/signup/salesman": "pages/signup/salesman.html",
-  "/users/[id]": "pages/users/[id].html"
+  "/users/[id]": "pages/users/[id].html",
+  "/users": "pages/users.html"
 }
