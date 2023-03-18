@@ -1,4 +1,4 @@
-import {FC, memo} from 'react'
+import { FC, memo } from 'react'
 import { CartButtons, CartItem } from 'entities/Cart'
 import s from './style.module.scss'
 import { SavedProps } from 'features/Saved'

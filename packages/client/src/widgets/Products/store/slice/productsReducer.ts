@@ -17,7 +17,6 @@ const productsReducer = createSlice({
       return initialState
     },
     changeFilter(state, { payload }: Action<Partial<SearchQuery>>) {
-      // @ts-ignore
       state.filter = { ...state.filter, ...payload }
     }
   },

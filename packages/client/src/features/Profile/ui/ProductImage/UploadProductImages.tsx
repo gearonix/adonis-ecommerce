@@ -35,7 +35,6 @@ const UploadProductImages = memo<ProductImagesProps>(({ values }) => {
     <AddProductImage ImageCarousel={ImageCarousel} files={files}/>
     <div className={s.add_image_block}>
       <div className={s.buttons}>
-        {/* @ts-ignore*/}
         <UploadButton className={'primary_button'}
           handleChange={onUpload} disabled={files.length === 5}>
           <AiOutlineUpload/>{t('Upload files')}</UploadButton>

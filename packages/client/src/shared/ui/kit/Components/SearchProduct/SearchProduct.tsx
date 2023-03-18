@@ -13,7 +13,7 @@ import { CFC } from 'shared/types/components'
 import { DefaultAssets } from 'shared/config/consts/assets'
 import { BsCart } from 'react-icons/bs'
 import { CartButtonProps, CartButtonUIProps } from 'features/ProductPage'
-import { MdMessage } from 'shared/ui/icons'
+import { FiHeart, MdMessage } from 'shared/ui/icons'
 
 export interface SearchProductProps {
   AddToSaved?: FC<SavedProps>,
@@ -37,7 +37,7 @@ export const SearchProduct: FC<SearchProductProps> = ({ AddToSaved, product, Car
       <div className={s.ratings}>
         <Rating name="size-small" readOnly
           defaultValue={product.rating} size="small"/>
-        <h2><MdMessage size={'14px'}/> 154 Orders</h2>
+        <h2><FiHeart size={'14px'} color={'#ff4a4a'}/> {product.savedCount} Orders</h2>
       </div>
 
       <Typo>{product.description}</Typo>

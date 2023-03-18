@@ -4,6 +4,7 @@ import { addProductToSaved, removeProductFromSaved } from 'features/Saved/store/
 import { useUnauthorized } from 'shared/lib/hooks'
 import { SavedSelectors } from 'features/Saved'
 import { toast } from 'react-toastify'
+import { productActions } from 'widgets/CurrentProduct'
 
 
 export interface SavedProps{
@@ -27,10 +28,12 @@ const SavedProvider: FC<SavedProps> = ({ productId, Component }) => {
       return toast.info('You cannot add more than 10 products.')
     }
     dispatch(addProductToSaved(productId))
+    dispatch(productActions.changeSavedCount('add'))
   }, [productId, totalCount])
 
   const removeFromSaved = () => {
     dispatch(removeProductFromSaved(productId))
+    dispatch(productActions.changeSavedCount('remove'))
   }
 
   const onClick = authorized(() => {

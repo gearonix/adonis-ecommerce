@@ -27,8 +27,6 @@ export class ProductsEntity {
       inStock: boolean
     @Column('json', { nullable: true })
       images: string[]
-    @Column('tinyint', { default: true })
-      savedCount: number
     @Column('int')
       salesmanId: number
     @Column('json')
@@ -49,6 +47,8 @@ export class ProductsEntity {
       productId: number
     @CreateDateColumn()
       creationDate: Date
+    @Column('smallint', { default: true })
+      savedCount: number
     @ManyToOne(() => UsersEntity)
     @JoinColumn({ name: 'salesmanId', foreignKeyConstraintName:
             'FK_products_userId', referencedColumnName: 'userId' })

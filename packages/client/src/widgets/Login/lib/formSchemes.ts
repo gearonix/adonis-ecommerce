@@ -11,8 +11,7 @@ const formTemplate = {
 
 export const loginSchema: Yup.SchemaOf<LoginForm> = Yup.object().shape(formTemplate)
 
-// @ts-ignore
-export const customerSchema: Yup.SchemaOf<SignupForm> = Yup.object().shape({
+export const customerSchema = Yup.object().shape({
   ...formTemplate,
   repeatPassword: creator.password()
 })

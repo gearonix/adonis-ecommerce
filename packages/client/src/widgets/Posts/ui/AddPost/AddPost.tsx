@@ -5,6 +5,7 @@ import { addPostSchema } from 'widgets/Posts/lib/formSchemes'
 import { AddPostForm } from 'widgets/Posts/types'
 import { useForm } from 'shared/lib/hooks/useForm'
 import { AddPostTemplate } from 'entities/Profile'
+import {postActions} from 'widgets/Posts';
 
 interface AddPostProps{
   close: () => void
@@ -16,6 +17,7 @@ const AddPost : FC<AddPostProps> = ({ close }) => {
   const dispatch = useDispatch()
 
   const onSubmit = useCallback((values: AddPostForm) => {
+    dispatch(postActions.setPage(0))
     dispatch(addPost(values))
     close()
   }, [])

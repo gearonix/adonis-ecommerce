@@ -28,6 +28,13 @@ const productReducer = createSlice({
     setComments(state, { payload }: Action<ProductComments>) {
       state.comments.data = payload.data
       state.comments.count = payload.count
+    },
+    changeSavedCount(state, { payload }: Action<'add' | 'remove'>) {
+      if (payload === 'add') {
+        state.productInfo.savedCount += 1
+      } else {
+        state.productInfo.savedCount -= 1
+      }
     }
   },
   extraReducers: (builder) => {

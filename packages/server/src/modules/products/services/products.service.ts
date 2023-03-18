@@ -88,4 +88,11 @@ export class ProductsService {
   async getProductsByIds(body: SearchByIdsDTO) {
     return this.products.find({ where: { productId: In(body.ids) } })
   }
+
+  async changeSavedCount(productId: number, mode: 'add' | 'remove') {
+    const operation = mode === 'add' ? '+' : '-'
+    return this.products.createQueryBuilder()
+        .update().set({ savedCount: () => `savedCount ${operation} 1` })
+        .execute()
+  }
 }

@@ -31,6 +31,8 @@ const ProfileHeader = memo(() => {
     actions.subscribeToStatus(user.userId)
   }, [user.userId])
 
+
+
   return <Display when={user}>
     <ContentModal isOpened={editProfile.isOpen} close={editProfile.close}>
       <EditProfile close={editProfile.close}/>

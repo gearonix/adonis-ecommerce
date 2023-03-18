@@ -2,9 +2,11 @@
 /.next/
 /out/
 .pnpm-debug.log*
-.env
+.env.development
+.env.production
 *.tsbuildinfo
 next-env.d.ts
 pnpm-lock.yaml
 .npmrc
 .swc
+analyze

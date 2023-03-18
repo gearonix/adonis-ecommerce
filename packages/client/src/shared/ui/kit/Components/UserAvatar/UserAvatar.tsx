@@ -3,6 +3,7 @@ import s from './style.module.scss'
 import { NextImage } from 'shared/ui/kit'
 import { DefaultAssets } from 'shared/config/consts/assets'
 import { useBooleanState } from 'shared/lib/hooks/useBooleanState'
+import { ImageModal } from 'shared/ui/material'
 
 interface UserAvatarProps{
   src: string | null,
@@ -26,7 +27,7 @@ const DefaultAvatar = () => {
 const ExistingAvatar: FC<{src: string, onError: () => void}> = ({ src, onError }) => {
   return <>
     <NextImage src={src} alt={''}
-      quality={100} priority={true} onError={onError}/>
+      quality={100} priority={true} onError={onError} />
   </>
 }
 

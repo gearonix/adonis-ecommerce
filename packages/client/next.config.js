@@ -1,11 +1,16 @@
 const path = require('path')
 
-// .env variables
+// environment variables
 const IS_DEV = process.env.NODE_ENV === 'development'
 const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL
 const SERVER_HOST = process.env.NEXT_PUBLIC_SERVER_HOST
 const GOOGLE_CLIENT_ID = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID
 const WEBSOCKET_URL = process.env.NEXT_PUBLIC_WEBSOCKET_URL
+
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.NEXT_PUBLIC_ANALYZE === 'true',
+  openAnalyzer: false
+})
 
 const nextConfig = {
   reactStrictMode: true,
@@ -39,4 +44,4 @@ const nextConfig = {
   }
 }
 
-module.exports = nextConfig
+module.exports = withBundleAnalyzer(nextConfig)
