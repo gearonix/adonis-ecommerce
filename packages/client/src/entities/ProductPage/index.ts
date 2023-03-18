@@ -1,6 +1,10 @@
-export { default as ProductDescription } from './ui/ProductDescription/ProductDescriptions'
-export { default as ProductParams } from './ui/ProductParams/ProductParams'
-export { default as ProductImages } from './ui/ProductImage/ProductImage'
-export { default as PurchaseProduct } from './ui/PurchaseProduct/PurchaseProduct'
+import dynamic from 'next/dynamic'
+
+export const ProductParams = dynamic(() => import('./ui/ProductParams/ProductParams'))
+export const ProductImages = dynamic(() => import('./ui/ProductImage/ProductImage'))
+export const PurchaseProduct = dynamic(() => import('./ui/PurchaseProduct/PurchaseProduct'))
+
 export { default as CommentBar } from './ui/CommentBar/CommentBar'
 export { default as Thanks } from './ui/Thanks/Thanks'
+
+export const ProductDescription = dynamic(() => import('./ui/ProductDescription/ProductDescriptions'))

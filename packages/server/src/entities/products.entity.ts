@@ -1,7 +1,17 @@
-import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from 'typeorm'
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  JoinColumn, JoinTable,
+  ManyToMany,
+  ManyToOne,
+  OneToOne,
+  PrimaryGeneratedColumn
+} from 'typeorm'
 import { UsersEntity } from '@entities/users.entity'
 import { ProductModels, ProductRatings, ProductSizes, ProductTypes } from '@app/types/elements/types'
 import { Lengths } from '@app/types/global'
+import { ProductCommentsEntity } from '@entities/product-comments.entity'
 
 @Entity('products')
 export class ProductsEntity {
@@ -19,7 +29,6 @@ export class ProductsEntity {
       images: string[]
     @Column('tinyint', { default: true })
       savedCount: number
-    @OneToOne(() => UsersEntity, (user) => user.userId)
     @Column('int')
       salesmanId: number
     @Column('json')
@@ -38,4 +47,10 @@ export class ProductsEntity {
       size: typeof ProductSizes[number]
     @PrimaryGeneratedColumn()
       productId: number
+    @CreateDateColumn()
+      creationDate: Date
+    @ManyToOne(() => UsersEntity)
+    @JoinColumn({ name: 'salesmanId', foreignKeyConstraintName:
+            'FK_products_userId', referencedColumnName: 'userId' })
+      salesman: UsersEntity
 }

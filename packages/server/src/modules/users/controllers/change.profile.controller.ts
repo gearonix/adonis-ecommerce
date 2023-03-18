@@ -25,7 +25,6 @@ export class ChangeProfileController {
     @Post('/background')
     @UseInterceptors(FileInterceptor(FileDirectories.USER_BACKGROUND))
     async changeUserBackground(@UploadedFile() background) {
-      console.log('test')
       const fileUrl = await this.profileService.changeUserBackground(background)
       return { fileUrl }
     }

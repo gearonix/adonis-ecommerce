@@ -1,5 +1,7 @@
-export { default as MessengerContent } from './ui/Content/MessengerContent'
-export { default as MessengerUser } from './ui/User/MessengerUser'
-export { default as MessengerHeaderTemp } from './ui/Header/MessengerHeaderTemplate'
-export { default as UserInfo } from './ui/UserInfo/UserInfo'
-export { default as MessageBar } from './ui/MessageBar/MessageBar'
+import dynamic from 'next/dynamic'
+
+export const MessengerContent = dynamic(() => import('./ui/Content/MessengerContent'))
+export const MessengerHeaderTemplate = dynamic(() => import('./ui/Header/MessengerHeaderTemplate'))
+export const MessengerUser = dynamic(() => import('./ui/User/MessengerUser'))
+export const UserInfo = dynamic(() => import('./ui/UserInfo/UserInfo'))
+export const MessageBar = dynamic(() => import('./ui/MessageBar/MessageBar'))

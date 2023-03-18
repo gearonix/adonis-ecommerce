@@ -19,8 +19,6 @@ export class ProductCommentsEntity {
   @JoinColumn({ name: 'userId', foreignKeyConstraintName:
           'FK_comments_userId', referencedColumnName: 'userId' })
     user: UsersEntity
-  // @OneToMany((type) => ProductsEntity, (product) => product.comment)
-  //   product: UsersEntity[]
 }
 
 

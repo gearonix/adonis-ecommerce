@@ -1,5 +1,5 @@
 import {FC, memo, useEffect} from 'react'
-import { MessengerHeaderTemp } from 'entities/Messenger'
+import { MessengerHeaderTemplate } from 'entities/Messenger'
 import { SearchMessages } from 'features/Messenger'
 import { useRouter } from 'next/router'
 import { useFilteredEffect } from 'shared/lib/hooks'
@@ -44,8 +44,8 @@ const MessengerHeader = memo(() => {
     }
   }, [])
 
-  return <MessengerHeaderTemp Search={SearchMessages}
-    user={opponent} label={userStatus}/>
+  return <MessengerHeaderTemplate Search={SearchMessages}
+                                  user={opponent} label={userStatus}/>
 })
 
 export default MessengerHeader

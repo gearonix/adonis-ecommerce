@@ -27,9 +27,10 @@ export const NextImage: FC<NextImageProps> = ({ src: initialSrc, alt = '',
     props.onError?.(e)
   }
 
-  return <WithSpring key={src}><Image src={src as string} alt={alt} fill
-    priority={true} sizes={'100%, 100%'} onClick={onClick} {...props}
-    onError={onError}/>
+  return <WithSpring key={src}>
+    <Image src={src as string} alt={alt} fill
+      priority={true} sizes={'100%, 100%'} onClick={onClick} {...props}
+      onError={onError}/>
   </WithSpring>
 }
 

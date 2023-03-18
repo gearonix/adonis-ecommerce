@@ -1,8 +1,9 @@
-import React, { FC } from 'react'
+import React, { FC, useCallback } from 'react'
 import { useDispatch, useSelector } from 'shared/types/redux'
 import { addProductToSaved, removeProductFromSaved } from 'features/Saved/store/thunks'
 import { useUnauthorized } from 'shared/lib/hooks'
 import { SavedSelectors } from 'features/Saved'
+import { toast } from 'react-toastify'
 
 
 export interface SavedProps{
@@ -19,10 +20,14 @@ export interface SquareButtonProps {
 const SavedProvider: FC<SavedProps> = ({ productId, Component }) => {
   const dispatch = useDispatch()
   const isInSaved = useSelector(SavedSelectors.isInSaved(productId))
+  const totalCount = useSelector(SavedSelectors.count)
   const authorized = useUnauthorized()
-  const addToSaved = () => {
+  const addToSaved = useCallback(() => {
+    if (totalCount >= 7) {
+      return toast.info('You cannot add more than 10 products.')
+    }
     dispatch(addProductToSaved(productId))
-  }
+  }, [productId, totalCount])
 
   const removeFromSaved = () => {
     dispatch(removeProductFromSaved(productId))

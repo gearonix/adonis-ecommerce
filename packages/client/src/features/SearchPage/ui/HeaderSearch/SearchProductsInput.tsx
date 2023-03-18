@@ -14,7 +14,8 @@ interface SearchForm{
 interface HeaderInputProps{
   Component: FC<{
     submit: () => void,
-    values: FieldValues
+    values: FieldValues,
+    form?: any
   }>
 }
 
@@ -22,7 +23,7 @@ const helpers = new Helpers()
 
 const SearchProductsInput: FC<HeaderInputProps> = ({ Component }) => {
   const filter = useSelector(ProductsSelectors.filter)
-  const { reg, submit } = useForm<SearchForm>(null, searchDefaultValues(filter.search))
+  const { reg, submit, getValues, form } = useForm<SearchForm>(null, searchDefaultValues(filter.search))
   const dispatch = useDispatch()
   const router = useRouter()
 
@@ -35,7 +36,7 @@ const SearchProductsInput: FC<HeaderInputProps> = ({ Component }) => {
   }
 
 
-  return <Component submit={submit(onSearch)} values={reg('search')}/>
+  return <Component submit={submit(onSearch)} values={reg('search')} form={form}/>
 }
 
 

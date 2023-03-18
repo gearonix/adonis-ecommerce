@@ -12,10 +12,7 @@ import { RequestContextModule } from 'nestjs-request-context'
   imports: [
     forwardRef(() => UsersModule),
     JwtModule.register({
-      secret: process.env.PRIVATE_KEY || appConfig.privateKey,
-      signOptions: {
-        expiresIn: '7d'
-      }
+      secret: process.env.PRIVATE_KEY || appConfig.privateKey
     }),
     RequestContextModule
   ],

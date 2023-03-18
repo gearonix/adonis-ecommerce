@@ -30,6 +30,7 @@ export const SearchProduct: FC<SearchProductProps> = ({ AddToSaved, product, Car
         width={190} height={190} priority={true}/>
     </LinkToProduct>
     <div className={s.info_block}>
+      <span>{product.salesman.email}</span>
       <Typo className={s.name}>
         {product.name} <InStock inStock={product.inStock} withoutTitle/></Typo>
       <h3 className={s.price}>${product.price}.00</h3>

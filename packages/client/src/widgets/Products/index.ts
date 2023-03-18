@@ -1,10 +1,10 @@
 import dynamic from 'next/dynamic'
 
 export const RecommendedItems = dynamic(() => import('./ui/RecommendedItems/RecommendedItems'))
+export const SearchList = dynamic(() => import('./ui/SearchList/SearchList'))
+export const AddProduct = dynamic(() => import('./ui/AddProduct/AddProduct'))
 
-export { default as SearchList } from './ui/SearchList/SearchList'
 export { default as MyProducts } from './ui/MyProducts/MyProducts'
-export { default as AddProduct } from './ui/AddProduct/AddProduct'
 export { default as SearchAside } from './ui/SearchAside/SearchAside'
 
 export { productsSlice, productsActions } from './store/slice/productsReducer'

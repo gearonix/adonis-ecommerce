@@ -1,5 +1,8 @@
-export { default as MyPosts } from './ui/UserPosts/Posts'
-export { default as AddPost } from './ui/AddPost/AddPost'
+import dynamic from 'next/dynamic'
+
+export const MyPosts = dynamic(() => import('./ui/UserPosts/Posts'))
+export const AddPost = dynamic(() => import('./ui/AddPost/AddPost'))
+
 
 export { postSlice, postActions } from './store/slice/postsReducer'
 

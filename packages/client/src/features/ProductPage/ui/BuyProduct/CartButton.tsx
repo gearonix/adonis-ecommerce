@@ -5,6 +5,7 @@ import { cartActions } from 'widgets/Cart/store/slice/cartReducer'
 import { useTranslation } from 'react-i18next'
 import { ProductSelectors } from 'widgets/CurrentProduct'
 import { CartSelectors } from 'widgets/Cart'
+import { toast } from 'react-toastify'
 
 export interface CartButtonProps{
   productId?: number,
@@ -15,15 +16,19 @@ const CartButton = memo<CartButtonProps>(({ productId: id, Component = DefaultCa
   const currentProductId = useSelector(ProductSelectors.id) as number
   const productId = id ?? currentProductId
   const isExists = useSelector(CartSelectors.existsInCart(productId))
+  const totalCount = useSelector(CartSelectors.count)
   const dispatch = useDispatch()
 
   const onAdd = useCallback(() => {
+    if (totalCount >= 5) {
+      return toast.info('You cannot add more than 5 products.')
+    }
     dispatch(cartActions.addProduct(productId))
-  },[productId])
+  }, [productId, totalCount])
 
   const onRemove = useCallback(() => {
     dispatch(cartActions.removeProduct(productId))
-  },[productId])
+  }, [productId])
 
 
   return <Component isExists={isExists} onAdd={onAdd} onRemove={onRemove}/>

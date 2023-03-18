@@ -17,8 +17,7 @@ export class TokenService {
 
   async generateToken(userId: number): Promise<ReturnToken> {
     const token = this.jwtService.sign(
-        { payload: { userId } },
-        { expiresIn: '1h' }
+        { payload: { userId } }
     )
     return { token }
   }

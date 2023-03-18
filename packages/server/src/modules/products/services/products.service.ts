@@ -35,6 +35,12 @@ export class ProductsService {
         name: ifExist(search, Like(`%${search}%`)),
         inStock: ifExist(inStock === 'true', true)
       },
+      order: {
+        productId: 'DESC'
+      },
+      relations: {
+        salesman: true
+      },
       ...withLimit(query.page)
     }
     )

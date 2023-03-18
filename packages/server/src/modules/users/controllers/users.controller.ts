@@ -12,7 +12,6 @@ export class UsersController {
   }
   @Get()
   async getUsers(@Query() query: UsersDTO) {
-    console.log(query)
     return this.usersService.getUsers(query)
   }
 }
