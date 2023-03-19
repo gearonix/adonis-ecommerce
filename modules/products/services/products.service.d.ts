@@ -49,4 +49,5 @@ export declare class ProductsService {
     }>;
     getProductsIdsByUserId(salesmanId: number): Promise<ProductsEntity[]>;
     getProductsByIds(body: SearchByIdsDTO): Promise<ProductsEntity[]>;
+    changeSavedCount(productId: number, mode: 'add' | 'remove'): Promise<import("typeorm").UpdateResult>;
 }

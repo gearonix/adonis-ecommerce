@@ -16,6 +16,7 @@ const posts_entity_1 = require("./posts.entity");
 const global_1 = require("../types/global");
 const messenger_rooms_entity_1 = require("./messenger-rooms.entity");
 const user_messages_entity_1 = require("./user-messages.entity");
+const products_entity_1 = require("./products.entity");
 let UsersEntity = class UsersEntity {
     role;
     firstName;
@@ -90,6 +91,7 @@ __decorate([
     (0, typeorm_1.OneToMany)(() => messenger_rooms_entity_1.MessengerRoomsEntity, (room) => room.starterId),
     (0, typeorm_1.OneToMany)(() => messenger_rooms_entity_1.MessengerRoomsEntity, (room) => room.invitedId),
     (0, typeorm_1.OneToMany)(() => user_messages_entity_1.UserMessagesEntity, (message) => message.user),
+    (0, typeorm_1.OneToMany)(() => products_entity_1.ProductsEntity, (product) => product.salesman),
     __metadata("design:type", Array)
 ], UsersEntity.prototype, "user", void 0);
 UsersEntity = __decorate([

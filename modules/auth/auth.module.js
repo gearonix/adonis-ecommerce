@@ -23,10 +23,7 @@ AuthModule = __decorate([
         imports: [
             (0, common_1.forwardRef)(() => users_1.UsersModule),
             jwt_1.JwtModule.register({
-                secret: process.env.PRIVATE_KEY || config_1.appConfig.privateKey,
-                signOptions: {
-                    expiresIn: '7d'
-                }
+                secret: process.env.PRIVATE_KEY || config_1.appConfig.privateKey
             }),
             nestjs_request_context_1.RequestContextModule
         ],

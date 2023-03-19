@@ -31,7 +31,6 @@ let ChangeProfileController = class ChangeProfileController {
         return { fileUrl };
     }
     async changeUserBackground(background) {
-        console.log('test');
         const fileUrl = await this.profileService.changeUserBackground(background);
         return { fileUrl };
     }

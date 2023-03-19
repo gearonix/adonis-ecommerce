@@ -21,7 +21,6 @@ let ProductsEntity = class ProductsEntity {
     description;
     inStock;
     images;
-    savedCount;
     salesmanId;
     features;
     material;
@@ -31,6 +30,9 @@ let ProductsEntity = class ProductsEntity {
     model;
     size;
     productId;
+    creationDate;
+    savedCount;
+    salesman;
 };
 __decorate([
     (0, typeorm_1.Column)('varchar', { length: global_1.Lengths.TINY_TITLE, nullable: true }),
@@ -57,11 +59,6 @@ __decorate([
     __metadata("design:type", Array)
 ], ProductsEntity.prototype, "images", void 0);
 __decorate([
-    (0, typeorm_1.Column)('tinyint', { default: true }),
-    __metadata("design:type", Number)
-], ProductsEntity.prototype, "savedCount", void 0);
-__decorate([
-    (0, typeorm_1.OneToOne)(() => users_entity_1.UsersEntity, (user) => user.userId),
     (0, typeorm_1.Column)('int'),
     __metadata("design:type", Number)
 ], ProductsEntity.prototype, "salesmanId", void 0);
@@ -97,6 +94,19 @@ __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
     __metadata("design:type", Number)
 ], ProductsEntity.prototype, "productId", void 0);
+__decorate([
+    (0, typeorm_1.CreateDateColumn)(),
+    __metadata("design:type", Date)
+], ProductsEntity.prototype, "creationDate", void 0);
+__decorate([
+    (0, typeorm_1.Column)('smallint', { default: true }),
+    __metadata("design:type", Number)
+], ProductsEntity.prototype, "savedCount", void 0);
+__decorate([
+    (0, typeorm_1.ManyToOne)(() => users_entity_1.UsersEntity),
+    (0, typeorm_1.JoinColumn)({ name: 'salesmanId', foreignKeyConstraintName: 'FK_products_userId', referencedColumnName: 'userId' }),
+    __metadata("design:type", users_entity_1.UsersEntity)
+], ProductsEntity.prototype, "salesman", void 0);
 ProductsEntity = __decorate([
     (0, typeorm_1.Entity)('products')
 ], ProductsEntity);

@@ -18,19 +18,24 @@ const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
 const auth_1 = require("../../auth");
 const saved_entity_1 = require("../../../entities/saved.entity");
+const products_service_1 = require("./products.service");
 let SavedService = class SavedService {
     saved;
     authService;
-    constructor(saved, authService) {
+    productsService;
+    constructor(saved, authService, productsService) {
         this.saved = saved;
         this.authService = authService;
+        this.productsService = productsService;
     }
     async addToSaved(productId) {
         const userId = await this.authService.getUserId();
+        await this.productsService.changeSavedCount(productId, 'add');
         return this.saved.save({ userId, productId });
     }
     async removeFromSaved(productId) {
         const userId = await this.authService.getUserId();
+        await this.productsService.changeSavedCount(productId, 'remove');
         return this.saved.delete({ productId, userId });
     }
     async getSavedProducts(id) {
@@ -42,8 +47,10 @@ let SavedService = class SavedService {
 SavedService = __decorate([
     (0, common_1.Injectable)(),
     __param(0, (0, typeorm_1.InjectRepository)(saved_entity_1.SavedEntity)),
+    __param(2, (0, common_1.Inject)((0, common_1.forwardRef)(() => products_service_1.ProductsService))),
     __metadata("design:paramtypes", [typeorm_2.Repository,
-        auth_1.AuthService])
+        auth_1.AuthService,
+        products_service_1.ProductsService])
 ], SavedService);
 exports.SavedService = SavedService;
 //# sourceMappingURL=saved.service.js.map

@@ -1,3 +1,4 @@
+import { UsersEntity } from '@entities/users.entity';
 import { ProductModels, ProductRatings, ProductSizes, ProductTypes } from '@app/types/elements/types';
 export declare class ProductsEntity {
     name: string;
@@ -6,7 +7,6 @@ export declare class ProductsEntity {
     description: string;
     inStock: boolean;
     images: string[];
-    savedCount: number;
     salesmanId: number;
     features: string[];
     material: string;
@@ -16,4 +16,7 @@ export declare class ProductsEntity {
     model: ProductModels;
     size: typeof ProductSizes[number];
     productId: number;
+    creationDate: Date;
+    savedCount: number;
+    salesman: UsersEntity;
 }

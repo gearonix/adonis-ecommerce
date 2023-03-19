@@ -48,6 +48,12 @@ let ProductsService = class ProductsService {
                 name: (0, helpers_1.ifExist)(search, (0, typeorm_2.Like)(`%${search}%`)),
                 inStock: (0, helpers_1.ifExist)(inStock === 'true', true)
             },
+            order: {
+                productId: 'DESC'
+            },
+            relations: {
+                salesman: true
+            },
             ...(0, helpers_1.withLimit)(query.page)
         });
         return { data, count };
@@ -73,6 +79,9 @@ let ProductsService = class ProductsService {
         const [data, count] = await this.products.findAndCount({
             where: { salesmanId },
             order: { productId: 'DESC' },
+            relations: {
+                salesman: true
+            },
             ...(0, helpers_1.withLimit)(page)
         });
         return { data, count };
@@ -83,10 +92,22 @@ let ProductsService = class ProductsService {
         }
         const saved = await this.savedService.getSavedProducts(salesmanId);
         return this.products.find({ where: { productId: (0, typeorm_2.In)(saved?.map((i) => i.productId)) },
-            order: { productId: 'DESC' } });
+            order: { productId: 'DESC' },
+            relations: {
+                salesman: true
+            }
+        });
     }
     async getProductsByIds(body) {
-        return this.products.find({ where: { productId: (0, typeorm_2.In)(body.ids) } });
+        return this.products.find({ where: { productId: (0, typeorm_2.In)(body.ids) }, relations: {
+                salesman: true
+            } });
+    }
+    async changeSavedCount(productId, mode) {
+        const operation = mode === 'add' ? '+' : '-';
+        return this.products.createQueryBuilder()
+            .update().set({ savedCount: () => `savedCount ${operation} 1` })
+            .execute();
     }
 };
 ProductsService = __decorate([

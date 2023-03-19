@@ -25,7 +25,6 @@ let UsersController = class UsersController {
         return this.usersService.getUserById(+id);
     }
     async getUsers(query) {
-        console.log(query);
         return this.usersService.getUsers(query);
     }
 };

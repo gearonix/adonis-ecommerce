@@ -27,7 +27,7 @@ let TokenService = class TokenService {
         this.jwtService = jwtService;
     }
     async generateToken(userId) {
-        const token = this.jwtService.sign({ payload: { userId } }, { expiresIn: '1h' });
+        const token = this.jwtService.sign({ payload: { userId } });
         return { token };
     }
     async getUser() {
