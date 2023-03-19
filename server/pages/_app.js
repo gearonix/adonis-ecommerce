@@ -4,6 +4,18 @@ exports.id = 2888;
 exports.ids = [2888];
 exports.modules = {
 
+/***/ 41510:
+/***/ ((module) => {
+
+// Exports
+module.exports = {
+	"style": {"fontFamily":"'__Inter_4b5723', '__Inter_Fallback_4b5723'","fontStyle":"normal"},
+	"className": "__className_4b5723"
+};
+
+
+/***/ }),
+
 /***/ 71200:
 /***/ ((module) => {
 
@@ -342,27 +354,35 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20997);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_font_google_target_css_path_src_app_providers_Layout_Layout_tsx_import_Inter_arguments_subsets_latin_variableName_interFont___WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(41510);
+/* harmony import */ var next_font_google_target_css_path_src_app_providers_Layout_Layout_tsx_import_Inter_arguments_subsets_latin_variableName_interFont___WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_font_google_target_css_path_src_app_providers_Layout_Layout_tsx_import_Inter_arguments_subsets_latin_variableName_interFont___WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var dev_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(37854);
 /* harmony import */ var widgets_Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7711);
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(59003);
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var shared_lib_hooks_useTheme__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(89828);
 /* harmony import */ var entities_Others__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(94640);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([dev_components__WEBPACK_IMPORTED_MODULE_1__, widgets_Header__WEBPACK_IMPORTED_MODULE_2__, entities_Others__WEBPACK_IMPORTED_MODULE_5__]);
-([dev_components__WEBPACK_IMPORTED_MODULE_1__, widgets_Header__WEBPACK_IMPORTED_MODULE_2__, entities_Others__WEBPACK_IMPORTED_MODULE_5__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+/* harmony import */ var app_providers_Notifications__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(74724);
+/* harmony import */ var dayjs_locale_ru__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(19161);
+/* harmony import */ var dayjs_locale_ru__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(dayjs_locale_ru__WEBPACK_IMPORTED_MODULE_7__);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([dev_components__WEBPACK_IMPORTED_MODULE_1__, widgets_Header__WEBPACK_IMPORTED_MODULE_2__, entities_Others__WEBPACK_IMPORTED_MODULE_5__, app_providers_Notifications__WEBPACK_IMPORTED_MODULE_6__]);
+([dev_components__WEBPACK_IMPORTED_MODULE_1__, widgets_Header__WEBPACK_IMPORTED_MODULE_2__, entities_Others__WEBPACK_IMPORTED_MODULE_5__, app_providers_Notifications__WEBPACK_IMPORTED_MODULE_6__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
 
 
 
-// const interFont = Inter({ subsets: ['latin'] })
+
+
+
 const Layout = ({ children  })=>{
     const { theme  } = (0,shared_lib_hooks_useTheme__WEBPACK_IMPORTED_MODULE_4__/* .useTheme */ .F)();
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-        className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(theme, "layout"),
+        className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(theme, "layout", (next_font_google_target_css_path_src_app_providers_Layout_Layout_tsx_import_Inter_arguments_subsets_latin_variableName_interFont___WEBPACK_IMPORTED_MODULE_8___default().className)),
         children: [
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(dev_components__WEBPACK_IMPORTED_MODULE_1__/* .DevNavigation */ .w, {}),
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(app_providers_Notifications__WEBPACK_IMPORTED_MODULE_6__/* .WithNotifications */ .x0, {}),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(widgets_Header__WEBPACK_IMPORTED_MODULE_2__/* .Header */ .h, {}),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                 className: "container",
@@ -745,7 +765,8 @@ const createStore = (config)=>{
         // @ts-ignore
         reducer: reducerManager.reduce,
         middleware,
-        preloadedState
+        preloadedState,
+        devTools: true
     });
     // @ts-ignore
     store.reducerManager = reducerManager;
@@ -1088,6 +1109,14 @@ module.exports = require("country-list-js");
 
 "use strict";
 module.exports = require("dayjs");
+
+/***/ }),
+
+/***/ 19161:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("dayjs/locale/ru");
 
 /***/ }),
 
@@ -1522,7 +1551,7 @@ module.exports = import("socket.io-client");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [2356,689,9931,1519,2921,4640,7854,9342,4326,6786], () => (__webpack_exec__(17774)));
+var __webpack_exports__ = __webpack_require__.X(0, [2356,689,5205,1519,2921,4640,7854,9342,4326,6786], () => (__webpack_exec__(17774)));
 module.exports = __webpack_exports__;
 
 })();

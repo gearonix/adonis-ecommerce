@@ -1,5 +1,5 @@
-exports.id = 9931;
-exports.ids = [9931];
+exports.id = 5205;
+exports.ids = [5205];
 exports.modules = {
 
 /***/ 74385:
@@ -29,6 +29,18 @@ function _objectWithoutPropertiesLoose(source, excluded) {
     }
     return target;
 }
+
+
+/***/ }),
+
+/***/ 99080:
+/***/ ((module) => {
+
+// Exports
+module.exports = {
+	"style": {"fontFamily":"'__Inter_4b5723', '__Inter_Fallback_4b5723'","fontStyle":"normal"},
+	"className": "__className_4b5723"
+};
 
 
 /***/ }),

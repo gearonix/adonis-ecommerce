@@ -1,1 +1,1 @@
-self.__NEXT_FONT_MANIFEST={pages:{},app:{},appUsingSizeAdjust:!1,pagesUsingSizeAdjust:!1};
+self.__NEXT_FONT_MANIFEST={pages:{"/_app":["static/media/2aaf0723e720e8b9-s.p.woff2"]},app:{},appUsingSizeAdjust:!1,pagesUsingSizeAdjust:!0};
