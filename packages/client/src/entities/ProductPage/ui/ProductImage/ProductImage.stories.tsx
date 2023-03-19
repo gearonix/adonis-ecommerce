@@ -1,6 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { ImageCarousel } from 'features/ProductPage'
 import ProductImage from './ProductImage'
+import { Assets } from 'shared/config/consts/assets'
 
 export default {
   title: 'entities/CurrentProduct/ProductImage',
@@ -12,5 +13,6 @@ const Template: ComponentStory<typeof ProductImage> = (args) => <ProductImage {.
 
 export const Default = Template.bind({})
 Default.args = {
-  ImageCarousel: ImageCarousel
+  ImageCarousel: ImageCarousel,
+  files: [Assets.BICYCLE]
 }

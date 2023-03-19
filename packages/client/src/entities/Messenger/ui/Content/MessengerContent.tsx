@@ -1,17 +1,14 @@
-import {FC, memo} from 'react'
+import { FC, memo } from 'react'
 import s from './style.module.scss'
-import { Message as MessageUI, NextImage, ScrollToBottom, TimeLabel } from 'shared/ui/kit'
+import { Message as MessageUI, ScrollToBottom, TimeLabel } from 'shared/ui/kit'
 import { Message } from 'widgets/Messenger'
 import { Nullable } from 'shared/types/common'
 import { useBottomScroll } from 'shared/lib/hooks/useBottomScroll'
 import { Display, WithSpring } from 'shared/lib/components'
 import Link from 'next/link'
 import { routes } from 'shared/config/consts/routes'
-import { Assets } from 'shared/config/consts/assets'
 import { useTimeout } from 'shared/lib/hooks'
-import { useTranslation } from 'react-i18next'
-import { BiMessage, BiMessageCheck, BiMessageDetail } from 'react-icons/bi'
-import { RiMessage2Line } from 'react-icons/ri'
+import { BiMessageDetail } from 'react-icons/bi'
 
 interface Props{
   messages: Message[],

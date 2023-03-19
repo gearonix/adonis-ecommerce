@@ -1,7 +1,7 @@
 import { FC, memo } from 'react'
 import { HeadField } from 'shared/ui/material'
 import { useForm } from 'react-hook-form'
-import { LoginForm } from '../types'
+import { LoginForm as LoginFormI } from '../types'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { loginSchema } from '../lib/formSchemes'
 import { useSubmitForm } from '../lib/hooks'
@@ -11,9 +11,9 @@ import { AuthTemplate } from 'entities/Auth'
 import { useTranslation } from 'react-i18next'
 
 const LoginForm = memo(() => {
-  const form = useForm<LoginForm>({ resolver: yupResolver(loginSchema) })
+  const form = useForm<LoginFormI>({ resolver: yupResolver(loginSchema) })
   const onSubmit = useSubmitForm(form.setError)
-  const reg = createFieldValues<LoginForm>(form)
+  const reg = createFieldValues<LoginFormI>(form)
   const { t } = useTranslation()
 
   return <AuthTemplate submit={form.handleSubmit(onSubmit)} GoogleButton={GoogleButton}>

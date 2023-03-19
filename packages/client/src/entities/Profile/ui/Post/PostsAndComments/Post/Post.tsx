@@ -1,15 +1,15 @@
 import Link from 'next/link'
-import {FC, memo} from 'react'
+import { FC, memo } from 'react'
 import { DefaultAssets } from 'shared/config/consts/assets'
 import { routes } from 'shared/config/consts/routes'
-import { Post } from 'widgets/Profile'
+import { Post as PostI } from 'widgets/Profile'
 import { BsDot, BsThreeDotsVertical } from 'shared/ui/icons'
 import { NextImage } from 'shared/ui/kit'
 import s from '../style.module.scss'
 import { Helpers } from 'shared/lib/helpers'
 
 interface PostProps{
-  post: Post
+  post: PostI
 }
 
 const Post: FC<PostProps> = memo(({ post }) => {

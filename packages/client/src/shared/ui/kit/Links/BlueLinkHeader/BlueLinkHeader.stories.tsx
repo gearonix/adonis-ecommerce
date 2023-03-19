@@ -11,5 +11,5 @@ const Template: ComponentStory<typeof BlueLinkHeader> = (args) => <BlueLinkHeade
 
 export const Default = Template.bind({})
 Default.args = {
-
+  label: 'write'
 }

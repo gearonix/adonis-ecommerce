@@ -7,12 +7,12 @@ import { useTheme } from 'shared/lib/hooks/useTheme'
 import { Footer } from 'entities/Others'
 import { WithNotifications } from 'app/providers/Notifications'
 
-const interFont = Inter({ subsets: ['latin'] })
+// const interFont = Inter({ subsets: ['latin'] })
 
 const Layout: FC<{ children: ReactNode }> = ({ children }) => {
   const { theme } = useTheme()
 
-  return <div className={cn(interFont.className, theme, 'layout')}>
+  return <div className={cn(theme, 'layout')}>
     {/* middlewares*/}
     <DevNavigation/>
 

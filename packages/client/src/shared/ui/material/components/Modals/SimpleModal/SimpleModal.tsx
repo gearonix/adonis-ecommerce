@@ -13,7 +13,6 @@ interface SimpleModalProps{
     title: string
 }
 
-const interFont = Inter({ subsets: ['latin'] })
 
 export const SimpleModal: CFC<SimpleModalProps> = ({ isOpened, close, children, title }) => {
   const { theme } = useTheme()
@@ -35,7 +34,7 @@ export const SimpleModal: CFC<SimpleModalProps> = ({ isOpened, close, children, 
         <WithSpring>
           <Fade in={isOpened}>
             <div className={cn(s.wrapper,
-                s[theme || 'light'], interFont.className)}>
+                s[theme || 'light'])}>
               <div className={s.header}>
                 <h2>{title}</h2>
                 <RxCross1 onClick={close} className={s.cross}/>

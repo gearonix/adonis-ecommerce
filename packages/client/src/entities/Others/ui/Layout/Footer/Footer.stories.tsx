@@ -1,5 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import Footer from './Footer'
+import { ThemeDecorator } from 'shared/config/storybook/decorators/ThemeDecorator'
+import { Theme } from 'shared/config/consts/themes'
 
 export default {
   title: 'entities/Layout/Footer',
@@ -9,7 +11,8 @@ export default {
 
 const Template: ComponentStory<typeof Footer> = (args) => <Footer {...args} />
 
-export const Default = Template.bind({})
-Default.args = {
+export const Light = Template.bind({})
 
-}
+export const Dark = Template.bind({})
+
+Dark.decorators = [ThemeDecorator(Theme.DARK)]

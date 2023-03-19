@@ -1,6 +1,7 @@
 import {createViewPorts} from './builders'
 import {addDecorator} from '@storybook/react';
 import {GoogleOAuthDecorator, ReduxDecorator, StyleDecorator} from '../src/shared/config/storybook/decorators';
+import {ThemeDecorator} from '../src/shared/config/storybook/decorators/ThemeDecorator';
 
 export const parameters = {
   viewport: {
@@ -18,3 +19,4 @@ export const parameters = {
 addDecorator(StyleDecorator)
 addDecorator(ReduxDecorator)
 addDecorator(GoogleOAuthDecorator)
+addDecorator(ThemeDecorator())

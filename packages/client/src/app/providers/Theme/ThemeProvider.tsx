@@ -5,10 +5,15 @@ import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles'
 import { useMuiTheme } from 'shared/lib/hooks/useTheme'
 import { useLocalStorage } from 'shared/lib/hooks/useLocalStorage'
 import { LocalStorage } from 'shared/config/consts/others'
+import { CFC } from 'shared/types/components'
+
+interface Props{
+  defaultTheme?: Theme
+}
 
 
-const ThemeProvider: FC<{ children: ReactNode }> = ({ children }) => {
-  const { value: theme, save: setTheme } = useLocalStorage(LocalStorage.THEME, Theme.LIGHT)
+const ThemeProvider: CFC<Props> = ({ children, defaultTheme = Theme.LIGHT }) => {
+  const { value: theme, save: setTheme } = useLocalStorage(LocalStorage.THEME, defaultTheme)
   const muiTheme = useMuiTheme(theme)
 
   const defaultProps = useMemo(() => ({
