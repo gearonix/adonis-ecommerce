@@ -39,10 +39,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(20926);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(13048);
-/* harmony import */ var shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(567);
-/* harmony import */ var shared_lib_hooks__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(59684);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shared_ui_kit__WEBPACK_IMPORTED_MODULE_2__, shared_lib_components__WEBPACK_IMPORTED_MODULE_4__, shared_lib_hooks__WEBPACK_IMPORTED_MODULE_8__]);
-([shared_ui_kit__WEBPACK_IMPORTED_MODULE_2__, shared_lib_components__WEBPACK_IMPORTED_MODULE_4__, shared_lib_hooks__WEBPACK_IMPORTED_MODULE_8__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+/* harmony import */ var shared_lib_hooks__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(59684);
+/* harmony import */ var react_icons_bi__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(76652);
+/* harmony import */ var react_icons_bi__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_icons_bi__WEBPACK_IMPORTED_MODULE_8__);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shared_ui_kit__WEBPACK_IMPORTED_MODULE_2__, shared_lib_components__WEBPACK_IMPORTED_MODULE_4__, shared_lib_hooks__WEBPACK_IMPORTED_MODULE_7__]);
+([shared_ui_kit__WEBPACK_IMPORTED_MODULE_2__, shared_lib_components__WEBPACK_IMPORTED_MODULE_4__, shared_lib_hooks__WEBPACK_IMPORTED_MODULE_7__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
@@ -88,16 +89,14 @@ const MessengerContent = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.mem
     });
 });
 const DefaultChat = ()=>{
-    const toShow = (0,shared_lib_hooks__WEBPACK_IMPORTED_MODULE_8__/* .useTimeout */ .KS)(300);
+    const toShow = (0,shared_lib_hooks__WEBPACK_IMPORTED_MODULE_7__/* .useTimeout */ .KS)(300);
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_lib_components__WEBPACK_IMPORTED_MODULE_4__/* .Display */ .sS, {
         when: toShow,
         children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(shared_lib_components__WEBPACK_IMPORTED_MODULE_4__/* .WithSpring */ .xM, {
             children: [
                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                     className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_9___default().default_chat_image),
-                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_2__/* .NextImage */ .oH, {
-                        src: shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_7__/* .Assets.CHAT */ .de.CHAT
-                    })
+                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_icons_bi__WEBPACK_IMPORTED_MODULE_8__.BiMessageDetail, {})
                 }),
                 /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h2", {
                     className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_9___default().default_title),

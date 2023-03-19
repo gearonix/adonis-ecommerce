@@ -3738,7 +3738,6 @@ var Assets;
     Assets["BICYCLE"] = "/assets/common/bicycle.png";
     Assets["ROCKET"] = "/assets/common/rocket.png";
     Assets["THANKS"] = "/assets/common/thanks.png";
-    Assets["CHAT"] = "/assets/common/chat.png";
 })(Assets || (Assets = {}));
 const ProductTypesAssets = {
     "Electronics": "/assets/product_types/electronics.png",

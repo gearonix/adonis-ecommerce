@@ -424,40 +424,25 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([sock
 
 const SocketProvider = ({ children  })=>{
     const userId = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_6__/* .useSelector */ .v9)(widgets_Login__WEBPACK_IMPORTED_MODULE_9__/* .AuthSelectors.userId */ .ce.userId);
-    const isAuthorized = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_6__/* .useSelector */ .v9)(widgets_Login__WEBPACK_IMPORTED_MODULE_9__/* .AuthSelectors.isAuthorized */ .ce.isAuthorized);
-    const [socket, setSocket] = (0,react__WEBPACK_IMPORTED_MODULE_7__.useState)({});
     const router = (0,next_router__WEBPACK_IMPORTED_MODULE_8__.useRouter)();
-    const disconnect = ()=>{
-        socket.disconnect();
-    };
-    (0,react__WEBPACK_IMPORTED_MODULE_7__.useEffect)(()=>{
-        if (!isAuthorized) {
-            socket.disconnect?.();
-            return;
+    const connection = (0,socket_io_client__WEBPACK_IMPORTED_MODULE_1__.io)(`${app_config_config__WEBPACK_IMPORTED_MODULE_2__/* ["default"].WEBSOCKET_URL */ .Z.WEBSOCKET_URL}/${app_config_globals__WEBPACK_IMPORTED_MODULE_5__/* .SocketGateWays.messenger */ .oV.messenger}`, {
+        withCredentials: true,
+        extraHeaders: {
+            userId: userId.toString()
         }
-        const connectionUrl = `${app_config_config__WEBPACK_IMPORTED_MODULE_2__/* ["default"].WEBSOCKET_URL */ .Z.WEBSOCKET_URL}/${app_config_globals__WEBPACK_IMPORTED_MODULE_5__/* .SocketGateWays.messenger */ .oV.messenger}`;
-        const connection = (0,socket_io_client__WEBPACK_IMPORTED_MODULE_1__.io)(connectionUrl, {
-            withCredentials: true,
-            extraHeaders: {
-                userId: userId.toString()
-            }
-        });
-        dev_components__WEBPACK_IMPORTED_MODULE_3__/* .DevGlobalVars.setSocket */ .P.setSocket("messenger", connection);
-        setSocket(connection);
-    }, [
-        isAuthorized,
-        userId
-    ]);
+    });
+    dev_components__WEBPACK_IMPORTED_MODULE_3__/* .DevGlobalVars.setSocket */ .P.setSocket("messenger", connection);
+    const disconnect = ()=>{
+        connection.disconnect();
+    };
     (0,react__WEBPACK_IMPORTED_MODULE_7__.useEffect)(()=>{
         router.events.on("routeChangeStart", disconnect);
         return ()=>{
             router.events.off("routeChangeStart", disconnect);
         };
-    }, [
-        disconnect
-    ]);
+    }, []);
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(widgets_Messenger_socket_provider_SocketContext__WEBPACK_IMPORTED_MODULE_4__/* ["default"].Provider */ .Z.Provider, {
-        value: socket,
+        value: connection,
         children: children
     });
 };
