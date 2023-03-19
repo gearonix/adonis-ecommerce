@@ -1,5 +1,5 @@
-exports.id = 827;
-exports.ids = [827];
+exports.id = 3827;
+exports.ids = [3827];
 exports.modules = {
 
 /***/ 36241:
@@ -10,8 +10,7 @@ module.exports = {
 	"recommended": "style_recommended____8ZE",
 	"image_block": "style_image_block__T47em",
 	"title": "style_title__Uc_UH",
-	"recommended_items": "style_recommended_items__2D0RY",
-	"item": "style_item__oetLV"
+	"recommended_items": "style_recommended_items__2D0RY"
 };
 
 
