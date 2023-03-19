@@ -6,15 +6,17 @@ import cn from 'classnames'
 import { useTheme } from 'shared/lib/hooks/useTheme'
 import { Footer } from 'entities/Others'
 import { WithNotifications } from 'app/providers/Notifications'
+import 'dayjs/locale/ru'
 
-// const interFont = Inter({ subsets: ['latin'] })
+const interFont = Inter({ subsets: ['latin'] })
 
 const Layout: FC<{ children: ReactNode }> = ({ children }) => {
   const { theme } = useTheme()
 
-  return <div className={cn(theme, 'layout')}>
+  return <div className={cn(theme, 'layout', interFont.className)}>
     {/* middlewares*/}
     <DevNavigation/>
+    <WithNotifications/>
 
     <Header/>
     <div className="container">

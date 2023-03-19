@@ -19,7 +19,7 @@ export const UserAvatar: FC<UserAvatarProps> = ({ src }) => {
 
 const DefaultAvatar = () => {
   return <div className={s.default_avatar}>
-    <NextImage src={DefaultAssets.AVATAR} alt={''} quality={100}
+    <NextImage src={DefaultAssets.AVATAR} alt={''}
       priority={true} />
   </div>
 }

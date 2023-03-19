@@ -9,11 +9,11 @@ import { MyLinks } from 'shared/config/consts/myLinks'
 import { SlSocialVkontakte } from 'react-icons/sl'
 import { BsTelegram } from 'react-icons/bs'
 import { HiOutlineDesktopComputer } from 'react-icons/hi'
-import { useTranslation } from 'react-i18next'
-import { useTheme } from 'shared/lib/hooks'
+import { useLanguage, useTheme } from 'shared/lib/hooks'
+import { MdLanguage } from 'react-icons/md'
 
 const Footer: FC = memo(() => {
-  const { t } = useTranslation()
+  const { t, isEnglish } = useLanguage()
   const { isLight } = useTheme()
   return <footer className={s.footer}>
     <div className={s.footer_block}>
@@ -95,7 +95,7 @@ const Footer: FC = memo(() => {
         <Link href={MyLinks.PORTFOLIO}>
           <HoverLink>@ Egor Uzhanin (Gearonix). 2023</HoverLink>
         </Link>
-        <HoverLink>English</HoverLink>
+        <HoverLink>{isEnglish ? 'English': 'Russian'}</HoverLink>
       </div>
     </div>
   </footer>

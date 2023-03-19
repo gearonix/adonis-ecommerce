@@ -1,14 +1,15 @@
 import { User } from 'widgets/Profile'
+import { EntityState } from '@reduxjs/toolkit'
 
-export interface UsersSlice{
-    data: User[],
+export interface UsersSlice extends EntityState<User>{
     count: number,
     page: number
 }
 
 
 export const initialState: UsersSlice = {
-  data: [],
+  ids: [],
+  entities: {},
   count: 0,
   page: 0
 }

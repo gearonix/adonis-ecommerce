@@ -1,6 +1,7 @@
 import dayjs from 'dayjs'
 import LocalizedFormat from 'dayjs/plugin/localizedFormat'
 import { UserRoles } from 'app/config/globals'
+import i18n from 'i18next'
 
 dayjs.extend(LocalizedFormat)
 
@@ -39,7 +40,7 @@ class Helpers {
     return difference
   }
   public reformatMysqlDate(date: string, format = 'LL') {
-    return dayjs(date).format(format)
+    return dayjs(date).locale(i18n.language).format(format)
   }
   public partial<T extends Object>(obj: T): Partial<T> {
     const newObj: Partial<T> = {}

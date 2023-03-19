@@ -57,6 +57,10 @@
     background: $bg-absolute-hover;
   }
 }
+.outlined_button.disabled{
+  color: $bg-300;
+  box-shadow: none;
+}
 
 .orange_button {
   background: $orange;

@@ -6,12 +6,12 @@ import Link from 'next/link'
 import { routes } from 'shared/config/consts/routes'
 import { Pagination } from 'shared/ui/material'
 import { PAGE_LIMIT } from 'app/config/globals'
-import { usersActions } from 'widgets/Users/store/slice/usersReducer'
+import { userAdapterSelectors, usersActions } from 'widgets/Users/store/slice/usersReducer'
 import { UsersSelectors } from 'widgets/Users'
 
 
 const UsersList = memo(() => {
-  const users = useSelector(UsersSelectors.users)
+  const users = useSelector(userAdapterSelectors.selectAll)
   const count = useSelector(UsersSelectors.count)
   const page = useSelector(UsersSelectors.page)
   const dispatch = useDispatch()

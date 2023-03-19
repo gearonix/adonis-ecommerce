@@ -17,7 +17,7 @@ const ContentButtons = memo<ContentButtonsProps>(({ AddProduct, AddPost }) => {
   return <div className={s.content_buttons}>
     <ContentButton page={WallPages.posts}><AiOutlineFileAdd/> {t('Posts')}</ContentButton>
     <ContentButton page={WallPages.products}><AiOutlineUnorderedList/> {t('Products')}</ContentButton>
-    <ContentButton page={WallPages.saved}><FiHeart/> {t('Saved')}</ContentButton>
+    <ContentButton page={WallPages.saved}><FiHeart/> {t('Orders')}</ContentButton>
     <div className={s.add_product}>
       {AddPost}
       {AddProduct}

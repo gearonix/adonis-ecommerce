@@ -6,7 +6,7 @@ import { FileInterceptor } from '@nestjs/platform-express'
 import { ProfileService } from '@modules/users/services'
 import { FileDirectories } from '@app/types/global'
 
-@Controller('profile/change')
+@Controller('users/change')
 export class ChangeProfileController {
   constructor( private profileService: ProfileService) {}
     @UseGuards(AuthGuard)

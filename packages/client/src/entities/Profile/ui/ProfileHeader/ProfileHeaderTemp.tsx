@@ -1,12 +1,14 @@
-import { FC, memo, ReactElement } from 'react'
+import { memo, ReactElement } from 'react'
 import s from './style.module.scss'
 import { ProfileBackground, UserAvatar, WriteToUser } from 'shared/ui/kit'
 import { Nullable, ObjectNullable } from 'shared/types/common'
 import { FormattedUser } from 'widgets/Profile/store/selectors'
-import { AiOutlineInfoCircle, BsPen } from 'shared/ui/icons'
+import { AiOutlineApi, AiOutlineInfoCircle, BsPen, GiTopHat } from 'shared/ui/icons'
 import { useTranslation } from 'react-i18next'
-import { Display } from 'shared/lib/components'
+import { Display, Ternary } from 'shared/lib/components'
 import { UserStatus } from 'shared/ui/kit/Components/UserStatus/UserStatus'
+import { UserRoles } from 'app/config/globals'
+import cn from 'classnames'
 
 
 export interface ProfileHeaderTemplate {
@@ -34,7 +36,12 @@ const ProfileHeaderTemp = memo<ProfileHeaderTemplate>((props) => {
         <UserStatus status={user.status} className={s.user_status}/>
       </div>
       <div className={s.user_info}>
-        <h2 className={s.user_name}>{user.userName}</h2>
+        <h2 className={cn(s.user_name, { [s.salesman]: user.role === UserRoles.SALESMAN })}>
+          <Ternary where={user.role === UserRoles.CUSTOMER}>
+            <AiOutlineApi/>
+            <GiTopHat/>
+          </Ternary>
+          {user.userName}</h2>
         <p className={s.description}>{user.description}</p>
         <h2 onClick={openInfo} className={s.details}><AiOutlineInfoCircle/>{t('Details')}</h2>
       </div>

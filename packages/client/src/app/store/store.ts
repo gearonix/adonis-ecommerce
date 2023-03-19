@@ -23,7 +23,8 @@ const createStore = (config: CreateStoreConfig) => {
     // @ts-ignore
     reducer: reducerManager.reduce,
     middleware,
-    preloadedState
+    preloadedState,
+    devTools: true
   })
 
 

@@ -1,5 +1,5 @@
 import { ProfileHeader as ProfileHeaderTemp, UserInfo } from 'entities/Profile'
-import { FC, memo } from 'react'
+import { memo } from 'react'
 import { ChangeBackground } from 'features/Profile'
 import { useDispatch, useSelector } from 'shared/types/redux'
 import { selectReformattedUser } from 'widgets/Profile/store/selectors'
@@ -30,7 +30,6 @@ const ProfileHeader = memo(() => {
 
     actions.subscribeToStatus(user.userId)
   }, [user.userId])
-
 
 
   return <Display when={user}>

@@ -3,14 +3,14 @@ import { AxiosResponse as Res } from 'shared/types/common'
 import { EditProfileForm } from 'widgets/Profile/types'
 import EndPoints from 'shared/config/consts/endpoints'
 import { User } from 'widgets/Profile'
-import { UsersForm } from 'widgets/Users/types'
+import { NewUsers, UsersForm } from 'widgets/Users/types'
 import { Helpers } from 'shared/lib/helpers'
 import { UsersSlice } from 'widgets/Users/store/slice/initialState'
 
 
 export interface ProfileApi {
     changeUserProfile(formValues: Partial<EditProfileForm>): Res<User>,
-    getUsers(values?: UsersForm): Res<UsersSlice>
+    getUsers(values?: UsersForm): Res<NewUsers>
 }
 
 const EndPoint = EndPoints.USERS

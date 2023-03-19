@@ -1,4 +1,4 @@
-import {FC, memo, useContext, useState} from 'react'
+import { FC, memo, useContext, useState } from 'react'
 import s from './style.module.scss'
 import { ContentButtons } from 'widgets/Profile'
 import { ContentModal } from 'shared/ui/material'

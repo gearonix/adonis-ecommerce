@@ -5,7 +5,7 @@
   margin: 30px auto 35px auto;
   @include itemBorder;
   .profile_background {
-    @include size(100%,360px);
+    @include size(100%,380px);
     position: relative;
     .image_wrapper{
       @include imageWrapper(100%, 100%, $rounded);
@@ -69,6 +69,15 @@
 
       .user_name {
         @include inlineStyles($small-md, $bg-100, bold);
+        svg{
+          @include size(24px,24px);
+          margin-right: 5px;
+        }
+      }
+      .user_name.salesman{
+        svg{
+        color: $link-color-max;
+        }
       }
 
       .description {
