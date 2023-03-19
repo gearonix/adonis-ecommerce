@@ -1,8 +1,22 @@
 @use 'shared/css/common.scss' as *;
 
 .dropdowns {
-  @include flex(space-between, center);
-  @include size(21%, 24px);
+  @include flex(stretch, center);
+  @include size(27%, 40px);
+  gap: 30px;
+  .github{
+    @include flex(stretch, center);
+    gap: 10px;
+    svg{
+      @include size(34px,34px);
+      color: $color-absolute;
+    }
+    h2{
+      color: $color-absolute;
+      font-size: 18px;
+    }
+
+  }
 
   select {
     @include flex(space-between);

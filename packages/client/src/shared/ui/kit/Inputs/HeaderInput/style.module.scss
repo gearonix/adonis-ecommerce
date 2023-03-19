@@ -1,42 +1,25 @@
 @use 'shared/css/common.scss' as *;
 
+.container{
+  @include size(50%);
+  @include flex(center,center);
+}
+
 .search {
-  @include size(40%, 38px);
+  @include size(65%, 38px);
   display: flex;
-  .search_wrapper{
-    @include size(62%, 100%);
-    font-size: 16px;
-    border: 1px solid $link-color;
-    border-radius: 8px 0 0 8px;
-    position: relative;
-    svg{
-      position: absolute;
-      top: 50%;
-      right: 8px;
-      transform: translate(0, -50%);
-      color: $hover-100;
-      @include size(14px, 14px);
-      transition: color 100ms;
-      &:hover{
-        color: $color-absolute-200;
-      }
-    }
-  }
 
   .search_input {
-    @include size;
-    border-radius: 8px 0 0 8px;
+    @include size(100%, 100%);
+    font-size: 16px;
+    border: 1px solid $link-color;
     background: $bg-absolute;
     padding-left: 10px;
+    border-radius: 8px 0 0 8px;
     color: $color-absolute;
     border-right-width: 0;
-    border: none;
     &::placeholder{
-      color: $color-absolute-200;
-    }
-    .clear{
-      position: absolute;
-      right: 20px;
+      color: $color-absolute;
     }
   }
 

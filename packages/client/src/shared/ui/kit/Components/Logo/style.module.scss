@@ -3,7 +3,7 @@
 .logo {
   cursor: pointer;
   position: relative;
-  @include imageWrapper(220px, 82px);
+  @include imageWrapper(250px, 60px);
   @media (max-width: 1148px) {
     width: 170px;
     height: 80%;

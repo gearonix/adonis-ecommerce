@@ -4,7 +4,7 @@
   width: 100%;
   background: $bg-absolute;
   border-bottom: 2px solid $bg-150;
-  max-height: 138px;
+  max-height: 172px;
 
   @media (max-width: 880px) {
   }
@@ -28,7 +28,7 @@
     margin: $center;
 
     .options {
-      @include size(18%, 38px);
+      @include size(18%, 45px);
       @include flex(space-between);
       * {
         color: $bg-300;
@@ -40,15 +40,17 @@
         @include flex(space-between, center, column);
         @include size(37px, 100%);
         text-align: center;
+        .avatar{
+          @include imageWrapper(25px,25px,100%);
+        }
 
         svg {
-          @include size(22px, 22px);
+          @include size(23px, 23px);
         }
 
         span {
           @include inlineStyles($xs, $bg-300);
           white-space: nowrap;
-          margin-top: 3px;
         }
       }
 

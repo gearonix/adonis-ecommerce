@@ -9,7 +9,8 @@ export enum DefaultAssets{
 }
 
 export enum Assets{
-    LOGO = '/assets/logo.svg',
+    LOGO_DARK = '/assets/logo-dark.png',
+    LOGO_LIGHT = '/assets/logo-light.png',
     NOT_FOUND = '/assets/common/not_found.svg',
     APP_ERROR = '/assets/common/app_error.png',
     ABOUT = '/assets/common/about.png',

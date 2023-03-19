@@ -8,11 +8,11 @@ const createMessengerSocketApi = (socket: Socket) => {
   return {
     subscribes: {
       onAddGroup(callback: (room: Room) => void) {
-        socket.on(MessengerEvents.ADD_ROOM, callback)
+        socket.on?.(MessengerEvents.ADD_ROOM, callback)
       },
       onAddMessage(callback: (message: Message) => void) {
-        socket.off(MessengerEvents.ADD_MESSAGE)
-        socket.on(MessengerEvents.ADD_MESSAGE, callback)
+        socket.off?.(MessengerEvents.ADD_MESSAGE)
+        socket.on?.(MessengerEvents.ADD_MESSAGE, callback)
       },
       onUserTyping(callback: () => void) {
         socket.on(MessengerEvents.TYPING, () => {
@@ -20,12 +20,12 @@ const createMessengerSocketApi = (socket: Socket) => {
         })
       },
       onNoLongerTyping(callback: () => void) {
-        socket.on(MessengerEvents.NO_LONGER_TYPING, () => {
+        socket.on?.(MessengerEvents.NO_LONGER_TYPING, () => {
           callback()
         })
       },
       onMessagesRead(callback: () => void) {
-        socket.on(MessengerEvents.MESSAGE_READ, () => {
+        socket.on?.(MessengerEvents.MESSAGE_READ, () => {
           callback()
         })
       }

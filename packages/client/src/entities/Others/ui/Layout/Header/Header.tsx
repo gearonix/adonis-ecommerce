@@ -2,9 +2,13 @@ import { FC, memo } from 'react'
 import s from './style.module.scss'
 import { AiOutlineSearch, FaHeart, FaInfo, FaShoppingCart, FaUserAlt, MdMessage } from 'shared/ui/icons'
 import Link from 'next/link'
-import { HoverLink, Logo } from 'shared/ui/kit'
+import { HoverLink, Logo, NextImage } from 'shared/ui/kit'
 import { routes } from 'shared/config/consts/routes'
 import { useTranslation } from 'react-i18next'
+import { useSelector } from 'shared/types/redux'
+import { AuthSelectors } from 'widgets/Login'
+import { DefaultAssets } from 'shared/config/consts/assets'
+import { Display, Ternary } from 'shared/lib/components'
 
 export interface HeaderSkeletonProps {
   Search: FC,
@@ -15,6 +19,7 @@ export interface HeaderSkeletonProps {
 
 const Header: FC<HeaderSkeletonProps> = memo(({ DropDowns, Burger, Search }) => {
   const { t } = useTranslation()
+  const avatar = useSelector(AuthSelectors.avatar)
   return <>
     <header className={s.header}>
       <div className={s.header_block}>
@@ -27,7 +32,12 @@ const Header: FC<HeaderSkeletonProps> = memo(({ DropDowns, Burger, Search }) => 
         <Search/>
         <div className={s.options}>
           <Link className={s.options_item} href={routes.LOGIN}>
-            <FaUserAlt/>
+            <Ternary where={avatar}>
+              <div className={s.avatar}>
+                <NextImage src={avatar} def={DefaultAssets.AVATAR}/>
+              </div>
+              <FaUserAlt/>
+            </Ternary>
             <span>{t('Profile')}</span>
           </Link>
           <Link className={s.options_item} href={routes.MESSENGER}>
