@@ -7910,8 +7910,6 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20997);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_font_google_target_css_path_src_shared_ui_material_components_Modals_SimpleModal_SimpleModal_tsx_import_Inter_arguments_subsets_latin_variableName_interFont___WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(99080);
-/* harmony import */ var next_font_google_target_css_path_src_shared_ui_material_components_Modals_SimpleModal_SimpleModal_tsx_import_Inter_arguments_subsets_latin_variableName_interFont___WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_font_google_target_css_path_src_shared_ui_material_components_Modals_SimpleModal_SimpleModal_tsx_import_Inter_arguments_subsets_latin_variableName_interFont___WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(65692);
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_mui_material__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(81013);
@@ -7923,7 +7921,6 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var shared_lib_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7562);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shared_lib_hooks__WEBPACK_IMPORTED_MODULE_2__, shared_lib_components__WEBPACK_IMPORTED_MODULE_5__]);
 ([shared_lib_hooks__WEBPACK_IMPORTED_MODULE_2__, shared_lib_components__WEBPACK_IMPORTED_MODULE_5__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
-
 
 
 
@@ -7953,7 +7950,7 @@ const SimpleModal = ({ isOpened , close , children , title  })=>{
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_mui_material__WEBPACK_IMPORTED_MODULE_1__.Fade, {
                         in: isOpened,
                         children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                            className: classnames__WEBPACK_IMPORTED_MODULE_3___default()((_style_module_scss__WEBPACK_IMPORTED_MODULE_6___default().wrapper), (_style_module_scss__WEBPACK_IMPORTED_MODULE_6___default())[theme || "light"], (next_font_google_target_css_path_src_shared_ui_material_components_Modals_SimpleModal_SimpleModal_tsx_import_Inter_arguments_subsets_latin_variableName_interFont___WEBPACK_IMPORTED_MODULE_7___default().className)),
+                            className: classnames__WEBPACK_IMPORTED_MODULE_3___default()((_style_module_scss__WEBPACK_IMPORTED_MODULE_6___default().wrapper), (_style_module_scss__WEBPACK_IMPORTED_MODULE_6___default())[theme || "light"]),
                             children: [
                                 /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                                     className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_6___default().header),

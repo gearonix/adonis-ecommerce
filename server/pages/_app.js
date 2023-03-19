@@ -4,18 +4,6 @@ exports.id = 2888;
 exports.ids = [2888];
 exports.modules = {
 
-/***/ 41510:
-/***/ ((module) => {
-
-// Exports
-module.exports = {
-	"style": {"fontFamily":"'__Inter_4b5723', '__Inter_Fallback_4b5723'","fontStyle":"normal"},
-	"className": "__className_4b5723"
-};
-
-
-/***/ }),
-
 /***/ 71200:
 /***/ ((module) => {
 
@@ -354,8 +342,6 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20997);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_font_google_target_css_path_src_app_providers_Layout_Layout_tsx_import_Inter_arguments_subsets_latin_variableName_interFont___WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(41510);
-/* harmony import */ var next_font_google_target_css_path_src_app_providers_Layout_Layout_tsx_import_Inter_arguments_subsets_latin_variableName_interFont___WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_font_google_target_css_path_src_app_providers_Layout_Layout_tsx_import_Inter_arguments_subsets_latin_variableName_interFont___WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var dev_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(37854);
 /* harmony import */ var widgets_Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7711);
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(59003);
@@ -370,11 +356,11 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([dev_
 
 
 
-
+// const interFont = Inter({ subsets: ['latin'] })
 const Layout = ({ children  })=>{
     const { theme  } = (0,shared_lib_hooks_useTheme__WEBPACK_IMPORTED_MODULE_4__/* .useTheme */ .F)();
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-        className: classnames__WEBPACK_IMPORTED_MODULE_3___default()((next_font_google_target_css_path_src_app_providers_Layout_Layout_tsx_import_Inter_arguments_subsets_latin_variableName_interFont___WEBPACK_IMPORTED_MODULE_6___default().className), theme, "layout"),
+        className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(theme, "layout"),
         children: [
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(dev_components__WEBPACK_IMPORTED_MODULE_1__/* .DevNavigation */ .w, {}),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(widgets_Header__WEBPACK_IMPORTED_MODULE_2__/* .Header */ .h, {}),
@@ -471,8 +457,8 @@ __webpack_async_result__();
 
 
 
-const ThemeProvider = ({ children  })=>{
-    const { value: theme , save: setTheme  } = (0,shared_lib_hooks_useLocalStorage__WEBPACK_IMPORTED_MODULE_6__/* .useLocalStorage */ ._)(shared_config_consts_others__WEBPACK_IMPORTED_MODULE_7__/* .LocalStorage.THEME */ .m.THEME, shared_config_consts_themes__WEBPACK_IMPORTED_MODULE_3__/* .Theme.LIGHT */ .Q.LIGHT);
+const ThemeProvider = ({ children , defaultTheme =shared_config_consts_themes__WEBPACK_IMPORTED_MODULE_3__/* .Theme.LIGHT */ .Q.LIGHT  })=>{
+    const { value: theme , save: setTheme  } = (0,shared_lib_hooks_useLocalStorage__WEBPACK_IMPORTED_MODULE_6__/* .useLocalStorage */ ._)(shared_config_consts_others__WEBPACK_IMPORTED_MODULE_7__/* .LocalStorage.THEME */ .m.THEME, defaultTheme);
     const muiTheme = (0,shared_lib_hooks_useTheme__WEBPACK_IMPORTED_MODULE_5__/* .useMuiTheme */ .$)(theme);
     const defaultProps = (0,react__WEBPACK_IMPORTED_MODULE_1__.useMemo)(()=>({
             theme,
@@ -1536,7 +1522,7 @@ module.exports = import("socket.io-client");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [2356,689,5205,1519,2921,4640,7854,9342,4326,6786], () => (__webpack_exec__(17774)));
+var __webpack_exports__ = __webpack_require__.X(0, [2356,689,9931,1519,2921,4640,7854,9342,4326,6786], () => (__webpack_exec__(17774)));
 module.exports = __webpack_exports__;
 
 })();
