@@ -17,7 +17,6 @@ export enum Assets{
     BICYCLE = '/assets/common/bicycle.png',
     ROCKET = '/assets/common/rocket.png',
     THANKS = '/assets/common/thanks.png',
-    CHAT = '/assets/common/chat.png'
 }
 
 export const ProductTypesAssets: Record<ProductTypesKeys, string> = {

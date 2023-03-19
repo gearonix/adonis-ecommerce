@@ -1,4 +1,4 @@
-import { FC, memo, useCallback, useEffect } from 'react'
+import { FC, memo, useCallback } from 'react'
 import s from './style.module.scss'
 import { SearchUsers } from 'features/Messenger'
 import { MessengerUser } from 'entities/Messenger'
@@ -12,7 +12,6 @@ import { useRouter } from 'next/router'
 import { useFilteredEffect } from 'shared/lib/hooks'
 import { getRoomByTargetId } from 'widgets/Messenger/lib/helpers/getRoomByTargetId'
 import { Display } from 'shared/lib/components'
-import { AiOutlineSearch } from 'shared/ui/icons'
 import { AiOutlineSmile } from 'react-icons/ai'
 import { useTranslation } from 'react-i18next'
 

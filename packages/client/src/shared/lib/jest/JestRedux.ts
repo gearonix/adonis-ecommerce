@@ -4,6 +4,7 @@ import { ValueOf } from 'shared/types/common'
 import { postSlice } from 'widgets/Posts'
 import { currentProductSlice } from 'widgets/CurrentProduct'
 import { createStore } from 'app/index'
+import { messengerSlice } from 'widgets/Messenger'
 
 export class JestRedux {
   store: Store
@@ -22,7 +23,8 @@ export class JestRedux {
 
     const asyncReducers: any = {
       posts: postSlice,
-      currentProduct: currentProductSlice
+      currentProduct: currentProductSlice,
+      messenger: messengerSlice
     }
 
     return createStore({

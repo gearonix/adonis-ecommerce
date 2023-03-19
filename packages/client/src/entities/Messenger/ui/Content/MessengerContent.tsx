@@ -10,6 +10,8 @@ import { routes } from 'shared/config/consts/routes'
 import { Assets } from 'shared/config/consts/assets'
 import { useTimeout } from 'shared/lib/hooks'
 import { useTranslation } from 'react-i18next'
+import { BiMessage, BiMessageCheck, BiMessageDetail } from 'react-icons/bi'
+import { RiMessage2Line } from 'react-icons/ri'
 
 interface Props{
   messages: Message[],
@@ -45,7 +47,7 @@ export const DefaultChat: FC = () => {
   return <Display when={toShow}>
     <WithSpring>
       <div className={s.default_chat_image}>
-        <NextImage src={Assets.CHAT} />
+        <BiMessageDetail/>
       </div>
       <h2 className={s.default_title}>Choose a chat
     or create a <Link href={routes.USERS}>

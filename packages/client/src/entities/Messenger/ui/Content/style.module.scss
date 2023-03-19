@@ -31,9 +31,15 @@
 }
 
 .default_chat_image{
-  @include imageWrapper(490px, 360px);
-  margin: 70px auto 0;
+  margin: 160px auto 0;
+  width: 20%;
+  @include flex(center,center);
+  svg{
+    @include size(160px,160px);
+    color: $color-absolute-200;
+  }
 }
+
 .default_title{
   margin-top: 50px;
   text-align: center;
