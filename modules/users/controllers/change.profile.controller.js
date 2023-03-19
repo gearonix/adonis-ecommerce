@@ -62,7 +62,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], ChangeProfileController.prototype, "changeUserBackground", null);
 ChangeProfileController = __decorate([
-    (0, common_1.Controller)('profile/change'),
+    (0, common_1.Controller)('users/change'),
     __metadata("design:paramtypes", [services_1.ProfileService])
 ], ChangeProfileController);
 exports.ChangeProfileController = ChangeProfileController;
