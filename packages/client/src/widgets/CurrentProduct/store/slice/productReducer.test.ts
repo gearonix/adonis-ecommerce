@@ -1,7 +1,7 @@
 import { JestRedux } from 'shared/lib/jest'
 import { Store } from 'app/store/store'
 import { currentProductSlice, productActions } from 'widgets/CurrentProduct'
-import { CurrentProductSlice, initialState } from 'widgets/CurrentProduct'
+import { CurrentProductSlice, productInitialState as initialState } from 'widgets/CurrentProduct'
 
 
 describe('productReducer', () => {

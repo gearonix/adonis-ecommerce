@@ -11,6 +11,6 @@ export type { CurrentProductApi } from './types'
 export type{ CurrentProductSlice, ProductComment,
   ProductComments } from './store/slice/initialState'
 
-export { productInitialState as productInitialState } from './store/slice/initialState'
+export { productInitialState } from './store/slice/initialState'
 
 export { default as ProductSelectors } from './store/selectors/currentProduct.selectors'

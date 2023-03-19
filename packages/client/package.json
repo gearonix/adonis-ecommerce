@@ -8,11 +8,12 @@
     "start": "next start",
     "lint": "eslint src/**/*.{js,jsx,ts,tsx} --fix",
     "storybook": "start-storybook -p 6006",
-    "loki": "npx loki test",
+    "loki": "npx loki test && npm run visual_report",
     "loki:approve": "npx loki approve",
     "loki:build": "loki --requireReference --reactUri file:./storybook-static",
     "storybook:build": "build-storybook",
     "test": "jest",
+    "visual_report": "node scripts/generate-visual-storybook-report/script.js && reg-cli --from .loki/report.json --report .loki/report.html",
     "test:watch": "jest --watch"
   },
   "dependencies": {

@@ -8,7 +8,7 @@ import { StateSchema } from 'app/store/types'
 type CreateStoreConfig = Partial<{
   middleware: CreateMiddleWare,
   asyncReducers: ReducersMapObject<StateSchema>,
-  preloadedState: DeepPartial<StateSchema>
+  preloadedState: Partial<StateSchema>
 }>
 
 export type Store = ReturnType<typeof createStore>

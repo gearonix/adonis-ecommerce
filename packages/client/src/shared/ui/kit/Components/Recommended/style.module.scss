@@ -2,14 +2,14 @@
 
 .item {
   @include padding(16px, 20px);
-  border: $br $bg-150;
   position: relative;
   @include itemHover;
-  border-radius: 4px;
+  border: $br $bg-selected;
 
   .item_title {
     margin-bottom: 9px;
     color: $bg-200;
+    font-size: 17px;
   }
 
   .item_description {
@@ -17,11 +17,11 @@
   }
 
   .item_image {
-    @include imageWrapper(115px, 90%, $rounded);
+    @include imageWrapper(97px, 97px, $rounded);
     box-sizing: border-box;
     position: absolute;
     top: 50%;
     transform: translate(0,-50%);
-    right: 0;
+    right: 10px;
   }
 }

@@ -1,6 +1,6 @@
 import { JestAsyncThunk } from 'shared/lib/jest'
 import { changeCommentsPage } from './changeCommentsPage'
-import { productActions, CurrentProductSlice, initialState } from 'widgets/CurrentProduct'
+import { productActions, CurrentProductSlice, productInitialState as initialState } from 'widgets/CurrentProduct'
 
 describe('changeCommentsPage', () => {
   let args: any

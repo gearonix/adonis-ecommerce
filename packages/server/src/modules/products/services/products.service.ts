@@ -70,6 +70,9 @@ export class ProductsService {
     const [data, count] = await this.products.findAndCount({
       where: { salesmanId },
       order: { productId: 'DESC' },
+      relations: {
+        salesman: true
+      },
       ...withLimit(page)
     })
     return { data, count }
@@ -82,11 +85,17 @@ export class ProductsService {
 
     return this.products.find(
         { where: { productId: In(saved?.map((i) => i.productId)) },
-          order: { productId: 'DESC' } })
+          order: { productId: 'DESC' },
+          relations: {
+            salesman: true
+          }
+        })
   }
 
   async getProductsByIds(body: SearchByIdsDTO) {
-    return this.products.find({ where: { productId: In(body.ids) } })
+    return this.products.find({ where: { productId: In(body.ids) }, relations: {
+      salesman: true
+    } })
   }
 
   async changeSavedCount(productId: number, mode: 'add' | 'remove') {

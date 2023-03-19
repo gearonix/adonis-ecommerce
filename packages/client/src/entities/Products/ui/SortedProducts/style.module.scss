@@ -6,6 +6,7 @@
   margin-top: 30px;
   background: $bg-absolute;
   border-radius: $rounded;
+  @include itemBorder;
   margin-bottom: 40px;
 
   .image_block {
@@ -30,13 +31,5 @@
     @include grid(4, 2);
     @include size(100%);
 
-
-    .item {
-      @include padding(16px, 20px);
-      border: $br $bg-150;
-      position: relative;
-      @include itemHover;
-
-    }
   }
 }

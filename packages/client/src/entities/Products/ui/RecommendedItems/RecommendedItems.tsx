@@ -1,6 +1,6 @@
 import s from './style.module.scss'
 import { ContainerTitle, RecommendedItemTall } from 'shared/ui/kit'
-import {FC, memo} from 'react'
+import { FC, memo } from 'react'
 import { RecommendedItemProps } from 'widgets/Products'
 import { Ternary } from 'shared/lib/components'
 import { GridPreloader } from 'shared/ui/material'

@@ -1,4 +1,4 @@
-import {FC, memo} from 'react'
+import { FC, memo } from 'react'
 import s from './style.module.scss'
 import { AiOutlineGithub } from 'shared/ui/icons'
 import { HoverLink, NextImage } from 'shared/ui/kit'
@@ -10,14 +10,16 @@ import { SlSocialVkontakte } from 'react-icons/sl'
 import { BsTelegram } from 'react-icons/bs'
 import { HiOutlineDesktopComputer } from 'react-icons/hi'
 import { useTranslation } from 'react-i18next'
+import { useTheme } from 'shared/lib/hooks'
 
 const Footer: FC = memo(() => {
   const { t } = useTranslation()
+  const { isLight } = useTheme()
   return <footer className={s.footer}>
     <div className={s.footer_block}>
       <div className={s.brand_block}>
         <div className={s.brand_logo}>
-          <NextImage src={Assets.LOGO}/>
+          <NextImage src={isLight ? Assets.LOGO_LIGHT : Assets.LOGO_DARK}/>
         </div>
         <p className={s.brand_text}>
           {t('Why_are')}

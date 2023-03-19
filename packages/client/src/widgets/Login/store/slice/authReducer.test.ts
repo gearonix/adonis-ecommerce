@@ -25,7 +25,7 @@ describe('Auth reducer', () => {
     expect(authSlice(state, authActions.authorizationFailed()).isAuthorized).toEqual(false)
   })
   test('logout', () => {
-    expect(authSlice(state, authActions.logout())).toEqual(defaultState)
+    expect(authSlice(state, authActions.logout())).toEqual(initialState)
   })
   test('authorizeUser', () => {
     const user = { userId: 1, avatar: 'avatar' } as User
