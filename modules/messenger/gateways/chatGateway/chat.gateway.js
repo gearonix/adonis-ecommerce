@@ -48,12 +48,8 @@ let ChatGateway = class ChatGateway {
         client.join((0, gatewayGroup_1.gatewayGroup)(types_1.MessengerGroups.MESSENGER_ROOM, roomId));
         client.to((0, gatewayGroup_1.gatewayGroup)(types_1.MessengerGroups.MESSENGER_ROOM, roomId))
             .emit(types_1.MessengerEvents.MESSAGE_READ);
-        console.log('SUBSCRIBE');
-        console.log(client.rooms);
     }
     async unsubscribeFromRoom(roomId, client) {
-        console.log('LEAVE');
-        console.log(client.rooms);
         client.leave((0, gatewayGroup_1.gatewayGroup)(types_1.MessengerGroups.MESSENGER_ROOM, roomId));
         client.to((0, gatewayGroup_1.gatewayGroup)(types_1.MessengerGroups.MESSENGER_ROOM, roomId))
             .emit(types_1.MessengerEvents.NO_LONGER_TYPING);

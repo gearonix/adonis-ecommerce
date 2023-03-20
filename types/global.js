@@ -36,5 +36,5 @@ var UserStatus;
     UserStatus["ONLINE"] = "online";
     UserStatus["OFFLINE"] = "offline";
 })(UserStatus = exports.UserStatus || (exports.UserStatus = {}));
-exports.PAGE_LIMIT = 6;
+exports.PAGE_LIMIT = 9;
 //# sourceMappingURL=global.js.map

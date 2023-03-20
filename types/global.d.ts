@@ -28,4 +28,4 @@ export declare enum UserStatus {
     ONLINE = "online",
     OFFLINE = "offline"
 }
-export declare const PAGE_LIMIT: 6;
+export declare const PAGE_LIMIT: 9;
