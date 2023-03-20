@@ -94,7 +94,9 @@ const MessengerAside = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)
         actions.unsubscribeFromRoom(selectedId);
         dispatch(widgets_Messenger__WEBPACK_IMPORTED_MODULE_5__/* .messengerActions.changeSelectedRoomId */ ._I.changeSelectedRoomId(id));
         dispatch(app_providers_Notifications__WEBPACK_IMPORTED_MODULE_8__/* .notifyActions.clearNotifications */ .cx.clearNotifications(id));
-    }, []);
+    }, [
+        selectedId
+    ]);
     (0,shared_lib_hooks__WEBPACK_IMPORTED_MODULE_10__/* .useFilteredEffect */ .El)(()=>{
         const roomId = (0,widgets_Messenger_lib_helpers_getRoomByTargetId__WEBPACK_IMPORTED_MODULE_15__/* .getRoomByTargetId */ .z)(targetId, rooms);
         if (roomId) {

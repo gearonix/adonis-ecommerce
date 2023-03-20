@@ -306,11 +306,11 @@ const createMessengerSocketApi = (socket)=>{
     return {
         subscribes: {
             onAddGroup (callback) {
-                socket.on?.(MessengerEvents.ADD_ROOM, callback);
+                socket.on(MessengerEvents.ADD_ROOM, callback);
             },
             onAddMessage (callback) {
-                socket.off?.(MessengerEvents.ADD_MESSAGE);
-                socket.on?.(MessengerEvents.ADD_MESSAGE, callback);
+                socket.off(MessengerEvents.ADD_MESSAGE);
+                socket.on(MessengerEvents.ADD_MESSAGE, callback);
             },
             onUserTyping (callback) {
                 socket.on(MessengerEvents.TYPING, ()=>{
@@ -318,12 +318,12 @@ const createMessengerSocketApi = (socket)=>{
                 });
             },
             onNoLongerTyping (callback) {
-                socket.on?.(MessengerEvents.NO_LONGER_TYPING, ()=>{
+                socket.on(MessengerEvents.NO_LONGER_TYPING, ()=>{
                     callback();
                 });
             },
             onMessagesRead (callback) {
-                socket.on?.(MessengerEvents.MESSAGE_READ, ()=>{
+                socket.on(MessengerEvents.MESSAGE_READ, ()=>{
                     callback();
                 });
             }
@@ -425,10 +425,11 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([sock
 const SocketProvider = ({ children  })=>{
     const userId = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_6__/* .useSelector */ .v9)(widgets_Login__WEBPACK_IMPORTED_MODULE_9__/* .AuthSelectors.userId */ .ce.userId);
     const router = (0,next_router__WEBPACK_IMPORTED_MODULE_8__.useRouter)();
+    console.log(userId);
     const connection = (0,socket_io_client__WEBPACK_IMPORTED_MODULE_1__.io)(`${app_config_config__WEBPACK_IMPORTED_MODULE_2__/* ["default"].WEBSOCKET_URL */ .Z.WEBSOCKET_URL}/${app_config_globals__WEBPACK_IMPORTED_MODULE_5__/* .SocketGateWays.messenger */ .oV.messenger}`, {
         withCredentials: true,
         extraHeaders: {
-            userId: userId.toString()
+            userId: userId?.toString?.()
         }
     });
     dev_components__WEBPACK_IMPORTED_MODULE_3__/* .DevGlobalVars.setSocket */ .P.setSocket("messenger", connection);
@@ -647,7 +648,9 @@ const MessengerInput = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)
             actions.sendMessage(roomId, values);
         }
         resetValue();
-    }, []);
+    }, [
+        roomId
+    ]);
     (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(resetValue, [
         roomId
     ]);
