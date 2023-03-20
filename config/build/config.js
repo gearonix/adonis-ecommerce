@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.appConfig = void 0;
 exports.appConfig = {
     PORT: 6868,
-    globalPrefix: 'api',
+    globalPrefix: 'adonis/api',
     appName: 'Adonis API',
     appVersion: '1.0.0',
     docsPrefix: '/api/docs',
