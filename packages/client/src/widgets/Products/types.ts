@@ -35,7 +35,8 @@ export interface SearchControlsForm{
 export interface SearchQuery extends SearchControlsForm{
     search: string,
     page: number,
-    inStock: boolean
+    inStock: boolean,
+    view?: ProductsView
 }
 
 export interface ProductsWithCount {
@@ -57,4 +58,9 @@ export interface ProductsApi {
     getProduct(id: number): Res<CurrentProductSlice>
 
     getCartProducts(ids: number[]): Res<Product[]>
+}
+
+export enum ProductsView{
+    NORMAL = 'normal',
+    TRANSFORMED = 'transformed'
 }

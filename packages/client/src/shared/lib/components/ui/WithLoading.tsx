@@ -4,14 +4,15 @@ import { CFC } from 'shared/types/components'
 import { useTimeout } from 'shared/lib/hooks'
 import { DefaultPreloader, PostsPreloader } from 'shared/ui/material'
 
-interface NoItemsProps{
+interface WithLoadingProps{
     when: any,
     title: string,
     Icon: FC,
     loading: boolean,
     Preloader?: FC,
     count?: number,
-    NotFound?: FC<{title: string, Icon: FC}>
+    NotFound?: FC<{title: string, Icon: FC}>,
+    className?: string
 }
 
 
@@ -22,8 +23,8 @@ interface PreloaderWrapperProps{
 }
 
 
-export const WithLoading: CFC<NoItemsProps> = (props) => {
-  const { title, Icon, when: noItems, children,
+export const WithLoading: CFC<WithLoadingProps> = (props) => {
+  const { title, Icon, when: noItems, children, className,
     NotFound = DefaultPreloader, ...preloaderProps } = props
 
 
@@ -32,7 +33,7 @@ export const WithLoading: CFC<NoItemsProps> = (props) => {
       <NotFound title={title} Icon={Icon}/>
     </Display>
     <Display when={!noItems}>
-      <WithSpring>
+      <WithSpring className={className}>
         {children}
       </WithSpring>
     </Display>

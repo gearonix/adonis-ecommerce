@@ -23,7 +23,7 @@ const UploadProductImages = memo<ProductImagesProps>(({ values }) => {
 
     values.setValue([...currentValues, file])
     setFiles([...files, fileUrl])
-  }, [values])
+  }, [values, currentValues])
 
   const removeFiles = () => {
     values.setValue([])

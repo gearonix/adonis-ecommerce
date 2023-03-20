@@ -1,6 +1,6 @@
 import { ProductModels, ProductRatings, ProductSizes, ProductTypes } from 'shared/types/elements/productTypes'
 import { KeyOf, ObjectNullable } from 'shared/types/common'
-import { SearchQuery } from 'widgets/Products/types'
+import { ProductsView, SearchQuery } from 'widgets/Products/types'
 import { User } from 'widgets/Profile'
 
 
@@ -42,7 +42,8 @@ export const productsInitialState: ProductsSlice = {
     rating: null,
     type: null,
     page: 0,
-    inStock: null
+    inStock: null,
+    view: ProductsView.NORMAL
   },
   isLoading: false
 }

@@ -6,6 +6,7 @@
   .image_wrapper{
     @include imageWrapper(100%, 100%, $rounded);
     margin: 0 auto;
+    cursor: pointer;
   }
   background: $color-300;
 

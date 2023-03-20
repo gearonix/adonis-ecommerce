@@ -1,4 +1,4 @@
-import { FC, memo, useCallback } from 'react'
+import { memo, useCallback } from 'react'
 import DefaultValues from 'widgets/Products/lib/form/initialValues'
 import { useDispatch } from 'shared/types/redux'
 import { addProduct } from 'widgets/Products/store/thunks/addProduct/addProduct'
@@ -8,12 +8,14 @@ import { useForm } from 'shared/lib/hooks'
 import { AddProductTemplate } from 'entities/Profile'
 import { ProductImages } from 'features/Profile'
 import { productsActions } from 'widgets/Products'
+import { WallPages } from 'widgets/Profile/types'
 
 interface AddProductProps{
-  cancel: () => void
+  cancel: () => void,
+  setPage: (page: WallPages) => void
 }
 
-const AddProduct = memo<AddProductProps>(({ cancel }) => {
+const AddProduct = memo<AddProductProps>(({ cancel, setPage }) => {
   const { form, reg } = useForm<AddProductForm>(addProductSchema, DefaultValues.addProduct())
   const dispatch = useDispatch()
 
@@ -21,6 +23,7 @@ const AddProduct = memo<AddProductProps>(({ cancel }) => {
     dispatch(productsActions.changeFilter({ page: 0 }))
     dispatch(addProduct(formValues))
     cancel()
+    setPage(WallPages.products)
   }, [])
 
 

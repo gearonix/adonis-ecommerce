@@ -18,10 +18,10 @@ const ProfileWall = memo(() => {
   return <ProfileWallContext.Provider value={{ page, setPage }}>
     <div className={s.profile_wall}>
       <ContentModal isOpened={addProduct.isOpen} close={addProduct.close}>
-        <AddProduct cancel={addProduct.close}/>
+        <AddProduct cancel={addProduct.close} setPage={setPage}/>
       </ContentModal>
       <ContentModal isOpened={addPost.isOpen} close={addPost.close}>
-        <AddPost close={addPost.close}/>
+        <AddPost close={addPost.close} setPage={setPage}/>
       </ContentModal>
       <ContentButtons openAddProduct={addProduct.open} openAddPost={addPost.open}/>
       <ProfileWallSwitcher/>

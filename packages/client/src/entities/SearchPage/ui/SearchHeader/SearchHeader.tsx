@@ -12,7 +12,7 @@ interface SearchHeaderProps{
 }
 
 const SearchHeader = memo<SearchHeaderProps>((props) => {
-  const { Filters, amount, filter: { page, inStock, ...filter } } = props
+  const { Filters, amount, filter: { page, inStock, view, rating, ...filter } } = props
   const helpers = new Helpers()
   const categories = Object.values(helpers.partial(filter)).join(', ')
   const { t } = useTranslation()

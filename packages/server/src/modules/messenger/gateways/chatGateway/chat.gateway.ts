@@ -50,16 +50,12 @@ export class ChatGateway {
 
       client.to(gatewayGroup(MessengerGroups.MESSENGER_ROOM, roomId))
           .emit(MessengerEvents.MESSAGE_READ)
-      console.log('SUBSCRIBE')
-      console.log(client.rooms)
     }
     @SubscribeMessage(MessengerEvents.UNSUBSCRIBE_FROM_ROOM)
     async unsubscribeFromRoom(
         @MessageBody('roomId') roomId: number,
         @ConnectedSocket() client: Socket
     ) {
-      console.log('LEAVE')
-      console.log(client.rooms)
       client.leave(gatewayGroup(MessengerGroups.MESSENGER_ROOM, roomId))
       client.to(gatewayGroup(MessengerGroups.MESSENGER_ROOM, roomId))
           .emit(MessengerEvents.NO_LONGER_TYPING)

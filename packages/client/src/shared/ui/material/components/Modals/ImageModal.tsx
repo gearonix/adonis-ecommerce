@@ -2,9 +2,9 @@ import { Backdrop, Fade, Modal } from '@mui/material'
 import { FC, useState } from 'react'
 import { ModalProps } from '../../types'
 import Image from 'next/image'
+import { NextImage } from 'shared/ui/kit'
 
 export const ImageModal: FC<ModalProps> = ({ isOpen, close, image, def }) => {
-  const [src, setSrc] = useState<string>(image as string)
   return image ? <Modal
     open={isOpen}
     onClose={() => close(false)}
@@ -23,7 +23,9 @@ export const ImageModal: FC<ModalProps> = ({ isOpen, close, image, def }) => {
     }}
   >
     <Fade in={isOpen} timeout={500}>
-      <Image src={src} alt={''} fill onError={() => def && setSrc(def)}/>
+      <div>
+        <NextImage src={image} def={def}/>
+      </div>
     </Fade>
   </Modal> : null
 }

@@ -19,6 +19,7 @@ const ProfileHeader = memo(() => {
   const isMe = useSelector(UserSelectors.isMe)
   const editProfile = useBooleanState()
   const profileInfo = useBooleanState()
+  const settings = useBooleanState()
   const { t } = useTranslation()
   const { subscribes, actions } = useAuthSocket()
   const dispatch = useDispatch()
@@ -40,9 +41,14 @@ const ProfileHeader = memo(() => {
       title={`${t('Detailed_information')} (${user.userName})`}>
       <UserInfo user={user}/>
     </SimpleModal>
+    <SimpleModal isOpened={settings.isOpen}
+      close={settings.close} title={`Settings (${user.userName})`}>
+      <div>settings</div>
+    </SimpleModal>
     <ProfileHeaderTemp ChangeBackground={<ChangeBackground/>}
       openProfile={editProfile.open}
       openInfo={profileInfo.open}
+      openSettings={settings.open}
       user={user}
       isMe={isMe}
     />

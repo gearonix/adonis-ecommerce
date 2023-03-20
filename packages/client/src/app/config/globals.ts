@@ -46,4 +46,4 @@ export enum SocketGateWays{
     auth = 'auth'
 }
 
-export const PAGE_LIMIT = 6 as const
+export const PAGE_LIMIT = 9 as const

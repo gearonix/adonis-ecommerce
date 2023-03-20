@@ -14,20 +14,22 @@ import cn from 'classnames'
 export interface ProfileHeaderTemplate {
   ChangeBackground: ReactElement,
   openProfile: () => void,
-  openInfo: () => void
+  openInfo: () => void,
+  openSettings: () => void,
   user: ObjectNullable<FormattedUser>,
   isMe: Nullable<boolean>,
 }
 
 
-const ProfileHeaderTemp = memo<ProfileHeaderTemplate>((props) => {
+const ProfileHeaderTemplate = memo<ProfileHeaderTemplate>((props) => {
   const { t } = useTranslation()
   const { ChangeBackground, openProfile,
-    openInfo, user, isMe } = props
+    openInfo, user, isMe, openSettings } = props
 
   return <div className={s.profile_header}>
     <div className={s.profile_background}>
-      <ProfileBackground src={user.background} ChangeBackground={ChangeBackground}/>
+      <ProfileBackground src={user.background}
+        ChangeBackground={ChangeBackground} openSettings={openSettings}/>
     </div>
 
     <div className={s.info_block}>
@@ -58,4 +60,4 @@ const ProfileHeaderTemp = memo<ProfileHeaderTemplate>((props) => {
   </div>
 })
 
-export default ProfileHeaderTemp
+export default ProfileHeaderTemplate

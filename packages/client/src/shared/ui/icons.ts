@@ -1,4 +1,4 @@
-export { FiHeart, FiType } from 'react-icons/fi'
+export { FiHeart, FiType, FiSettings } from 'react-icons/fi'
 
 export { GiHamburgerMenu, GiTopHat, GiMaterialsScience } from 'react-icons/gi'
 

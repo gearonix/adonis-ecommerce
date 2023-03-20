@@ -11,6 +11,16 @@
       @include imageWrapper(100%, 100%, $rounded);
       margin: 0 auto;
     }
+    svg{
+      @include absolute(18px,18px);
+      @include size(26px, 26px);
+      opacity: 0.75;
+      transition: transform 200ms;
+      &:hover{
+        transform: rotate(45deg);
+        opacity: 1;
+      }
+    }
     background: $color-300;
 
 

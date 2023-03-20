@@ -14,6 +14,23 @@
     display: flex;
     gap: 16px;
   }
+  .attached_image{
+    @include imageWrapper(230px, 120px, $rounded);
+    position: absolute;
+    top: -125px;
+    opacity: 0.8;
+    left: 0;
+    svg{
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      background: $bg-absolute-hover;
+      opacity: 0.66;
+      border-radius: 100%;
+      padding: 4px;
+      @include size(13px, 13px);
+    }
+  }
 
   .image_wrapper {
     svg {
