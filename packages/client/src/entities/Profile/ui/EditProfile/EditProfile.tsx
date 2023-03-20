@@ -1,4 +1,4 @@
-import {FC, memo} from 'react'
+import { FC, memo } from 'react'
 import s from './style.module.scss'
 import { Button, ProfileBackground, UserAvatar } from 'shared/ui/kit'
 import { HeadField, TextArea } from 'shared/ui/material'

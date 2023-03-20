@@ -1,4 +1,4 @@
-import {FC, memo, MutableRefObject, useRef, useState} from 'react'
+import { FC, memo, MutableRefObject, useRef, useState } from 'react'
 import s from './style.module.scss'
 import { NextImage } from 'shared/ui/kit'
 import { ImageModal } from 'shared/ui/material'

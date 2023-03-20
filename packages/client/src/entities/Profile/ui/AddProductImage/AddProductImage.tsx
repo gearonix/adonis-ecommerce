@@ -1,4 +1,4 @@
-import {FC, memo, useState} from 'react'
+import { FC, memo, useState } from 'react'
 import s from './style.module.scss'
 import { NextImage } from 'shared/ui/kit'
 import { ImageCarouselProps } from 'features/ProductPage'

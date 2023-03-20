@@ -3,4 +3,4 @@ export { notifySlice, notifyActions } from './store/notificationsReducer'
 export { useNewMessage } from './hooks/useNewMessage'
 export { NewMessage } from './toasts/NewMessage'
 
-export {default as NotifySelectors} from './store/notify.selectors'
+export { default as NotifySelectors } from './store/notify.selectors'

@@ -1,4 +1,4 @@
-import {FC, memo} from 'react'
+import { FC, memo } from 'react'
 import s from './style.module.scss'
 import { HiOutlineFlag, MdMessage, TfiWorld } from 'shared/ui/icons'
 import { Button, NextImage } from 'shared/ui/kit'

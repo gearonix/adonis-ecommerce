@@ -15,7 +15,7 @@ import { MessengerModule } from '@modules/messenger'
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath: `.${process.env.NODE_ENV}.env`,
+      envFilePath: `.env`,
       cache: true
     }),
     TypeOrmModule.forRoot(buildDBConfig()),

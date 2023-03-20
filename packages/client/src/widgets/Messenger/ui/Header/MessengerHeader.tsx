@@ -1,4 +1,4 @@
-import {FC, memo, useEffect} from 'react'
+import { FC, memo, useEffect } from 'react'
 import { MessengerHeaderTemplate } from 'entities/Messenger'
 import { SearchMessages } from 'features/Messenger'
 import { useRouter } from 'next/router'
@@ -46,7 +46,7 @@ const MessengerHeader = memo(() => {
   }, [])
 
   return <MessengerHeaderTemplate Search={SearchMessages}
-                                  user={opponent} label={userStatus}/>
+    user={opponent} label={userStatus}/>
 })
 
 export default MessengerHeader

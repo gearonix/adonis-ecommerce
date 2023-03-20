@@ -1,4 +1,4 @@
-import {FC, memo} from 'react'
+import { FC, memo } from 'react'
 import { NextImage } from 'shared/ui/kit'
 import { DefaultAssets } from 'shared/config/consts/assets'
 import { BsDot } from 'shared/ui/icons'

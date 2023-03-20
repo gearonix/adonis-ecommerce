@@ -1,4 +1,4 @@
-import {FC, memo} from 'react'
+import { FC, memo } from 'react'
 import s from './style.module.scss'
 import { YouMayLikeItem } from 'shared/ui/kit'
 import { RecommendedItemProps } from 'widgets/Products'

@@ -1,4 +1,4 @@
-import {FC, memo} from 'react'
+import { FC, memo } from 'react'
 import { FormattedUser } from 'widgets/Profile/store/selectors'
 import { BsInfoLg, GiTopHat, SlPresent, AiOutlineCar, BsBuilding, CiAt } from 'shared/ui/icons'
 import s from './style.module.scss'

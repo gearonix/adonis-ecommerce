@@ -1,6 +1,6 @@
 import { Store } from 'app/store/store'
 import { JestRedux } from 'shared/lib/jest'
-import {AuthSelectors, AuthSlice } from 'widgets/Login'
+import { AuthSelectors, AuthSlice } from 'widgets/Login'
 
 
 describe('AuthSelectors', () => {

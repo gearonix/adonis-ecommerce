@@ -1,4 +1,4 @@
-import {FC, memo} from 'react'
+import { FC, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import s from './style.module.scss'
 import { RiQuestionAnswerLine } from 'shared/ui/icons'

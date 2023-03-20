@@ -1,5 +1,5 @@
 import { AxiosResponse as Res } from 'shared/types/common'
-import {Post, PostsSlice } from './store/slice/initialState'
+import { Post, PostsSlice } from './store/slice/initialState'
 
 export interface AddPostForm {
     message: string,

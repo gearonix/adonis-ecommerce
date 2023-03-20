@@ -1,4 +1,4 @@
-import {FC, memo, useEffect} from 'react'
+import { FC, memo, useEffect } from 'react'
 import { useForm } from 'shared/lib/hooks'
 import { createDefaultValues } from 'widgets/Users/lib/defaultValues'
 import { UsersHeader as UsersHeaderTemplate } from 'entities/Users'

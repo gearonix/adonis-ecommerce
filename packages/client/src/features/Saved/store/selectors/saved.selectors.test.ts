@@ -1,7 +1,7 @@
 import { JestRedux } from 'shared/lib/jest'
 import { Store } from 'shared/types/redux'
 import { SavedSlice } from 'features/Saved'
-import SavedSelectors from 'features/Saved/store/selectors/saved.selectors';
+import SavedSelectors from 'features/Saved/store/selectors/saved.selectors'
 
 
 describe('SavedSelectors', () => {

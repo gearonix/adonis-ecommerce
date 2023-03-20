@@ -5,7 +5,7 @@ import { addPostSchema } from 'widgets/Posts/lib/formSchemes'
 import { AddPostForm } from 'widgets/Posts/types'
 import { useForm } from 'shared/lib/hooks/useForm'
 import { AddPostTemplate } from 'entities/Profile'
-import {postActions} from 'widgets/Posts';
+import { postActions } from 'widgets/Posts'
 
 interface AddPostProps{
   close: () => void

@@ -1,4 +1,4 @@
-import React, {FC, memo} from 'react'
+import React, { FC, memo } from 'react'
 import s from './style.module.scss'
 import { ObjectNullable } from 'shared/types/common'
 import { SearchQuery } from 'widgets/Products/types'

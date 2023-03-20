@@ -1,4 +1,4 @@
-import {FC, memo} from 'react'
+import { FC, memo } from 'react'
 import s from './style.module.scss'
 import { AutoComplete, Checkbox, HeadField, NumberField, Rating,
   StandardSelect, TextArea } from 'shared/ui/material'

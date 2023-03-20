@@ -1,4 +1,4 @@
-import {FC, memo} from 'react'
+import { FC, memo } from 'react'
 import s from './style.module.scss'
 import { Button, RecommendedItem } from 'shared/ui/kit'
 import { routes } from 'shared/config/consts/routes'

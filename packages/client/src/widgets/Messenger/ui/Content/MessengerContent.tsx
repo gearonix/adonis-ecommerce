@@ -1,4 +1,4 @@
-import {FC, memo, useEffect} from 'react'
+import { FC, memo, useEffect } from 'react'
 import s from './style.module.scss'
 import { MessengerContent as MessengerContentTemp } from 'entities/Messenger'
 import { useFilteredEffect } from 'shared/lib/hooks'
