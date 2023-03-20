@@ -41,7 +41,7 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shar
 
 
 const SearchHeader = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)((props)=>{
-    const { Filters , amount , filter: { page , inStock , ...filter }  } = props;
+    const { Filters , amount , filter: { page , inStock , view , rating , ...filter }  } = props;
     const helpers = new shared_lib_helpers__WEBPACK_IMPORTED_MODULE_2__/* .Helpers */ .ZH();
     const categories = Object.values(helpers.partial(filter)).join(", ");
     const { t  } = (0,react_i18next__WEBPACK_IMPORTED_MODULE_3__.useTranslation)();

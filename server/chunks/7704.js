@@ -1,5 +1,5 @@
-exports.id = 3344;
-exports.ids = [3344];
+exports.id = 7704;
+exports.ids = [7704];
 exports.modules = {
 
 /***/ 3632:
@@ -25,7 +25,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 63344:
+/***/ 7704:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -60,9 +60,9 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shar
 
 
 
-const ProfileHeaderTemp = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)((props)=>{
+const ProfileHeaderTemplate = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)((props)=>{
     const { t  } = (0,react_i18next__WEBPACK_IMPORTED_MODULE_4__.useTranslation)();
-    const { ChangeBackground , openProfile , openInfo , user , isMe  } = props;
+    const { ChangeBackground , openProfile , openInfo , user , isMe , openSettings  } = props;
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
         className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_9___default().profile_header),
         children: [
@@ -70,7 +70,8 @@ const ProfileHeaderTemp = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.me
                 className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_9___default().profile_background),
                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_2__/* .ProfileBackground */ .Om, {
                     src: user.background,
-                    ChangeBackground: ChangeBackground
+                    ChangeBackground: ChangeBackground,
+                    openSettings: openSettings
                 })
             }),
             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
@@ -147,7 +148,7 @@ const ProfileHeaderTemp = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.me
         ]
     });
 });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ProfileHeaderTemp);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ProfileHeaderTemplate);
 
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });

@@ -68,14 +68,16 @@ const ProfileWall = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)(()
                     isOpened: addProduct.isOpen,
                     close: addProduct.close,
                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(widgets_Products__WEBPACK_IMPORTED_MODULE_4__/* .AddProduct */ .Rl, {
-                        cancel: addProduct.close
+                        cancel: addProduct.close,
+                        setPage: setPage
                     })
                 }),
                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_material__WEBPACK_IMPORTED_MODULE_3__/* .ContentModal */ .K5, {
                     isOpened: addPost.isOpen,
                     close: addPost.close,
                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(widgets_Posts__WEBPACK_IMPORTED_MODULE_9__/* .AddPost */ .Tc, {
-                        close: addPost.close
+                        close: addPost.close,
+                        setPage: setPage
                     })
                 }),
                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(widgets_Profile__WEBPACK_IMPORTED_MODULE_2__/* .ContentButtons */ .sy, {

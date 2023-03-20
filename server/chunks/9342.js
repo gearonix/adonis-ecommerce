@@ -425,7 +425,6 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([sock
 const SocketProvider = ({ children  })=>{
     const userId = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_6__/* .useSelector */ .v9)(widgets_Login__WEBPACK_IMPORTED_MODULE_9__/* .AuthSelectors.userId */ .ce.userId);
     const router = (0,next_router__WEBPACK_IMPORTED_MODULE_8__.useRouter)();
-    console.log(userId);
     const connection = (0,socket_io_client__WEBPACK_IMPORTED_MODULE_1__.io)(`${app_config_config__WEBPACK_IMPORTED_MODULE_2__/* ["default"].WEBSOCKET_URL */ .Z.WEBSOCKET_URL}/${app_config_globals__WEBPACK_IMPORTED_MODULE_5__/* .SocketGateWays.messenger */ .oV.messenger}`, {
         withCredentials: true,
         extraHeaders: {

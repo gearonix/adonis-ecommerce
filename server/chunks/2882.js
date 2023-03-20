@@ -46,6 +46,7 @@ const ProfileHeader = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_2__.memo)(
     const isMe = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_4__/* .useSelector */ .v9)(widgets_Profile__WEBPACK_IMPORTED_MODULE_7__/* .UserSelectors.isMe */ .G0.isMe);
     const editProfile = (0,shared_lib_hooks_useBooleanState__WEBPACK_IMPORTED_MODULE_8__/* .useBooleanState */ .z)();
     const profileInfo = (0,shared_lib_hooks_useBooleanState__WEBPACK_IMPORTED_MODULE_8__/* .useBooleanState */ .z)();
+    const settings = (0,shared_lib_hooks_useBooleanState__WEBPACK_IMPORTED_MODULE_8__/* .useBooleanState */ .z)();
     const { t  } = (0,react_i18next__WEBPACK_IMPORTED_MODULE_9__.useTranslation)();
     const { subscribes , actions  } = (0,widgets_Profile_lib_hooks_useAuthSocket__WEBPACK_IMPORTED_MODULE_11__/* .useAuthSocket */ .s)();
     const dispatch = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_4__/* .useDispatch */ .I0)();
@@ -75,10 +76,19 @@ const ProfileHeader = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_2__.memo)(
                     user: user
                 })
             }),
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_material__WEBPACK_IMPORTED_MODULE_6__/* .SimpleModal */ .Yy, {
+                isOpened: settings.isOpen,
+                close: settings.close,
+                title: `Settings (${user.userName})`,
+                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                    children: "settings"
+                })
+            }),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(entities_Profile__WEBPACK_IMPORTED_MODULE_1__/* .ProfileHeader */ .gF, {
                 ChangeBackground: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(features_Profile__WEBPACK_IMPORTED_MODULE_3__/* .ChangeBackground */ .lD, {}),
                 openProfile: editProfile.open,
                 openInfo: profileInfo.open,
+                openSettings: settings.open,
                 user: user,
                 isMe: isMe
             })

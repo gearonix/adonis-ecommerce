@@ -51,7 +51,6 @@ const MessengerHeader = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo
         subscribes.onAddGroup((room)=>{
             dispatch(widgets_Messenger__WEBPACK_IMPORTED_MODULE_9__/* .messengerActions.addRoom */ ._I.addRoom(room));
         });
-        console.log(targetId);
         actions.startChat(targetId);
     }, [
         targetId

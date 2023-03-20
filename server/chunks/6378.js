@@ -46,6 +46,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var shared_lib_hooks_useForm__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(26073);
 /* harmony import */ var entities_Profile__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(3669);
 /* harmony import */ var widgets_Posts__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(87094);
+/* harmony import */ var widgets_Profile_types__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(89665);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([widgets_Posts_store_thunks__WEBPACK_IMPORTED_MODULE_3__, widgets_Posts_lib_formSchemes__WEBPACK_IMPORTED_MODULE_4__, shared_lib_hooks_useForm__WEBPACK_IMPORTED_MODULE_5__, entities_Profile__WEBPACK_IMPORTED_MODULE_6__, widgets_Posts__WEBPACK_IMPORTED_MODULE_7__]);
 ([widgets_Posts_store_thunks__WEBPACK_IMPORTED_MODULE_3__, widgets_Posts_lib_formSchemes__WEBPACK_IMPORTED_MODULE_4__, shared_lib_hooks_useForm__WEBPACK_IMPORTED_MODULE_5__, entities_Profile__WEBPACK_IMPORTED_MODULE_6__, widgets_Posts__WEBPACK_IMPORTED_MODULE_7__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
@@ -56,13 +57,15 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([widg
 
 
 
-const AddPost = ({ close  })=>{
+
+const AddPost = ({ close , setPage  })=>{
     const { reg , submit  } = (0,shared_lib_hooks_useForm__WEBPACK_IMPORTED_MODULE_5__/* .useForm */ .c)(widgets_Posts_lib_formSchemes__WEBPACK_IMPORTED_MODULE_4__/* .addPostSchema */ .y);
     const dispatch = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_2__/* .useDispatch */ .I0)();
     const onSubmit = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)((values)=>{
         dispatch(widgets_Posts__WEBPACK_IMPORTED_MODULE_7__/* .postActions.setPage */ .rZ.setPage(0));
         dispatch((0,widgets_Posts_store_thunks__WEBPACK_IMPORTED_MODULE_3__/* .addPost */ .q)(values));
         close();
+        setPage(widgets_Profile_types__WEBPACK_IMPORTED_MODULE_8__/* .WallPages.posts */ .O.posts);
     }, []);
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(entities_Profile__WEBPACK_IMPORTED_MODULE_6__/* .AddPostTemplate */ .bv, {
         reg: reg,
