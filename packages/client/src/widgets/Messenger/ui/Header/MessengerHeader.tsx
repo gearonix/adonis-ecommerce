@@ -25,6 +25,7 @@ const MessengerHeader = memo(() => {
     subscribes.onAddGroup((room) => {
       dispatch(messengerActions.addRoom(room))
     })
+    console.log(targetId)
 
     actions.startChat(targetId)
   }, [targetId])

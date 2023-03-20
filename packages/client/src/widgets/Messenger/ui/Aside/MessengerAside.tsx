@@ -30,7 +30,7 @@ const MessengerAside: FC = memo(() => {
     actions.unsubscribeFromRoom(selectedId)
     dispatch(messengerActions.changeSelectedRoomId(id))
     dispatch(notifyActions.clearNotifications(id))
-  }, [])
+  }, [selectedId])
 
   useFilteredEffect(() => {
     const roomId = getRoomByTargetId(targetId, rooms)

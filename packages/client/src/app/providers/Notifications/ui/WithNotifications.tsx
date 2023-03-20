@@ -6,6 +6,7 @@ import { useAuthSocket } from 'widgets/Profile/lib/hooks/useAuthSocket'
 import { useDispatch, useSelector } from 'shared/types/redux'
 import { useEffect } from 'react'
 import { MessengerSelectors } from 'widgets/Messenger'
+import { AuthSelectors } from 'widgets/Login'
 
 
 const WithNotifications = () => {
@@ -13,6 +14,7 @@ const WithNotifications = () => {
   const { subscribes } = useAuthSocket()
   const dispatch = useDispatch()
   const selectedRoom = useSelector(MessengerSelectors.selectedId)
+  const userId = useSelector(AuthSelectors.userId)
   const isMessageValid = useNewMessage()
 
   useEffect(() => {
@@ -22,7 +24,7 @@ const WithNotifications = () => {
         dispatch(notifyActions.addNotification(message))
       }
     })
-  }, [selectedRoom])
+  }, [selectedRoom, userId])
 
 
   return <ToastContainer

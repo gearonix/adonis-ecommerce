@@ -29,7 +29,7 @@ const MessengerInput = memo(() => {
       actions.sendMessage(roomId, values)
     }
     resetValue()
-  }, [])
+  }, [roomId])
 
   useEffect(resetValue, [roomId])
 

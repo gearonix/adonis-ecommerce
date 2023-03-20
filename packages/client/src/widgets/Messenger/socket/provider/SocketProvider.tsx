@@ -12,8 +12,9 @@ import { AuthSelectors } from 'widgets/Login'
 const SocketProvider: CFC = ({ children }) => {
   const userId = useSelector(AuthSelectors.userId) as number
   const router = useRouter()
+  console.log(userId)
   const connection = io(`${appConfig.WEBSOCKET_URL}/${SocketGateWays.messenger}`,
-      { withCredentials: true, extraHeaders: { userId: userId.toString() } })
+      { withCredentials: true, extraHeaders: { userId: userId?.toString?.() } })
 
   DevGlobalVars.setSocket('messenger', connection)
 
