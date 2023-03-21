@@ -87,7 +87,8 @@ const SearchUsers = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)(()
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
         style: {
             width: "90%",
-            margin: "0 auto"
+            margin: "0 auto",
+            marginBottom: "6px"
         },
         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_material__WEBPACK_IMPORTED_MODULE_2__/* .SearchInput */ .Mj, {
             values: reg("search")

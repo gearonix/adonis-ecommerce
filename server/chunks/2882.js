@@ -79,9 +79,9 @@ const ProfileHeader = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_2__.memo)(
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_material__WEBPACK_IMPORTED_MODULE_6__/* .SimpleModal */ .Yy, {
                 isOpened: settings.isOpen,
                 close: settings.close,
-                title: `Settings (${user.userName})`,
-                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                    children: "settings"
+                title: `${t("Settings")} (${user.userName})`,
+                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(entities_Profile__WEBPACK_IMPORTED_MODULE_1__/* .Settings */ .Zr, {
+                    Logout: features_Profile__WEBPACK_IMPORTED_MODULE_3__/* .Logout */ .RD
                 })
             }),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(entities_Profile__WEBPACK_IMPORTED_MODULE_1__/* .ProfileHeader */ .gF, {

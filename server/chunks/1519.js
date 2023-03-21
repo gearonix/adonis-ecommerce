@@ -146,6 +146,25 @@ module.exports = {
 
 /***/ }),
 
+/***/ 13367:
+/***/ ((module) => {
+
+// Exports
+module.exports = {
+	"settings": "style_settings__KVIaZ",
+	"theme_container": "style_theme_container__J6OIH",
+	"language_container": "style_language_container__T7Erl",
+	"dropdowns": "style_dropdowns__0nbWk",
+	"theme": "style_theme__xHIMh",
+	"image_wrapper": "style_image_wrapper__euVKX",
+	"radio": "style_radio__tKjPP",
+	"logout_container": "style_logout_container__hAhhK",
+	"languages": "style_languages__AdFBj"
+};
+
+
+/***/ }),
+
 /***/ 32828:
 /***/ ((module) => {
 
@@ -1586,6 +1605,7 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony export */   "Ai": () => (/* binding */ AddProductTemplate),
 /* harmony export */   "JI": () => (/* binding */ EditProfile),
 /* harmony export */   "SO": () => (/* reexport safe */ _ui_Post_PostsAndComments_Post_Post__WEBPACK_IMPORTED_MODULE_1__.Z),
+/* harmony export */   "Zr": () => (/* reexport safe */ _ui_Settings_Settings__WEBPACK_IMPORTED_MODULE_5__.Z),
 /* harmony export */   "ao": () => (/* reexport safe */ _ui_UserInfo_UserInfo__WEBPACK_IMPORTED_MODULE_3__.Z),
 /* harmony export */   "bv": () => (/* binding */ AddPostTemplate),
 /* harmony export */   "gF": () => (/* binding */ ProfileHeader)
@@ -1596,8 +1616,10 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var _ui_Post_PostsAndComments_Comment_CommentTemplate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(28435);
 /* harmony import */ var _ui_UserInfo_UserInfo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(68493);
 /* harmony import */ var _ui_AddProductImage_AddProductImage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(39538);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_ui_Post_PostsAndComments_Post_Post__WEBPACK_IMPORTED_MODULE_1__, _ui_Post_PostsAndComments_Comment_CommentTemplate__WEBPACK_IMPORTED_MODULE_2__, _ui_UserInfo_UserInfo__WEBPACK_IMPORTED_MODULE_3__, _ui_AddProductImage_AddProductImage__WEBPACK_IMPORTED_MODULE_4__]);
-([_ui_Post_PostsAndComments_Post_Post__WEBPACK_IMPORTED_MODULE_1__, _ui_Post_PostsAndComments_Comment_CommentTemplate__WEBPACK_IMPORTED_MODULE_2__, _ui_UserInfo_UserInfo__WEBPACK_IMPORTED_MODULE_3__, _ui_AddProductImage_AddProductImage__WEBPACK_IMPORTED_MODULE_4__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+/* harmony import */ var _ui_Settings_Settings__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(69343);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_ui_Post_PostsAndComments_Post_Post__WEBPACK_IMPORTED_MODULE_1__, _ui_Post_PostsAndComments_Comment_CommentTemplate__WEBPACK_IMPORTED_MODULE_2__, _ui_UserInfo_UserInfo__WEBPACK_IMPORTED_MODULE_3__, _ui_AddProductImage_AddProductImage__WEBPACK_IMPORTED_MODULE_4__, _ui_Settings_Settings__WEBPACK_IMPORTED_MODULE_5__]);
+([_ui_Post_PostsAndComments_Post_Post__WEBPACK_IMPORTED_MODULE_1__, _ui_Post_PostsAndComments_Comment_CommentTemplate__WEBPACK_IMPORTED_MODULE_2__, _ui_UserInfo_UserInfo__WEBPACK_IMPORTED_MODULE_3__, _ui_AddProductImage_AddProductImage__WEBPACK_IMPORTED_MODULE_4__, _ui_Settings_Settings__WEBPACK_IMPORTED_MODULE_5__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
 
 
 
@@ -1879,6 +1901,164 @@ const Post = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_2__.memo)(({ post  
     });
 });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Post);
+
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
+
+/***/ }),
+
+/***/ 69343:
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20997);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(13367);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_style_module_scss__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(21519);
+/* harmony import */ var shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(567);
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(65692);
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_mui_material__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_icons_bi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(76652);
+/* harmony import */ var react_icons_bi__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_icons_bi__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_icons_hi__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(61111);
+/* harmony import */ var react_icons_hi__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_icons_hi__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(16290);
+/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_icons_fa__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var shared_lib_hooks__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(59684);
+/* harmony import */ var shared_config_consts_themes__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(10579);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(59003);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_9__);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__, shared_lib_hooks__WEBPACK_IMPORTED_MODULE_7__]);
+([shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__, shared_lib_hooks__WEBPACK_IMPORTED_MODULE_7__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
+
+
+
+
+
+
+
+
+
+
+const Settings = ({ Logout  })=>{
+    const { setTheme , theme , isLight  } = (0,shared_lib_hooks__WEBPACK_IMPORTED_MODULE_7__/* .useTheme */ .Fg)();
+    const { isEnglish , toggleLang , t  } = (0,shared_lib_hooks__WEBPACK_IMPORTED_MODULE_7__/* .useLanguage */ .ZK)();
+    return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+        className: classnames__WEBPACK_IMPORTED_MODULE_9___default()((_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().settings), "with_theme", theme),
+        children: [
+            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().theme_container),
+                children: [
+                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h3", {
+                        children: [
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_icons_hi__WEBPACK_IMPORTED_MODULE_5__.HiOutlineMoon, {}),
+                            " ",
+                            t("Theme")
+                        ]
+                    }),
+                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().dropdowns),
+                        children: [
+                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().theme),
+                                onClick: ()=>setTheme?.(shared_config_consts_themes__WEBPACK_IMPORTED_MODULE_8__/* .Theme.LIGHT */ .Q.LIGHT),
+                                children: [
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().image_wrapper),
+                                        children: [
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_mui_material__WEBPACK_IMPORTED_MODULE_3__.Radio, {
+                                                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().radio),
+                                                checked: isLight
+                                            }),
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__/* .NextImage */ .oH, {
+                                                src: shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_2__/* .ThemesAssets.LIGHT */ .Jz.LIGHT
+                                            })
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h4", {
+                                        children: t("Light")
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().theme),
+                                onClick: ()=>setTheme?.(shared_config_consts_themes__WEBPACK_IMPORTED_MODULE_8__/* .Theme.DARK */ .Q.DARK),
+                                children: [
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().image_wrapper),
+                                        children: [
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_mui_material__WEBPACK_IMPORTED_MODULE_3__.Radio, {
+                                                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().radio),
+                                                checked: !isLight
+                                            }),
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__/* .NextImage */ .oH, {
+                                                src: shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_2__/* .ThemesAssets.DARK */ .Jz.DARK
+                                            })
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h4", {
+                                        children: t("Dark")
+                                    })
+                                ]
+                            })
+                        ]
+                    })
+                ]
+            }),
+            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().language_container),
+                children: [
+                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h3", {
+                        children: [
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_icons_fa__WEBPACK_IMPORTED_MODULE_6__.FaLanguage, {}),
+                            " ",
+                            t("Language")
+                        ]
+                    }),
+                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().languages),
+                        children: [
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_mui_material__WEBPACK_IMPORTED_MODULE_3__.FormControlLabel, {
+                                control: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_mui_material__WEBPACK_IMPORTED_MODULE_3__.Radio, {
+                                    checked: !isEnglish,
+                                    onClick: toggleLang
+                                }),
+                                label: t("Russian")
+                            }),
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_mui_material__WEBPACK_IMPORTED_MODULE_3__.FormControlLabel, {
+                                control: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_mui_material__WEBPACK_IMPORTED_MODULE_3__.Radio, {
+                                    checked: isEnglish,
+                                    onClick: toggleLang
+                                }),
+                                label: t("English")
+                            })
+                        ]
+                    })
+                ]
+            }),
+            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().logout_container),
+                children: [
+                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h3", {
+                        children: [
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_icons_bi__WEBPACK_IMPORTED_MODULE_4__.BiLogOut, {}),
+                            " ",
+                            t("Sign out")
+                        ]
+                    }),
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Logout, {})
+                ]
+            })
+        ]
+    });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Settings);
 
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });
@@ -2362,6 +2542,7 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "L6": () => (/* reexport safe */ _ui_AddPost_AddPost__WEBPACK_IMPORTED_MODULE_0__.Z),
 /* harmony export */   "PL": () => (/* reexport safe */ _ui_ChangeAvatar_ChangeAvatar__WEBPACK_IMPORTED_MODULE_1__.Z),
+/* harmony export */   "RD": () => (/* reexport safe */ _ui_Logout_Logout__WEBPACK_IMPORTED_MODULE_7__.Z),
 /* harmony export */   "VU": () => (/* reexport safe */ _ui_ProductImage_UploadProductImages__WEBPACK_IMPORTED_MODULE_6__.Z),
 /* harmony export */   "lD": () => (/* reexport safe */ _ui_ChangeBackground_ChangeBackground__WEBPACK_IMPORTED_MODULE_2__.Z),
 /* harmony export */   "nx": () => (/* reexport safe */ _ui_OpenAddProduct_OpenAddProduct__WEBPACK_IMPORTED_MODULE_4__.Z),
@@ -2374,8 +2555,10 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var _ui_OpenAddProduct_OpenAddProduct__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4208);
 /* harmony import */ var _ui_OpenProfileEdit_ChangeProfile__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(805);
 /* harmony import */ var _ui_ProductImage_UploadProductImages__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(42161);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_ui_AddPost_AddPost__WEBPACK_IMPORTED_MODULE_0__, _ui_ChangeAvatar_ChangeAvatar__WEBPACK_IMPORTED_MODULE_1__, _ui_ChangeBackground_ChangeBackground__WEBPACK_IMPORTED_MODULE_2__, _ui_ContentButtons_ContentButtons__WEBPACK_IMPORTED_MODULE_3__, _ui_OpenAddProduct_OpenAddProduct__WEBPACK_IMPORTED_MODULE_4__, _ui_OpenProfileEdit_ChangeProfile__WEBPACK_IMPORTED_MODULE_5__, _ui_ProductImage_UploadProductImages__WEBPACK_IMPORTED_MODULE_6__]);
-([_ui_AddPost_AddPost__WEBPACK_IMPORTED_MODULE_0__, _ui_ChangeAvatar_ChangeAvatar__WEBPACK_IMPORTED_MODULE_1__, _ui_ChangeBackground_ChangeBackground__WEBPACK_IMPORTED_MODULE_2__, _ui_ContentButtons_ContentButtons__WEBPACK_IMPORTED_MODULE_3__, _ui_OpenAddProduct_OpenAddProduct__WEBPACK_IMPORTED_MODULE_4__, _ui_OpenProfileEdit_ChangeProfile__WEBPACK_IMPORTED_MODULE_5__, _ui_ProductImage_UploadProductImages__WEBPACK_IMPORTED_MODULE_6__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+/* harmony import */ var _ui_Logout_Logout__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(5369);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_ui_AddPost_AddPost__WEBPACK_IMPORTED_MODULE_0__, _ui_ChangeAvatar_ChangeAvatar__WEBPACK_IMPORTED_MODULE_1__, _ui_ChangeBackground_ChangeBackground__WEBPACK_IMPORTED_MODULE_2__, _ui_ContentButtons_ContentButtons__WEBPACK_IMPORTED_MODULE_3__, _ui_OpenAddProduct_OpenAddProduct__WEBPACK_IMPORTED_MODULE_4__, _ui_OpenProfileEdit_ChangeProfile__WEBPACK_IMPORTED_MODULE_5__, _ui_ProductImage_UploadProductImages__WEBPACK_IMPORTED_MODULE_6__, _ui_Logout_Logout__WEBPACK_IMPORTED_MODULE_7__]);
+([_ui_AddPost_AddPost__WEBPACK_IMPORTED_MODULE_0__, _ui_ChangeAvatar_ChangeAvatar__WEBPACK_IMPORTED_MODULE_1__, _ui_ChangeBackground_ChangeBackground__WEBPACK_IMPORTED_MODULE_2__, _ui_ContentButtons_ContentButtons__WEBPACK_IMPORTED_MODULE_3__, _ui_OpenAddProduct_OpenAddProduct__WEBPACK_IMPORTED_MODULE_4__, _ui_OpenProfileEdit_ChangeProfile__WEBPACK_IMPORTED_MODULE_5__, _ui_ProductImage_UploadProductImages__WEBPACK_IMPORTED_MODULE_6__, _ui_Logout_Logout__WEBPACK_IMPORTED_MODULE_7__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
 
 
 
@@ -2702,6 +2885,44 @@ const ContentButton = ({ children , page  })=>{
     });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ContentButtons);
+
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
+
+/***/ }),
+
+/***/ 5369:
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20997);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(57987);
+/* harmony import */ var shared_types_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(17418);
+/* harmony import */ var widgets_Login_store_thunks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(71397);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([react_i18next__WEBPACK_IMPORTED_MODULE_1__, widgets_Login_store_thunks__WEBPACK_IMPORTED_MODULE_3__]);
+([react_i18next__WEBPACK_IMPORTED_MODULE_1__, widgets_Login_store_thunks__WEBPACK_IMPORTED_MODULE_3__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
+
+
+
+const Logout = ()=>{
+    const dispatch = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_2__/* .useDispatch */ .I0)();
+    const { t  } = (0,react_i18next__WEBPACK_IMPORTED_MODULE_1__.useTranslation)();
+    const onClick = ()=>{
+        dispatch((0,widgets_Login_store_thunks__WEBPACK_IMPORTED_MODULE_3__/* .logoutUser */ .TX)());
+    };
+    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
+        className: "primary_button",
+        onClick: onClick,
+        children: t("Sign out")
+    });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Logout);
 
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });
@@ -3762,6 +3983,7 @@ __webpack_async_result__();
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Jz": () => (/* binding */ ThemesAssets),
 /* harmony export */   "XU": () => (/* binding */ ProductTypesAssets),
 /* harmony export */   "de": () => (/* binding */ Assets),
 /* harmony export */   "h9": () => (/* binding */ DefaultAssets),
@@ -3798,6 +4020,11 @@ var MyProjectsAssets;
 (function(MyProjectsAssets) {
     MyProjectsAssets["SpaceCalendar"] = "/assets/my_projects/space-calendar.png";
 })(MyProjectsAssets || (MyProjectsAssets = {}));
+var ThemesAssets;
+(function(ThemesAssets) {
+    ThemesAssets["LIGHT"] = "/assets/themes/light.svg";
+    ThemesAssets["DARK"] = "/assets/themes/dark.svg";
+})(ThemesAssets || (ThemesAssets = {}));
 
 
 /***/ }),
@@ -5012,10 +5239,12 @@ const useTheme = ()=>{
         const selectedTheme = theme == shared_config_consts_themes__WEBPACK_IMPORTED_MODULE_2__/* .Theme.LIGHT */ .Q.LIGHT ? shared_config_consts_themes__WEBPACK_IMPORTED_MODULE_2__/* .Theme.DARK */ .Q.DARK : shared_config_consts_themes__WEBPACK_IMPORTED_MODULE_2__/* .Theme.LIGHT */ .Q.LIGHT;
         setTheme?.(selectedTheme);
     };
+    const isLight = theme === shared_config_consts_themes__WEBPACK_IMPORTED_MODULE_2__/* .Theme.LIGHT */ .Q.LIGHT;
     return {
         theme,
         toggleTheme,
-        isLight: theme === shared_config_consts_themes__WEBPACK_IMPORTED_MODULE_2__/* .Theme.LIGHT */ .Q.LIGHT
+        isLight,
+        setTheme
     };
 };
 const useMuiTheme = (theme)=>{
@@ -5789,7 +6018,7 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shar
 
 
 
-const ProfileBackground = ({ src , ChangeBackground , openSettings  })=>{
+const ProfileBackground = ({ src , ChangeBackground , openSettings , isMe  })=>{
     const error = (0,shared_lib_hooks_useBooleanState__WEBPACK_IMPORTED_MODULE_2__/* .useBooleanState */ .z)();
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
@@ -5801,7 +6030,7 @@ const ProfileBackground = ({ src , ChangeBackground , openSettings  })=>{
             }),
             ChangeBackground,
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_lib_components__WEBPACK_IMPORTED_MODULE_5__/* .Display */ .sS, {
-                when: openSettings,
+                when: openSettings && isMe,
                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_icons_fi__WEBPACK_IMPORTED_MODULE_4__.FiSettings, {
                     onClick: openSettings
                 })
@@ -6349,17 +6578,17 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20997);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_icons_fi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(92750);
-/* harmony import */ var react_icons_fi__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_icons_fi__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(13048);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(20926);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var shared_types_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(17418);
-/* harmony import */ var widgets_Login__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(70698);
-/* harmony import */ var shared_lib_components__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7562);
-/* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(57987);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([widgets_Login__WEBPACK_IMPORTED_MODULE_5__, shared_lib_components__WEBPACK_IMPORTED_MODULE_6__, react_i18next__WEBPACK_IMPORTED_MODULE_7__]);
-([widgets_Login__WEBPACK_IMPORTED_MODULE_5__, shared_lib_components__WEBPACK_IMPORTED_MODULE_6__, react_i18next__WEBPACK_IMPORTED_MODULE_7__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+/* harmony import */ var shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(13048);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(20926);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var shared_types_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(17418);
+/* harmony import */ var widgets_Login__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(70698);
+/* harmony import */ var shared_lib_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7562);
+/* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(57987);
+/* harmony import */ var react_icons_bi__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(76652);
+/* harmony import */ var react_icons_bi__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_icons_bi__WEBPACK_IMPORTED_MODULE_7__);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([widgets_Login__WEBPACK_IMPORTED_MODULE_4__, shared_lib_components__WEBPACK_IMPORTED_MODULE_5__, react_i18next__WEBPACK_IMPORTED_MODULE_6__]);
+([widgets_Login__WEBPACK_IMPORTED_MODULE_4__, shared_lib_components__WEBPACK_IMPORTED_MODULE_5__, react_i18next__WEBPACK_IMPORTED_MODULE_6__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
@@ -6369,13 +6598,13 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([widg
 
 
 const WriteToUser = ({ className , targetId  })=>{
-    const isAuthorized = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_4__/* .useSelector */ .v9)(widgets_Login__WEBPACK_IMPORTED_MODULE_5__/* .AuthSelectors.isAuthorized */ .ce.isAuthorized);
-    const { t  } = (0,react_i18next__WEBPACK_IMPORTED_MODULE_7__.useTranslation)();
-    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_lib_components__WEBPACK_IMPORTED_MODULE_6__/* .Display */ .sS, {
+    const isAuthorized = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_3__/* .useSelector */ .v9)(widgets_Login__WEBPACK_IMPORTED_MODULE_4__/* .AuthSelectors.isAuthorized */ .ce.isAuthorized);
+    const { t  } = (0,react_i18next__WEBPACK_IMPORTED_MODULE_6__.useTranslation)();
+    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_lib_components__WEBPACK_IMPORTED_MODULE_5__/* .Display */ .sS, {
         when: isAuthorized,
-        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_3___default()), {
+        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_2___default()), {
             href: {
-                pathname: shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_2__/* .routes.MESSENGER */ ._.MESSENGER,
+                pathname: shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_1__/* .routes.MESSENGER */ ._.MESSENGER,
                 query: {
                     targetId
                 }
@@ -6385,7 +6614,7 @@ const WriteToUser = ({ className , targetId  })=>{
                 children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("button", {
                     className: "outlined_button",
                     children: [
-                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_icons_fi__WEBPACK_IMPORTED_MODULE_1__.FiMessageCircle, {}),
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_icons_bi__WEBPACK_IMPORTED_MODULE_7__.BiMessageDetail, {}),
                         t("Write message")
                     ]
                 })
@@ -6474,33 +6703,36 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20997);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var features_SearchPage_lib_helpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(33999);
+/* harmony import */ var features_SearchPage_lib_helpers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(33999);
 /* harmony import */ var shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(21519);
-/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(17849);
-/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_style_module_scss__WEBPACK_IMPORTED_MODULE_2__);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__]);
-shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(17849);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_style_module_scss__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(57987);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__, react_i18next__WEBPACK_IMPORTED_MODULE_2__]);
+([shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__, react_i18next__WEBPACK_IMPORTED_MODULE_2__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
 
 
 
 
 const HeaderInput = ({ submit , values  })=>{
+    const { t  } = (0,react_i18next__WEBPACK_IMPORTED_MODULE_2__.useTranslation)();
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_2___default().container),
+        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_3___default().container),
         children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-            className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_2___default().search),
+            className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_3___default().search),
             children: [
                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("input", {
-                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_2___default().search_input),
-                    placeholder: "Search",
+                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_3___default().search_input),
+                    placeholder: t("Search"),
                     ...values.inputProps,
-                    onKeyDown: (0,features_SearchPage_lib_helpers__WEBPACK_IMPORTED_MODULE_3__/* .onEnter */ .g)(submit),
+                    onKeyDown: (0,features_SearchPage_lib_helpers__WEBPACK_IMPORTED_MODULE_4__/* .onEnter */ .g)(submit),
                     autoComplete: "off"
                 }),
                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__/* .Button */ .zx, {
                     w: "90px",
                     onClick: submit,
-                    children: "Search"
+                    children: t("Search")
                 })
             ]
         })
@@ -6545,17 +6777,20 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20997);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(24988);
-/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_style_module_scss__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(24988);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_style_module_scss__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(21519);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(59003);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__]);
 shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
 
 
-const BlueLink = ({ children , onClick =()=>{} , style  })=>{
+
+const BlueLink = ({ children , onClick =()=>{} , style , className  })=>{
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_2___default().link),
+        className: classnames__WEBPACK_IMPORTED_MODULE_2___default()((_style_module_scss__WEBPACK_IMPORTED_MODULE_3___default().link), className),
         style: style,
         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__/* .HoverLink */ .EU, {
             onClick: onClick,
@@ -8210,14 +8445,25 @@ const SizeButtons = ({ onClick  })=>{
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_mui_material__WEBPACK_IMPORTED_MODULE_1__);
 
 
-const Switcher = ({ onChange , value , label , color  })=>{
+const Switcher = ({ onChange , value , label , color , Icon  })=>{
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_mui_material__WEBPACK_IMPORTED_MODULE_1__.FormControlLabel, {
         control: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_mui_material__WEBPACK_IMPORTED_MODULE_1__.Switch, {
             checked: value,
             onChange: onChange,
             color: color
         }),
-        label: label
+        label: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+            children: [
+                Icon && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Icon, {
+                    style: {
+                        marginBottom: "-2px",
+                        marginRight: "3px"
+                    }
+                }),
+                " ",
+                label
+            ]
+        })
     });
 };
 

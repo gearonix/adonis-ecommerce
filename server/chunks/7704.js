@@ -71,7 +71,8 @@ const ProfileHeaderTemplate = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1_
                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_2__/* .ProfileBackground */ .Om, {
                     src: user.background,
                     ChangeBackground: ChangeBackground,
-                    openSettings: openSettings
+                    openSettings: openSettings,
+                    isMe: isMe
                 })
             }),
             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
