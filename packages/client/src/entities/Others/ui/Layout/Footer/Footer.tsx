@@ -78,8 +78,8 @@ const Footer: FC = memo(() => {
           <Link href={routes.LOGIN}>
             <HoverLink bold>{t('My_Profile')}</HoverLink> <br/>
           </Link>
-          <Link href={routes.SIGNUP}>
-            <HoverLink>{t('Sign_up')}</HoverLink><br/>
+          <Link href={routes.USERS}>
+            <HoverLink>{t('Users')}</HoverLink><br/>
           </Link>
         </div>
       </nav>

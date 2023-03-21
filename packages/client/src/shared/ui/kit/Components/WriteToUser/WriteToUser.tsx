@@ -7,6 +7,7 @@ import { useSelector } from 'shared/types/redux'
 import { AuthSelectors } from 'widgets/Login'
 import { Display } from 'shared/lib/components'
 import { useTranslation } from 'react-i18next'
+import { BiMessageDetail } from 'react-icons/bi'
 
 interface Props{
   className?: string,
@@ -23,7 +24,7 @@ export const WriteToUser : FC<Props> = ({ className, targetId }) => {
       query: { targetId }
     }}>
       <div className={className}>
-        <button className="outlined_button"><FiMessageCircle />{t('Write message')}</button>
+        <button className="outlined_button"><BiMessageDetail />{t('Write message')}</button>
       </div>
     </Link>
   </Display>

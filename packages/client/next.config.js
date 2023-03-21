@@ -13,7 +13,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 })
 
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   sassOptions: {
     includePaths: [path.join(__dirname, 'src/shared')]
   },

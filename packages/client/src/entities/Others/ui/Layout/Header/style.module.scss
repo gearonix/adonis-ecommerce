@@ -78,14 +78,16 @@
   @include flex(space-between, center);
 
   .navbar {
-    @include flex(space-between, center);
-    @include size(25%, 24px);
+    @include flex(stretch, center);
+    @include size(45%, 24px);
+    gap: 50px;
 
     a {
       @include flex(stretch, center);
 
       svg {
-        margin-right: 4px;
+        margin-right: 5px;
+        @include size(17px, 17px);
       }
     }
 

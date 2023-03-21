@@ -1,0 +1,61 @@
+@use 'src/shared/css/common.scss' as *;
+
+.user{
+  @include size(96%, 208px);
+  @include itemBorder;
+  padding: 17px;
+  display: flex;
+  gap: 20px;
+  margin: 30px auto 0;
+  position: relative;
+  .avatar{
+    @include imageWrapper(160px,160px,10px);
+    border: $br $bg-150;
+  }
+  .info{
+    .user_name{
+      font-size: 22px;
+      svg{
+        margin-right: 6px;
+      }
+      margin-bottom: 5px;
+      color: $color-absolute;
+    }
+    .user_name.salesman{
+      color: $link-color-max;
+    }
+    .location{
+      font-size: 18px;
+      margin-top: 8px
+    }
+    .email, .description{
+      color: $color-absolute-200;
+    }
+    .email{
+      text-decoration: underline;
+      margin-top: 3px;
+    }
+  }
+  .write_message{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    button{
+      min-width: 186px;
+      height: 34px;
+      font-size: 17px;
+      svg{
+        margin-right: 6px;
+        margin-bottom: -2px;
+        @include size(17px, 17px);
+      }
+    }
+  }
+  .date{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 15px;
+    color: $color-absolute-200;
+  }
+}

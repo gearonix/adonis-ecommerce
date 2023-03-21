@@ -1,19 +1,23 @@
-import { FC, memo, useEffect, useState } from 'react'
+import React, { memo, useEffect } from 'react'
 import { useDispatch, useSelector } from 'shared/types/redux'
 import { getUsers } from 'widgets/Users/store/thunks/getUsers'
-import { RequiredState } from 'app/store/types'
-import Link from 'next/link'
-import { routes } from 'shared/config/consts/routes'
-import { Pagination } from 'shared/ui/material'
+import { Pagination, ProductsPreloader } from 'shared/ui/material'
 import { PAGE_LIMIT } from 'app/config/globals'
 import { userAdapterSelectors, usersActions } from 'widgets/Users/store/slice/usersReducer'
 import { UsersSelectors } from 'widgets/Users'
+import { User } from 'entities/Users'
+import s from './style.module.scss'
+import { AiOutlineShoppingCart as CartIcon } from 'react-icons/ai'
+import { NotFound, WithLoading } from 'shared/ui/kit'
+import cn from 'classnames'
+import { FiUsers } from 'react-icons/fi'
 
 
 const UsersList = memo(() => {
   const users = useSelector(userAdapterSelectors.selectAll)
   const count = useSelector(UsersSelectors.count)
   const page = useSelector(UsersSelectors.page)
+  const isLoading = useSelector(UsersSelectors.isLoading)
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(getUsers({ page }))
@@ -23,12 +27,15 @@ const UsersList = memo(() => {
     dispatch(usersActions.changePage(page))
   }
 
-  return <>
-    {users.map((user, idx) => <Link href={`${routes.USERS}/${user.userId}`} key={idx}>
-      <h1>{user.email}</h1>
-    </Link>)
-    }
-    <Pagination count={count / PAGE_LIMIT} onChange={onPageChange} page={page} />
+  return <><div className={s.users}>
+    <WithLoading when={!users.length} title={'Users'} Icon={FiUsers}
+      loading={isLoading} Preloader={ProductsPreloader} count={6}
+      NotFound={() => <NotFound title={'Users'} Icon={FiUsers} w={100}
+      />}>
+      {users.map((user) => <User user={user} key={user.userId}/>)}
+    </WithLoading>
+  </div>
+  <Pagination count={count / PAGE_LIMIT} onChange={onPageChange} page={page} />
   </>
 })
 

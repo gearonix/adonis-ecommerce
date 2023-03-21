@@ -1,6 +1,9 @@
 @use 'src/shared/css/common.scss' as *;
 
-.container{
-  width: 74%;
-  margin: 40px auto 0;
+.users{
+  @include customScroll;
+  height: 900px;
+  width: 103%;
+  overflow-y: auto;
+  overflow-x: hidden;
 }

@@ -1,6 +1,14 @@
 import { FC, memo } from 'react'
 import s from './style.module.scss'
-import { AiOutlineSearch, FaHeart, FaInfo, FaShoppingCart, FaUserAlt, MdMessage } from 'shared/ui/icons'
+import {
+  AiOutlineSearch,
+  AiOutlineShoppingCart,
+  FaHeart,
+  FaInfo,
+  FaShoppingCart,
+  FaUserAlt,
+  MdMessage
+} from 'shared/ui/icons'
 import Link from 'next/link'
 import { HoverLink, Logo, NextImage } from 'shared/ui/kit'
 import { routes } from 'shared/config/consts/routes'
@@ -9,6 +17,7 @@ import { useSelector } from 'shared/types/redux'
 import { AuthSelectors } from 'widgets/Login'
 import { DefaultAssets } from 'shared/config/consts/assets'
 import { Display, Ternary } from 'shared/lib/components'
+import { HiUsers } from 'react-icons/hi'
 
 export interface HeaderSkeletonProps {
   Search: FC,
@@ -61,6 +70,12 @@ const Header: FC<HeaderSkeletonProps> = memo(({ DropDowns, Burger, Search }) => 
           </Link>
           <Link href={routes.MESSENGER}>
             <HoverLink><MdMessage/> {t('Messages')}</HoverLink>
+          </Link>
+          <Link href={routes.USERS}>
+            <HoverLink><HiUsers/> {t('Users')}</HoverLink>
+          </Link>
+          <Link href={routes.CART}>
+            <HoverLink><AiOutlineShoppingCart/> {t('My_Cart')}</HoverLink>
           </Link>
           <Link href={routes.ABOUT}>
             <HoverLink><FaInfo/> {t('About')}</HoverLink>

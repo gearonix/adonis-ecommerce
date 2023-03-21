@@ -12,11 +12,7 @@ interface SearchForm{
 }
 
 interface HeaderInputProps{
-  Component: FC<{
-    submit: () => void,
-    values: FieldValues,
-    form?: any
-  }>
+  Component: any
 }
 
 const helpers = new Helpers()

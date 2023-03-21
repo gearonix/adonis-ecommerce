@@ -4,6 +4,7 @@ import { SearchInput } from 'shared/ui/material'
 import { UserRoles } from 'app/config/globals'
 import { Checkbox } from '@mui/material'
 import { createFieldValues } from 'shared/lib/helpers'
+import { useTranslation } from 'react-i18next'
 
 interface UsersHeaderProps{
   form: any,
@@ -12,6 +13,7 @@ interface UsersHeaderProps{
 
 
 const UsersHeader : FC<UsersHeaderProps> = ({ form, reg }) => {
+  const { t } = useTranslation()
   const onCheckBoxChange = (e: unknown, value: boolean) => {
     form.setValue('role', value ? UserRoles.SALESMAN : null)
   }
@@ -23,7 +25,7 @@ const UsersHeader : FC<UsersHeaderProps> = ({ form, reg }) => {
     <div className={s.controls_buttons}>
       <div>
         <Checkbox onChange={onCheckBoxChange} title={'In stock'} value={true}/>
-        <span>Only Salesman</span>
+        <span>{t('Only Salesman')}</span>
       </div>
     </div>
   </article>

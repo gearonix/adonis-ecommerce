@@ -3,6 +3,8 @@ import { initialState, UsersSlice } from './initialState'
 import { User } from 'widgets/Profile'
 import { NewUsers } from 'widgets/Users/types'
 import { StateSchema } from 'app/store/types'
+import { withLoading } from 'shared/lib/helpers'
+import { getUsers } from 'widgets/Users/store/thunks/getUsers'
 
 const usersAdapter = createEntityAdapter<User>({
   selectId: (user) => user.userId,
@@ -21,6 +23,9 @@ const userReducer = createSlice({
     changePage(state, { payload }: PayloadAction<number>) {
       state.page = payload
     }
+  },
+  extraReducers: (builder) => {
+    withLoading(builder, getUsers)
   }
 })
 

@@ -6,7 +6,7 @@ import { ProductTypes } from 'shared/types/elements'
 import { Product } from 'widgets/Products'
 
 interface RecommendedItemsProps{
-  Component: FC<RecommendedItemProps>,
+  Component: any,
   type?: KeyOf<typeof ProductTypes>
 }
 
