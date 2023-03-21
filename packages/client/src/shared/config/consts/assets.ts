@@ -32,3 +32,8 @@ export const ProductTypesAssets: Record<ProductTypesKeys, string> = {
 export enum MyProjectsAssets{
     SpaceCalendar = '/assets/my_projects/space-calendar.png'
 }
+
+export enum ThemesAssets{
+    LIGHT = '/assets/themes/light.svg',
+    DARK = '/assets/themes/dark.svg'
+}

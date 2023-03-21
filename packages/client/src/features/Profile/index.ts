@@ -5,4 +5,4 @@ export { default as ContentButtons } from './ui/ContentButtons/ContentButtons'
 export { default as OpenAddProduct } from './ui/OpenAddProduct/OpenAddProduct'
 export { default as OpenModal } from './ui/OpenProfileEdit/ChangeProfile'
 export { default as ProductImages } from './ui/ProductImage/UploadProductImages'
-
+export { default as Logout } from './ui/Logout/Logout'

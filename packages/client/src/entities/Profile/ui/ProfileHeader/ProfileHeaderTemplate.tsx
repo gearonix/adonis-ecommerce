@@ -29,7 +29,8 @@ const ProfileHeaderTemplate = memo<ProfileHeaderTemplate>((props) => {
   return <div className={s.profile_header}>
     <div className={s.profile_background}>
       <ProfileBackground src={user.background}
-        ChangeBackground={ChangeBackground} openSettings={openSettings}/>
+        ChangeBackground={ChangeBackground}
+        openSettings={openSettings} isMe={isMe}/>
     </div>
 
     <div className={s.info_block}>

@@ -1,6 +1,6 @@
-import { ProfileHeader as ProfileHeaderTemp, UserInfo } from 'entities/Profile'
+import { ProfileHeader as ProfileHeaderTemp, Settings, UserInfo } from 'entities/Profile'
 import { memo } from 'react'
-import { ChangeBackground } from 'features/Profile'
+import { ChangeBackground, Logout } from 'features/Profile'
 import { useDispatch, useSelector } from 'shared/types/redux'
 import { selectReformattedUser } from 'widgets/Profile/store/selectors'
 import { ContentModal, SimpleModal } from 'shared/ui/material'
@@ -43,7 +43,7 @@ const ProfileHeader = memo(() => {
     </SimpleModal>
     <SimpleModal isOpened={settings.isOpen}
       close={settings.close} title={`Settings (${user.userName})`}>
-      <div>settings</div>
+      <Settings Logout={Logout}/>
     </SimpleModal>
     <ProfileHeaderTemp ChangeBackground={<ChangeBackground/>}
       openProfile={editProfile.open}

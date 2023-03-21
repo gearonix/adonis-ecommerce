@@ -1,0 +1,65 @@
+@use 'src/shared/css/common.scss' as *;
+
+
+.settings{
+  .theme_container, .language_container{
+    width: 100%;
+    height: 138px;
+    @include flex(space-between);
+    padding: 15px 7px 7px;
+
+    h3{
+      @include inlineStyles($xm, $color-absolute, normal);
+    }
+    .dropdowns{
+      height: 100%;
+      width: 78%;
+      @include flex(space-around);
+    }
+    .theme{
+      width: 130px;
+      .image_wrapper{
+        @include imageWrapper(100%, 78px, 3px);
+        overflow: initial;
+      }
+      .radio{
+        @include absolute(-45px, 50%, 1);
+        transform: translate(0, -50%);
+      }
+      h4{
+        text-align: center;
+        font-size: 18px;
+        margin-top: 6px;
+      }
+    }
+  }
+  .language_container, .logout_container{
+    @include flex(space-between);
+    height: 60px;
+    h3{
+      @include inlineStyles($xm, $color-absolute, normal);
+      svg{
+        margin-right: 3px;
+      }
+    }
+  }
+  .language_container{
+    h3{
+      margin-top: 6px;
+    }
+    .languages{
+      & > *{
+        margin-right: 38px;
+      }
+    }
+  }
+  .logout_container{
+    margin-top: 20px;
+    button{
+      width: 155px;
+      margin-top: 10px;
+      height: 34px;
+
+    }
+  }
+}

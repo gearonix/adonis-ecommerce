@@ -9,22 +9,24 @@ import { Display } from 'shared/lib/components'
 interface Props{
     src: string | null,
     ChangeBackground: ReactElement,
-    openSettings?: () => void
+    openSettings?: () => void,
+    isMe?: boolean
 }
 
 
-export const ProfileBackground : FC<Props> = ({ src, ChangeBackground, openSettings }) => {
-  const error = useBooleanState()
+export const ProfileBackground : FC<Props> =
+    ({ src, ChangeBackground, openSettings, isMe }) => {
+      const error = useBooleanState()
 
-  return <>
-    {src && !error.isOpen ? <ExistingBackground src={src}
-      onError={error.open}/> : <div className={s.default}/>}
-    {ChangeBackground}
-    <Display when={openSettings}>
-      <FiSettings onClick={openSettings}/>
-    </Display>
-  </>
-}
+      return <>
+        {src && !error.isOpen ? <ExistingBackground src={src}
+          onError={error.open}/> : <div className={s.default}/>}
+        {ChangeBackground}
+        <Display when={openSettings && isMe}>
+          <FiSettings onClick={openSettings}/>
+        </Display>
+      </>
+    }
 
 const ExistingBackground: FC<{src: string, onError: () => void}> = ({ src, onError }) => {
   const modal = useBooleanState()
