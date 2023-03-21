@@ -9,6 +9,8 @@
   box-sizing: border-box;
   transition: background 200ms;
   border-bottom: $br $bg-150;
+  box-shadow: $shadow;
+
 
   &:hover {
     background: $bg-absolute-hover;

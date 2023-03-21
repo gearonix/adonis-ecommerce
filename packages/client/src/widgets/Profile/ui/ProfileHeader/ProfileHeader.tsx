@@ -42,7 +42,7 @@ const ProfileHeader = memo(() => {
       <UserInfo user={user}/>
     </SimpleModal>
     <SimpleModal isOpened={settings.isOpen}
-      close={settings.close} title={`Settings (${user.userName})`}>
+      close={settings.close} title={`${t('Settings')} (${user.userName})`}>
       <Settings Logout={Logout}/>
     </SimpleModal>
     <ProfileHeaderTemp ChangeBackground={<ChangeBackground/>}

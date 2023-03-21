@@ -22,7 +22,7 @@ const SearchUsers: FC = memo(() => {
     return () => sub.unsubscribe()
   }, [])
 
-  return <div style={{ width: '90%', margin: '0 auto' }}>
+  return <div style={{ width: '90%', margin: '0 auto', marginBottom: '6px' }}>
     <SearchInput values={reg('search')} />
   </div>
 })

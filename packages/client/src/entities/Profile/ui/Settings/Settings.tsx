@@ -17,11 +17,11 @@ interface SettingsProps{
 
 const Settings : FC<SettingsProps> = ({ Logout }) => {
   const { setTheme, theme, isLight } = useTheme()
-  const { isEnglish, toggleLang } = useLanguage()
+  const { isEnglish, toggleLang, t } = useLanguage()
 
   return <div className={cn(s.settings, 'with_theme', theme)}>
     <div className={s.theme_container}>
-      <h3><HiOutlineMoon/> Theme</h3>
+      <h3><HiOutlineMoon/> {t('Theme')}</h3>
       <div className={s.dropdowns}>
         <div className={s.theme}
           onClick={() => setTheme?.(Theme.LIGHT)}>
@@ -30,7 +30,7 @@ const Settings : FC<SettingsProps> = ({ Logout }) => {
               checked={isLight}/>
             <NextImage src={ThemesAssets.LIGHT} />
           </div>
-          <h4>Light</h4>
+          <h4>{t('Light')}</h4>
         </div>
         <div className={s.theme}
           onClick={() => setTheme?.(Theme.DARK)}>
@@ -39,23 +39,23 @@ const Settings : FC<SettingsProps> = ({ Logout }) => {
               checked={!isLight}/>
             <NextImage src={ThemesAssets.DARK} />
           </div>
-          <h4>Dark</h4>
+          <h4>{t('Dark')}</h4>
         </div>
       </div>
     </div>
     <div className={s.language_container}>
-      <h3><FaLanguage/> Language</h3>
+      <h3><FaLanguage/> {t('Language')}</h3>
       <div className={s.languages}>
         <FormControlLabel
           control={<Radio checked={!isEnglish} onClick={toggleLang}/>}
-          label="Russian" />
+          label={t('Russian')} />
         <FormControlLabel
           control={<Radio checked={isEnglish} onClick={toggleLang}/>}
-          label="English" />
+          label={t('English')} />
       </div>
     </div>
     <div className={s.logout_container}>
-      <h3><BiLogOut/> Sign out</h3>
+      <h3><BiLogOut/> {t('Sign out')}</h3>
       <Logout/>
     </div>
   </div>

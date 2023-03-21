@@ -9,6 +9,7 @@ import { getRooms } from 'widgets/Messenger/store/thunks'
 import { messengerActions, MessengerSelectors, selectOpponentUser } from 'widgets/Messenger'
 import { useAuthSocket } from 'widgets/Profile/lib/hooks/useAuthSocket'
 import { UserStatus } from 'shared/config/consts/others'
+import { Display } from 'shared/lib/components'
 
 const MessengerHeader = memo(() => {
   const opponent = useSelector(selectOpponentUser)
@@ -43,8 +44,10 @@ const MessengerHeader = memo(() => {
     }
   }, [])
 
-  return <MessengerHeaderTemplate Search={SearchMessages}
-    user={opponent} label={userStatus}/>
+  return <Display when={opponent?.userId}>
+    <MessengerHeaderTemplate Search={SearchMessages}
+      user={opponent} label={userStatus}/>
+  </Display>
 })
 
 export default MessengerHeader

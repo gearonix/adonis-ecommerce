@@ -9,6 +9,7 @@ import Link from 'next/link'
 import { routes } from 'shared/config/consts/routes'
 import { useTimeout } from 'shared/lib/hooks'
 import { BiMessageDetail } from 'react-icons/bi'
+import { useTranslation } from 'react-i18next'
 
 interface Props{
   messages: Message[],
@@ -41,15 +42,16 @@ const MessengerContent = memo<Props>(({ messages, userId }) => {
 
 export const DefaultChat: FC = () => {
   const toShow = useTimeout(300)
+  const { t } = useTranslation()
   return <Display when={toShow}>
-    <WithSpring>
+    <WithSpring className={s.default_container}>
       <div className={s.default_chat_image}>
         <BiMessageDetail/>
       </div>
-      <h2 className={s.default_title}>Choose a chat
-    or create a <Link href={routes.USERS}>
-        <span>new one</span>
-      </Link>
+      <h2 className={s.default_title}>{t('Choose a chat or create a')}
+        <Link href={routes.USERS}>
+          <span> {t('new one')}</span>
+        </Link>
       </h2>
     </WithSpring>
   </Display>

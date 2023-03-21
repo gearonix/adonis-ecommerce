@@ -76,11 +76,11 @@ h2 {
 .messenger_page {
     display: flex;
     height: 770px;
-    margin-top: 35px;
     margin-bottom: 30px;
     border: 1px solid $bg-150;
     border-radius: $rounded;
     overflow: hidden;
+    box-shadow: $shadow;
 }
 
 .cart_page {

@@ -30,10 +30,13 @@
   }
 }
 
+.default_container{
+  @include absolute(50%, 50%);
+  transform: translate(-50%, -60%);
+  @include flex(stretch, center, column);
+}
+
 .default_chat_image{
-  margin: 160px auto 0;
-  width: 20%;
-  @include flex(center,center);
   svg{
     @include size(160px,160px);
     color: $color-absolute-200;

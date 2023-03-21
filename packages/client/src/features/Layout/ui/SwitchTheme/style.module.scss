@@ -1,8 +1,8 @@
 @use 'shared/css/common.scss' as *;
 
 .dropdowns {
-  @include flex(stretch, center);
-  @include size(27%, 40px);
+  @include flex(center, center);
+  @include size(35%, 40px);
   gap: 30px;
   .github{
     @include flex(stretch, center);

@@ -8,13 +8,21 @@ import { RecommendedItems } from 'widgets/Products'
 import { SortedProducts } from 'entities/Products'
 import { ProductTypes } from 'shared/types/elements'
 import { SocketProvider } from 'widgets/Messenger'
+import { ContainerTitle } from 'shared/ui/kit'
+import { useSelector } from 'shared/types/redux'
+import { AuthSelectors } from 'widgets/Login'
+import { useTranslation } from 'react-i18next'
 
 
 const Messenger: FC = () => {
+  const userName = useSelector(AuthSelectors.userName)
+  const { t } = useTranslation()
+
   return <div>
     <Head>
       <title>Adonis - Messenger</title>
     </Head>
+    <ContainerTitle>{t('Messenger')} ({userName})</ContainerTitle>
     <WithSpring className={'messenger_page'}>
       <MessengerAside/>
       <div style={{ width: '88%' }}>
