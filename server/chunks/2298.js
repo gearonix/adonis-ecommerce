@@ -8,8 +8,7 @@ exports.modules = {
 // Exports
 module.exports = {
 	"extra_services": "style_extra_services__z_gO8",
-	"block": "style_block__KfIKs",
-	"item": "style_item__yjGFd"
+	"block": "style_block__KfIKs"
 };
 
 

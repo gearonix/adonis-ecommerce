@@ -4132,7 +4132,7 @@ const MyProjects = [
     }
 ];
 const MyLinks = {
-    PORTFOLIO: "#",
+    PORTFOLIO: "https://gearonixx.com/",
     PROJECT: "https://github.com/Gearonix/Adonis-Ecommerce",
     VK: "https://vk.com/id606417601",
     GITHUB: "https://github.com/Gearonix",
@@ -4988,6 +4988,7 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_use
 
 
 
+
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });
 
@@ -5681,48 +5682,44 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shar
 
 
 const ExtraService = ({ image , link , title  })=>{
-    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_3___default()), {
+    return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_3___default()), {
+        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().item),
         href: link,
-        children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-            className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().item),
-            children: [
-                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().item_image),
-                    style: (0,shared_lib_helpers__WEBPACK_IMPORTED_MODULE_2__/* .backgroundImage */ .Nx)(image),
-                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().item_button),
-                        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_1__/* .AiOutlineSearch */ .RB, {})
-                    })
-                }),
-                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h3", {
-                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().item_title),
-                    children: title
+        children: [
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().item_image),
+                style: (0,shared_lib_helpers__WEBPACK_IMPORTED_MODULE_2__/* .backgroundImage */ .Nx)(image),
+                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().item_button),
+                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_1__/* .AiOutlineSearch */ .RB, {})
                 })
-            ]
-        })
+            }),
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h3", {
+                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().item_title),
+                children: title
+            })
+        ]
     });
 };
 const DefaultExtraService = ()=>{
     const { t  } = (0,react_i18next__WEBPACK_IMPORTED_MODULE_6__.useTranslation)();
-    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_lib_components__WEBPACK_IMPORTED_MODULE_5__/* .ApiAnimation */ .j9, {
+    return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(shared_lib_components__WEBPACK_IMPORTED_MODULE_5__/* .ApiAnimation */ .j9, {
         type: "increaseSize",
-        children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-            className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().item),
-            children: [
-                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().item_image),
-                    style: (0,shared_lib_helpers__WEBPACK_IMPORTED_MODULE_2__/* .backgroundImage */ .Nx)(shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_4__/* .DefaultAssets.PROJECT */ .h9.PROJECT),
-                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().item_button),
-                        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_1__/* .AiOutlineSearch */ .RB, {})
-                    })
-                }),
-                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h3", {
-                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().item_title),
-                    children: t("Coming_soon..")
+        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().item),
+        children: [
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().item_image),
+                style: (0,shared_lib_helpers__WEBPACK_IMPORTED_MODULE_2__/* .backgroundImage */ .Nx)(shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_4__/* .DefaultAssets.PROJECT */ .h9.PROJECT),
+                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().item_button),
+                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_1__/* .AiOutlineSearch */ .RB, {})
                 })
-            ]
-        })
+            }),
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h3", {
+                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().item_title),
+                children: t("Coming_soon..")
+            })
+        ]
     });
 };
 

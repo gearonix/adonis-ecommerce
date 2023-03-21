@@ -63,6 +63,7 @@ const DevNavigation = ()=>{
     const changeLanguage = ()=>{
         i18n.changeLanguage(i18n.language === "en" ? "ru" : "en");
     };
+    return null;
     return  false ? /*#__PURE__*/ 0 : null;
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DevNavigation);

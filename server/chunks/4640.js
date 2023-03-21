@@ -61,6 +61,23 @@ module.exports = {
 
 /***/ }),
 
+/***/ 16997:
+/***/ ((module) => {
+
+// Exports
+module.exports = {
+	"navigation": "style_navigation__oDVl0",
+	"header": "style_header__NLI2j",
+	"avatar": "style_avatar__W26XC",
+	"user_name": "style_user_name__9Q__Q",
+	"content": "style_content__6g5gC",
+	"container": "style_container__ZV9oi",
+	"link": "style_link__tYY8R"
+};
+
+
+/***/ }),
+
 /***/ 62010:
 /***/ ((module) => {
 
@@ -93,8 +110,10 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var _ui_NotFound_NotFound__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(33806);
 /* harmony import */ var _ui_Layout_Header_Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8900);
 /* harmony import */ var _ui_Layout_Footer_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(73400);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_ui_About_About__WEBPACK_IMPORTED_MODULE_0__, _ui_AppError_AppError__WEBPACK_IMPORTED_MODULE_1__, _ui_NotFound_NotFound__WEBPACK_IMPORTED_MODULE_2__, _ui_Layout_Header_Header__WEBPACK_IMPORTED_MODULE_3__, _ui_Layout_Footer_Footer__WEBPACK_IMPORTED_MODULE_4__]);
-([_ui_About_About__WEBPACK_IMPORTED_MODULE_0__, _ui_AppError_AppError__WEBPACK_IMPORTED_MODULE_1__, _ui_NotFound_NotFound__WEBPACK_IMPORTED_MODULE_2__, _ui_Layout_Header_Header__WEBPACK_IMPORTED_MODULE_3__, _ui_Layout_Footer_Footer__WEBPACK_IMPORTED_MODULE_4__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+/* harmony import */ var _ui_Navigation_Navigation__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(98249);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_ui_About_About__WEBPACK_IMPORTED_MODULE_0__, _ui_AppError_AppError__WEBPACK_IMPORTED_MODULE_1__, _ui_NotFound_NotFound__WEBPACK_IMPORTED_MODULE_2__, _ui_Layout_Header_Header__WEBPACK_IMPORTED_MODULE_3__, _ui_Layout_Footer_Footer__WEBPACK_IMPORTED_MODULE_4__, _ui_Navigation_Navigation__WEBPACK_IMPORTED_MODULE_5__]);
+([_ui_About_About__WEBPACK_IMPORTED_MODULE_0__, _ui_AppError_AppError__WEBPACK_IMPORTED_MODULE_1__, _ui_NotFound_NotFound__WEBPACK_IMPORTED_MODULE_2__, _ui_Layout_Header_Header__WEBPACK_IMPORTED_MODULE_3__, _ui_Layout_Footer_Footer__WEBPACK_IMPORTED_MODULE_4__, _ui_Navigation_Navigation__WEBPACK_IMPORTED_MODULE_5__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
 
 
 
@@ -179,9 +198,12 @@ const About = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_11__.memo)(()=>{
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("br", {})
                             ]
                         })
-                    }),
-                    t("links")
+                    })
                 ]
+            }),
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("p", {
+                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_12___default().text),
+                children: t("links")
             }),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_3___default()), {
                 href: shared_config_consts_myLinks__WEBPACK_IMPORTED_MODULE_4__/* .MyLinks.PROJECT */ .b.PROJECT,
@@ -581,8 +603,8 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(16689);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(92677);
-/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_style_module_scss__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(92677);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_style_module_scss__WEBPACK_IMPORTED_MODULE_14__);
 /* harmony import */ var shared_ui_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(83720);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(20926);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
@@ -595,8 +617,12 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var shared_lib_components__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(7562);
 /* harmony import */ var react_icons_hi__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(61111);
 /* harmony import */ var react_icons_hi__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react_icons_hi__WEBPACK_IMPORTED_MODULE_11__);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shared_ui_kit__WEBPACK_IMPORTED_MODULE_4__, react_i18next__WEBPACK_IMPORTED_MODULE_6__, widgets_Login__WEBPACK_IMPORTED_MODULE_8__, shared_lib_components__WEBPACK_IMPORTED_MODULE_10__]);
-([shared_ui_kit__WEBPACK_IMPORTED_MODULE_4__, react_i18next__WEBPACK_IMPORTED_MODULE_6__, widgets_Login__WEBPACK_IMPORTED_MODULE_8__, shared_lib_components__WEBPACK_IMPORTED_MODULE_10__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+/* harmony import */ var shared_lib_hooks__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(59684);
+/* harmony import */ var _Navigation_Navigation__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(98249);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shared_ui_kit__WEBPACK_IMPORTED_MODULE_4__, react_i18next__WEBPACK_IMPORTED_MODULE_6__, widgets_Login__WEBPACK_IMPORTED_MODULE_8__, shared_lib_components__WEBPACK_IMPORTED_MODULE_10__, shared_lib_hooks__WEBPACK_IMPORTED_MODULE_12__, _Navigation_Navigation__WEBPACK_IMPORTED_MODULE_13__]);
+([shared_ui_kit__WEBPACK_IMPORTED_MODULE_4__, react_i18next__WEBPACK_IMPORTED_MODULE_6__, widgets_Login__WEBPACK_IMPORTED_MODULE_8__, shared_lib_components__WEBPACK_IMPORTED_MODULE_10__, shared_lib_hooks__WEBPACK_IMPORTED_MODULE_12__, _Navigation_Navigation__WEBPACK_IMPORTED_MODULE_13__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
+
 
 
 
@@ -613,12 +639,17 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shar
 const Header = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)(({ DropDowns , Burger , Search  })=>{
     const { t  } = (0,react_i18next__WEBPACK_IMPORTED_MODULE_6__.useTranslation)();
     const avatar = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_7__/* .useSelector */ .v9)(widgets_Login__WEBPACK_IMPORTED_MODULE_8__/* .AuthSelectors.avatar */ .ce.avatar);
+    const navigation = (0,shared_lib_hooks__WEBPACK_IMPORTED_MODULE_12__/* .useBooleanState */ .zj)();
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("header", {
-            className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_12___default().header),
+            className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_14___default().header),
             children: [
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_lib_components__WEBPACK_IMPORTED_MODULE_10__/* .Display */ .sS, {
+                    when: navigation.isOpen,
+                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_Navigation_Navigation__WEBPACK_IMPORTED_MODULE_13__/* ["default"] */ .Z, {})
+                }),
                 /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_12___default().header_block),
+                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_14___default().header_block),
                     children: [
                         /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                             style: {
@@ -630,24 +661,24 @@ const Header = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)(({ Drop
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Burger, {}),
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_3___default()), {
                                     href: "/",
-                                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_12___default().logo_link),
+                                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_14___default().logo_link),
                                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_4__/* .Logo */ .TR, {})
                                 })
                             ]
                         }),
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Search, {}),
                         /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                            className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_12___default().options),
+                            className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_14___default().options),
                             children: [
                                 /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_3___default()), {
-                                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_12___default().options_item),
+                                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_14___default().options_item),
                                     href: shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_5__/* .routes.LOGIN */ ._.LOGIN,
                                     children: [
                                         /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(shared_lib_components__WEBPACK_IMPORTED_MODULE_10__/* .Ternary */ .fV, {
                                             where: avatar,
                                             children: [
                                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_12___default().avatar),
+                                                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_14___default().avatar),
                                                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_4__/* .NextImage */ .oH, {
                                                         src: avatar,
                                                         def: shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_9__/* .DefaultAssets.AVATAR */ .h9.AVATAR
@@ -662,7 +693,7 @@ const Header = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)(({ Drop
                                     ]
                                 }),
                                 /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_3___default()), {
-                                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_12___default().options_item),
+                                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_14___default().options_item),
                                     href: shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_5__/* .routes.MESSENGER */ ._.MESSENGER,
                                     children: [
                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_2__/* .MdMessage */ .a9, {}),
@@ -672,7 +703,7 @@ const Header = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)(({ Drop
                                     ]
                                 }),
                                 /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_3___default()), {
-                                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_12___default().options_item),
+                                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_14___default().options_item),
                                     href: shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_5__/* .routes.SAVED */ ._.SAVED,
                                     children: [
                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_2__/* .FaHeart */ .$0, {}),
@@ -682,7 +713,7 @@ const Header = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)(({ Drop
                                     ]
                                 }),
                                 /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_3___default()), {
-                                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_12___default().options_item),
+                                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_14___default().options_item),
                                     href: shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_5__/* .routes.CART */ ._.CART,
                                     children: [
                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_2__/* .FaShoppingCart */ .Fe, {}),
@@ -696,10 +727,10 @@ const Header = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)(({ Drop
                     ]
                 }),
                 /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_12___default().navbar_block),
+                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_14___default().navbar_block),
                     children: [
                         /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("nav", {
-                            className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_12___default().navbar),
+                            className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_14___default().navbar),
                             children: [
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_3___default()), {
                                     href: shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_5__/* .routes.SEARCH */ ._.SEARCH,
@@ -761,6 +792,72 @@ const Header = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)(({ Drop
     });
 });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Header);
+
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
+
+/***/ }),
+
+/***/ 98249:
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20997);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(16997);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_style_module_scss__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(21519);
+/* harmony import */ var shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(567);
+/* harmony import */ var shared_ui_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(83720);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__]);
+shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+
+
+
+
+
+const Navigation = ()=>{
+    return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_4___default().navigation),
+        children: [
+            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_4___default().header),
+                children: [
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_4___default().avatar),
+                        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__/* .NextImage */ .oH, {
+                            src: shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_2__/* .DefaultAssets.AVATAR */ .h9.AVATAR
+                        })
+                    }),
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h2", {
+                        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_4___default().user_name),
+                        children: "User Name"
+                    })
+                ]
+            }),
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_4___default().content),
+                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_4___default().container),
+                    children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_4___default().link),
+                        children: [
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_3__/* .AiOutlineShoppingCart */ .nx, {}),
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h3", {
+                                children: "Test link"
+                            })
+                        ]
+                    })
+                })
+            })
+        ]
+    });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Navigation);
 
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });
