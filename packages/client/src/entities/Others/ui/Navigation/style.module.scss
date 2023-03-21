@@ -1,0 +1,46 @@
+@use 'src/shared/css/common.scss' as *;
+
+.navigation{
+  width: 72%;
+  height: 100vh;
+  background: $bg-absolute;
+  @include absolute;
+  *{
+    box-sizing: border-box;
+  }
+  .header{
+    background: $bg-selected;
+    height: 113px;
+    width: 100%;
+    padding: 20px;
+    .avatar{
+      @include imageWrapper(44px, 44px, 100%);
+      margin-bottom: 10px;
+    }
+    .user_name{
+      font-size: 17px;
+    }
+  }
+  .content{
+    @include testBorder;
+    padding: 23px;
+    box-sizing: border-box;
+    .container{
+      @include testBorder;
+      padding: 15px;
+      border-bottom: 1px solid $bg-150;
+    }
+  }
+  .link{
+    width: 260px;
+    height: 48px;
+    @include testBorder;
+    padding-top: 16px;
+    box-sizing: border-box;
+    svg{
+      @include size(24px, 24px);
+      margin-right: 15px;
+      color: $bg-150;
+    }
+  }
+}

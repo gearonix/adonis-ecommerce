@@ -2,7 +2,7 @@
 
 .burger {
   display: none;
-  margin-right: 10px;
+  margin-right: 20px;
 
   svg {
     color: $bg-100;
@@ -11,5 +11,8 @@
 
   @media (max-width: 880px) {
     display: block;
+  }
+  @media (max-width: 480px) {
+    margin-right: 0;
   }
 }

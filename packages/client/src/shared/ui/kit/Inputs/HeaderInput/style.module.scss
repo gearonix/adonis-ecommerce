@@ -3,11 +3,36 @@
 .container{
   @include size(50%);
   @include flex(center,center);
+  @media (max-width: 1568px) {
+    width: 60%;
+  }
+  @media (max-width: 1160px) {
+    width: 70%;
+  }
+  @media (max-width: 904px) {
+    display: none;
+  }
 }
 
 .search {
   @include size(65%, 38px);
   display: flex;
+  @media (max-width: 1160px) {
+    width: 80%;
+  }
+  @media (max-width: 1000px) {
+    width: 90%;
+  }
+  @media (max-width: 866px) {
+    width: 80%;
+  }
+  //@media (max-width: 890px) {
+  //  position: absolute;
+  //  bottom: 20px;
+  //  left: 50%;
+  //  transform: translate(-50%, 0);
+  //  width: 70%;
+  //}
 
   .search_input {
     @include size(100%, 100%);
@@ -21,15 +46,19 @@
     &::placeholder{
       color: $color-absolute;
     }
+    @media (max-width: 880px) {
+      border-radius: 8px;
+      border-right-width: 1px;
+    }
   }
 
   button {
     border-radius: 0 8px 8px 0;
+    @media (max-width: 880px) {
+      display: none;
+    }
   }
 
-  @media (max-width: 880px) {
-    display: none;
-  }
 }
 
 .mobile_search {

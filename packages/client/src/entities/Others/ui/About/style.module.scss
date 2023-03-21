@@ -5,6 +5,12 @@
   margin: 0 auto 30px;
   @include itemBorder;
   position: relative;
+  @media (max-width: 934px) {
+    width: 95%;
+  }
+  @media (max-width: 518px) {
+    width: 98%;
+  }
 }
 .error_container{
   background: white;
@@ -37,6 +43,12 @@
   text-align: center;
   margin-top: 30px;
   margin-bottom: 40px;
+  @media (max-width: 934px) {
+    font-size: 34px;
+  }
+  @media (max-width: 518px) {
+    font-size: 27px;
+  }
 
   span {
     background-image: linear-gradient(to left, $link-color, $link-color);
@@ -49,10 +61,21 @@
   width: 65%;
   font-size: $small-md;
   margin: 0 auto 20px;
+  @media (max-width: 1550px) {
+    font-size: 21px;
+  }
+  @media (max-width: 515px) {
+    width: 85%;
+    font-size: 18px;
+  }
 
   span{
     font-size: $small-md;
     color: $link-color;
+    @media (max-width: 1550px) {
+      font-size: 21px;
+    }
+
   }
 }
 
@@ -61,6 +84,7 @@
   color: $color-absolute-200;
   margin-bottom: 30px;
   margin-top: 20px;
+
 }
 
 
@@ -73,13 +97,25 @@
   svg {
     @include size(37px, 37px);
     color: $color-absolute;
+    @media (max-width: 518px) {
+      @include size(29px, 29px);
+    }
   }
+  @media (max-width: 518px) {
+    top: 15px;
+    right: 15px;
+  }
+
 }
 
 .links{
   width: 65%;
   padding: 0;
   margin: 40px auto 0;
+  @media (max-width: 515px) {
+    width: 85%;
+    margin-top: 20px;
+  }
   a{
     display: block;
     width: max-content;
@@ -89,12 +125,27 @@
     svg{
       margin-right: 10px;
       @include size(21px,21px);
+      @media (max-width: 650px) {
+        @include size(19px,19px);
+
+      }
+    }
+    @media (max-width: 650px) {
+      font-size: 19px;
     }
   }
 }
 
 .image_wrapper {
-  @include imageWrapper(30%, 270px);
+  @include imageWrapper(401px, 270px);
   margin: 50px auto;
+  @media (max-width: 934px) {
+    width: 348px;
+    height: 250px;
+  }
+  @media (max-width: 518px) {
+    width: 218px;
+    height: 190px;
+  }
 }
 

@@ -21,8 +21,8 @@ const About = memo(() => {
     </p>
     <p className={s.text}>
       {t('Detailed_description')} <Link href={MyLinks.PORTFOLIO}><span>{t('here')}. <br/></span></Link>
-      {t('links')}
     </p>
+    <p className={s.text}>{t('links')}</p>
     <Link href={MyLinks.PROJECT}>
       <div className={s.github_icon}>
         <AiOutlineGithub/>

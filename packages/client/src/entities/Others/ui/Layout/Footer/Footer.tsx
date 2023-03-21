@@ -10,7 +10,6 @@ import { SlSocialVkontakte } from 'react-icons/sl'
 import { BsTelegram } from 'react-icons/bs'
 import { HiOutlineDesktopComputer } from 'react-icons/hi'
 import { useLanguage, useTheme } from 'shared/lib/hooks'
-import { MdLanguage } from 'react-icons/md'
 
 const Footer: FC = memo(() => {
   const { t, isEnglish } = useLanguage()

@@ -14,28 +14,24 @@ interface ExtraServiceProps{
 }
 
 export const ExtraService: FC<ExtraServiceProps> = ({ image, link, title }) => {
-  return <Link href={link}>
-    <div className={s.item}>
-      <div className={s.item_image} style={backgroundImage(image)}>
-        <div className={s.item_button}>
-          <AiOutlineSearch/>
-        </div>
+  return <Link className={s.item} href={link}>
+    <div className={s.item_image} style={backgroundImage(image)}>
+      <div className={s.item_button}>
+        <AiOutlineSearch/>
       </div>
-      <h3 className={s.item_title}>{title}</h3>
     </div>
+    <h3 className={s.item_title}>{title}</h3>
   </Link>
 }
 
 export const DefaultExtraService: FC = () => {
   const { t } = useTranslation()
-  return <ApiAnimation type={'increaseSize'}>
-    <div className={s.item}>
-      <div className={s.item_image} style={backgroundImage(DefaultAssets.PROJECT)}>
-        <div className={s.item_button}>
-          <AiOutlineSearch/>
-        </div>
+  return <ApiAnimation type={'increaseSize'} className={s.item}>
+    <div className={s.item_image} style={backgroundImage(DefaultAssets.PROJECT)}>
+      <div className={s.item_button}>
+        <AiOutlineSearch/>
       </div>
-      <h3 className={s.item_title}>{t('Coming_soon..')}</h3>
     </div>
+    <h3 className={s.item_title}>{t('Coming_soon..')}</h3>
   </ApiAnimation>
 }

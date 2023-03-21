@@ -18,6 +18,8 @@ import { AuthSelectors } from 'widgets/Login'
 import { DefaultAssets } from 'shared/config/consts/assets'
 import { Display, Ternary } from 'shared/lib/components'
 import { HiUsers } from 'react-icons/hi'
+import { useBooleanState } from 'shared/lib/hooks'
+import Navigation from '../../Navigation/Navigation'
 
 export interface HeaderSkeletonProps {
   Search: FC,
@@ -29,8 +31,12 @@ export interface HeaderSkeletonProps {
 const Header: FC<HeaderSkeletonProps> = memo(({ DropDowns, Burger, Search }) => {
   const { t } = useTranslation()
   const avatar = useSelector(AuthSelectors.avatar)
+  const navigation = useBooleanState()
   return <>
     <header className={s.header}>
+      <Display when={navigation.isOpen}>
+        <Navigation/>
+      </Display>
       <div className={s.header_block}>
         <div style={{ height: '100%', display: 'flex', alignItems: 'center' }}>
           <Burger/>

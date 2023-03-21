@@ -3,6 +3,9 @@
 .recommended {
   @include size(100%, 270px);
   @include flex();
+  @media (max-width: 450px) {
+    display: none;
+  }
   margin-top: 30px;
   background: $bg-absolute;
   border-radius: $rounded;

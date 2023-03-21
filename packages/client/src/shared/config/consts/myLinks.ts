@@ -18,7 +18,7 @@ export const MyProjects: Project[] = [
 
 
 export const MyLinks = {
-  PORTFOLIO: '#',
+  PORTFOLIO: 'https://gearonixx.com/',
   PROJECT: 'https://github.com/Gearonix/Adonis-Ecommerce',
   VK: 'https://vk.com/id606417601',
   GITHUB: 'https://github.com/Gearonix',

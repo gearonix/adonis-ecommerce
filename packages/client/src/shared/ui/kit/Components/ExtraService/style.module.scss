@@ -2,7 +2,7 @@
 
 .item {
   @include itemHover;
-  @include size(375px);
+  @include size(22%);
   transition: background 200ms;
 
   &:hover {

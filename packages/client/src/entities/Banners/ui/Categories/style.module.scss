@@ -47,6 +47,9 @@
     width: 16%;
 
     .user_block {
+      @media (max-width: 596px) {
+        display: none;
+      }
       width: 100%;
       border-radius: 6px;
       background: $link-color-light;
@@ -113,6 +116,9 @@
       padding-top: 16px;
       padding-left: 16px;
       cursor: pointer;
+      @media (max-width: 596px) {
+        display: none;
+      }
 
       h4 {
         font-size: $small;

@@ -22,8 +22,7 @@ const DevNavigation: FC = () => {
   const changeLanguage = () => {
     i18n.changeLanguage(i18n.language === 'en' ? 'ru' : 'en')
   }
-
-
+  return null
   return process.env.IS_DEV ?
       <div style={{ position: 'fixed', left: 0, bottom: 0, cursor: 'pointer', zIndex: 1000 }}>
         <Link href={'/'}>

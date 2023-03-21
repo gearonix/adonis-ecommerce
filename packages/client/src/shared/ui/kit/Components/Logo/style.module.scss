@@ -8,4 +8,17 @@
     width: 170px;
     height: 80%;
   }
+  @media (max-width: 1568px) {
+    height: 47px;
+  }
+  @media (max-width: 1160px) {
+    width: 160px;
+    height: 46px;
+  }
+  @media (max-width: 870px) {
+    width: 170px;
+  }
+  @media (max-width: 480px) {
+    transform: scale(0.8);
+  }
 }

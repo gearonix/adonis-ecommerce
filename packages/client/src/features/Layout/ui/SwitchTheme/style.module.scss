@@ -4,16 +4,66 @@
   @include flex(center, center);
   @include size(35%, 40px);
   gap: 30px;
+  @media (max-width: 1494px) {
+    position: absolute;
+    right: 20px;
+    bottom: 12px;
+    width: 40%;
+  }
+  @media (max-width: 1072px) {
+    label{
+      display: none;
+    }
+  }
+  @media (max-width: 1280px) {
+    width: 50%;
+    justify-content: flex-end;
+  }
+  @media (max-width: 1078px) {
+    width: 600px !important;
+  }
+  @media (max-width: 737px) {
+    bottom: 0;
+  }
+  @media (max-width: 594px) {
+    gap: 23px;
+  }
+  @media (max-width: 508px) {
+    display: none;
+  }
+
+  .mobile{
+    display: none;
+    @include size(22px, 22px);
+    @media (max-width: 1072px) {
+      display: block;
+    }
+    @media (max-width: 594px) {
+      @include size(20px, 20px);
+    }
+  }
   .github{
     @include flex(stretch, center);
     gap: 10px;
     svg{
       @include size(34px,34px);
       color: $color-absolute;
+      @media (max-width: 1072px) {
+        @include size(29px, 29px);
+      }
+      @media (max-width: 594px) {
+        @include size(26px, 26px);
+      }
     }
     h2{
       color: $color-absolute;
       font-size: 18px;
+      @media (max-width: 1280px) {
+        font-size: 16px;
+      }
+      @media (max-width: 1072px) {
+        display: none;
+      }
     }
 
   }
@@ -26,8 +76,5 @@
 
   @media (max-width: 1072px) {
     width: 35%;
-  }
-  @media (max-width: 880px) {
-    display: none;
   }
 }

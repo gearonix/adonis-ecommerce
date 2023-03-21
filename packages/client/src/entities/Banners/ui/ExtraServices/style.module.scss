@@ -9,20 +9,5 @@
   .block {
     @include flex(space-between);
     @include size(100%, 220px);
-
-    .item {
-      @include itemHover;
-      @include size(23%);
-      transition: background 200ms;
-
-      &:hover {
-        background: #F8F8F8;
-      }
-
-      background: $bg-absolute;
-      border-radius: 8px;
-      border: 2px solid $bg-150;
-
-    }
   }
 }
