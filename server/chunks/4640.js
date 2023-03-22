@@ -55,7 +55,8 @@ module.exports = {
 	"options_item": "style_options_item__p64nh",
 	"avatar": "style_avatar__QDYRS",
 	"navbar_block": "style_navbar_block__o5JaG",
-	"navbar": "style_navbar__WXokj"
+	"navbar": "style_navbar__WXokj",
+	"mobile": "style_mobile__3ssw1"
 };
 
 
@@ -710,7 +711,16 @@ const Header = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)(({ Drop
                                                         def: shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_9__/* .DefaultAssets.AVATAR */ .h9.AVATAR
                                                     })
                                                 }),
-                                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_2__/* .FaUserAlt */ .q1, {})
+                                                /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+                                                    children: [
+                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_2__/* .FaUserAlt */ .q1, {
+                                                            className: "desktop"
+                                                        }),
+                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_2__/* .AiOutlineUser */ .nf, {
+                                                            className: "mobile"
+                                                        })
+                                                    ]
+                                                })
                                             ]
                                         }),
                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
@@ -719,17 +729,19 @@ const Header = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)(({ Drop
                                     ]
                                 }),
                                 /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_3___default()), {
-                                    className: classnames__WEBPACK_IMPORTED_MODULE_14___default()((_style_module_scss__WEBPACK_IMPORTED_MODULE_15___default().options_item), (_style_module_scss__WEBPACK_IMPORTED_MODULE_15___default().mobile)),
+                                    className: classnames__WEBPACK_IMPORTED_MODULE_14___default()((_style_module_scss__WEBPACK_IMPORTED_MODULE_15___default().options_item), "desktop"),
                                     href: shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_5__/* .routes.MESSENGER */ ._.MESSENGER,
                                     children: [
-                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_2__/* .MdMessage */ .a9, {}),
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_2__/* .MdMessage */ .a9, {
+                                            className: "desktop"
+                                        }),
                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
                                             children: t("Messenger")
                                         })
                                     ]
                                 }),
                                 /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_3___default()), {
-                                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_15___default().options_item),
+                                    className: classnames__WEBPACK_IMPORTED_MODULE_14___default()((_style_module_scss__WEBPACK_IMPORTED_MODULE_15___default().options_item), "desktop"),
                                     href: shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_5__/* .routes.SAVED */ ._.SAVED,
                                     children: [
                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_2__/* .FaHeart */ .$0, {}),
@@ -742,7 +754,12 @@ const Header = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)(({ Drop
                                     className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_15___default().options_item),
                                     href: shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_5__/* .routes.CART */ ._.CART,
                                     children: [
-                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_2__/* .FaShoppingCart */ .Fe, {}),
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_2__/* .FaShoppingCart */ .Fe, {
+                                            className: "desktop"
+                                        }),
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_2__/* .AiOutlineShoppingCart */ .nx, {
+                                            className: "mobile"
+                                        }),
                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
                                             children: t("My_Cart")
                                         })

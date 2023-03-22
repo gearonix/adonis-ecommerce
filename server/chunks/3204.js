@@ -23,7 +23,7 @@ widgets_Products_store_thunks__WEBPACK_IMPORTED_MODULE_3__ = (__webpack_async_de
 
 
 
-const RecommendedItems = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)(({ Component , ...filter })=>{
+const RecommendedItems = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)(({ Component , Icon , ...filter })=>{
     const dispatch = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_2__/* .useDispatch */ .I0)();
     const [items, setItems] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);
     (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{
@@ -34,6 +34,7 @@ const RecommendedItems = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.mem
     }, []);
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Component, {
         items: items,
+        Icon: Icon,
         ...filter
     });
 });

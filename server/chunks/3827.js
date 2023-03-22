@@ -63,7 +63,7 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shar
 
 
 
-const SortedProducts = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)(({ type ="Electronics" , items  })=>{
+const SortedProducts = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)(({ type ="Electronics" , items , Icon  })=>{
     const dispatch = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_5__/* .useDispatch */ .I0)();
     const router = (0,next_router__WEBPACK_IMPORTED_MODULE_6__.useRouter)();
     const { t  } = (0,react_i18next__WEBPACK_IMPORTED_MODULE_10__.useTranslation)();
@@ -76,9 +76,13 @@ const SortedProducts = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
         className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_13___default().recommended),
         children: [
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_2__/* .ContainerTitle */ .Wr, {
+            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(shared_ui_kit__WEBPACK_IMPORTED_MODULE_2__/* .ContainerTitle */ .Wr, {
                 className: classnames__WEBPACK_IMPORTED_MODULE_11___default()((_style_module_scss__WEBPACK_IMPORTED_MODULE_13___default().mobile_header)),
-                children: t(type)
+                children: [
+                    Icon && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Icon, {}),
+                    " ",
+                    t(type)
+                ]
             }),
             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                 className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_13___default().image_block),
