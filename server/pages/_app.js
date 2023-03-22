@@ -816,9 +816,10 @@ __webpack_async_result__();
 
 
 
-const Burger = ()=>{
+const Burger = ({ onOpen  })=>{
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
         className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_2___default().burger),
+        onClick: onOpen,
         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_1__/* .GiHamburgerMenu */ .vH, {})
     });
 };
@@ -1445,6 +1446,14 @@ module.exports = require("react-icons/rx");
 
 "use strict";
 module.exports = require("react-icons/sl");
+
+/***/ }),
+
+/***/ 44152:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("react-icons/tb");
 
 /***/ }),
 

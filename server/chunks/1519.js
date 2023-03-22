@@ -336,7 +336,9 @@ module.exports = {
 
 // Exports
 module.exports = {
-	"logo": "style_logo__Z4C_K"
+	"logo": "style_logo__Z4C_K",
+	"desktop": "style_desktop__PbR72",
+	"mobile": "style_mobile__5IM_3"
 };
 
 
@@ -4001,6 +4003,7 @@ var Assets;
 (function(Assets) {
     Assets["LOGO_DARK"] = "/assets/logo-dark.png";
     Assets["LOGO_LIGHT"] = "/assets/logo-light.png";
+    Assets["LOGO_MOBILE"] = "/assets/logo-mobile.png";
     Assets["NOT_FOUND"] = "/assets/common/not_found.svg";
     Assets["APP_ERROR"] = "/assets/common/app_error.png";
     Assets["ABOUT"] = "/assets/common/about.png";
@@ -4343,6 +4346,8 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: external "react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(20997);
+// EXTERNAL MODULE: external "react"
+var external_react_ = __webpack_require__(16689);
 // EXTERNAL MODULE: external "@react-spring/web"
 var web_ = __webpack_require__(8157);
 ;// CONCATENATED MODULE: ./src/shared/lib/components/animations/config/springs.ts
@@ -4353,6 +4358,22 @@ const springs = {
             },
             to: {
                 opacity: 1
+            }
+        }),
+    burgerMenu: ()=>({
+            from: {
+                x: -550
+            },
+            to: {
+                x: 0
+            }
+        }),
+    partialOpacity: ()=>({
+            from: {
+                opacity: 0
+            },
+            to: {
+                opacity: 0.6
             }
         }),
     opacityHeight: (height)=>({
@@ -4382,7 +4403,9 @@ const springs = {
 
 
 
-const WithSpring = ({ className , children , type ="opacity" , param , style , onClick  })=>{
+
+const WithSpring = /*#__PURE__*/ (0,external_react_.forwardRef)((props, ref)=>{
+    const { className , children , type ="opacity" , param , style , onClick  } = props;
     const spring = (0,web_.useSpring)(config_springs[type](param));
     return /*#__PURE__*/ jsx_runtime_.jsx(web_.animated.div, {
         className: className,
@@ -4391,9 +4414,10 @@ const WithSpring = ({ className , children , type ="opacity" , param , style , o
             ...style
         },
         onClick: onClick,
+        ref: ref,
         children: children
     });
-};
+});
 /* harmony default export */ const WithSpring_WithSpring = (WithSpring);
 
 
@@ -4957,6 +4981,7 @@ const withFormData = (mode)=>(...files)=>{
 __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "El": () => (/* reexport safe */ _useFilteredEffect__WEBPACK_IMPORTED_MODULE_8__.E),
+/* harmony export */   "F5": () => (/* reexport safe */ _useLockScroll__WEBPACK_IMPORTED_MODULE_10__.F),
 /* harmony export */   "Fg": () => (/* reexport safe */ _useTheme__WEBPACK_IMPORTED_MODULE_3__.F),
 /* harmony export */   "KS": () => (/* reexport safe */ _useTimeout__WEBPACK_IMPORTED_MODULE_4__.K),
 /* harmony export */   "Yz": () => (/* reexport safe */ _useInterval__WEBPACK_IMPORTED_MODULE_6__.Y),
@@ -4975,8 +5000,10 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var _useLanguage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(75750);
 /* harmony import */ var _useFilteredEffect__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(38603);
 /* harmony import */ var _useBottomScroll__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(59033);
+/* harmony import */ var _useLockScroll__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(83164);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_useForm__WEBPACK_IMPORTED_MODULE_1__, _useUnauthorized__WEBPACK_IMPORTED_MODULE_5__, _useLanguage__WEBPACK_IMPORTED_MODULE_7__]);
 ([_useForm__WEBPACK_IMPORTED_MODULE_1__, _useUnauthorized__WEBPACK_IMPORTED_MODULE_5__, _useLanguage__WEBPACK_IMPORTED_MODULE_7__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
 
 
 
@@ -5216,6 +5243,28 @@ const useLocalStorage = (key, defaultValue)=>{
 
 /***/ }),
 
+/***/ 83164:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "F": () => (/* binding */ useLockScroll)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(16689);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+const useLockScroll = ()=>{
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(()=>{
+        document.body.style.overflow = "hidden";
+        return ()=>{
+            document.body.style.overflow = "auto";
+        };
+    }, []);
+};
+
+
+/***/ }),
+
 /***/ 89828:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -5422,6 +5471,7 @@ const useDispatch = react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch;
 /* harmony export */   "$0": () => (/* reexport safe */ react_icons_fa__WEBPACK_IMPORTED_MODULE_7__.FaHeart),
 /* harmony export */   "$m": () => (/* reexport safe */ react_icons_ai__WEBPACK_IMPORTED_MODULE_3__.AiOutlineCar),
 /* harmony export */   "Dp": () => (/* reexport safe */ react_icons_bs__WEBPACK_IMPORTED_MODULE_2__.BsInfoLg),
+/* harmony export */   "ED": () => (/* reexport safe */ react_icons_bi__WEBPACK_IMPORTED_MODULE_12__.BiUser),
 /* harmony export */   "Eh": () => (/* reexport safe */ react_icons_ai__WEBPACK_IMPORTED_MODULE_3__.AiOutlineFileSearch),
 /* harmony export */   "Fe": () => (/* reexport safe */ react_icons_fa__WEBPACK_IMPORTED_MODULE_7__.FaShoppingCart),
 /* harmony export */   "H9": () => (/* reexport safe */ react_icons_bs__WEBPACK_IMPORTED_MODULE_2__.BsGridFill),
@@ -5430,6 +5480,7 @@ const useDispatch = react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch;
 /* harmony export */   "Ik": () => (/* reexport safe */ react_icons_gi__WEBPACK_IMPORTED_MODULE_1__.GiTopHat),
 /* harmony export */   "L": () => (/* reexport safe */ react_icons_bs__WEBPACK_IMPORTED_MODULE_2__.BsCheck2All),
 /* harmony export */   "LL": () => (/* reexport safe */ react_icons_fa__WEBPACK_IMPORTED_MODULE_7__.FaInfo),
+/* harmony export */   "N8": () => (/* reexport safe */ react_icons_ai__WEBPACK_IMPORTED_MODULE_3__.AiOutlineBars),
 /* harmony export */   "O1": () => (/* reexport safe */ react_icons_ai__WEBPACK_IMPORTED_MODULE_3__.AiOutlineFileAdd),
 /* harmony export */   "QN": () => (/* reexport safe */ react_icons_hi__WEBPACK_IMPORTED_MODULE_5__.HiOutlineFlag),
 /* harmony export */   "QZ": () => (/* reexport safe */ react_icons_ai__WEBPACK_IMPORTED_MODULE_3__.AiFillFileAdd),
@@ -5437,9 +5488,12 @@ const useDispatch = react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch;
 /* harmony export */   "RF": () => (/* reexport safe */ react_icons_bs__WEBPACK_IMPORTED_MODULE_2__.BsCartPlus),
 /* harmony export */   "RU": () => (/* reexport safe */ react_icons_fi__WEBPACK_IMPORTED_MODULE_0__.FiType),
 /* harmony export */   "TA": () => (/* reexport safe */ react_icons_ai__WEBPACK_IMPORTED_MODULE_3__.AiOutlineApi),
+/* harmony export */   "UX": () => (/* reexport safe */ react_icons_tb__WEBPACK_IMPORTED_MODULE_15__.TbLanguage),
+/* harmony export */   "WY": () => (/* reexport safe */ react_icons_fi__WEBPACK_IMPORTED_MODULE_0__.FiUsers),
 /* harmony export */   "Zl": () => (/* reexport safe */ react_icons_tfi__WEBPACK_IMPORTED_MODULE_6__.TfiWorld),
 /* harmony export */   "a9": () => (/* reexport safe */ react_icons_md__WEBPACK_IMPORTED_MODULE_4__.MdMessage),
 /* harmony export */   "aB": () => (/* reexport safe */ react_icons_ai__WEBPACK_IMPORTED_MODULE_3__.AiOutlineUpload),
+/* harmony export */   "av": () => (/* reexport safe */ react_icons_bi__WEBPACK_IMPORTED_MODULE_12__.BiMessageDetail),
 /* harmony export */   "bB": () => (/* reexport safe */ react_icons_bs__WEBPACK_IMPORTED_MODULE_2__.BsPen),
 /* harmony export */   "bz": () => (/* reexport safe */ react_icons_ai__WEBPACK_IMPORTED_MODULE_3__.AiOutlineCheck),
 /* harmony export */   "cG": () => (/* reexport safe */ react_icons_io__WEBPACK_IMPORTED_MODULE_13__.IoIosResize),
@@ -5451,6 +5505,7 @@ const useDispatch = react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch;
 /* harmony export */   "ky": () => (/* reexport safe */ react_icons_ai__WEBPACK_IMPORTED_MODULE_3__.AiOutlineArrowLeft),
 /* harmony export */   "lQ": () => (/* reexport safe */ react_icons_sl__WEBPACK_IMPORTED_MODULE_10__.SlPresent),
 /* harmony export */   "lk": () => (/* reexport safe */ react_icons_io__WEBPACK_IMPORTED_MODULE_13__.IoLogoModelS),
+/* harmony export */   "lo": () => (/* reexport safe */ react_icons_ai__WEBPACK_IMPORTED_MODULE_3__.AiOutlineHeart),
 /* harmony export */   "nf": () => (/* reexport safe */ react_icons_ai__WEBPACK_IMPORTED_MODULE_3__.AiOutlineUser),
 /* harmony export */   "nx": () => (/* reexport safe */ react_icons_ai__WEBPACK_IMPORTED_MODULE_3__.AiOutlineShoppingCart),
 /* harmony export */   "oF": () => (/* reexport safe */ react_icons_ai__WEBPACK_IMPORTED_MODULE_3__.AiFillLock),
@@ -5461,9 +5516,11 @@ const useDispatch = react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch;
 /* harmony export */   "q1": () => (/* reexport safe */ react_icons_fa__WEBPACK_IMPORTED_MODULE_7__.FaUserAlt),
 /* harmony export */   "ql": () => (/* reexport safe */ react_icons_bs__WEBPACK_IMPORTED_MODULE_2__.BsBuilding),
 /* harmony export */   "ri": () => (/* reexport safe */ react_icons_bs__WEBPACK_IMPORTED_MODULE_2__.BsDot),
+/* harmony export */   "s1": () => (/* reexport safe */ react_icons_bs__WEBPACK_IMPORTED_MODULE_2__.BsMoon),
 /* harmony export */   "t5": () => (/* reexport safe */ react_icons_ai__WEBPACK_IMPORTED_MODULE_3__.AiOutlineUnorderedList),
 /* harmony export */   "tN": () => (/* reexport safe */ react_icons_ri__WEBPACK_IMPORTED_MODULE_14__.RiQuestionAnswerLine),
 /* harmony export */   "vH": () => (/* reexport safe */ react_icons_gi__WEBPACK_IMPORTED_MODULE_1__.GiHamburgerMenu),
+/* harmony export */   "vz": () => (/* reexport safe */ react_icons_ci__WEBPACK_IMPORTED_MODULE_11__.CiLogin),
 /* harmony export */   "w8": () => (/* reexport safe */ react_icons_ai__WEBPACK_IMPORTED_MODULE_3__.AiFillEye),
 /* harmony export */   "y5": () => (/* reexport safe */ react_icons_ai__WEBPACK_IMPORTED_MODULE_3__.AiOutlineStar),
 /* harmony export */   "yS": () => (/* reexport safe */ react_icons_rx__WEBPACK_IMPORTED_MODULE_9__.RxCross1),
@@ -5500,6 +5557,13 @@ const useDispatch = react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch;
 /* harmony import */ var react_icons_io__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(react_icons_io__WEBPACK_IMPORTED_MODULE_13__);
 /* harmony import */ var react_icons_ri__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(68098);
 /* harmony import */ var react_icons_ri__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(react_icons_ri__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var react_icons_tb__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(44152);
+/* harmony import */ var react_icons_tb__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(react_icons_tb__WEBPACK_IMPORTED_MODULE_15__);
+
+
+
+
+
 
 
 
@@ -5662,8 +5726,8 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20997);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(90334);
-/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_style_module_scss__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(90334);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_style_module_scss__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var shared_ui_icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(83720);
 /* harmony import */ var shared_lib_helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(82103);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(20926);
@@ -5671,6 +5735,8 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(567);
 /* harmony import */ var shared_lib_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7562);
 /* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(57987);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(59003);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_7__);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shared_lib_helpers__WEBPACK_IMPORTED_MODULE_2__, shared_lib_components__WEBPACK_IMPORTED_MODULE_5__, react_i18next__WEBPACK_IMPORTED_MODULE_6__]);
 ([shared_lib_helpers__WEBPACK_IMPORTED_MODULE_2__, shared_lib_components__WEBPACK_IMPORTED_MODULE_5__, react_i18next__WEBPACK_IMPORTED_MODULE_6__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
@@ -5681,21 +5747,22 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shar
 
 
 
+
 const ExtraService = ({ image , link , title  })=>{
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_3___default()), {
-        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().item),
+        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_8___default().item),
         href: link,
         children: [
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().item_image),
+                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_8___default().item_image),
                 style: (0,shared_lib_helpers__WEBPACK_IMPORTED_MODULE_2__/* .backgroundImage */ .Nx)(image),
                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().item_button),
+                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_8___default().item_button),
                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_1__/* .AiOutlineSearch */ .RB, {})
                 })
             }),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h3", {
-                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().item_title),
+                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_8___default().item_title),
                 children: title
             })
         ]
@@ -5705,18 +5772,18 @@ const DefaultExtraService = ()=>{
     const { t  } = (0,react_i18next__WEBPACK_IMPORTED_MODULE_6__.useTranslation)();
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(shared_lib_components__WEBPACK_IMPORTED_MODULE_5__/* .ApiAnimation */ .j9, {
         type: "increaseSize",
-        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().item),
+        className: classnames__WEBPACK_IMPORTED_MODULE_7___default()((_style_module_scss__WEBPACK_IMPORTED_MODULE_8___default().item), (_style_module_scss__WEBPACK_IMPORTED_MODULE_8___default().default_project)),
         children: [
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().item_image),
+                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_8___default().item_image),
                 style: (0,shared_lib_helpers__WEBPACK_IMPORTED_MODULE_2__/* .backgroundImage */ .Nx)(shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_4__/* .DefaultAssets.PROJECT */ .h9.PROJECT),
                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().item_button),
+                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_8___default().item_button),
                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_1__/* .AiOutlineSearch */ .RB, {})
                 })
             }),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h3", {
-                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_7___default().item_title),
+                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_8___default().item_title),
                 children: t("Coming_soon..")
             })
         ]
@@ -5755,11 +5822,18 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shar
 
 const Logo = ()=>{
     const { isLight  } = (0,shared_lib_hooks__WEBPACK_IMPORTED_MODULE_4__/* .useTheme */ .Fg)();
-    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+    return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
         className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_5___default().logo),
-        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_2__/* .NextImage */ .oH, {
-            src: isLight ? shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_3__/* .Assets.LOGO_LIGHT */ .de.LOGO_LIGHT : shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_3__/* .Assets.LOGO_DARK */ .de.LOGO_DARK
-        })
+        children: [
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_2__/* .NextImage */ .oH, {
+                src: isLight ? shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_3__/* .Assets.LOGO_LIGHT */ .de.LOGO_LIGHT : shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_3__/* .Assets.LOGO_DARK */ .de.LOGO_DARK,
+                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_5___default().desktop)
+            }),
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_2__/* .NextImage */ .oH, {
+                src: shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_3__/* .Assets.LOGO_MOBILE */ .de.LOGO_MOBILE,
+                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_5___default().mobile)
+            })
+        ]
     });
 };
 
@@ -6097,6 +6171,13 @@ const RecommendedItem = ({ product  })=>{
         children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_3___default()), {
             href: `${shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_4__/* .routes.SEARCH */ ._.SEARCH}/${product.productId}`,
             children: [
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_6___default().item_image),
+                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__/* .NextImage */ .oH, {
+                        src: product.images[0],
+                        def: shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_5__/* .DefaultAssets.PRODUCT */ .h9.PRODUCT
+                    })
+                }),
                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h3", {
                     className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_6___default().item_title),
                     children: product.name
@@ -6104,13 +6185,6 @@ const RecommendedItem = ({ product  })=>{
                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
                     className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_6___default().item_description),
                     children: helpers.cropped(product.description)
-                }),
-                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_6___default().item_image),
-                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__/* .NextImage */ .oH, {
-                        src: product.images[0],
-                        def: shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_5__/* .DefaultAssets.PRODUCT */ .h9.PRODUCT
-                    })
                 })
             ]
         })
@@ -7050,13 +7124,16 @@ const CartIcon = ({ Icon , title , subtitle  })=>{
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20997);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10057);
-/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_style_module_scss__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10057);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_style_module_scss__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(59003);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_1__);
 
 
-const ContainerTitle = ({ children  })=>{
+
+const ContainerTitle = ({ children , className  })=>{
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h2", {
-        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_1___default().title),
+        className: classnames__WEBPACK_IMPORTED_MODULE_1___default()((_style_module_scss__WEBPACK_IMPORTED_MODULE_2___default().title), className),
         children: children
     });
 };

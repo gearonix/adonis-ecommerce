@@ -72,7 +72,9 @@ module.exports = {
 	"user_name": "style_user_name__9Q__Q",
 	"content": "style_content__6g5gC",
 	"container": "style_container__ZV9oi",
-	"link": "style_link__tYY8R"
+	"link": "style_link__tYY8R",
+	"background": "style_background__YoWC8",
+	"footer_text": "style_footer_text__Z078p"
 };
 
 
@@ -122,6 +124,23 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_ui_
 
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });
+
+/***/ }),
+
+/***/ 66472:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "v": () => (/* binding */ getUserName)
+/* harmony export */ });
+const getUserName = (userName)=>{
+    if (userName === "User not found") {
+        return "Sign in | Register";
+    }
+    return userName;
+};
+
 
 /***/ }),
 
@@ -603,8 +622,8 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(16689);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(92677);
-/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_style_module_scss__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(92677);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_style_module_scss__WEBPACK_IMPORTED_MODULE_15__);
 /* harmony import */ var shared_ui_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(83720);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(20926);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
@@ -619,8 +638,11 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var react_icons_hi__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react_icons_hi__WEBPACK_IMPORTED_MODULE_11__);
 /* harmony import */ var shared_lib_hooks__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(59684);
 /* harmony import */ var _Navigation_Navigation__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(98249);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(59003);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_14__);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shared_ui_kit__WEBPACK_IMPORTED_MODULE_4__, react_i18next__WEBPACK_IMPORTED_MODULE_6__, widgets_Login__WEBPACK_IMPORTED_MODULE_8__, shared_lib_components__WEBPACK_IMPORTED_MODULE_10__, shared_lib_hooks__WEBPACK_IMPORTED_MODULE_12__, _Navigation_Navigation__WEBPACK_IMPORTED_MODULE_13__]);
 ([shared_ui_kit__WEBPACK_IMPORTED_MODULE_4__, react_i18next__WEBPACK_IMPORTED_MODULE_6__, widgets_Login__WEBPACK_IMPORTED_MODULE_8__, shared_lib_components__WEBPACK_IMPORTED_MODULE_10__, shared_lib_hooks__WEBPACK_IMPORTED_MODULE_12__, _Navigation_Navigation__WEBPACK_IMPORTED_MODULE_13__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
 
 
 
@@ -642,14 +664,16 @@ const Header = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)(({ Drop
     const navigation = (0,shared_lib_hooks__WEBPACK_IMPORTED_MODULE_12__/* .useBooleanState */ .zj)();
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("header", {
-            className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_14___default().header),
+            className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_15___default().header),
             children: [
                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_lib_components__WEBPACK_IMPORTED_MODULE_10__/* .Display */ .sS, {
                     when: navigation.isOpen,
-                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_Navigation_Navigation__WEBPACK_IMPORTED_MODULE_13__/* ["default"] */ .Z, {})
+                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_Navigation_Navigation__WEBPACK_IMPORTED_MODULE_13__/* ["default"] */ .Z, {
+                        onClose: navigation.close
+                    })
                 }),
                 /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_14___default().header_block),
+                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_15___default().header_block),
                     children: [
                         /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                             style: {
@@ -658,27 +682,29 @@ const Header = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)(({ Drop
                                 alignItems: "center"
                             },
                             children: [
-                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Burger, {}),
+                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Burger, {
+                                    onOpen: navigation.open
+                                }),
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_3___default()), {
                                     href: "/",
-                                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_14___default().logo_link),
+                                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_15___default().logo_link),
                                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_4__/* .Logo */ .TR, {})
                                 })
                             ]
                         }),
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Search, {}),
                         /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                            className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_14___default().options),
+                            className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_15___default().options),
                             children: [
                                 /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_3___default()), {
-                                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_14___default().options_item),
+                                    className: classnames__WEBPACK_IMPORTED_MODULE_14___default()((_style_module_scss__WEBPACK_IMPORTED_MODULE_15___default().options_item), (_style_module_scss__WEBPACK_IMPORTED_MODULE_15___default().mobile)),
                                     href: shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_5__/* .routes.LOGIN */ ._.LOGIN,
                                     children: [
                                         /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(shared_lib_components__WEBPACK_IMPORTED_MODULE_10__/* .Ternary */ .fV, {
                                             where: avatar,
                                             children: [
                                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_14___default().avatar),
+                                                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_15___default().avatar),
                                                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_4__/* .NextImage */ .oH, {
                                                         src: avatar,
                                                         def: shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_9__/* .DefaultAssets.AVATAR */ .h9.AVATAR
@@ -693,7 +719,7 @@ const Header = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)(({ Drop
                                     ]
                                 }),
                                 /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_3___default()), {
-                                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_14___default().options_item),
+                                    className: classnames__WEBPACK_IMPORTED_MODULE_14___default()((_style_module_scss__WEBPACK_IMPORTED_MODULE_15___default().options_item), (_style_module_scss__WEBPACK_IMPORTED_MODULE_15___default().mobile)),
                                     href: shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_5__/* .routes.MESSENGER */ ._.MESSENGER,
                                     children: [
                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_2__/* .MdMessage */ .a9, {}),
@@ -703,7 +729,7 @@ const Header = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)(({ Drop
                                     ]
                                 }),
                                 /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_3___default()), {
-                                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_14___default().options_item),
+                                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_15___default().options_item),
                                     href: shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_5__/* .routes.SAVED */ ._.SAVED,
                                     children: [
                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_2__/* .FaHeart */ .$0, {}),
@@ -713,7 +739,7 @@ const Header = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)(({ Drop
                                     ]
                                 }),
                                 /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_3___default()), {
-                                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_14___default().options_item),
+                                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_15___default().options_item),
                                     href: shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_5__/* .routes.CART */ ._.CART,
                                     children: [
                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_2__/* .FaShoppingCart */ .Fe, {}),
@@ -727,10 +753,10 @@ const Header = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)(({ Drop
                     ]
                 }),
                 /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_14___default().navbar_block),
+                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_15___default().navbar_block),
                     children: [
                         /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("nav", {
-                            className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_14___default().navbar),
+                            className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_15___default().navbar),
                             children: [
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_3___default()), {
                                     href: shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_5__/* .routes.SEARCH */ ._.SEARCH,
@@ -745,6 +771,7 @@ const Header = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)(({ Drop
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_3___default()), {
                                     href: shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_5__/* .routes.MESSENGER */ ._.MESSENGER,
                                     children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(shared_ui_kit__WEBPACK_IMPORTED_MODULE_4__/* .HoverLink */ .EU, {
+                                        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_15___default().messenger),
                                         children: [
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_2__/* .MdMessage */ .a9, {}),
                                             " ",
@@ -808,51 +835,210 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20997);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(16997);
-/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_style_module_scss__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(16997);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_style_module_scss__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(21519);
 /* harmony import */ var shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(567);
-/* harmony import */ var shared_ui_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(83720);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__]);
-shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+/* harmony import */ var shared_lib_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7562);
+/* harmony import */ var shared_types_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(17418);
+/* harmony import */ var widgets_Login__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(70698);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(20926);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(13048);
+/* harmony import */ var entities_Others_lib_getUserName__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(66472);
+/* harmony import */ var shared_lib_hooks__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(59684);
+/* harmony import */ var shared_ui_icons__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(83720);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__, shared_lib_components__WEBPACK_IMPORTED_MODULE_3__, widgets_Login__WEBPACK_IMPORTED_MODULE_5__, shared_lib_hooks__WEBPACK_IMPORTED_MODULE_8__]);
+([shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__, shared_lib_components__WEBPACK_IMPORTED_MODULE_3__, widgets_Login__WEBPACK_IMPORTED_MODULE_5__, shared_lib_hooks__WEBPACK_IMPORTED_MODULE_8__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
 
 
-const Navigation = ()=>{
-    return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_4___default().navigation),
+
+
+
+
+
+
+
+const Navigation = ({ onClose  })=>{
+    const avatar = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_4__/* .useSelector */ .v9)(widgets_Login__WEBPACK_IMPORTED_MODULE_5__/* .AuthSelectors.avatar */ .ce.avatar);
+    const userName = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_4__/* .useSelector */ .v9)(widgets_Login__WEBPACK_IMPORTED_MODULE_5__/* .AuthSelectors.userName */ .ce.userName);
+    const userId = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_4__/* .useSelector */ .v9)(widgets_Login__WEBPACK_IMPORTED_MODULE_5__/* .AuthSelectors.userId */ .ce.userId);
+    const { toggleTheme  } = (0,shared_lib_hooks__WEBPACK_IMPORTED_MODULE_8__/* .useTheme */ .Fg)();
+    const { toggleLang  } = (0,shared_lib_hooks__WEBPACK_IMPORTED_MODULE_8__/* .useLanguage */ .ZK)();
+    (0,shared_lib_hooks__WEBPACK_IMPORTED_MODULE_8__/* .useLockScroll */ .F5)();
+    return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
-            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_4___default().header),
-                children: [
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_4___default().avatar),
-                        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__/* .NextImage */ .oH, {
-                            src: shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_2__/* .DefaultAssets.AVATAR */ .h9.AVATAR
-                        })
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h2", {
-                        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_4___default().user_name),
-                        children: "User Name"
-                    })
-                ]
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_lib_components__WEBPACK_IMPORTED_MODULE_3__/* .WithSpring */ .xM, {
+                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().background),
+                type: "partialOpacity",
+                onClick: onClose
             }),
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_4___default().content),
-                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_4___default().container),
-                    children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_4___default().link),
+            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(shared_lib_components__WEBPACK_IMPORTED_MODULE_3__/* .WithSpring */ .xM, {
+                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().navigation),
+                type: "burgerMenu",
+                children: [
+                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().header),
                         children: [
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_3__/* .AiOutlineShoppingCart */ .nx, {}),
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h3", {
-                                children: "Test link"
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().avatar),
+                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_1__/* .NextImage */ .oH, {
+                                    src: avatar,
+                                    def: shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_2__/* .DefaultAssets.AVATAR */ .h9.AVATAR
+                                })
+                            }),
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h2", {
+                                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().user_name),
+                                children: (0,entities_Others_lib_getUserName__WEBPACK_IMPORTED_MODULE_11__/* .getUserName */ .v)(userName)
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().content),
+                        children: [
+                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().container),
+                                onClick: onClose,
+                                children: [
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_6___default()), {
+                                        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().link),
+                                        href: shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_7__/* .routes.MAIN */ ._.MAIN,
+                                        children: [
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_9__/* .AiOutlineHome */ .iq, {}),
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h3", {
+                                                children: "Home"
+                                            })
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(shared_lib_components__WEBPACK_IMPORTED_MODULE_3__/* .Ternary */ .fV, {
+                                        where: userId,
+                                        children: [
+                                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_6___default()), {
+                                                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().link),
+                                                href: `${shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_7__/* .routes.USERS */ ._.USERS}/userId`,
+                                                children: [
+                                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_9__/* .BiUser */ .ED, {}),
+                                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h3", {
+                                                        children: "Profile"
+                                                    })
+                                                ]
+                                            }),
+                                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_6___default()), {
+                                                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().link),
+                                                href: shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_7__/* .routes.LOGIN */ ._.LOGIN,
+                                                children: [
+                                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_9__/* .CiLogin */ .vz, {}),
+                                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h3", {
+                                                        children: "Sign in"
+                                                    })
+                                                ]
+                                            })
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_6___default()), {
+                                        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().link),
+                                        href: shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_7__/* .routes.SEARCH */ ._.SEARCH,
+                                        children: [
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_9__/* .AiOutlineBars */ .N8, {}),
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h3", {
+                                                children: "Categories"
+                                            })
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_6___default()), {
+                                        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().link),
+                                        href: shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_7__/* .routes.MESSENGER */ ._.MESSENGER,
+                                        children: [
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_9__/* .BiMessageDetail */ .av, {}),
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h3", {
+                                                children: "Messenger"
+                                            })
+                                        ]
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().container),
+                                onClick: onClose,
+                                children: [
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_6___default()), {
+                                        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().link),
+                                        href: shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_7__/* .routes.SAVED */ ._.SAVED,
+                                        children: [
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_9__/* .AiOutlineHeart */ .lo, {}),
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h3", {
+                                                children: "Orders"
+                                            })
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_6___default()), {
+                                        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().link),
+                                        href: shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_7__/* .routes.USERS */ ._.USERS,
+                                        children: [
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_9__/* .FiUsers */ .WY, {}),
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h3", {
+                                                children: "Users"
+                                            })
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_6___default()), {
+                                        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().link),
+                                        href: shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_7__/* .routes.CART */ ._.CART,
+                                        children: [
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_9__/* .AiOutlineShoppingCart */ .nx, {}),
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h3", {
+                                                children: "My Cart"
+                                            })
+                                        ]
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().container),
+                                onClick: onClose,
+                                children: [
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_6___default()), {
+                                        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().link),
+                                        href: shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_7__/* .routes.ABOUT */ ._.ABOUT,
+                                        children: [
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_9__/* .BsInfoLg */ .Dp, {}),
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h3", {
+                                                children: "About Project"
+                                            })
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().link),
+                                        onClick: toggleTheme,
+                                        children: [
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_9__/* .BsMoon */ .s1, {}),
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h3", {
+                                                children: "Switch Theme"
+                                            })
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().link),
+                                        onClick: toggleLang,
+                                        children: [
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_9__/* .TbLanguage */ .UX, {}),
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h3", {
+                                                children: "Switch language"
+                                            })
+                                        ]
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h2", {
+                                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().footer_text),
+                                children: "@ Gearonix 2023"
                             })
                         ]
                     })
-                })
+                ]
             })
         ]
     });
