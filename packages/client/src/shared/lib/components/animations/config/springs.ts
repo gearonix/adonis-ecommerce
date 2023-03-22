@@ -9,6 +9,22 @@ const springs: Springs = {
       opacity: 1
     }
   }),
+  burgerMenu: () => ({
+    from: {
+      x: -550
+    },
+    to: {
+      x: 0
+    }
+  }),
+  partialOpacity: () => ({
+    from: {
+      opacity: 0
+    },
+    to: {
+      opacity: 0.6
+    }
+  }),
   opacityHeight: (height) => ({
     from: {
       opacity: 0,

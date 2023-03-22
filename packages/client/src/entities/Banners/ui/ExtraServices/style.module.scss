@@ -10,4 +10,7 @@
     @include flex(space-between);
     @include size(100%, 220px);
   }
+  @media (max-width: 830px) {
+    display: none;
+  }
 }

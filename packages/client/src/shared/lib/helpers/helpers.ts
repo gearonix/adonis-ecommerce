@@ -2,6 +2,7 @@ import dayjs from 'dayjs'
 import LocalizedFormat from 'dayjs/plugin/localizedFormat'
 import { UserRoles } from 'app/config/globals'
 import i18n from 'i18next'
+import { User } from 'widgets/Profile'
 
 dayjs.extend(LocalizedFormat)
 

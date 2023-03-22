@@ -2,7 +2,7 @@
 
 .item {
   @include itemHover;
-  @include size(22%);
+  @include size(360px);
   transition: background 200ms;
 
   &:hover {
@@ -48,4 +48,7 @@
       margin-bottom: -4px;
     }
   }
+}
+.default_project{
+
 }

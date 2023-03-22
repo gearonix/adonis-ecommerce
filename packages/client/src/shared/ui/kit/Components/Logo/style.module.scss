@@ -19,6 +19,22 @@
     width: 170px;
   }
   @media (max-width: 480px) {
-    transform: scale(0.8);
+    transform: scale(0.74);
+    margin-left: -9px;
+  }
+  @media (max-width: 400px) {
+    width: 47px;
+    height: 47px;
+  }
+  .desktop{
+    @media (max-width: 400px) {
+      display: none;
+    }
+  }
+  .mobile{
+    display: none;
+    @media (max-width: 400px) {
+      display: block;
+    }
   }
 }

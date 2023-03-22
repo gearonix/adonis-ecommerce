@@ -11,11 +11,11 @@ export const RecommendedItem: FC<{product: Product}> = ({ product }) => {
   const helpers = new Helpers()
   return <div className={s.item}>
     <Link href={`${routes.SEARCH}/${product.productId}`}>
-      <h3 className={s.item_title}>{product.name}</h3>
-      <span className={s.item_description}>{helpers.cropped(product.description)}</span>
       <div className={s.item_image}>
         <NextImage src={product.images[0]} def={DefaultAssets.PRODUCT}/>
       </div>
+      <h3 className={s.item_title}>{product.name}</h3>
+      <span className={s.item_description}>{helpers.cropped(product.description)}</span>
     </Link>
   </div>
 }

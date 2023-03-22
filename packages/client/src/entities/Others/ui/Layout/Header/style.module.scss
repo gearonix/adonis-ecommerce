@@ -10,9 +10,8 @@
     height: 133px;
   }
   @media (max-width: 508px) {
-    height: 76px;
+    height: 70px;
   }
-
 
 
   .logo_link {
@@ -23,6 +22,10 @@
     }
     @media (max-width: 880px) {
       width: 155px;
+    }
+    @media (max-width: 400px) {
+      width: 47px;
+      margin-left: 12px;
     }
 
 
@@ -38,7 +41,7 @@
     @media (max-width: 910px) {
       justify-content: space-between;
     }
-    @media (max-width: 460px) {
+    @media (max-width: 508px) {
       height: 100%;
     }
 
@@ -61,10 +64,8 @@
         width: 50%;
       }
       @media (max-width: 802px) {
-        width: 180px !important;
+        width: 170px !important;
       }
-
-
 
       .options_item {
         @include flex(space-between, center, column);
@@ -73,14 +74,21 @@
         @media (max-width: 1160px) {
           flex-direction: row;
         }
-        .avatar{
-          @include imageWrapper(25px,25px,100%);
+
+        .avatar {
+          @include imageWrapper(25px, 25px, 100%);
         }
 
         svg {
           @include size(23px, 23px);
           @media (max-width: 1160px) {
             @include size(27px, 27px);
+          }
+          @media (max-width: 508px) {
+            @include size(23px, 23px);
+          }
+          @media (max-width: 508px) {
+            @include size(21px, 21px);
           }
         }
 

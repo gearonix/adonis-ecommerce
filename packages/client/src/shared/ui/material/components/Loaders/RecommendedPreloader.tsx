@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardContent, Skeleton } from '@mui/material'
+import { Card, Skeleton } from '@mui/material'
 import { FC } from 'react'
 import { Map } from 'shared/lib/components'
 

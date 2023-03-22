@@ -16,7 +16,7 @@ const MainPage = () => {
       <title>Adonis - Online Shopping</title>
     </Head>
     <Categories/>
-    <RecommendedItems Component={SortedProducts} type={ProductTypes[1]}/>
+    <RecommendedItems Component={SortedProducts} type={ProductTypes[0]}/>
     <RecommendedItems Component={SortedProducts} type={ProductTypes[4]}/>
     <FindProductBanner Form={<SearchProductsForm Component={ProductBannerForm}/>}/>
     <RecommendedItems Component={RecommendedMap}/>

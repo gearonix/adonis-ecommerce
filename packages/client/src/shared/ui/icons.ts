@@ -9,7 +9,7 @@ export { AiFillEye, AiFillEyeInvisible, AiFillLock, AiOutlineApi, AiOutlineArrow
   AiOutlineCheck, AiOutlineGithub, AiOutlineHome, AiOutlineSearch, AiFillFileAdd,
   AiOutlineFileAdd, AiOutlineUnorderedList, AiOutlineUpload, AiOutlineShoppingCart,
   AiOutlineCar, AiOutlineUser, AiOutlineInfoCircle,
-  AiOutlineFileSearch, AiOutlineStar } from 'react-icons/ai'
+  AiOutlineFileSearch, AiOutlineStar, AiOutlineBars, AiOutlineHeart } from 'react-icons/ai'
 
 export { MdMessage, MdOutlineDescription, MdSend, MdOutlineDesignServices } from 'react-icons/md'
 
@@ -32,3 +32,9 @@ export { BiDollar, BiImage } from 'react-icons/bi'
 export { IoIosResize, IoLogoModelS } from 'react-icons/io'
 
 export { RiQuestionAnswerLine } from 'react-icons/ri'
+
+export { TbLanguage } from 'react-icons/tb'
+export { BsMoon } from 'react-icons/bs'
+export { FiUsers } from 'react-icons/fi'
+export { BiMessageDetail, BiUser } from 'react-icons/bi'
+export { CiLogin } from 'react-icons/ci'

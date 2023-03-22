@@ -11,6 +11,7 @@ export enum DefaultAssets{
 export enum Assets{
     LOGO_DARK = '/assets/logo-dark.png',
     LOGO_LIGHT = '/assets/logo-light.png',
+    LOGO_MOBILE = '/assets/logo-mobile.png',
     NOT_FOUND = '/assets/common/not_found.svg',
     APP_ERROR = '/assets/common/app_error.png',
     ABOUT = '/assets/common/about.png',

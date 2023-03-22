@@ -20,11 +20,13 @@ import { Display, Ternary } from 'shared/lib/components'
 import { HiUsers } from 'react-icons/hi'
 import { useBooleanState } from 'shared/lib/hooks'
 import Navigation from '../../Navigation/Navigation'
+import { BurgerProps } from 'features/Layout/ui/Burger/Burger'
+import cn from 'classnames'
 
 export interface HeaderSkeletonProps {
   Search: FC,
   DropDowns: FC,
-  Burger: FC
+  Burger: FC<BurgerProps>
 }
 
 
@@ -35,18 +37,18 @@ const Header: FC<HeaderSkeletonProps> = memo(({ DropDowns, Burger, Search }) => 
   return <>
     <header className={s.header}>
       <Display when={navigation.isOpen}>
-        <Navigation/>
+        <Navigation onClose={navigation.close}/>
       </Display>
       <div className={s.header_block}>
         <div style={{ height: '100%', display: 'flex', alignItems: 'center' }}>
-          <Burger/>
+          <Burger onOpen={navigation.open}/>
           <Link href={'/'} className={s.logo_link}>
             <Logo/>
           </Link>
         </div>
         <Search/>
         <div className={s.options}>
-          <Link className={s.options_item} href={routes.LOGIN}>
+          <Link className={cn(s.options_item, s.mobile)} href={routes.LOGIN}>
             <Ternary where={avatar}>
               <div className={s.avatar}>
                 <NextImage src={avatar} def={DefaultAssets.AVATAR}/>
@@ -55,7 +57,7 @@ const Header: FC<HeaderSkeletonProps> = memo(({ DropDowns, Burger, Search }) => 
             </Ternary>
             <span>{t('Profile')}</span>
           </Link>
-          <Link className={s.options_item} href={routes.MESSENGER}>
+          <Link className={cn(s.options_item, s.mobile)} href={routes.MESSENGER}>
             <MdMessage/>
             <span>{t('Messenger')}</span>
           </Link>
@@ -75,7 +77,7 @@ const Header: FC<HeaderSkeletonProps> = memo(({ DropDowns, Burger, Search }) => 
             <HoverLink><AiOutlineSearch/> {t('Search')}</HoverLink>
           </Link>
           <Link href={routes.MESSENGER}>
-            <HoverLink><MdMessage/> {t('Messages')}</HoverLink>
+            <HoverLink className={s.messenger}><MdMessage/> {t('Messages')}</HoverLink>
           </Link>
           <Link href={routes.USERS}>
             <HoverLink><HiUsers/> {t('Users')}</HoverLink>

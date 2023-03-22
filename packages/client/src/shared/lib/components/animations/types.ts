@@ -13,7 +13,7 @@ export interface Springs {
 
 export interface WithSpringProps {
     className?: string,
-    children: ReactNode,
+    children?: ReactNode,
     type?: keyof typeof springs,
     param?: string | number,
     style?: CSSProperties,

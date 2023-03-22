@@ -1,4 +1,4 @@
-import React, { FC, memo } from 'react'
+import React, { memo } from 'react'
 import s from './style.module.scss'
 import { Button, CategoriesList, NextImage } from 'shared/ui/kit'
 import { ProductTypesKeys } from 'shared/types/elements/productTypes'

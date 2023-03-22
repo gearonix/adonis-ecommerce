@@ -1,6 +1,6 @@
 import { FC, memo } from 'react'
 import s from './style.module.scss'
-import { Button, RecommendedItem } from 'shared/ui/kit'
+import { BlueLink, Button, ContainerTitle, RecommendedItem } from 'shared/ui/kit'
 import { routes } from 'shared/config/consts/routes'
 import { productsActions, RecommendedItemProps } from 'widgets/Products'
 import { useDispatch } from 'shared/types/redux'
@@ -9,6 +9,8 @@ import { RecommendedPreloader } from 'shared/ui/material'
 import { backgroundImage } from 'shared/lib/helpers'
 import { ProductTypesAssets } from 'shared/config/consts/assets'
 import { useTranslation } from 'react-i18next'
+import cn from 'classnames'
+import { AiOutlineArrowRight } from 'react-icons/ai'
 
 
 const SortedProducts = memo<RecommendedItemProps>(({ type = 'Electronics', items }) => {
@@ -22,6 +24,7 @@ const SortedProducts = memo<RecommendedItemProps>(({ type = 'Electronics', items
   }
 
   return <div className={s.recommended}>
+    <ContainerTitle className={cn(s.mobile_header)}>{t(type)}</ContainerTitle>
     <div className={s.image_block}
       style={backgroundImage(ProductTypesAssets[type])}>
       <div className={s.title}>{t(type)}</div>
@@ -32,6 +35,9 @@ const SortedProducts = memo<RecommendedItemProps>(({ type = 'Electronics', items
       {items.length ? items.slice(0, 8).map((product, idx) => <RecommendedItem product={product}
         key={`${product.productId}_${idx}`}/>) : <RecommendedPreloader/>}
     </div>
+    <BlueLink className={s.source_now} onClick={onSearch}>
+      {t('Source_now')} <AiOutlineArrowRight/>
+    </BlueLink>
   </div>
 })
 

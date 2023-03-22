@@ -4,16 +4,28 @@
   @include flex(stretch, center, column);
   @include padding(10px, 9px);
   height: 310px;
+  width: 236px;
   background: $bg-absolute;
   border-radius: $rounded;
   border: $br $bg-150;
   @include itemHover;
   box-shadow: $shadow;
+  @media (max-width: 1454px) {
+    width: 200px;
+    height: 270px;
+  }
+  @media (max-width: 870px) {
+    width: 160px;
+    height: 230px;
+    padding: 13px;
+  }
+  @media (max-width: 420px) {
+    width: 140px;
+  }
 
   .price, .item_description {
     display: inline-block;
     width: 90%;
-
   }
 
   .price {
@@ -28,7 +40,7 @@
   }
 
   .image_wrapper {
-    @include imageWrapper(90%, 200px);
+    @include imageWrapper(148px, 148px);
     margin: 0 auto;
   }
 }

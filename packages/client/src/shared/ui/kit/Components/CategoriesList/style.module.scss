@@ -2,11 +2,29 @@
 
 .list {
   width: 12%;
+  @media (max-width: 1052px) {
+    width: 20%;
+  }
+  @media (max-width: 634px) {
+    display: none;
+  }
 
   h2.list_item {
     margin-top: 22px;
     color: $bg-200;
     margin-left: 10px;
     cursor: pointer;
+    @media (max-width: 922px) {
+      font-size: 15px;
+      margin-top: 15px;
+    }
+    @media (max-width: 718px) {
+      font-size: 14px;
+      margin-top: 13px;
+    }
+    @media (max-width: 698px) {
+      font-size: 13px;
+      margin-top: 11px;
+    }
   }
 }

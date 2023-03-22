@@ -4,4 +4,8 @@
     @include inlineStyles($small_md, $bg-100, bold);
     margin-bottom: 24px;
     margin-top: 14px;
+    @media (max-width: 600px) {
+        font-size: 22px;
+        margin-bottom: 8px;
+    }
 }

@@ -7,9 +7,12 @@
   svg {
     color: $bg-100;
     @include size(24px, 24px);
+    @media (max-width: 480px) {
+      @include size(22px, 22px);
+    }
   }
 
-  @media (max-width: 880px) {
+  @media (max-width: 628px) {
     display: block;
   }
   @media (max-width: 480px) {

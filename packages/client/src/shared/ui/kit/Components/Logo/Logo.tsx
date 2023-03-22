@@ -8,7 +8,9 @@ import { useTheme } from 'shared/lib/hooks'
 export const Logo: FC = () => {
   const { isLight } = useTheme()
   return <div className={s.logo}>
-    <NextImage src={isLight ? Assets.LOGO_LIGHT : Assets.LOGO_DARK}/>
+    <NextImage src={isLight ? Assets.LOGO_LIGHT : Assets.LOGO_DARK}
+      className={s.desktop}/>
+    <NextImage src={Assets.LOGO_MOBILE} className={s.mobile}/>
   </div>
 }
 

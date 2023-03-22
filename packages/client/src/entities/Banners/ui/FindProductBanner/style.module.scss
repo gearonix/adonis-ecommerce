@@ -2,23 +2,43 @@
 
 
 .search_form {
-  @include size(100%, 420px);
+
+  @include size(100%, 400px);
   @include padding(40px, 40px);
   border-radius: $rounded;
   margin-top: 20px;
   position: relative;
   box-sizing: border-box;
   @include backgroundImage('/assets/common/search_form.png');
+  background-size: cover;
 
   .title {
     margin-bottom: 20px;
     width: 400px;
     @include inlineStyles($l-medium, white, bold);
+    @media (max-width: 1180px) {
+      font-size: 26px;
+    }
+    @media (max-width: 460px) {
+      display: none;
+    }
   }
 
   .description {
     color: white;
     width: 400px;
+    @media (max-width: 460px) {
+      display: none;
+    }
+  }
+  @media (max-width: 1016px) {
+    padding-bottom: 20px;
+    height: max-content;
+  }
+  @media (max-width: 460px) {
+    padding: 10px;
+    margin: 10px 0;
+    height: 210px;
   }
 
 }
