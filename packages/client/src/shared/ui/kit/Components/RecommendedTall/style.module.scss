@@ -20,7 +20,8 @@
     padding: 13px;
   }
   @media (max-width: 420px) {
-    width: 140px;
+    width: 130px;
+    height: 200px;
   }
 
   .price, .item_description {
@@ -42,5 +43,10 @@
   .image_wrapper {
     @include imageWrapper(148px, 148px);
     margin: 0 auto;
+    @media (max-width: 460px) {
+      width: 122px;
+      height: 122px;
+    }
   }
+
 }

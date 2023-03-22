@@ -19,7 +19,7 @@
     @media (max-width: 1180px) {
       font-size: 26px;
     }
-    @media (max-width: 460px) {
+    @media (max-width: 792px) {
       display: none;
     }
   }
@@ -27,7 +27,7 @@
   .description {
     color: white;
     width: 400px;
-    @media (max-width: 460px) {
+    @media (max-width: 792px) {
       display: none;
     }
   }
@@ -35,10 +35,14 @@
     padding-bottom: 20px;
     height: max-content;
   }
+  @media (max-width: 792px) {
+    height: max-content;
+    padding: 10px;
+  }
   @media (max-width: 460px) {
     padding: 10px;
     margin: 10px 0;
-    height: 210px;
+    height: 180px;
   }
 
 }

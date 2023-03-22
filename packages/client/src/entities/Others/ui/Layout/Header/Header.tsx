@@ -3,6 +3,7 @@ import s from './style.module.scss'
 import {
   AiOutlineSearch,
   AiOutlineShoppingCart,
+  AiOutlineUser,
   FaHeart,
   FaInfo,
   FaShoppingCart,
@@ -53,20 +54,24 @@ const Header: FC<HeaderSkeletonProps> = memo(({ DropDowns, Burger, Search }) => 
               <div className={s.avatar}>
                 <NextImage src={avatar} def={DefaultAssets.AVATAR}/>
               </div>
-              <FaUserAlt/>
+              <>
+                <FaUserAlt className={'desktop'}/>
+                <AiOutlineUser className={'mobile'}/>
+              </>
             </Ternary>
             <span>{t('Profile')}</span>
           </Link>
-          <Link className={cn(s.options_item, s.mobile)} href={routes.MESSENGER}>
-            <MdMessage/>
+          <Link className={cn(s.options_item, 'desktop')} href={routes.MESSENGER}>
+            <MdMessage className={'desktop'}/>
             <span>{t('Messenger')}</span>
           </Link>
-          <Link className={s.options_item} href={routes.SAVED}>
+          <Link className={cn(s.options_item, 'desktop')} href={routes.SAVED}>
             <FaHeart/>
             <span>{t('Orders')}</span>
           </Link>
           <Link className={s.options_item} href={routes.CART}>
-            <FaShoppingCart/>
+            <FaShoppingCart className={'desktop'}/>
+            <AiOutlineShoppingCart className={'mobile'}/>
             <span>{t('My_Cart')}</span>
           </Link>
         </div>

@@ -12,6 +12,9 @@
   @media (max-width: 508px) {
     height: 70px;
   }
+  @media (max-width: 400px) {
+    height: 52px;
+  }
 
 
   .logo_link {
@@ -27,8 +30,6 @@
       width: 47px;
       margin-left: 12px;
     }
-
-
   }
 
   .header_block {
@@ -66,6 +67,9 @@
       @media (max-width: 802px) {
         width: 170px !important;
       }
+      @media (max-width: 450px) {
+        width: 85px !important;
+      }
 
       .options_item {
         @include flex(space-between, center, column);
@@ -89,6 +93,10 @@
           }
           @media (max-width: 508px) {
             @include size(21px, 21px);
+          }
+          @media (max-width: 450px) {
+            @include size(25px, 25px);
+
           }
         }
 
@@ -172,5 +180,11 @@
         font-size: 15px;
       }
     }
+  }
+}
+.mobile{
+  display: block;
+  @media (max-width: 450px) {
+    display: none;
   }
 }

@@ -5,7 +5,7 @@
     display: none;
   }
   width: 72%;
-  height: 100vh;
+  height: 101vh;
   max-width: 350px;
   background: $bg-absolute;
   @include absolute;
@@ -54,7 +54,7 @@
   @media (min-width: 900px) {
     display: none;
   }
-  @include size(100vw, 100vh);
+  @include size(101vw, 101vh);
   @include absolute;
   background: black;
   opacity: 0.55;

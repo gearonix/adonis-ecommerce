@@ -13,7 +13,7 @@ import cn from 'classnames'
 import { AiOutlineArrowRight } from 'react-icons/ai'
 
 
-const SortedProducts = memo<RecommendedItemProps>(({ type = 'Electronics', items }) => {
+const SortedProducts = memo<RecommendedItemProps>(({ type = 'Electronics', items, Icon }) => {
   const dispatch = useDispatch()
   const router = useRouter()
   const { t } = useTranslation()
@@ -24,7 +24,7 @@ const SortedProducts = memo<RecommendedItemProps>(({ type = 'Electronics', items
   }
 
   return <div className={s.recommended}>
-    <ContainerTitle className={cn(s.mobile_header)}>{t(type)}</ContainerTitle>
+    <ContainerTitle className={cn(s.mobile_header)}>{Icon && <Icon/>} {t(type)}</ContainerTitle>
     <div className={s.image_block}
       style={backgroundImage(ProductTypesAssets[type])}>
       <div className={s.title}>{t(type)}</div>

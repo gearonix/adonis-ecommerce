@@ -8,6 +8,7 @@ import { ExtraServices, FindProductBanner } from 'entities/Banners'
 import { Categories } from 'widgets/Banners'
 import { SearchProductsForm } from 'features/SearchPage'
 import { ProductBannerForm } from 'entities/SearchPage'
+import { MdMobileFriendly, MdOutlineSportsBaseball } from 'react-icons/md'
 
 
 const MainPage = () => {
@@ -16,8 +17,10 @@ const MainPage = () => {
       <title>Adonis - Online Shopping</title>
     </Head>
     <Categories/>
-    <RecommendedItems Component={SortedProducts} type={ProductTypes[0]}/>
-    <RecommendedItems Component={SortedProducts} type={ProductTypes[4]}/>
+    <RecommendedItems Component={SortedProducts}
+      type={ProductTypes[0]} Icon={MdMobileFriendly}/>
+    <RecommendedItems Component={SortedProducts}
+      type={ProductTypes[4]} Icon={MdOutlineSportsBaseball}/>
     <FindProductBanner Form={<SearchProductsForm Component={ProductBannerForm}/>}/>
     <RecommendedItems Component={RecommendedMap}/>
     <ExtraServices/>

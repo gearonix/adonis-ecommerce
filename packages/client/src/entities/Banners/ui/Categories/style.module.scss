@@ -61,7 +61,7 @@
       @media (max-width: 488px) {
         margin-top: 35px;
       }
-      @media (max-width: 558px) {
+      @media (max-width: 700px) {
         color: $bg-absolute;
         text-shadow: 2px 1px 2px $color-absolute;
       }
@@ -81,12 +81,12 @@
       @media (max-width: 676px) {
         font-size: 24px;
       }
-      @media (max-width: 558px) {
+      @media (max-width: 700px) {
         color: $bg-absolute;
         text-shadow: 2px 1px 2px $color-absolute;
       }
       @media (max-width: 400px) {
-        font-size: 20px;
+        font-size: 22px;
       }
     }
     button{
@@ -100,7 +100,7 @@
       }
       @media (max-width: 400px) {
         height: 25px;
-        font-size: 11px;
+        font-size: 14px;
       }
     }
 

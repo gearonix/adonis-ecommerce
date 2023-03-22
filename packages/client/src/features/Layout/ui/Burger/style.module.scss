@@ -2,13 +2,14 @@
 
 .burger {
   display: none;
-  margin-right: 20px;
+  margin-right: 10px;
 
   svg {
-    color: $bg-100;
+    display: block;
+    color: $bg-200;
     @include size(24px, 24px);
     @media (max-width: 480px) {
-      @include size(22px, 22px);
+      @include size(24px, 24px);
     }
   }
 

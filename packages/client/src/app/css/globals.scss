@@ -94,3 +94,17 @@ h2 {
     width: 74%;
     margin: 40px auto 0;
 }
+
+
+.desktop{
+    display: block;
+    @media (max-width: 450px) {
+      display: none !important;
+    }
+}
+.mobile{
+    display: none;
+    @media (max-width: 450px) {
+        display: block;
+    }
+}

@@ -9,6 +9,11 @@
   h2{
     margin-left: 24px;
     margin-bottom: 24px;
+    @media (max-width: 460px) {
+      font-size: 19px;
+      margin-bottom: 5px;
+      margin-left: 10px;
+    }
   }
 
   .items_block {
@@ -39,13 +44,14 @@
       width: 500px;
     }
     @media (max-width: 500px) {
-      width: 380px;
-      grid-gap: 4px;
+      width: max-content;
+      height: max-content;
+      grid-gap: 15px;
     }
   }
   @media (max-width: 706px) {
-    height: 890px;
-    overflow: hidden;
+    padding-bottom: 0;
+    margin-bottom: 0;
     margin-top: 0;
     padding-top: 0;
   }

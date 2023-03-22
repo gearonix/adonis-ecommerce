@@ -7,15 +7,17 @@ import { Product } from 'widgets/Products'
 
 interface RecommendedItemsProps{
   Component: any,
-  type?: KeyOf<typeof ProductTypes>
+  type?: KeyOf<typeof ProductTypes>,
+  Icon?: FC
 }
 
 export interface RecommendedItemProps{
   items: Product[],
-  type?: KeyOf<typeof ProductTypes>
+  type?: KeyOf<typeof ProductTypes>,
+  Icon?: FC
 }
 
-const RecommendedItems= memo<RecommendedItemsProps>(({ Component, ...filter }) => {
+const RecommendedItems= memo<RecommendedItemsProps>(({ Component, Icon, ...filter }) => {
   const dispatch = useDispatch()
   const [items, setItems] = useState<Product[]>([])
 
@@ -26,7 +28,7 @@ const RecommendedItems= memo<RecommendedItemsProps>(({ Component, ...filter }) =
     })
   }, [])
 
-  return <Component items={items} {...filter}/>
+  return <Component items={items} Icon={Icon} {...filter}/>
 })
 
 export default RecommendedItems
