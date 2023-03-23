@@ -13,6 +13,17 @@
   @include flex(space-between, center);
   .search{
     width: 33%;
+    @media (max-width: 858px) {
+      width: 50%;
+    }
+    @media (max-width: 665px) {
+      width: 87%;
+      margin: 0 auto;
+    }
+  }
+  @media (max-width: 665px) {
+    height: 48px;
+    padding: 0;
   }
 }
 
@@ -23,5 +34,8 @@
   gap: 35px;
   span{
     margin-top: -5px;
+  }
+  @media (max-width: 665px) {
+    display: none;
   }
 }

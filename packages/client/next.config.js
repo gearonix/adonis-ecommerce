@@ -6,6 +6,7 @@ const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL
 const SERVER_HOST = process.env.NEXT_PUBLIC_SERVER_HOST
 const GOOGLE_CLIENT_ID = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID
 const WEBSOCKET_URL = process.env.NEXT_PUBLIC_WEBSOCKET_URL
+const SHOW_DEV_NAVIGATION = process.env.NEXT_PUBLIC_SHOW_DEV_NAVIGATION
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.NEXT_PUBLIC_ANALYZE === 'true',
@@ -21,7 +22,8 @@ const nextConfig = {
     GOOGLE_CLIENT_ID,
     SERVER_URL,
     IS_DEV,
-    WEBSOCKET_URL
+    WEBSOCKET_URL,
+    SHOW_DEV_NAVIGATION
   },
   images: {
     remotePatterns: [

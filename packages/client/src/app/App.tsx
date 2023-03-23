@@ -3,8 +3,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google'
 import Head from 'next/head'
 import {
   AuthProvider, AuthGuard, Layout, StoreProvider, ThemeProvider,
-  ErrorBoundary,
-  FontProvider
+  ErrorBoundary
 } from './providers'
 import 'shared/config/i18n'
 import { WithNotifications } from 'app/providers/Notifications'

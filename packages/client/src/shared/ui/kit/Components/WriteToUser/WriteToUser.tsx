@@ -24,7 +24,7 @@ export const WriteToUser : FC<Props> = ({ className, targetId }) => {
       query: { targetId }
     }}>
       <div className={className}>
-        <button className="outlined_button"><BiMessageDetail />{t('Write message')}</button>
+        <button className="outlined_button"><BiMessageDetail /><span>{t('Write message')}</span></button>
       </div>
     </Link>
   </Display>

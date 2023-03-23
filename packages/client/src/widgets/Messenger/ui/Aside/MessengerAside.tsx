@@ -14,6 +14,7 @@ import { getRoomByTargetId } from 'widgets/Messenger/lib/helpers/getRoomByTarget
 import { Display } from 'shared/lib/components'
 import { AiOutlineSmile } from 'react-icons/ai'
 import { useTranslation } from 'react-i18next'
+import cn from 'classnames'
 
 const MessengerAside: FC = memo(() => {
   const selectedId = useSelector(MessengerSelectors.selectedId)
@@ -40,7 +41,7 @@ const MessengerAside: FC = memo(() => {
     }
   }, [targetId, rooms.length])
 
-  return <aside className={s.messenger_aside}>
+  return <aside className={cn(s.messenger_aside, { [s.selected]: selectedId })}>
     <SearchUsers/>
     {rooms.map((room, idx) => {
       return <MessengerUser key={idx} room={room}

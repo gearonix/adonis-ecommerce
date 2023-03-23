@@ -1,4 +1,4 @@
-import { FC, memo, useCallback, useEffect } from 'react'
+import { memo, useCallback, useEffect } from 'react'
 import { useForm } from 'shared/lib/hooks'
 import { MessageBar } from 'entities/Messenger'
 import { useMessengerSocket } from 'widgets/Messenger/lib/hooks'

@@ -1,5 +1,4 @@
-@use '../../../../css/common' as *;
-
+@use 'src/shared/css/common.scss' as *;
 
 .no_products {
   @include flex(stretch, center, column);
@@ -10,11 +9,19 @@
     text-align: center;
     margin-top: 45px;
     color: $color-absolute-200;
+    @media (max-width: 754px) {
+      font-size: 22px;
+      margin-top: 20px;
+    }
   }
 
   svg {
     margin: 30px auto;
     color: $color-absolute-200;
     @include size(110px, 110px);
+    @media (max-width: 754px) {
+      @include size(80px, 80px);
+    }
   }
+
 }

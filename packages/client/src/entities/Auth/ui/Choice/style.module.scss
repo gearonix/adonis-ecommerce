@@ -3,8 +3,19 @@
 
 .signup_main {
   @include size(100%, 600px);
+  @media (max-width: 484px) {
+    height: max-content;
+    margin-bottom: 15vh;
+  }
 
   .wrapper {
+    @media (max-width: 484px) {
+      width: 330px;
+    }
+    @media (max-width: 436px) {
+      width: 300px;
+      margin-top: 30px;
+    }
     width: 387px;
     @include itemBorder;
     margin: 60px auto 0 auto;
@@ -34,16 +45,25 @@
       span {
         color: $link-color;
       }
+      @media (max-width: 540px) {
+        margin-top: 0;
+      }
     }
 
     .title {
       @include inlineStyles(24px, $bg-100, bold);
+      @media (max-width: 540px) {
+        font-size: 20px;
+      }
     }
 
     .choice_container {
       @include grid(2, 2);
       margin: 87px auto 0 auto;
       width: 96%;
+      @media (max-width: 540px) {
+        margin-top: 30px;
+      }
 
       .choice_block {
         margin: 0 auto;
@@ -55,6 +75,9 @@
         svg {
           @include size(92px, 92px);
           color: $bg-200;
+          @media (max-width: 540px) {
+            @include size(75px, 75px);
+          }
         }
 
         &:hover {
@@ -66,6 +89,11 @@
 
       button {
         margin: 42px auto 0;
+        @media (max-width: 540px) {
+          min-width: 130px !important;
+          font-size: 13px;
+          margin-top: 20px;
+        }
       }
     }
   }

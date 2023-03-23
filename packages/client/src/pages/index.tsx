@@ -9,6 +9,7 @@ import { Categories } from 'widgets/Banners'
 import { SearchProductsForm } from 'features/SearchPage'
 import { ProductBannerForm } from 'entities/SearchPage'
 import { MdMobileFriendly, MdOutlineSportsBaseball } from 'react-icons/md'
+import { FaTshirt } from 'react-icons/fa'
 
 
 const MainPage = () => {
@@ -18,13 +19,13 @@ const MainPage = () => {
     </Head>
     <Categories/>
     <RecommendedItems Component={SortedProducts}
-      type={ProductTypes[0]} Icon={MdMobileFriendly}/>
+      type={ProductTypes[1]} Icon={FaTshirt}/>
     <RecommendedItems Component={SortedProducts}
       type={ProductTypes[4]} Icon={MdOutlineSportsBaseball}/>
     <FindProductBanner Form={<SearchProductsForm Component={ProductBannerForm}/>}/>
     <RecommendedItems Component={RecommendedMap}/>
     <ExtraServices/>
-    <RecommendedItems Component={SortedProducts} type={ProductTypes[0]}/>
+    <RecommendedItems Component={SortedProducts} type={ProductTypes[0]} Icon={MdMobileFriendly}/>
   </WithSpring>
 }
 

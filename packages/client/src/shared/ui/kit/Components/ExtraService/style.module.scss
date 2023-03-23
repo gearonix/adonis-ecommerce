@@ -2,11 +2,14 @@
 
 .item {
   @include itemHover;
-  @include size(360px);
+  @include size(390px);
   transition: background 200ms;
 
   &:hover {
     background: $bg-absolute-hover;
+  }
+  @media (max-width: 1500px) {
+    width: 360px;
   }
 
   background: $bg-absolute;

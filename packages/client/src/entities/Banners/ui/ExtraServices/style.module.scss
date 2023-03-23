@@ -1,6 +1,9 @@
 @use 'shared/css/common.scss' as *;
 
 .extra_services {
+  h2{
+    margin-top: 25px;
+  }
   width: 100%;
   box-sizing: border-box;
   padding-top: 20px;
@@ -9,8 +12,12 @@
   .block {
     @include flex(space-between);
     @include size(100%, 220px);
+    gap: 45px;
+    @media (max-width: 1533px) {
+      gap: 10px;
+    }
   }
-  @media (max-width: 830px) {
+  @media (max-width: 1454px) {
     display: none;
   }
 }

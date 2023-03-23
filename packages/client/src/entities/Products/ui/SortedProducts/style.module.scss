@@ -1,13 +1,15 @@
 @use 'shared/css/common.scss' as *;
 
 .recommended {
-  @include size(100%, 270px);
+  @include size(98%, 270px);
   @include flex();
   @media (max-width: 994px) {
     height: 220px;
   }
   @media (max-width: 674px) {
     height: 185px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   @media (max-width: 578px) {
     height: max-content;
@@ -17,11 +19,10 @@
     margin-bottom: 7px;
     overflow: hidden;
   }
-  margin-top: 30px;
   background: $bg-absolute;
   border-radius: $rounded;
   @include itemBorder;
-  margin-bottom: 40px;
+  margin: 30px auto 40px;
 
   .image_block {
     background-size: cover;

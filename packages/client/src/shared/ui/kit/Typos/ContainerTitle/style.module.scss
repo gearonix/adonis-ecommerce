@@ -4,8 +4,14 @@
     @include inlineStyles($small_md, $bg-100, bold);
     margin-bottom: 24px;
     margin-top: 14px;
+    margin-left: 5px;
     @media (max-width: 600px) {
-        font-size: 22px;
+        font-size: 20px;
         margin-bottom: 8px;
+    }
+}
+.disappears{
+    @media (max-width: 486px) {
+      display: none;
     }
 }

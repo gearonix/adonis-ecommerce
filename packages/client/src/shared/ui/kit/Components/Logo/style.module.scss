@@ -22,18 +22,18 @@
     transform: scale(0.74);
     margin-left: -9px;
   }
-  @media (max-width: 400px) {
+  @media (max-width: 500px) {
     width: 41px;
     height: 41px;
   }
   .desktop{
-    @media (max-width: 400px) {
+    @media (max-width: 500px) {
       display: none;
     }
   }
   .mobile{
     display: none;
-    @media (max-width: 400px) {
+    @media (max-width: 500px) {
       display: block;
     }
   }

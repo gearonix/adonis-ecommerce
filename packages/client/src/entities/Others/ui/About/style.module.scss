@@ -18,10 +18,21 @@
   padding: 14px;
   @include flex(stretch, center,column);
   margin-top: 60px;
+  @media (max-width: 540px) {
+    margin-top: 20px;
+  }
   .text{
     color: #3a3a3a;
     width: 54%;
     line-height: 33px;
+    @media (max-width: 540px) {
+      width: 85%;
+    }
+  }
+  .image_wrapper{
+    @media (max-width: 540px) {
+      width: 85%;
+    }
   }
   button{
     background: #2a7dfc;

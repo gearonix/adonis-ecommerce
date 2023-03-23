@@ -1,4 +1,4 @@
-import { FC, useRef } from 'react'
+import { FC } from 'react'
 import s from './style.module.scss'
 import { NextImage } from 'shared/ui/kit'
 import { DefaultAssets } from 'shared/config/consts/assets'
@@ -41,7 +41,7 @@ const Navigation : FC<NavigationProps> = ({ onClose }) => {
             <h3>Home</h3>
           </Link>
           <Ternary where={userId}>
-            <Link className={s.link} href={`${routes.USERS}/userId`}>
+            <Link className={s.link} href={routes.LOGIN}>
               <BiUser />
               <h3>Profile</h3>
             </Link>

@@ -11,6 +11,7 @@ import { useMessengerSocket } from 'widgets/Messenger/lib/hooks'
 import { MessengerSelectors } from 'widgets/Messenger'
 import { AuthSelectors } from 'widgets/Login'
 import { DefaultChat } from 'entities/Messenger/ui/Content/MessengerContent'
+import cn from 'classnames'
 
 const MessengerContent = memo(() => {
   const dispatch = useDispatch()

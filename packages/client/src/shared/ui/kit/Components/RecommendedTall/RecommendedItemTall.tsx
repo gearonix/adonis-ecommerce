@@ -15,7 +15,7 @@ export const RecommendedItemTall: FC<{product: Product}> = ({ product }) => {
     </div>
     <h3 className={s.price}>${product.price}</h3>
     <span className={s.item_description}>
-      {helpers.cropped(product.description, 14)}
+      {helpers.cropped(product.description, 30)}
     </span> </Link>
 }
 

@@ -54,7 +54,7 @@
   @media (min-width: 900px) {
     display: none;
   }
-  @include size(101vw, 101vh);
+  @include size(100vw, 101vh);
   @include absolute;
   background: black;
   opacity: 0.55;

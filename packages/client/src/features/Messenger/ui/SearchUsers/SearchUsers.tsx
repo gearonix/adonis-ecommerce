@@ -3,6 +3,7 @@ import { SearchInput } from 'shared/ui/material'
 import { useForm } from 'shared/lib/hooks'
 import { useDispatch } from 'shared/types/redux'
 import { messengerActions } from 'widgets/Messenger'
+import s from './style.module.scss'
 
 interface SearchForm{
   search: string
@@ -22,7 +23,7 @@ const SearchUsers: FC = memo(() => {
     return () => sub.unsubscribe()
   }, [])
 
-  return <div style={{ width: '90%', margin: '0 auto', marginBottom: '6px' }}>
+  return <div className={s.input}>
     <SearchInput values={reg('search')} />
   </div>
 })

@@ -7,9 +7,7 @@ import { userAdapterSelectors, usersActions } from 'widgets/Users/store/slice/us
 import { UsersSelectors } from 'widgets/Users'
 import { User } from 'entities/Users'
 import s from './style.module.scss'
-import { AiOutlineShoppingCart as CartIcon } from 'react-icons/ai'
 import { NotFound, WithLoading } from 'shared/ui/kit'
-import cn from 'classnames'
 import { FiUsers } from 'react-icons/fi'
 
 

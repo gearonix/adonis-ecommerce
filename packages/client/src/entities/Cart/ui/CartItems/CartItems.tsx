@@ -20,7 +20,7 @@ export interface CartItemsProps{
 
 const CartItems = memo<CartItemsProps>((props) => {
   const { items, RemoveAll, AddToSaved, Remove, Icon = CartIcon, title = 'Cart' } = props
-  return <div style={{ width: '50%' }}>
+  return <div>
     <div className={s.cart_container}>
       <div className={s.cart_layout}>
 

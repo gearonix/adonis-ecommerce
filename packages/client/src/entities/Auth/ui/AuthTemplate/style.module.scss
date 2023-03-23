@@ -9,12 +9,18 @@
   @include itemBorder;
   margin: 60px auto 50px;
   padding: 30px;
+  @media (max-width: 540px) {
+    width: 280px;
+  }
 }
 
 .title {
   font-size: $small-md;
   margin-bottom: 30px;
   font-weight: bold;
+  @media (max-width: 540px) {
+    font-size: 20px;
+  }
 }
 
 .grey_line {

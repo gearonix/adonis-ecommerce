@@ -6,7 +6,12 @@
   @include itemBorder;
   position: relative;
   height: 570px;
+  padding-bottom: 20px;
   @include flex(stretch,center,column);
+  @media (max-width: 560px) {
+    margin-top: 0;
+    height: max-content;
+  }
 }
 
 .title {
@@ -17,6 +22,12 @@
   svg{
     @include size(30px,30px);
     margin-right: 3px;
+    @media (max-width: 560px) {
+      @include size(27px,27px);
+    }
+  }
+  @media (max-width: 560px) {
+    font-size: 28px;
   }
 }
 
@@ -26,6 +37,10 @@
   color: $color-absolute-200;
   text-align: center;
   margin: 0 auto 30px;
+  @media (max-width: 560px) {
+    font-size: 22px;
+    margin-bottom: 0;
+  }
 }
 
 .image_wrapper {
@@ -34,6 +49,9 @@
   svg{
     @include size(200px,200px);
     color: $color-absolute-200;
+    @media (max-width: 560px) {
+      @include size(150px,150px);
+    }
   }
 }
 

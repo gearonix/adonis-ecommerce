@@ -5,6 +5,9 @@
   background: $bg-absolute;
   padding-top: 40px;
   margin-top: 10px;
+  @media (max-width: 800px) {
+    padding-top: 20px;
+  }
 
 
 
@@ -16,11 +19,12 @@
     @media (max-width: 990px) {
       height: 132px;
     }
-    @media (max-width: 832px) {
+    @media (max-width: 800px) {
       height: 68px;
     }
     @media (max-width: 800px) {
-      height: 38px;
+      height: max-content;
+      margin: 0;
     }
 
     @include size(85%, 234px);
@@ -30,6 +34,8 @@
     }
     @media (max-width: 832px) {
       justify-content: center;
+      margin: 0 auto;
+      padding-bottom: 20px;
     }
     margin: 0 auto 59px;
 
@@ -40,9 +46,7 @@
     .brand_block {
       @include size(25%);
       @media (max-width: 800px) {
-        position: absolute;
-        left: 20px;
-        bottom: 32px;
+        display: none;
       }
 
       .brand_text {
@@ -122,10 +126,10 @@
             font-size: 15px;
           }
           @media (max-width: 584px) {
-            font-size: 14px;
+            font-size: 13px;
           }
           @media (max-width: 400px) {
-            font-size: 13px;
+            font-size: 12px;
           }
         }
 

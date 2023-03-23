@@ -10,6 +10,16 @@
   @include flex(space-between);
   margin: 20px auto 10px auto;
   @include size(700px, 52px);
+  @media (max-width: 1131px) {
+    width: 500px;
+  }
+  @media (max-width: 855px) {
+    width: 400px;
+    height: 43px;
+  }
+  @media (max-width: 447px) {
+    width: 340px;
+  }
   .buttons{
     display: flex;
     gap: 16px;
@@ -36,6 +46,9 @@
     svg {
       @include size(27px, 27px);
       color: $hover-100;
+      @media (max-width: 855px) {
+        @include size(22px, 22px)
+      }
     }
     position: relative;
     input{
@@ -73,5 +86,9 @@
     &:hover {
       color: #789CCE;
     }
+    @media (max-width: 855px) {
+      @include size(22px, 22px)
+    }
   }
 }
+

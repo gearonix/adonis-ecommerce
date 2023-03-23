@@ -8,6 +8,13 @@
 .layout{
     background: $color-300;
     color: $color-absolute;
+    min-height: 100vh;
+    @media (max-width: 508px) {
+      padding-top: 70px;
+    }
+    @media (max-width: 400px) {
+      padding-top: 52px;
+    }
 }
 
 * {
@@ -73,7 +80,7 @@ h2 {
 
 }
 
-.messenger_page {
+.messenger_page{
     display: flex;
     height: 770px;
     margin-bottom: 30px;
@@ -82,10 +89,32 @@ h2 {
     overflow: hidden;
     box-shadow: $shadow;
 }
+.messenger_page.selected{
+    @media (max-width: 851px) {
+        margin-top: 20px;
+        height: max-content;
+    }
+    .messenger_block{
+        @media (max-width: 851px) {
+            display: block;
+            width: 100%;
+            height: 600px;
+        }
+    }
+}
+.messenger_block{
+    width: 77%;
+    @media (max-width: 851px) {
+        display: none;
+    }
+}
+
 
 .cart_page {
-    width: 100%;
     display: flex;
+    @media (max-width: 486px) {
+      display: block;
+    }
 }
 
 
@@ -93,6 +122,15 @@ h2 {
 .users{
     width: 74%;
     margin: 40px auto 0;
+    @media (max-width: 1342px) {
+      width: 85%;
+    }
+    @media (max-width: 1032px) {
+      width: 90%;
+    }
+    @media (max-width: 520px) {
+      width: 100%;
+    }
 }
 
 

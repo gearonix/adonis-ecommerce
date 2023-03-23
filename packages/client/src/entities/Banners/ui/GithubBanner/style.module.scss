@@ -10,6 +10,16 @@
   @include flex(space-between, center);
   background: $link-color;
   transition: background 200ms;
+  @media (max-width: 774px) {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 80px;
+  }
+  @media (max-width: 522px) {
+    @include flex(stretch, center, column);
+    padding: 14px;
+    height: max-content;
+  }
 
   &:hover {
     background: $link-color-hover;
@@ -23,10 +33,25 @@
   h2 {
     font-size: $small-md;
     margin-bottom: 4px;
+    @media (max-width: 774px) {
+      font-size: 18px;
+    }
+    @media (max-width: 422px) {
+      font-size: 16px;
+    }
+  }
+  span{
+    @media (max-width: 774px) {
+      font-size: 14px;
+    }
   }
 
   button {
     width: 121px;
+    @media (max-width: 522px) {
+      margin-top: 12px;
+      height: 25px;
+    }
   }
 
 

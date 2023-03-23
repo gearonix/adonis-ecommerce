@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import React, { FC, useEffect } from 'react'
 import { DynamicModuleLoader, WithSpring } from 'shared/lib/components'
-import { MessengerAside, MessengerContent, MessengerHeader, messengerSlice } from
+import { MessengerAside, MessengerContent, MessengerHeader, MessengerSelectors, messengerSlice } from
   'widgets/Messenger'
 import { ExtraServices } from 'entities/Banners'
 import { RecommendedItems } from 'widgets/Products'
@@ -12,9 +12,11 @@ import { ContainerTitle } from 'shared/ui/kit'
 import { useSelector } from 'shared/types/redux'
 import { AuthSelectors } from 'widgets/Login'
 import { useTranslation } from 'react-i18next'
+import cn from 'classnames'
 
 
 const Messenger: FC = () => {
+  const isSelected = useSelector(MessengerSelectors.selectedId)
   const userName = useSelector(AuthSelectors.userName)
   const { t } = useTranslation()
 
@@ -23,9 +25,9 @@ const Messenger: FC = () => {
       <title>Adonis - Messenger</title>
     </Head>
     <ContainerTitle>{t('Messenger')} ({userName})</ContainerTitle>
-    <WithSpring className={'messenger_page'}>
+    <WithSpring className={cn('messenger_page', { selected: isSelected })}>
       <MessengerAside/>
-      <div style={{ width: '88%' }}>
+      <div className={cn('messenger_block')}>
         <MessengerHeader/>
         <MessengerContent/>
       </div>

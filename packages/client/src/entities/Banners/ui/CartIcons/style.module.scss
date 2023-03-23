@@ -1,7 +1,7 @@
 @use 'shared/css/common.scss' as *;
 
 .cart_icons {
-  @include size(100%, 50px);
+  @include size(809px, 50px);
   @include flex(space-between);
   margin-top: 30px;
   margin-bottom: 30px;
@@ -15,5 +15,8 @@
       margin-top: 8px;
     }
 
+  }
+  @media (max-width: 1246px) {
+    display: none;
   }
 }

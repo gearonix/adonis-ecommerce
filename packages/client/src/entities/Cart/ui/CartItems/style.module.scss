@@ -6,7 +6,7 @@
   display: flex;
 
   .cart_layout {
-    width: 100%;
+    width: 809px;
     @include itemBorder;
     padding: 20px;
     box-sizing: border-box;
@@ -17,7 +17,23 @@
       margin-bottom: 23px;
       display: flex;
       border-bottom: $br $bg-150;
-
+    }
+    @media (max-width: 1246px) {
+      width: 609px;
+    }
+    @media (max-width: 952px) {
+      width: 509px;
+    }
+    @media (max-width: 754px) {
+      width: 440px;
+    }
+    @media (max-width: 680px) {
+      width: 350px;
+    }
+    @media (max-width: 486px) {
+      padding: 10px;
+      margin: 20px auto 10px;
+      width: 100%;
     }
 
   }
@@ -25,7 +41,7 @@
   .checkout_block {
     @include itemBorder;
     box-shadow: $shadow;
-    @include size(16%);
+    @include size(300px);
     margin-left: 20px;
     padding: 20px;
 

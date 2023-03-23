@@ -24,7 +24,7 @@ const Cart = () => {
     <Head>
       <title>Adonis - Shopping Cart ({productsCount})</title>
     </Head>
-    <ContainerTitle>{t('My_Cart')} ({productsCount})</ContainerTitle>
+    <ContainerTitle disappears>{t('My_Cart')} ({productsCount})</ContainerTitle>
     <div className={'cart_page'}>
       <CartProvider>
         <CartItems RemoveAll={RemoveAllCard} Remove={RemoveFromCard}

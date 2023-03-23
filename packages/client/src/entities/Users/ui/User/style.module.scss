@@ -8,11 +8,36 @@
   gap: 20px;
   margin: 30px auto 0;
   position: relative;
+  @media (max-width: 1032px) {
+    height: 180px;
+  }
+  @media (max-width: 460px) {
+    gap: 5px;
+    padding-left: 6px;
+    box-sizing: border-box;
+  }
+  @media (max-width: 700px) {
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
   .avatar{
     @include imageWrapper(160px,160px,10px);
     border: $br $bg-150;
+    @media (max-width: 920px) {
+      width: 120px;
+      height: 120px;
+    }
+    @media (max-width: 520px) {
+      width: 80px;
+      height: 80px;
+    }
   }
   .info{
+    @media (max-width: 520px) {
+      *{
+        font-size: 15px;
+      }
+    }
     .user_name{
       font-size: 22px;
       svg{
@@ -20,20 +45,35 @@
       }
       margin-bottom: 5px;
       color: $color-absolute;
+      @media (max-width: 920px) {
+        font-size: 20px;
+      }
+      @media (max-width: 520px) {
+        font-size: 16px;
+      }
     }
     .user_name.salesman{
       color: $link-color-max;
     }
     .location{
       font-size: 18px;
-      margin-top: 8px
+      margin-top: 8px;
+      @media (max-width: 520px) {
+        font-size: 14px;
+      }
     }
     .email, .description{
       color: $color-absolute-200;
+      @media (max-width: 520px) {
+        font-size: 15px;
+      }
     }
     .email{
       text-decoration: underline;
       margin-top: 3px;
+      @media (max-width: 520px) {
+        display: none;
+      }
     }
   }
   .write_message{
@@ -48,7 +88,28 @@
         margin-right: 6px;
         margin-bottom: -2px;
         @include size(17px, 17px);
+        @media (max-width: 680px) {
+          margin-right: 0;
+          @include size(18px, 18px);
+          color: $color-absolute-200;
+        }
       }
+      span{
+        @media (max-width: 680px) {
+          display: none;
+        }
+      }
+      @media (max-width: 680px) {
+        min-width: 34px;
+        width: 34px;
+        height: 34px;
+        @include flex(center, center);
+        padding: 0;
+      }
+    }
+    @media (max-width: 680px) {
+      top: 10px;
+      right: 20px;
     }
   }
   .date{
@@ -57,5 +118,8 @@
     right: 20px;
     font-size: 15px;
     color: $color-absolute-200;
+    @media (max-width: 920px) {
+      display: none;
+    }
   }
 }
