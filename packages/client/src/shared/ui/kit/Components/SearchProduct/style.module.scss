@@ -9,24 +9,58 @@
   @include flex(stretch, center);
   position: relative;
   background: $bg-absolute;
+  @media (max-width: 876px) {
+    height: 180px;
+    align-items: initial;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  @media (max-width: 506px) {
+    margin-top: 0;
+    margin-bottom: 10px;
+    height: 110px;
+  }
   .buttons{
     position: absolute;
     right: 20px;
     top: 20px;
+    @media (max-width: 506px) {
+      top: 13px;
+      right: 13px;
+    }
+
   }
   .product_image{
     @include imageWrapper(190px,190px,$rounded);
+    margin-left: 20px;
+    @media (max-width: 876px) {
+      height: 130px;
+      width: 130px;
+      margin-left: 10px;
+    }
+    @media (max-width: 750px) {
+      width: 100px;
+      height: 100px;
+    }
   }
   .avatar{
     @include imageWrapper(33px,33px,100%);
     img{
       margin: 0;
     }
+
   }
   .description{
     margin-top: 7px;
     font-weight: normal;
     width: 300px;
+    @media (max-width: 506px) {
+      font-size: 14px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      width: 160px;
+      height: 1.2em;
+    }
   }
   .name ,.product_name{
     display: flex;
@@ -35,18 +69,21 @@
     svg{
       margin-bottom: -3px;
     }
+    @media (max-width: 876px) {
+      font-size: 14px;
+    }
   }
   .product_name{
     margin-top: 8px;
     font-size: $xm;
     font-weight: bold;
-
-  }
-
-  img {
-    cursor: pointer;
-    border-radius: $rounded;
-    margin-left: 10px;
+    @media (max-width: 876px) {
+      font-size: 17px;
+    }
+    @media (max-width: 506px) {
+      margin-top: 0;
+      font-size: 16px;
+    }
   }
 
   .info_block {
@@ -55,17 +92,29 @@
     .info_header{
       @include flex(stretch, center);
       gap: 7px;
+      @media (max-width: 506px) {
+        display: none;
+      }
     }
 
     .price {
       @include inlineStyles($xm, $bg-100, bold);
       margin-top: 5px;
       margin-bottom: 5px;
+      @media (max-width: 506px) {
+        font-size: 16px;
+        font-weight: normal;
+      }
     }
     .ratings{
       display: flex;
       align-items: center;
       gap: 10px;
+      h2{
+        @media (max-width: 506px) {
+          display: none;
+        }
+      }
     }
   }
   .greyLine{
@@ -108,4 +157,9 @@
   }
 
 
+}
+.blueLink{
+  @media (max-width: 506px) {
+    display: none;
+  }
 }

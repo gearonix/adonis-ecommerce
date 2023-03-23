@@ -12,13 +12,22 @@
     @include itemBorder;
     margin: 0;
     cursor: pointer;
+    @media (max-width: 520px) {
+      @include size(65px, 65px);
+    }
   }
 
   .item_info {
     @include size(82%);
     margin-left: 10px;
+    @media (max-width: 520px) {
+      width: 62%;
+    }
     h4{
       color: $color-absolute;
+      @media (max-width: 520px) {
+        font-size: 14px;
+      }
     }
 
     p {
@@ -26,12 +35,27 @@
       margin-top: 7px;
       margin-bottom: 9px;
       width: 319px;
+      @media (max-width: 520px) {
+        font-size: 13px;
+        width: 185px;
+      }
     }
 
     .item_buttons {
       margin-top: 10px;
       display: flex;
       gap: 10px;
+      button:first-child{
+        font-size: 15px;
+        margin-top: 10px;
+        min-width: 180px;
+        height: 32px;
+        @media (max-width: 520px) {
+          height: 30px !important;
+          min-width: 120px !important;
+          font-size: 13px;
+        }
+      }
     }
 
   }
@@ -43,6 +67,9 @@
     h2 {
       color: $color-absolute;
       font-weight: bold;
+      @media (max-width: 520px) {
+        font-size: 13px;
+      }
     }
 
   }

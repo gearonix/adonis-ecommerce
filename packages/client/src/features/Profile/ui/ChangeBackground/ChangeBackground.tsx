@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, FC, memo } from 'react'
+import { ButtonHTMLAttributes, memo } from 'react'
 import { UploadButton } from 'shared/ui/kit'
 import { UploadProperties } from 'app/config/globals'
 import { useDispatch, useSelector } from 'shared/types/redux'
@@ -22,7 +22,7 @@ const ChangeBackground = memo<ButtonHTMLAttributes<HTMLButtonElement>>(() => {
 
   return isMe ? <UploadButton
     handleChange={handleBackground} width={200} className={s.button}>
-    <BsPencil/> {t('Change_backgroundNo')}</UploadButton> : null
+    {t('Change_backgroundNo')}</UploadButton> : null
 })
 
 export default ChangeBackground

@@ -6,6 +6,7 @@ import { CartIcons } from 'entities/Banners'
 import { AiOutlineShoppingCart as CartIcon } from 'shared/ui/icons'
 import { WithLoading } from 'shared/ui/kit'
 import { Product } from 'widgets/Products'
+import cn from 'classnames'
 
 export interface CartItemsProps{
   Remove?: FC<any>,
@@ -14,14 +15,15 @@ export interface CartItemsProps{
   items: Product[],
   title?: string,
   Icon?: FC,
-  loading: boolean
+  loading: boolean,
+  isSaved?: boolean
 }
 
 
 const CartItems = memo<CartItemsProps>((props) => {
   const { items, RemoveAll, AddToSaved, Remove, Icon = CartIcon, title = 'Cart' } = props
   return <div>
-    <div className={s.cart_container}>
+    <div className={cn(s.cart_container, { [s.saved]: props.isSaved })}>
       <div className={s.cart_layout}>
 
         <WithLoading when={!items.length} title={title} Icon={Icon} loading={false}>

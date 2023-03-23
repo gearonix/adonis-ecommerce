@@ -8,6 +8,9 @@
   cursor: pointer;
   @include flex(center, center);
   @include size(40px, 40px);
+  @media (max-width: 506px) {
+    @include size(30px, 30px);
+  }
 
   &:hover {
     svg {

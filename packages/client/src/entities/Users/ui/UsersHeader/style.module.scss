@@ -28,7 +28,7 @@
 }
 
 .controls_buttons {
-  @include size(30%);
+  @include size(330px);
   margin-right: 30px;
   @include flex(flex-end, center);
   gap: 35px;

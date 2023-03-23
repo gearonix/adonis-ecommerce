@@ -102,6 +102,7 @@ export class ProductsService {
     const operation = mode === 'add' ? '+' : '-'
     return this.products.createQueryBuilder()
         .update().set({ savedCount: () => `savedCount ${operation} 1` })
+        .where('productId = :productId', { productId })
         .execute()
   }
 }

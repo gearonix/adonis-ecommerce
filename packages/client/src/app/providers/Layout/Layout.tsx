@@ -7,7 +7,10 @@ import { useTheme } from 'shared/lib/hooks/useTheme'
 import { Footer } from 'entities/Others'
 import { WithNotifications } from 'app/providers/Notifications'
 import 'dayjs/locale/ru'
+import customParseFormat from 'dayjs/plugin/customParseFormat'
+import dayjs from 'dayjs'
 
+dayjs.extend(customParseFormat)
 const interFont = Inter({ subsets: ['latin'] })
 
 const Layout: FC<{ children: ReactNode }> = ({ children }) => {

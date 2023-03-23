@@ -19,7 +19,6 @@ const CartItem = memo<CartItemProps>(({ Remove, AddToSaved, product }) => {
   const removeBtnRef = useRef()
   const { t } = useTranslation()
 
-  // return <ApiAnimation className={s.item} type={'reduceLength'} param={140} subscriber={removeBtnRef}>
   return <div className={s.item}> {product.images.length && <ImageModal isOpen={isOpen} close={openModal} image={product.images[0]}
     def={DefaultAssets.PRODUCT}/>}
   <div className={s.image_wrapper} onClick={() => openModal(true)}>

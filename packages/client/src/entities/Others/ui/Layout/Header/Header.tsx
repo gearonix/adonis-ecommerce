@@ -17,7 +17,7 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'shared/types/redux'
 import { AuthSelectors } from 'widgets/Login'
 import { DefaultAssets } from 'shared/config/consts/assets'
-import { Display, Ternary } from 'shared/lib/components'
+import { ApiAnimation, Display, Ternary } from 'shared/lib/components'
 import { HiUsers } from 'react-icons/hi'
 import { useBooleanState } from 'shared/lib/hooks'
 import Navigation from '../../Navigation/Navigation'
@@ -51,9 +51,9 @@ const Header: FC<HeaderSkeletonProps> = memo(({ DropDowns, Burger, Search }) => 
         <div className={s.options}>
           <Link className={cn(s.options_item, s.mobile)} href={routes.LOGIN}>
             <Ternary where={avatar}>
-              <div className={s.avatar}>
+              <ApiAnimation className={s.avatar} type={'increaseSize'}>
                 <NextImage src={avatar} def={DefaultAssets.AVATAR}/>
-              </div>
+              </ApiAnimation>
               <>
                 <FaUserAlt className={'desktop'}/>
                 <AiOutlineUser className={'mobile'}/>

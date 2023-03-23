@@ -16,7 +16,7 @@ const EditProfile = memo<EditProfileProps>(({ ChangeBackground, ChangeAvatar,
   const { theme } = useTheme()
   const { t } = useTranslation()
 
-  return <div className={cn(s.add_product_block, s[theme || 'light'], 'with_theme')}>
+  return <div className={cn(s.add_product_block, theme, 'with_theme')}>
     <h2 className={s.title}>{t('Change_profile')}</h2>
     <div className={s.container}>
 

@@ -16,7 +16,7 @@ const SearchPage: FC = () => {
         <title>Adonis - Search items</title>
       </Head>
       <SearchAside/>
-      <div style={{ position: 'relative', width: '68%' }}>
+      <div className={'search_container'}>
         <SearchHeader/>
         <SearchList/>
         <SearchPagination/>

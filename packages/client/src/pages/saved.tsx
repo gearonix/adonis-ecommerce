@@ -21,7 +21,7 @@ const Saved: FC = () => {
       <title>Adonis - Saved ({savedCount})</title>
     </Head>
     <ContainerTitle>{t('Saved_products')} ({savedCount})</ContainerTitle>
-    <SavedItems Remove={RemoveFromSaved} Component={CartItemsTemplate} />
+    <SavedItems Remove={RemoveFromSaved} Component={CartItemsTemplate}/>
     <RecommendedItems Component={SortedProducts} type={ProductTypes[0]}/>
     <GithubBanner/>
     <RecommendedItems Component={SortedProducts} type={ProductTypes[1]}/>

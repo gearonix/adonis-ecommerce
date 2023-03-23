@@ -19,12 +19,9 @@ export const UploadButton: FC<UploadButtonProps> = ({ className, children, handl
 
     handleChange(file as File)
   }
-  const { isLight } = useTheme()
-
   return <Button className={cn(s.UploadButton, className, { [s.disabled]: disabled })} w={width}>
     {children}
     {!disabled && <input type={'file'} onChange={onChange}/>}
-
   </Button>
 }
 

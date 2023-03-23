@@ -27,7 +27,7 @@ const SavedItems : FC<CartItemsProps> = memo(({ Remove, AddToSaved, Component })
 
 
   return Component ? <Component Remove={Remove} AddToSaved={AddToSaved} items={products}
-    Icon={FiHeart} title={'Saved'} loading={isLoading}/> : null
+    Icon={FiHeart} title={'Saved'} loading={isLoading} isSaved={true}/> : null
 })
 
 

@@ -7,6 +7,16 @@
   @include customScroll;
   overflow-x: hidden;
   padding-right: 19px;
+  @media (max-width: 876px) {
+    &::-webkit-scrollbar{
+      display: none;
+    }
+  }
+  @media (max-width: 750px) {
+    padding: 0;
+    width: 100%;
+  }
+
 }
 
 .transformed{
