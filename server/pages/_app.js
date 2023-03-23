@@ -355,8 +355,8 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20997);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_font_google_target_css_path_src_app_providers_Layout_Layout_tsx_import_Inter_arguments_subsets_latin_variableName_interFont___WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(41510);
-/* harmony import */ var next_font_google_target_css_path_src_app_providers_Layout_Layout_tsx_import_Inter_arguments_subsets_latin_variableName_interFont___WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_font_google_target_css_path_src_app_providers_Layout_Layout_tsx_import_Inter_arguments_subsets_latin_variableName_interFont___WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var next_font_google_target_css_path_src_app_providers_Layout_Layout_tsx_import_Inter_arguments_subsets_latin_variableName_interFont___WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(41510);
+/* harmony import */ var next_font_google_target_css_path_src_app_providers_Layout_Layout_tsx_import_Inter_arguments_subsets_latin_variableName_interFont___WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(next_font_google_target_css_path_src_app_providers_Layout_Layout_tsx_import_Inter_arguments_subsets_latin_variableName_interFont___WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var dev_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(37854);
 /* harmony import */ var widgets_Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7711);
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(59003);
@@ -366,6 +366,10 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var app_providers_Notifications__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(74724);
 /* harmony import */ var dayjs_locale_ru__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(19161);
 /* harmony import */ var dayjs_locale_ru__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(dayjs_locale_ru__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var dayjs_plugin_customParseFormat__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(84125);
+/* harmony import */ var dayjs_plugin_customParseFormat__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(dayjs_plugin_customParseFormat__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(1635);
+/* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(dayjs__WEBPACK_IMPORTED_MODULE_9__);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([dev_components__WEBPACK_IMPORTED_MODULE_1__, widgets_Header__WEBPACK_IMPORTED_MODULE_2__, entities_Others__WEBPACK_IMPORTED_MODULE_5__, app_providers_Notifications__WEBPACK_IMPORTED_MODULE_6__]);
 ([dev_components__WEBPACK_IMPORTED_MODULE_1__, widgets_Header__WEBPACK_IMPORTED_MODULE_2__, entities_Others__WEBPACK_IMPORTED_MODULE_5__, app_providers_Notifications__WEBPACK_IMPORTED_MODULE_6__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
@@ -377,10 +381,13 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([dev_
 
 
 
+
+
+dayjs__WEBPACK_IMPORTED_MODULE_9___default().extend((dayjs_plugin_customParseFormat__WEBPACK_IMPORTED_MODULE_8___default()));
 const Layout = ({ children  })=>{
     const { theme  } = (0,shared_lib_hooks_useTheme__WEBPACK_IMPORTED_MODULE_4__/* .useTheme */ .F)();
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-        className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(theme, "layout", (next_font_google_target_css_path_src_app_providers_Layout_Layout_tsx_import_Inter_arguments_subsets_latin_variableName_interFont___WEBPACK_IMPORTED_MODULE_8___default().className)),
+        className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(theme, "layout", (next_font_google_target_css_path_src_app_providers_Layout_Layout_tsx_import_Inter_arguments_subsets_latin_variableName_interFont___WEBPACK_IMPORTED_MODULE_10___default().className)),
         children: [
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(dev_components__WEBPACK_IMPORTED_MODULE_1__/* .DevNavigation */ .w, {}),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(app_providers_Notifications__WEBPACK_IMPORTED_MODULE_6__/* .WithNotifications */ .x0, {}),
@@ -791,8 +798,8 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony export */ });
 /* harmony import */ var _ui_Burger_Burger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(58646);
 /* harmony import */ var _ui_SwitchTheme_HeaderDropDowns__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(48599);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_ui_SwitchTheme_HeaderDropDowns__WEBPACK_IMPORTED_MODULE_1__]);
-_ui_SwitchTheme_HeaderDropDowns__WEBPACK_IMPORTED_MODULE_1__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_ui_Burger_Burger__WEBPACK_IMPORTED_MODULE_0__, _ui_SwitchTheme_HeaderDropDowns__WEBPACK_IMPORTED_MODULE_1__]);
+([_ui_Burger_Burger__WEBPACK_IMPORTED_MODULE_0__, _ui_SwitchTheme_HeaderDropDowns__WEBPACK_IMPORTED_MODULE_1__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
@@ -802,29 +809,37 @@ __webpack_async_result__();
 /***/ }),
 
 /***/ 58646:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20997);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9937);
-/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_style_module_scss__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9937);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_style_module_scss__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var shared_ui_icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(83720);
+/* harmony import */ var shared_lib_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7562);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shared_lib_components__WEBPACK_IMPORTED_MODULE_2__]);
+shared_lib_components__WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+
 
 
 
 const Burger = ({ onOpen  })=>{
-    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_2___default().burger),
+    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_lib_components__WEBPACK_IMPORTED_MODULE_2__/* .ApiAnimation */ .j9, {
+        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_3___default().burger),
         onClick: onOpen,
+        type: "reverseScale",
         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_1__/* .GiHamburgerMenu */ .vH, {})
     });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Burger);
 
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -1134,6 +1149,14 @@ module.exports = require("dayjs");
 
 "use strict";
 module.exports = require("dayjs/locale/ru");
+
+/***/ }),
+
+/***/ 84125:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("dayjs/plugin/customParseFormat");
 
 /***/ }),
 

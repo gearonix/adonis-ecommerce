@@ -66,7 +66,7 @@ const EditProfile = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)(({
     const { theme  } = (0,shared_lib_hooks__WEBPACK_IMPORTED_MODULE_6__/* .useTheme */ .Fg)();
     const { t  } = (0,react_i18next__WEBPACK_IMPORTED_MODULE_9__.useTranslation)();
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-        className: classnames__WEBPACK_IMPORTED_MODULE_7___default()((_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().add_product_block), (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default())[theme || "light"], "with_theme"),
+        className: classnames__WEBPACK_IMPORTED_MODULE_7___default()((_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().add_product_block), theme, "with_theme"),
         children: [
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h2", {
                 className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().title),

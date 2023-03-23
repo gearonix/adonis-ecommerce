@@ -704,8 +704,9 @@ const Header = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)(({ Drop
                                         /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(shared_lib_components__WEBPACK_IMPORTED_MODULE_10__/* .Ternary */ .fV, {
                                             where: avatar,
                                             children: [
-                                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_lib_components__WEBPACK_IMPORTED_MODULE_10__/* .ApiAnimation */ .j9, {
                                                     className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_15___default().avatar),
+                                                    type: "increaseSize",
                                                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_4__/* .NextImage */ .oH, {
                                                         src: avatar,
                                                         def: shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_9__/* .DefaultAssets.AVATAR */ .h9.AVATAR
