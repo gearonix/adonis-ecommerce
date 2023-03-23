@@ -1,11 +1,22 @@
-"use strict";
 exports.id = 1137;
 exports.ids = [1137];
 exports.modules = {
 
+/***/ 69662:
+/***/ ((module) => {
+
+// Exports
+module.exports = {
+	"input": "style_input___vpzN"
+};
+
+
+/***/ }),
+
 /***/ 31137:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Q": () => (/* reexport safe */ _ui_SearchMessages_SearchMessages__WEBPACK_IMPORTED_MODULE_0__.Z),
@@ -26,6 +37,7 @@ __webpack_async_result__();
 /***/ 61898:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
@@ -53,6 +65,7 @@ const SearchMessages = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)
 /***/ 22053:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -65,8 +78,11 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var shared_lib_hooks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(59684);
 /* harmony import */ var shared_types_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(17418);
 /* harmony import */ var widgets_Messenger__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(19342);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(69662);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_style_module_scss__WEBPACK_IMPORTED_MODULE_6__);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shared_ui_material__WEBPACK_IMPORTED_MODULE_2__, shared_lib_hooks__WEBPACK_IMPORTED_MODULE_3__, widgets_Messenger__WEBPACK_IMPORTED_MODULE_5__]);
 ([shared_ui_material__WEBPACK_IMPORTED_MODULE_2__, shared_lib_hooks__WEBPACK_IMPORTED_MODULE_3__, widgets_Messenger__WEBPACK_IMPORTED_MODULE_5__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
 
 
 
@@ -85,11 +101,7 @@ const SearchUsers = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)(()
         return ()=>sub.unsubscribe();
     }, []);
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-        style: {
-            width: "90%",
-            margin: "0 auto",
-            marginBottom: "6px"
-        },
+        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_6___default().input),
         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_material__WEBPACK_IMPORTED_MODULE_2__/* .SearchInput */ .Mj, {
             values: reg("search")
         })

@@ -11,6 +11,7 @@ module.exports = {
 	"messages_wrapper": "style_messages_wrapper__Bo_dp",
 	"scrollToBottom": "style_scrollToBottom__n1Lxx",
 	"default_container": "style_default_container__gMYZ_",
+	"bottomWrapper": "style_bottomWrapper__ClUl1",
 	"default_chat_image": "style_default_chat_image__W7LEu",
 	"default_title": "style_default_title__pTFnf"
 };

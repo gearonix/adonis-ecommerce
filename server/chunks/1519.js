@@ -598,7 +598,8 @@ module.exports = {
 
 // Exports
 module.exports = {
-	"title": "style_title__2wm0P"
+	"title": "style_title__2wm0P",
+	"disappears": "style_disappears__uUJow"
 };
 
 
@@ -1392,9 +1393,6 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([enti
 const CartItems = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)((props)=>{
     const { items , RemoveAll , AddToSaved , Remove , Icon =shared_ui_icons__WEBPACK_IMPORTED_MODULE_4__/* .AiOutlineShoppingCart */ .nx , title ="Cart"  } = props;
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-        style: {
-            width: "50%"
-        },
         children: [
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                 className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_6___default().cart_container),
@@ -6256,7 +6254,7 @@ const RecommendedItemTall = ({ product  })=>{
             }),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
                 className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_6___default().item_description),
-                children: helpers.cropped(product.description, 14)
+                children: helpers.cropped(product.description, 30)
             }),
             " "
         ]
@@ -6700,7 +6698,9 @@ const WriteToUser = ({ className , targetId  })=>{
                     className: "outlined_button",
                     children: [
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_icons_bi__WEBPACK_IMPORTED_MODULE_7__.BiMessageDetail, {}),
-                        t("Write message")
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
+                            children: t("Write message")
+                        })
                     ]
                 })
             })
@@ -7145,9 +7145,11 @@ const CartIcon = ({ Icon , title , subtitle  })=>{
 
 
 
-const ContainerTitle = ({ children , className  })=>{
+const ContainerTitle = ({ children , className , disappears  })=>{
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h2", {
-        className: classnames__WEBPACK_IMPORTED_MODULE_1___default()((_style_module_scss__WEBPACK_IMPORTED_MODULE_2___default().title), className),
+        className: classnames__WEBPACK_IMPORTED_MODULE_1___default()((_style_module_scss__WEBPACK_IMPORTED_MODULE_2___default().title), className, {
+            [(_style_module_scss__WEBPACK_IMPORTED_MODULE_2___default().disappears)]: disappears
+        }),
         children: children
     });
 };

@@ -10,11 +10,11 @@ module.exports = {
 	"container": "style_container__a_W9j",
 	"error_container": "style_error_container__c05es",
 	"text": "style_text__R0Yef",
+	"image_wrapper": "style_image_wrapper__1_i5m",
 	"title": "style_title__wc41y",
 	"link": "style_link___i_H7",
 	"github_icon": "style_github_icon__JPKVU",
-	"links": "style_links__zMJY7",
-	"image_wrapper": "style_image_wrapper__1_i5m"
+	"links": "style_links__zMJY7"
 };
 
 
@@ -935,7 +935,7 @@ const Navigation = ({ onClose  })=>{
                                         children: [
                                             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_6___default()), {
                                                 className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_10___default().link),
-                                                href: `${shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_7__/* .routes.USERS */ ._.USERS}/userId`,
+                                                href: shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_7__/* .routes.LOGIN */ ._.LOGIN,
                                                 children: [
                                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_9__/* .BiUser */ .ED, {}),
                                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h3", {
