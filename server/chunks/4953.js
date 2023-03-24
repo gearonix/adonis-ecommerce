@@ -92,7 +92,7 @@ const ProductDescriptions = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.
                                 product: product,
                                 className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_11___default().table)
                             }),
-                            product?.features?.map((feature, idx)=>{
+                            product?.features?.slice(0, 6)?.map((feature, idx)=>{
                                 return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit_Components_Advantage_ui_Advantage__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {
                                     title: feature
                                 }, idx);
