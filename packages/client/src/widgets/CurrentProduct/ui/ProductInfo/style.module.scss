@@ -14,6 +14,12 @@
   background: $bg-absolute;
   padding: 20px;
   @include flex();
+  @media (max-width: 1438px) {
+    height: max-content;
+  }
+  @media (max-width: 600px) {
+    margin-top: 20px;
+  }
 
 
 }

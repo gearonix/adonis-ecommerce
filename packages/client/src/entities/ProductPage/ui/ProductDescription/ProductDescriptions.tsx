@@ -25,7 +25,7 @@ const ProductDescriptions = memo(() => {
           {product.description}
         </div>
         <Table product={product} className={s.table}/>
-        {product?.features?.map((feature, idx) => {
+        {product?.features?.slice(0, 6)?.map((feature, idx) => {
           return <Advantage title={feature} key={idx}/>
         })}
       </Display>

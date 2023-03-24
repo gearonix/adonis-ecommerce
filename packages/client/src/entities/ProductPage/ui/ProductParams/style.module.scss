@@ -15,14 +15,17 @@
 
   .rating_block {
     @include flex();
-    @include size(60%, 20px);
-
+    @include size(20px, 20px);
+    white-space: nowrap;
     h3 {
       color: $bg-300;
       margin-left: 10px;
 
       svg {
         margin-right: 3px;
+      }
+      @media (max-width: 652px) {
+        display: none;
       }
     }
 
@@ -32,15 +35,21 @@
     @include inlineStyles($l-medium, $bg-100, bold);
     margin-top: 12px;
     margin-bottom: 12px;
+    @media (max-width: 700px) {
+      font-size: 24px;
+    }
   }
 
   .params_block {
     border-bottom: 1px solid $bg-150;
     padding-bottom: 16px;
     width: 100%;
+    @media (max-width: 652px) {
+      width: 200px;
+    }
 
     .params_flex {
-      @include size(40%, 20px);
+      @include size(290px, 20px);
       @include flex(space-between);
       margin-top: 16px;
 
@@ -49,6 +58,14 @@
       }
       span:last-child{
         color: $bg-300;
+      }
+      span{
+        @media (max-width: 768px) {
+          font-size: 14px;
+        }
+      }
+      @media (max-width: 652px) {
+        width: 100%;
       }
     }
   }
