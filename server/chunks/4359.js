@@ -244,6 +244,18 @@ module.exports = {
 
 /***/ }),
 
+/***/ 42502:
+/***/ ((module) => {
+
+// Exports
+module.exports = {
+	"saved": "style_saved__G8bl5",
+	"blueLink": "style_blueLink__Ek8DC"
+};
+
+
+/***/ }),
+
 /***/ 21795:
 /***/ ((module) => {
 
@@ -2435,7 +2447,7 @@ const DefaultCartUI = ({ onAdd , isExists , onRemove  })=>{
         w: "100%",
         onClick: onRemove,
         color: "red",
-        children: t("Remove")
+        children: t("Remove from cart")
     }) : /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_2__/* .Button */ .zx, {
         w: "100%",
         onClick: onAdd,
@@ -3535,8 +3547,11 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var shared_ui_kit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(26365);
 /* harmony import */ var shared_lib_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(78828);
 /* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(57987);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(42502);
+/* harmony import */ var _style_module_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_style_module_scss__WEBPACK_IMPORTED_MODULE_6__);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shared_ui_kit__WEBPACK_IMPORTED_MODULE_3__, shared_lib_components__WEBPACK_IMPORTED_MODULE_4__, react_i18next__WEBPACK_IMPORTED_MODULE_5__]);
 ([shared_ui_kit__WEBPACK_IMPORTED_MODULE_3__, shared_lib_components__WEBPACK_IMPORTED_MODULE_4__, react_i18next__WEBPACK_IMPORTED_MODULE_5__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
 
 
 
@@ -3547,17 +3562,10 @@ const ProductSaved = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)((
     const { t  } = (0,react_i18next__WEBPACK_IMPORTED_MODULE_5__.useTranslation)();
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_lib_components__WEBPACK_IMPORTED_MODULE_4__/* .ApiAnimation */ .j9, {
         type: "increaseSize",
-        style: {
-            margin: "0 auto",
-            width: "80%",
-            marginTop: "8px"
-        },
         onClick: onClick,
+        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_6___default().saved),
         children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(shared_ui_kit__WEBPACK_IMPORTED_MODULE_3__/* .BlueLink */ .sJ, {
-            style: {
-                margin: "0 auto",
-                marginTop: "8px"
-            },
+            className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_6___default().blueLink),
             children: [
                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_icons__WEBPACK_IMPORTED_MODULE_2__/* .FiHeart */ .$, {}),
                 " ",
@@ -9114,9 +9122,9 @@ const cartReducer = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__.createSlice
             state.data.splice(state.data.indexOf(payload), 1);
             storage.save(state.data);
         },
-        removeAll () {
+        removeAll (state) {
             storage.save([]);
-            return initialState;
+            state.data = [];
         }
     }
 });

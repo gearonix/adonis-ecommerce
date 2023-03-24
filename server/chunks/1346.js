@@ -61,29 +61,32 @@ const PurchaseProduct = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo
             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                 className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_9___default().purchase_card),
                 children: [
-                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                        className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_9___default().purchase_supplier),
-                        children: [
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_9___default().image_wrapper),
-                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_3__/* .NextImage */ .oH, {
-                                    alt: "",
-                                    src: salesman.avatar || shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_6__/* .DefaultAssets.AVATAR */ .h9.AVATAR,
-                                    priority: false,
-                                    def: shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_6__/* .DefaultAssets.AVATAR */ .h9.AVATAR
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_4___default()), {
+                        href: `${shared_config_consts_routes__WEBPACK_IMPORTED_MODULE_5__/* .routes.USERS */ ._.USERS}/${salesman.userId}`,
+                        children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                            className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_9___default().purchase_supplier),
+                            children: [
+                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                                    className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_9___default().image_wrapper),
+                                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_3__/* .NextImage */ .oH, {
+                                        alt: "",
+                                        src: salesman.avatar || shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_6__/* .DefaultAssets.AVATAR */ .h9.AVATAR,
+                                        priority: false,
+                                        def: shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_6__/* .DefaultAssets.AVATAR */ .h9.AVATAR
+                                    })
+                                }),
+                                /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h2", {
+                                    children: [
+                                        t("Supplier"),
+                                        " ",
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("br", {}),
+                                        salesman.firstName,
+                                        " ",
+                                        salesman.lastName
+                                    ]
                                 })
-                            }),
-                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h2", {
-                                children: [
-                                    t("Supplier"),
-                                    " ",
-                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("br", {}),
-                                    salesman.firstName,
-                                    " ",
-                                    salesman.lastName
-                                ]
-                            })
-                        ]
+                            ]
+                        })
                     }),
                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("span", {
                         className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_9___default().supplier_params),

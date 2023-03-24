@@ -89,7 +89,7 @@ const Categories = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)((pr
                         children: t(title)
                     }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_ui_kit__WEBPACK_IMPORTED_MODULE_2__/* .Button */ .zx, {
-                        w: "112px",
+                        w: "140px",
                         color: "outlined",
                         onClick: onSearch,
                         children: t("Learn_more")
