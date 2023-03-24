@@ -9,5 +9,11 @@
     @include size(17px,17px);
     border-radius: 100%;
     background: #4bb34b;
+    @media (max-width: 520px) {
+      @include size(13px, 13px);
+    }
+  }
+  @media (max-width: 520px) {
+    @include size(21px, 21px);
   }
 }

@@ -9,6 +9,15 @@
   background: $bg-absolute;
   margin: 0px auto 60px;
   padding: 15px 15px 70px;
+  @media (max-width: 1652px) {
+    width: 95%;
+  }
+  @media (max-width: 1186px) {
+    width: 100%;
+  }
+  @media (max-width: 900px) {
+    margin-bottom: 10px;
+  }
 }
 .wall{
   width: 100%;

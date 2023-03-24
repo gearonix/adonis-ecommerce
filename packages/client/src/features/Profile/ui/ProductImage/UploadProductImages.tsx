@@ -37,9 +37,9 @@ const UploadProductImages = memo<ProductImagesProps>(({ values }) => {
       <div className={s.buttons}>
         <UploadButton className={'primary_button'}
           handleChange={onUpload} disabled={files.length === 5}>
-          <AiOutlineUpload/>{t('Upload files')}</UploadButton>
+          <AiOutlineUpload/><span>{t('Upload files')}</span></UploadButton>
         <button className={'outlined_button'} onClick={removeFiles} >
-          <BsTrash/> {t('Remove all')}</button>
+          <BsTrash/> <span>{t('Remove all')}</span></button>
       </div>
       <Display when={values.error}>
         <FormHelperText error id="accountId-error" sx={{ fontSize: 14, marginTop: 0,

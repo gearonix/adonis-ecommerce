@@ -27,7 +27,7 @@ const DefaultAvatar = () => {
 const ExistingAvatar: FC<{src: string, onError: () => void}> = ({ src, onError }) => {
   return <>
     <NextImage src={src} alt={''}
-      quality={100} priority={true} onError={onError} />
+      quality={300} priority={true} onError={onError} />
   </>
 }
 

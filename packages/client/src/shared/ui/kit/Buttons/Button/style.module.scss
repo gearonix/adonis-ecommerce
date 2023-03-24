@@ -8,6 +8,8 @@
   border-radius: $rounded;
   transition: background 200ms;
   display: block;
+  padding-left: 4px;
+  padding-right: 4px;
   width: max-content;
 
   &:hover {
@@ -18,12 +20,10 @@
     font-size: 15px;
   }
   @media (max-width: 676px) {
-    font-size: 13px;
     height: 28px;
   }
   @media (max-width: 400px) {
     height: 25px;
-    font-size: 11px;
   }
 }
 .primary{

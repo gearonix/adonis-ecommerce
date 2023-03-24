@@ -23,7 +23,7 @@ const AddProduct = memo<AddProductProps>(({ submitForm, cancel, ProductImages, r
     </div>
     <div className={s.container}>
       <div className={s.fields}>
-        <div className={s.flex}>
+        <div className={cn(s.flex, s.product_names)}>
           <HeadField title={t('Product Name')} values={reg('name', 20)} Icon={BsPen}/>
           <HeadField title={t('Product Design')} values={reg('design', 20)} Icon={MdOutlineDesignServices}/>
         </div>
@@ -32,7 +32,7 @@ const AddProduct = memo<AddProductProps>(({ submitForm, cancel, ProductImages, r
         <Checkbox title={t('In Stock')} values={reg('inStock')}/>
 
         <div className={s.greyLine}/>
-        <div className={s.flex}>
+        <div className={cn(s.flex, s.product_images_block)}>
           <div className={s.numberFields}>
             <NumberField title={t('Price')} values={reg('price')} Icon={BiDollar}/>
             <NumberField title={t('Warranty (years)')}

@@ -18,8 +18,7 @@ const EditProfile = memo<EditProfileProps>(({ ChangeBackground, ChangeAvatar,
 
   return <div className={cn(s.add_product_block, theme, 'with_theme')}>
     <h2 className={s.title}>{t('Change_profile')}</h2>
-    <div className={s.container}>
-
+    <div className={cn(s.container, s.background_container)}>
       <div className={s.background}>
         <ProfileBackground src={user.background} ChangeBackground={ChangeBackground}/>
       </div>
@@ -30,10 +29,15 @@ const EditProfile = memo<EditProfileProps>(({ ChangeBackground, ChangeAvatar,
           </div>
           {ChangeAvatar}
         </div>
-        <HeadField title={t('First_Name')} values={reg('firstName')}/>
-        <HeadField title={t('Last_Name')} values={reg('lastName')}/>
+        <div className={s.user_info_fields}>
+          <HeadField title={t('First_Name')} values={reg('firstName')}/>
+          <HeadField title={t('Last_Name')} values={reg('lastName')}/>
+        </div>
+
       </div>
-      <TextArea title={t('Description')} values={reg('description', 55)}/>
+      <div className={s.description}>
+        <TextArea title={t('Description')} values={reg('description', 55)}/>
+      </div>
       <SearchSelect values={countries.names()}
         inputValues={reg('country')} Icon={AiOutlineCar}/>
       <SearchSelect values={countries.capitals()}

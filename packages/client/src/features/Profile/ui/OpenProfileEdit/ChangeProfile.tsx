@@ -9,7 +9,7 @@ interface ChangeProfileProps{
 const ChangeProfile = memo<ChangeProfileProps>(({ openProfile }) => {
   const isMe = useSelector(userSelectors.isMe)
   return isMe ? <button className="outlined_button"
-    onClick={openProfile}>Change profile</button> : null
+    onClick={openProfile}><span>Change profile</span></button> : null
 })
 
 export default ChangeProfile

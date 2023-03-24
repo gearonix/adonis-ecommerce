@@ -9,6 +9,7 @@ import { User } from 'entities/Users'
 import s from './style.module.scss'
 import { NotFound, WithLoading } from 'shared/ui/kit'
 import { FiUsers } from 'react-icons/fi'
+import { AuthSelectors } from 'widgets/Login'
 
 
 const UsersList = memo(() => {
@@ -16,6 +17,7 @@ const UsersList = memo(() => {
   const count = useSelector(UsersSelectors.count)
   const page = useSelector(UsersSelectors.page)
   const isLoading = useSelector(UsersSelectors.isLoading)
+  const userId = useSelector(AuthSelectors.userId)
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(getUsers({ page }))
@@ -30,7 +32,7 @@ const UsersList = memo(() => {
       loading={isLoading} Preloader={ProductsPreloader} count={6}
       NotFound={() => <NotFound title={'Users'} Icon={FiUsers} w={100}
       />}>
-      {users.map((user) => <User user={user} key={user.userId}/>)}
+      {users.map((user) => <User user={user} key={user.userId} isMe={userId === user.userId}/>)}
     </WithLoading>
   </div>
   <Pagination count={count / PAGE_LIMIT} onChange={onPageChange} page={page} />

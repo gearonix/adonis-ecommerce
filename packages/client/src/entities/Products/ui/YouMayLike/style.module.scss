@@ -12,4 +12,8 @@
     margin-bottom: 14px;
     color: $color-absolute;
   }
+  @media (max-width: 1076px) {
+    display: none;
+  }
+
 }

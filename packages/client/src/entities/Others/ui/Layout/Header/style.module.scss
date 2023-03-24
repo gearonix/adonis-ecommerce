@@ -153,7 +153,7 @@
     gap: 50px;
     @media (max-width: 1494px) {
       width: 50%;
-      gap: 30px;
+      gap: 15px;
     }
     @media (max-width: 894px) {
       width: 70%;
@@ -165,7 +165,7 @@
       gap: 13px;
     }
     @media (max-width: 594px) {
-      gap: 13px;
+      gap: 8px;
     }
     @media (max-width: 508px) {
       display: none;
@@ -173,11 +173,12 @@
 
     a {
       @include flex(stretch, center);
+      white-space: nowrap;
 
       svg {
         margin-right: 5px;
         @include size(17px, 17px);
-        @media (max-width: 1186px) {
+        @media (max-width: 1272px) {
           display: none;
         }
       }
@@ -186,6 +187,12 @@
       }
       @media (max-width: 594px) {
         font-size: 15px;
+      }
+
+    }
+    & > a:last-child{
+      @media (max-width: 711px) {
+        display: none;
       }
     }
   }

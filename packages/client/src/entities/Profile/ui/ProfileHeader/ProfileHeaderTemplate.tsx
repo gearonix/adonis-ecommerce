@@ -54,7 +54,7 @@ const ProfileHeaderTemplate = memo<ProfileHeaderTemplate>((props) => {
       <Display when={isMe}>
         <div className={s.change_profile}>
           <button className="outlined_button"
-            onClick={openProfile}><BsPen/> {t('Change_profile')}</button>
+            onClick={openProfile}><BsPen/> <span>{t('Change_profile')}</span></button>
         </div>
       </Display>
     </div>

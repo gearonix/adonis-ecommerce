@@ -1,11 +1,12 @@
 import { Backdrop, Fade, Modal } from '@mui/material'
-import { FC, useState } from 'react'
-import { ModalProps } from '../../types'
-import Image from 'next/image'
+import { FC } from 'react'
+import { ModalProps } from '../../../types'
 import { NextImage } from 'shared/ui/kit'
+import { useAdaptive } from 'shared/lib/hooks'
 
 export const ImageModal: FC<ModalProps> = ({ isOpen, close, image, def }) => {
-  return image ? <Modal
+  const isMobile = useAdaptive(900)
+  return image && !isMobile ? <Modal
     open={isOpen}
     onClose={() => close(false)}
     closeAfterTransition

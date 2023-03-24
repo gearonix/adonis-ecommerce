@@ -24,7 +24,7 @@ const ProductDescriptions = memo(() => {
         <div className={s.description}>
           {product.description}
         </div>
-        <Table product={product}/>
+        <Table product={product} className={s.table}/>
         {product?.features?.map((feature, idx) => {
           return <Advantage title={feature} key={idx}/>
         })}

@@ -23,7 +23,7 @@ const GoogleButton = memo<GoogleButtonProps>(({ role }) => {
     onSuccess={onSuccess}
     onError={onError}
     size={'large'}
-    width={'310'}
+    width={'300'}
     theme={theme === Theme.LIGHT ? undefined : 'filled_black'}
   />
 })

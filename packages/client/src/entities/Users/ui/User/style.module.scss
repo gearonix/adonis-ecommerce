@@ -75,6 +75,13 @@
         display: none;
       }
     }
+    .description{
+      margin-top: 3px;
+      margin-bottom: 5px;
+      @media (max-width: 520px) {
+        font-size: 13px;
+      }
+    }
   }
   .write_message{
     position: absolute;

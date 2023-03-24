@@ -10,7 +10,7 @@ import cn from 'classnames'
 import { UserRoles } from 'app/config/globals'
 import { GiTopHat } from 'react-icons/gi'
 import { AiOutlineApi } from 'shared/ui/icons'
-import { Ternary, WithSpring } from 'shared/lib/components'
+import { Display, Ternary, WithSpring } from 'shared/lib/components'
 import { CiLocationOn } from 'react-icons/ci'
 import { BsClouds } from 'react-icons/bs'
 import { CFC } from 'shared/types/components'
@@ -18,11 +18,12 @@ import Link from 'next/link'
 import { routes } from 'shared/config/consts/routes'
 
 interface UserProps{
-    user: User
+    user: User,
+    isMe: boolean
 }
 
 
-const User : FC<UserProps> = ({ user }) => {
+const User : FC<UserProps> = ({ user, isMe }) => {
   const helpers = new Helpers()
   const { t } = useTranslation()
   const isSalesman = user.role === UserRoles.SALESMAN
@@ -54,7 +55,9 @@ const User : FC<UserProps> = ({ user }) => {
         <BlueLink className={s.view_details}>{t('View_details')}</BlueLink>
       </LinkToUser>
     </div>
-    <WriteToUser targetId={user.userId} className={s.write_message}/>
+    <Display when={!isMe}>
+      <WriteToUser targetId={user.userId} className={s.write_message}/>
+    </Display>
     <span className={s.date}>{helpers.reformatMysqlDate(user.registration_date)}</span>
   </WithSpring>
 }

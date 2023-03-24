@@ -7,26 +7,35 @@
   padding: 25px 25px 25px 25px;
   position: relative;
   display: flex;
-
-  * {
-    //@include testBorder;
-  }
-
   border-bottom: $br $bg-150;
   box-sizing: border-box;
+  @media (max-width: 444px) {
+    padding: 6px;
+  }
 
   .user_image {
     @include imageWrapper(60px, 60px, 100%);
     margin-right: 10px;
+    @media (max-width: 444px) {
+      margin-top: 4px;
+      margin-right: 3px;
+      @include size(44px, 44px);
+    }
   }
 
   .user_info {
+    position: relative;
     width: 90%;
     margin-left: 7px;
 
     .user_name {
       span:first-child{
         font-weight: bold;
+      }
+      .email{
+        @media (max-width: 520px) {
+          display: none;
+        }
       }
 
 
@@ -40,11 +49,32 @@
       font-size: 17px;
       line-height: 23px;
       max-width: 50%;
+      @media (max-width: 520px) {
+        font-size: 15px;
+      }
     }
 
     .attached_image {
-      @include imageWrapper(50%, 260px, $rounded);
+      @include imageWrapper(530px, 260px, $rounded);
       margin-top: 15px;
+      @media (max-width: 896px) {
+        width: 450px;
+      }
+      @media (max-width: 664px) {
+        margin-left: -65px;
+        width: 430px;
+        height: 190px;
+      }
+      @media (max-width: 512px) {
+        width: 350px;
+        height: 150px;
+        margin-top: 10px;
+      }
+      @media (max-width: 430px) {
+        width: 310px;
+        height: 130px;
+        margin-left: -48px;
+      }
 
       margin-bottom: 15px;
     }

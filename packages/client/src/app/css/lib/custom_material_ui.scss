@@ -59,14 +59,19 @@
 .MuiTypography-root{
     color: $color-absolute;
 }
-.MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-colorPrimary.MuiInputBase-formControl.MuiInputBase-adornedStart.css-1rn6w7t-MuiInputBase-root-MuiOutlinedInput-root{
-    width: 320px !important;
-    height: 44px;
-}
 .css-1xfpnb4-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-1xfpnb4-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-1xfpnb4-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input{
     width: 320px !important;
+    @media (max-width: 452px) {
+      width: 220px !important;
+    }
 }
 
 .css-1ovk7w0-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root{
     margin-top: 0 !important;
+}
+
+.css-56o49e-MuiAutocomplete-root .MuiOutlinedInput-root.MuiInputBase-sizeSmall{
+    @media (max-width: 600px) {
+      width: 275px;
+    }
 }

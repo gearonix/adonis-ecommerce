@@ -4,11 +4,16 @@ import { useTheme } from 'shared/lib/hooks/useTheme'
 import { useTranslation } from 'react-i18next'
 import { Product } from 'widgets/Products'
 
-export const Table: FC<{product: Product}> = ({ product }) => {
+interface TableProps{
+  product: Product,
+  className: string
+}
+
+export const Table: FC<TableProps> = ({ product, className }) => {
   const { isLight } = useTheme()
   const { t } = useTranslation()
   return (
-    <div style={{ width: '60%' }}>
+    <div className={className}>
       <TableContainer component={Paper}>
         <MuiTable aria-label="a dense table">
           <TableHead sx={{ backgroundColor: isLight ? '#EFF2F4' : '#2a2a2a' }}>

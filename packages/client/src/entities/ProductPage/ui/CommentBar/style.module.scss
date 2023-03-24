@@ -3,8 +3,12 @@
 .comment_bar{
   @include itemBorder;
   width: 54%;
-  height: 330px;
+  min-height: 310px;
   margin-bottom: 45px;
+  @media (max-width: 1130px) {
+    width: 748px;
+    margin-bottom: 0;
+  }
 }
 .textarea{
   width: 90%;
@@ -13,11 +17,23 @@
     font-size: 20px;
     margin-bottom: 15px;
     color: $color-absolute-200;
+    @media (max-width: 600px) {
+      font-size: 17px;
+    }
   }
   div{
     width: 100%;
   }
   .submit_button{
     float: right;
+    height: 31px;
+    min-width: 140px;
+    margin-bottom: 15px;
+    @media (max-width: 600px) {
+      font-size: 14px;
+      min-width: 120px;
+      margin-top: -10px;
+      margin-bottom: 0;
+    }
   }
 }

@@ -4,6 +4,9 @@
   width: 35%;
   height: 330px;
   @include itemBorder;
+  @media (max-width: 1130px) {
+    display: none;
+  }
   .title{
     font-size: $xm;
     color: $color-absolute-200;

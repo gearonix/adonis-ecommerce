@@ -2,11 +2,23 @@
 
 
 .add_product_block {
+  .container.background_container{
+    @media (max-width: 700px) {
+      padding-top: 0;
+    }
+  }
   padding: 20px 20px 0;
   .title {
     font-size: $l-medium;
     text-align: center;
     color: $color-absolute;
+    @media (max-width: 700px) {
+      font-size: 23px;
+      margin-top: 10px;
+    }
+  }
+  @media (max-width: 600px) {
+    padding: 0;
   }
 
   .container {
@@ -16,7 +28,16 @@
     width: 70%;
     gap: 25px;
     margin: 20px auto 25px;
-
+    @media (max-width: 1778px) {
+      width: 80%;
+    }
+    @media (max-width: 1288px) {
+      width: 95%;
+    }
+    @media (max-width: 600px) {
+      padding-left: 0;
+      padding-right: 0;
+    }
     .title {
 
       text-align: left;
@@ -33,13 +54,32 @@
       width: 100%;
       gap: 20px;
     }
+    .user_info_fields{
+      display: flex;
+      gap: 20px;
+      width: 80%;
+      @media (max-width: 783px) {
+        display: block;
+        & > div{
+          margin-bottom: 10px;
+        }
+      }
+    }
 
     .user_info_block {
       margin: 10px 0 10px 0;
       padding: 10px 0 10px 0;
       border-top: $br $bg-150;
       border-bottom: $br $bg-150;
+      @media (max-width: 595px) {
+        flex-direction: column;
+      }
+      @media (max-width: 700px) {
+        border-top: none;
+        padding-top: 0;
+      }
     }
+
 
     .save_buttons {
       margin-top: 37px;
@@ -68,6 +108,9 @@
         top: 20px;
         @include size(187px, 35px);
       }
+      @media (max-width: 600px) {
+        display: none;
+      }
 
       padding-bottom: 20px;
     }
@@ -75,6 +118,9 @@
     .user_avatar_block {
       @include size(163px);
       height: 176px;
+      @media (max-width: 595px) {
+        margin: 0 auto;
+      }
       @include flex(center, center, column);
 
       .user_avatar {
@@ -98,3 +144,12 @@
     color: white
   }
 }
+.description{
+  @media (max-width: 600px) {
+    width: 340px;
+  }
+  @media (max-width: 419px) {
+    width: 275px;
+  }
+}
+

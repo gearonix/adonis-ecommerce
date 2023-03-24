@@ -24,10 +24,31 @@
       background: #0D6EFD !important;
       color: white !important;
     }
+    @media (max-width: 924px) {
+      margin-top: 10px;
+      justify-content: flex-start;
+      margin-left: 15px;
+    }
     button{
       height: 33px;
       width: 42%;
+      span {
       font-size: 14px;
+      @media (max-width: 924px) {
+        display: none;
+      }
+      }
+      @media (max-width: 924px) {
+        width: 35px;
+        min-width: 35px !important;
+        height: 35px;
+        @include flex(center, center);
+        padding: 0;
+        svg{
+          margin-right: 0;
+          @include size(19px, 19px);
+        }
+      }
     }
   }
 
@@ -35,5 +56,10 @@
     font-size: $xm;
     margin-bottom: 50px;
     text-align: center;
+  }
+}
+.flex{
+  @media (max-width: 924px) {
+    width: 180px;
   }
 }

@@ -21,7 +21,7 @@ const OpenAddProduct = memo<{ open:() => void }>(({ open }) => {
 
   return <Display when={isMe}>
     <button className={cn('outlined_button', { disabled: !isSalesman })}
-      onClick={onClick}><BsCartPlus/>  {t('Add Product')}</button>
+      onClick={onClick}><BsCartPlus/><span>{t('Add Product')}</span></button>
   </Display>
 })
 

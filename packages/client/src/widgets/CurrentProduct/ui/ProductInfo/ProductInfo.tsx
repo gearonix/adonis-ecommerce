@@ -26,7 +26,6 @@ const ProductInfo = memo(() => {
       dispatch(productActions.clearProduct())
     }
   }, [id])
-
   return <WithLoading title={'Product'} Icon={CartIcon} when={!isExists} loading={isLoading}
     NotFound={NotFound} Preloader={() => <PenPreloader instantly/>} count={1}>
     <article className={s.product_info}>

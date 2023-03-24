@@ -5,13 +5,34 @@
   text-align: center;
   color: $color-absolute;
   margin-bottom: 45px;
+  @media (max-width: 834px) {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+  @media (max-width: 630px) {
+    font-size: 22px;
+  }
 }
 .container{
-  width: 50%;
+  width: 647px;
   margin: 0 auto 0;
   padding-top: 20px;
   padding-bottom: 20px;
   border-top: $br $bg-150;
+  @media (max-width: 1094px) {
+    width: 547px;
+  }
+  @media (max-width: 814px) {
+    width: 460px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  @media (max-width: 630px) {
+    width: 360px;
+  }
+  @media (max-width: 502px) {
+    width: 280px;
+  }
 }
 .save_buttons {
   button:first-child{
@@ -21,9 +42,16 @@
   button{
     min-width: 145px;
     height: 34px;
+    @media (max-width: 520px) {
+      min-width: 125px;
+      height: 30px;
+    }
   }
   margin-top: 18px;
   width: 100%;
   display: flex;
   gap: 15px;
+  @media (max-width: 814px) {
+    margin-top: 10px;
+  }
 }

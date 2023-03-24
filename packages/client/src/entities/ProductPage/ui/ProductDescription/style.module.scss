@@ -3,6 +3,13 @@
 .product_params {
   @include itemBorder;
   @include size(74%, 575px);
+  @media (max-width: 1076px) {
+    width: 100%;
+  }
+  @media (max-width: 700px) {
+    height: max-content;
+    padding-bottom: 15px;
+  }
 
   .header {
     @include size(100%, 36px);
@@ -25,7 +32,19 @@
     .description {
       width: 70%;
       min-height: 70px;
+      @media (max-width: 500px) {
+        min-height: 40px;
+      }
     }
 
+  }
+}
+.table{
+  width: 60%;
+  @media (max-width: 1648px) {
+    width: 80%;
+  }
+  @media (max-width: 584px) {
+    width: 95%;
   }
 }

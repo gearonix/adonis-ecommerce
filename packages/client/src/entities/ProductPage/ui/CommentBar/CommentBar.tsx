@@ -6,6 +6,7 @@ import { BlueLinkHeader, Button } from 'shared/ui/kit'
 import { createFieldValues } from 'shared/lib/helpers'
 import { CommentForm } from 'features/ProductPage'
 import { TextArea } from 'shared/ui/material'
+import cn from 'classnames'
 
 interface CommentBarProps{
     reg : ReturnType<typeof createFieldValues<CommentForm>>,
@@ -20,9 +21,8 @@ const CommentBar = memo<CommentBarProps>(({ reg, submit }) => {
     <div className={s.textarea}>
       <TextArea title={t('Write your opinion about the product.')} values={reg('message')}
         placeholder={t('Your opinion...') || ''}/>
-      <Button w={100} className={s.submit_button} onClick={submit}>
-        {t('Leave comment')}
-      </Button>
+      <button className={cn(s.submit_button, 'primary_button')}
+        onClick={submit}>{t('Leave comment')}</button>
     </div>
   </div>
 })

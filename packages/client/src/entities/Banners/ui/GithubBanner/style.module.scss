@@ -19,6 +19,8 @@
     @include flex(stretch, center, column);
     padding: 14px;
     height: max-content;
+    width: 95%;
+    margin: 0 auto;
   }
 
   &:hover {
