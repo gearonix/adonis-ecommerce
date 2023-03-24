@@ -51,8 +51,8 @@
       margin-top: 53px;
       margin-bottom: 5px;
       font-size: $medium;
-      text-shadow: 2px 1px 2px $color-absolute;
-      color: $bg-absolute;
+      text-shadow: 2px 1px 2px #000;
+      color: #fff;
       @media (max-width: 922px) {
         font-size: 23px;
       }
@@ -71,8 +71,8 @@
       margin-bottom: 19px;
       font-size: $l-medium;
       font-weight: bold;
-      text-shadow: 2px 1px 2px $color-absolute;
-      color: $bg-absolute;
+      text-shadow: 2px 1px 2px #000;
+      color: #fff;
       @media (max-width: 922px) {
         font-size: 27px;
       }

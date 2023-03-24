@@ -9,6 +9,10 @@
 
   .wrapper:has(.image_wrapper) {
     min-width: 365px;
+    @media (max-width: 600px) {
+      width: 100%;
+      min-width: initial;
+    }
   }
 
   .wrapper {

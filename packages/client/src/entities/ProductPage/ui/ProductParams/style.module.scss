@@ -10,7 +10,9 @@
     margin-top: 6px;
     margin-bottom: 6px;
     width: 60%;
-
+  }
+  @media (max-width: 600px) {
+    margin-left: 7px;
   }
 
   .rating_block {

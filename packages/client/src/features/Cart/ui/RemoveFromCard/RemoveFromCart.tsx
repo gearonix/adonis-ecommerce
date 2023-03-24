@@ -13,7 +13,7 @@ const RemoveFromCart = forwardRef<HTMLButtonElement, {productId: number}>(({ pro
   }
 
 
-  return <Button w={'140px'} color={'redColored'} h={'32px'} ref={ref}
+  return <Button w={'140px'} color={'redColored'} h={'36px'} ref={ref}
     onClick={withDelay(removeFromCard)}>{t('Remove')}</Button>
 })
 

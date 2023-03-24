@@ -6,6 +6,10 @@
   display: flex;
   border-bottom: $br $bg-150;
   overflow: hidden;
+  padding-bottom: 20px;
+  @media (max-width: 600px) {
+    padding-bottom: 0px;
+  }
 
   .image_wrapper {
     @include imageWrapper(87px,87px,$rounded);
@@ -26,7 +30,7 @@
     h4{
       color: $color-absolute;
       @media (max-width: 520px) {
-        font-size: 14px;
+        font-size: 15px;
       }
     }
 
@@ -36,7 +40,7 @@
       margin-bottom: 9px;
       width: 319px;
       @media (max-width: 520px) {
-        font-size: 13px;
+        font-size: 12px;
         width: 185px;
       }
     }

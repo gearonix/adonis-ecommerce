@@ -9,5 +9,7 @@
   .image_carousel_wrapper {
     @include imageWrapper(47px,47px,4px);
     margin-right: 10px;
+    border: $br $bg-150;
+    padding: 2px;
   }
 }

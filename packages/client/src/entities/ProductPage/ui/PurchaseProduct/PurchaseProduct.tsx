@@ -22,18 +22,20 @@ const PurchaseProduct = memo<PurchaseProductP>(({ AddToSaved, CartButton, produc
   const { salesman, productInfo } = product
   return <div className={s.purchase_block}>
     <div className={s.purchase_card}>
-      <div className={s.purchase_supplier}>
-        <div className={s.image_wrapper}>
-          <NextImage alt={''}
-            src={salesman.avatar || DefaultAssets.AVATAR}
-            priority={false} def={DefaultAssets.AVATAR}/>
-        </div>
+      <Link href={`${routes.USERS}/${salesman.userId}`}>
+        <div className={s.purchase_supplier}>
+          <div className={s.image_wrapper}>
+            <NextImage alt={''}
+              src={salesman.avatar || DefaultAssets.AVATAR}
+              priority={false} def={DefaultAssets.AVATAR}/>
+          </div>
 
-        <h2>
-          {t('Supplier')} <br/>
-          {salesman.firstName} {salesman.lastName}
-        </h2>
-      </div>
+          <h2>
+            {t('Supplier')} <br/>
+            {salesman.firstName} {salesman.lastName}
+          </h2>
+        </div>
+      </Link>
       <span className={s.supplier_params}><MdMessage/>{salesman.email}</span>
       <span className={s.supplier_params}><TfiWorld/>{salesman.country ? salesman.country :
           'No Country'}</span>

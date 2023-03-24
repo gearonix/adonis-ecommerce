@@ -6,6 +6,7 @@
   box-sizing: border-box;
   border-radius: $rounded;
   @include size(100%, 580px);
+  position: relative;
 
   * {
     font-size: $small;
@@ -18,7 +19,13 @@
     height: max-content;
   }
   @media (max-width: 600px) {
-    margin-top: 20px;
+    margin-top: 0;
+  }
+  @media (max-width: 478px) {
+    height: 750px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 0;
   }
 
 

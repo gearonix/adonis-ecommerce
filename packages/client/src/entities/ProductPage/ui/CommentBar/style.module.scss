@@ -9,6 +9,9 @@
     width: 748px;
     margin-bottom: 0;
   }
+  @media (max-width: 600px) {
+    margin-top: 10px;
+  }
 }
 .textarea{
   width: 90%;

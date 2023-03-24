@@ -37,7 +37,7 @@ const Categories= memo<CategoriesProps>((props) => {
       style={backgroundImage(ProductTypesAssets[category])}>
       <h2 className={s.subtitle}>{t(subtitle)}</h2>
       <h2 className={s.title}>{t(title)}</h2>
-      <Button w={'112px'} color={'outlined'} onClick={onSearch}>{t('Learn_more')}</Button>
+      <Button w={'140px'} color={'outlined'} onClick={onSearch}>{t('Learn_more')}</Button>
     </WithSpring>
     <div className={s.login_block}>
       <div className={s.user_block}>

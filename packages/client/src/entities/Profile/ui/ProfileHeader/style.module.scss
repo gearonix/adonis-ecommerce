@@ -181,7 +181,6 @@
     }
 
     .change_profile {
-      @include size(18%, 50px);
       @include flex(flex-end);
       position: absolute;
       right: 28px;

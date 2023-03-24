@@ -3,12 +3,13 @@
 .product_params {
   @include itemBorder;
   @include size(74%, 575px);
-  @media (max-width: 1076px) {
-    width: 98%;
+  @media (max-width: 1514px) {
+    width: calc(100% - 2px);
   }
   @media (max-width: 700px) {
     height: max-content;
     padding-bottom: 15px;
+    margin-top: 0;
   }
 
   .header {

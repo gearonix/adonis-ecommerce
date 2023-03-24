@@ -15,14 +15,9 @@
     margin-bottom: 10px;
     height: 80px;
   }
-  @media (max-width: 522px) {
-    @include flex(stretch, center, column);
-    padding: 14px;
-    height: max-content;
-    width: 95%;
-    margin: 0 auto;
+  @media (max-width: 648px) {
+    display: none;
   }
-
   &:hover {
     background: $link-color-hover;
     //005ADE

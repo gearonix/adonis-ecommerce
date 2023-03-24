@@ -17,7 +17,10 @@
   @media (max-width: 700px) {
     width: 86%;
     padding: 7px;
-    height: 90%;
-    top: 20px;
+    height: initial;
+    max-height: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }

@@ -2,32 +2,78 @@
 
 
 .purchase_block {
-  @include size(18%);
+  @include size(289px);
+  margin-right: 10px;
   margin-left: 20px;
   padding: 15px;
-  display: none;
   box-sizing: border-box;
+  @media (max-width: 1064px) {
+    position: absolute;
+    right: 0;
+    top: -5px;
+    z-index: 8;
+    height: max-content;
+  }
+  @media (max-width: 864px) {
+    width: max-content;
+    min-width: 230px;
+  }
+  @media (max-width: 682px) {
+    right: initial;
+    top: initial;
+    left: 10px;
+    bottom: 45px;
+    padding: 0;
+    margin: 0;
+    min-width: 180px;
+  }
+  @media (max-width: 478px) {
+    background-color: $bg-absolute;
+    bottom: 5px;
+    width: 92%;
+  }
 
   .purchase_card {
     padding: 17px;
     border: $br $bg-150;
     border-radius: $rounded;
     @include size(100%, 325px);
+    @media (max-width: 1064px) {
+      height: 100%;
+      padding: 4px 7px;
+    }
 
     .purchase_supplier {
       @include size(100%, 65px);
       @include flex();
+      @media (max-width: 1064px) {
+        border-bottom: none;
+        margin-bottom: 0;
+        height: 100%;
+      }
       border-bottom: $br $bg-150;
       margin-bottom: 11px;
       color: $color-absolute;
       .image_wrapper{
         @include imageWrapper(50px,50px,$rounded);
         border: $br $bg-150;
+        @media (max-width: 1064px) {
+          @include size(45px, 45px);
+        }
+        @media (max-width: 864px) {
+          @include size(40px, 40px);
+        }
+        @media (max-width: 478px) {
+          margin-bottom: 8px;
+          @include size(50px, 50px)
+        }
       }
-
 
       h2 {
         margin-left: 11px;
+        @media (max-width: 1064px) {
+          font-size: 15px;
+        }
       }
 
       * {
@@ -39,6 +85,12 @@
       margin-bottom: 11px;
       display: block;
       color: $bg-300;
+      @media (max-width: 1064px) {
+        display: none;
+      }
+      @media (max-width: 478px) {
+        display: block;
+      }
 
       svg {
         margin-right: 16px;
@@ -51,6 +103,14 @@
 
       &[class*="outlined_button"] {
         color: $link-color;
+      }
+    }
+    button{
+      @media (max-width: 1064px) {
+        display: none;
+      }
+      @media (max-width: 478px) {
+        display: block;
       }
     }
   }

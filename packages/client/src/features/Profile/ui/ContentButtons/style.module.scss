@@ -43,8 +43,8 @@
       span{
         display: none;
       }
-      min-width: 40px !important;
-      height: 40px;
+      min-width: 30px !important;
+      height: 30px;
     }
 
   }
@@ -56,7 +56,7 @@
     right: 0;
     top: 0;
     @media (max-width: 520px) {
-      gap: 0px;
+      gap: 5px;
       top: 3px;
       justify-content: flex-end;
     }

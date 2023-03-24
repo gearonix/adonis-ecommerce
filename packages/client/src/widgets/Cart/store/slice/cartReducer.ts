@@ -23,9 +23,9 @@ const cartReducer = createSlice({
       state.data.splice(state.data.indexOf(payload), 1)
       storage.save(state.data)
     },
-    removeAll() {
+    removeAll(state) {
       storage.save([])
-      return initialState
+      state.data = []
     }
   }
 })
