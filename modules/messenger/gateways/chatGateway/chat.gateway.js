@@ -39,15 +39,10 @@ let ChatGateway = class ChatGateway {
     }
     async startChat(invitedId, client) {
         const starterId = await this.getUserIdByHeaders(client);
-        console.log('STARTCHAT');
-        console.log(invitedId);
-        console.log(starterId);
         const room = await this.roomsService.startChat(starterId, invitedId);
         client.emit(types_1.MessengerEvents.ADD_ROOM, room);
     }
     async makeRoomSubscription(roomId, client) {
-        console.log('SUBSCRIBE_TO_ROOM');
-        console.log(roomId);
         const userId = await this.getUserIdByHeaders(client);
         await this.messagesService.makeMessagesRead(roomId, userId);
         client.join((0, gatewayGroup_1.gatewayGroup)(types_1.MessengerGroups.MESSENGER_ROOM, roomId));
@@ -60,9 +55,6 @@ let ChatGateway = class ChatGateway {
             .emit(types_1.MessengerEvents.NO_LONGER_TYPING);
     }
     async sendMessage(message, client) {
-        console.log('SEND_MESSAGE');
-        console.log(message.senderId);
-        console.log(message.roomId);
         const senderId = await this.getUserIdByHeaders(client);
         const newMessage = await this.messagesService.saveMessage({ ...message, senderId });
         client.emit(types_1.MessengerEvents.ADD_MESSAGE, newMessage);
@@ -72,9 +64,12 @@ let ChatGateway = class ChatGateway {
             .emit(types_2.StatusEvents.SHOW_NOTIFICATION, newMessage);
     }
     async makeMessageRead(message, client) {
-        await this.messagesService.makeMessageRead(message.messageId);
-        client.to((0, gatewayGroup_1.gatewayGroup)(types_1.MessengerGroups.MESSENGER_ROOM, message.roomId))
-            .emit(types_1.MessengerEvents.MESSAGE_READ);
+        const userId = await this.getUserIdByHeaders(client);
+        if (userId !== message.senderId) {
+            await this.messagesService.makeMessageRead(message.messageId);
+            client.to((0, gatewayGroup_1.gatewayGroup)(types_1.MessengerGroups.MESSENGER_ROOM, message.roomId))
+                .emit(types_1.MessengerEvents.MESSAGE_READ);
+        }
     }
     async userTyping(roomId, client) {
         const userId = await this.getUserIdByHeaders(client);
@@ -87,7 +82,7 @@ let ChatGateway = class ChatGateway {
             .emit(types_1.MessengerEvents.NO_LONGER_TYPING, { userId });
     }
     async getUserIdByHeaders(client) {
-        const userId = Number(client.handshake.headers.userid);
+        const userId = Number(client.handshake.auth.userid);
         return isNaN(userId) ? null : userId;
     }
 };
