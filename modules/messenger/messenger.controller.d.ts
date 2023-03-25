@@ -7,5 +7,5 @@ export declare class MessengerController {
     private authService;
     constructor(roomsService: RoomsService, messagesService: MessagesService, authService: AuthService);
     getUserRooms(userId: number): Promise<import("../../entities/messenger-rooms.entity").MessengerRoomsEntity[]>;
-    selectRoom(id: string, userId: number): Promise<import("../../entities/user-messages.entity").UserMessagesEntity[]>;
+    selectRoom(id: string, userId: number, page: string): Promise<import("../../entities/user-messages.entity").UserMessagesEntity[]>;
 }

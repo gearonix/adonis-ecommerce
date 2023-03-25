@@ -8,7 +8,7 @@ export declare class MessagesService {
     private fileService;
     private roomService;
     constructor(messages: Repository<UserMessagesEntity>, fileService: FilesService, roomService: RoomsService);
-    selectRoom(roomId: number, userId: number): Promise<UserMessagesEntity[]>;
+    selectRoom(roomId: number, userId: number, page: string): Promise<UserMessagesEntity[]>;
     makeMessagesRead(roomId: number, userId: number): Promise<import("typeorm").UpdateResult>;
     makeMessageRead(messageId: number): Promise<import("typeorm").UpdateResult>;
     saveMessage({ file, ...message }: NewMessage): Promise<UserMessagesEntity>;

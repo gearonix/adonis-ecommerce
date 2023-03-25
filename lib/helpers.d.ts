@@ -4,8 +4,8 @@ export declare const getRequest: (requestContext: any) => any;
 export declare const getResponse: (requestContext: any) => any;
 export declare const isNumber: (str: string) => boolean;
 export declare const ifExist: <T, N>(name: T, value: N) => N;
-export declare const withLimit: (page: string | undefined, take?: 9) => {
-    take: 9;
+export declare const withLimit: (page: string | undefined, take?: number) => {
+    take: number;
     skip: number;
 };
 export declare const sleep: () => Promise<unknown>;

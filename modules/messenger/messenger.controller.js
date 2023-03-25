@@ -29,8 +29,8 @@ let MessengerController = class MessengerController {
     async getUserRooms(userId) {
         return this.roomsService.getUserRooms(userId);
     }
-    async selectRoom(id, userId) {
-        return this.messagesService.selectRoom(Number(id), userId);
+    async selectRoom(id, userId, page) {
+        return this.messagesService.selectRoom(Number(id), userId, page);
     }
 };
 __decorate([
@@ -44,8 +44,9 @@ __decorate([
     (0, common_1.Put)(':id'),
     __param(0, (0, common_1.Param)('id')),
     __param(1, (0, common_1.Body)('userId')),
+    __param(2, (0, common_1.Query)('page')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String, Number]),
+    __metadata("design:paramtypes", [String, Number, String]),
     __metadata("design:returntype", Promise)
 ], MessengerController.prototype, "selectRoom", null);
 MessengerController = __decorate([

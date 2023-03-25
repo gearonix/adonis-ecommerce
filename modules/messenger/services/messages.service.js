@@ -20,6 +20,7 @@ const typeorm_2 = require("typeorm");
 const global_1 = require("../../../types/global");
 const files_service_1 = require("../../files/files.service");
 const messenger_1 = require("..");
+const helpers_1 = require("../../../lib/helpers");
 let MessagesService = class MessagesService {
     messages;
     fileService;
@@ -29,14 +30,19 @@ let MessagesService = class MessagesService {
         this.fileService = fileService;
         this.roomService = roomService;
     }
-    async selectRoom(roomId, userId) {
+    async selectRoom(roomId, userId, page) {
         await this.roomService.checkUserHasRoom(roomId, userId);
-        return this.messages.find({
+        const messages = await this.messages.find({
             where: { roomId },
             relations: {
                 user: true
-            }
+            },
+            order: {
+                creationDate: 'DESC'
+            },
+            ...(0, helpers_1.withLimit)(page, 15)
         });
+        return messages.reverse();
     }
     async makeMessagesRead(roomId, userId) {
         const senderId = await this.roomService.getOpponentId(roomId, userId);
