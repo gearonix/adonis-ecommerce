@@ -5,7 +5,9 @@
 .wrapper{
   width: 600px;
   border-radius: 20px;
+
   @include absolute(50%,45%);
+
   transform: translate(-50%,-50%);
   z-index: 8;
   border: none;
@@ -13,6 +15,7 @@
   box-shadow: $shadow;
   padding-bottom: 20px;
 }
+
 .header{
   width: 100%;
   height: 54px;
@@ -22,33 +25,41 @@
   align-items: center;
   justify-content: space-between;
   border-radius: 20px 20px 0 0;
+
   h2{
     color: $color-absolute;
     font-size: 18px;
   }
 }
+
 .wrapper.light{
   background: #fff;
+
   .header{
     background: #f7f7f7;
     border-bottom: 1px solid #d3d3d3;
   }
 }
+
 .wrapper.dark{
   background: #2C2D2E;
   color: white;
+
   .header{
     background: #232324;
     border-bottom: 1px solid #424242;
   }
+
   h2{
     font-size: 16px;
     font-weight: normal;
   }
+
   .cross{
     @include size(20px,20px);
   }
 }
+
 .content{
   width: 100%;
   height: 80%;

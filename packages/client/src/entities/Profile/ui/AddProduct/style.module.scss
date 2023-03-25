@@ -3,6 +3,7 @@
 .add_product_block {
   padding: 20px;
   position: relative;
+
   @media (max-width: 1158px) {
     padding: 0;
   }
@@ -11,65 +12,80 @@
     font-size: $l-medium;
     text-align: center;
     color: $color-absolute;
+
     @media (max-width: 900px) {
       font-size: 22px;
-      margin-bottom: 0px;
+      margin-bottom: 0;
     }
   }
+
   .background_image{
     @include imageWrapper(130px,130px);
     @include absolute(30px, 40px);
+
     img{
       opacity: 0.8;
     }
+
     @media (max-width: 1676px) {
       display: none;
     }
   }
 
   .container {
-    padding: 30px 20px 30px 20px;
+    padding: 30px 20px;
     border-top: $br $bg-150;
     border-bottom: $br $bg-150;
     width: 760px;
     gap: 25px;
     margin: 20px auto 25px;
+
     @media (max-width: 1180px) {
       padding-left: 0;
       padding-right: 0;
     }
+
     @media (max-width: 918px) {
       width: 560px;
     }
+
     @media (max-width: 692px) {
       width: 460px;
     }
+
     @media (max-width: 550px) {
       width: 350px;
     }
+
     @media (max-width: 436px) {
       width: 90%;
     }
+
     .flex{
       display: flex;
       gap: 50px;
+
       & > *{
         width: 373px;
+
         @media (max-width: 918px) {
           width: 300px;
         }
       }
     }
+
     .flex.product_images_block{
       @media (max-width: 698px) {
         display: block;
       }
     }
+
     .flex.product_names{
       @media (max-width: 574px) {
         display: block;
       }
     }
+
     .numberFields{
       & > div{
         @media (max-width: 574px) {
@@ -100,12 +116,16 @@
         display: block;
         width: 100%;
       }
+
       position: relative;
+
       .product_image_wrapper{
         @include imageWrapper(270px,270px);
+
         position: absolute;
         right: 50px;
         top: 20px;
+
         @media (max-width: 938px) {
           display: none;
         }
@@ -117,13 +137,16 @@
         background: #0D6EFD;
         color: white;
       }
+
       button{
         min-width: 145px;
         height: 34px;
+
         @media (max-width: 500px) {
           font-size: 14px;
         }
       }
+
       margin-top: 37px;
       width: 100%;
       display: flex;
@@ -137,6 +160,7 @@
         position: absolute;
         right: 20px;
         top: 20px;
+
         @include size(187px, 35px);
       }
 

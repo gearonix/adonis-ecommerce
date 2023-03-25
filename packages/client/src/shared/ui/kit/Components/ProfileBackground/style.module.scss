@@ -2,12 +2,16 @@
 
 .profile_background {
   @include size(100%,360px);
+
   position: relative;
+
   .image_wrapper{
     @include imageWrapper(100%, 100%, $rounded);
+
     margin: 0 auto;
     cursor: pointer;
   }
+
   background: $color-300;
 
 
@@ -16,7 +20,9 @@
     right: 20px;
     top: 20px;
     z-index: 1;
+
     @include size(210px, 32px);
+
     opacity: 0.6;
     transition: opacity 200ms;
     background: $link-color;
@@ -33,5 +39,6 @@
 
 .default{
   @include size;
+
   background: $color-300;
 }

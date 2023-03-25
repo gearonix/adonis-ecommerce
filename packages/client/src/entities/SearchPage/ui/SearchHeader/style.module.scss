@@ -9,18 +9,23 @@
   border-radius: 6px;
   background: $bg-absolute;
   color: $color-absolute;
+
   @include size(100%, 56px);
   @include itemHover;
   @include flex(space-between, center);
+
   @media (max-width: 1334px) {
     margin-top: 25px;
   }
+
   @media (max-width: 750px) {
     box-sizing: border-box;
   }
+
   @media (max-width: 508px) {
     padding: 0;
   }
+
   .controls_title {
     @include size(40%);
     @include flex(stretch, center);
@@ -29,9 +34,11 @@
       *{
       font-size: 14px;
       }
+
       width: max-content;
       white-space: nowrap;
     }
+
     @media (max-width: 508px) {
       margin-left: 10px;
     }
@@ -43,8 +50,11 @@
 
   .controls_buttons {
     @include size(43%);
+
     margin-right: 30px;
+
     @include flex(flex-end, center);
+
     gap: 18px;
 
   }

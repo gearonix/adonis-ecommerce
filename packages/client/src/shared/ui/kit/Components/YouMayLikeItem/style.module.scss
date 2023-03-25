@@ -2,11 +2,13 @@
 
 .item {
   @include size(90%, 80px);
+
   display: flex;
   margin-top: 20px;
 
   .image_wrapper {
     @include size(90px, 80px);
+
     margin: 0 11px 0 0;
     position: relative;
   }
@@ -17,6 +19,7 @@
       color: $bg-300;
       margin-top: 4px;
     }
+
     h4{
       color: $bg-100;
     }

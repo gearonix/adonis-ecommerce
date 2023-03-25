@@ -3,15 +3,18 @@
 
 .image_carousel {
   @include size(100%, 48px);
-  @include flex();
+  @include flex;
+
   margin-top: 10px;
 
   .image_carousel_wrapper {
     @include imageWrapper(47px,47px,4px);
+
     margin-right: 10px;
     border: $br $bg-150;
     padding: 2px;
   }
+
   @media (max-width: 420px) {
     display: none;
   }

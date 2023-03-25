@@ -5,7 +5,9 @@
   border: 1px solid $bg-150;
   box-sizing: border-box;
   border-radius: $rounded;
+
   @include size(100%, 580px);
+
   position: relative;
 
   * {
@@ -14,13 +16,17 @@
 
   background: $bg-absolute;
   padding: 20px;
-  @include flex();
+
+  @include flex;
+
   @media (max-width: 1438px) {
     height: max-content;
   }
+
   @media (max-width: 600px) {
     margin-top: 0;
   }
+
   @media (max-width: 478px) {
     height: 750px;
     padding-left: 10px;

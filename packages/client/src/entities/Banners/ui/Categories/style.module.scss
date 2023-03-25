@@ -11,16 +11,20 @@
   & > div {
     height: 92%;
   }
+
   @media (max-width: 922px) {
     height: 250px;
   }
+
   @media (max-width: 676px) {
     height: 210px;
   }
+
   @media (max-width: 900px) {
     border-radius: 0;
 
   }
+
   @media (max-width: 488px) {
     height: 180px;
     margin-top: 10px;
@@ -33,16 +37,20 @@
     position: relative;
     padding-left: 45px;
     border-radius: 8px;
+
     @media (max-width: 1052px) {
       width: 70%;
     }
+
     @media (max-width: 922px) {
       height: 100% !important;
       width: 65%;
     }
+
     @media (max-width: 634px) {
       width: 100%;
     }
+
     @media (max-width: 900px) {
       border-radius: 0;
     }
@@ -53,15 +61,19 @@
       font-size: $medium;
       text-shadow: 2px 1px 2px #000;
       color: #fff;
+
       @media (max-width: 922px) {
         font-size: 23px;
       }
+
       @media (max-width: 676px) {
         font-size: 20px;
       }
+
       @media (max-width: 488px) {
         margin-top: 35px;
       }
+
       @media (max-width: 400px) {
         font-size: 17px;
       }
@@ -73,25 +85,31 @@
       font-weight: bold;
       text-shadow: 2px 1px 2px #000;
       color: #fff;
+
       @media (max-width: 922px) {
         font-size: 27px;
       }
+
       @media (max-width: 676px) {
         font-size: 24px;
       }
+
       @media (max-width: 400px) {
         font-size: 22px;
       }
     }
+
     button{
       @media (max-width: 800px) {
         height: 33px;
         font-size: 15px;
       }
+
       @media (max-width: 676px) {
         font-size: 13px;
         height: 28px;
       }
+
       @media (max-width: 400px) {
         height: 25px;
         font-size: 14px;
@@ -102,9 +120,11 @@
 
   .login_block {
     width: 16%;
+
     @media (max-width: 1052px) {
       display: none;
     }
+
     .user_block {
       width: 100%;
       border-radius: 6px;
@@ -112,6 +132,7 @@
       padding-top: 13px;
       padding-bottom: 3px;
       box-sizing: border-box;
+
       //min-height: 58px;
       max-height: 170px;
 
@@ -119,20 +140,26 @@
         @include size(93%, 48px);
 
         margin: 0 auto;
+
         @include flex(space-between, center);
 
         .hi_user {
           height: 38px;
           margin-bottom: 17px;
-          @include flex();
+
+          @include flex;
+
           align-items: center;
+
           .image_wrapper{
             @include imageWrapper(44px,44px,100%);
+
             margin-right: 9px;
           }
 
           img {
             @include size(47px, 47px);
+
             border-radius: 100%;
             margin-right: 10px;
           }
@@ -140,6 +167,7 @@
           .user_title {
             font-size: $small;
             color: black;
+
             @media (max-width: 1308px) {
               font-size: 14px;
             }
@@ -150,7 +178,7 @@
       }
 
       button {
-        margin: 10px auto 10px;
+        margin: 10px auto;
 
         &[class*="outlined_button"] {
           color: $link-color;
@@ -165,6 +193,7 @@
 
     .card, .greenCard {
       @include size(calc(100% - 16px), 71px);
+
       border-radius: 6px;
       background: #F38332;
       color: $color-absolute;
@@ -180,15 +209,19 @@
       h4 {
         font-size: $small;
         color: $color-absolute;
+
         @media (max-width: 1232px) {
           font-size: 15px;
         }
+
         @media (max-width: 1126px) {
           font-size: 13px;
         }
       }
+
       svg{
         @include size(18px,18px);
+
         margin-bottom: -4px;
       }
     }

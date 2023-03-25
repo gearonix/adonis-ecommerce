@@ -24,11 +24,11 @@
   display: inline-block;
   padding: 5px 0;
   position: relative;
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.3s ease-in-out;
 
-  &:before {
+  &::before {
     content: '';
     background: $link-color-hover;
     display: block;
@@ -44,7 +44,7 @@
     background-position: 0;
   }
 
-  &:hover:before {
+  &:hover::before {
     width: 100%;
   }
 }

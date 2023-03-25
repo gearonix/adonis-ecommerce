@@ -6,7 +6,7 @@ import { Display } from 'shared/lib/components'
 import { useTranslation } from 'react-i18next'
 
 interface StandardSelectProps{
-  title?: string,
+  title?: string | null,
   values: FieldValues,
   Icon?: FC,
   placeholder?: string

@@ -5,6 +5,7 @@
   background: $bg-absolute;
   padding-top: 40px;
   margin-top: 10px;
+
   @media (max-width: 800px) {
     padding-top: 20px;
   }
@@ -13,33 +14,41 @@
 
   .footer_block {
     position: relative;
+
     img {
       cursor: pointer;
     }
+
     @media (max-width: 990px) {
       height: 132px;
     }
+
     @media (max-width: 800px) {
       height: 68px;
     }
+
     @media (max-width: 800px) {
       height: max-content;
       margin: 0;
     }
+
     @media (max-width: 420px) {
       display: none;
     }
 
     @include size(85%, 234px);
-    @include flex();
+    @include flex;
+
     @media (max-width: 832px) {
       justify-content: space-between;
     }
+
     @media (max-width: 832px) {
       justify-content: center;
       margin: 0 auto;
       padding-bottom: 20px;
     }
+
     margin: 0 auto 59px;
 
     @media (max-width: 1150px) {
@@ -48,6 +57,7 @@
 
     .brand_block {
       @include size(25%);
+
       @media (max-width: 800px) {
         display: none;
       }
@@ -57,9 +67,11 @@
         margin-top: 13px;
         margin-bottom: 14px;
         width: 60%;
+
         @media (max-width: 1018px) {
           font-size: 14px;
         }
+
         @media (max-width: 878px) {
           display: none;
         }
@@ -67,37 +79,45 @@
 
       .brand_logo {
         @include imageWrapper(180px, 55px);
+
         @media (max-width: 990px) {
           width: 155px;
           height: 46px;
           margin-bottom: 20px;
         }
+
         @media (max-width: 800px) {
           display: none;
         }
       }
 
       .icon_block {
-        @include flex();
+        @include flex;
         @include size(60%, 32px);
 
         .icon {
           @include size(32px, 32px);
           @include flex(center, center);
+
           background: white;
           border-radius: 100%;
+
           @media (max-width: 800px) {
             @include size(26px, 26px);
           }
+
           @media (max-width: 800px) {
             @include size(23px, 23px);
+
             background: transparent;
           }
 
           svg {
             @include size(23px, 23px);
+
             @media (max-width: 800px) {
               @include size(14px, 14px);
+
               color: white !important;
             }
           }
@@ -111,12 +131,15 @@
     .navbar {
       @include size(50%, 78px);
       @include flex(space-between);
+
       @media (max-width: 832px) {
         width: 80%;
       }
+
       @media (max-width: 690px) {
         width: 95%;
       }
+
       @media (max-width: 584px) {
         font-size: 14px;
       }
@@ -125,12 +148,15 @@
         a {
           cursor: pointer;
           font-size: 18px;
+
           @media (max-width: 990px) {
             font-size: 15px;
           }
+
           @media (max-width: 584px) {
             font-size: 13px;
           }
+
           @media (max-width: 400px) {
             font-size: 12px;
           }
@@ -147,10 +173,13 @@
 
     .github_block {
       @include size(25%, 100%);
+
       position: absolute;
       right: 0;
       top: 0;
+
       @include flex(start, center, column);
+
       @media (max-width: 832px) {
         display: none;
       }
@@ -161,7 +190,9 @@
 
       svg {
         margin-top: 6px;
+
         @include size(55px, 55px);
+
         color: $color-absolute;
       }
     }
@@ -169,16 +200,20 @@
 
   .footer_bottom {
     @include size(100%, 70px);
+
     background: $bg-light-blue;
     color: #606060;
 
     .footer_bottom_block {
       @include size(73%, 100%);
       @include flex(space-between, center);
+
       margin: 0 auto;
+
       @media (max-width: 550px) {
         width: 83%;
       }
+
       a{
         @media (max-width: 550px) {
           font-size: 12px;

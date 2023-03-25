@@ -2,6 +2,7 @@
 
 .messages_block {
   @include size(100%, calc(88%));
+
   position: relative;
 
   .messages_wrapper {
@@ -9,10 +10,12 @@
     overflow-y: auto;
     height: 100%;
     margin: 0 auto 20px;
+
     &::-webkit-scrollbar {
       display: none;
     }
   }
+
   .scrollToBottom{
     position: absolute;
     opacity: 0.74;
@@ -20,11 +23,15 @@
     right: 100px;
     background: $bg-absolute;
     border: $br $bg-150;
+
     @include size(45px, 37px);
     @include flex(center,center);
+
     border-radius: $rounded;
+
     svg{
       @include size(28px, 28px);
+
       color: $color-absolute-200;
     }
   }
@@ -32,12 +39,16 @@
 
 .default_container{
   @include absolute(50%, 50%);
+
   transform: translate(-50%, -60%);
+
   @media (max-width: 530px) {
     display: none;
   }
+
   @include flex(stretch, center, column);
 }
+
 .bottomWrapper{
   @media (max-width: 560px) {
     display: none;
@@ -47,7 +58,9 @@
 .default_chat_image{
   svg{
     @include size(160px,160px);
+
     color: $color-absolute-200;
+
     @media (max-width: 776px) {
       @include size(115px, 115px);
     }
@@ -57,15 +70,19 @@
 .default_title{
   margin-top: 50px;
   text-align: center;
+
   @include inlineStyles(23px, $color-absolute-200);
+
   span{
     cursor: pointer;
     color: $link-color !important;
     font-size: 23px;
+
     @media (max-width: 776px) {
       font-size: 18px;
     }
   }
+
   @media (max-width: 776px) {
     font-size: 18px;
   }

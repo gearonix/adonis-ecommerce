@@ -3,34 +3,44 @@
 
 .product_images {
   margin-right: 20px;
+
   @media (max-width: 486px) {
     margin-right: 0;
   }
 
   .image_wrapper {
     @include imageWrapper(400px,400px,$rounded);
+
     border: 1.5px solid $bg-150;
     border-radius: $rounded;
     cursor: pointer;
+
     @include itemHover;
+
     @media (max-width: 1438px) {
       @include size(300px, 300px);
     }
+
     @media (max-width: 774px) {
       @include size(200px, 200px);
     }
+
     @media (max-width: 652px) {
       @include size(240px, 240px);
     }
+
     @media (max-width: 542px) {
       @include size(200px, 200px);
     }
+
     @media (max-width: 460px) {
       @include size(150px, 150px);
     }
+
     @media (max-width: 460px) {
       @include size(120px, 120px);
     }
+
     @media (max-width: 382px) {
       @include size(110px, 110px);
     }

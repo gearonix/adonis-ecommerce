@@ -7,19 +7,24 @@
   button {
     svg {
       margin-right: 9px;
+
       @include size(15px, 15px);
+
       @media (max-width: 540px) {
         @include size(12px, 12px);
+
         margin-right: 3px;
         margin-bottom: -2px;
       }
     }
   }
+
   button:first-child{
     @media (max-width: 540px) {
       min-width: 130px !important;
     }
   }
+
   @media (max-width: 548px) {
     height: 30px;
   }

@@ -4,9 +4,11 @@
 .container {
   width: 87%;
   margin: 0 auto;
+
   @media (max-width: 1320px) {
     width: 95%;
   }
+
   @media (max-width: 592px) {
     width: 100%;
   }
@@ -33,7 +35,9 @@
 .primary_button, .outlined_button, .orange_button, .green_button
 ,.red_button{
   text-align: center;
+
   @include inlineStyles($small, $bg-absolute);
+
   height: 38px;
   background: $link-color;
   border-radius: $rounded;
@@ -62,6 +66,7 @@
     background: $bg-absolute-hover;
   }
 }
+
 .outlined_button.disabled{
   color: $bg-300;
   box-shadow: none;
@@ -82,8 +87,10 @@
     background: #03A718;
   }
 }
+
 .red_button{
   background: $red;
+
   &:hover {
     background: #FE4D4D;
   }
@@ -97,15 +104,16 @@
 
   * {
     font-size: 16px;
-    background-color: rgb(247, 247, 247);
+    background-color: rgb(247 247 247);
     height: 50px;
     padding: 15px;
-    border: 1px solid rgb(41, 18, 18);
+    border: 1px solid rgb(41 18 18);
   }
 }
 
 .dark_title {
   @include inlineStyles($small_md, $bg-100, bold);
+
   margin-bottom: 24px;
   margin-top: 14px;
 }
@@ -135,11 +143,11 @@
   display: inline-block;
   padding: 5px 0;
   position: relative;
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.3s ease-in-out;
 
-  &:before {
+  &::before {
     content: '';
     background: $link-color;
     display: block;
@@ -155,14 +163,16 @@
     background-position: 0;
   }
 
-  &:hover:before {
+  &:hover::before {
     width: 100%;
   }
 }
+
 .search_head {
   color: $bg-300;
   margin-top: 20px;
   margin-bottom: 20px;
+
   @media (max-width: 600px) {
     display: none;
   }
@@ -175,6 +185,7 @@
 .color_red {
   color: $red;
 }
+
 .users_page{
   min-height: 700px;
 }

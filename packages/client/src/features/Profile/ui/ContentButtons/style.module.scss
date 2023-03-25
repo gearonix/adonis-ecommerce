@@ -3,20 +3,26 @@
 .content_buttons {
   @include size(100%, 40px);
   @include flex(flex-start, center);
+
   padding-bottom: 10px;
   border-bottom: $br $bg-150;
   position: relative;
+
   .content_button{
     @media (max-width: 694px) {
       font-size: 16px;
+
       svg{
         @include size(15px, 15px);
       }
+
       height: 30px;
     }
+
     @media (max-width: 506px) {
       margin-right: 1px;
       font-size: 13px;
+
       svg{
         @include size(13px, 13px);
       }
@@ -39,10 +45,12 @@
     svg {
       @include size(18px, 18px);
     }
+
     @media (max-width: 784px) {
       span{
         display: none;
       }
+
       min-width: 30px !important;
       height: 30px;
     }
@@ -55,6 +63,7 @@
     position: absolute;
     right: 0;
     top: 0;
+
     @media (max-width: 520px) {
       gap: 5px;
       top: 3px;
@@ -64,16 +73,19 @@
     button {
       min-width: 167px;
       height: 33px;
+
       @media (max-width: 520px) {
-        gap: 0px;
+        gap: 0;
         top: 3px;
         margin-right: 0;
       }
 
       svg {
         @include size(16px, 16px);
+
         margin-right: 2px;
       }
+
       color: $bg-100;
     }
   }

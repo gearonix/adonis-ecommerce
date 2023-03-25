@@ -7,19 +7,23 @@
   width: 260px;
   margin-left: 50px;
   margin-top: 30px;
+
   @media (max-width: 924px) {
     width: 180px;
     min-height: 180px;
     height: 180px;
     margin-left: 10px;
   }
+
   //@include testBorder;
 
   .image_wrapper {
     @include imageWrapper(260px,240px,12px);
+
     border: 1.5px solid #d7d7d7;
     border-radius: $rounded;
     cursor: pointer;
+
     @media (max-width: 924px) {
       width: 180px;
       height: 180px;

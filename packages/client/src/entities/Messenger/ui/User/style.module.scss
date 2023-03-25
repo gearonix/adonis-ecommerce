@@ -3,6 +3,7 @@
 
 .user {
   @include size(100%, 78px);
+
   cursor: pointer;
   transition: background 400ms;
   border-bottom: $br $color-300;
@@ -13,12 +14,16 @@
 
   .wrapper {
     @include size(90%);
+
     margin: 0 auto;
+
     @include flex(stretch, center);
 
     .image {
       position: relative;
+
       @include size(48px, 48px);
+
       border-radius: 100%;
       margin-right: 17px;
       overflow: hidden;
@@ -48,8 +53,10 @@
 
       .new_message {
         @include size(18px, 18px);
+
         border-radius: 100%;
         background: #78E378;
+
         @include flex(center, center);
         @include inlineStyles(12px, $bg-absolute);
       }

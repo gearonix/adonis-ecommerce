@@ -2,8 +2,11 @@
 
 .messages_header {
   @include size(100%, 68px);
+
   background: $bg-absolute;
+
   @include flex(space-between, center);
+
   padding-left: 22px;
   padding-right: 22px;
   box-sizing: border-box;

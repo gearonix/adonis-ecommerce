@@ -9,12 +9,16 @@
   right: 100px;
   background: $bg-absolute;
   border: $br $bg-150;
+
   @include size(45px, 37px);
   @include flex(center,center);
+
   border-radius: $rounded;
   cursor: pointer;
+
   svg{
     @include size(28px, 28px);
+
     color: $color-absolute-200;
   }
 }

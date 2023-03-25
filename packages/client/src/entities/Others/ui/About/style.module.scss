@@ -3,37 +3,49 @@
 .container,.error_container {
   width: 80%;
   margin: 0 auto 30px;
+
   @include itemBorder;
+
   position: relative;
+
   @media (max-width: 934px) {
     width: 95%;
   }
+
   @media (max-width: 518px) {
     width: 98%;
   }
 }
+
 .error_container{
   background: white;
   box-shadow: $shadow;
   padding: 14px;
+
   @include flex(stretch, center,column);
+
   margin-top: 60px;
+
   @media (max-width: 540px) {
     margin-top: 20px;
   }
+
   .text{
     color: #3a3a3a;
     width: 54%;
     line-height: 33px;
+
     @media (max-width: 540px) {
       width: 85%;
     }
   }
+
   .image_wrapper{
     @media (max-width: 540px) {
       width: 85%;
     }
   }
+
   button{
     background: #2a7dfc;
     color: white;
@@ -43,6 +55,7 @@
     font-size: 18px;
     margin: 0 auto 30px;
     transition: background 200ms;
+
     &:hover{
       background: #1d6dfc;
     }
@@ -51,12 +64,15 @@
 
 .title {
   @include inlineStyles(42px, $bg-100, bold);
+
   text-align: center;
   margin-top: 30px;
   margin-bottom: 40px;
+
   @media (max-width: 934px) {
     font-size: 34px;
   }
+
   @media (max-width: 518px) {
     font-size: 27px;
   }
@@ -72,9 +88,11 @@
   width: 65%;
   font-size: $small-md;
   margin: 0 auto 20px;
+
   @media (max-width: 1550px) {
     font-size: 21px;
   }
+
   @media (max-width: 515px) {
     width: 85%;
     font-size: 18px;
@@ -83,6 +101,7 @@
   span{
     font-size: $small-md;
     color: $link-color;
+
     @media (max-width: 1550px) {
       font-size: 21px;
     }
@@ -107,11 +126,14 @@
 
   svg {
     @include size(37px, 37px);
+
     color: $color-absolute;
+
     @media (max-width: 518px) {
       @include size(29px, 29px);
     }
   }
+
   @media (max-width: 518px) {
     top: 15px;
     right: 15px;
@@ -123,24 +145,30 @@
   width: 65%;
   padding: 0;
   margin: 40px auto 0;
+
   @media (max-width: 515px) {
     width: 85%;
     margin-top: 20px;
   }
+
   a{
     display: block;
     width: max-content;
     margin-top: 5px;
     color: $color-absolute-200;
     font-size: $small-md;
+
     svg{
       margin-right: 10px;
+
       @include size(21px,21px);
+
       @media (max-width: 650px) {
         @include size(19px,19px);
 
       }
     }
+
     @media (max-width: 650px) {
       font-size: 19px;
     }
@@ -149,11 +177,14 @@
 
 .image_wrapper {
   @include imageWrapper(401px, 270px);
+
   margin: 50px auto;
+
   @media (max-width: 934px) {
     width: 348px;
     height: 250px;
   }
+
   @media (max-width: 518px) {
     width: 218px;
     height: 190px;

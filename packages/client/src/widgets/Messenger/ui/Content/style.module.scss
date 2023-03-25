@@ -2,6 +2,7 @@
 
 .messages_main {
   @include size(100%);
+
   background: $bg-absolute;
   margin: 0 auto;
   position: relative;
@@ -9,9 +10,7 @@
 
   .wrapper {
     padding: 0;
+
     @include size(100%, calc(100% - 80px));
   }
-}
-.messages_main.selected{
-
 }

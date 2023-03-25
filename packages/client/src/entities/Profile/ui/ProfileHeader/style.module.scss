@@ -2,48 +2,65 @@
 
 .profile_header {
   width: 83%;
-  margin: 30px auto 35px auto;
+  margin: 30px auto 35px;
+
   @include itemBorder;
+
   @media (max-width: 1652px) {
     width: 95%;
   }
+
   @media (max-width: 1186px) {
     width: 100%;
   }
+
   @media (max-width: 932px) {
     margin-top: 10px;
     margin-bottom: 10px;
   }
+
   .profile_background {
     @include size(100%,380px);
+
     position: relative;
+
     .image_wrapper{
       @include imageWrapper(100%, 100%, $rounded);
+
       margin: 0 auto;
     }
+
     @media (max-width: 932px) {
       height: 280px;
     }
+
     @media (max-width: 756px) {
       height: 220px;
     }
+
     @media (max-width: 514px) {
       height: 150px;
     }
+
     svg{
       @include absolute(18px,18px);
       @include size(26px, 26px);
+
       opacity: 0.75;
       transition: transform 200ms;
+
       &:hover{
         transform: rotate(45deg);
         opacity: 1;
       }
+
       color: white;
+
       @media (max-width: 662px) {
         display: none;
       }
     }
+
     background: $color-300;
 
 
@@ -52,7 +69,9 @@
       right: 20px;
       top: 20px;
       z-index: 1;
+
       @include size(210px, 32px);
+
       opacity: 0.6;
       transition: opacity 200ms;
 
@@ -63,6 +82,7 @@
       svg {
         margin-right: 3px;
       }
+
       @media (max-width: 750px) {
         display: none;
       }
@@ -73,8 +93,11 @@
     position: relative;
     padding: 20px;
     box-sizing: border-box;
+
     @include size(100%, 165px);
+
     display: flex;
+
     @media (max-width: 518px) {
       height: 145px;
       justify-content: center;
@@ -83,7 +106,9 @@
 
     .avatar {
       @include imageWrapper(170px, 170px, 100%);
+
       overflow: initial;
+
       img{
         border-radius: 100%;
       }
@@ -92,20 +117,24 @@
       margin-left: 20px;
       margin-top: -110px;
       background: white;
+
       @media (max-width: 1080px) {
         width: 150px;
         height: 150px;
         margin-top: -90px;
       }
+
       @media (max-width: 756px) {
         width: 135px;
         height: 135px;
       }
+
       @media (max-width: 514px) {
         width: 110px;
         height: 110px;
         margin-top: -80px;
       }
+
       @media (max-width: 518px) {
         position: absolute;
         margin: 0;
@@ -115,17 +144,20 @@
         top: -73px;
         transform: translate(-50%);
       }
+
       .user_status{
         position: absolute;
         z-index: 3;
         right: 13px;
         bottom: 13px;
+
         @media (max-width: 518px) {
           right: 10px;
           bottom: 11px;
         }
       }
     }
+
     .write_to_user{
       position: absolute;
       right: 18px;
@@ -134,10 +166,14 @@
 
     .user_info {
       @include size(25%);
+
       margin-left: 20px;
+
       @media (max-width: 518px) {
         @include flex(center, center, column);
+
         margin-top: 20px;
+
         *{
           text-align: center;
         }
@@ -145,24 +181,32 @@
 
       .user_name {
         @include inlineStyles($small-md, $bg-100, bold);
+
         white-space: nowrap;
+
         svg{
           @include size(24px,24px);
+
           margin-right: 5px;
+
           @media (max-width: 1080px) {
             @include size(21px,21px);
           }
+
           @media (max-width: 756px) {
             @include size(19px, 19px);
           }
         }
+
         @media (max-width: 1080px) {
           font-size: 21px;
         }
+
         @media (max-width: 756px) {
           font-size: 19px;
         }
       }
+
       .user_name.salesman{
         svg{
         color: $link-color-max;
@@ -171,8 +215,10 @@
 
       .description {
         @include inlineStyles($small, $bg-300);
+
         margin-top: 10px;
         position: relative;
+
         @media (max-width: 756px) {
           font-size: 15px;
           width: 200px;
@@ -182,6 +228,7 @@
 
     .change_profile {
       @include flex(flex-end);
+
       position: absolute;
       right: 28px;
       top: 20px;
@@ -190,33 +237,42 @@
         cursor: pointer;
         min-width: 183px;
         height: 33px;
+
         svg{
           margin-right: 3px;
+
           @include size(18px, 18px);
+
           margin-bottom: -2px;
+
           @media (max-width: 756px) {
             @include size(17px, 17px);
           }
+
           @media (max-width: 518px) {
            @include size(15px, 15px);
           }
         }
+
         span{
           @media (max-width: 756px) {
             display: none;
           }
         }
+
         @media (max-width: 756px) {
           min-width: 37px;
           max-width: 37px;
           height: 37px;
         }
+
         @media (max-width: 518px) {
           min-width: 34px;
           height: 34px;
         }
 
       }
+
       @media (max-width: 518px) {
         right: 13px;
         top: 13px;
@@ -226,13 +282,17 @@
   }
 
 }
+
 .details{
   color: $color-absolute-200;
   font-size: 17px;
+
   @include flex(stretch, center);
+
   gap: 10px;
   margin-top: 10px;
   cursor: pointer;
+
   @media (max-width: 518px) {
     display: none;
   }

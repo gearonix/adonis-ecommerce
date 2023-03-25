@@ -2,8 +2,10 @@
 
 .button {
   text-align: center;
+
   @include inlineStyles($small, $bg-absolute);
   @include size(18%, 38px);
+
   background: $link-color;
   border-radius: $rounded;
   transition: background 200ms;
@@ -15,59 +17,79 @@
   &:hover {
     background: $link-color-hover;
   }
+
   @media (max-width: 820px) {
     height: 31px;
     font-size: 15px;
   }
+
   @media (max-width: 676px) {
     height: 30px;
   }
+
   @media (max-width: 400px) {
     height: 30px;
   }
 }
+
 .primary{
   background: $link-color;
+
   &:hover{
     background: $link-color-hover;
   }
+
   color: white;
 }
+
 .outlined{
   background: white;
+
   &:hover{
     background: #F3F3F3;
   }
+
   color: black;
 }
+
 .orange{
   background: #FF9017;
+
   &:hover{
     background: #FE8604;
   }
 }
+
 .green{
   background: #00B517;
+
   &:hover{
     background: #03A718;
   }
+
   color: white;
 }
+
 .red{
   background: #FA3434;
+
   &:hover{
     background: #FE4D4D;
   }
+
   color: white;
 }
+
 .blueBordered,.redColored{
   background: $bg-absolute;
   transition: border, color 200ms, 400ms;
+
   &:hover{
     color: $link-color-hover;
     border: $br $link-color-hover;
     background: $bg-absolute;
   }
+
   color: $link-blue-white;
   border: $br #E0E0E0;
 }
@@ -78,9 +100,11 @@
 
 .greyBordered{
   background: $bg-absolute;
+
   &:hover{
     background: $bg-absolute;
   }
+
   color: $color-absolute;
   border: $br #E0E0E0;
 }

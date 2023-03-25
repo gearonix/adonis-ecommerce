@@ -6,8 +6,10 @@
   border-radius: $rounded;
   margin-bottom: 13px;
   cursor: pointer;
+
   @include flex(center, center);
   @include size(40px, 40px);
+
   @media (max-width: 506px) {
     @include size(30px, 30px);
   }
@@ -30,6 +32,7 @@
     @include size(20px, 20px);
   }
 }
+
 .saved{
   svg {
     path {

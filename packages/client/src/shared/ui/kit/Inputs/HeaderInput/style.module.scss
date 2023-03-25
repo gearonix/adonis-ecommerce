@@ -3,12 +3,15 @@
 .container{
   @include size(50%);
   @include flex(center,center);
+
   @media (max-width: 1568px) {
     width: 60%;
   }
+
   @media (max-width: 1160px) {
     width: 70%;
   }
+
   @media (max-width: 904px) {
     display: none;
   }
@@ -16,26 +19,24 @@
 
 .search {
   @include size(65%, 38px);
+
   display: flex;
+
   @media (max-width: 1160px) {
     width: 80%;
   }
+
   @media (max-width: 1000px) {
     width: 90%;
   }
+
   @media (max-width: 866px) {
     width: 80%;
   }
-  //@media (max-width: 890px) {
-  //  position: absolute;
-  //  bottom: 20px;
-  //  left: 50%;
-  //  transform: translate(-50%, 0);
-  //  width: 70%;
-  //}
 
   .search_input {
     @include size(100%, 100%);
+
     font-size: 16px;
     border: 1px solid $link-color;
     background: $bg-absolute;
@@ -43,9 +44,11 @@
     border-radius: 8px 0 0 8px;
     color: $color-absolute;
     border-right-width: 0;
+
     &::placeholder{
       color: $color-absolute;
     }
+
     @media (max-width: 880px) {
       border-radius: 8px;
       border-right-width: 1px;
@@ -54,6 +57,7 @@
 
   button {
     border-radius: 0 8px 8px 0;
+
     @media (max-width: 880px) {
       display: none;
     }
@@ -63,11 +67,14 @@
 
 .mobile_search {
   position: relative;
+
   @include size(90%, 40px);
+
   margin: 0 auto 12px;
 
   input {
     @include size;
+
     border-radius: $rounded;
     background: #F7FAFC;
     color: $bg-300;
@@ -81,6 +88,7 @@
   svg {
     @include absolute(9px, 8px, 1);
     @include size(22px, 22px);
+
     color: $bg-300;
   }
 }

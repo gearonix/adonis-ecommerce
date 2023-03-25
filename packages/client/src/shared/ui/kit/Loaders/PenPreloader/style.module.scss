@@ -2,7 +2,9 @@
 
 .preloader {
   @include size(100%, 700px);
+
   position: relative;
+
   @media (max-width: 900px) {
     opacity: 0;
   }
@@ -11,11 +13,14 @@
 
 .container {
   @include absolute(50%, 50%);
+
   transform: translate(-50%, 20%) scale(0.7);
+
   @media (max-width: 900px) {
     opacity: 0;
   }
 }
+
 .pen{
   @media (max-width: 900px) {
     display: none;
@@ -48,9 +53,9 @@
   border-radius: 3rem;
   height: 100%;
   background: #79b6fc;
-  -webkit-animation: line_drow 10s ease-out infinite;
   animation: line_drow 10s ease-out infinite;
-  -webkit-animation-timing-function: cubic-bezier(0.71, 0.22, 0.29, 0.73);
+  animation: line_drow 10s ease-out infinite;
+  animation-timing-function: cubic-bezier(0.71, 0.22, 0.29, 0.73);
   animation-timing-function: cubic-bezier(0.71, 0.22, 0.29, 0.73);
 }
 
@@ -61,14 +66,14 @@
   width: 25rem;
   height: 4rem;
   line-height: 4rem;
-  background: rgba(249, 89, 89, 0.07);
+  background: rgb(249 89 89 / 7%);
   text-align: center;
   transform: translate(1%, -365%) rotate(-45deg);
-  -webkit-transform-origin: center;
   transform-origin: center;
-  -webkit-animation: pen_move 10s ease-out infinite;
+  transform-origin: center;
   animation: pen_move 10s ease-out infinite;
-  -webkit-animation-timing-function: cubic-bezier(0.71, 0.22, 0.29, 0.73);
+  animation: pen_move 10s ease-out infinite;
+  animation-timing-function: cubic-bezier(0.71, 0.22, 0.29, 0.73);
   animation-timing-function: cubic-bezier(0.71, 0.22, 0.29, 0.73);
 }
 
@@ -90,9 +95,9 @@
   width: 100%;
   background: #79b6fc;
   z-index: -1;
-  -webkit-animation: color_empty 10s ease-out infinite;
   animation: color_empty 10s ease-out infinite;
-  -webkit-animation-timing-function: cubic-bezier(0.71, 0.22, 0.29, 0.73);
+  animation: color_empty 10s ease-out infinite;
+  animation-timing-function: cubic-bezier(0.71, 0.22, 0.29, 0.73);
   animation-timing-function: cubic-bezier(0.71, 0.22, 0.29, 0.73);
 }
 
@@ -105,9 +110,9 @@
   width: 0;
   background: #79b6fc;
   z-index: -1;
-  -webkit-animation: color_full 10s ease-out infinite;
   animation: color_full 10s ease-out infinite;
-  -webkit-animation-timing-function: cubic-bezier(0.71, 0.22, 0.29, 0.73);
+  animation: color_full 10s ease-out infinite;
+  animation-timing-function: cubic-bezier(0.71, 0.22, 0.29, 0.73);
   animation-timing-function: cubic-bezier(0.71, 0.22, 0.29, 0.73);
 }
 
@@ -157,12 +162,13 @@
   background: #34374c;
 }
 
-@-webkit-keyframes line_drow {
+@keyframes line_drow {
   0%,
   90%,
   100% {
     width: 0;
   }
+
   50%,
   60% {
     width: 100%;
@@ -175,20 +181,23 @@
   100% {
     width: 0;
   }
+
   50%,
   60% {
     width: 100%;
   }
 }
 
-@-webkit-keyframes color_empty {
+@keyframes color_empty {
   0% {
     left: 0;
   }
+
   50%,
   60% {
     left: -100%;
   }
+
   90%,
   100% {
     left: -100%;
@@ -199,24 +208,28 @@
   0% {
     left: 0;
   }
+
   50%,
   60% {
     left: -100%;
   }
+
   90%,
   100% {
     left: -100%;
   }
 }
 
-@-webkit-keyframes color_full {
+@keyframes color_full {
   0% {
     width: 0;
   }
+
   50%,
   60% {
     width: 0;
   }
+
   90%,
   100% {
     width: 100%;
@@ -227,41 +240,49 @@
   0% {
     width: 0;
   }
+
   50%,
   60% {
     width: 0;
   }
+
   90%,
   100% {
     width: 100%;
   }
 }
 
-@-webkit-keyframes pen_move {
+@keyframes pen_move {
   0% {
     left: 0;
     transform: translate(1%, -365%) rotate(-45deg);
   }
+
   50% {
     left: 100%;
     transform: translate(1%, -365%) rotate(-45deg);
   }
+
   55% {
     left: 100%;
     transform: translate(1%, -385%) rotate(-45deg);
   }
+
   60% {
     left: 100%;
     transform: translate(-8%, -310%) rotate(140deg);
   }
+
   90% {
     left: 0;
     transform: translate(-8%, -310%) rotate(140deg);
   }
+
   95% {
     left: 0;
     transform: translate(-8%, -450%) rotate(140deg);
   }
+
   100% {
     transform: translate(1%, -365%) rotate(315deg);
   }
@@ -272,26 +293,32 @@
     left: 0;
     transform: translate(1%, -365%) rotate(-45deg);
   }
+
   50% {
     left: 100%;
     transform: translate(1%, -365%) rotate(-45deg);
   }
+
   55% {
     left: 100%;
     transform: translate(1%, -385%) rotate(-45deg);
   }
+
   60% {
     left: 100%;
     transform: translate(-8%, -310%) rotate(140deg);
   }
+
   90% {
     left: 0;
     transform: translate(-8%, -310%) rotate(140deg);
   }
+
   95% {
     left: 0;
     transform: translate(-8%, -450%) rotate(140deg);
   }
+
   100% {
     transform: translate(1%, -365%) rotate(315deg);
   }

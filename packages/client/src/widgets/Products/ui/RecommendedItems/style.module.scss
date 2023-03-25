@@ -2,6 +2,7 @@
 
 .recommended_items {
   @include size(100%, 700px);
+
   margin-top: 20px;
   margin-bottom: 40px;
   padding-top: 20px;
@@ -9,7 +10,9 @@
 
   .items_block {
     @include size(80%);
+
     margin: 0 auto;
+
     @include grid(5, 2, 20px, 18%);
   }
 }

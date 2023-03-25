@@ -3,14 +3,17 @@
 
 .container{
   width: 100%;
+
   .comments_block{
     margin-top: 20px;
+
     @include itemBorder;
+
     margin-bottom: 20px;
+
     @media (max-width: 700px) {
       margin-bottom: 0;
       margin-top: 10px;
     }
   }
-  //@include testBorder;
 }

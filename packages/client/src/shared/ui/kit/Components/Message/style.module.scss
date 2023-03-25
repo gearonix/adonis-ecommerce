@@ -9,6 +9,7 @@
 
   .wrapper:has(.image_wrapper) {
     min-width: 365px;
+
     @media (max-width: 600px) {
       width: 100%;
       min-width: initial;
@@ -28,7 +29,9 @@
 
     .image_wrapper {
       cursor: pointer;
+
       @include size(calc(100% + 2px), 200px);
+
       margin-left: -1px;
       margin-top: -1px;
       margin-bottom: 12px;
@@ -39,6 +42,7 @@
 
     .title_wrapper {
       @include size(67%);
+
       margin-right: 10px;
 
       .title {
@@ -83,6 +87,7 @@
     .title {
       color: white;
     }
+
     &:hover {
       background: #3192FF;
     }

@@ -3,36 +3,46 @@
 .logo {
   cursor: pointer;
   position: relative;
+
   @include imageWrapper(250px, 57px);
+
   @media (max-width: 1148px) {
     width: 170px;
     height: 80%;
   }
+
   @media (max-width: 1568px) {
     height: 47px;
   }
+
   @media (max-width: 1160px) {
     width: 160px;
     height: 46px;
   }
+
   @media (max-width: 870px) {
     width: 170px;
   }
+
   @media (max-width: 480px) {
     transform: scale(0.74);
     margin-left: -9px;
   }
+
   @media (max-width: 500px) {
     width: 37px;
     height: 37px;
   }
+
   .desktop{
     @media (max-width: 500px) {
       display: none;
     }
   }
+
   .mobile{
     display: none;
+
     @media (max-width: 500px) {
       display: block;
     }

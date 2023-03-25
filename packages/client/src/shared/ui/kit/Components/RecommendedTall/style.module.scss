@@ -7,21 +7,27 @@
   background: $bg-absolute;
   border-radius: $rounded;
   border: $br $bg-150;
+
   @include itemHover;
+
   box-shadow: $shadow;
+
   @media (max-width: 1608px) {
     width: 220px;
     height: 280px;
   }
+
   @media (max-width: 1454px) {
     width: 200px;
     height: 270px;
   }
+
   @media (max-width: 870px) {
     width: 160px;
     height: 230px;
     padding: 13px;
   }
+
   @media (max-width: 500px) {
     width: 110px;
     height: 180px;
@@ -43,6 +49,7 @@
     margin-top: 6px;
     color: $bg-300;
     margin-left: 20px;
+
     @media (max-width: 504px) {
       font-size: 14px;
       width: 75%;
@@ -54,15 +61,19 @@
 
   .image_wrapper {
     @include imageWrapper(168px, 178px, $rounded);
+
     margin: 0 auto;
+
     @media (max-width: 504px) {
       width: 100px;
       height: 100px;
     }
+
     @media (max-width: 870px) {
       width: 120px;
       height: 120px;
     }
+
     @media (max-width: 504px) {
       width: 80px;
       height: 80px;

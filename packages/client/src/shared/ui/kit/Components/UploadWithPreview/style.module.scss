@@ -1,40 +1,54 @@
 @use 'src/shared/css/common.scss' as *;
+
 .images{
   @include size(75%);
+
   margin: 0 auto;
+
   @include flex(stretch, center, column);
+
   @media (max-width: 660px) {
     width: 90%;
   }
+
   @media (max-width: 502px) {
     width: 100%;
   }
+
   .image_wrapper{
     @include imageWrapper(80%, 190px, $rounded);
+
     border: $br $bg-150;
     transition: opacity 200ms;
+
     &:hover{
       opacity: 0.7;
     }
+
     @media (max-width: 660px) {
       height: 150px;
     }
+
     @media (max-width: 502px) {
       width: 100%;
     }
   }
+
   .hiddenUpload{
       @include absolute;
       @include size;
+
       opacity: 0;
       cursor: pointer;
   }
+
   p{
     color: $color-absolute-200;
     font-size: 18px;
     margin-bottom: 0;
     margin-top: 15px;
   }
+
   .error{
     transition: color 500ms;
     color: $red

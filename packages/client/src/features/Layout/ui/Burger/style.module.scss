@@ -7,7 +7,9 @@
   svg {
     display: block;
     color: $bg-200;
+
     @include size(24px, 24px);
+
     @media (max-width: 480px) {
       @include size(24px, 24px);
     }
@@ -16,6 +18,7 @@
   @media (max-width: 628px) {
     display: block;
   }
+
   @media (max-width: 480px) {
     margin-right: 0;
   }

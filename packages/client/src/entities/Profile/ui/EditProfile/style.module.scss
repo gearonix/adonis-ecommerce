@@ -7,39 +7,46 @@
       padding-top: 0;
     }
   }
+
   padding: 20px 20px 0;
+
   .title {
     font-size: $l-medium;
     text-align: center;
     color: $color-absolute;
+
     @media (max-width: 700px) {
       font-size: 23px;
       margin-top: 10px;
     }
   }
+
   @media (max-width: 600px) {
     padding: 0;
   }
 
   .container {
-    padding: 30px 20px 0px 20px;
+    padding: 30px 20px 0;
     border-top: $br $bg-150;
     border-bottom: $br $bg-150;
     width: 70%;
     gap: 25px;
     margin: 20px auto 25px;
+
     @media (max-width: 1778px) {
       width: 80%;
     }
+
     @media (max-width: 1288px) {
       width: 95%;
     }
+
     @media (max-width: 600px) {
       padding-left: 0;
       padding-right: 0;
     }
-    .title {
 
+    .title {
       text-align: left;
       margin-top: 5px;
       font-size: $small-md;
@@ -50,16 +57,20 @@
 
     .flex, .user_info_block {
       @include size;
+
       display: flex;
       width: 100%;
       gap: 20px;
     }
+
     .user_info_fields{
       display: flex;
       gap: 20px;
       width: 80%;
+
       @media (max-width: 783px) {
         display: block;
+
         & > div{
           margin-bottom: 10px;
         }
@@ -67,13 +78,15 @@
     }
 
     .user_info_block {
-      margin: 10px 0 10px 0;
-      padding: 10px 0 10px 0;
+      margin: 10px 0;
+      padding: 10px 0;
       border-top: $br $bg-150;
       border-bottom: $br $bg-150;
+
       @media (max-width: 595px) {
         flex-direction: column;
       }
+
       @media (max-width: 700px) {
         border-top: none;
         padding-top: 0;
@@ -87,10 +100,12 @@
       display: flex;
       gap: 19px;
       margin-bottom: 20px;
+
       .save{
         background: #0D6EFD;
         color: white;
       }
+
       .cancel{
         background: white;
         color: black;
@@ -100,14 +115,17 @@
 
     .background {
       @include imageWrapper(100%, 177px, $rounded);
+
       background: $color-300;
 
       button {
         position: absolute;
         right: 20px;
         top: 20px;
+
         @include size(187px, 35px);
       }
+
       @media (max-width: 600px) {
         display: none;
       }
@@ -117,10 +135,13 @@
 
     .user_avatar_block {
       @include size(163px);
+
       height: 176px;
+
       @media (max-width: 595px) {
         margin: 0 auto;
       }
+
       @include flex(center, center, column);
 
       .user_avatar {
@@ -130,6 +151,7 @@
       button {
         //margin: 0 auto;
         @include size(163px, 30px);
+
         margin-top: 10px;
         background: white;
         color: black;
@@ -139,15 +161,18 @@
 
   }
 }
+
 .add_product_block.dark{
   .title{
     color: white
   }
 }
+
 .description{
   @media (max-width: 600px) {
     width: 340px;
   }
+
   @media (max-width: 419px) {
     width: 275px;
   }

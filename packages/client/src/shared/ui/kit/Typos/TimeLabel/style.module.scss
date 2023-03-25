@@ -1,12 +1,14 @@
 @use 'shared/css/common.scss' as *;
 
 .today_label {
-  background: rgba(61, 112, 184, 0.3);
+  background: rgb(61 112 184 / 30%);
   height: 28px;
   border-radius: 12px;
   min-width: 71px;
   max-width: 100px;
-  margin: 16px auto 16px;
+  margin: 16px auto;
+
   @include flex(center, center);
+
   color: white;
 }

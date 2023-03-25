@@ -3,6 +3,7 @@
 .aside {
   width: 240px;
   margin-right: 28px;
+
   @media (max-width: 1334px) {
     display: none;
   }

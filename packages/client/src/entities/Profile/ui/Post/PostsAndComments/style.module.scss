@@ -4,21 +4,25 @@
 .post,.comment {
   width: 100%;
   min-height: 157px;
-  padding: 25px 25px 25px 25px;
+  padding: 25px;
   position: relative;
   display: flex;
   border-bottom: $br $bg-150;
   box-sizing: border-box;
+
   @media (max-width: 444px) {
     padding: 6px;
   }
 
   .user_image {
     @include imageWrapper(60px, 60px, 100%);
+
     margin-right: 10px;
+
     @media (max-width: 444px) {
       margin-top: 4px;
       margin-right: 3px;
+
       @include size(44px, 44px);
     }
   }
@@ -32,6 +36,7 @@
       span:first-child{
         font-weight: bold;
       }
+
       .email{
         @media (max-width: 520px) {
           display: none;
@@ -49,6 +54,7 @@
       font-size: 17px;
       line-height: 23px;
       max-width: 50%;
+
       @media (max-width: 520px) {
         font-size: 15px;
       }
@@ -56,20 +62,25 @@
 
     .attached_image {
       @include imageWrapper(530px, 260px, $rounded);
+
       margin-top: 15px;
+
       @media (max-width: 896px) {
         width: 450px;
       }
+
       @media (max-width: 664px) {
         margin-left: -65px;
         width: 430px;
         height: 190px;
       }
+
       @media (max-width: 512px) {
         width: 350px;
         height: 150px;
         margin-top: 10px;
       }
+
       @media (max-width: 430px) {
         width: 310px;
         height: 130px;
@@ -86,12 +97,16 @@
 
       button {
         background: $bg-absolute;
+
         @include inlineStyles($small, $bg-300);
+
         padding: 0;
+
         @include flex(center, center);
 
         svg {
           margin-right: 4px;
+
           @include size(20px, 20px);
         }
 

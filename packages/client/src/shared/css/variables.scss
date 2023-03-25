@@ -22,7 +22,6 @@ $bg-absolute-hover: var(--bg-absolute-hover);
 $bg-selected: var(--bg-selected);
 $block-border: var(--block-border);
 $link-color-max: var(--link-color-max);
-
 $xs: 12px;
 $small: 16px;
 $xm: 20px;
@@ -30,11 +29,9 @@ $small-md: 24px;
 $medium: 28px;
 $l-medium: 32px;
 $giant: 74px;
-
-$shadow: 4px 4px 8px -3px rgba(34, 60, 80, 0.2);
-$shadow-hover: px 5px 10px 2px rgba(34, 60, 80, 0.26);
+$shadow: 4px 4px 8px -3px rgb(34 60 80 / 20%);
+$shadow-hover: px 5px 10px 2px rgb(34 60 80 / 26%);
 $center: 0 auto;
-
 $rounded: 6px;
 $br: 1px solid;
 

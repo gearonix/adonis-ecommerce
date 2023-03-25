@@ -3,6 +3,7 @@
 
 .item {
   @include size(30%);
+
   display: flex;
 
   span {
@@ -14,13 +15,18 @@
 
 .image_wrapper {
   background: $color-100;
+
   @include size(48px, 48px);
+
   border-radius: 100%;
+
   @include flex(center, center);
+
   margin-right: 10px;
 
   svg {
     @include size(24px, 24px);
+
     color: #8B96A5;
   }
 }

@@ -2,21 +2,26 @@
 
 .messenger_aside {
   @include size(320px);
+
   background: $bg-absolute;
   position: relative;
   overflow-y: auto;
   overflow-x: hidden;
   box-sizing: border-box;
   border-right: $br $bg-150;
+
   @include customScroll;
+
   @media (max-width: 778px) {
     width: 290px;
   }
+
   @media (max-width: 851px) {
     width: 100%;
     min-height: 300px;
   }
 }
+
 .messenger_aside.selected{
   @media (max-width: 851px) {
     display: none;
@@ -25,16 +30,23 @@
 
 .nothing_found{
   @include absolute(50%,40%);
+
   transform: translate(-50%,-50%);
+
   @include flex(stretch, center, column);
+
   padding-bottom: 10px;
+
   h2{
     text-align: center;
     margin-top: 50px;
+
     @include inlineStyles($xm, $color-absolute-200);
   }
+
   svg{
     @include size(48px,48px);
+
     margin: 20px auto 0;
     color: $color-absolute-200;
   }

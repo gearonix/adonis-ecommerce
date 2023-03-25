@@ -4,20 +4,24 @@
   @media (max-width: 1052px) {
     display: none;
   }
+
   margin: 8px auto 0;
 }
+
 .saved{
   width: 80%;
 }
-.blueLink{
 
+.blueLink{
   @media (max-width: 600px) {
     a{
       font-size: 14px;
     }
+
     svg{
       @include size(14px, 14px);
     }
+
     margin-top: -3px;
   }
 }

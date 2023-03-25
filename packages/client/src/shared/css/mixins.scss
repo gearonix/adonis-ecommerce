@@ -22,11 +22,13 @@
   } @else {
     justify-content: $jc;
   }
+
   @if $ai == start or $ai == end {
     align-items: flex- $ai;
   } @else {
     align-items: $ai;
   }
+
   display: flex;
   flex-direction: $dir;
 }
@@ -58,6 +60,7 @@
 @mixin itemHover {
   cursor: pointer;
   transition: border, 350ms;
+
   &:hover {
     border: 1px solid v.$bg-150-hover;
   }
@@ -70,7 +73,7 @@
   background: v.$bg-absolute;
 }
 
-@mixin imageWrapper($w: 100%,$h: 100%,$br: 0px) {
+@mixin imageWrapper($w: 100%,$h: 100%,$br: 0) {
   width: $w;
   height: $h;
   border-radius: $br;
@@ -81,20 +84,22 @@
 
 @mixin customScroll {
   &::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 6px rgb(0 0 0 / 30%);
     background-color: #F7FAFC;
   }
 
   &::-webkit-scrollbar {
     width: 8px;
+
     @media (max-width: 600px) {
       width: 3px;
     }
+
     background-color: #F7FAFC;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-image: -webkit-linear-gradient(45deg,
+    background-image: linear-gradient(45deg,
             #a2a2a2 25%,
             transparent 25%,
             transparent 50%,

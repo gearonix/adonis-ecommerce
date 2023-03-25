@@ -3,9 +3,11 @@
 .UploadButton{
   position: relative;
   overflow: hidden;
+
   input{
     @include absolute;
     @include size;
+
     opacity: 0;
     cursor: pointer;
   }

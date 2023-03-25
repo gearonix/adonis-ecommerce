@@ -6,6 +6,7 @@
   width: 407px;
   display: flex;
   cursor: pointer;
+
   @media (max-width: 500px) {
     margin-top: 10px;
   }
@@ -13,7 +14,9 @@
 
 .image {
   @include  imageWrapper(48px, 48px, 100%);
+
   margin-right: 17px;
+
   @media (max-width: 500px) {
     width: 42px;
     height: 42px;
@@ -30,6 +33,7 @@
     font-size: 15px;
     width: 90%;
   }
+
   .online{
     color: #4bb34b;
   }

@@ -3,11 +3,13 @@
 .item {
   @include itemHover;
   @include size(390px);
+
   transition: background 200ms;
 
   &:hover {
     background: $bg-absolute-hover;
   }
+
   @media (max-width: 1500px) {
     width: 360px;
   }
@@ -21,14 +23,19 @@
     background-repeat: no-repeat;
 
     @include size(100%, 180px);
+
     position: relative;
 
     .item_button {
       border-radius: 100%;
       border: 2px solid $bg-absolute;
+
       @include size(55px, 55px);
+
       background: #D1E7FF;
+
       @include flex(center, center);
+
       position: absolute;
       right: 21px;
       bottom: -17px;
@@ -47,11 +54,10 @@
 
     svg{
       @include size(20px,20px);
+
       margin-right: 4px;
       margin-bottom: -4px;
     }
   }
 }
-.default_project{
 
-}

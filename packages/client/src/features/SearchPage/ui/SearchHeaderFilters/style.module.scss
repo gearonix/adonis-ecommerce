@@ -3,16 +3,22 @@
 
 .controls_buttons {
   @include size(330px);
+
   margin-right: 30px;
+
   @include flex(flex-end, center);
+
   gap: 45px;
+
   span{
     margin-top: -5px;
+
     @media (max-width: 508px) {
       font-size: 13px;
       margin-top: 0;
     }
   }
+
   @media (max-width: 508px) {
     margin-right: 10px;
   }

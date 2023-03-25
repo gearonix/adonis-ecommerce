@@ -4,16 +4,19 @@
   @include customScroll;
   @include absolute(50%, 5%);
   @include size(70%, 80%);
+
   transform: translate(-50%, 0);
   overflow-y: auto;
   overflow-x: hidden;
   border-radius: $rounded;
   box-shadow: $shadow;
   padding: 32px;
+
   @media (max-width: 1106px) {
     width: 83%;
     padding: 13px;
   }
+
   @media (max-width: 700px) {
     width: 86%;
     padding: 7px;

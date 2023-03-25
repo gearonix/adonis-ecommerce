@@ -3,6 +3,7 @@
 
 .header {
   @include size(100%, 36px);
+
   border-bottom: $br $bg-150;
 
   h4 {

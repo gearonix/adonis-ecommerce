@@ -2,24 +2,31 @@
 
 .github_banner {
   @include size(100%, 110px);
+
   padding: 30px;
   margin-bottom: 40px;
   margin-top: 40px;
   border-radius: $rounded;
   box-sizing: border-box;
+
   @include flex(space-between, center);
+
   background: $link-color;
   transition: background 200ms;
+
   @media (max-width: 774px) {
     margin-top: 10px;
     margin-bottom: 10px;
     height: 80px;
   }
+
   @media (max-width: 648px) {
     display: none;
   }
+
   &:hover {
     background: $link-color-hover;
+
     //005ADE
   }
 
@@ -30,13 +37,16 @@
   h2 {
     font-size: $small-md;
     margin-bottom: 4px;
+
     @media (max-width: 774px) {
       font-size: 18px;
     }
+
     @media (max-width: 422px) {
       font-size: 16px;
     }
   }
+
   span{
     @media (max-width: 774px) {
       font-size: 14px;
@@ -45,6 +55,7 @@
 
   button {
     width: 121px;
+
     @media (max-width: 522px) {
       margin-top: 12px;
       height: 25px;

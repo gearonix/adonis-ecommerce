@@ -7,29 +7,39 @@
   position: relative;
   padding: 10px 15px 10px 10px;
   box-sizing: border-box;
+
   @include flex(space-between);
-  margin: 20px auto 10px auto;
+
+  margin: 20px auto 10px;
+
   @include size(700px, 52px);
+
   @media (max-width: 1131px) {
     width: 500px;
   }
+
   @media (max-width: 855px) {
     width: 400px;
     height: 43px;
   }
+
   @media (max-width: 447px) {
     width: 340px;
   }
+
   .buttons{
     display: flex;
     gap: 16px;
   }
+
   .attached_image{
     @include imageWrapper(230px, 120px, $rounded);
+
     position: absolute;
     top: -125px;
     opacity: 0.8;
     left: 0;
+
     svg{
       position: absolute;
       right: 10px;
@@ -38,6 +48,7 @@
       opacity: 0.66;
       border-radius: 100%;
       padding: 4px;
+
       @include size(13px, 13px);
     }
   }
@@ -45,15 +56,20 @@
   .image_wrapper {
     svg {
       @include size(27px, 27px);
+
       color: $hover-100;
+
       @media (max-width: 855px) {
         @include size(22px, 22px)
       }
     }
+
     position: relative;
+
     input{
       @include absolute;
       @include size;
+
       margin: 0;
       opacity: 0;
     }
@@ -61,6 +77,7 @@
 
   input {
     @include size(85%);
+
     width: 85%;
     border: none;
     margin-left: 0;
@@ -77,15 +94,17 @@
 
 
 .send {
-
   svg {
     color: $hover-100;
+
     @include size(27px, 27px);
+
     transition: color 200ms;
 
     &:hover {
       color: #789CCE;
     }
+
     @media (max-width: 855px) {
       @include size(22px, 22px)
     }
