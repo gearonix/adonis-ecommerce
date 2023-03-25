@@ -583,10 +583,10 @@ module.exports = {
 module.exports = {
 	"preloader": "style_preloader__Kgmta",
 	"container": "style_container__R2oZX",
+	"pen": "style_pen__efHQ3",
 	"text": "style_text__MrVDt",
 	"line": "style_line___yGtL",
 	"line_drow": "style_line_drow__DlqU7",
-	"pen": "style_pen__efHQ3",
 	"pen_move": "style_pen_move__fNcmd",
 	"pen_overlay": "style_pen_overlay__wX7fr",
 	"color_empty": "style_color_empty__lrqbk",
@@ -7458,9 +7458,8 @@ shared_lib_components__WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependenci
 
 const Checkbox = ({ title , values  })=>{
     const { getValue , setValue  } = values;
-    const currentValue = getValue();
-    const onChange = ()=>{
-        setValue(!currentValue);
+    const onChange = (e, newValue)=>{
+        setValue(newValue);
     };
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(shared_lib_components__WEBPACK_IMPORTED_MODULE_2__/* .Display */ .sS, {
         when: values,
@@ -8144,9 +8143,10 @@ const PostsPreloader = ()=>{
 /***/ }),
 
 /***/ 87843:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "a": () => (/* binding */ ProductsPreloader)
 /* harmony export */ });
@@ -8154,12 +8154,17 @@ const PostsPreloader = ()=>{
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(65692);
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_mui_material__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var shared_lib_hooks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(38537);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shared_lib_hooks__WEBPACK_IMPORTED_MODULE_2__]);
+shared_lib_hooks__WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+
 
 
 const ProductsPreloader = ()=>{
+    const isMobile = (0,shared_lib_hooks__WEBPACK_IMPORTED_MODULE_2__/* .useAdaptive */ .WQ)(600);
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_1__.Card, {
         sx: {
-            height: 190,
+            height: isMobile ? 100 : 190,
             m: 2,
             borderRadius: "6px",
             display: "flex",
@@ -8169,8 +8174,8 @@ const ProductsPreloader = ()=>{
         children: [
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_mui_material__WEBPACK_IMPORTED_MODULE_1__.Skeleton, {
                 sx: {
-                    height: 185,
-                    width: 185,
+                    height: isMobile ? 100 : 185,
+                    width: isMobile ? 100 : 185,
                     borderRadius: "6px"
                 },
                 animation: "wave",
@@ -8221,6 +8226,8 @@ const ProductsPreloader = ()=>{
     });
 };
 
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -8932,8 +8939,8 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var _components_Loaders_RecommendedPreloader__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(49607);
 /* harmony import */ var _components_Loaders_GridPreloader__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(84098);
 /* harmony import */ var _components_Others_Switcher__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(24099);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_Controls_Checkbox_Checkbox__WEBPACK_IMPORTED_MODULE_0__, _components_Inputs_AutoComplete__WEBPACK_IMPORTED_MODULE_3__, _components_Inputs_SearchInput_SearchInput__WEBPACK_IMPORTED_MODULE_5__, _components_Inputs_TextArea__WEBPACK_IMPORTED_MODULE_7__, _components_Modals_ImageModal_ImageModal__WEBPACK_IMPORTED_MODULE_9__, _components_Selects_StandardSelect__WEBPACK_IMPORTED_MODULE_11__, _components_Others_Table__WEBPACK_IMPORTED_MODULE_14__, _components_Inputs_NumberField__WEBPACK_IMPORTED_MODULE_16__, _components_Modals_SimpleModal_SimpleModal__WEBPACK_IMPORTED_MODULE_17__, _kit_Loaders_DefaultPreloader_DefaultPreloader__WEBPACK_IMPORTED_MODULE_20__, _components_Loaders_RecommendedPreloader__WEBPACK_IMPORTED_MODULE_21__, _components_Loaders_GridPreloader__WEBPACK_IMPORTED_MODULE_22__]);
-([_components_Controls_Checkbox_Checkbox__WEBPACK_IMPORTED_MODULE_0__, _components_Inputs_AutoComplete__WEBPACK_IMPORTED_MODULE_3__, _components_Inputs_SearchInput_SearchInput__WEBPACK_IMPORTED_MODULE_5__, _components_Inputs_TextArea__WEBPACK_IMPORTED_MODULE_7__, _components_Modals_ImageModal_ImageModal__WEBPACK_IMPORTED_MODULE_9__, _components_Selects_StandardSelect__WEBPACK_IMPORTED_MODULE_11__, _components_Others_Table__WEBPACK_IMPORTED_MODULE_14__, _components_Inputs_NumberField__WEBPACK_IMPORTED_MODULE_16__, _components_Modals_SimpleModal_SimpleModal__WEBPACK_IMPORTED_MODULE_17__, _kit_Loaders_DefaultPreloader_DefaultPreloader__WEBPACK_IMPORTED_MODULE_20__, _components_Loaders_RecommendedPreloader__WEBPACK_IMPORTED_MODULE_21__, _components_Loaders_GridPreloader__WEBPACK_IMPORTED_MODULE_22__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_Controls_Checkbox_Checkbox__WEBPACK_IMPORTED_MODULE_0__, _components_Inputs_AutoComplete__WEBPACK_IMPORTED_MODULE_3__, _components_Inputs_SearchInput_SearchInput__WEBPACK_IMPORTED_MODULE_5__, _components_Inputs_TextArea__WEBPACK_IMPORTED_MODULE_7__, _components_Modals_ImageModal_ImageModal__WEBPACK_IMPORTED_MODULE_9__, _components_Selects_StandardSelect__WEBPACK_IMPORTED_MODULE_11__, _components_Others_Table__WEBPACK_IMPORTED_MODULE_14__, _components_Inputs_NumberField__WEBPACK_IMPORTED_MODULE_16__, _components_Modals_SimpleModal_SimpleModal__WEBPACK_IMPORTED_MODULE_17__, _components_Loaders_ProductsPreloader__WEBPACK_IMPORTED_MODULE_19__, _kit_Loaders_DefaultPreloader_DefaultPreloader__WEBPACK_IMPORTED_MODULE_20__, _components_Loaders_RecommendedPreloader__WEBPACK_IMPORTED_MODULE_21__, _components_Loaders_GridPreloader__WEBPACK_IMPORTED_MODULE_22__]);
+([_components_Controls_Checkbox_Checkbox__WEBPACK_IMPORTED_MODULE_0__, _components_Inputs_AutoComplete__WEBPACK_IMPORTED_MODULE_3__, _components_Inputs_SearchInput_SearchInput__WEBPACK_IMPORTED_MODULE_5__, _components_Inputs_TextArea__WEBPACK_IMPORTED_MODULE_7__, _components_Modals_ImageModal_ImageModal__WEBPACK_IMPORTED_MODULE_9__, _components_Selects_StandardSelect__WEBPACK_IMPORTED_MODULE_11__, _components_Others_Table__WEBPACK_IMPORTED_MODULE_14__, _components_Inputs_NumberField__WEBPACK_IMPORTED_MODULE_16__, _components_Modals_SimpleModal_SimpleModal__WEBPACK_IMPORTED_MODULE_17__, _components_Loaders_ProductsPreloader__WEBPACK_IMPORTED_MODULE_19__, _kit_Loaders_DefaultPreloader_DefaultPreloader__WEBPACK_IMPORTED_MODULE_20__, _components_Loaders_RecommendedPreloader__WEBPACK_IMPORTED_MODULE_21__, _components_Loaders_GridPreloader__WEBPACK_IMPORTED_MODULE_22__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
