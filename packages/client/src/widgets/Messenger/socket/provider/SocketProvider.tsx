@@ -1,24 +1,32 @@
-import { io } from 'socket.io-client'
+import { io, Socket } from 'socket.io-client'
 import appConfig from 'app/config/config'
 import { DevGlobalVars } from 'dev/components'
 import SocketContext from 'widgets/Messenger/socket/provider/SocketContext'
 import { CFC } from 'shared/types/components'
 import { SocketGateWays } from 'app/config/globals'
 import { useSelector } from 'shared/types/redux'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { AuthSelectors } from 'widgets/Login'
+import { useFilteredEffect } from 'shared/lib/hooks'
 
 const SocketProvider: CFC = ({ children }) => {
   const userId = useSelector(AuthSelectors.userId) as number
   const router = useRouter()
-  const connection = io(`${appConfig.WEBSOCKET_URL}/${SocketGateWays.messenger}`,
-      { withCredentials: true, extraHeaders: { userId: userId?.toString?.() } })
+  const [socket, setSocket] = useState<Socket>()
 
-  DevGlobalVars.setSocket('messenger', connection)
+  useFilteredEffect(() => {
+    socket?.disconnect?.()
+    const connection = io(`${appConfig.WEBSOCKET_URL}/${SocketGateWays.messenger}`,
+        { withCredentials: true, auth: { userid: userId.toString?.() } })
+    DevGlobalVars.setSocket('messenger', connection)
+    console.log({ userid: userId.toString?.() })
+    setSocket(connection)
+  }, [userId])
+
 
   const disconnect = () => {
-    connection.disconnect()
+    socket?.disconnect?.()
   }
 
   useEffect(() => {
@@ -26,11 +34,11 @@ const SocketProvider: CFC = ({ children }) => {
     return () => {
       router.events.off('routeChangeStart', disconnect)
     }
-  }, [])
+  }, [socket])
 
-  return <SocketContext.Provider value={connection}>
+  return socket ? <SocketContext.Provider value={socket}>
     {children}
-  </SocketContext.Provider>
+  </SocketContext.Provider> : null
 }
 
 

@@ -43,9 +43,6 @@ export class ChatGateway {
         @MessageBody('roomId') roomId: number,
         @ConnectedSocket() client: Socket
     ) {
-      console.log('SUBSCRIBE TO ROOM')
-      console.log(roomId)
-      console.log(client.rooms)
       const userId = await this.getUserIdByHeaders(client)
       await this.messagesService.makeMessagesRead(roomId, userId)
       client.join(gatewayGroup(MessengerGroups.MESSENGER_ROOM, roomId))
@@ -68,11 +65,7 @@ export class ChatGateway {
         @MessageBody() message: NewMessage,
         @ConnectedSocket() client: Socket
     ) {
-      console.log('SEND MESSAGE')
-      console.log(message)
-      console.log(client.rooms)
       const senderId = await this.getUserIdByHeaders(client)
-      console.log(senderId)
       const newMessage = await this.messagesService.saveMessage({ ...message, senderId })
 
       client.emit(MessengerEvents.ADD_MESSAGE, newMessage)
@@ -87,9 +80,12 @@ export class ChatGateway {
         @MessageBody() message: UserMessagesEntity,
         @ConnectedSocket() client: Socket
     ) {
-      await this.messagesService.makeMessageRead(message.messageId)
-      client.to(gatewayGroup(MessengerGroups.MESSENGER_ROOM, message.roomId))
-          .emit(MessengerEvents.MESSAGE_READ)
+      const userId = await this.getUserIdByHeaders(client)
+      if (userId !== message.senderId) {
+        await this.messagesService.makeMessageRead(message.messageId)
+        client.to(gatewayGroup(MessengerGroups.MESSENGER_ROOM, message.roomId))
+            .emit(MessengerEvents.MESSAGE_READ)
+      }
     }
 
     @SubscribeMessage(MessengerEvents.TYPING)
@@ -113,7 +109,7 @@ export class ChatGateway {
     }
 
     private async getUserIdByHeaders(client: Socket) {
-      const userId = Number(client.handshake.headers.userid)
+      const userId = Number(client.handshake.auth.userid)
       return isNaN(userId) ? null : userId
     }
 }
