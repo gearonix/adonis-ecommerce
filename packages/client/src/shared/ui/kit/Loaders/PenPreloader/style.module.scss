@@ -3,12 +3,23 @@
 .preloader {
   @include size(100%, 700px);
   position: relative;
+  @media (max-width: 900px) {
+    opacity: 0;
+  }
 }
 
 
 .container {
   @include absolute(50%, 50%);
   transform: translate(-50%, 20%) scale(0.7);
+  @media (max-width: 900px) {
+    opacity: 0;
+  }
+}
+.pen{
+  @media (max-width: 900px) {
+    display: none;
+  }
 }
 
 .text {

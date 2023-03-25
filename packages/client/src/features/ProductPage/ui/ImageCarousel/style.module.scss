@@ -12,4 +12,7 @@
     border: $br $bg-150;
     padding: 2px;
   }
+  @media (max-width: 420px) {
+    display: none;
+  }
 }

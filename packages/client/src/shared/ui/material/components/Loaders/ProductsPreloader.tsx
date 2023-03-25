@@ -1,12 +1,14 @@
 import { Card, Skeleton } from '@mui/material'
 import { FC } from 'react'
+import { useAdaptive } from 'shared/lib/hooks'
 
 
 export const ProductsPreloader: FC = () => {
-  return <Card sx={{ height: 190, m: 2, borderRadius: '6px',
+  const isMobile = useAdaptive(600)
+  return <Card sx={{ height: isMobile ? 100 : 190, m: 2, borderRadius: '6px',
     display: 'flex', padding: '15px', position: 'relative' }}>
 
-    <Skeleton sx={{ height: 185, width: 185, borderRadius: '6px' }}
+    <Skeleton sx={{ height: isMobile ? 100 : 185, width: isMobile ? 100 : 185, borderRadius: '6px' }}
       animation="wave" variant="rectangular" />
     <div>
       <Skeleton

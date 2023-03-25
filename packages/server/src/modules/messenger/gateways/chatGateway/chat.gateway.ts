@@ -33,10 +33,6 @@ export class ChatGateway {
         @ConnectedSocket() client: Socket
     ) {
       const starterId = await this.getUserIdByHeaders(client)
-      console.log('STARTCHAT')
-      console.log(invitedId)
-      console.log(starterId)
-
       const room = await this.roomsService.startChat(starterId, invitedId)
 
       client.emit(MessengerEvents.ADD_ROOM, room)
@@ -47,8 +43,9 @@ export class ChatGateway {
         @MessageBody('roomId') roomId: number,
         @ConnectedSocket() client: Socket
     ) {
-      console.log('SUBSCRIBE_TO_ROOM')
+      console.log('SUBSCRIBE TO ROOM')
       console.log(roomId)
+      console.log(client.rooms)
       const userId = await this.getUserIdByHeaders(client)
       await this.messagesService.makeMessagesRead(roomId, userId)
       client.join(gatewayGroup(MessengerGroups.MESSENGER_ROOM, roomId))
@@ -71,10 +68,11 @@ export class ChatGateway {
         @MessageBody() message: NewMessage,
         @ConnectedSocket() client: Socket
     ) {
-      console.log('SEND_MESSAGE')
-      console.log(message.senderId)
-      console.log(message.roomId)
+      console.log('SEND MESSAGE')
+      console.log(message)
+      console.log(client.rooms)
       const senderId = await this.getUserIdByHeaders(client)
+      console.log(senderId)
       const newMessage = await this.messagesService.saveMessage({ ...message, senderId })
 
       client.emit(MessengerEvents.ADD_MESSAGE, newMessage)

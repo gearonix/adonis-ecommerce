@@ -10,10 +10,8 @@ interface Checkbox{
 
 export const Checkbox: FC<Checkbox> = ({ title, values }) => {
   const { getValue, setValue } = values
-  const currentValue = getValue()
-
-  const onChange = () => {
-    setValue(!currentValue)
+  const onChange = (e: any, newValue: boolean) => {
+    setValue(newValue)
   }
 
   return <Display when={values}>
