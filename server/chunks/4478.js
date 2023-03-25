@@ -95,8 +95,10 @@ const MessengerAside = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)
     const { actions  } = (0,widgets_Messenger_lib_hooks__WEBPACK_IMPORTED_MODULE_6__/* .useMessengerSocket */ ._)();
     const getOpponentUser = (0,widgets_Messenger_lib_helpers__WEBPACK_IMPORTED_MODULE_15__/* .selectOpponentUser */ .o)(userId);
     const switchRoom = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)((id)=>{
+        if (id === selectedId) return;
         actions.unsubscribeFromRoom(selectedId);
         dispatch(widgets_Messenger__WEBPACK_IMPORTED_MODULE_5__/* .messengerActions.changeSelectedRoomId */ ._I.changeSelectedRoomId(id));
+        dispatch(widgets_Messenger__WEBPACK_IMPORTED_MODULE_5__/* .messengerActions.clearRoom */ ._I.clearRoom());
         dispatch(app_providers_Notifications__WEBPACK_IMPORTED_MODULE_8__/* .notifyActions.clearNotifications */ .cx.clearNotifications(id));
     }, [
         selectedId

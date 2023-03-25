@@ -54,12 +54,12 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shar
 
 
 
-
 const MessengerContent = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)(()=>{
     const dispatch = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_4__/* .useDispatch */ .I0)();
     const messages = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_4__/* .useSelector */ .v9)(widgets_Messenger__WEBPACK_IMPORTED_MODULE_8__/* .MessengerSelectors.messages */ ._5.messages);
     const roomId = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_4__/* .useSelector */ .v9)(widgets_Messenger__WEBPACK_IMPORTED_MODULE_8__/* .MessengerSelectors.selectedId */ ._5.selectedId);
     const userId = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_4__/* .useSelector */ .v9)(widgets_Login__WEBPACK_IMPORTED_MODULE_10__/* .AuthSelectors.userId */ .ce.userId);
+    const page = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_4__/* .useSelector */ .v9)(widgets_Messenger__WEBPACK_IMPORTED_MODULE_8__/* .MessengerSelectors.page */ ._5.page);
     const { actions , subscribes  } = (0,widgets_Messenger_lib_hooks__WEBPACK_IMPORTED_MODULE_9__/* .useMessengerSocket */ ._)();
     (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{
         subscribes.onAddMessage((message)=>{
@@ -73,9 +73,25 @@ const MessengerContent = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.mem
     (0,shared_lib_hooks__WEBPACK_IMPORTED_MODULE_3__/* .useFilteredEffect */ .El)(()=>{
         dispatch(widgets_Messenger__WEBPACK_IMPORTED_MODULE_8__/* .messengerActions.clearRoom */ ._I.clearRoom());
         actions.subscribeToRoom(roomId);
-        dispatch((0,widgets_Messenger_store_thunks__WEBPACK_IMPORTED_MODULE_5__/* .selectRoom */ .c)(roomId));
+        dispatch(widgets_Messenger__WEBPACK_IMPORTED_MODULE_8__/* .messengerActions.clearPage */ ._I.clearPage());
+        dispatch((0,widgets_Messenger_store_thunks__WEBPACK_IMPORTED_MODULE_5__/* .getMessages */ ._)({
+            roomId
+        }));
     }, [
         roomId
+    ]);
+    const updatePage = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(()=>{
+        dispatch(widgets_Messenger__WEBPACK_IMPORTED_MODULE_8__/* .messengerActions.increasePage */ ._I.increasePage());
+    }, []);
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{
+        if (roomId && page !== 0) {
+            dispatch((0,widgets_Messenger_store_thunks__WEBPACK_IMPORTED_MODULE_5__/* .getMessages */ ._)({
+                roomId,
+                page
+            }));
+        }
+    }, [
+        page
     ]);
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
         className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_12___default().messages_main),
@@ -87,7 +103,9 @@ const MessengerContent = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.mem
                     children: [
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(entities_Messenger__WEBPACK_IMPORTED_MODULE_2__/* .MessengerContent */ .cF, {
                             messages: messages,
-                            userId: userId
+                            userId: userId,
+                            getMoreMessages: updatePage,
+                            roomId: roomId
                         }),
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_MessengerInput_MessengerInput__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {})
                     ]

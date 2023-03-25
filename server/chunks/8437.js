@@ -40,12 +40,12 @@ __webpack_async_result__();
 __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "A": () => (/* reexport safe */ _getRooms_getRooms__WEBPACK_IMPORTED_MODULE_0__.A),
-/* harmony export */   "c": () => (/* reexport safe */ _selectRoom_selectRoom__WEBPACK_IMPORTED_MODULE_1__.c)
+/* harmony export */   "_": () => (/* reexport safe */ _selectRoom_getMessages__WEBPACK_IMPORTED_MODULE_1__._)
 /* harmony export */ });
 /* harmony import */ var _getRooms_getRooms__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(13616);
-/* harmony import */ var _selectRoom_selectRoom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(58995);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_getRooms_getRooms__WEBPACK_IMPORTED_MODULE_0__, _selectRoom_selectRoom__WEBPACK_IMPORTED_MODULE_1__]);
-([_getRooms_getRooms__WEBPACK_IMPORTED_MODULE_0__, _selectRoom_selectRoom__WEBPACK_IMPORTED_MODULE_1__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+/* harmony import */ var _selectRoom_getMessages__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(16624);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_getRooms_getRooms__WEBPACK_IMPORTED_MODULE_0__, _selectRoom_getMessages__WEBPACK_IMPORTED_MODULE_1__]);
+([_getRooms_getRooms__WEBPACK_IMPORTED_MODULE_0__, _selectRoom_getMessages__WEBPACK_IMPORTED_MODULE_1__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
@@ -54,12 +54,12 @@ __webpack_async_result__();
 
 /***/ }),
 
-/***/ 58995:
+/***/ 16624:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "c": () => (/* binding */ selectRoom)
+/* harmony export */   "_": () => (/* binding */ getMessages)
 /* harmony export */ });
 /* harmony import */ var shared_types_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(98429);
 /* harmony import */ var shared_lib_helpers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(95575);
@@ -71,9 +71,9 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shar
 
 
 
-const selectRoom = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_0__/* .createThunk */ .L3)("messenger/SELECT_ROOM", async (roomId, { dispatch , extra , getState  })=>{
+const getMessages = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_0__/* .createThunk */ .L3)("messenger/SELECT_ROOM", async ({ roomId , page =0  }, { dispatch , extra , getState  })=>{
     const userId = widgets_Login__WEBPACK_IMPORTED_MODULE_3__/* .AuthSelectors.userId */ .ce.userId(getState());
-    const messages = await extra.api.messenger.selectRoom(roomId, userId);
+    const messages = await extra.api.messenger.selectRoom(roomId, userId, page);
     if ((0,shared_lib_helpers__WEBPACK_IMPORTED_MODULE_1__/* .isError */ .VZ)(messages)) {
         return;
     }

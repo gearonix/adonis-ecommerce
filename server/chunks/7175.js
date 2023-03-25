@@ -75,8 +75,8 @@ const messengerApi = {
             userId
         });
     },
-    selectRoom (roomId, userId) {
-        return shared_config_consts_axios__WEBPACK_IMPORTED_MODULE_1__/* ["default"].put */ .Z.put(`${endpoint.selectRoom}/${roomId}`, {
+    selectRoom (roomId, userId, page) {
+        return shared_config_consts_axios__WEBPACK_IMPORTED_MODULE_1__/* ["default"].put */ .Z.put(`${endpoint.selectRoom}/${roomId}?page=${page}`, {
             userId
         });
     }
@@ -309,7 +309,6 @@ const createMessengerSocketApi = (socket)=>{
                 socket.on(MessengerEvents.ADD_ROOM, callback);
             },
             onAddMessage (callback) {
-                socket.off(MessengerEvents.ADD_MESSAGE);
                 socket.on(MessengerEvents.ADD_MESSAGE, callback);
             },
             onUserTyping (callback) {
@@ -437,9 +436,6 @@ const SocketProvider = ({ children  })=>{
             }
         });
         dev_components__WEBPACK_IMPORTED_MODULE_3__/* .DevGlobalVars.setSocket */ .P.setSocket("messenger", connection);
-        console.log({
-            userid: userId.toString?.()
-        });
         setSocket(connection);
     }, [
         userId
@@ -480,7 +476,8 @@ const MessengerSelectors = {
     filter: ({ messenger  })=>messenger.rooms.filter,
     userStatus: ({ messenger  })=>{
         return !messenger.isTyping ? messenger.status : "typing...";
-    }
+    },
+    page: ({ messenger  })=>messenger.page
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MessengerSelectors);
 
@@ -556,7 +553,8 @@ const messengerInitialState = {
     messages: [],
     selectedId: null,
     isTyping: false,
-    status: others/* UserStatus.OFFLINE */.J.OFFLINE
+    status: others/* UserStatus.OFFLINE */.J.OFFLINE,
+    page: 0
 };
 
 ;// CONCATENATED MODULE: ./src/widgets/Messenger/store/slice/messengerReducer.ts
@@ -576,11 +574,15 @@ const messengerReducer = (0,toolkit_.createSlice)({
             }
         },
         setMessages (state, { payload  }) {
-            state.messages = payload;
+            state.messages = [
+                ...payload,
+                ...state.messages
+            ];
         },
         changeSelectedRoomId (state, { payload  }) {
             state.selectedId = payload;
             state.isTyping = false;
+            state.messages = [];
         },
         addMessage (state, { payload  }) {
             const ids = state.messages.map(({ messageId  })=>messageId);
@@ -611,6 +613,12 @@ const messengerReducer = (0,toolkit_.createSlice)({
         },
         clearMessenger () {
             return messengerInitialState;
+        },
+        clearPage (state) {
+            state.page = 0;
+        },
+        increasePage (state) {
+            state.page += 1;
         }
     }
 });
