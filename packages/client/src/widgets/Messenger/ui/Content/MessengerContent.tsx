@@ -1,23 +1,22 @@
-import { FC, memo, useEffect } from 'react'
+import { memo, useCallback, useEffect } from 'react'
 import s from './style.module.scss'
 import { MessengerContent as MessengerContentTemp } from 'entities/Messenger'
 import { useFilteredEffect } from 'shared/lib/hooks'
 import { useDispatch, useSelector } from 'shared/types/redux'
-import { selectRoom } from 'widgets/Messenger/store/thunks'
+import { getMessages } from 'widgets/Messenger/store/thunks'
 import { Display } from 'shared/lib/components'
 import MessengerInput from '../MessengerInput/MessengerInput'
-import { messengerActions } from 'widgets/Messenger'
+import { messengerActions, MessengerSelectors } from 'widgets/Messenger'
 import { useMessengerSocket } from 'widgets/Messenger/lib/hooks'
-import { MessengerSelectors } from 'widgets/Messenger'
 import { AuthSelectors } from 'widgets/Login'
 import { DefaultChat } from 'entities/Messenger/ui/Content/MessengerContent'
-import cn from 'classnames'
 
 const MessengerContent = memo(() => {
   const dispatch = useDispatch()
   const messages = useSelector(MessengerSelectors.messages)
   const roomId = useSelector(MessengerSelectors.selectedId)
   const userId = useSelector(AuthSelectors.userId)
+  const page = useSelector(MessengerSelectors.page)
   const { actions, subscribes } = useMessengerSocket()
 
 
@@ -34,13 +33,25 @@ const MessengerContent = memo(() => {
   useFilteredEffect(() => {
     dispatch(messengerActions.clearRoom())
     actions.subscribeToRoom(roomId)
-    dispatch(selectRoom(roomId))
+    dispatch(messengerActions.clearPage())
+    dispatch(getMessages({ roomId }))
   }, [roomId])
+
+  const updatePage = useCallback(() => {
+    dispatch(messengerActions.increasePage())
+  }, [])
+
+  useEffect(() => {
+    if (roomId && page !== 0) {
+      dispatch(getMessages({ roomId, page }))
+    }
+  }, [page])
 
   return <div className={s.messages_main}>
     <div className={s.wrapper}>
       <Display when={roomId}>
-        <MessengerContentTemp messages={messages} userId={userId}/>
+        <MessengerContentTemp messages={messages} userId={userId}
+          getMoreMessages={updatePage} roomId={roomId}/>
         <MessengerInput/>
       </Display>
       <Display when={!roomId}>

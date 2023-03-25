@@ -20,7 +20,6 @@ const SocketProvider: CFC = ({ children }) => {
     const connection = io(`${appConfig.WEBSOCKET_URL}/${SocketGateWays.messenger}`,
         { withCredentials: true, auth: { userid: userId.toString?.() } })
     DevGlobalVars.setSocket('messenger', connection)
-    console.log({ userid: userId.toString?.() })
     setSocket(connection)
   }, [userId])
 

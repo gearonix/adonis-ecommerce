@@ -10,7 +10,8 @@ export interface MessengerSlice{
     messages: Message[],
     selectedId: Nullable<number>,
     isTyping: boolean,
-    status: UserStatus
+    status: UserStatus,
+    page: number
 }
 
 export interface Room{
@@ -41,5 +42,6 @@ export const messengerInitialState: MessengerSlice = {
   messages: [],
   selectedId: null,
   isTyping: false,
-  status: UserStatus.OFFLINE
+  status: UserStatus.OFFLINE,
+  page: 0
 }

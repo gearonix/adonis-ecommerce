@@ -16,11 +16,12 @@ const messengerReducer = createSlice({
       }
     },
     setMessages(state, { payload }: Action<Message[]>) {
-      state.messages = payload
+      state.messages = [...payload, ...state.messages]
     },
     changeSelectedRoomId(state, { payload }: Action<number>) {
       state.selectedId = payload
       state.isTyping = false
+      state.messages = []
     },
     addMessage(state, { payload }: Action<Message>) {
       const ids = state.messages.map(({ messageId }) => messageId)
@@ -48,6 +49,12 @@ const messengerReducer = createSlice({
     },
     clearMessenger() {
       return initialState
+    },
+    clearPage(state) {
+      state.page = 0
+    },
+    increasePage(state) {
+      state.page += 1
     }
   }
 })

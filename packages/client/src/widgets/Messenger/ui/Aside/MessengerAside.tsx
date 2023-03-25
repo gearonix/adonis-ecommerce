@@ -28,8 +28,10 @@ const MessengerAside: FC = memo(() => {
   const getOpponentUser = selectOpponentUser(userId)
 
   const switchRoom = useCallback((id : number) => {
+    if (id === selectedId) return
     actions.unsubscribeFromRoom(selectedId)
     dispatch(messengerActions.changeSelectedRoomId(id))
+    dispatch(messengerActions.clearRoom())
     dispatch(notifyActions.clearNotifications(id))
   }, [selectedId])
 

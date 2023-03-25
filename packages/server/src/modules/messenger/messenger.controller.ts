@@ -1,4 +1,4 @@
-import { Body, Controller, forwardRef, Get, Inject, Param, Put } from '@nestjs/common'
+import { Body, Controller, forwardRef, Get, Inject, Param, Put, Query } from '@nestjs/common'
 import { RoomsService } from '@modules/messenger/index'
 import { AuthService } from '@modules/auth'
 import { MessagesService } from '@modules/messenger/services/messages.service'
@@ -18,7 +18,9 @@ export class MessengerController {
     return this.roomsService.getUserRooms(userId)
   }
   @Put(':id')
-  async selectRoom(@Param('id') id: string, @Body('userId') userId: number) {
-    return this.messagesService.selectRoom(Number(id), userId)
+  async selectRoom(@Param('id') id: string,
+                   @Body('userId') userId: number,
+                   @Query('page') page: string) {
+    return this.messagesService.selectRoom(Number(id), userId, page)
   }
 }

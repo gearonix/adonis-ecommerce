@@ -7,7 +7,8 @@ const MessengerSelectors = {
   filter: ({ messenger }: RequiredState) => messenger.rooms.filter,
   userStatus: ({ messenger }: RequiredState) => {
     return !messenger.isTyping ? messenger.status : 'typing...'
-  }
+  },
+  page: ({ messenger }: RequiredState) => messenger.page
 
 }
 

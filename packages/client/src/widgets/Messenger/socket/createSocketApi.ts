@@ -11,7 +11,6 @@ const createMessengerSocketApi = (socket: Socket) => {
         socket.on(MessengerEvents.ADD_ROOM, callback)
       },
       onAddMessage(callback: (message: Message) => void) {
-        socket.off(MessengerEvents.ADD_MESSAGE)
         socket.on(MessengerEvents.ADD_MESSAGE, callback)
       },
       onUserTyping(callback: () => void) {

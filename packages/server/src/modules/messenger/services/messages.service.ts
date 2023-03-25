@@ -6,6 +6,7 @@ import { NewMessage } from '@modules/messenger/gateways/chatGateway/requestTypes
 import { FileDirectories } from '@app/types/global'
 import { FilesService } from '@modules/files/files.service'
 import { RoomsService } from '@modules/messenger'
+import { withLimit } from '@lib/helpers'
 
 @Injectable()
 export class MessagesService {
@@ -18,15 +19,20 @@ export class MessagesService {
   ) {}
 
 
-  async selectRoom(roomId: number, userId: number) {
+  async selectRoom(roomId: number, userId: number, page: string) {
     await this.roomService.checkUserHasRoom(roomId, userId)
 
-    return this.messages.find({
+    const messages = await this.messages.find({
       where: { roomId },
       relations: {
         user: true
-      }
+      },
+      order: {
+        creationDate: 'DESC'
+      },
+      ...withLimit(page, 15)
     })
+    return messages.reverse()
   }
 
   async makeMessagesRead(roomId: number, userId: number) {

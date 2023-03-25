@@ -8,7 +8,7 @@ export const messengerApi: MessengerApi = {
   getRooms(userId) {
     return axiosInstance.put(endpoint.getRooms, { userId })
   },
-  selectRoom(roomId: number, userId: number) {
-    return axiosInstance.put(`${endpoint.selectRoom}/${roomId}`, { userId })
+  selectRoom(roomId: number, userId: number, page: number) {
+    return axiosInstance.put(`${endpoint.selectRoom}/${roomId}?page=${page}`, { userId })
   }
 }

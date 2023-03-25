@@ -1,5 +1,5 @@
 import { JestAsyncThunk } from 'shared/lib/jest'
-import { selectRoom } from './selectRoom'
+import { getMessages } from './getMessages'
 import { messengerInitialState as initialState } from 'widgets/Messenger/store/slice/initialState'
 import { messengerActions } from 'widgets/Messenger'
 
@@ -15,7 +15,7 @@ describe('selectRoom', () => {
     args = {
 
     }
-    thunk = new JestAsyncThunk(selectRoom, 'messenger', 'messenger', defaultState)
+    thunk = new JestAsyncThunk(getMessages, 'messenger', 'messenger', defaultState)
   })
 
   test('selectRoom success', async () => {

@@ -1,2 +1,2 @@
 export { getRooms } from './getRooms/getRooms'
-export { selectRoom } from './selectRoom/selectRoom'
+export { getMessages } from './selectRoom/getMessages'

@@ -1,34 +1,45 @@
-import { DependencyList, useEffect, useRef, useState } from 'react'
+import { DependencyList, MutableRefObject, useEffect, useRef, useState } from 'react'
 
 
 export const useBottomScroll = (...deps: DependencyList) => {
-  const ref = useRef<HTMLDivElement | null>(null)
-  const containerRef = useRef<HTMLDivElement | null>(null)
+  const bottomRef = useRef() as MutableRefObject<HTMLDivElement>
+  const containerRef = useRef() as MutableRefObject<HTMLDivElement>
   const [scrollBottomSize, setScrollBottom] = useState<number>(Infinity)
 
   const scrollToBottom = () => {
-    if (ref.current) {
-      ref.current.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+    if (bottomRef.current) {
+      bottomRef.current.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
     }
   }
   useEffect(() => {
     scrollToBottom()
     setTimeout(scrollToBottom, 550)
-  }, [...deps, ref])
+  }, [containerRef.current, ...deps])
+
+  const rememberContainerScroll = () => {
+    const scrollTop = containerRef.current.scrollHeight -
+        containerRef.current.clientHeight - scrollBottomSize
+    containerRef.current?.scrollTo(0, scrollTop )
+  }
 
 
   const onScroll = () => {
     if (containerRef.current) {
-      const scrollBottom = containerRef.current.scrollHeight -
-          containerRef.current.scrollTop - containerRef.current.clientHeight
+      const scrollBottom = getScrollBottom(containerRef)
       setScrollBottom(scrollBottom)
     }
   }
+
+  const getScrollBottom = (ref: MutableRefObject<HTMLDivElement>) => {
+    return ref.current.scrollHeight - ref.current.scrollTop - ref.current.clientHeight
+  }
+
   return {
-    bottomRef: ref,
+    bottomRef,
     scrollToBottom,
     onScroll,
     scrollBottomSize,
-    containerRef
+    containerRef,
+    rememberContainerScroll
   }
 }

@@ -3,5 +3,5 @@ import { Message, Room } from 'widgets/Messenger/store/slice/initialState'
 
 export interface MessengerApi {
     getRooms(userId: Nullable<number>): Res<Room[]>,
-    selectRoom(roomId: number, userId: Nullable<number>): Res<Message[]>
+    selectRoom(roomId: number, userId: Nullable<number>, page: number): Res<Message[]>
 }

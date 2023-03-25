@@ -21,7 +21,7 @@ export const ifExist = <T, N>(name: T, value: N): N | undefined => {
   return name ? value : undefined
 }
 
-export const withLimit = (page: string | undefined, take = PAGE_LIMIT) => {
+export const withLimit = (page: string | undefined, take: number = PAGE_LIMIT) => {
   return {
     take,
     skip: page ? Number(page) * take : 0
