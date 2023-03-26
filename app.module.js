@@ -26,8 +26,7 @@ AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
             config_1.ConfigModule.forRoot({
-                envFilePath: `.env`,
-                cache: true
+                envFilePath: `.env`
             }),
             typeorm_1.TypeOrmModule.forRoot((0, config_2.buildDBConfig)()),
             serve_static_1.ServeStaticModule.forRoot({

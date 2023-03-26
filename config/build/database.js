@@ -31,6 +31,13 @@ const process = __importStar(require("process"));
 const entities_1 = __importDefault(require("../../entities"));
 const buildDBConfig = () => {
     const { HOST_NAME, DB_PORT, USER_NAME, PASSWORD, DATABASE_NAME } = process.env;
+    console.log(HOST_NAME);
+    console.log(DB_PORT);
+    console.log(USER_NAME);
+    console.log(PASSWORD);
+    console.log(DATABASE_NAME);
+    console.log(process.env.NODE_ENV);
+    console.log(`.${process.env.NODE_ENV}.env`);
     return {
         type: 'mysql',
         host: HOST_NAME,
@@ -39,7 +46,9 @@ const buildDBConfig = () => {
         password: PASSWORD,
         database: DATABASE_NAME,
         synchronize: true,
-        entities: entities_1.default
+        entities: entities_1.default,
+        connectTimeout: 1000000,
+        acquireTimeout: 1000000,
     };
 };
 exports.buildDBConfig = buildDBConfig;
