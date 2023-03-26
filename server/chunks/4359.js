@@ -5016,6 +5016,7 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony export */   "Ji": () => (/* reexport safe */ _useBottomScroll__WEBPACK_IMPORTED_MODULE_9__.J),
 /* harmony export */   "KS": () => (/* reexport safe */ _useTimeout__WEBPACK_IMPORTED_MODULE_4__.K),
 /* harmony export */   "MQ": () => (/* reexport safe */ _useInfiniteScroll__WEBPACK_IMPORTED_MODULE_12__.M),
+/* harmony export */   "Nr": () => (/* reexport safe */ _useDebounce__WEBPACK_IMPORTED_MODULE_14__.N),
 /* harmony export */   "WQ": () => (/* reexport safe */ _useAdaptive__WEBPACK_IMPORTED_MODULE_10__.W),
 /* harmony export */   "Yz": () => (/* reexport safe */ _useInterval__WEBPACK_IMPORTED_MODULE_6__.Y),
 /* harmony export */   "ZK": () => (/* reexport safe */ _useLanguage__WEBPACK_IMPORTED_MODULE_7__.Z),
@@ -5036,8 +5037,12 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var _useAdaptive__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(11791);
 /* harmony import */ var _useLockScroll__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(88731);
 /* harmony import */ var _useInfiniteScroll__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(38609);
+/* harmony import */ var _useThrottle__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(90617);
+/* harmony import */ var _useDebounce__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(501);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_useForm__WEBPACK_IMPORTED_MODULE_1__, _useUnauthorized__WEBPACK_IMPORTED_MODULE_5__, _useLanguage__WEBPACK_IMPORTED_MODULE_7__]);
 ([_useForm__WEBPACK_IMPORTED_MODULE_1__, _useUnauthorized__WEBPACK_IMPORTED_MODULE_5__, _useLanguage__WEBPACK_IMPORTED_MODULE_7__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
+
 
 
 
@@ -5106,6 +5111,8 @@ const useBooleanState = (initialValue = false)=>{
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(16689);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var shared_lib_hooks_useThrottle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(90617);
+
 
 const useBottomScroll = (...deps)=>{
     const bottomRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
@@ -5130,12 +5137,12 @@ const useBottomScroll = (...deps)=>{
         const scrollTop = containerRef.current.scrollHeight - containerRef.current.clientHeight - scrollBottomSize;
         containerRef.current?.scrollTo(0, scrollTop);
     };
-    const onScroll = ()=>{
+    const onScroll = (0,shared_lib_hooks_useThrottle__WEBPACK_IMPORTED_MODULE_1__/* .useThrottle */ .f)(()=>{
         if (containerRef.current) {
             const scrollBottom = getScrollBottom(containerRef);
             setScrollBottom(scrollBottom);
         }
-    };
+    }, 100);
     const getScrollBottom = (ref)=>{
         return ref.current.scrollHeight - ref.current.scrollTop - ref.current.clientHeight;
     };
@@ -5147,6 +5154,34 @@ const useBottomScroll = (...deps)=>{
         containerRef,
         rememberContainerScroll
     };
+};
+
+
+/***/ }),
+
+/***/ 501:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "N": () => (/* binding */ useDebounce)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(16689);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+const useDebounce = (callback, delay)=>{
+    const debounceRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(()=>{
+        if (debounceRef.current) {
+            clearTimeout(debounceRef.current);
+        }
+        debounceRef.current = setTimeout(()=>{
+            callback();
+        }, delay);
+    }, [
+        callback,
+        delay
+    ]);
 };
 
 
@@ -5410,6 +5445,35 @@ const useMuiTheme = (theme)=>{
             mode: theme === shared_config_consts_themes__WEBPACK_IMPORTED_MODULE_2__/* .Theme.LIGHT */ .Q.LIGHT ? "light" : "dark"
         }
     });
+};
+
+
+/***/ }),
+
+/***/ 90617:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "f": () => (/* binding */ useThrottle)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(16689);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+const useThrottle = (callback, delay)=>{
+    const throttleRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(false);
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(()=>{
+        if (!throttleRef.current) {
+            callback();
+            throttleRef.current = true;
+            setTimeout(()=>{
+                throttleRef.current = false;
+            }, delay);
+        }
+    }, [
+        callback,
+        delay
+    ]);
 };
 
 
