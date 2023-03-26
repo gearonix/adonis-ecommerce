@@ -1,5 +1,5 @@
 import { FC, memo, useEffect } from 'react'
-import { useForm } from 'shared/lib/hooks'
+import { useDebounce, useForm } from 'shared/lib/hooks'
 import { createDefaultValues } from 'widgets/Users/lib/defaultValues'
 import { UsersHeader as UsersHeaderTemplate } from 'entities/Users'
 import { useDispatch, useSelector } from 'shared/types/redux'
@@ -13,9 +13,9 @@ const UsersHeader = memo(() => {
   const dispatch = useDispatch()
   const page = useSelector(UsersSelectors.page)
 
-  const onChange = () => {
+  const onChange = useDebounce(() => {
     dispatch(getUsers(getValues()))
-  }
+  }, 200)
 
   useEffect(() => {
     const sub = watch(onChange)

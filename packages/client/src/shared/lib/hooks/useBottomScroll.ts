@@ -1,4 +1,5 @@
 import { DependencyList, MutableRefObject, useEffect, useRef, useState } from 'react'
+import { useThrottle } from 'shared/lib/hooks/useThrottle'
 
 
 export const useBottomScroll = (...deps: DependencyList) => {
@@ -23,12 +24,12 @@ export const useBottomScroll = (...deps: DependencyList) => {
   }
 
 
-  const onScroll = () => {
+  const onScroll = useThrottle(() => {
     if (containerRef.current) {
       const scrollBottom = getScrollBottom(containerRef)
       setScrollBottom(scrollBottom)
     }
-  }
+  }, 100)
 
   const getScrollBottom = (ref: MutableRefObject<HTMLDivElement>) => {
     return ref.current.scrollHeight - ref.current.scrollTop - ref.current.clientHeight
