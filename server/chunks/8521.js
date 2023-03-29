@@ -221,7 +221,7 @@ const getUserPosts = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_0__/* .creat
     const userId = widgets_Profile__WEBPACK_IMPORTED_MODULE_3__/* .UserSelectors.userId */ .G0.userId(getState());
     if (!userId) return;
     const response = await extra.api.posts.getPosts(userId, page);
-    if ((0,shared_lib_helpers_others_httpHelpers__WEBPACK_IMPORTED_MODULE_2__/* .isError */ .V)(response)) return;
+    if ((0,shared_lib_helpers_others_httpHelpers__WEBPACK_IMPORTED_MODULE_2__/* .isError */ .VZ)(response)) return;
     dispatch(widgets_Posts_store_slice_postsReducer__WEBPACK_IMPORTED_MODULE_1__/* .postActions.setPosts */ .r.setPosts(response.data));
 });
 
