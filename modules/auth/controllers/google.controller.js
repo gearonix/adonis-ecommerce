@@ -16,21 +16,16 @@ exports.GoogleController = void 0;
 const common_1 = require("@nestjs/common");
 const users_1 = require("../../users");
 const google_service_1 = require("../services/google.service");
-const token_service_1 = require("../services/token.service");
 let GoogleController = class GoogleController {
     googleService;
-    tokenService;
-    constructor(googleService, tokenService) {
+    constructor(googleService) {
         this.googleService = googleService;
-        this.tokenService = tokenService;
     }
     async registrationByGoogle({ jwt, role }) {
-        const tokenData = await this.googleService.signupWithGoogle({ jwt, role });
-        return this.tokenService.setAuthCookie(tokenData);
+        return this.googleService.signupWithGoogle({ jwt, role });
     }
     async loginByGoogle(request) {
-        const tokenData = await this.googleService.loginWithGoogle(request.jwt);
-        return this.tokenService.setAuthCookie(tokenData);
+        return this.googleService.loginWithGoogle(request.jwt);
     }
 };
 __decorate([
@@ -49,8 +44,7 @@ __decorate([
 ], GoogleController.prototype, "loginByGoogle", null);
 GoogleController = __decorate([
     (0, common_1.Controller)('auth/google'),
-    __metadata("design:paramtypes", [google_service_1.GoogleService,
-        token_service_1.TokenService])
+    __metadata("design:paramtypes", [google_service_1.GoogleService])
 ], GoogleController);
 exports.GoogleController = GoogleController;
 //# sourceMappingURL=google.controller.js.map

@@ -10,7 +10,6 @@ export declare class TokenService {
     getUser(): Promise<UsersEntity & {
         isMe: boolean;
     }>;
-    getUserIdByCookie(): Promise<number>;
-    setAuthCookie(tokenData: ReturnToken): Promise<ReturnToken>;
+    getUserIdByHeaders(): Promise<number>;
     verifyToken(token: string): Promise<number>;
 }

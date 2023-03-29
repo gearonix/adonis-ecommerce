@@ -21,11 +21,11 @@ let AuthGuard = class AuthGuard {
     canActivate(context) {
         const req = context.switchToHttp().getRequest();
         try {
-            const token = req.cookies.AUTH_TOKEN;
-            if (!token) {
-                throw new common_1.UnauthorizedException({
-                    message: serverExceptions_1.ServerExceptions.NOT_AUTHORIZED
-                });
+            const authHeader = req.headers.authorization;
+            const bearer = authHeader.split(' ')[0];
+            const token = authHeader.split(' ')[1];
+            if (bearer !== 'Bearer' || !token) {
+                throw new common_1.UnauthorizedException({ message: serverExceptions_1.ServerExceptions.NOT_AUTHORIZED });
             }
             req.user = this.jwtService.verify(token);
             return true;

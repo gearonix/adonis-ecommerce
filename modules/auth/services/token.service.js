@@ -32,17 +32,19 @@ let TokenService = class TokenService {
     }
     async getUser() {
         try {
-            const userId = await this.getUserIdByCookie();
+            const userId = await this.getUserIdByHeaders();
             return await this.usersService.getUserById(userId);
         }
         catch (e) {
             throw new common_1.HttpException(exceptions_1.ServerExceptions.INCORRECT_TOKEN, common_1.HttpStatus.NO_CONTENT);
         }
     }
-    async getUserIdByCookie() {
+    async getUserIdByHeaders() {
         const req = (0, helpers_1.getRequest)(nestjs_request_context_1.RequestContext);
-        const token = req.cookies.AUTH_TOKEN;
-        if (!token) {
+        const authorization = req.headers.authorization;
+        const bearer = authorization.split(' ')[0];
+        const token = authorization.split(' ')[1];
+        if (!token || bearer !== 'Bearer') {
             throw new common_1.HttpException(exceptions_1.ServerExceptions.INCORRECT_TOKEN, common_1.HttpStatus.NO_CONTENT);
         }
         try {
@@ -51,11 +53,6 @@ let TokenService = class TokenService {
         catch (e) {
             throw new common_1.HttpException(exceptions_1.ServerExceptions.INCORRECT_TOKEN, common_1.HttpStatus.NO_CONTENT);
         }
-    }
-    async setAuthCookie(tokenData) {
-        const res = (0, helpers_1.getResponse)(nestjs_request_context_1.RequestContext);
-        res.cookie('AUTH_TOKEN', tokenData.token);
-        return tokenData;
     }
     async verifyToken(token) {
         const tokenData = await this.jwtService.verify(token);

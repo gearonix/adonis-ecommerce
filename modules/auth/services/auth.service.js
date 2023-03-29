@@ -86,7 +86,7 @@ let AuthService = class AuthService {
         const userId = req?.user?.payload?.userId;
         if (!userId) {
             try {
-                const userId = await this.tokenService.getUserIdByCookie();
+                const userId = await this.tokenService.getUserIdByHeaders();
                 return userId;
             }
             catch (e) {

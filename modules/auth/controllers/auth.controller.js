@@ -25,12 +25,10 @@ let AuthController = class AuthController {
         this.tokenService = tokenService;
     }
     async login(user) {
-        const tokenData = await this.authService.login(user);
-        return this.tokenService.setAuthCookie(tokenData);
+        return this.authService.login(user);
     }
     async registration(user) {
-        const tokenData = await this.authService.registration(user);
-        return this.tokenService.setAuthCookie(tokenData);
+        return this.authService.registration(user);
     }
 };
 __decorate([
