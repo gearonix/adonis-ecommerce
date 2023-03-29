@@ -86,7 +86,7 @@ const SortedProducts = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)
             }),
             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                 className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_13___default().image_block),
-                style: (0,shared_lib_helpers__WEBPACK_IMPORTED_MODULE_8__/* .backgroundImage */ .Nx)(shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_9__/* .ProductTypesAssets */ .XU[type]),
+                style: (0,shared_lib_helpers__WEBPACK_IMPORTED_MODULE_8__/* .backgroundImage */ .Nx)((0,shared_lib_helpers__WEBPACK_IMPORTED_MODULE_8__/* .publicAssets */ .VK)(shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_9__/* .ProductTypesAssets */ .XU[type])),
                 children: [
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                         className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_13___default().title),

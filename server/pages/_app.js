@@ -79,10 +79,16 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_pro
 const App = ({ Component , pageProps  })=>{
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_head__WEBPACK_IMPORTED_MODULE_2___default()), {
-                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("title", {
-                    children: "Adonis"
-                })
+            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_2___default()), {
+                children: [
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("title", {
+                        children: "Adonis"
+                    }),
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
+                        rel: "shortcut icon",
+                        href: `${process.env.PUBLIC_FOLDER}/favicon.ico`
+                    })
+                ]
             }),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_react_oauth_google__WEBPACK_IMPORTED_MODULE_1__.GoogleOAuthProvider, {
                 clientId: process.env.GOOGLE_CLIENT_ID,
@@ -214,7 +220,7 @@ const AuthGuard = ({ children  })=>{
     const isAuthorized = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(widgets_Login__WEBPACK_IMPORTED_MODULE_9__/* .AuthSelectors.isAuthorized */ .ce.isAuthorized);
     const userId = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(widgets_Login__WEBPACK_IMPORTED_MODULE_9__/* .AuthSelectors.userId */ .ce.userId);
     const authCheck = (url)=>{
-        const path = url.split("?")[0];
+        const path = url.split("?")[0].replace(app_config_config__WEBPACK_IMPORTED_MODULE_5__/* ["default"].BASE_PATH */ .Z.BASE_PATH, "");
         const { forbiddenPaths  } = app_config_config__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z;
         // redirect if not registered
         if (!isAuthorized && forbiddenPaths.unauthorized.includes(path)) {
@@ -425,8 +431,10 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(71853);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_5__);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([dev_components__WEBPACK_IMPORTED_MODULE_2__, app_store_store__WEBPACK_IMPORTED_MODULE_3__]);
-([dev_components__WEBPACK_IMPORTED_MODULE_2__, app_store_store__WEBPACK_IMPORTED_MODULE_3__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+/* harmony import */ var shared_lib_helpers__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(95575);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([dev_components__WEBPACK_IMPORTED_MODULE_2__, app_store_store__WEBPACK_IMPORTED_MODULE_3__, shared_lib_helpers__WEBPACK_IMPORTED_MODULE_6__]);
+([dev_components__WEBPACK_IMPORTED_MODULE_2__, app_store_store__WEBPACK_IMPORTED_MODULE_3__, shared_lib_helpers__WEBPACK_IMPORTED_MODULE_6__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
 
 
 
@@ -436,10 +444,12 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([dev_
 const StoreProvider = ({ children , asyncReducers , preloadedState  })=>{
     const [store, setStore] = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)();
     const router = (0,next_router__WEBPACK_IMPORTED_MODULE_5__.useRouter)();
+    const storage = new shared_lib_helpers__WEBPACK_IMPORTED_MODULE_6__/* .NextLocalStorage */ .Y6();
     (0,react__WEBPACK_IMPORTED_MODULE_4__.useEffect)(()=>{
         const store = (0,app_store_store__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z)({
             middleware: {
-                redirect: router.push
+                redirect: router.push,
+                storage
             },
             asyncReducers,
             preloadedState
@@ -869,8 +879,8 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react_icons_fa__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var react_icons_bs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(10567);
 /* harmony import */ var react_icons_bs__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react_icons_bs__WEBPACK_IMPORTED_MODULE_10__);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shared_ui_material__WEBPACK_IMPORTED_MODULE_2__, shared_lib_hooks__WEBPACK_IMPORTED_MODULE_3__, react_i18next__WEBPACK_IMPORTED_MODULE_4__, shared_lib_hooks_useLanguage__WEBPACK_IMPORTED_MODULE_5__]);
-([shared_ui_material__WEBPACK_IMPORTED_MODULE_2__, shared_lib_hooks__WEBPACK_IMPORTED_MODULE_3__, react_i18next__WEBPACK_IMPORTED_MODULE_4__, shared_lib_hooks_useLanguage__WEBPACK_IMPORTED_MODULE_5__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([shared_ui_material__WEBPACK_IMPORTED_MODULE_2__, shared_lib_hooks__WEBPACK_IMPORTED_MODULE_3__, react_i18next__WEBPACK_IMPORTED_MODULE_4__, shared_lib_hooks_useLanguage__WEBPACK_IMPORTED_MODULE_5__, shared_config_consts_myLinks__WEBPACK_IMPORTED_MODULE_8__]);
+([shared_ui_material__WEBPACK_IMPORTED_MODULE_2__, shared_lib_hooks__WEBPACK_IMPORTED_MODULE_3__, react_i18next__WEBPACK_IMPORTED_MODULE_4__, shared_lib_hooks_useLanguage__WEBPACK_IMPORTED_MODULE_5__, shared_config_consts_myLinks__WEBPACK_IMPORTED_MODULE_8__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
@@ -962,6 +972,8 @@ __webpack_async_result__();
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var app_config_config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1211);
+
 const i18nConfig = {
     fallbackLng: "en",
     debug: false,
@@ -969,7 +981,7 @@ const i18nConfig = {
         escapeValue: false
     },
     backend: {
-        loadPath: "/locales/{{lng}}/{{ns}}.json"
+        loadPath: `${app_config_config__WEBPACK_IMPORTED_MODULE_0__/* ["default"].PUBLIC_FOLDER */ .Z.PUBLIC_FOLDER}/locales/{{lng}}/{{ns}}.json`
     }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (i18nConfig);

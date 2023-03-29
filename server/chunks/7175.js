@@ -402,16 +402,16 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var app_config_config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1211);
 /* harmony import */ var dev_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9254);
 /* harmony import */ var widgets_Messenger_socket_provider_SocketContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(44324);
-/* harmony import */ var app_config_globals__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(579);
-/* harmony import */ var shared_types_redux__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(98429);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(16689);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(71853);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var widgets_Login__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(73421);
-/* harmony import */ var shared_lib_hooks__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(38537);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([socket_io_client__WEBPACK_IMPORTED_MODULE_1__, dev_components__WEBPACK_IMPORTED_MODULE_3__, widgets_Login__WEBPACK_IMPORTED_MODULE_9__, shared_lib_hooks__WEBPACK_IMPORTED_MODULE_10__]);
-([socket_io_client__WEBPACK_IMPORTED_MODULE_1__, dev_components__WEBPACK_IMPORTED_MODULE_3__, widgets_Login__WEBPACK_IMPORTED_MODULE_9__, shared_lib_hooks__WEBPACK_IMPORTED_MODULE_10__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+/* harmony import */ var shared_types_redux__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(98429);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(16689);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(71853);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var widgets_Login__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(73421);
+/* harmony import */ var shared_lib_hooks__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(38537);
+/* harmony import */ var app_config_globals__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(579);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([socket_io_client__WEBPACK_IMPORTED_MODULE_1__, dev_components__WEBPACK_IMPORTED_MODULE_3__, widgets_Login__WEBPACK_IMPORTED_MODULE_8__, shared_lib_hooks__WEBPACK_IMPORTED_MODULE_9__]);
+([socket_io_client__WEBPACK_IMPORTED_MODULE_1__, dev_components__WEBPACK_IMPORTED_MODULE_3__, widgets_Login__WEBPACK_IMPORTED_MODULE_8__, shared_lib_hooks__WEBPACK_IMPORTED_MODULE_9__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
@@ -424,17 +424,18 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([sock
 
 
 const SocketProvider = ({ children  })=>{
-    const userId = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_6__/* .useSelector */ .v9)(widgets_Login__WEBPACK_IMPORTED_MODULE_9__/* .AuthSelectors.userId */ .ce.userId);
-    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_8__.useRouter)();
-    const [socket, setSocket] = (0,react__WEBPACK_IMPORTED_MODULE_7__.useState)();
-    (0,shared_lib_hooks__WEBPACK_IMPORTED_MODULE_10__/* .useFilteredEffect */ .El)(()=>{
+    const userId = (0,shared_types_redux__WEBPACK_IMPORTED_MODULE_5__/* .useSelector */ .v9)(widgets_Login__WEBPACK_IMPORTED_MODULE_8__/* .AuthSelectors.userId */ .ce.userId);
+    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_7__.useRouter)();
+    const [socket, setSocket] = (0,react__WEBPACK_IMPORTED_MODULE_6__.useState)();
+    (0,shared_lib_hooks__WEBPACK_IMPORTED_MODULE_9__/* .useFilteredEffect */ .El)(()=>{
         socket?.disconnect?.();
-        const connection = (0,socket_io_client__WEBPACK_IMPORTED_MODULE_1__.io)(`${app_config_config__WEBPACK_IMPORTED_MODULE_2__/* ["default"].WEBSOCKET_URL */ .Z.WEBSOCKET_URL}/${app_config_globals__WEBPACK_IMPORTED_MODULE_5__/* .SocketGateWays.messenger */ .oV.messenger}`, {
-            withCredentials: true,
+        const connectionOptions = {
             auth: {
                 userid: userId.toString?.()
-            }
-        });
+            },
+            path: app_config_globals__WEBPACK_IMPORTED_MODULE_10__/* .SocketPaths.messenger */ .az.messenger
+        };
+        const connection = (0,socket_io_client__WEBPACK_IMPORTED_MODULE_1__.io)(`${app_config_config__WEBPACK_IMPORTED_MODULE_2__/* ["default"].WEBSOCKET_URL */ .Z.WEBSOCKET_URL}`, connectionOptions);
         dev_components__WEBPACK_IMPORTED_MODULE_3__/* .DevGlobalVars.setSocket */ .P.setSocket("messenger", connection);
         setSocket(connection);
     }, [
@@ -443,7 +444,7 @@ const SocketProvider = ({ children  })=>{
     const disconnect = ()=>{
         socket?.disconnect?.();
     };
-    (0,react__WEBPACK_IMPORTED_MODULE_7__.useEffect)(()=>{
+    (0,react__WEBPACK_IMPORTED_MODULE_6__.useEffect)(()=>{
         router.events.on("routeChangeStart", disconnect);
         return ()=>{
             router.events.off("routeChangeStart", disconnect);
