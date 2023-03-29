@@ -78,7 +78,7 @@ const Categories = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.memo)((pr
                 type: "opacityHeight",
                 className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_11___default().image_block),
                 param: 390,
-                style: (0,shared_lib_helpers__WEBPACK_IMPORTED_MODULE_9__/* .backgroundImage */ .Nx)((0,shared_lib_helpers__WEBPACK_IMPORTED_MODULE_9__/* .publicAssets */ .VK)(shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_3__/* .ProductTypesAssets */ .XU[category])),
+                style: (0,shared_lib_helpers__WEBPACK_IMPORTED_MODULE_9__/* .backgroundImage */ .Nx)(shared_config_consts_assets__WEBPACK_IMPORTED_MODULE_3__/* .ProductTypesAssets */ .XU[category]),
                 children: [
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h2", {
                         className: (_style_module_scss__WEBPACK_IMPORTED_MODULE_11___default().subtitle),
