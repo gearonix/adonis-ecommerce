@@ -7,7 +7,10 @@ const appConfig = {
     unauthorized: [routes.MESSENGER, routes.SAVED],
     authorized: [routes.LOGIN, routes.SIGNUP_CUSTOMER, routes.SIGNUP_SALESMAN, routes.SIGNUP]
   },
-  WEBSOCKET_URL: process.env.WEBSOCKET_URL || 'http://localhost:9090'
+  WEBSOCKET_URL: process.env.WEBSOCKET_URL,
+  PUBLIC_FOLDER: process.env.PUBLIC_FOLDER,
+  BASE_PATH: process.env.BASE_PATH,
+  isDev: process.env.IS_DEV
 }
 
 

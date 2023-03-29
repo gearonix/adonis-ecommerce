@@ -13,6 +13,7 @@ const App = ({ Component, pageProps }: AppProps) => {
   return <>
     <Head>
       <title>Adonis</title>
+      <link rel={'shortcut icon'} href={`${process.env.PUBLIC_FOLDER}/favicon.ico`} />
     </Head>
     <GoogleOAuthProvider clientId={process.env.GOOGLE_CLIENT_ID as string}>
       <StoreProvider>

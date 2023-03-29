@@ -36,5 +36,6 @@ lerna-debug.log*
 
 .env
 .production.env
+.development.env
 
 pnpm-lock.yaml

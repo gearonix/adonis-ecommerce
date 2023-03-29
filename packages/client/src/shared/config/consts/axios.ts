@@ -1,5 +1,7 @@
 import axios from 'axios'
 import appConfig from 'app/config/config'
+import { NextLocalStorage } from 'shared/lib/helpers'
+import { LocalStorage } from 'shared/config/consts/others'
 
 
 const axiosInstance = axios.create({
@@ -19,5 +21,11 @@ axios.interceptors.response.use(
       return Promise.reject(error)
     }
 )
+
+const storage = new NextLocalStorage()
+
+axiosInstance.defaults
+    .headers.common['authorization'] =
+    `Bearer ${storage.get(LocalStorage.AUTH_TOKEN)}`
 
 export default axiosInstance

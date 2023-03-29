@@ -7,34 +7,32 @@ import {
   WebSocketGateway,
   WebSocketServer
 } from '@nestjs/websockets'
-import { appConfig } from '@app/config'
-import { createGateway } from '@modules/messenger/lib/createGateway'
-import { SocketGateWays, UserStatus } from '@app/types/global'
+import { SocketPaths, UserStatus } from '@app/types/global'
 import { Namespace, Socket } from 'socket.io'
-import cookie from 'cookie'
 import { TokenService } from '@modules/auth/services'
 import { UserStatusService } from '@modules/messenger/services/user-status.service'
 import { forwardRef, Inject, Logger } from '@nestjs/common'
 import { gatewayGroup } from '@modules/messenger/lib/gatewayGroup'
 import { StatusEvents, StatusGroups } from '@modules/messenger/gateways/statusGateway/types'
 import { RoomsService } from '@modules/messenger'
+import { createGateway } from '@modules/messenger/lib/createGateway'
 
-@WebSocketGateway(appConfig.socketPort, createGateway(SocketGateWays.AUTH))
+@WebSocketGateway(createGateway(SocketPaths.auth))
 export class StatusGateway implements OnGatewayConnection, OnGatewayDisconnect {
   private readonly logger = new Logger(StatusGateway.name)
   @WebSocketServer()
     authServer: Namespace
 
   constructor(
-        @Inject(forwardRef(() => TokenService))
-        private tokenService: TokenService,
-        private onlineUsers: UserStatusService,
-        @Inject(forwardRef(() => RoomsService))
-        private roomsService: RoomsService
+      @Inject(forwardRef(() => TokenService))
+      private tokenService: TokenService,
+      private onlineUsers: UserStatusService,
+      @Inject(forwardRef(() => RoomsService))
+      private roomsService: RoomsService
   ) {}
 
   async handleConnection(@ConnectedSocket() client: Socket) {
-    const userId = await this.getUserId(client)
+    const userId = await this.getUserIdByHeaders(client)
     this.onlineUsers.addUser(userId)
 
     client.to(gatewayGroup(StatusGroups.ONLINE_STATUS, userId))
@@ -49,7 +47,7 @@ export class StatusGateway implements OnGatewayConnection, OnGatewayDisconnect {
     this.logger.log(`Amount of connected sockets: ${this.authServer.sockets.size}`)
   }
   async handleDisconnect(@ConnectedSocket() client: Socket) {
-    const userId = await this.getUserId(client)
+    const userId = await this.getUserIdByHeaders(client)
     this.onlineUsers.removeUser(userId)
 
     client.to(gatewayGroup(StatusGroups.ONLINE_STATUS, userId))
@@ -69,13 +67,8 @@ export class StatusGateway implements OnGatewayConnection, OnGatewayDisconnect {
     client.emit(StatusEvents.STATUS_CHANGED, { status })
   }
 
-  async getUserId(client: Socket) {
-    const cookies = client.handshake.headers.cookie
-    if (!cookies) return
-    const token = cookie.parse(cookies).AUTH_TOKEN
-
-    if (token) {
-      return this.tokenService.verifyToken(token)
-    }
+  async getUserIdByHeaders(client: Socket) {
+    const userId = Number(client.handshake.auth.userid)
+    return isNaN(userId) ? null : userId
   }
 }

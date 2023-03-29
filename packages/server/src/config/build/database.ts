@@ -5,7 +5,6 @@ import entities from '@app/entities'
 export const buildDBConfig = (): TypeOrmModuleOptions => {
   const { HOST_NAME, DB_PORT, USER_NAME, PASSWORD, DATABASE_NAME } =
     process.env
-
   return {
     type: 'mysql',
     host: HOST_NAME,

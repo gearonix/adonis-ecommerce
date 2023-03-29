@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import s from './style.module.scss'
 import { AiOutlineSearch } from 'shared/ui/icons'
-import { backgroundImage } from 'shared/lib/helpers'
+import { backgroundImage, publicAssets } from 'shared/lib/helpers'
 import Link from 'next/link'
 import { DefaultAssets } from 'shared/config/consts/assets'
 import { ApiAnimation } from 'shared/lib/components'
@@ -28,7 +28,7 @@ export const ExtraService: FC<ExtraServiceProps> = ({ image, link, title }) => {
 export const DefaultExtraService: FC = () => {
   const { t } = useTranslation()
   return <ApiAnimation type={'increaseSize'} className={cn(s.item, s.default_project)}>
-    <div className={s.item_image} style={backgroundImage(DefaultAssets.PROJECT)}>
+    <div className={s.item_image} style={backgroundImage(publicAssets(DefaultAssets.PROJECT))}>
       <div className={s.item_button}>
         <AiOutlineSearch/>
       </div>

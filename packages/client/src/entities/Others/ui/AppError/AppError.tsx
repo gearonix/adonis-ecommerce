@@ -4,6 +4,7 @@ import { Button, NextImage } from 'shared/ui/kit'
 import { FC, memo } from 'react'
 import { Assets } from 'shared/config/consts/assets'
 import { useTranslation } from 'react-i18next'
+import { publicAssets } from 'shared/lib/helpers'
 
 interface AppErrorProps{
     errorInfo: string,
@@ -16,7 +17,7 @@ const AppError = memo<AppErrorProps>(({ errorInfo, onRedirect }) => {
     <h1 className={s.title}>{t('Seems_like')}</h1>
     <p className={s.text}>{t('If_you')}</p>
     <div className={s.image_wrapper}>
-      <NextImage src={Assets.APP_ERROR}/>
+      <NextImage src={publicAssets(Assets.APP_ERROR)}/>
     </div>
     <button onClick={onRedirect}>{t('Return_to')}</button>
   </div>

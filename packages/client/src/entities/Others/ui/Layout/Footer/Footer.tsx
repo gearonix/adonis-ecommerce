@@ -10,6 +10,7 @@ import { SlSocialVkontakte } from 'react-icons/sl'
 import { BsTelegram } from 'react-icons/bs'
 import { HiOutlineDesktopComputer } from 'react-icons/hi'
 import { useLanguage, useTheme } from 'shared/lib/hooks'
+import { publicAssets } from 'shared/lib/helpers'
 
 const Footer: FC = memo(() => {
   const { t, isEnglish } = useLanguage()
@@ -18,7 +19,7 @@ const Footer: FC = memo(() => {
     <div className={s.footer_block}>
       <div className={s.brand_block}>
         <div className={s.brand_logo}>
-          <NextImage src={isLight ? Assets.LOGO_LIGHT : Assets.LOGO_DARK}/>
+          <NextImage src={publicAssets(isLight ? Assets.LOGO_LIGHT : Assets.LOGO_DARK)}/>
         </div>
         <p className={s.brand_text}>
           {t('Why_are')}

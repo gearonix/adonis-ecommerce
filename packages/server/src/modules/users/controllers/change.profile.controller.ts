@@ -9,23 +9,23 @@ import { FileDirectories } from '@app/types/global'
 @Controller('users/change')
 export class ChangeProfileController {
   constructor( private profileService: ProfileService) {}
-    @UseGuards(AuthGuard)
-    @Post()
+  @UseGuards(AuthGuard)
+  @Post()
   changeProfile(@Body() body: ObjectOptional<EditProfileForm>) {
     return this.profileService.changeProfile(body)
   }
-    @UseGuards(AuthGuard)
-    @Post('/avatar')
-    @UseInterceptors(FileInterceptor(FileDirectories.USER_AVATAR))
-    async changeAvatar(@UploadedFile() avatar) {
-      const fileUrl = await this.profileService.changeUserImage(avatar)
-      return { fileUrl }
-    }
-    @UseGuards(AuthGuard)
-    @Post('/background')
-    @UseInterceptors(FileInterceptor(FileDirectories.USER_BACKGROUND))
-    async changeUserBackground(@UploadedFile() background) {
-      const fileUrl = await this.profileService.changeUserBackground(background)
-      return { fileUrl }
-    }
+  @UseGuards(AuthGuard)
+  @Post('/avatar')
+  @UseInterceptors(FileInterceptor(FileDirectories.USER_AVATAR))
+  async changeAvatar(@UploadedFile() avatar) {
+    const fileUrl = await this.profileService.changeUserImage(avatar)
+    return { fileUrl }
+  }
+  @UseGuards(AuthGuard)
+  @Post('/background')
+  @UseInterceptors(FileInterceptor(FileDirectories.USER_BACKGROUND))
+  async changeUserBackground(@UploadedFile() background) {
+    const fileUrl = await this.profileService.changeUserBackground(background)
+    return { fileUrl }
+  }
 }

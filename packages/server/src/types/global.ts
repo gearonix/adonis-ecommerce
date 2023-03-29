@@ -23,10 +23,11 @@ export enum FileDirectories{
   MESSENGER_ATTACHMENTS = 'messenger_attachments'
 }
 
-export enum SocketGateWays{
-  MESSENGER = 'messenger',
-  AUTH = 'auth'
+export enum SocketPaths{
+  messenger = '/adonis-ecommerce-api/messenger_socket.io',
+  auth = '/adonis-ecommerce-api/socket.io'
 }
+
 
 export enum UserStatus{
   ONLINE = 'online',

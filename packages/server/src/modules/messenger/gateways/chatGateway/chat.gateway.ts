@@ -1,9 +1,5 @@
-import { ConnectedSocket, MessageBody, SubscribeMessage,
-  WebSocketGateway, WebSocketServer } from '@nestjs/websockets'
-import { appConfig } from '@app/config'
+import { ConnectedSocket, MessageBody, SubscribeMessage, WebSocketGateway, WebSocketServer } from '@nestjs/websockets'
 import { Server, Socket } from 'socket.io'
-import { createGateway } from '@modules/messenger/lib/createGateway'
-import { SocketGateWays } from '@app/types/global'
 import { StatusGateway } from '../statusGateway/status.gateway'
 import { RoomsService } from '@modules/messenger'
 import { MessengerEvents, MessengerGroups } from './types'
@@ -14,8 +10,10 @@ import { UserMessagesEntity } from '@app/entities'
 import { StatusGroups } from '@modules/messenger/gateways'
 import { StatusEvents } from '@modules/messenger/gateways/statusGateway/types'
 import { MessagesService } from '@modules/messenger/services/messages.service'
+import { createGateway } from '@modules/messenger/lib/createGateway'
+import { SocketPaths } from '@app/types/global'
 
-@WebSocketGateway(appConfig.socketPort, createGateway(SocketGateWays.MESSENGER))
+@WebSocketGateway(createGateway(SocketPaths.messenger))
 export class ChatGateway {
     @WebSocketServer()
       server: Server
@@ -32,7 +30,7 @@ export class ChatGateway {
         @MessageBody('targetId') invitedId: number,
         @ConnectedSocket() client: Socket
     ) {
-      const starterId = await this.getUserIdByHeaders(client)
+      const starterId = await this.statusGateway.getUserIdByHeaders(client)
       const room = await this.roomsService.startChat(starterId, invitedId)
 
       client.emit(MessengerEvents.ADD_ROOM, room)
@@ -43,7 +41,7 @@ export class ChatGateway {
         @MessageBody('roomId') roomId: number,
         @ConnectedSocket() client: Socket
     ) {
-      const userId = await this.getUserIdByHeaders(client)
+      const userId = await this.statusGateway.getUserIdByHeaders(client)
       await this.messagesService.makeMessagesRead(roomId, userId)
       client.join(gatewayGroup(MessengerGroups.MESSENGER_ROOM, roomId))
 
@@ -65,7 +63,7 @@ export class ChatGateway {
         @MessageBody() message: NewMessage,
         @ConnectedSocket() client: Socket
     ) {
-      const senderId = await this.getUserIdByHeaders(client)
+      const senderId = await this.statusGateway.getUserIdByHeaders(client)
       const newMessage = await this.messagesService.saveMessage({ ...message, senderId })
 
       client.emit(MessengerEvents.ADD_MESSAGE, newMessage)
@@ -80,7 +78,7 @@ export class ChatGateway {
         @MessageBody() message: UserMessagesEntity,
         @ConnectedSocket() client: Socket
     ) {
-      const userId = await this.getUserIdByHeaders(client)
+      const userId = await this.statusGateway.getUserIdByHeaders(client)
       if (userId !== message.senderId) {
         await this.messagesService.makeMessageRead(message.messageId)
         client.to(gatewayGroup(MessengerGroups.MESSENGER_ROOM, message.roomId))
@@ -93,7 +91,7 @@ export class ChatGateway {
         @MessageBody('roomId') roomId: number,
         @ConnectedSocket() client: Socket
     ) {
-      const userId = await this.getUserIdByHeaders(client)
+      const userId = await this.statusGateway.getUserIdByHeaders(client)
       client.to(gatewayGroup(MessengerGroups.MESSENGER_ROOM, roomId))
           .emit(MessengerEvents.TYPING, { userId })
     }
@@ -103,13 +101,8 @@ export class ChatGateway {
         @MessageBody('roomId') roomId: number,
         @ConnectedSocket() client: Socket
     ) {
-      const userId = await this.getUserIdByHeaders(client)
+      const userId = await this.statusGateway.getUserIdByHeaders(client)
       client.to(gatewayGroup(MessengerGroups.MESSENGER_ROOM, roomId))
           .emit(MessengerEvents.NO_LONGER_TYPING, { userId })
-    }
-
-    private async getUserIdByHeaders(client: Socket) {
-      const userId = Number(client.handshake.auth.userid)
-      return isNaN(userId) ? null : userId
     }
 }

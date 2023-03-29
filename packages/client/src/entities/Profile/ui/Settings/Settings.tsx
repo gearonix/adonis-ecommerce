@@ -9,6 +9,7 @@ import { FaLanguage } from 'react-icons/fa'
 import { useLanguage, useTheme } from 'shared/lib/hooks'
 import { Theme } from 'shared/config/consts/themes'
 import cn from 'classnames'
+import { publicAssets } from 'shared/lib/helpers'
 
 interface SettingsProps{
   Logout: FC
@@ -28,7 +29,7 @@ const Settings : FC<SettingsProps> = ({ Logout }) => {
           <div className={s.image_wrapper}>
             <Radio className={s.radio}
               checked={isLight}/>
-            <NextImage src={ThemesAssets.LIGHT} />
+            <NextImage src={publicAssets(ThemesAssets.LIGHT)} />
           </div>
           <h4>{t('Light')}</h4>
         </div>
@@ -37,7 +38,7 @@ const Settings : FC<SettingsProps> = ({ Logout }) => {
           <div className={s.image_wrapper}>
             <Radio className={s.radio}
               checked={!isLight}/>
-            <NextImage src={ThemesAssets.DARK} />
+            <NextImage src={publicAssets(ThemesAssets.DARK)} />
           </div>
           <h4>{t('Dark')}</h4>
         </div>

@@ -12,6 +12,7 @@ import { useTheme } from 'shared/lib/hooks'
 import cn from 'classnames'
 import { Assets } from 'shared/config/consts/assets'
 import { useTranslation } from 'react-i18next'
+import { publicAssets } from 'shared/lib/helpers'
 
 const AddProduct = memo<AddProductProps>(({ submitForm, cancel, ProductImages, reg }) => {
   const { theme } = useTheme()
@@ -19,7 +20,7 @@ const AddProduct = memo<AddProductProps>(({ submitForm, cancel, ProductImages, r
   return <div className={cn(s.add_product_block, 'with_theme', theme)}>
     <h2 className={s.title}>{t('Add Product')}</h2>
     <div className={s.background_image}>
-      <NextImage src={Assets.ROCKET} />
+      <NextImage src={publicAssets(Assets.ROCKET)} />
     </div>
     <div className={s.container}>
       <div className={s.fields}>
@@ -49,7 +50,7 @@ const AddProduct = memo<AddProductProps>(({ submitForm, cancel, ProductImages, r
           <StandardSelect title={t('Product_model')} values={reg('model')} Icon={IoLogoModelS}/>
           <StandardSelect title={t('Product_size')} values={reg('size')} Icon={IoIosResize}/>
           <div className={s.product_image_wrapper}>
-            <NextImage src={Assets.BICYCLE} />
+            <NextImage src={publicAssets(Assets.BICYCLE)} />
           </div>
         </div>
         <div className={s.flex}>

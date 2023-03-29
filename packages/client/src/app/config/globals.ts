@@ -41,9 +41,13 @@ export enum UploadProperties{
     POST_IMAGES = 'post_images',
 }
 
-export enum SocketGateWays{
+export enum SocketPaths{
+    messenger = '/adonis-ecommerce-api/messenger_socket.io',
+    auth = '/adonis-ecommerce-api/socket.io'
+}
+
+export enum DevSocketNameSpaces{
     messenger = 'messenger',
-    auth = 'auth'
 }
 
 export const PAGE_LIMIT = 9 as const

@@ -15,7 +15,7 @@ const AuthGuard: FC<{ children: ReactNode }> = ({ children }) => {
   const userId = useSelector(AuthSelectors.userId)
 
   const authCheck = (url: string) => {
-    const path: Routes = url.split('?')[0] as Routes
+    const path = url.split('?')[0].replace(appConfig.BASE_PATH as string, '')
     const { forbiddenPaths } = appConfig
 
     // redirect if not registered

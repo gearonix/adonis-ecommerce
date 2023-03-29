@@ -4,6 +4,7 @@ import { NextImage } from 'shared/ui/kit'
 import { DefaultAssets } from 'shared/config/consts/assets'
 import { useBooleanState } from 'shared/lib/hooks/useBooleanState'
 import { ImageModal } from 'shared/ui/material'
+import { publicAssets } from 'shared/lib/helpers'
 
 interface UserAvatarProps{
   src: string | null,
@@ -19,7 +20,7 @@ export const UserAvatar: FC<UserAvatarProps> = ({ src }) => {
 
 const DefaultAvatar = () => {
   return <div className={s.default_avatar}>
-    <NextImage src={DefaultAssets.AVATAR} alt={''}
+    <NextImage src={publicAssets(DefaultAssets.AVATAR)} alt={''}
       priority={true} />
   </div>
 }

@@ -9,10 +9,8 @@
   margin-top: 20px;
   position: relative;
   box-sizing: border-box;
-
-  @include backgroundImage('/assets/common/search_form.png');
-
   background-size: cover;
+  background-repeat: no-repeat;
 
   .title {
     margin-bottom: 20px;

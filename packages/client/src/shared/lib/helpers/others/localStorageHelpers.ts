@@ -20,8 +20,8 @@ export class ReduxLocalStorage<T> {
   }
 }
 
-export class LocalStorageHelper {
-  public get() {
+export class NextLocalStorage {
+  public getStorage() {
     if (typeof localStorage !== 'undefined') {
       return localStorage
     }
@@ -30,6 +30,16 @@ export class LocalStorageHelper {
   public clear() {
     if (typeof localStorage !== 'undefined') {
       localStorage.clear()
+    }
+  }
+  public get(key: LocalStorage) {
+    if (typeof localStorage!=='undefined') {
+      return localStorage.getItem(key)
+    }
+  }
+  public set(key: LocalStorage, value: string) {
+    if (typeof localStorage !== 'undefined' && value) {
+      localStorage.setItem(key, value)
     }
   }
 }

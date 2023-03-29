@@ -9,7 +9,7 @@ import { AiOutlineFileSearch, AiOutlineShoppingCart } from 'shared/ui/icons'
 import { Display, Ternary, WithSpring } from 'shared/lib/components'
 import { ProductTypesTitles } from 'widgets/Banners/lib/productTitles'
 import { Nullable } from 'shared/types/common'
-import { backgroundImage } from 'shared/lib/helpers'
+import { backgroundImage, publicAssets } from 'shared/lib/helpers'
 import { useTranslation } from 'react-i18next'
 
 
@@ -34,7 +34,7 @@ const Categories= memo<CategoriesProps>((props) => {
     <CategoriesList value={category} setValue={setCategory}/>
     <WithSpring key={category} type={'opacityHeight'}
       className={s.image_block} param={390}
-      style={backgroundImage(ProductTypesAssets[category])}>
+      style={backgroundImage(publicAssets(ProductTypesAssets[category]))}>
       <h2 className={s.subtitle}>{t(subtitle)}</h2>
       <h2 className={s.title}>{t(title)}</h2>
       <Button w={'140px'} color={'outlined'} onClick={onSearch}>{t('Learn_more')}</Button>

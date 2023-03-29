@@ -5,6 +5,7 @@ import Link from 'next/link'
 import React, { memo } from 'react'
 import { Assets } from 'shared/config/consts/assets'
 import { useTranslation } from 'react-i18next'
+import { publicAssets } from 'shared/lib/helpers'
 
 const NotFoundComponent = memo(() => {
   const { t } = useTranslation()
@@ -15,7 +16,7 @@ const NotFoundComponent = memo(() => {
       <button className={cn(s.go_back, 'primary_button')}>{t('Go back')}</button>
     </Link>
     <div className={s.image_wrapper}>
-      <NextImage src={Assets.NOT_FOUND}/>
+      <NextImage src={publicAssets(Assets.NOT_FOUND)}/>
     </div>
   </div>
 })

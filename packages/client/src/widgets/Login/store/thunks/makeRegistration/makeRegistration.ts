@@ -11,7 +11,7 @@ export const makeRegistration = createThunk(
 
       if (isError(response)) return rejectWithValue(Exceptions.USER_ALREADY_EXISTS)
 
-      await dispatch(authorizeUser())
+      await dispatch(authorizeUser(response.data.token))
     }
 )
 
@@ -23,6 +23,6 @@ export const registerByGoogle = createThunk(
 
       if (isError(response)) return rejectWithValue(Exceptions.REGISTRATION_FAILED)
 
-      await dispatch(authorizeUser())
+      await dispatch(authorizeUser(response.data.token))
     }
 )

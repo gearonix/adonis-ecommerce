@@ -11,10 +11,10 @@ import { Roles } from '@app/types/global'
 
 export class AuthService {
   constructor(
-    @Inject(forwardRef(() => UsersService))
-    private usersService: UsersService,
-    private jwtService: JwtService,
-    private tokenService: TokenService
+      @Inject(forwardRef(() => UsersService))
+      private usersService: UsersService,
+      private jwtService: JwtService,
+      private tokenService: TokenService
   ) {}
 
   async login(userDto: UserLoginDTO): Promise<ReturnToken> {
@@ -71,7 +71,7 @@ export class AuthService {
     const userId = req?.user?.payload?.userId
     if (!userId) {
       try {
-        const userId = await this.tokenService.getUserIdByCookie()
+        const userId = await this.tokenService.getUserIdByHeaders()
         return userId
       } catch (e) {
         return null

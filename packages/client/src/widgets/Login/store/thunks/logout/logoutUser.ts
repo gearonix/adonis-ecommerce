@@ -1,11 +1,11 @@
 import { createThunk } from 'shared/types/redux'
 import { userActions } from 'widgets/Profile'
 import { authActions } from 'widgets/Login/store/slice/authReducer'
-import { LocalStorageHelper } from 'shared/lib/helpers/others/localStorageHelpers'
+import { NextLocalStorage } from 'shared/lib/helpers/others/localStorageHelpers'
 import { cartActions } from 'widgets/Cart/store/slice/cartReducer'
 import { routes } from 'shared/config/consts/routes'
 
-const storage = new LocalStorageHelper()
+const storage = new NextLocalStorage()
 
 export const logoutUser = createThunk(
     'profile/LOGOUT_USER',

@@ -1,3 +1,5 @@
+import appConfig from 'app/config/config'
+
 const i18nConfig = {
   fallbackLng: 'en',
   debug: false,
@@ -5,7 +7,7 @@ const i18nConfig = {
     escapeValue: false
   },
   backend: {
-    loadPath: '/locales/{{lng}}/{{ns}}.json'
+    loadPath: `${appConfig.PUBLIC_FOLDER}/locales/{{lng}}/{{ns}}.json`
   }
 }
 

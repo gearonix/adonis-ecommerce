@@ -4,6 +4,7 @@ import { Assets } from 'shared/config/consts/assets'
 import { BlueLinkHeader, NextImage } from 'shared/ui/kit'
 import s from './style.module.scss'
 import { SlPresent } from 'shared/ui/icons'
+import { publicAssets } from 'shared/lib/helpers'
 
 const Thanks : FC = () => {
   const { t } = useTranslation()
@@ -12,7 +13,7 @@ const Thanks : FC = () => {
     <div className={s.thanks_bar}>
       <h2 className={s.title}>{t('Thank you for using my store!')}</h2>
       <div className={s.image_wrapper}>
-        <NextImage src={Assets.THANKS} />
+        <NextImage src={publicAssets(Assets.THANKS)} />
       </div>
     </div>
   </div>

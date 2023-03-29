@@ -4,14 +4,14 @@ import { UsersService } from '@app/modules/users'
 import { ReturnToken } from '@app/modules/auth/types/returnTypes'
 import { UsersEntity } from '@app/entities'
 import { RequestContext } from 'nestjs-request-context'
-import { getRequest, getResponse } from '@app/lib/helpers'
+import { getRequest } from '@app/lib/helpers'
 import { ServerExceptions } from '@app/types/exceptions'
 
 export class TokenService {
   constructor(
-        @Inject(forwardRef(() => UsersService))
-        private usersService: UsersService,
-        private jwtService: JwtService
+      @Inject(forwardRef(() => UsersService))
+      private usersService: UsersService,
+      private jwtService: JwtService
   ) {
   }
 
@@ -24,7 +24,7 @@ export class TokenService {
 
   async getUser(): Promise<UsersEntity & {isMe: boolean}> {
     try {
-      const userId = await this.getUserIdByCookie()
+      const userId = await this.getUserIdByHeaders()
       return await this.usersService.getUserById(userId)
     } catch (e) {
       throw new HttpException(
@@ -34,10 +34,12 @@ export class TokenService {
     }
   }
 
-  async getUserIdByCookie(): Promise<number> {
+  async getUserIdByHeaders(): Promise<number> {
     const req = getRequest(RequestContext)
-    const token = req.cookies.AUTH_TOKEN
-    if (!token) {
+    const authorization = req.headers.authorization
+    const bearer = authorization.split(' ')[0]
+    const token = authorization.split(' ')[1]
+    if (!token || bearer !== 'Bearer') {
       throw new HttpException(
           ServerExceptions.INCORRECT_TOKEN,
           HttpStatus.NO_CONTENT
@@ -51,12 +53,6 @@ export class TokenService {
           HttpStatus.NO_CONTENT
       )
     }
-  }
-
-  async setAuthCookie(tokenData: ReturnToken): Promise<ReturnToken> {
-    const res = getResponse(RequestContext)
-    res.cookie('AUTH_TOKEN', tokenData.token)
-    return tokenData
   }
 
   async verifyToken(token: string) {

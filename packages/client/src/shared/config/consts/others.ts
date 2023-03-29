@@ -5,5 +5,6 @@ export enum UserStatus{
 
 export enum LocalStorage {
     THEME = 'theme',
-    CART = 'cart'
+    CART = 'cart',
+    AUTH_TOKEN = 'auth_token'
 }

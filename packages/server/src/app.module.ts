@@ -11,11 +11,12 @@ import { CommentsModule } from '@app/modules/comments'
 import { RequestContextModule } from 'nestjs-request-context'
 import { PostsModule } from '@app/modules/posts/posts.module'
 import { MessengerModule } from '@modules/messenger'
+import * as process from 'process'
 
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath: `.env`,
+      envFilePath: `.${process.env.NODE_ENV}.env`,
       cache: true
     }),
     TypeOrmModule.forRoot(buildDBConfig()),

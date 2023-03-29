@@ -2,6 +2,7 @@ import { FC, SyntheticEvent, useEffect, useState } from 'react'
 import Image, { ImageProps } from 'next/image'
 import { Nullable } from 'shared/types/common'
 import { WithSpring } from 'shared/lib/components'
+import { publicAssets } from 'shared/lib/helpers'
 
 // @ts-ignore
 interface NextImageProps extends ImageProps {
@@ -13,16 +14,16 @@ interface NextImageProps extends ImageProps {
 
 export const NextImage: FC<NextImageProps> = ({ src: initialSrc, alt = '',
   onClick = () => {}, def: defaultSrc, ...props }) => {
-  const [src, setSrc] = useState(initialSrc || defaultSrc)
+  const [src, setSrc] = useState(initialSrc || publicAssets(defaultSrc))
 
   useEffect(() => {
-    setSrc(initialSrc || defaultSrc)
+    setSrc(initialSrc || publicAssets(defaultSrc))
   }, [initialSrc])
 
 
   const onError = (e: SyntheticEvent<HTMLImageElement>) => {
     if (defaultSrc) {
-      setSrc(defaultSrc)
+      setSrc(publicAssets(defaultSrc))
     }
     props.onError?.(e)
   }

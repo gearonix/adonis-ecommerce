@@ -10,7 +10,9 @@
     "start:client": "npm run dev --workspace=client",
     "start:server": "npm run start:dev --workspace=server",
     "lint": "npm run lint --workspace=client && npm run lint --workspace=server",
-    "build": "npm run build --workspace=client && npm run build --workspace=server"
+    "build": "npm run build --workspace=client && npm run build --workspace=server",
+    "build:client": "npm run build --workspace=client",
+    "build:server": "npm run build --workspace=server"
   },
   "repository": {
     "type": "git",

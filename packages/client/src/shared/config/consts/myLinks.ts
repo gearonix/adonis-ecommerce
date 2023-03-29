@@ -1,8 +1,9 @@
 import { MyProjectsAssets } from 'shared/config/consts/assets'
+import { publicAssets } from 'shared/lib/helpers'
 
 
 interface Project{
-    image: MyProjectsAssets,
+    image: string,
     title: string,
     link: string
 }
@@ -10,7 +11,7 @@ interface Project{
 
 export const MyProjects: Project[] = [
   {
-    image: MyProjectsAssets.SpaceCalendar,
+    image: publicAssets(MyProjectsAssets.SpaceCalendar),
     title: 'Space Calendar',
     link: 'https://gearonixx.com/space_calendar/index.html'
   }

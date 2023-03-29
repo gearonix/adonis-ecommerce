@@ -10,6 +10,7 @@ import { BsTelegram } from 'react-icons/bs'
 import { HiOutlineDesktopComputer } from 'react-icons/hi'
 import { useTranslation } from 'react-i18next'
 import { memo } from 'react'
+import { publicAssets } from 'shared/lib/helpers'
 
 const About = memo(() => {
   const { t } = useTranslation()
@@ -47,7 +48,7 @@ const About = memo(() => {
     </ul>
 
     <div className={s.image_wrapper}>
-      <NextImage src={Assets.ABOUT}/>
+      <NextImage src={publicAssets(Assets.ABOUT)}/>
     </div>
     <Link href={routes.MAIN}>
       <h4 className={s.link}>

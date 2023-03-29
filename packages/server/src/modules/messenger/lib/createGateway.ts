@@ -1,8 +1,7 @@
-import { SocketGateWays } from '@app/types/global'
-import { corsConfig } from '@app/config'
+import { SocketPaths } from '@app/types/global'
 
-export const createGateway = (gateway: SocketGateWays) => ({
-  namespace: gateway,
-  cors: corsConfig,
-  cookie: true
+export const createGateway = (path: SocketPaths) => ({
+  cors: true,
+  transports: ['websocket', 'polling'],
+  path
 })

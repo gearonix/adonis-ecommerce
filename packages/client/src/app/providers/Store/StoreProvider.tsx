@@ -7,6 +7,7 @@ import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore'
 import { useRouter } from 'next/router'
 import { DeepPartial, ReducersMapObject } from '@reduxjs/toolkit'
 import { StateSchema } from 'app/store/types'
+import { NextLocalStorage } from 'shared/lib/helpers'
 
 interface StoreProviderProps{
   asyncReducers?: ReducersMapObject<StateSchema>,
@@ -16,11 +17,13 @@ interface StoreProviderProps{
 const StoreProvider: CFC<StoreProviderProps> = ({ children, asyncReducers, preloadedState }) => {
   const [store, setStore] = useState<ToolkitStore>()
   const router = useRouter()
+  const storage = new NextLocalStorage()
 
   useEffect(() => {
     const store = createStore({
       middleware: {
-        redirect: router.push
+        redirect: router.push,
+        storage
       },
       asyncReducers,
       preloadedState

@@ -6,7 +6,7 @@ import { productsActions, RecommendedItemProps } from 'widgets/Products'
 import { useDispatch } from 'shared/types/redux'
 import { useRouter } from 'next/router'
 import { RecommendedPreloader } from 'shared/ui/material'
-import { backgroundImage } from 'shared/lib/helpers'
+import { backgroundImage, publicAssets } from 'shared/lib/helpers'
 import { ProductTypesAssets } from 'shared/config/consts/assets'
 import { useTranslation } from 'react-i18next'
 import cn from 'classnames'
@@ -26,7 +26,7 @@ const SortedProducts = memo<RecommendedItemProps>(({ type = 'Electronics', items
   return <div className={s.recommended}>
     <ContainerTitle className={cn(s.mobile_header)}>{Icon && <Icon/>} {t(type)}</ContainerTitle>
     <div className={s.image_block}
-      style={backgroundImage(ProductTypesAssets[type])}>
+      style={backgroundImage(publicAssets(ProductTypesAssets[type]))}>
       <div className={s.title}>{t(type)}</div>
 
       <Button w={'119px'} color={'outlined'} onClick={onSearch}>{t('Source_now')}</Button>
