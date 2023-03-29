@@ -17,5 +17,4 @@ export declare class ChatGateway {
     makeMessageRead(message: UserMessagesEntity, client: Socket): Promise<void>;
     userTyping(roomId: number, client: Socket): Promise<void>;
     noLongerTyping(roomId: number, client: Socket): Promise<void>;
-    private getUserIdByHeaders;
 }
