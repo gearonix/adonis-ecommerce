@@ -13,5 +13,5 @@ export declare class StatusGateway implements OnGatewayConnection, OnGatewayDisc
     handleConnection(client: Socket): Promise<void>;
     handleDisconnect(client: Socket): Promise<void>;
     subscribeUser(targetId: number, client: Socket): Promise<void>;
-    getUserIdByHeaders(client: Socket): Promise<number>;
+    getUserId(client: Socket): Promise<number>;
 }

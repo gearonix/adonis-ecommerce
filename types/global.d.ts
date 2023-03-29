@@ -20,9 +20,9 @@ export declare enum FileDirectories {
     POST_IMAGES = "post_images",
     MESSENGER_ATTACHMENTS = "messenger_attachments"
 }
-export declare enum SocketPaths {
-    messenger = "/adonis-ecommerce-api/messenger_socket.io",
-    auth = "/adonis-ecommerce-api/socket.io"
+export declare enum SocketGateWays {
+    MESSENGER = "messenger",
+    AUTH = "auth"
 }
 export declare enum UserStatus {
     ONLINE = "online",

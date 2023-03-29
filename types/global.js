@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PAGE_LIMIT = exports.UserStatus = exports.SocketPaths = exports.FileDirectories = exports.Roles = exports.Lengths = void 0;
+exports.PAGE_LIMIT = exports.UserStatus = exports.SocketGateWays = exports.FileDirectories = exports.Roles = exports.Lengths = void 0;
 var Lengths;
 (function (Lengths) {
     Lengths[Lengths["TITLE"] = 40] = "TITLE";
@@ -26,11 +26,11 @@ var FileDirectories;
     FileDirectories["POST_IMAGES"] = "post_images";
     FileDirectories["MESSENGER_ATTACHMENTS"] = "messenger_attachments";
 })(FileDirectories = exports.FileDirectories || (exports.FileDirectories = {}));
-var SocketPaths;
-(function (SocketPaths) {
-    SocketPaths["messenger"] = "/adonis-ecommerce-api/messenger_socket.io";
-    SocketPaths["auth"] = "/adonis-ecommerce-api/socket.io";
-})(SocketPaths = exports.SocketPaths || (exports.SocketPaths = {}));
+var SocketGateWays;
+(function (SocketGateWays) {
+    SocketGateWays["MESSENGER"] = "messenger";
+    SocketGateWays["AUTH"] = "auth";
+})(SocketGateWays = exports.SocketGateWays || (exports.SocketGateWays = {}));
 var UserStatus;
 (function (UserStatus) {
     UserStatus["ONLINE"] = "online";
