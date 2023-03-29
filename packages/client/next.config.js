@@ -38,7 +38,7 @@ const nextConfig = {
         port: ''
       }
     ],
-    domains: ['lh3.googleusercontent.com', SERVER_HOST, 'localhost']
+    domains: ['lh3.googleusercontent.com', SERVER_HOST || 'http://localhost:6868', 'localhost']
   },
   eslint: {
     ignoreDuringBuilds: true
