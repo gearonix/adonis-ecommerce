@@ -11,24 +11,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 var StatusGateway_1;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.StatusGateway = void 0;
 const websockets_1 = require("@nestjs/websockets");
-const config_1 = require("../../../../config");
-const createGateway_1 = require("../../lib/createGateway");
 const global_1 = require("../../../../types/global");
 const socket_io_1 = require("socket.io");
-const cookie_1 = __importDefault(require("cookie"));
 const services_1 = require("../../../auth/services");
 const user_status_service_1 = require("../../services/user-status.service");
 const common_1 = require("@nestjs/common");
 const gatewayGroup_1 = require("../../lib/gatewayGroup");
 const types_1 = require("./types");
 const messenger_1 = require("../..");
+const createGateway_1 = require("../../lib/createGateway");
 let StatusGateway = StatusGateway_1 = class StatusGateway {
     tokenService;
     onlineUsers;
@@ -41,7 +36,7 @@ let StatusGateway = StatusGateway_1 = class StatusGateway {
         this.roomsService = roomsService;
     }
     async handleConnection(client) {
-        const userId = await this.getUserId(client);
+        const userId = await this.getUserIdByHeaders(client);
         this.onlineUsers.addUser(userId);
         client.to((0, gatewayGroup_1.gatewayGroup)(types_1.StatusGroups.ONLINE_STATUS, userId))
             .emit(types_1.StatusEvents.STATUS_CHANGED, { status: global_1.UserStatus.ONLINE });
@@ -52,7 +47,7 @@ let StatusGateway = StatusGateway_1 = class StatusGateway {
         this.logger.log(`Amount of connected sockets: ${this.authServer.sockets.size}`);
     }
     async handleDisconnect(client) {
-        const userId = await this.getUserId(client);
+        const userId = await this.getUserIdByHeaders(client);
         this.onlineUsers.removeUser(userId);
         client.to((0, gatewayGroup_1.gatewayGroup)(types_1.StatusGroups.ONLINE_STATUS, userId))
             .emit(types_1.StatusEvents.STATUS_CHANGED, { status: global_1.UserStatus.OFFLINE });
@@ -63,14 +58,9 @@ let StatusGateway = StatusGateway_1 = class StatusGateway {
         const status = this.onlineUsers.getOnlineStatus(targetId);
         client.emit(types_1.StatusEvents.STATUS_CHANGED, { status });
     }
-    async getUserId(client) {
-        const cookies = client.handshake.headers.cookie;
-        if (!cookies)
-            return;
-        const token = cookie_1.default.parse(cookies).AUTH_TOKEN;
-        if (token) {
-            return this.tokenService.verifyToken(token);
-        }
+    async getUserIdByHeaders(client) {
+        const userId = Number(client.handshake.auth.userid);
+        return isNaN(userId) ? null : userId;
     }
 };
 __decorate([
@@ -98,7 +88,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], StatusGateway.prototype, "subscribeUser", null);
 StatusGateway = StatusGateway_1 = __decorate([
-    (0, websockets_1.WebSocketGateway)(config_1.appConfig.socketPort, (0, createGateway_1.createGateway)(global_1.SocketGateWays.AUTH)),
+    (0, websockets_1.WebSocketGateway)((0, createGateway_1.createGateway)(global_1.SocketPaths.auth)),
     __param(0, (0, common_1.Inject)((0, common_1.forwardRef)(() => services_1.TokenService))),
     __param(2, (0, common_1.Inject)((0, common_1.forwardRef)(() => messenger_1.RoomsService))),
     __metadata("design:paramtypes", [services_1.TokenService,
