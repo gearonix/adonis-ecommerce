@@ -1611,7 +1611,7 @@ module.exports = import("socket.io-client");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [722,5346,8313,4359,4448,5360,9254,7175,8521,444], () => (__webpack_exec__(44354)));
+var __webpack_exports__ = __webpack_require__.X(0, [722,5346,8313,8828,4448,5360,9254,7175,8521,444], () => (__webpack_exec__(44354)));
 module.exports = __webpack_exports__;
 
 })();
