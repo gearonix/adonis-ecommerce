@@ -6,10 +6,12 @@ import { loginByGoogle } from '../store/thunks/loginUser/loginUser'
 import { GoogleButtonProps, RegisterByGoogle } from '../types'
 import { Theme } from 'shared/config/consts/themes'
 import { useTheme } from 'shared/lib/hooks/useTheme'
+import { useAdaptive } from 'shared/lib/hooks'
 
 const GoogleButton = memo<GoogleButtonProps>(({ role }) => {
   const dispatch = useDispatch()
   const { theme } = useTheme()
+  const isMobile = useAdaptive(420)
   const onSuccess = async ({ credential }: CredentialResponse) => {
     if (role) {
       dispatch(registerByGoogle({ jwt: credential, role } as RegisterByGoogle))
@@ -23,7 +25,7 @@ const GoogleButton = memo<GoogleButtonProps>(({ role }) => {
     onSuccess={onSuccess}
     onError={onError}
     size={'large'}
-    width={'300'}
+    width={isMobile ? '280' : '300'}
     theme={theme === Theme.LIGHT ? undefined : 'filled_black'}
   />
 })

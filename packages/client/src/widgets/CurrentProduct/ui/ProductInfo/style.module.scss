@@ -33,6 +33,12 @@
     padding-right: 10px;
     padding-bottom: 0;
   }
+  @supports (-webkit-touch-callout: none) {
+    @media (max-width: 478px) {
+      height: initial;
+      min-height: 480px;
+    }
+  }
 
 
 }

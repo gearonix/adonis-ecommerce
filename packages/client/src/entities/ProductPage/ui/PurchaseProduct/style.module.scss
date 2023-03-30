@@ -3,6 +3,11 @@
 
 .purchase_block {
   @include size(289px);
+  @supports (-webkit-touch-callout: none) {
+    @media (max-width: 478px) {
+      display: none;
+    }
+  }
 
   margin-right: 10px;
   margin-left: 20px;
@@ -15,6 +20,7 @@
     top: -5px;
     z-index: 8;
     height: max-content;
+
   }
 
   @media (max-width: 864px) {
@@ -26,12 +32,17 @@
     inset: initial initial 45px 10px;
     padding: 0;
     margin: 0;
+    right: 22px;
+    top: 12px;
     min-width: 180px;
   }
 
   @media (max-width: 478px) {
     background-color: $bg-absolute;
     bottom: 5px;
+    top: initial;
+    right: initial;
+    margin-bottom: 10px;
     width: 92%;
   }
 
@@ -39,11 +50,13 @@
     padding: 17px;
     border: $br $bg-150;
     border-radius: $rounded;
+    min-height: 200px;
 
     @include size(100%, 325px);
 
     @media (max-width: 1064px) {
       height: 100%;
+      min-height: initial;
       padding: 4px 7px;
     }
 

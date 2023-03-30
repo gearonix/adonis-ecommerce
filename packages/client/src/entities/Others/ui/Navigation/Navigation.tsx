@@ -3,7 +3,7 @@ import s from './style.module.scss'
 import { NextImage } from 'shared/ui/kit'
 import { DefaultAssets } from 'shared/config/consts/assets'
 import { Ternary, WithSpring } from 'shared/lib/components'
-import { useSelector } from 'shared/types/redux'
+import { useDispatch, useSelector } from 'shared/types/redux'
 import { AuthSelectors } from 'widgets/Login'
 import Link from 'next/link'
 import { routes } from 'shared/config/consts/routes'
@@ -12,6 +12,8 @@ import { useLanguage, useLockScroll, useTheme } from 'shared/lib/hooks'
 import { AiOutlineBars, AiOutlineHeart, CiLogin,
   BiMessageDetail, BiUser, FiUsers, BsMoon, TbLanguage,
   AiOutlineHome, AiOutlineShoppingCart, BsInfoLg } from 'shared/ui/icons'
+import { SlLogout } from 'react-icons/sl'
+import { logoutUser } from 'widgets/Login/store/thunks'
 
 interface NavigationProps{
   onClose: () => void
@@ -24,11 +26,17 @@ const Navigation : FC<NavigationProps> = ({ onClose }) => {
   const { toggleTheme } = useTheme()
   const { toggleLang, t } = useLanguage()
   useLockScroll()
+  const dispatch = useDispatch()
+  const logout = () => {
+    dispatch(logoutUser())
+    onClose()
+  }
 
   return <>
     <WithSpring className={s.background} type={'partialOpacity'} onClick={onClose}/>
     <WithSpring className={s.navigation} type={'burgerMenu'}>
       <div className={s.header}>
+        <div className={s.logout} onClick={logout}><SlLogout/></div>
         <div className={s.avatar}>
           <NextImage src={avatar} def={DefaultAssets.AVATAR}/>
         </div>

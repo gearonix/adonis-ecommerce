@@ -227,6 +227,13 @@
     }
 
     .change_profile {
+      @media (max-width: 756px) {
+        *{
+          margin: 0 !important;
+        }
+        justify-content: center;
+        align-items: center;
+      }
       @include flex(flex-end);
 
       position: absolute;
@@ -237,6 +244,9 @@
         cursor: pointer;
         min-width: 183px;
         height: 33px;
+        @media (max-width: 420px) {
+          padding: 0;
+        }
 
         svg{
           margin-right: 3px;
@@ -247,6 +257,7 @@
 
           @media (max-width: 756px) {
             @include size(17px, 17px);
+            margin: 0 !important;
           }
 
           @media (max-width: 518px) {

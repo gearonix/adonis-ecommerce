@@ -65,7 +65,7 @@
     }
 
     position: relative;
-
+    overflow: hidden;
     input{
       @include absolute;
       @include size;

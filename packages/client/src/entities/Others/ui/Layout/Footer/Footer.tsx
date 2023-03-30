@@ -101,4 +101,6 @@ const Footer: FC = memo(() => {
   </footer>
 })
 
+console.log('( ͡° ͜ʖ ͡°)')
+
 export default Footer

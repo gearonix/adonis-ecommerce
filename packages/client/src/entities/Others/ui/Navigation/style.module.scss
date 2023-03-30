@@ -4,6 +4,15 @@
   @media (min-width: 900px) {
     display: none;
   }
+  .logout{
+    position: absolute;
+    right: 13px;
+    top: 10px;
+    color: $color-absolute-200;
+    svg{
+      @include size(14px, 14px);
+    }
+  }
 
   width: 72%;
   height: 101vh;

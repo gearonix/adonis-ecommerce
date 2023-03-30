@@ -27,6 +27,15 @@
         @include size(13px, 13px);
       }
     }
+    @media (max-width: 410px) {
+      span{
+        display: none;
+      }
+      svg{
+        @include size(17px, 17px);
+      }
+      margin: 0;
+    }
   }
 
   button {

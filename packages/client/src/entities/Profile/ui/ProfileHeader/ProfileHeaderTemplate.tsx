@@ -1,4 +1,4 @@
-import { memo, ReactElement } from 'react'
+import { FC, memo, ReactElement } from 'react'
 import s from './style.module.scss'
 import { ProfileBackground, UserAvatar, WriteToUser } from 'shared/ui/kit'
 import { Nullable, ObjectNullable } from 'shared/types/common'
@@ -21,7 +21,7 @@ export interface ProfileHeaderTemplate {
 }
 
 
-const ProfileHeaderTemplate = memo<ProfileHeaderTemplate>((props) => {
+const ProfileHeaderTemplate: FC<ProfileHeaderTemplate> = (props) => {
   const { t } = useTranslation()
   const { ChangeBackground, openProfile,
     openInfo, user, isMe, openSettings } = props
@@ -59,6 +59,6 @@ const ProfileHeaderTemplate = memo<ProfileHeaderTemplate>((props) => {
       </Display>
     </div>
   </div>
-})
+}
 
 export default ProfileHeaderTemplate

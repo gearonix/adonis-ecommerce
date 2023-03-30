@@ -19,9 +19,6 @@ const UsersList = memo(() => {
   const isLoading = useSelector(UsersSelectors.isLoading)
   const userId = useSelector(AuthSelectors.userId)
   const dispatch = useDispatch()
-  useEffect(() => {
-    dispatch(getUsers({ page }))
-  }, [page])
 
   const onPageChange = (page: number) => {
     dispatch(usersActions.changePage(page))

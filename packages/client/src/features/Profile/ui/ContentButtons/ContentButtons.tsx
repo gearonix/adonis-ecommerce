@@ -15,9 +15,16 @@ export interface ContentButtonsProps {
 const ContentButtons = memo<ContentButtonsProps>(({ AddProduct, AddPost }) => {
   const { t } = useTranslation()
   return <div className={s.content_buttons}>
-    <ContentButton page={WallPages.posts}><AiOutlineFileAdd/> {t('Posts')}</ContentButton>
-    <ContentButton page={WallPages.products}><AiOutlineUnorderedList/> {t('Products')}</ContentButton>
-    <ContentButton page={WallPages.saved}><FiHeart/> {t('Saved cropped')}</ContentButton>
+    <ContentButton page={WallPages.posts}>
+      <AiOutlineFileAdd/> <span>{t('Posts')}</span>
+    </ContentButton>
+    <ContentButton page={WallPages.products}>
+      <AiOutlineUnorderedList/>
+      <span>{t('Products')}</span>
+    </ContentButton>
+    <ContentButton page={WallPages.saved}>
+      <FiHeart/>
+      <span>{t('Saved cropped')}</span></ContentButton>
     <div className={s.add_product}>
       {AddPost}
       {AddProduct}

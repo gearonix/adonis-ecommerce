@@ -47,6 +47,12 @@
       span:last-child{
         @include inlineStyles($small, $bg-300, normal);
       }
+      .date{
+        @media (max-width: 420px) {
+          font-size: 14px !important;
+        }
+      }
+
     }
 
     .post_text {
@@ -83,7 +89,7 @@
 
       @media (max-width: 430px) {
         width: 310px;
-        height: 130px;
+        height: 145px;
         margin-left: -48px;
       }
 

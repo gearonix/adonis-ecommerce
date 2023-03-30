@@ -6,6 +6,7 @@
   border-radius: $rounded;
   margin-bottom: 13px;
   cursor: pointer;
+  color: $link-color;
 
   @include flex(center, center);
   @include size(40px, 40px);
@@ -16,17 +17,14 @@
 
   &:hover {
     svg {
-      path {
         color: #FF7E7E;
-      }
     }
   }
 
   svg {
+    color: $link-color;
     path {
       transition: color 400ms;
-      color: $link-color;
-
     }
 
     @include size(20px, 20px);
@@ -35,8 +33,6 @@
 
 .saved{
   svg {
-    path {
-      color: #fa9090;
-    }
+    color: #fa9090;
   }
 }
