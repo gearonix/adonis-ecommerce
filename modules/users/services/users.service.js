@@ -32,6 +32,7 @@ let UsersService = class UsersService {
         this.userStatusService = userStatusService;
     }
     async getUsers(query) {
+        console.log(query);
         const users = await this.users.find({
             where: (0, createUsersQuery_1.createUsersQuery)(query),
             order: { registration_date: 'DESC' },
