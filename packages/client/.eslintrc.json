@@ -29,7 +29,11 @@
     "react/display-name": "off",
     "i18next/no-literal-string": "off"
   },
-  "ignorePatterns": ["next-env.d.ts","**/scripts/**", "next.config.js", "server.js"],
+  "ignorePatterns": ["next-env.d.ts",
+    "**/scripts/**",
+    "next.config.js",
+    "server.js",
+    "main"],
   "plugins": ["@typescript-eslint"],
   "parser": "@typescript-eslint/parser",
   "root": true

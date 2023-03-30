@@ -21,13 +21,13 @@ const GoogleButton = memo<GoogleButtonProps>(({ role }) => {
   }
   const onError = () => console.error('Login by google failed.')
 
-  return <GoogleLogin
+  return process.env.NODE_ENV !== 'electron-build' ? <GoogleLogin
     onSuccess={onSuccess}
     onError={onError}
     size={'large'}
     width={isMobile ? '280' : '300'}
     theme={theme === Theme.LIGHT ? undefined : 'filled_black'}
-  />
+  /> : null
 })
 
 export default GoogleButton

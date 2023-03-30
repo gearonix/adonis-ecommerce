@@ -21,7 +21,6 @@ export class UsersService {
   ) {}
 
   async getUsers(query: UsersDTO) {
-    console.log(query)
     const users = await this.users.find({
       where: createUsersQuery(query),
       order: { registration_date: 'DESC' },

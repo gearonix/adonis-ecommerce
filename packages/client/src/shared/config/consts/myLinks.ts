@@ -13,7 +13,7 @@ export const MyProjects: Project[] = [
   {
     image: publicAssets(MyProjectsAssets.SpaceCalendar),
     title: 'Space Calendar',
-    link: 'https://gearonixx.com/space_calendar/index.html'
+    link: 'https://gearonixx.com/space-calendar'
   }
 ]
 

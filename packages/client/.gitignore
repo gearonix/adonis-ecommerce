@@ -1,6 +1,5 @@
-/node_modules
-/.next/
-/out/
+node_modules
+.next
 .pnpm-debug.log*
 .env.development
 .env.production
@@ -10,3 +9,5 @@ pnpm-lock.yaml
 .npmrc
 .swc
 analyze
+out
+dist

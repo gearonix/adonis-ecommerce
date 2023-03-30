@@ -10,14 +10,17 @@ const SHOW_DEV_NAVIGATION = process.env.NEXT_PUBLIC_SHOW_DEV_NAVIGATION
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH
 const PUBLIC_FOLDER = process.env.NEXT_PUBLIC_PUBLIC_FOLDER
 
+
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.NEXT_PUBLIC_ANALYZE === 'true',
   openAnalyzer: false
 })
 
+
+
 const nextConfig = {
   reactStrictMode: false,
-  basePath: BASE_PATH,
+  basePath: process.env.NODE_ENV !== 'electron-build' ? BASE_PATH : '',
   sassOptions: {
     includePaths: [path.join(__dirname, 'src/shared')]
   },
@@ -35,9 +38,10 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'https://lh3.googleusercontent.com',
-        port: ''
+        port: '',
       }
     ],
+    unoptimized: true,
     domains: ['lh3.googleusercontent.com', SERVER_HOST || 'http://localhost:6868', 'localhost']
   },
   eslint: {
