@@ -5,8 +5,6 @@ node_modules
 .env.production
 *.tsbuildinfo
 next-env.d.ts
-pnpm-lock.yaml
-.npmrc
 .swc
 analyze
 out
